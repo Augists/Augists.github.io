@@ -39,7 +39,7 @@
 <meta property="og:description" content="My Method &amp; Tips for Hexo Beautifying">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-30T06:47:51.000Z">
-<meta property="article:modified_time" content="2020-05-31T04:37:50.740Z">
+<meta property="article:modified_time" content="2020-05-31T11:14:45.307Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="HEXO">
 <meta name="twitter:card" content="summary">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-31 12:37:50" itemprop="dateModified" datetime="2020-05-31T12:37:50+08:00">2020-05-31</time>
+                <time title="Modified: 2020-05-31 19:14:45" itemprop="dateModified" datetime="2020-05-31T19:14:45+08:00">2020-05-31</time>
               </span>
 
           
@@ -260,6 +260,16 @@ before <code>copyright</code></li>
 <li>Search <code>permalink</code></li>
 <li>From <code>permalink: :year/:month/:day/:title/</code> to <code>permalink: :title/</code></li>
 </ol>
+<h3 id="404-in-Tags-or-Categories"><a href="#404-in-Tags-or-Categories" class="headerlink" title="404 in Tags or Categories"></a>404 in Tags or Categories</h3><h4 id="Reason"><a href="#Reason" class="headerlink" title="Reason"></a>Reason</h4><p>Change a part of tags or categories after generating</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><ol>
+<li>File path <code>.deploy_git//.git/config</code></li>
+<li>Find <code>ignorecase</code></li>
+<li>From <code>true</code> to <code>false</code></li>
+<li>Clean and generate<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Several-tags-in-one-article"><a href="#Several-tags-in-one-article" class="headerlink" title="Several tags in one article"></a>Several tags in one article</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: [HELLO, HEXO]</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -343,7 +353,7 @@ before <code>copyright</code></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Beautify-Hexo"><span class="nav-number">1.</span> <span class="nav-text">Beautify Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#method"><span class="nav-number">1.1.</span> <span class="nav-text">method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Click-Number"><span class="nav-number">1.1.1.</span> <span class="nav-text">Click Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#No-Powered-by"><span class="nav-number">1.1.2.</span> <span class="nav-text">No Powered-by</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag-Icon"><span class="nav-number">1.1.3.</span> <span class="nav-text">Tag Icon</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">1.2.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nothing-in-Tags-page"><span class="nav-number">1.2.1.</span> <span class="nav-text">Nothing in Tags page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-New-“Post”-Init"><span class="nav-number">1.2.2.</span> <span class="nav-text">Hexo New “Post” Init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-A-Post-in-Hexo"><span class="nav-number">1.2.3.</span> <span class="nav-text">Delete A Post in Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#My-Problem"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">My Problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Common-Solution"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Common Solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">My Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Inside"><span class="nav-number">1.2.4.</span> <span class="nav-text">Link Inside</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-Setting"><span class="nav-number">1.2.5.</span> <span class="nav-text">URL Setting</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Beautify-Hexo"><span class="nav-number">1.</span> <span class="nav-text">Beautify Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#method"><span class="nav-number">1.1.</span> <span class="nav-text">method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Click-Number"><span class="nav-number">1.1.1.</span> <span class="nav-text">Click Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#No-Powered-by"><span class="nav-number">1.1.2.</span> <span class="nav-text">No Powered-by</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag-Icon"><span class="nav-number">1.1.3.</span> <span class="nav-text">Tag Icon</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">1.2.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nothing-in-Tags-page"><span class="nav-number">1.2.1.</span> <span class="nav-text">Nothing in Tags page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-New-“Post”-Init"><span class="nav-number">1.2.2.</span> <span class="nav-text">Hexo New “Post” Init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-A-Post-in-Hexo"><span class="nav-number">1.2.3.</span> <span class="nav-text">Delete A Post in Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#My-Problem"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">My Problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Common-Solution"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Common Solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">My Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Inside"><span class="nav-number">1.2.4.</span> <span class="nav-text">Link Inside</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-Setting"><span class="nav-number">1.2.5.</span> <span class="nav-text">URL Setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#404-in-Tags-or-Categories"><span class="nav-number">1.2.6.</span> <span class="nav-text">404 in Tags or Categories</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reason"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">Reason</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Several-tags-in-one-article"><span class="nav-number">1.2.7.</span> <span class="nav-text">Several tags in one article</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -365,7 +375,7 @@ before <code>copyright</code></li>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
