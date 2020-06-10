@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-10T07:41:09.818Z</updated>
+  <updated>2020-06-10T07:56:09.154Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux Terminal Command Run Script</title>
+    <link href="https://augists.top/Terminal/Linux-Terminal-Command-Run-Script/"/>
+    <id>https://augists.top/Terminal/Linux-Terminal-Command-Run-Script/</id>
+    <published>2020-06-10T07:41:43.000Z</published>
+    <updated>2020-06-10T07:56:09.154Z</updated>
+    
+    <summary type="html">
+    
+      Study Notes of Linux Terminal Command EP2-Run Script&lt;br&gt;Copyright@HuaHuaJiangLeetCode
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux Terminal Command Newcomer</title>
     <link href="https://augists.top/Terminal/Linux-Terminal-Command-Newcomer/"/>
     <id>https://augists.top/Terminal/Linux-Terminal-Command-Newcomer/</id>
     <published>2020-06-09T10:33:18.000Z</published>
-    <updated>2020-06-10T07:41:09.818Z</updated>
+    <updated>2020-06-10T07:56:02.640Z</updated>
     
     <summary type="html">
     
@@ -137,7 +158,7 @@
     <link href="https://augists.top/mac/mac-or-win/"/>
     <id>https://augists.top/mac/mac-or-win/</id>
     <published>2020-05-31T04:19:58.000Z</published>
-    <updated>2020-06-10T02:10:56.682Z</updated>
+    <updated>2020-06-10T07:55:41.080Z</updated>
     
     <summary type="html">
     
@@ -156,7 +177,7 @@
     <link href="https://augists.top/mac/Command-Line-Tool/"/>
     <id>https://augists.top/mac/Command-Line-Tool/</id>
     <published>2020-05-31T03:46:57.000Z</published>
-    <updated>2020-06-10T02:45:47.440Z</updated>
+    <updated>2020-06-10T07:55:34.418Z</updated>
     
     <summary type="html">
     
@@ -299,7 +320,7 @@
     <link href="https://augists.top/vim&amp;emacs/Spacemacs/"/>
     <id>https://augists.top/vim&amp;emacs/Spacemacs/</id>
     <published>2020-05-31T03:22:47.000Z</published>
-    <updated>2020-06-10T02:44:22.224Z</updated>
+    <updated>2020-06-10T07:56:14.219Z</updated>
     
     <summary type="html">
     
@@ -382,25 +403,6 @@
     <summary type="html">
     
       Curcular Queue in c language
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Double O List</title>
-    <link href="https://augists.top/List/Double-o-List/"/>
-    <id>https://augists.top/List/Double-o-List/</id>
-    <published>2020-05-31T02:18:07.000Z</published>
-    <updated>2020-05-31T02:32:39.506Z</updated>
-    
-    <summary type="html">
-    
-      Double Linked List in c (after List-c)
     
     </summary>
     
