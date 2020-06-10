@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Augists-ZDCZ</title>
+  
+  <subtitle>LESS is MORE</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-06-09T16:34:03.145Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Augists</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux Terminal Command Newcomer</title>
+    <link href="http://yoursite.com/Terminal/Linux-Terminal-Command-Newcomer/"/>
+    <id>http://yoursite.com/Terminal/Linux-Terminal-Command-Newcomer/</id>
+    <published>2020-06-09T10:33:18.000Z</published>
+    <updated>2020-06-09T16:34:03.145Z</updated>
+    
+    <summary type="html">
+    
+      Study Notes of Linux Terminal Command EP1-Newcomer&lt;br&gt;Copyright@HuaHuaJiangLeetCode
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+      <category term="TERMINAL" scheme="http://yoursite.com/tags/TERMINAL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mouse</title>
+    <link href="http://yoursite.com/others/mouse/"/>
+    <id>http://yoursite.com/others/mouse/</id>
+    <published>2020-06-08T03:33:41.000Z</published>
+    <updated>2020-06-08T03:43:33.301Z</updated>
+    
+    <summary type="html">
+    
+      Mouse Introduction by Copyright@NULL-K7N
+    
+    </summary>
+    
+    
+    
+      <category term="DEVICE" scheme="http://yoursite.com/tags/DEVICE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mechanical Keyboard</title>
+    <link href="http://yoursite.com/others/mechanical-keyboard/"/>
+    <id>http://yoursite.com/others/mechanical-keyboard/</id>
+    <published>2020-06-08T02:57:17.000Z</published>
+    <updated>2020-06-08T03:33:13.848Z</updated>
+    
+    <summary type="html">
+    
+      Mechanical Keyboard Introduction by Copyright@NULL-K7N
+    
+    </summary>
+    
+    
+    
+      <category term="DEVICE" scheme="http://yoursite.com/tags/DEVICE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Live2D Show</title>
+    <link href="http://yoursite.com/HEXO/Live2D-Show/"/>
+    <id>http://yoursite.com/HEXO/Live2D-Show/</id>
+    <published>2020-06-01T02:22:17.000Z</published>
+    <updated>2020-06-01T02:32:15.410Z</updated>
+    
+    <summary type="html">
+    
+      It is not accessible without VPN to live2d models. Regard it as a mirror of model show.
+    
+    </summary>
+    
+    
+    
+      <category term="HEXO" scheme="http://yoursite.com/tags/HEXO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Own Domain &gt;&gt; Deploy</title>
+    <link href="http://yoursite.com/HEXO/Own-Domain-Deploy/"/>
+    <id>http://yoursite.com/HEXO/Own-Domain-Deploy/</id>
+    <published>2020-06-01T00:52:07.000Z</published>
+    <updated>2020-06-01T05:51:24.924Z</updated>
+    
+    <summary type="html">
+    
+      How to create your own website? Deploy...
+    
+    </summary>
+    
+    
+    
+      <category term="HEXO" scheme="http://yoursite.com/tags/HEXO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Own Domain &gt;&gt; Generate</title>
+    <link href="http://yoursite.com/HEXO/Own-Domain-Hexo/"/>
+    <id>http://yoursite.com/HEXO/Own-Domain-Hexo/</id>
+    <published>2020-05-31T11:16:51.000Z</published>
+    <updated>2020-06-01T00:54:39.145Z</updated>
+    
+    <summary type="html">
+    
+      How to create your own website? Generate...
+    
+    </summary>
+    
+    
+    
+      <category term="HEXO" scheme="http://yoursite.com/tags/HEXO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MAC or WIN</title>
+    <link href="http://yoursite.com/mac/mac-or-win/"/>
+    <id>http://yoursite.com/mac/mac-or-win/</id>
+    <published>2020-05-31T04:19:58.000Z</published>
+    <updated>2020-06-10T02:10:56.682Z</updated>
+    
+    <summary type="html">
+    
+      How to choose your personal computer? It is enough! Read me
+    
+    </summary>
+    
+    
+    
+      <category term="MAC" scheme="http://yoursite.com/tags/MAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Command Line Tool </title>
+    <link href="http://yoursite.com/mac/Command-Line-Tool/"/>
+    <id>http://yoursite.com/mac/Command-Line-Tool/</id>
+    <published>2020-05-31T03:46:57.000Z</published>
+    <updated>2020-06-09T10:37:55.599Z</updated>
+    
+    <summary type="html">
+    
+      Command Line Tools I recommand
+    
+    </summary>
+    
+    
+    
+      <category term="TERMINAL" scheme="http://yoursite.com/tags/TERMINAL/"/>
+    
+      <category term="MAC" scheme="http://yoursite.com/tags/MAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Cheat Sheet En</title>
+    <link href="http://yoursite.com/git/git-cheat-sheet-en/"/>
+    <id>http://yoursite.com/git/git-cheat-sheet-en/</id>
+    <published>2020-05-31T03:44:27.000Z</published>
+    <updated>2020-06-09T10:37:13.581Z</updated>
+    
+    <summary type="html">
+    
+      Git Cheat Sheet in English check if necessary
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+      <category term="TERMINAL" scheme="http://yoursite.com/tags/TERMINAL/"/>
+    
+      <category term="GIT" scheme="http://yoursite.com/tags/GIT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Cheat Sheet</title>
+    <link href="http://yoursite.com/git/git-cheat-sheet/"/>
+    <id>http://yoursite.com/git/git-cheat-sheet/</id>
+    <published>2020-05-31T03:35:38.000Z</published>
+    <updated>2020-06-09T10:37:20.149Z</updated>
+    
+    <summary type="html">
+    
+      Git Cheat Sheet check if necessary
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+      <category term="TERMINAL" scheme="http://yoursite.com/tags/TERMINAL/"/>
+    
+      <category term="GIT" scheme="http://yoursite.com/tags/GIT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Abbreviation in Email</title>
+    <link href="http://yoursite.com/English/abbreviation-in-email/"/>
+    <id>http://yoursite.com/English/abbreviation-in-email/</id>
+    <published>2020-05-31T03:32:55.000Z</published>
+    <updated>2020-06-09T10:35:32.586Z</updated>
+    
+    <summary type="html">
+    
+      Part of useful abbreviation in email
+    
+    </summary>
+    
+    
+    
+      <category term="ENGLISH" scheme="http://yoursite.com/tags/ENGLISH/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Writing CET4&amp;6</title>
+    <link href="http://yoursite.com/English/Writing-CET4-6/"/>
+    <id>http://yoursite.com/English/Writing-CET4-6/</id>
+    <published>2020-05-31T03:31:24.000Z</published>
+    <updated>2020-06-09T10:35:44.915Z</updated>
+    
+    <summary type="html">
+    
+      Notes of writing in English CET 4 &amp; 6
+    
+    </summary>
+    
+    
+    
+      <category term="ENGLISH" scheme="http://yoursite.com/tags/ENGLISH/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Email Writing</title>
+    <link href="http://yoursite.com/English/Email-in-English/"/>
+    <id>http://yoursite.com/English/Email-in-English/</id>
+    <published>2020-05-31T03:29:28.000Z</published>
+    <updated>2020-05-31T03:30:24.009Z</updated>
+    
+    <summary type="html">
+    
+      How to write a prefect English email
+    
+    </summary>
+    
+    
+    
+      <category term="ENGLISH" scheme="http://yoursite.com/tags/ENGLISH/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Transition Word &amp; Sentence</title>
+    <link href="http://yoursite.com/English/Transition-word-sentence/"/>
+    <id>http://yoursite.com/English/Transition-word-sentence/</id>
+    <published>2020-05-31T03:27:57.000Z</published>
+    <updated>2020-05-31T03:29:12.676Z</updated>
+    
+    <summary type="html">
+    
+      Plenty of Transition words &amp; sentences
+    
+    </summary>
+    
+    
+    
+      <category term="ENGLISH" scheme="http://yoursite.com/tags/ENGLISH/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spacemacs</title>
+    <link href="http://yoursite.com/vim&amp;emacs/Spacemacs/"/>
+    <id>http://yoursite.com/vim&amp;emacs/Spacemacs/</id>
+    <published>2020-05-31T03:22:47.000Z</published>
+    <updated>2020-06-09T10:38:23.855Z</updated>
+    
+    <summary type="html">
+    
+      Some Nots &amp; Tips of Spacemacs
+    
+    </summary>
+    
+    
+    
+      <category term="TERMINAL" scheme="http://yoursite.com/tags/TERMINAL/"/>
+    
+      <category term="EMACS" scheme="http://yoursite.com/tags/EMACS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Queue of Stack</title>
+    <link href="http://yoursite.com/Stack/Queue-of-Stack/"/>
+    <id>http://yoursite.com/Stack/Queue-of-Stack/</id>
+    <published>2020-05-31T02:47:54.000Z</published>
+    <updated>2020-05-31T02:48:24.170Z</updated>
+    
+    <summary type="html">
+    
+      Queue in c language
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Stack &amp; Queue</title>
+    <link href="http://yoursite.com/Stack/Stack-Queue/"/>
+    <id>http://yoursite.com/Stack/Stack-Queue/</id>
+    <published>2020-05-31T02:45:39.000Z</published>
+    <updated>2020-05-31T02:46:28.376Z</updated>
+    
+    <summary type="html">
+    
+      A poem of Stack &amp; Queue
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Circular Queue</title>
+    <link href="http://yoursite.com/Stack/Circular-Queue/"/>
+    <id>http://yoursite.com/Stack/Circular-Queue/</id>
+    <published>2020-05-31T02:39:32.000Z</published>
+    <updated>2020-05-31T02:43:41.750Z</updated>
+    
+    <summary type="html">
+    
+      Curcular Queue in c language
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Time O</title>
+    <link href="http://yoursite.com/Stack/Time-o/"/>
+    <id>http://yoursite.com/Stack/Time-o/</id>
+    <published>2020-05-31T02:39:32.000Z</published>
+    <updated>2020-05-31T02:44:23.767Z</updated>
+    
+    <summary type="html">
+    
+      Basic notes of Time O
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Double O List</title>
+    <link href="http://yoursite.com/List/Double-o-List/"/>
+    <id>http://yoursite.com/List/Double-o-List/</id>
+    <published>2020-05-31T02:18:07.000Z</published>
+    <updated>2020-05-31T02:32:39.506Z</updated>
+    
+    <summary type="html">
+    
+      Double Linked List in c (after List-c)
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
+    
+  </entry>
+  
+</feed>
