@@ -1568,7 +1568,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2e1499;
+  background: #dbffb9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2402,14 +2402,12 @@ pre code {
   font-size: 14px;
 }
 .post-body p a {
-  color: #0593d3;
+  color: #020208;
   border-bottom: none;
-  border-bottom: 1px solid #0593d3;
 }
 .post-body p a:hover {
   color: #fc6423;
-  border-bottom: none;
-  border-bottom: 1px solid #fc6423;
+  text-decoration: underline;
 }
 .category-all-page .category-all-title {
   text-align: center;
