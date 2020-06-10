@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmgxm76w2j30qo0dadt0.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmgxsq46kj30rm0dc4ah.jpg">
 <meta property="article:published_time" content="2020-06-09T10:33:18.000Z">
-<meta property="article:modified_time" content="2020-06-10T02:45:07.850Z">
+<meta property="article:modified_time" content="2020-06-10T07:41:09.818Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="CODE">
 <meta property="article:tag" content="TERMINAL">
@@ -200,7 +200,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-10 10:45:07" itemprop="dateModified" datetime="2020-06-10T10:45:07+08:00">2020-06-10</time>
+                <time title="Modified: 2020-06-10 15:41:09" itemprop="dateModified" datetime="2020-06-10T15:41:09+08:00">2020-06-10</time>
               </span>
 
           
@@ -263,15 +263,15 @@
 <li><p>换个地方 cd (<strong>C</strong>hange <strong>D</strong>irectory)</p>
 <ul>
 <li>% cd path / cd ~</li>
-<li>% cd .. <em># 向上一层</em></li>
+<li>% cd ..    <em># 向上一层</em></li>
 </ul>
 </li>
 <li><p>瞅瞅 ls (<strong>L</strong>i<strong>s</strong>t Directory Contents)</p>
 <ul>
 <li>% ls</li>
-<li>% ls -l <em># list mode</em></li>
-<li>% ls -l -a = ls -la <em># list + all files</em></li>
-<li>% ls -lh <em># list + human readable size</em></li>
+<li>% ls -l                <em># list mode</em></li>
+<li>% ls -l -a = ls -la    <em># list + all files</em></li>
+<li>% ls -lh                <em># list + human readable size</em></li>
 </ul>
 </li>
 </ul>
@@ -293,14 +293,58 @@
 </li>
 </ul>
 <h2 id="文件内容"><a href="#文件内容" class="headerlink" title="文件内容"></a>文件内容</h2><ul>
-<li>打印文件内容 cat ()</li>
-</ul>
+<li><p>打印文件内容 cat (Con<strong>cat</strong>enate and print files)</p>
 <ul>
-<li>头和尾</li>
-<li>交互浏览</li>
-<li>内容查找</li>
-<li>单词统计</li>
+<li>% cat a.txt</li>
+<li>% cat a.txt b.txt        <em># print a.txt then b.txt</em></li>
+<li>% cat &lt; a.txt            <em># read from stdin</em></li>
 </ul>
+</li>
+<li><p>头和尾 head and tail</p>
+<ul>
+<li>% head a.txt            <em># 默认打印10行</em></li>
+<li>% tail a.txt / tail -n 5 a.txt / tail -f a.txt    <em># 一直观察文件，打印新添加的内容</em></li>
+</ul>
+</li>
+<li><p>交互浏览 less (readonly version of vi?)</p>
+<ul>
+<li>% less a.txt</li>
+</ul>
+</li>
+<li><p>内容查找 / or grep</p>
+<ul>
+<li>% man less | grep -n sim    <em># line number</em></li>
+</ul>
+</li>
+<li><p>单词统计 wc (<strong>W</strong>ord, line and byte <strong>c</strong>ount)</p>
+<ul>
+<li>% man wc | wc            <em># -l只打印行数</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="重定向和管道"><a href="#重定向和管道" class="headerlink" title="重定向和管道"></a>重定向和管道</h2><ul>
+<li><p>重定向：改变输入输出设备</p>
+<ul>
+<li>标准输入(stdin) / 标准输出(stdout)：控制台 / 键盘 / 屏幕</li>
+<li>% echo hello &gt; hello.txt        <em># redirect to a file</em></li>
+<li>% echo world &gt;&gt; hello.txt        <em># append to a file</em></li>
+<li>% cat &lt; hello.txt                <em># use file as stdio = read from file</em></li>
+</ul>
+</li>
+<li><p>管道：将前一个命令的标准输出作为下一个程序的标注输入</p>
+<ul>
+<li>% man less | grep sim</li>
+<li>% man less | grep -n sim | grep That &gt; that.txt    <em># mutiple pipes</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="Unix哲学"><a href="#Unix哲学" class="headerlink" title="Unix哲学"></a>Unix哲学</h2><ul>
+<li>每个程序只做一件事情，并且把这件事情做好</li>
+<li>一个程序的输出可以作为另外一个程序的输入，不要输出无关内容</li>
+<li>编写处理字符流的程序，因为那是通用接口</li>
+<li>编写可以互相协作的程序</li>
+</ul>
+<p><a href="https://www.bilibili.com/video/BV1hp4y1C7Zm?t=236" target="_blank" rel="noopener">玩转Linux命令行 - 初来乍到 - EP1</a></p>
 <p>(md partial supported) </p>
 </div>
 
@@ -440,7 +484,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#EP1-初来乍到"><span class="nav-number">1.</span> <span class="nav-text">EP1 初来乍到</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行？"><span class="nav-number">1.1.</span> <span class="nav-text">命令行？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行的世界很单纯"><span class="nav-number">1.2.</span> <span class="nav-text">命令行的世界很单纯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初来乍到"><span class="nav-number">1.3.</span> <span class="nav-text">初来乍到</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻求帮助"><span class="nav-number">1.4.</span> <span class="nav-text">寻求帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件内容"><span class="nav-number">1.5.</span> <span class="nav-text">文件内容</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#EP1-初来乍到"><span class="nav-number">1.</span> <span class="nav-text">EP1 初来乍到</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行？"><span class="nav-number">1.1.</span> <span class="nav-text">命令行？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行的世界很单纯"><span class="nav-number">1.2.</span> <span class="nav-text">命令行的世界很单纯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初来乍到"><span class="nav-number">1.3.</span> <span class="nav-text">初来乍到</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻求帮助"><span class="nav-number">1.4.</span> <span class="nav-text">寻求帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件内容"><span class="nav-number">1.5.</span> <span class="nav-text">文件内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重定向和管道"><span class="nav-number">1.6.</span> <span class="nav-text">重定向和管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix哲学"><span class="nav-number">1.7.</span> <span class="nav-text">Unix哲学</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
