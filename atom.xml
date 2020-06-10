@@ -187,11 +187,11 @@
     
     
     
+      <category term="GIT" scheme="http://yoursite.com/tags/GIT/"/>
+    
       <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
     
       <category term="TERMINAL" scheme="http://yoursite.com/tags/TERMINAL/"/>
-    
-      <category term="GIT" scheme="http://yoursite.com/tags/GIT/"/>
     
   </entry>
   
@@ -210,11 +210,11 @@
     
     
     
+      <category term="GIT" scheme="http://yoursite.com/tags/GIT/"/>
+    
       <category term="CODE" scheme="http://yoursite.com/tags/CODE/"/>
     
       <category term="TERMINAL" scheme="http://yoursite.com/tags/TERMINAL/"/>
-    
-      <category term="GIT" scheme="http://yoursite.com/tags/GIT/"/>
     
   </entry>
   
