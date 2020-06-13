@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-11T02:25:10.076Z</updated>
+  <updated>2020-06-13T15:55:14.016Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,9 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>My Status at the Time of Blogging</title>
+    <link href="https://augists.top/self/My-Status-at-the-Time-of-Blogging/"/>
+    <id>https://augists.top/self/My-Status-at-the-Time-of-Blogging/</id>
+    <published>2020-06-13T15:19:57.000Z</published>
+    <updated>2020-06-13T15:55:14.016Z</updated>
+    
+    <summary type="html">
+    
+      My Status at the Time of Blogging (sharing)
+    
+    </summary>
+    
+    
+    
+      <category term="HEXO" scheme="https://augists.top/tags/HEXO/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux Terminal Command Process Management</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command-Process-Management/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command-Process-Management/</id>
+    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Process-Management/"/>
+    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Process-Management/</id>
     <published>2020-06-11T01:08:08.000Z</published>
     <updated>2020-06-11T02:25:10.076Z</updated>
     
@@ -39,8 +58,8 @@
   
   <entry>
     <title>Linux Terminal Command Event Handling</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command-Event-Handling/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command-Event-Handling/</id>
+    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Event-Handling/"/>
+    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Event-Handling/</id>
     <published>2020-06-10T15:31:01.000Z</published>
     <updated>2020-06-10T16:21:13.663Z</updated>
     
@@ -60,8 +79,8 @@
   
   <entry>
     <title>Linux Terminal Command Run Script</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command-Run-Script/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command-Run-Script/</id>
+    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/"/>
+    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/</id>
     <published>2020-06-10T07:41:43.000Z</published>
     <updated>2020-06-10T11:03:01.777Z</updated>
     
@@ -81,8 +100,8 @@
   
   <entry>
     <title>Linux Terminal Command Newcomer</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command-Newcomer/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command-Newcomer/</id>
+    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Newcomer/"/>
+    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Newcomer/</id>
     <published>2020-06-09T10:33:18.000Z</published>
     <updated>2020-06-10T07:56:02.640Z</updated>
     
@@ -388,25 +407,6 @@
     <summary type="html">
     
       Queue in c language
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Stack &amp; Queue</title>
-    <link href="https://augists.top/Stack/Stack-Queue/"/>
-    <id>https://augists.top/Stack/Stack-Queue/</id>
-    <published>2020-05-31T02:45:39.000Z</published>
-    <updated>2020-05-31T02:46:28.376Z</updated>
-    
-    <summary type="html">
-    
-      A poem of Stack &amp; Queue
     
     </summary>
     
