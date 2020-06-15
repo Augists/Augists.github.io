@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-14T10:42:49.331Z</updated>
+  <updated>2020-06-15T14:22:20.488Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The Missing Semester of Your CS Education&lt;br&gt;Lecture1 Course Overview+The Shell</title>
+    <link href="https://augists.top/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/"/>
+    <id>https://augists.top/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/</id>
+    <published>2020-06-14T10:58:02.000Z</published>
+    <updated>2020-06-15T14:22:20.488Z</updated>
+    
+    <summary type="html">
+    
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+  </entry>
   
   <entry>
     <title>My Status at the Time of Blogging</title>
@@ -394,25 +415,6 @@
       <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
       <category term="EMACS" scheme="https://augists.top/tags/EMACS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Queue of Stack</title>
-    <link href="https://augists.top/Stack/Queue-of-Stack/"/>
-    <id>https://augists.top/Stack/Queue-of-Stack/</id>
-    <published>2020-05-31T02:47:54.000Z</published>
-    <updated>2020-05-31T02:48:24.170Z</updated>
-    
-    <summary type="html">
-    
-      Queue in c language
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
   </entry>
   
