@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-15T14:22:20.488Z</updated>
+  <updated>2020-06-16T13:32:18.539Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Function Limit and Sum of Number Series</title>
+    <link href="https://augists.top/MATLAB/Function-Limit-and-Sum-of-Number-Series/"/>
+    <id>https://augists.top/MATLAB/Function-Limit-and-Sum-of-Number-Series/</id>
+    <published>2020-06-16T12:46:38.000Z</published>
+    <updated>2020-06-16T13:32:18.539Z</updated>
+    
+    <summary type="html">
+    
+      Notes of MATLAB Function Limit and Sum of Number Series
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
+    
+  </entry>
   
   <entry>
     <title>The Missing Semester of Your CS Education&lt;br&gt;Lecture1 Course Overview+The Shell</title>
@@ -394,27 +415,6 @@
     
     
       <category term="ENGLISH" scheme="https://augists.top/tags/ENGLISH/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spacemacs</title>
-    <link href="https://augists.top/vim&amp;emacs/Spacemacs/"/>
-    <id>https://augists.top/vim&amp;emacs/Spacemacs/</id>
-    <published>2020-05-31T03:22:47.000Z</published>
-    <updated>2020-06-10T07:56:14.219Z</updated>
-    
-    <summary type="html">
-    
-      Some Nots &amp; Tips of Spacemacs
-    
-    </summary>
-    
-    
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="EMACS" scheme="https://augists.top/tags/EMACS/"/>
     
   </entry>
   
