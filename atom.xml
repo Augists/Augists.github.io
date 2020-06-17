@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-16T14:37:28.832Z</updated>
+  <updated>2020-06-17T13:45:28.253Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Multivariate Function Integration</title>
+    <link href="https://augists.top/MATLAB/Multivariate-Function-Integration/"/>
+    <id>https://augists.top/MATLAB/Multivariate-Function-Integration/</id>
+    <published>2020-06-16T14:43:00.000Z</published>
+    <updated>2020-06-17T13:45:28.253Z</updated>
+    
+    <summary type="html">
+    
+      Notes of MATLAB&lt;br&gt;Multivariate Function Integration
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Multivariate Function Differentiation</title>
+    <link href="https://augists.top/MATLAB/Multivariate-Function-Differentiation/"/>
+    <id>https://augists.top/MATLAB/Multivariate-Function-Differentiation/</id>
+    <published>2020-06-16T14:40:10.000Z</published>
+    <updated>2020-06-17T13:26:36.541Z</updated>
+    
+    <summary type="html">
+    
+      Notes of MATLAB&lt;br&gt;Multivariate Function Differentiation
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Solution of Integral of One Unary Function and Differential Equations</title>
+    <link href="https://augists.top/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/"/>
+    <id>https://augists.top/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/</id>
+    <published>2020-06-16T14:38:51.000Z</published>
+    <updated>2020-06-16T14:39:45.120Z</updated>
+    
+    <summary type="html">
+    
+      Notes of MATLAB&lt;br&gt;Solution of Integral of One Unary Function and Differential Equations
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
+    
+  </entry>
   
   <entry>
     <title>Derivation of Unary Function and Taylor Expansion</title>
@@ -84,7 +147,7 @@
     <link href="https://augists.top/self/My-Status-at-the-Time-of-Blogging/"/>
     <id>https://augists.top/self/My-Status-at-the-Time-of-Blogging/</id>
     <published>2020-06-13T15:19:57.000Z</published>
-    <updated>2020-06-14T10:42:49.331Z</updated>
+    <updated>2020-06-16T15:03:09.948Z</updated>
     
     <summary type="html">
     
@@ -360,63 +423,6 @@
       <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
       <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Abbreviation in Email</title>
-    <link href="https://augists.top/English/abbreviation-in-email/"/>
-    <id>https://augists.top/English/abbreviation-in-email/</id>
-    <published>2020-05-31T03:32:55.000Z</published>
-    <updated>2020-06-09T10:35:32.586Z</updated>
-    
-    <summary type="html">
-    
-      Part of useful abbreviation in email
-    
-    </summary>
-    
-    
-    
-      <category term="ENGLISH" scheme="https://augists.top/tags/ENGLISH/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Writing CET4&amp;6</title>
-    <link href="https://augists.top/English/Writing-CET4-6/"/>
-    <id>https://augists.top/English/Writing-CET4-6/</id>
-    <published>2020-05-31T03:31:24.000Z</published>
-    <updated>2020-06-09T10:35:44.915Z</updated>
-    
-    <summary type="html">
-    
-      Notes of writing in English CET 4 &amp; 6
-    
-    </summary>
-    
-    
-    
-      <category term="ENGLISH" scheme="https://augists.top/tags/ENGLISH/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Email Writing</title>
-    <link href="https://augists.top/English/Email-in-English/"/>
-    <id>https://augists.top/English/Email-in-English/</id>
-    <published>2020-05-31T03:29:28.000Z</published>
-    <updated>2020-05-31T03:30:24.009Z</updated>
-    
-    <summary type="html">
-    
-      How to write a prefect English email
-    
-    </summary>
-    
-    
-    
-      <category term="ENGLISH" scheme="https://augists.top/tags/ENGLISH/"/>
     
   </entry>
   
