@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-17T13:45:28.253Z</updated>
+  <updated>2020-06-20T05:27:00.539Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,9 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Electronic or Deelectronic</title>
+    <link href="https://augists.top/self/Electronic-or-Deelectronic/"/>
+    <id>https://augists.top/self/Electronic-or-Deelectronic/</id>
+    <published>2020-06-20T03:49:26.000Z</published>
+    <updated>2020-06-20T05:27:00.539Z</updated>
+    
+    <summary type="html">
+    
+      Something I Thought
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The Missing Semester of Your CS Education&lt;br&gt;Lecture1 Shell Tools and Scripting</title>
+    <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/"/>
+    <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/</id>
+    <published>2020-06-18T01:27:40.000Z</published>
+    <updated>2020-06-20T03:28:11.014Z</updated>
+    
+    <summary type="html">
+    
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Multivariate Function Integration</title>
-    <link href="https://augists.top/MATLAB/Multivariate-Function-Integration/"/>
-    <id>https://augists.top/MATLAB/Multivariate-Function-Integration/</id>
+    <link href="https://augists.top/NOTES/MATLAB/Multivariate-Function-Integration/"/>
+    <id>https://augists.top/NOTES/MATLAB/Multivariate-Function-Integration/</id>
     <published>2020-06-16T14:43:00.000Z</published>
     <updated>2020-06-17T13:45:28.253Z</updated>
     
@@ -39,8 +79,8 @@
   
   <entry>
     <title>Multivariate Function Differentiation</title>
-    <link href="https://augists.top/MATLAB/Multivariate-Function-Differentiation/"/>
-    <id>https://augists.top/MATLAB/Multivariate-Function-Differentiation/</id>
+    <link href="https://augists.top/NOTES/MATLAB/Multivariate-Function-Differentiation/"/>
+    <id>https://augists.top/NOTES/MATLAB/Multivariate-Function-Differentiation/</id>
     <published>2020-06-16T14:40:10.000Z</published>
     <updated>2020-06-17T13:26:36.541Z</updated>
     
@@ -60,8 +100,8 @@
   
   <entry>
     <title>Solution of Integral of One Unary Function and Differential Equations</title>
-    <link href="https://augists.top/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/"/>
-    <id>https://augists.top/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/</id>
+    <link href="https://augists.top/NOTES/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/"/>
+    <id>https://augists.top/NOTES/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/</id>
     <published>2020-06-16T14:38:51.000Z</published>
     <updated>2020-06-16T14:39:45.120Z</updated>
     
@@ -81,8 +121,8 @@
   
   <entry>
     <title>Derivation of Unary Function and Taylor Expansion</title>
-    <link href="https://augists.top/MATLAB/Derivation-of-Unary-Function-and-Taylor-Expansion/"/>
-    <id>https://augists.top/MATLAB/Derivation-of-Unary-Function-and-Taylor-Expansion/</id>
+    <link href="https://augists.top/NOTES/MATLAB/Derivation-of-Unary-Function-and-Taylor-Expansion/"/>
+    <id>https://augists.top/NOTES/MATLAB/Derivation-of-Unary-Function-and-Taylor-Expansion/</id>
     <published>2020-06-16T13:33:43.000Z</published>
     <updated>2020-06-16T14:37:28.832Z</updated>
     
@@ -102,8 +142,8 @@
   
   <entry>
     <title>Function Limit and Sum of Number Series</title>
-    <link href="https://augists.top/MATLAB/Function-Limit-and-Sum-of-Number-Series/"/>
-    <id>https://augists.top/MATLAB/Function-Limit-and-Sum-of-Number-Series/</id>
+    <link href="https://augists.top/NOTES/MATLAB/Function-Limit-and-Sum-of-Number-Series/"/>
+    <id>https://augists.top/NOTES/MATLAB/Function-Limit-and-Sum-of-Number-Series/</id>
     <published>2020-06-16T12:46:38.000Z</published>
     <updated>2020-06-16T13:44:23.152Z</updated>
     
@@ -123,8 +163,8 @@
   
   <entry>
     <title>The Missing Semester of Your CS Education&lt;br&gt;Lecture1 Course Overview+The Shell</title>
-    <link href="https://augists.top/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/"/>
-    <id>https://augists.top/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/</id>
+    <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/"/>
+    <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/</id>
     <published>2020-06-14T10:58:02.000Z</published>
     <updated>2020-06-15T14:22:20.488Z</updated>
     
@@ -163,8 +203,8 @@
   
   <entry>
     <title>Linux Terminal Command Process Management</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Process-Management/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Process-Management/</id>
+    <link href="https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Process-Management/"/>
+    <id>https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Process-Management/</id>
     <published>2020-06-11T01:08:08.000Z</published>
     <updated>2020-06-11T02:25:10.076Z</updated>
     
@@ -184,8 +224,8 @@
   
   <entry>
     <title>Linux Terminal Command Event Handling</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Event-Handling/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Event-Handling/</id>
+    <link href="https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Event-Handling/"/>
+    <id>https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Event-Handling/</id>
     <published>2020-06-10T15:31:01.000Z</published>
     <updated>2020-06-10T16:21:13.663Z</updated>
     
@@ -205,8 +245,8 @@
   
   <entry>
     <title>Linux Terminal Command Run Script</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/</id>
+    <link href="https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/"/>
+    <id>https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/</id>
     <published>2020-06-10T07:41:43.000Z</published>
     <updated>2020-06-10T11:03:01.777Z</updated>
     
@@ -226,8 +266,8 @@
   
   <entry>
     <title>Linux Terminal Command Newcomer</title>
-    <link href="https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Newcomer/"/>
-    <id>https://augists.top/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Newcomer/</id>
+    <link href="https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Newcomer/"/>
+    <id>https://augists.top/NOTES/Terminal/Linux-Terminal-Command/Linux-Terminal-Command-Newcomer/</id>
     <published>2020-06-09T10:33:18.000Z</published>
     <updated>2020-06-10T07:56:02.640Z</updated>
     
@@ -377,52 +417,6 @@
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
       <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Cheat Sheet En</title>
-    <link href="https://augists.top/git/git-cheat-sheet-en/"/>
-    <id>https://augists.top/git/git-cheat-sheet-en/</id>
-    <published>2020-05-31T03:44:27.000Z</published>
-    <updated>2020-06-09T10:37:13.581Z</updated>
-    
-    <summary type="html">
-    
-      Git Cheat Sheet in English check if necessary
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Cheat Sheet</title>
-    <link href="https://augists.top/git/git-cheat-sheet/"/>
-    <id>https://augists.top/git/git-cheat-sheet/</id>
-    <published>2020-05-31T03:35:38.000Z</published>
-    <updated>2020-06-09T10:37:20.149Z</updated>
-    
-    <summary type="html">
-    
-      Git Cheat Sheet check if necessary
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
     
   </entry>
   
