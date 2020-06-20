@@ -39,7 +39,7 @@
 <meta property="og:description" content="Study Notes of MIT CoursesCopyright@MIT">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-18T01:27:40.000Z">
-<meta property="article:modified_time" content="2020-06-20T03:28:11.014Z">
+<meta property="article:modified_time" content="2020-06-20T06:57:29.781Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="CODE">
 <meta property="article:tag" content="TERMINAL">
@@ -197,7 +197,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-20 11:28:11" itemprop="dateModified" datetime="2020-06-20T11:28:11+08:00">2020-06-20</time>
+                <time title="Modified: 2020-06-20 14:57:29" itemprop="dateModified" datetime="2020-06-20T14:57:29+08:00">2020-06-20</time>
               </span>
 
           
@@ -212,7 +212,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note warning"><h1 id="Shell-Tools-and-Scripting"><a href="#Shell-Tools-and-Scripting" class="headerlink" title="Shell Tools and Scripting"></a>Shell Tools and Scripting</h1><p>In this lecture, we will present some of the basics of using bash as a scripting language along with a number of shell tools that cover several of the most common tasks that you will be constantly performing in the command line.</p>
+        <iframe src="//player.bilibili.com/player.html?aid=86911412&bvid=BV1x7411H7wa&cid=148439477&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<div class="note warning"><h1 id="Shell-Tools-and-Scripting"><a href="#Shell-Tools-and-Scripting" class="headerlink" title="Shell Tools and Scripting"></a>Shell Tools and Scripting</h1><p>In this lecture, we will present some of the basics of using bash as a scripting language along with a number of shell tools that cover several of the most common tasks that you will be constantly performing in the command line.</p>
 <h2 id="Shell-Scripting"><a href="#Shell-Scripting" class="headerlink" title="Shell Scripting"></a>Shell Scripting</h2><p>So far we have seen how to execute commands in the shell and pipe them together. However, in many scenarios you will want to perform a series of commands and make use of control flow expressions like conditionals or loops.</p>
 <p>Shell scripts are the next step in complexity. Most shells have their own scripting language with variables, control flow and its own syntax. What makes shell scripting different from other scripting programming language is that it is optimized for performing shell-related tasks. Thus, creating command pipelines, saving results into files, and reading from standard input are primitives in shell scripting, which makes it easier to use than general purpose scripting languages. For this section we will focus on bash scripting since it is the most common.</p>
 <p>To assign variables in bash, use the syntax <code>foo=bar</code> and access the value of the variable with <code>$foo</code>. Note that <code>foo = bar</code> will not work since it is interpreted as calling the <code>foo</code> program with arguments <code>=</code> and <code>bar</code>. In general, in shell scripts the space character will perform argument splitting. This behavior can be confusing to use at first, so always check for that.</p>
@@ -285,18 +287,34 @@
 <p>Lastly, a thing to have in mind is that if you start a command with a leading space it won’t be added to your shell history. This comes in handy when you are typing commands with passwords or other bits of sensitive information. If you make the mistake of not adding the leading space, you can always manually remove the entry by editing your <code>.bash_history</code> or <code>.zhistory</code>.</p>
 <h3 id="Directory-Navigation"><a href="#Directory-Navigation" class="headerlink" title="Directory Navigation"></a>Directory Navigation</h3><p>So far, we have assumed that you are already where you need to be to perform these actions. But how do you go about quickly navigating directories? There are many simple ways that you could do this, such as writing shell aliases or creating symlinks with <a href="https://www.man7.org/linux/man-pages/man1/ln.1.html" target="_blank" rel="noopener">ln -s</a>, but the truth is that developers have figured out quite clever and sophisticated solutions by now.</p>
 <p>as with the theme of this course, you often want to optimize for the common case. finding frequent and/or recent files and directories can be done through tools like <a href="https://github.com/clvv/fasd" target="_blank" rel="noopener">fasd</a> and <a href="https://github.com/wting/autojump" target="_blank" rel="noopener">autojump</a>. fasd ranks files and directories by <a href="https://developer.mozilla.org/en/the_places_frecency_algorithm" target="_blank" rel="noopener"><em>frecency</em></a>, that is, by both <em>frequency</em> and <em>recency</em>. by default, <code>fasd</code> adds a <code>z</code> command that you can use to quickly <code>cd</code> using a substring of a <em>frecent</em> directory. for example, if you often go to <code>/home/user/files/cool_project</code> you can simply use <code>z cool</code> to jump there. using autojump, this same change of directory could be accomplished using <code>j cool</code>.</p>
-<p>TODO</p>
-<p>More complex tools exist to quickly get an overview of a directory structure: tree, broot or even full fledged file managers like nnn or ranger.</p>
-<p>Exercises<br>Read man ls and write an ls command that lists files in the following manner</p>
-<p>Includes all files, including hidden files<br>Sizes are listed in human readable format (e.g. 454M instead of 454279954)<br>Files are ordered by recency<br>Output is colorized<br>A sample output would look like this</p>
-<p> -rw-r–r–   1 user group 1.1M Jan 14 09:53 baz<br> drwxr-xr-x   5 user group  160 Jan 14 09:53 .<br> -rw-r–r–   1 user group  514 Jan 14 06:42 bar<br> -rw-r–r–   1 user group 106M Jan 13 12:12 foo<br> drwx——+ 47 user group 1.5K Jan 12 18:08 ..<br>Write bash functions marco and polo that do the following. Whenever you execute marco the current working directory should be saved in some manner, then when you execute polo, no matter what directory you are in, polo should cd you back to the directory where you executed marco. For ease of debugging you can write the code in a file marco.sh and (re)load the definitions to your shell by executing source marco.sh.</p>
-<p>Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.</p>
-<p> #!/usr/bin/env bash</p>
-<p> n=$(( RANDOM % 100 ))</p>
-<p> if [[ n -eq 42 ]]; then<br>    echo “Something went wrong”<br>    &gt;&amp;2 echo “The error was using magic numbers”<br>    exit 1<br> fi</p>
-<p> echo “Everything went according to plan”<br>As we covered in the lecture find’s -exec can be very powerful for performing operations over the files we are searching for. However, what if we want to do something with all the files, like creating a zip file? As you have seen so far commands will take input from both arguments and STDIN. When piping commands, we are connecting STDOUT to STDIN, but some commands like tar take inputs from arguments. To bridge this disconnect there’s the xargs command which will execute a command using STDIN as arguments. For example ls | xargs rm will delete the files in the current directory.</p>
-<p>Your task is to write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces (hint: check -d flag for xargs)</p>
-<p>(Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?</p>
+<p>More complex tools exist to quickly get an overview of a directory structure: <a href="https://linux.die.net/man/1/tree" target="_blank" rel="noopener">tree</a>, <a href="https://github.com/Canop/broot" target="_blank" rel="noopener">broot</a> or even full fledged（羽翼丰满的） file managers like <a href="https://github.com/jarun/nnn" target="_blank" rel="noopener">nnn</a> or <a href="https://github.com/ranger/ranger" target="_blank" rel="noopener">ranger</a>.</p>
+<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><ol>
+<li>Read <a href="https://www.man7.org/linux/man-pages/man1/ls.1.html" target="_blank" rel="noopener">man ls</a> and write an <code>ls</code> command that lists files in the following manner<ul>
+<li>Includes all files, including hidden files</li>
+<li>Sizes are listed in human readable format (e.g. 454M instead of 454279954)</li>
+<li>Files are ordered by recency</li>
+<li>Output is colorized</li>
+</ul>
+</li>
+</ol>
+<p>A sample output would look like this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--   1 user group 1.1M Jan 14 09:53 baz</span><br><span class="line">drwxr-xr-x   5 user group  160 Jan 14 09:53 .</span><br><span class="line">-rw-r--r--   1 user group  514 Jan 14 06:42 bar</span><br><span class="line">-rw-r--r--   1 user group 106M Jan 13 12:12 foo</span><br><span class="line">drwx------+ 47 user group 1.5K Jan 12 18:08 ..</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>Write bash functions <code>marco</code> and <code>polo</code> that do the following. Whenever you execute <code>marco</code> the current working directory should be saved in some manner, then when you execute <code>polo</code>, no matter what directory you are in, <code>polo</code> should <code>cd</code> you back to the directory where you executed <code>marco</code>. For ease of debugging you can write the code in a file <code>marco.sh</code> and (re)load the definitions to your shell by executing <code>source marco.sh</code>.</p>
+</li>
+<li><p>Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line">n=$(( RANDOM % 100 ))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ n -eq 42 ]]; <span class="keyword">then</span></span><br><span class="line">   <span class="built_in">echo</span> <span class="string">"Something went wrong"</span></span><br><span class="line">   &gt;&amp;2 <span class="built_in">echo</span> <span class="string">"The error was using magic numbers"</span></span><br><span class="line">   <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Everything went according to plan"</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>As we covered in the lecture <code>find</code>’s <code>-exec</code> can be very powerful for performing operations over the files we are searching for. However, what if we want to do something with <em>all</em> the files, like creating a zip file? As you have seen so far commands will take input from both arguments and STDIN. When piping commands, we are connecting STDOUT to STDIN, but some commands like <code>tar</code> take inputs from arguments. To bridge this disconnect there’s the <a href="https://www.man7.org/linux/man-pages/man1/xargs.1.html" target="_blank" rel="noopener">xargs</a> command which will execute a command using STDIN as arguments. For example <code>ls | xargs rm</code> will delete the files in the current directory.</li>
+</ol>
+<p>Your task is to write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces (hint: check <code>-d</code> flag for <code>xargs</code>)</p>
+<ol start="5">
+<li>(Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?</li>
+</ol>
 </div>
 
     </div>
@@ -438,7 +456,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Tools-and-Scripting"><span class="nav-number">1.</span> <span class="nav-text">Shell Tools and Scripting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-Scripting"><span class="nav-number">1.1.</span> <span class="nav-text">Shell Scripting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-Tools"><span class="nav-number">1.2.</span> <span class="nav-text">Shell Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-how-to-use-commands"><span class="nav-number">1.2.1.</span> <span class="nav-text">Finding how to use commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-files"><span class="nav-number">1.2.2.</span> <span class="nav-text">Finding files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-code"><span class="nav-number">1.2.3.</span> <span class="nav-text">Finding code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-shell-commands"><span class="nav-number">1.2.4.</span> <span class="nav-text">Finding shell commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directory-Navigation"><span class="nav-number">1.2.5.</span> <span class="nav-text">Directory Navigation</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Tools-and-Scripting"><span class="nav-number">1.</span> <span class="nav-text">Shell Tools and Scripting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-Scripting"><span class="nav-number">1.1.</span> <span class="nav-text">Shell Scripting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-Tools"><span class="nav-number">1.2.</span> <span class="nav-text">Shell Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-how-to-use-commands"><span class="nav-number">1.2.1.</span> <span class="nav-text">Finding how to use commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-files"><span class="nav-number">1.2.2.</span> <span class="nav-text">Finding files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-code"><span class="nav-number">1.2.3.</span> <span class="nav-text">Finding code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-shell-commands"><span class="nav-number">1.2.4.</span> <span class="nav-text">Finding shell commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directory-Navigation"><span class="nav-number">1.2.5.</span> <span class="nav-text">Directory Navigation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">1.3.</span> <span class="nav-text">Exercises</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
