@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-22T11:14:53.770Z</updated>
+  <updated>2020-06-22T11:23:20.486Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -21,23 +21,19 @@
     <link href="https://augists.top/self/Cpp-STL-Report/"/>
     <id>https://augists.top/self/Cpp-STL-Report/</id>
     <published>2020-06-22T11:13:27.000Z</published>
-    <updated>2020-06-22T11:14:53.770Z</updated>
+    <updated>2020-06-22T11:23:20.486Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;div class=&quot;note
-        
-      
+      Summer Term Report of C++ STL
     
     </summary>
     
     
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -46,21 +42,19 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture10-Potpourri/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture10-Potpourri/</id>
     <published>2020-06-22T11:09:16.000Z</published>
-    <updated>2020-06-22T11:12:01.440Z</updated>
+    <updated>2020-06-22T11:24:40.532Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=86911412&amp;bvid=BV1x7411H7wa&amp;cid=148517006&amp;page=10&quot; scrolling=&quot;no&quot; border=&quot;0&quot;
-        
-      
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
     
     </summary>
     
     
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -69,21 +63,19 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture9-Security-and-Crytography/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture9-Security-and-Crytography/</id>
     <published>2020-06-22T11:08:53.000Z</published>
-    <updated>2020-06-22T11:11:50.792Z</updated>
+    <updated>2020-06-22T11:24:36.642Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=86911412&amp;bvid=BV1x7411H7wa&amp;cid=156001917&amp;page=9&quot; scrolling=&quot;no&quot; border=&quot;0&quot;
-        
-      
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
     
     </summary>
     
     
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -92,21 +84,19 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture8-Metaprogramming/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture8-Metaprogramming/</id>
     <published>2020-06-22T11:08:20.000Z</published>
-    <updated>2020-06-22T11:11:41.240Z</updated>
+    <updated>2020-06-22T11:24:33.442Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=86911412&amp;bvid=BV1x7411H7wa&amp;cid=148514356&amp;page=8&quot; scrolling=&quot;no&quot; border=&quot;0&quot;
-        
-      
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
     
     </summary>
     
     
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -115,21 +105,19 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture7-Debugging-and-Profiling/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture7-Debugging-and-Profiling/</id>
     <published>2020-06-22T11:07:54.000Z</published>
-    <updated>2020-06-22T11:11:30.442Z</updated>
+    <updated>2020-06-22T11:24:30.034Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=86911412&amp;bvid=BV1x7411H7wa&amp;cid=148513606&amp;page=7&quot; scrolling=&quot;no&quot; border=&quot;0&quot;
-        
-      
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
     
     </summary>
     
     
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -138,21 +126,19 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture6-Version-Control-Git/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture6-Version-Control-Git/</id>
     <published>2020-06-22T11:06:40.000Z</published>
-    <updated>2020-06-22T11:11:18.072Z</updated>
+    <updated>2020-06-22T11:24:26.090Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=86911412&amp;bvid=BV1x7411H7wa&amp;cid=148506489&amp;page=6&quot; scrolling=&quot;no&quot; border=&quot;0&quot;
-        
-      
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
     
     </summary>
     
     
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -161,21 +147,19 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture5-Command-line-Environment/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture5-Command-line-Environment/</id>
     <published>2020-06-22T11:06:13.000Z</published>
-    <updated>2020-06-22T11:10:24.119Z</updated>
+    <updated>2020-06-22T11:24:20.298Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=86911412&amp;bvid=BV1x7411H7wa&amp;cid=148505846&amp;page=5&quot; scrolling=&quot;no&quot; border=&quot;0&quot;
-        
-      
+      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
     
     </summary>
     
     
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -278,9 +262,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
   </entry>
   
@@ -301,9 +285,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
   </entry>
   
@@ -324,9 +308,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
   </entry>
   
@@ -347,9 +331,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
   </entry>
   
@@ -370,9 +354,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
   </entry>
   
