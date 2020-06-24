@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg1ihzp56lj30hq05yta2.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg2o3cdq4yj30ym0pmgx0.jpg">
 <meta property="article:published_time" content="2020-06-22T11:13:27.000Z">
-<meta property="article:modified_time" content="2020-06-23T17:29:19.992Z">
+<meta property="article:modified_time" content="2020-06-24T01:46:59.958Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="CODE">
 <meta property="article:tag" content="NOTE">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-24 01:29:19" itemprop="dateModified" datetime="2020-06-24T01:29:19+08:00">2020-06-24</time>
+                <time title="Modified: 2020-06-24 09:46:59" itemprop="dateModified" datetime="2020-06-24T09:46:59+08:00">2020-06-24</time>
               </span>
 
           
@@ -217,7 +217,7 @@
 
       
         <div class="note warning"><h1 id="C-STL-Report"><a href="#C-STL-Report" class="headerlink" title="C++ STL Report"></a>C++ STL Report</h1><h2 id="范型程序设计"><a href="#范型程序设计" class="headerlink" title="范型程序设计"></a>范型程序设计</h2><ul>
-<li>范型(Genericity)：具有在多种数据类型上皆可操作的含意</li>
+<li>范型(<em>Genericity</em>)：具有在多种数据类型上皆可操作的含意</li>
 <li>范型程序设计：编写完全一般化并可重复使用的程序，其效率不依赖于具体数据类型</li>
 </ul>
 <h2 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h2><ul>
@@ -229,15 +229,15 @@
 <h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ul>
 <li><p>分类</p>
 <ul>
-<li>顺序容器 : vector / list / deque</li>
-<li>关联容器 : set / multiset / map / mutimap</li>
-<li>容器适配器 : stack / queue / priority_queue</li>
+<li>顺序容器 : <code>vector</code> / <code>list</code> / <code>deque</code></li>
+<li>关联容器 : <code>set</code> / <code>multiset</code> / <code>map</code> / <code>mutimap</code></li>
+<li>容器适配器 : <code>stack</code> / <code>queue</code> / <code>priority_queue</code></li>
 </ul>
 </li>
 </ul>
 <h4 id="顺序容器"><a href="#顺序容器" class="headerlink" title="顺序容器"></a>顺序容器</h4><ul>
 <li>非排序，元素的插入位置同元素的值无关</li>
-<li>vector / list / deque</li>
+<li><code>vector</code> / <code>list</code> / <code>deque</code></li>
 </ul>
 <div class="note info"><h5 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h5><ul>
 <li>头文件 <code>#include &lt;vector&gt;</code></li>
@@ -264,35 +264,35 @@
 </div>
 
 <h5 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h5><ul>
-<li>front: 返回第一个元素</li>
-<li>back: 返回最后一个元素</li>
-<li>push_back: 在容器的最后添加一个元素</li>
-<li>pop_back: 删除最后一个元素</li>
-<li>begin: 返回指向容器中第一个元素的迭代器</li>
-<li>end: 返回指向容器中最后一个元素后面的位置的迭代器</li>
-<li>rbegin: 返回指向容器中最后一个元素的迭代器</li>
-<li>rend: 返回指向容器中第一个元素前面的位置的迭代器</li>
+<li><code>front</code>: 返回第一个元素</li>
+<li><code>back</code>: 返回最后一个元素</li>
+<li><code>push_back</code>: 在容器的最后添加一个元素</li>
+<li><code>pop_back</code>: 删除最后一个元素</li>
+<li><code>begin</code>: 返回指向容器中第一个元素的迭代器</li>
+<li><code>end</code>: 返回指向容器中最后一个元素后面的位置的迭代器</li>
+<li><code>rbegin</code>: 返回指向容器中最后一个元素的迭代器</li>
+<li><code>rend</code>: 返回指向容器中第一个元素前面的位置的迭代器</li>
 </ul>
 <h5 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h5><ul>
-<li>通常，使用vector是最好的选择，除非有很好的理由选择其他容器</li>
-<li>如果程序要求随机访问元素，应使用vector和deque</li>
-<li>如果程序要求在容器的中间插入或删除元素，应使用list</li>
-<li>如果程序需要在头尾位置插入或删除元素，但不会在中间位置插入或删除，应使用deque</li>
+<li>通常，使用<code>vector</code>是最好的选择，除非有很好的理由选择其他容器</li>
+<li>如果程序要求随机访问元素，应使用<code>vector</code>和<code>deque</code></li>
+<li>如果程序要求在容器的中间插入或删除元素，应使用<code>list</code></li>
+<li>如果程序需要在头尾位置插入或删除元素，但不会在中间位置插入或删除，应使用<code>deque</code></li>
 </ul>
 <h4 id="关联容器"><a href="#关联容器" class="headerlink" title="关联容器"></a>关联容器</h4><ul>
 <li>按照关键字保存、访问</li>
 <li>有序，元素的插入位置按排序规则确定</li>
-<li>set / multiset / map / multimap</li>
+<li><code>set</code> / <code>multiset</code> / <code>map</code> / <code>multimap</code></li>
 </ul>
 <div class="note info"><h5 id="set-multiset"><a href="#set-multiset" class="headerlink" title="set / multiset"></a>set / multiset</h5><ul>
 <li><code>set&lt;key, pred&gt;</code> / <code>multiset&lt;key, pred&gt;</code><ul>
 <li>元素只包含一个关键字</li>
-<li>pred默认为<code>less&lt;key&gt;</code><ul>
+<li><code>pred</code>默认为<code>less&lt;key&gt;</code><ul>
 <li><code>set&lt;string&gt; s = {&quot;The&quot;, &quot;But&quot;, &quot;And&quot;};</code></li>
 <li><code>set&lt;string, less&lt;string&gt;&gt; s = {&quot;The&quot;, &quot;But&quot;, &quot;And&quot;};</code></li>
 </ul>
 </li>
-<li>set中不可有关键字相同的元素，multiset中允许出现关键字相同的元素</li>
+<li><code>set</code>中不可有关键字相同的元素，<code>multiset</code>中允许出现关键字相同的元素</li>
 </ul>
 </li>
 </ul>
@@ -348,16 +348,16 @@
 </ul></div>
 
 <h5 id="常用操作-1"><a href="#常用操作-1" class="headerlink" title="常用操作"></a>常用操作</h5><ul>
-<li>find: 返回一个关键字与指定值相等的元素的迭代器</li>
-<li>lower_bound: 返回小于或等于某值的第一个元素的迭代器</li>
-<li>upper_bound: 返回大于某值的元素的迭代器</li>
-<li>equal_range: 返回关键字与给定值相等的元素上下限的两个迭代器</li>
-<li>count: 计算等于某值的元素个数</li>
-<li>insert: 用以插入一个元素或一个区间</li>
+<li><code>find</code>: 返回一个关键字与指定值相等的元素的迭代器</li>
+<li><code>lower_bound</code>: 返回小于或等于某值的第一个元素的迭代器</li>
+<li><code>upper_bound</code>: 返回大于某值的元素的迭代器</li>
+<li><code>equal_range</code>: 返回关键字与给定值相等的元素上下限的两个迭代器</li>
+<li><code>count</code>: 计算等于某值的元素个数</li>
+<li><code>insert</code>: 用以插入一个元素或一个区间</li>
 </ul>
 <h4 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h4><ul>
 <li>使用基本顺序容器实现<ul>
-<li>stack / queue / priority_queue</li>
+<li><code>stack</code> / <code>queue</code> / <code>priority_queue</code></li>
 <li>元素的存取有限制</li>
 </ul>
 </li>
@@ -366,7 +366,7 @@
 <li>头文件 <code>#include &lt;stack&gt;</code></li>
 <li>先进后出</li>
 <li><code>stack&lt;Type, Container&gt;</code><ul>
-<li>Container可用vector, list, deque来实现，缺省情况用deque实现</li>
+<li><code>Container</code>可用<code>vector</code>, <code>list</code>, <code>deque</code>来实现，缺省情况用<code>deque</code>实现</li>
 </ul>
 </li>
 </ul>
@@ -376,7 +376,7 @@
 <li>头文件 <code>#include &lt;queue&gt;</code></li>
 <li>先进先出</li>
 <li><code>queue&lt;Type, Container&gt;</code><ul>
-<li>Container可以用list和deque实现，不能基于vector，缺省情况用deque</li>
+<li><code>Container</code>可以用<code>list</code>和<code>deque</code>实现，不能基于<code>vector</code>，缺省情况用<code>deque</code></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +386,7 @@
 <li>头文件 <code>#include &lt;queue&gt;</code></li>
 <li>元素具有优先级，优先级高的先出</li>
 <li><code>priority_queue&lt;Type, Container, Functional&gt;</code><ul>
-<li>Container可以用vector和deque实现，不能基于list，缺省情况用vector实现</li>
+<li><code>Container</code>可以用<code>vector</code>和<code>deque</code>实现，不能基于<code>list</code>，缺省情况用<code>vector</code>实现</li>
 </ul>
 </li>
 </ul>
