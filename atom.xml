@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-27T06:27:21.126Z</updated>
+  <updated>2020-06-27T16:38:29.325Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GCC Error</title>
+    <link href="https://augists.top/self/gcc-error/"/>
+    <id>https://augists.top/self/gcc-error/</id>
+    <published>2020-06-27T16:00:22.000Z</published>
+    <updated>2020-06-27T16:38:29.325Z</updated>
+    
+    <summary type="html">
+    
+      Today when I use f5 as normal to compile and run c++ code, an error occurred&lt;br&gt;Take a Look of My Error🤣
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+  </entry>
   
   <entry>
     <title>STL Learn and Summarize</title>
@@ -434,27 +455,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>The Missing Semester of Your CS Education&lt;br&gt;Lecture1 Course Overview+The Shell</title>
-    <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/"/>
-    <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/</id>
-    <published>2020-06-14T10:58:02.000Z</published>
-    <updated>2020-06-27T06:25:35.820Z</updated>
-    
-    <summary type="html">
-    
-      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
-    
-    </summary>
-    
-    
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
