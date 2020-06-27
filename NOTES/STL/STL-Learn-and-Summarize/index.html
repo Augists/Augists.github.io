@@ -31,18 +31,18 @@
   })();
 </script>
 
-  <meta name="description" content="Copyright@Augenstern">
+  <meta name="description" content="C++ STL ReportCopyright@Augenstern">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL Learn and Summarize">
 <meta property="og:url" content="https://augists.top/NOTES/STL/STL-Learn-and-Summarize/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="Copyright@Augenstern">
+<meta property="og:description" content="C++ STL ReportCopyright@Augenstern">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg4zzjdyukj30aq0qq3zf.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg504vmj6ej30kk0aq0tb.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg505eaidcj30mw0byjs5.jpg">
 <meta property="article:published_time" content="2020-06-25T16:22:14.000Z">
-<meta property="article:modified_time" content="2020-06-25T16:31:27.792Z">
+<meta property="article:modified_time" content="2020-06-27T06:13:41.883Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="CODE">
 <meta property="article:tag" content="NOTE">
@@ -194,13 +194,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-26 00:22:14 / Modified: 00:31:27" itemprop="dateCreated datePublished" datetime="2020-06-26T00:22:14+08:00">2020-06-26</time>
+              <time title="Created: 2020-06-26 00:22:14" itemprop="dateCreated datePublished" datetime="2020-06-26T00:22:14+08:00">2020-06-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-27 14:13:41" itemprop="dateModified" datetime="2020-06-27T14:13:41+08:00">2020-06-27</time>
+              </span>
 
           
-            <div class="post-description"><br>Copyright@Augenstern</div>
+            <div class="post-description">C++ STL Report<br>Copyright@Augenstern</div>
 
         </div>
       </header>
@@ -217,28 +223,55 @@
 <div class="note warning"><p>在第一周，我对标准模板库STL进行了学习，将各部分组件及其关系梳理成思维导图的形式，展示如下：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg4zzjdyukj30aq0qq3zf.jpg" alt="STL"></p>
 <p>现将各组件作用，适用范围整理如下，便于理解记忆：</p>
-<p>STL：是泛型程序设计的代表作品。包含很多基本算法和数据结构，且将算法与数据结构完全分离。</p>
-<p>容器(container):是能够保存各种类型对象的类（我认为与模板类类似，，可以看作一个模板类的集合）。</p>
-<p>顺序容器(sequence container):对象的线性集合，所有对象都是同一类型。</p>
-<p>向量(vector):多功能的，能连续存放各种类型对象的类模板。</p>
-<p>连续储存的元素，从后面插入删除元素，直接访问任何元素，支持[]下标运算符访问操作。</p>
-<p>列表(list):由节点组成的双向链表，从任意位置插入删除。</p>
-<pre><code>没有重载[]运算符，所以不支持随机存取。</code></pre><p>双向队列(deque):可以从双向进行操作的队列，从前面/后面插入/删除元素，直接访问任何元素。</p>
-<p>关联容器(associative container):关联容器内元素有序，在查找时具有良好的性能。关联容器包括集合，映射，多集合，多映射。</p>
-<p>集合(set):快速查找，无重复元素，元素有关键字和值两部分，元素顺序根据关键字确定，set中不可有关键字相同的元素，重载了[]运算符。</p>
-<p>多集合(multiset):快速查找，允许出现关键字相同的元素。</p>
-<p>映射(map):也称为字典或关联数组。由键值对组成的集合，无重复元素，基于键进行查找。要求键key在容器中是唯一的，对应的value数据值可以重复。</p>
-<p>容器适配器(container adapter):包括队列，栈，优先级队列。</p>
-<p>队列(queue):支持先进先出(FIFO)模式的数据存取。</p>
-<p>栈(stack):支持先进后出(FILO)模式的数据存取。</p>
-<p>优先级队列(priority_queue):每次从队列中取出的元素具有最高的优先级，优先级与元素的值相关联。具体例子如银行排队中，VIP用户时间长&gt;VIP用户时间短&gt;普通用户时间长&gt;普通用户时间短。</p>
-<p>迭代器(iterator)：迭代器是指针的泛化，是一种检查容器内元素并遍历元素的数据类型。通过对一个迭代器的解引用操作（<code>*</code>），可以访问到容器内所包含的元素。</p>
-<p>输入迭代器：提供读功能的向前移动迭代器，可进行增加，比较与解引用。</p>
-<p>输出迭代器：提供写功能的向前移动迭代器，可进行增加，比较与解引用。</p>
-<p>前向迭代器：同时具有输入迭代器和输出迭代器的功能，并可对迭代器的值进行储存。</p>
-<p>双向迭代器：同时提供读写功能，同forward迭代器，但可用来进行增加或减少操作。</p>
-<p>随机迭代器：提供随机读写功能，是功能最强大的迭代器，具有双向迭代器的全部功能，同时实现指针的算数与比较运算。</p>
-<p>反向迭代器：同随机迭代器或前向迭代器，但其移动是反向的。</p>
+<ul>
+<li><p>STL: 是泛型程序设计的代表作品。包含很多基本算法和数据结构，且将算法与数据结构完全分离。</p>
+</li>
+<li><p>容器(<em>container</em>): 是能够保存各种类型对象的类（我认为与模板类类似，，可以看作一个模板类的集合）。</p>
+</li>
+<li><p>顺序容器(<em>sequence container</em>): 对象的线性集合，所有对象都是同一类型。</p>
+</li>
+<li><p>向量(<em>vector</em>): 多功能的，能连续存放各种类型对象的类模板。</p>
+</li>
+</ul>
+<p>连续储存的元素，从后面插入删除元素，直接访问任何元素，支持<code>[]</code>下标运算符访问操作。</p>
+<ul>
+<li>列表(<em>list</em>): 由节点组成的双向链表，从任意位置插入删除。</li>
+</ul>
+<p>没有重载<code>[]</code>运算符，所以不支持随机存取。</p>
+<ul>
+<li><p>双向队列(<em>deque</em>): 可以从双向进行操作的队列，从前面/后面插入/删除元素，直接访问任何元素。</p>
+</li>
+<li><p>关联容器(<em>associative container</em>): 关联容器内元素有序，在查找时具有良好的性能。关联容器包括集合，映射，多集合，多映射。</p>
+</li>
+<li><p>集合(<em>set</em>): 快速查找，无重复元素，元素有关键字和值两部分，元素顺序根据关键字确定，<code>set</code>中不可有关键字相同的元素，重载了<code>[]</code>运算符。</p>
+</li>
+<li><p>多集合(<em>multiset</em>): 快速查找，允许出现关键字相同的元素。</p>
+</li>
+<li><p>映射(<em>map</em>): 也称为字典或关联数组。由键值对组成的集合，无重复元素，基于键进行查找。要求键<code>key</code>在容器中是唯一的，对应的<code>value</code>数据值可以重复。</p>
+</li>
+<li><p>容器适配器(<em>container adapter</em>): 包括队列，栈，优先级队列。</p>
+</li>
+<li><p>队列(<em>queue</em>): 支持先进先出(<em>FIFO</em>)模式的数据存取。</p>
+</li>
+<li><p>栈(<em>stack</em>): 支持先进后出(<em>FILO</em>)模式的数据存取。</p>
+</li>
+<li><p>优先级队列(<em>priority_queue</em>): 每次从队列中取出的元素具有最高的优先级，优先级与元素的值相关联。具体例子如银行排队中，<code>VIP用户时间长&gt;VIP用户时间短&gt;普通用户时间长&gt;普通用户时间短</code>。</p>
+</li>
+<li><p>迭代器(<em>iterator</em>): 迭代器是指针的泛化，是一种检查容器内元素并遍历元素的数据类型。通过对一个迭代器的解引用操作（<code>*</code>），可以访问到容器内所包含的元素。</p>
+</li>
+<li><p>输入迭代器: 提供读功能的向前移动迭代器，可进行增加，比较与解引用。</p>
+</li>
+<li><p>输出迭代器: 提供写功能的向前移动迭代器，可进行增加，比较与解引用。</p>
+</li>
+<li><p>前向迭代器: 同时具有输入迭代器和输出迭代器的功能，并可对迭代器的值进行储存。</p>
+</li>
+<li><p>双向迭代器: 同时提供读写功能，同forward迭代器，但可用来进行增加或减少操作。</p>
+</li>
+<li><p>随机迭代器: 提供随机读写功能，是功能最强大的迭代器，具有双向迭代器的全部功能，同时实现指针的算数与比较运算。</p>
+</li>
+<li><p>反向迭代器: 同随机迭代器或前向迭代器，但其移动是反向的。</p>
+</li>
+</ul>
 <p>不同容器支持的迭代器不同，常见容器支持的迭代器类型如下表：</p>
 <table>
 <thead>
@@ -280,7 +313,7 @@
 <td>不支持迭代器</td>
 </tr>
 </tbody></table>
-<p>算法：以迭代器类型为参数，和数据的具体实现分离。头文件：algorithm.h。</p>
+<p>算法：以迭代器类型为参数，和数据的具体实现分离。头文件：<code>algorithm.h</code></p>
 <p>学习成果：</p>
 <ol>
 <li>使用vector及迭代器完成对一组数中出现次数大于2的数字进行输出：</li>
