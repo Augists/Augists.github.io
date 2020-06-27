@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-27T06:13:41.883Z</updated>
+  <updated>2020-06-27T06:27:21.126Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://augists.top/NOTES/STL/STL-Learn-and-Summarize/"/>
     <id>https://augists.top/NOTES/STL/STL-Learn-and-Summarize/</id>
     <published>2020-06-25T16:22:14.000Z</published>
-    <updated>2020-06-27T06:13:41.883Z</updated>
+    <updated>2020-06-27T06:27:21.126Z</updated>
     
     <summary type="html">
     
@@ -37,6 +37,8 @@
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
   </entry>
   
   <entry>
@@ -44,7 +46,7 @@
     <link href="https://augists.top/NOTES/STL/STL-note/"/>
     <id>https://augists.top/NOTES/STL/STL-note/</id>
     <published>2020-06-25T15:06:08.000Z</published>
-    <updated>2020-06-25T16:22:51.486Z</updated>
+    <updated>2020-06-27T06:27:12.110Z</updated>
     
     <summary type="html">
     
@@ -60,6 +62,8 @@
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
   </entry>
   
   <entry>
@@ -67,7 +71,7 @@
     <link href="https://augists.top/NOTES/STL/Cpp-STL-Report/"/>
     <id>https://augists.top/NOTES/STL/Cpp-STL-Report/</id>
     <published>2020-06-22T11:13:27.000Z</published>
-    <updated>2020-06-25T16:22:32.118Z</updated>
+    <updated>2020-06-27T06:27:30.494Z</updated>
     
     <summary type="html">
     
@@ -83,6 +87,8 @@
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
   </entry>
   
   <entry>
@@ -90,7 +96,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture10-Potpourri/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture10-Potpourri/</id>
     <published>2020-06-22T11:09:16.000Z</published>
-    <updated>2020-06-22T11:24:40.532Z</updated>
+    <updated>2020-06-27T06:26:08.460Z</updated>
     
     <summary type="html">
     
@@ -111,7 +117,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture9-Security-and-Crytography/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture9-Security-and-Crytography/</id>
     <published>2020-06-22T11:08:53.000Z</published>
-    <updated>2020-06-22T11:24:36.642Z</updated>
+    <updated>2020-06-27T06:26:05.700Z</updated>
     
     <summary type="html">
     
@@ -132,7 +138,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture8-Metaprogramming/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture8-Metaprogramming/</id>
     <published>2020-06-22T11:08:20.000Z</published>
-    <updated>2020-06-22T11:24:33.442Z</updated>
+    <updated>2020-06-27T06:26:02.397Z</updated>
     
     <summary type="html">
     
@@ -153,7 +159,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture7-Debugging-and-Profiling/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture7-Debugging-and-Profiling/</id>
     <published>2020-06-22T11:07:54.000Z</published>
-    <updated>2020-06-22T11:24:30.034Z</updated>
+    <updated>2020-06-27T06:25:58.556Z</updated>
     
     <summary type="html">
     
@@ -174,7 +180,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture6-Version-Control-Git/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture6-Version-Control-Git/</id>
     <published>2020-06-22T11:06:40.000Z</published>
-    <updated>2020-06-22T11:24:26.090Z</updated>
+    <updated>2020-06-27T06:25:55.226Z</updated>
     
     <summary type="html">
     
@@ -195,7 +201,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture5-Command-line-Environment/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture5-Command-line-Environment/</id>
     <published>2020-06-22T11:06:13.000Z</published>
-    <updated>2020-06-22T11:24:20.298Z</updated>
+    <updated>2020-06-27T06:25:50.376Z</updated>
     
     <summary type="html">
     
@@ -216,7 +222,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture4-Data-Wrangling/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture4-Data-Wrangling/</id>
     <published>2020-06-20T14:37:30.000Z</published>
-    <updated>2020-06-22T11:10:51.776Z</updated>
+    <updated>2020-06-27T06:25:47.348Z</updated>
     
     <summary type="html">
     
@@ -237,7 +243,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture3-Editor-Vim/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture3-Editor-Vim/</id>
     <published>2020-06-20T09:28:56.000Z</published>
-    <updated>2020-06-20T14:38:40.085Z</updated>
+    <updated>2020-06-27T06:25:43.996Z</updated>
     
     <summary type="html">
     
@@ -277,7 +283,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/</id>
     <published>2020-06-18T01:27:40.000Z</published>
-    <updated>2020-06-20T14:38:33.610Z</updated>
+    <updated>2020-06-27T06:25:40.428Z</updated>
     
     <summary type="html">
     
@@ -436,7 +442,7 @@
     <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/"/>
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/</id>
     <published>2020-06-14T10:58:02.000Z</published>
-    <updated>2020-06-20T14:38:26.408Z</updated>
+    <updated>2020-06-27T06:25:35.820Z</updated>
     
     <summary type="html">
     
