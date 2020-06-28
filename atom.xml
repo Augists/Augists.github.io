@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-27T16:38:29.325Z</updated>
+  <updated>2020-06-28T04:12:52.132Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2019 Review</title>
+    <link href="https://augists.top/self/2019-Review/"/>
+    <id>https://augists.top/self/2019-Review/</id>
+    <published>2020-06-28T02:33:30.000Z</published>
+    <updated>2020-06-28T04:12:52.132Z</updated>
+    
+    <summary type="html">
+    
+      Written on December 29th 2019
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GCC Error</title>
     <link href="https://augists.top/self/gcc-error/"/>
     <id>https://augists.top/self/gcc-error/</id>
     <published>2020-06-27T16:00:22.000Z</published>
-    <updated>2020-06-27T16:38:29.325Z</updated>
+    <updated>2020-06-27T16:40:43.594Z</updated>
     
     <summary type="html">
     
@@ -92,7 +111,7 @@
     <link href="https://augists.top/NOTES/STL/Cpp-STL-Report/"/>
     <id>https://augists.top/NOTES/STL/Cpp-STL-Report/</id>
     <published>2020-06-22T11:13:27.000Z</published>
-    <updated>2020-06-27T06:27:30.494Z</updated>
+    <updated>2020-06-28T01:20:20.588Z</updated>
     
     <summary type="html">
     
@@ -432,29 +451,6 @@
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>self/myVector</title>
-    <link href="https://augists.top/self/myVector/"/>
-    <id>https://augists.top/self/myVector/</id>
-    <published>2020-06-15T11:26:45.247Z</published>
-    <updated>2020-06-24T02:20:17.484Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;myVector&quot;&gt;&lt;a href=&quot;#myVector&quot; class=&quot;headerlink&quot; title=&quot;myVector&quot;&gt;&lt;/a&gt;myVector&lt;/h1&gt;&lt;h2 id=&quot;设计思想&quot;&gt;&lt;a href=&quot;#设计思想&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   

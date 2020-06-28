@@ -40,7 +40,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg7b3mjzpdj320603kq8s.jpg">
 <meta property="article:published_time" content="2020-06-27T16:00:22.000Z">
-<meta property="article:modified_time" content="2020-06-27T16:38:29.325Z">
+<meta property="article:modified_time" content="2020-06-27T16:40:43.594Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="CODE">
 <meta property="article:tag" content="C&#x2F;C++">
@@ -193,7 +193,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-28 00:00:22 / Modified: 00:38:29" itemprop="dateCreated datePublished" datetime="2020-06-28T00:00:22+08:00">2020-06-28</time>
+              <time title="Created: 2020-06-28 00:00:22 / Modified: 00:40:43" itemprop="dateCreated datePublished" datetime="2020-06-28T00:00:22+08:00">2020-06-28</time>
             </span>
 
           
@@ -215,7 +215,7 @@
 <p>第一行的</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; dic = &#123;&#123;<span class="string">"中文"</span>, <span class="string">"Chinese"</span>&#125;, &#123;<span class="string">"英文"</span>, <span class="string">"English"</span>&#125;, &#123;<span class="string">"汉语"</span>, <span class="string">"Chinese"</span>&#125;, &#123;<span class="string">"英语"</span>, <span class="string">"English"</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>在我直接使用<code>&lt;f5&gt;</code>编译运行的时候 error 了</p>
+<p>在我直接使用 <code>&lt;f5&gt;</code> 编译运行的时候 error 了</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg7b3mjzpdj320603kq8s.jpg" alt="error"></p>
 <p>而我使用的 vimrc 中的 <code>&lt;f5&gt;</code> 的配置如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">map &lt;F5&gt; :call CompileRunGcc()&lt;CR&gt;</span><br><span class="line">func! CompileRunGcc()</span><br><span class="line">    exec &quot;w&quot;</span><br><span class="line">    if &amp;filetype &#x3D;&#x3D; &#39;c&#39;</span><br><span class="line">        exec &quot;!gcc % -o %&lt;&quot;</span><br><span class="line">        exec &quot;!time .&#x2F;%&lt;&quot;</span><br><span class="line">    elseif &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;</span><br><span class="line">        exec &quot;!g++ % -o %&lt;&quot;</span><br><span class="line">        exec &quot;!time .&#x2F;%&lt;&quot;</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure>
@@ -323,7 +323,10 @@
     <a href="/NOTES/STL/STL-Learn-and-Summarize/" rel="prev" title="STL Learn and Summarize">
       <i class="fa fa-chevron-left"></i> STL Learn and Summarize
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/self/2019-Review/" rel="next" title="2019 Review">
+      2019 Review <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -404,7 +407,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
