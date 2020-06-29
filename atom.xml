@@ -90,13 +90,13 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
   </entry>
   
@@ -115,13 +115,36 @@
     
     
     
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+  </entry>
+  
+  <entry>
+    <title>self/myVector</title>
+    <link href="https://augists.top/self/myVector/"/>
+    <id>https://augists.top/self/myVector/</id>
+    <published>2020-06-24T02:20:17.484Z</published>
+    <updated>2020-06-24T02:20:17.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;myVector&quot;&gt;&lt;a href=&quot;#myVector&quot; class=&quot;headerlink&quot; title=&quot;myVector&quot;&gt;&lt;/a&gt;myVector&lt;/h1&gt;&lt;h2 id=&quot;设计思想&quot;&gt;&lt;a href=&quot;#设计思想&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
     
   </entry>
   
@@ -140,13 +163,13 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
   </entry>
   
@@ -165,9 +188,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -186,9 +209,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -207,9 +230,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -228,9 +251,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -249,9 +272,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -270,9 +293,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -291,9 +314,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -312,9 +335,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -352,9 +375,9 @@
     
     
     
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
@@ -373,9 +396,9 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
@@ -396,9 +419,9 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
@@ -419,32 +442,9 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Derivation of Unary Function and Taylor Expansion</title>
-    <link href="https://augists.top/NOTES/MATLAB/Derivation-of-Unary-Function-and-Taylor-Expansion/"/>
-    <id>https://augists.top/NOTES/MATLAB/Derivation-of-Unary-Function-and-Taylor-Expansion/</id>
-    <published>2020-06-16T13:33:43.000Z</published>
-    <updated>2020-06-20T14:39:56.614Z</updated>
-    
-    <summary type="html">
-    
-      Note of MATLAB&lt;br&gt;Derivation of Unary Function and Taylor Expansion
-    
-    </summary>
-    
-    
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     

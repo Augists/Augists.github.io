@@ -1568,7 +1568,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e0ffd5;
+  background: #28ff8c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3096,4 +3096,7 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.utterances {
+  max-width: unset;
 }
