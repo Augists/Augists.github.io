@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-06-28T10:47:27.916Z</updated>
+  <updated>2020-06-29T06:29:28.596Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Review the First Half of the Year</title>
+    <link href="https://augists.top/self/REVIEW/Review-the-First-Half-of-the-Year/"/>
+    <id>https://augists.top/self/REVIEW/Review-the-First-Half-of-the-Year/</id>
+    <published>2020-06-29T05:14:43.000Z</published>
+    <updated>2020-06-29T06:29:28.596Z</updated>
+    
+    <summary type="html">
+    
+      It is June 29th 2020&lt;br&gt;Time to Review the First Half of the Year
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
+    
+  </entry>
   
   <entry>
     <title>Software Development Process</title>
@@ -37,10 +58,10 @@
   
   <entry>
     <title>2019 Review</title>
-    <link href="https://augists.top/self/2019-Review/"/>
-    <id>https://augists.top/self/2019-Review/</id>
+    <link href="https://augists.top/self/REVIEW/2019-Review/"/>
+    <id>https://augists.top/self/REVIEW/2019-Review/</id>
     <published>2020-06-28T02:33:30.000Z</published>
-    <updated>2020-06-28T04:12:52.132Z</updated>
+    <updated>2020-06-29T06:18:36.562Z</updated>
     
     <summary type="html">
     
@@ -51,6 +72,8 @@
     
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
     
   </entry>
   
@@ -90,9 +113,9 @@
     
     
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -115,9 +138,9 @@
     
     
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -163,9 +186,9 @@
     
     
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -396,9 +419,9 @@
     
     
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
@@ -419,32 +442,9 @@
     
     
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Solution of Integral of One Unary Function and Differential Equations</title>
-    <link href="https://augists.top/NOTES/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/"/>
-    <id>https://augists.top/NOTES/MATLAB/Solution-of-Integral-of-One-Unary-Function-and-Differential-Equations/</id>
-    <published>2020-06-16T14:38:51.000Z</published>
-    <updated>2020-06-22T11:04:59.140Z</updated>
-    
-    <summary type="html">
-    
-      Notes of MATLAB&lt;br&gt;Solution of Integral of One Unary Function and Differential Equations
-    
-    </summary>
-    
-    
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="MATLAB" scheme="https://augists.top/tags/MATLAB/"/>
     
