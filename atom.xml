@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-02T05:04:02.468Z</updated>
+  <updated>2020-07-01T12:59:49.931Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,25 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>meVector</title>
-    <link href="https://augists.top/self/myVector/"/>
-    <id>https://augists.top/self/myVector/</id>
-    <published>2020-06-30T15:19:57.000Z</published>
-    <updated>2020-07-02T05:04:02.468Z</updated>
-    
-    <summary type="html">
-    
-      myVector in C++
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-  </entry>
   
   <entry>
     <title>Inspirational Quotes to College Newcomers</title>
@@ -59,7 +40,7 @@
     <link href="https://augists.top/NOTES/SUMMERTERM/QT/QT-Report/"/>
     <id>https://augists.top/NOTES/SUMMERTERM/QT/QT-Report/</id>
     <published>2020-06-30T02:18:31.000Z</published>
-    <updated>2020-07-01T09:29:52.990Z</updated>
+    <updated>2020-07-02T09:26:27.829Z</updated>
     
     <summary type="html">
     
@@ -97,6 +78,25 @@
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>meVector</title>
+    <link href="https://augists.top/self/myVector/"/>
+    <id>https://augists.top/self/myVector/</id>
+    <published>2020-06-28T15:19:57.000Z</published>
+    <updated>2020-07-02T05:54:26.925Z</updated>
+    
+    <summary type="html">
+    
+      myVector in C++
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
   </entry>
   
