@@ -40,12 +40,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gga3zom4fnj30e20ci3zs.jpg">
 <meta property="article:published_time" content="2020-06-30T02:18:31.000Z">
-<meta property="article:modified_time" content="2020-07-02T09:26:27.829Z">
+<meta property="article:modified_time" content="2020-07-03T04:03:10.511Z">
 <meta property="article:author" content="Augists">
-<meta property="article:tag" content="NOTE">
 <meta property="article:tag" content="C&#x2F;C++">
-<meta property="article:tag" content="QT">
+<meta property="article:tag" content="NOTE">
 <meta property="article:tag" content="SUMMERTERM">
+<meta property="article:tag" content="QT">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gga3zom4fnj30e20ci3zs.jpg">
 
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-02 17:26:27" itemprop="dateModified" datetime="2020-07-02T17:26:27+08:00">2020-07-02</time>
+                <time title="Modified: 2020-07-03 12:03:10" itemprop="dateModified" datetime="2020-07-03T12:03:10+08:00">2020-07-03</time>
               </span>
 
           
@@ -391,6 +391,153 @@
 <li>布局分配比例</li>
 </ul>
 </li>
+</ul>
+<h2 id="网络编程-（Socket-编程）"><a href="#网络编程-（Socket-编程）" class="headerlink" title="网络编程 （Socket 编程）"></a>网络编程 （Socket 编程）</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
+<li>物理连接</li>
+<li>IP</li>
+<li>端口号：用于区分同一主机上的不同软件</li>
+<li>协议：TCP、UDP<ul>
+<li>TCP<ul>
+<li>传输控制协议</li>
+<li>面向连接</li>
+<li>侧重连通和数据传递的安全性</li>
+<li>通信效率低</li>
+<li>client &amp; server</li>
+</ul>
+</li>
+<li>UDP<ul>
+<li>数据报协议</li>
+<li>面向非连接</li>
+<li>侧重大量数据的收发</li>
+<li>通信效率高</li>
+<li>发送端和接收端</li>
+<li>发送的每个包都需要包含 ip 和端口号</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="编程方法-以-UDP-为例）"><a href="#编程方法-以-UDP-为例）" class="headerlink" title="编程方法 (以 UDP 为例）"></a>编程方法 (以 UDP 为例）</h3><ul>
+<li>每个程序都可以既是发送端又是接收端</li>
+<li>在发送端和接收端 pro 文件中增加 <code>network</code> 模块，修改 pro 文件后要执行一次 qmake</li>
+</ul>
+<h4 id="发送端"><a href="#发送端" class="headerlink" title="发送端"></a>发送端</h4><ul>
+<li>定义 <code>QUdpSocket</code> 对象</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QUdpSocket *send;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建 <code>QUdpSocket</code> 对象</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">send = <span class="keyword">new</span> QUdpSocket(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用 <code>QUdpSocket</code> 类的 <code>writeDatagram</code> 方法发送数据</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">send-&gt;writeDatagram(data, QHostAddress(<span class="string">"127.0.0.0"</span>), <span class="number">6666</span>);</span><br></pre></td></tr></table></figure>
+<p>将数据 data 发送到本地回环地址 <code>127.0.0.1</code> 的 <code>6666</code> 端口上</p>
+<h4 id="接收端"><a href="#接收端" class="headerlink" title="接收端"></a>接收端</h4><ul>
+<li>定义 <code>QUdpSocket</code> 对象</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QUdpSocket *rec;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建 <code>QUdpSocket</code> 对象</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rec = <span class="keyword">new</span> QUdpSocket(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>绑定接收 ip 和端口号</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rec-&gt;bind(QHostAddress(<span class="string">"127.0.0.1"</span>), <span class="number">6666</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>连接接收数据的信号和槽</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect(rec, SIGNAL(readyRead()), <span class="keyword">this</span>, SLOT(readMsh()));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接收槽定义</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Widget::readMsg</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buff[<span class="number">20</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="comment">// 收到rec发出的readyRead信号，rec已经准备好数据了</span></span><br><span class="line">    rec-&gt;readDatagram(buff, <span class="number">19</span>);</span><br><span class="line">    ui-&gt;label-&gt;setText(buff);</span><br></pre></td></tr></table></figure>
+
+<h4 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h4><ul>
+<li>修改字符串处理的方式</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vodi <span class="title">Widget::on_pushButton_clicked</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    QString str = ui-&gt;lineEdit-&gt;text();</span><br><span class="line">    <span class="function">QByteArray <span class="title">data</span><span class="params">(str.toStdString().data())</span></span>;</span><br><span class="line"></span><br><span class="line">    send-&gt;writeDatagram(data, QHostAddress(<span class="string">"127.0.0.1"</span>), <span class="number">6666</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h3><ul>
+<li>数据库的意义</li>
+</ul>
+<p>帮助我们做数据管理工作，保证功能和效率，尤其在大量数据的情况下<br>数据库是个程序，用来管理数据文件的程序</p>
+<ul>
+<li>数据库中存储数据的单元是表 table</li>
+<li>操作数据库是用过 SQL 语句完成的，不管用数据库软件还是 QT 编程</li>
+<li>主键是不能重复的（类似 set）用于区分唯一的数据，每个表只能有一个主键</li>
+</ul>
+<h3 id="常用数据库操作语句"><a href="#常用数据库操作语句" class="headerlink" title="常用数据库操作语句"></a>常用数据库操作语句</h3><ul>
+<li>使用指定的数据库</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> mydb;</span><br></pre></td></tr></table></figure>
+
+<p><code>mydb</code> 是数据库名</p>
+<ul>
+<li>创建表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stu (<span class="keyword">no</span> <span class="built_in">int</span> primary <span class="keyword">key</span>, <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>), score <span class="built_in">int</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>primary key</code> 指定主键，可选</p>
+<ul>
+<li>删除表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> stu;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>插入数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> stu <span class="keyword">values</span>(<span class="number">2</span>, <span class="string">"Jerry"</span>, <span class="number">61</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> stu <span class="keyword">where</span> <span class="keyword">no</span> = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>where</code> 用来指定删除数据的条件</p>
+<ul>
+<li>查询数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> stu;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> stu <span class="keyword">where</span> <span class="keyword">no</span> = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> stu <span class="keyword">where</span> <span class="keyword">no</span> = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="QT-程序访问数据库"><a href="#QT-程序访问数据库" class="headerlink" title="QT 程序访问数据库"></a>QT 程序访问数据库</h3><h4 id="Sqlite"><a href="#Sqlite" class="headerlink" title="Sqlite"></a>Sqlite</h4><ul>
+<li>Sqlite 是 QT 自带的数据库，连接比较容易</li>
+<li>Sqlite 是单机数据库，不能通过网络连接</li>
+</ul>
+<h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4><ul>
+<li>在 pro 工程文件中增加 <code>sql</code> 模块</li>
+<li>一般数据库是整个程序共享的，所以在 <code>main</code> 函数中连接</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">QSqlDatabase db = QSqlDatabase::addDatabase(<span class="string">"QSQLITE"</span>);</span><br><span class="line">db.setDatabaseName(<span class="string">"mydb.db"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!db.open())</span><br><span class="line">&#123;</span><br><span class="line">    qDebug() &lt;&lt; <span class="string">"Error when open Database"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h4><ul>
+<li>定义 <code>QSqlQuery</code> 对象，用于执行 SQL 语句</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QSqlQuery query;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行 SQL 语句</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">query.exec(<span class="string">"create table stu (no int primary key, name varchar(20), score int);"</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">query.exec(<span class="string">"insert into stu values (1, 'Tom', 60)"</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询 <code>SELECT</code> 结果</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">QString no = ui-&gt;lineEdit-&gt;test();</span><br><span class="line"><span class="function">QString <span class="title">cmd</span><span class="params">(<span class="string">"select * from stu where no = "</span>)</span></span>;</span><br><span class="line">cmd += no;</span><br><span class="line"><span class="keyword">bool</span> res = query.exec(cmd);</span><br><span class="line">qDebug() &lt;&lt; res;</span><br><span class="line"><span class="keyword">while</span> (query.next())</span><br><span class="line">&#123;</span><br><span class="line">    qDebug() &lt;&lt; query.value(<span class="number">0</span>) &lt;&lt; <span class="string">":"</span> &lt;&lt; query.value(<span class="number">1</span>).toString() &lt;&lt; <span class="string">":"</span> &lt;&lt; query.value(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在界面中展示数据库数据"><a href="#在界面中展示数据库数据" class="headerlink" title="在界面中展示数据库数据"></a>在界面中展示数据库数据</h4><ul>
+<li><code>QTableView</code></li>
+<li><code>QSqlQueryModel</code></li>
 </ul></div>
 
     </div>
@@ -457,10 +604,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
               <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
-              <a href="/tags/QT/" rel="tag"><i class="fa fa-tag"></i> QT</a>
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
               <a href="/tags/SUMMERTERM/" rel="tag"><i class="fa fa-tag"></i> SUMMERTERM</a>
+              <a href="/tags/QT/" rel="tag"><i class="fa fa-tag"></i> QT</a>
           </div>
 
         
@@ -541,7 +688,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QT-学习报告"><span class="nav-number">1.</span> <span class="nav-text">QT 学习报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件结构"><span class="nav-number">1.1.</span> <span class="nav-text">软件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QT工程"><span class="nav-number">1.2.</span> <span class="nav-text">QT工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QT的基本原理"><span class="nav-number">1.3.</span> <span class="nav-text">QT的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.3.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#界面文件如何保存？以什么格式保存？"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">界面文件如何保存？以什么格式保存？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#界面文件如何参与编译？"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">界面文件如何参与编译？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#界面和功能如何关联？"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">界面和功能如何关联？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QT界面如何运行起来的？"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">QT界面如何运行起来的？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用控件和类"><span class="nav-number">1.4.</span> <span class="nav-text">常用控件和类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#界面设计方法"><span class="nav-number">1.4.1.</span> <span class="nav-text">界面设计方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QPushButton"><span class="nav-number">1.4.2.</span> <span class="nav-text">QPushButton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QLabel"><span class="nav-number">1.4.3.</span> <span class="nav-text">QLabel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QLineEdit"><span class="nav-number">1.4.4.</span> <span class="nav-text">QLineEdit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QDebug"><span class="nav-number">1.4.5.</span> <span class="nav-text">QDebug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号-signal-和槽-slot-机制-（QT-精髓）"><span class="nav-number">1.5.</span> <span class="nav-text">信号 signal 和槽 slot 机制 （QT 精髓）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信号和槽的意义"><span class="nav-number">1.5.1.</span> <span class="nav-text">信号和槽的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现信号和槽机制的三种方式"><span class="nav-number">1.5.2.</span> <span class="nav-text">实现信号和槽机制的三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义信号和槽的方法"><span class="nav-number">1.5.3.</span> <span class="nav-text">自定义信号和槽的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信号和槽的连接可以是多对多的"><span class="nav-number">1.5.4.</span> <span class="nav-text">信号和槽的连接可以是多对多的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QT-内存注意事项"><span class="nav-number">1.6.</span> <span class="nav-text">QT 内存注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布局"><span class="nav-number">1.7.</span> <span class="nav-text">布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控件的位置"><span class="nav-number">1.7.1.</span> <span class="nav-text">控件的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动布局"><span class="nav-number">1.7.2.</span> <span class="nav-text">手动布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动布局"><span class="nav-number">1.7.3.</span> <span class="nav-text">自动布局</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QT-学习报告"><span class="nav-number">1.</span> <span class="nav-text">QT 学习报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件结构"><span class="nav-number">1.1.</span> <span class="nav-text">软件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QT工程"><span class="nav-number">1.2.</span> <span class="nav-text">QT工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QT的基本原理"><span class="nav-number">1.3.</span> <span class="nav-text">QT的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.3.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#界面文件如何保存？以什么格式保存？"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">界面文件如何保存？以什么格式保存？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#界面文件如何参与编译？"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">界面文件如何参与编译？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#界面和功能如何关联？"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">界面和功能如何关联？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QT界面如何运行起来的？"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">QT界面如何运行起来的？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用控件和类"><span class="nav-number">1.4.</span> <span class="nav-text">常用控件和类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#界面设计方法"><span class="nav-number">1.4.1.</span> <span class="nav-text">界面设计方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QPushButton"><span class="nav-number">1.4.2.</span> <span class="nav-text">QPushButton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QLabel"><span class="nav-number">1.4.3.</span> <span class="nav-text">QLabel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QLineEdit"><span class="nav-number">1.4.4.</span> <span class="nav-text">QLineEdit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QDebug"><span class="nav-number">1.4.5.</span> <span class="nav-text">QDebug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号-signal-和槽-slot-机制-（QT-精髓）"><span class="nav-number">1.5.</span> <span class="nav-text">信号 signal 和槽 slot 机制 （QT 精髓）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信号和槽的意义"><span class="nav-number">1.5.1.</span> <span class="nav-text">信号和槽的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现信号和槽机制的三种方式"><span class="nav-number">1.5.2.</span> <span class="nav-text">实现信号和槽机制的三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义信号和槽的方法"><span class="nav-number">1.5.3.</span> <span class="nav-text">自定义信号和槽的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信号和槽的连接可以是多对多的"><span class="nav-number">1.5.4.</span> <span class="nav-text">信号和槽的连接可以是多对多的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QT-内存注意事项"><span class="nav-number">1.6.</span> <span class="nav-text">QT 内存注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布局"><span class="nav-number">1.7.</span> <span class="nav-text">布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控件的位置"><span class="nav-number">1.7.1.</span> <span class="nav-text">控件的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动布局"><span class="nav-number">1.7.2.</span> <span class="nav-text">手动布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动布局"><span class="nav-number">1.7.3.</span> <span class="nav-text">自动布局</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络编程-（Socket-编程）"><span class="nav-number">1.8.</span> <span class="nav-text">网络编程 （Socket 编程）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.8.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编程方法-以-UDP-为例）"><span class="nav-number">1.8.2.</span> <span class="nav-text">编程方法 (以 UDP 为例）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#发送端"><span class="nav-number">1.8.2.1.</span> <span class="nav-text">发送端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接收端"><span class="nav-number">1.8.2.2.</span> <span class="nav-text">接收端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中文乱码"><span class="nav-number">1.8.2.3.</span> <span class="nav-text">中文乱码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">1.9.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.9.1.</span> <span class="nav-text">数据库的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用数据库操作语句"><span class="nav-number">1.9.2.</span> <span class="nav-text">常用数据库操作语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QT-程序访问数据库"><span class="nav-number">1.9.3.</span> <span class="nav-text">QT 程序访问数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sqlite"><span class="nav-number">1.9.3.1.</span> <span class="nav-text">Sqlite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接数据库"><span class="nav-number">1.9.3.2.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问数据库"><span class="nav-number">1.9.3.3.</span> <span class="nav-text">访问数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在界面中展示数据库数据"><span class="nav-number">1.9.3.4.</span> <span class="nav-text">在界面中展示数据库数据</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
