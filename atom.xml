@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-01T12:59:49.931Z</updated>
+  <updated>2020-07-05T06:18:28.292Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MFC Report</title>
+    <link href="https://augists.top/NOTES/SUMMERTERM/MFC/MFC-Report/"/>
+    <id>https://augists.top/NOTES/SUMMERTERM/MFC/MFC-Report/</id>
+    <published>2020-07-03T04:31:36.000Z</published>
+    <updated>2020-07-05T06:18:28.292Z</updated>
+    
+    <summary type="html">
+    
+      Summer Term Report of MFC
+    
+    </summary>
+    
+    
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="MFC" scheme="https://augists.top/tags/MFC/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+  </entry>
   
   <entry>
     <title>Inspirational Quotes to College Newcomers</title>
@@ -40,11 +65,11 @@
     <link href="https://augists.top/NOTES/SUMMERTERM/QT/QT-Report/"/>
     <id>https://augists.top/NOTES/SUMMERTERM/QT/QT-Report/</id>
     <published>2020-06-30T02:18:31.000Z</published>
-    <updated>2020-07-03T04:03:10.511Z</updated>
+    <updated>2020-07-03T04:33:19.781Z</updated>
     
     <summary type="html">
     
-      Summmer Term Report of QT
+      Summer Term Report of QT
     
     </summary>
     
@@ -184,9 +209,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
   </entry>
   
@@ -211,9 +236,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
   </entry>
   
@@ -238,9 +263,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
   </entry>
   
@@ -428,27 +453,6 @@
     
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Missing Semester of Your CS Education&lt;br&gt;Lecture1 Shell Tools and Scripting</title>
-    <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/"/>
-    <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/</id>
-    <published>2020-06-18T01:27:40.000Z</published>
-    <updated>2020-06-27T06:25:40.428Z</updated>
-    
-    <summary type="html">
-    
-      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
-    
-    </summary>
-    
-    
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
