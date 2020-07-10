@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-08T01:19:24.420Z</updated>
+  <updated>2020-07-10T09:02:42.798Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,11 +17,80 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Congratulation 2020 Final Exam</title>
+    <link href="https://augists.top/self/Congratulation-2020-Final-Exam/"/>
+    <id>https://augists.top/self/Congratulation-2020-Final-Exam/</id>
+    <published>2020-07-10T08:56:31.000Z</published>
+    <updated>2020-07-10T09:02:42.798Z</updated>
+    
+    <summary type="html">
+    
+      Congratulation on your graduation !!! 🎉🎉🎉
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>#Pragma Once or #Ifndef</title>
+    <link href="https://augists.top/self/ERROR/pragma-once-or-ifndef/"/>
+    <id>https://augists.top/self/ERROR/pragma-once-or-ifndef/</id>
+    <published>2020-07-10T08:42:47.000Z</published>
+    <updated>2020-07-10T08:55:20.358Z</updated>
+    
+    <summary type="html">
+    
+      Both of them are MACRO in c/c++, but do you know the DIFFERENCES?
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QT5 C++11 Lambda Error</title>
+    <link href="https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/"/>
+    <id>https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/</id>
+    <published>2020-07-10T08:20:08.000Z</published>
+    <updated>2020-07-10T08:41:46.075Z</updated>
+    
+    <summary type="html">
+    
+      An unexpected error of Lambda Expression when using connect in QT5 C++11
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="QT" scheme="https://augists.top/tags/QT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Tortured by QT</title>
-    <link href="https://augists.top/self/Tortured-by-QT/"/>
-    <id>https://augists.top/self/Tortured-by-QT/</id>
+    <link href="https://augists.top/self/THINKING/Tortured-by-QT/"/>
+    <id>https://augists.top/self/THINKING/Tortured-by-QT/</id>
     <published>2020-07-08T00:55:42.000Z</published>
-    <updated>2020-07-08T01:19:24.420Z</updated>
+    <updated>2020-07-10T08:57:48.935Z</updated>
     
     <summary type="html">
     
@@ -33,14 +102,16 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
+      <category term="THINKING" scheme="https://augists.top/tags/THINKING/"/>
+    
   </entry>
   
   <entry>
     <title>Privacy</title>
-    <link href="https://augists.top/self/Privacy/"/>
-    <id>https://augists.top/self/Privacy/</id>
+    <link href="https://augists.top/self/THINKING/Privacy/"/>
+    <id>https://augists.top/self/THINKING/Privacy/</id>
     <published>2020-07-05T06:57:48.000Z</published>
-    <updated>2020-07-05T07:09:11.492Z</updated>
+    <updated>2020-07-10T08:57:42.360Z</updated>
     
     <summary type="html">
     
@@ -51,6 +122,8 @@
     
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="THINKING" scheme="https://augists.top/tags/THINKING/"/>
     
   </entry>
   
@@ -207,10 +280,10 @@
   
   <entry>
     <title>GCC Error</title>
-    <link href="https://augists.top/self/gcc-error/"/>
-    <id>https://augists.top/self/gcc-error/</id>
+    <link href="https://augists.top/self/ERROR/gcc-error/"/>
+    <id>https://augists.top/self/ERROR/gcc-error/</id>
     <published>2020-06-27T16:00:22.000Z</published>
-    <updated>2020-06-27T16:40:43.594Z</updated>
+    <updated>2020-07-10T08:23:49.076Z</updated>
     
     <summary type="html">
     
@@ -222,7 +295,11 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
@@ -376,69 +453,6 @@
     <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture7-Debugging-and-Profiling/</id>
     <published>2020-06-22T11:07:54.000Z</published>
     <updated>2020-06-27T06:25:58.556Z</updated>
-    
-    <summary type="html">
-    
-      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
-    
-    </summary>
-    
-    
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lecture6 Version Control (Git)</title>
-    <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture6-Version-Control-Git/"/>
-    <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture6-Version-Control-Git/</id>
-    <published>2020-06-22T11:06:40.000Z</published>
-    <updated>2020-06-27T06:25:55.226Z</updated>
-    
-    <summary type="html">
-    
-      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
-    
-    </summary>
-    
-    
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lecture5 Command-Line Environment</title>
-    <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture5-Command-line-Environment/"/>
-    <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture5-Command-line-Environment/</id>
-    <published>2020-06-22T11:06:13.000Z</published>
-    <updated>2020-06-27T06:25:50.376Z</updated>
-    
-    <summary type="html">
-    
-      Study Notes of MIT Courses&lt;br&gt;Copyright@MIT
-    
-    </summary>
-    
-    
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Missing Semester of Your CS Education&lt;br&gt;Lecture4 Lecture4 Data Wrangling</title>
-    <link href="https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture4-Data-Wrangling/"/>
-    <id>https://augists.top/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture4-Data-Wrangling/</id>
-    <published>2020-06-20T14:37:30.000Z</published>
-    <updated>2020-06-27T06:25:47.348Z</updated>
     
     <summary type="html">
     

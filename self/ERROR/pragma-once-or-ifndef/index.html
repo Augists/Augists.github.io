@@ -31,20 +31,22 @@
   })();
 </script>
 
-  <meta name="description" content="Something I Thought">
+  <meta name="description" content="Both of them are MACRO in c&#x2F;c++, but do you know the DIFFERENCES?">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Electronic or Deelectronic">
-<meta property="og:url" content="https://augists.top/self/Electronic-or-Deelectronic/index.html">
+<meta property="og:title" content="#Pragma Once or #Ifndef">
+<meta property="og:url" content="https://augists.top/self/ERROR/pragma-once-or-ifndef/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="Something I Thought">
+<meta property="og:description" content="Both of them are MACRO in c&#x2F;c++, but do you know the DIFFERENCES?">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-20T03:49:26.000Z">
-<meta property="article:modified_time" content="2020-06-20T05:27:00.539Z">
+<meta property="article:published_time" content="2020-07-10T08:42:47.000Z">
+<meta property="article:modified_time" content="2020-07-10T08:55:20.358Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="ESSAY">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="SUMMERTERM">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://augists.top/self/Electronic-or-Deelectronic/">
+<link rel="canonical" href="https://augists.top/self/ERROR/pragma-once-or-ifndef/">
 
 
 <script id="page-configurations">
@@ -57,7 +59,7 @@
   };
 </script>
 
-  <title>Electronic or Deelectronic | Augists-ZDCZ</title>
+  <title>#Pragma Once or #Ifndef | Augists-ZDCZ</title>
   
 
 
@@ -166,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://augists.top/self/Electronic-or-Deelectronic/">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/self/ERROR/pragma-once-or-ifndef/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
@@ -179,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Electronic or Deelectronic
+          #Pragma Once or #Ifndef
         </h1>
 
         <div class="post-meta">
@@ -190,11 +192,11 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-20 11:49:26 / Modified: 13:27:00" itemprop="dateCreated datePublished" datetime="2020-06-20T11:49:26+08:00">2020-06-20</time>
+              <time title="Created: 2020-07-10 16:42:47 / Modified: 16:55:20" itemprop="dateCreated datePublished" datetime="2020-07-10T16:42:47+08:00">2020-07-10</time>
             </span>
 
           
-            <div class="post-description">Something I Thought</div>
+            <div class="post-description">Both of them are MACRO in c/c++, but do you know the DIFFERENCES?</div>
 
         </div>
       </header>
@@ -205,23 +207,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note warning"><h1 id="关于电子化与去电子化"><a href="#关于电子化与去电子化" class="headerlink" title="关于电子化与去电子化"></a>关于电子化与去电子化</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>昨天出去嗨皮，后俩的计划又临时有变，于是</p>
-<ul>
-<li>手机没电📱且没有充电宝和数据线🔋，不能打滴滴和出示健康码</li>
-<li>疫情当前，公共交通工具都需要出示健康码</li>
-</ul>
-<p>最终，选择只剩下一个：出租车</p>
-<p>该关注的是，在这个全面电子化的今天，一旦作为中枢的手机没电，会导致整个系统全面瘫痪</p>
-<h2 id="电子化与去（个人）电子化"><a href="#电子化与去（个人）电子化" class="headerlink" title="电子化与去（个人）电子化"></a>电子化与去（个人）电子化</h2><p>词当然是自己创造拿来用的，与其说是去电子化，更不如叫去个人电子化</p>
-<p>当前的电子化的方式，将手机作为中枢设备，并且是每个人的手机</p>
-<p>这必定要直面一些问题，笼统来说是个人手机的性能与稳定性</p>
-<p>而去个人电子化，是把个体的中枢组合起来，以一个总的方式来进行维护和管理</p>
-<p>一方面是成本下降，另一方面也是对稳定性的保证</p>
-<h2 id="发散"><a href="#发散" class="headerlink" title="发散"></a>发散</h2><p>把去个人电子化具体一点，最先想到的就是云服务器</p>
-<p>将服务器集合到一起，统一进行维护等，除了成本降低，也拉低了云服务器的入门门槛</p>
-<p>相反，去中心化也是另一个</p>
-<p>将本来集中在一起的分散开，好处是开始强调的隐私问题等</p>
-<p>最后，关于应该使用相反的两种中的哪一种，可能需要具体情况具体分析</p>
+        <div class="note warning"><p>起因是有人跟我说两个文件互相 <code>#include</code> 了，导致重定义</p>
+<p>所以才想起来去查查两个的区别</p>
+<p>第一次看到 <code>#pragma once</code> 是看杜传 <strong>GitHub</strong> 上的他们小组做的疫情扩散模拟程序</p>
+<p>莫大佬在 h 文件里写的这个宏</p>
+<p>当时查资料只看到了说</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br></pre></td></tr></table></figure>
+
+<p>与</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#ifndef _H_</span><br><span class="line">#define _H_</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<p>是相同作用，但是不知道两个区别，也不知道为什么要有一个新的宏来做这个事情</p>
+<p>前两天再查才看到</p>
+<p>放个<a href="https://www.cnblogs.com/Braveliu/archive/2012/12/29/2838726.html" target="_blank" rel="noopener">原文链接</a>，没有标明原创或者转载，姑且当他是原创吧</p>
+<div class="note success"><h3 id="ifndef"><a href="#ifndef" class="headerlink" title="#ifndef"></a>#ifndef</h3><p><code>#ifndef</code> 的方式受 C/C++ 语言标准支持。它不仅可以保证同一个文件不会被包含多次，也能保证内容完全相同的两个文件（或者代码片段）不会被不小心同时包含。</p>
+<p>当然，缺点就是如果不同头文件中的宏名不小心“撞车”，可能就会导致你看到头文件明明存在，但编译器却硬说找不到声明的状况——这种情况有时非常让人郁闷。</p>
+<p>由于编译器每次都需要打开头文件才能判定是否有重复定义，因此在编译大型项目时，ifndef会使得编译时间相对较长，因此一些编译器逐渐开始支持 <code>#pragma once</code> 的方式。</p>
+<h3 id="pragma-once"><a href="#pragma-once" class="headerlink" title="#pragma once"></a>#pragma once</h3><p><code>#pragma once</code> 一般由编译器提供保证：同一个文件不会被包含多次。注意这里所说的“同一个文件”是指物理上的一个文件，而不是指内容相同的两个文件。</p>
+<p>你无法对一个头文件中的一段代码作 <code>#pragma once</code> 声明，而只能针对文件。</p>
+<p>其好处是，你不必再担心宏名冲突了，当然也就不会出现宏名冲突引发的奇怪问题。大型项目的编译速度也因此提高了一些。</p>
+<p>对应的缺点就是如果某个头文件有多份拷贝，本方法不能保证他们不被重复包含。当然，相比宏名冲突引发的“找不到声明”的问题，这种重复包含很容易被发现并修正。</p>
+<p>另外，这种方式不支持跨平台！</p>
+</div>
 </div>
 
     </div>
@@ -238,7 +245,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://augists.top/self/Electronic-or-Deelectronic/" title="Electronic or Deelectronic">https://augists.top/self/Electronic-or-Deelectronic/</a>
+    <a href="https://augists.top/self/ERROR/pragma-once-or-ifndef/" title="#Pragma Once or #Ifndef">https://augists.top/self/ERROR/pragma-once-or-ifndef/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -289,6 +296,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/ESSAY/" rel="tag"><i class="fa fa-tag"></i> ESSAY</a>
+              <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
+              <a href="/tags/SUMMERTERM/" rel="tag"><i class="fa fa-tag"></i> SUMMERTERM</a>
           </div>
 
         
@@ -297,12 +306,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/" rel="prev" title="The Missing Semester of Your CS Education<br>Lecture1 Shell Tools and Scripting">
-      <i class="fa fa-chevron-left"></i> The Missing Semester of Your CS Education<br>Lecture1 Shell Tools and Scripting
+    <a href="/self/ERROR/QT5-C-11-Lambda-Error/" rel="prev" title="QT5 C++11 Lambda Error">
+      <i class="fa fa-chevron-left"></i> QT5 C++11 Lambda Error
     </a></div>
       <div class="post-nav-item">
-    <a href="/NOTES/Terminal/The-Missing-Semester-of-Your-CS-Education/Lecture3-Editor-Vim/" rel="next" title="The Missing Semester of Your CS Education<br>Lecture3 Editor (Vim)">
-      The Missing Semester of Your CS Education<br>Lecture3 Editor (Vim) <i class="fa fa-chevron-right"></i>
+    <a href="/self/Congratulation-2020-Final-Exam/" rel="next" title="Congratulation 2020 Final Exam">
+      Congratulation 2020 Final Exam <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -369,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于电子化与去电子化"><span class="nav-number">1.</span> <span class="nav-text">关于电子化与去电子化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#起因"><span class="nav-number">1.1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子化与去（个人）电子化"><span class="nav-number">1.2.</span> <span class="nav-text">电子化与去（个人）电子化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发散"><span class="nav-number">1.3.</span> <span class="nav-text">发散</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ifndef"><span class="nav-number">1.</span> <span class="nav-text">#ifndef</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pragma-once"><span class="nav-number">2.</span> <span class="nav-text">#pragma once</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -384,14 +393,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

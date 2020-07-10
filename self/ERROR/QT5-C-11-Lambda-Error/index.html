@@ -31,20 +31,24 @@
   })();
 </script>
 
-  <meta name="description" content="How does bilibili know where I am on the condition that I have closed its location permission">
+  <meta name="description" content="An unexpected error of Lambda Expression when using connect in QT5 C++11">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Privacy">
-<meta property="og:url" content="https://augists.top/self/Privacy/index.html">
+<meta property="og:title" content="QT5 C++11 Lambda Error">
+<meta property="og:url" content="https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="How does bilibili know where I am on the condition that I have closed its location permission">
+<meta property="og:description" content="An unexpected error of Lambda Expression when using connect in QT5 C++11">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-05T06:57:48.000Z">
-<meta property="article:modified_time" content="2020-07-05T07:09:11.492Z">
+<meta property="article:published_time" content="2020-07-10T08:20:08.000Z">
+<meta property="article:modified_time" content="2020-07-10T08:41:46.075Z">
 <meta property="article:author" content="Augists">
+<meta property="article:tag" content="CODE">
 <meta property="article:tag" content="ESSAY">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="SUMMERTERM">
+<meta property="article:tag" content="QT">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://augists.top/self/Privacy/">
+<link rel="canonical" href="https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/">
 
 
 <script id="page-configurations">
@@ -57,7 +61,7 @@
   };
 </script>
 
-  <title>Privacy | Augists-ZDCZ</title>
+  <title>QT5 C++11 Lambda Error | Augists-ZDCZ</title>
   
 
 
@@ -166,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://augists.top/self/Privacy/">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
@@ -179,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Privacy
+          QT5 C++11 Lambda Error
         </h1>
 
         <div class="post-meta">
@@ -190,11 +194,11 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-05 14:57:48 / Modified: 15:09:11" itemprop="dateCreated datePublished" datetime="2020-07-05T14:57:48+08:00">2020-07-05</time>
+              <time title="Created: 2020-07-10 16:20:08 / Modified: 16:41:46" itemprop="dateCreated datePublished" datetime="2020-07-10T16:20:08+08:00">2020-07-10</time>
             </span>
 
           
-            <div class="post-description">How does bilibili know where I am on the condition that I have closed its location permission</div>
+            <div class="post-description">An unexpected error of Lambda Expression when using connect in QT5 C++11</div>
 
         </div>
       </header>
@@ -205,14 +209,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note warning"><p>个人隐私一直是国内不是特别关注的事情，直到小米发布了最新的 <code>MIUI12</code> 才在国内大范围的引起讨论</p>
-<p>我在 <code>ios-设置</code> 中已经将 bilibili 的 <code>location</code> 设置为了 <code>never</code>，但是为什么 bilibili 还是能获取到我的大概（至少）位置信息呢</p>
-<p>在 bilibili 的首页推送中，今天第一次出现了与我的位置信息相关的推送</p>
-<p>图我就不放了，毕竟也是与位置隐私相关的</p>
-<p>但是我确实一直能收到很多软件与位置相关的推送，只是对于这次来说，特殊之处在于我特意去看了被我设置了禁止访问位置权限</p>
-<p>明确我是已经关闭了它的位置权限，而且我也没有在 bilibili 和剪贴板中提起过我的位置</p>
-<p>那么就奇怪了，它是怎么知道我的位置的呢？？？</p>
-<p>😔</p>
+        <div class="note warning"><h1 id="QT-Lambda-表达式在-connect-时-error"><a href="#QT-Lambda-表达式在-connect-时-error" class="headerlink" title="QT Lambda 表达式在 connect 时 error"></a>QT Lambda 表达式在 connect 时 error</h1><p>依旧在这个折磨人的小学期</p>
+<p>第一次接触到 <strong>Lambda</strong> 表达式，以及它在 QT 的 <code>connect</code> 函数中的运用</p>
+<p>但是当自己写的时候，却发现不是那回事</p>
+<h2 id="我的情况"><a href="#我的情况" class="headerlink" title="我的情况"></a>我的情况</h2><p>我在将一个 button 连接，但是我希望只有在 button 点击的时候，才在相应的位置上 new<br>这样我就可以只定义二维指针数组，而不需要立即为他们分配内存</p>
+<p>在 h 文件中，有他们的二维指针数组</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gmae</span> :</span> <span class="keyword">public</span> QWidget</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    QPushButton *mapButton[<span class="number">12</span>][<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line">    Tower *tower[<span class="number">12</span>][<span class="number">7</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在 cpp 中，<code>mapButton</code> 已经 <code>new</code> 过了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// j, i 是因为 ij 是二维数组式的行列下标，而 QT 中为 xy</span></span><br><span class="line">connect(mapButton[j][i], SIGNAL(click(<span class="keyword">bool</span>)), [=]()</span><br><span class="line">&#123;</span><br><span class="line">    tower[j][i] = <span class="keyword">new</span> Tower(<span class="keyword">this</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>然后就 error 了😭，会告诉你没有合适的 <strong>candidate</strong></p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>出现这个问题，根据我的最终解决方案和推测，是这样的</p>
+<p>QT 从 5 开始，才支持 C++11 的 <strong>Lambda</strong> 表达式，而同时，QT5 对 <code>connect</code> 稍有修改</p>
+<p>由原来的</p>
+<figure class="highlight qt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect(*sender, SIGNAL(senderSignal()), *receiver, SLOT(receiverSlot()));</span><br></pre></td></tr></table></figure>
+
+<p>修改为了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect(*sender, &amp;SenderClass::signal, *receiver, &amp;ReceiverClass::slot);</span><br></pre></td></tr></table></figure>
+
+<p>但是同时，兼容旧版的 <code>connect</code> 函数</p>
+<p>但是 <code>Lambda</code> 表达式的 <code>connect</code> 函数并不支持旧版</p>
+<p>当参数中用了 <code>Lambda</code> 表达式，会自动以 5 之后的标准看待这个 <code>connect</code> 函数</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>所以解决方案也很简单</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">connect(mapButton[j][i], &amp;QPushButton::click, [=]()</span><br><span class="line">&#123;</span><br><span class="line">    tower[j][i] = <span class="keyword">new</span> Tower(<span class="keyword">this</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>我觉得对于这个问题，与下一篇的 <code>#pragma once</code> 放在一起看，会对新旧标注以及兼容性有一点自己的想法吧</p>
 </div>
 
     </div>
@@ -229,7 +251,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://augists.top/self/Privacy/" title="Privacy">https://augists.top/self/Privacy/</a>
+    <a href="https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/" title="QT5 C++11 Lambda Error">https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -279,7 +301,11 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/CODE/" rel="tag"><i class="fa fa-tag"></i> CODE</a>
               <a href="/tags/ESSAY/" rel="tag"><i class="fa fa-tag"></i> ESSAY</a>
+              <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
+              <a href="/tags/SUMMERTERM/" rel="tag"><i class="fa fa-tag"></i> SUMMERTERM</a>
+              <a href="/tags/QT/" rel="tag"><i class="fa fa-tag"></i> QT</a>
           </div>
 
         
@@ -288,12 +314,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/NOTES/SUMMERTERM/MFC/MFC-Report/" rel="prev" title="MFC Report">
-      <i class="fa fa-chevron-left"></i> MFC Report
+    <a href="/self/THINKING/Tortured-by-QT/" rel="prev" title="Tortured by QT">
+      <i class="fa fa-chevron-left"></i> Tortured by QT
     </a></div>
       <div class="post-nav-item">
-    <a href="/self/Tortured-by-QT/" rel="next" title="Tortured by QT">
-      Tortured by QT <i class="fa fa-chevron-right"></i>
+    <a href="/self/ERROR/pragma-once-or-ifndef/" rel="next" title="#Pragma Once or #Ifndef">
+      #Pragma Once or #Ifndef <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -360,6 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QT-Lambda-表达式在-connect-时-error"><span class="nav-number">1.</span> <span class="nav-text">QT Lambda 表达式在 connect 时 error</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#我的情况"><span class="nav-number">1.1.</span> <span class="nav-text">我的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题原因"><span class="nav-number">1.2.</span> <span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">1.3.</span> <span class="nav-text">解决</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -374,14 +401,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
