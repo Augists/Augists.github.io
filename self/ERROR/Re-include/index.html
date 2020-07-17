@@ -31,28 +31,23 @@
   })();
 </script>
 
-  <meta name="description" content="C++ STL ReportCopyright@Augenstern">
+  <meta name="description" content="So annoying bug disgusts me">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STL Learn and Summarize">
-<meta property="og:url" content="https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/index.html">
+<meta property="og:title" content="Re-#Include">
+<meta property="og:url" content="https://augists.top/self/ERROR/Re-include/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="C++ STL ReportCopyright@Augenstern">
+<meta property="og:description" content="So annoying bug disgusts me">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg4zzjdyukj30aq0qq3zf.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg504vmj6ej30kk0aq0tb.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg505eaidcj30mw0byjs5.jpg">
-<meta property="article:published_time" content="2020-06-25T16:22:14.000Z">
-<meta property="article:modified_time" content="2020-06-30T02:24:48.581Z">
+<meta property="article:published_time" content="2020-07-17T14:25:04.000Z">
+<meta property="article:modified_time" content="2020-07-17T15:04:39.188Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="CODE">
+<meta property="article:tag" content="ESSAY">
 <meta property="article:tag" content="C&#x2F;C++">
-<meta property="article:tag" content="NOTE">
 <meta property="article:tag" content="SUMMERTERM">
-<meta property="article:tag" content="STL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg4zzjdyukj30aq0qq3zf.jpg">
 
-<link rel="canonical" href="https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/">
+<link rel="canonical" href="https://augists.top/self/ERROR/Re-include/">
 
 
 <script id="page-configurations">
@@ -65,7 +60,7 @@
   };
 </script>
 
-  <title>STL Learn and Summarize | Augists-ZDCZ</title>
+  <title>Re-#Include | Augists-ZDCZ</title>
   
 
 
@@ -174,7 +169,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/self/ERROR/Re-include/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
@@ -187,7 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          STL Learn and Summarize
+          Re-#Include
         </h1>
 
         <div class="post-meta">
@@ -196,19 +191,13 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-06-26 00:22:14" itemprop="dateCreated datePublished" datetime="2020-06-26T00:22:14+08:00">2020-06-26</time>
+              <time title="Created: 2020-07-17 22:25:04 / Modified: 23:04:39" itemprop="dateCreated datePublished" datetime="2020-07-17T22:25:04+08:00">2020-07-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-30 10:24:48" itemprop="dateModified" datetime="2020-06-30T10:24:48+08:00">2020-06-30</time>
-              </span>
 
           
-            <div class="post-description">C++ STL Report<br>Copyright@Augenstern</div>
+            <div class="post-description">So annoying bug disgusts me</div>
 
         </div>
       </header>
@@ -219,125 +208,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p>Copyright@Augenstern</p>
-</blockquote>
-<div class="note warning"><p>在第一周，我对标准模板库STL进行了学习，将各部分组件及其关系梳理成思维导图的形式，展示如下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg4zzjdyukj30aq0qq3zf.jpg" alt="STL"></p>
-<p>现将各组件作用，适用范围整理如下，便于理解记忆：</p>
-<ul>
-<li><p>STL: 是泛型程序设计的代表作品。包含很多基本算法和数据结构，且将算法与数据结构完全分离。</p>
-</li>
-<li><p>容器(<em>container</em>): 是能够保存各种类型对象的类（我认为与模板类类似，，可以看作一个模板类的集合）。</p>
-</li>
-<li><p>顺序容器(<em>sequence container</em>): 对象的线性集合，所有对象都是同一类型。</p>
-</li>
-<li><p>向量(<em>vector</em>): 多功能的，能连续存放各种类型对象的类模板。</p>
-</li>
-</ul>
-<p>连续储存的元素，从后面插入删除元素，直接访问任何元素，支持<code>[]</code>下标运算符访问操作。</p>
-<ul>
-<li>列表(<em>list</em>): 由节点组成的双向链表，从任意位置插入删除。</li>
-</ul>
-<p>没有重载<code>[]</code>运算符，所以不支持随机存取。</p>
-<ul>
-<li><p>双向队列(<em>deque</em>): 可以从双向进行操作的队列，从前面/后面插入/删除元素，直接访问任何元素。</p>
-</li>
-<li><p>关联容器(<em>associative container</em>): 关联容器内元素有序，在查找时具有良好的性能。关联容器包括集合，映射，多集合，多映射。</p>
-</li>
-<li><p>集合(<em>set</em>): 快速查找，无重复元素，元素有关键字和值两部分，元素顺序根据关键字确定，<code>set</code>中不可有关键字相同的元素，重载了<code>[]</code>运算符。</p>
-</li>
-<li><p>多集合(<em>multiset</em>): 快速查找，允许出现关键字相同的元素。</p>
-</li>
-<li><p>映射(<em>map</em>): 也称为字典或关联数组。由键值对组成的集合，无重复元素，基于键进行查找。要求键<code>key</code>在容器中是唯一的，对应的<code>value</code>数据值可以重复。</p>
-</li>
-<li><p>容器适配器(<em>container adapter</em>): 包括队列，栈，优先级队列。</p>
-</li>
-<li><p>队列(<em>queue</em>): 支持先进先出(<em>FIFO</em>)模式的数据存取。</p>
-</li>
-<li><p>栈(<em>stack</em>): 支持先进后出(<em>FILO</em>)模式的数据存取。</p>
-</li>
-<li><p>优先级队列(<em>priority_queue</em>): 每次从队列中取出的元素具有最高的优先级，优先级与元素的值相关联。具体例子如银行排队中，<code>VIP用户时间长&gt;VIP用户时间短&gt;普通用户时间长&gt;普通用户时间短</code>。</p>
-</li>
-<li><p>迭代器(<em>iterator</em>): 迭代器是指针的泛化，是一种检查容器内元素并遍历元素的数据类型。通过对一个迭代器的解引用操作（<code>*</code>），可以访问到容器内所包含的元素。</p>
-</li>
-<li><p>输入迭代器: 提供读功能的向前移动迭代器，可进行增加，比较与解引用。</p>
-</li>
-<li><p>输出迭代器: 提供写功能的向前移动迭代器，可进行增加，比较与解引用。</p>
-</li>
-<li><p>前向迭代器: 同时具有输入迭代器和输出迭代器的功能，并可对迭代器的值进行储存。</p>
-</li>
-<li><p>双向迭代器: 同时提供读写功能，同forward迭代器，但可用来进行增加或减少操作。</p>
-</li>
-<li><p>随机迭代器: 提供随机读写功能，是功能最强大的迭代器，具有双向迭代器的全部功能，同时实现指针的算数与比较运算。</p>
-</li>
-<li><p>反向迭代器: 同随机迭代器或前向迭代器，但其移动是反向的。</p>
-</li>
-</ul>
-<p>不同容器支持的迭代器不同，常见容器支持的迭代器类型如下表：</p>
-<table>
-<thead>
-<tr>
-<th>容器</th>
-<th>迭代器类别</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>vector</td>
-<td>随机迭代器</td>
-</tr>
-<tr>
-<td>deque</td>
-<td>随机迭代器</td>
-</tr>
-<tr>
-<td>list</td>
-<td>双向迭代器</td>
-</tr>
-<tr>
-<td>set / multiset</td>
-<td>双向迭代器</td>
-</tr>
-<tr>
-<td>map / multimap</td>
-<td>双向迭代器</td>
-</tr>
-<tr>
-<td>stack</td>
-<td>不支持迭代器</td>
-</tr>
-<tr>
-<td>queue</td>
-<td>不支持迭代器</td>
-</tr>
-<tr>
-<td>priority_queue</td>
-<td>不支持迭代器</td>
-</tr>
-</tbody></table>
-<p>算法：以迭代器类型为参数，和数据的具体实现分离。头文件：<code>algorithm.h</code></p>
-<p>学习成果：</p>
-<ol>
-<li>使用vector及迭代器完成对一组数中出现次数大于2的数字进行输出：</li>
-</ol>
-<p>运行截图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg504vmj6ej30kk0aq0tb.jpg" alt=""></p>
-<p>实现难点：令出现多次的元素再后续遍历中不再重复输出。后采用返回首次出现的迭代器与现在所在的位置进行比较的方法解决。</p>
-<ol start="2">
-<li>使用map实现简单英汉词典</li>
-</ol>
-<p>实现截图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg505eaidcj30mw0byjs5.jpg" alt=""></p>
-<p>可改进：可以通过multimap实现一词多义，也可以通过读取文本文档的方式预先导入词库。</p>
-<p>通过学习发现存在的一些问题：</p>
-<ol>
-<li><p>绝大部分容器迭代器仅限于了解，并未真正进行尝试；</p>
-</li>
-<li><p>迭代器与容器元素混淆不清，常进行等价使用并因此报错；</p>
-</li>
-<li><p>对于算法的返回值理解不清，使用时常常出现问题，日后还需多加努力。</p>
-</li>
-</ol>
+        <div class="note warning"><p>之前写过一篇关于 <code>#ifndef</code> 与 <code>#pragma once</code> 的博客<br>但是事情好像不是那么简单</p>
+<h2 id="错误样例"><a href="#错误样例" class="headerlink" title="错误样例"></a>错误样例</h2><p>A.h</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"B.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> :</span> <span class="keyword">public</span> B</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>B.h</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"A.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="错误原因分析"><a href="#错误原因分析" class="headerlink" title="错误原因分析"></a>错误原因分析</h2><p>如果我没记错，这种因为 h 文件互相引用而导致的重定义之前弄的我莫名其妙</p>
+<p>按照之前看 <code>#ifnedf</code> 的解释，内容一样不应该被编译器重复添加而导致重定义<br>但是它确实就存在这样了<br>网上查询好像还没有找到合适的解释（我还没看官方文档，只看了 CSDN <code>(^_^)a</code></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>根据看到的一些文章，解决方案无非两种</p>
+<h3 id="尽量改为-cpp-文件引用"><a href="#尽量改为-cpp-文件引用" class="headerlink" title="尽量改为 cpp 文件引用"></a>尽量改为 cpp 文件引用</h3><p>cpp 文件不会被再次引用，所以可以更放心的用 <code>#include</code><br>但是也要注意，cpp 文件的引用里可能会有冲突</p>
+<h3 id="改为类声明"><a href="#改为类声明" class="headerlink" title="改为类声明"></a>改为类声明</h3><p>在错误样例中，A.h 文件改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class B;</span><br><span class="line"></span><br><span class="line">class A : public B</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>对类B进行声明</p>
 </div>
 
     </div>
@@ -350,11 +235,11 @@
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>Post author:  </strong>Augenstern
+    <strong>Post author:  </strong>Augists
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/" title="STL Learn and Summarize">https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/</a>
+    <a href="https://augists.top/self/ERROR/Re-include/" title="Re-#Include">https://augists.top/self/ERROR/Re-include/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -405,10 +290,9 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/CODE/" rel="tag"><i class="fa fa-tag"></i> CODE</a>
+              <a href="/tags/ESSAY/" rel="tag"><i class="fa fa-tag"></i> ESSAY</a>
               <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
-              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
               <a href="/tags/SUMMERTERM/" rel="tag"><i class="fa fa-tag"></i> SUMMERTERM</a>
-              <a href="/tags/STL/" rel="tag"><i class="fa fa-tag"></i> STL</a>
           </div>
 
         
@@ -417,13 +301,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/NOTES/SUMMERTERM/STL/STL-note/" rel="prev" title="STL Note">
-      <i class="fa fa-chevron-left"></i> STL Note
+    <a href="/self/ERROR/Switch-Case-Braces/" rel="prev" title="Switch Case Braces">
+      <i class="fa fa-chevron-left"></i> Switch Case Braces
     </a></div>
-      <div class="post-nav-item">
-    <a href="/self/ERROR/gcc-error/" rel="next" title="GCC Error">
-      GCC Error <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -489,6 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误样例"><span class="nav-number">1.</span> <span class="nav-text">错误样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误原因分析"><span class="nav-number">2.</span> <span class="nav-text">错误原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#尽量改为-cpp-文件引用"><span class="nav-number">3.1.</span> <span class="nav-text">尽量改为 cpp 文件引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改为类声明"><span class="nav-number">3.2.</span> <span class="nav-text">改为类声明</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
