@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-17T15:04:39.188Z</updated>
+  <updated>2020-07-18T04:53:02.478Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML Study Note</title>
+    <link href="https://augists.top/NOTES/SUMMERTERM/WEB/HTML-study-note/"/>
+    <id>https://augists.top/NOTES/SUMMERTERM/WEB/HTML-study-note/</id>
+    <published>2020-07-18T03:19:41.000Z</published>
+    <updated>2020-07-18T04:53:02.478Z</updated>
+    
+    <summary type="html">
+    
+      HTML note in Summer Term
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
+    
+      <category term="HTML" scheme="https://augists.top/tags/HTML/"/>
+    
+  </entry>
   
   <entry>
     <title>Re-#Include</title>
@@ -436,33 +463,6 @@
     <summary type="html">
     
       C++ STL Note&lt;br&gt;Copyright@Steve Yu
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ STL Report</title>
-    <link href="https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/"/>
-    <id>https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/</id>
-    <published>2020-06-22T11:13:27.000Z</published>
-    <updated>2020-06-30T08:23:21.473Z</updated>
-    
-    <summary type="html">
-    
-      Summer Term Report of C++ STL
     
     </summary>
     
