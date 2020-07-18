@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-18T04:53:02.478Z</updated>
+  <updated>2020-07-18T09:19:47.599Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://augists.top/NOTES/SUMMERTERM/WEB/HTML-study-note/"/>
     <id>https://augists.top/NOTES/SUMMERTERM/WEB/HTML-study-note/</id>
     <published>2020-07-18T03:19:41.000Z</published>
-    <updated>2020-07-18T04:53:02.478Z</updated>
+    <updated>2020-07-18T09:19:47.599Z</updated>
     
     <summary type="html">
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>Re-#Include</title>
-    <link href="https://augists.top/self/ERROR/Re-include/"/>
-    <id>https://augists.top/self/ERROR/Re-include/</id>
+    <link href="https://augists.top/SELF/ERROR/Re-include/"/>
+    <id>https://augists.top/SELF/ERROR/Re-include/</id>
     <published>2020-07-17T14:25:04.000Z</published>
     <updated>2020-07-17T15:04:39.188Z</updated>
     
@@ -70,8 +70,8 @@
   
   <entry>
     <title>Switch Case Braces</title>
-    <link href="https://augists.top/self/ERROR/Switch-Case-Braces/"/>
-    <id>https://augists.top/self/ERROR/Switch-Case-Braces/</id>
+    <link href="https://augists.top/SELF/ERROR/Switch-Case-Braces/"/>
+    <id>https://augists.top/SELF/ERROR/Switch-Case-Braces/</id>
     <published>2020-07-17T13:27:32.000Z</published>
     <updated>2020-07-17T14:24:00.590Z</updated>
     
@@ -116,8 +116,8 @@
   
   <entry>
     <title>C++ Cin Clean Cache</title>
-    <link href="https://augists.top/others/C-cin-clean-cache/"/>
-    <id>https://augists.top/others/C-cin-clean-cache/</id>
+    <link href="https://augists.top/NOTES/CODE_LANGUAGE/C-cin-clean-cache/"/>
+    <id>https://augists.top/NOTES/CODE_LANGUAGE/C-cin-clean-cache/</id>
     <published>2020-07-11T11:19:46.000Z</published>
     <updated>2020-07-14T02:22:50.972Z</updated>
     
@@ -139,8 +139,8 @@
   
   <entry>
     <title>Congratulation 2020 Final Exam</title>
-    <link href="https://augists.top/self/Congratulation-2020-Final-Exam/"/>
-    <id>https://augists.top/self/Congratulation-2020-Final-Exam/</id>
+    <link href="https://augists.top/SELF/Congratulation-2020-Final-Exam/"/>
+    <id>https://augists.top/SELF/Congratulation-2020-Final-Exam/</id>
     <published>2020-07-10T08:56:31.000Z</published>
     <updated>2020-07-10T09:06:56.830Z</updated>
     
@@ -158,8 +158,8 @@
   
   <entry>
     <title>#Pragma Once or #Ifndef</title>
-    <link href="https://augists.top/self/ERROR/pragma-once-or-ifndef/"/>
-    <id>https://augists.top/self/ERROR/pragma-once-or-ifndef/</id>
+    <link href="https://augists.top/SELF/ERROR/pragma-once-or-ifndef/"/>
+    <id>https://augists.top/SELF/ERROR/pragma-once-or-ifndef/</id>
     <published>2020-07-10T08:42:47.000Z</published>
     <updated>2020-07-17T13:29:17.639Z</updated>
     
@@ -183,8 +183,8 @@
   
   <entry>
     <title>QT5 C++11 Lambda Error</title>
-    <link href="https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/"/>
-    <id>https://augists.top/self/ERROR/QT5-C-11-Lambda-Error/</id>
+    <link href="https://augists.top/SELF/ERROR/QT5-C-11-Lambda-Error/"/>
+    <id>https://augists.top/SELF/ERROR/QT5-C-11-Lambda-Error/</id>
     <published>2020-07-10T08:20:08.000Z</published>
     <updated>2020-07-10T08:41:46.075Z</updated>
     
@@ -210,8 +210,8 @@
   
   <entry>
     <title>Tortured by QT</title>
-    <link href="https://augists.top/self/THINKING/Tortured-by-QT/"/>
-    <id>https://augists.top/self/THINKING/Tortured-by-QT/</id>
+    <link href="https://augists.top/SELF/THINKING/Tortured-by-QT/"/>
+    <id>https://augists.top/SELF/THINKING/Tortured-by-QT/</id>
     <published>2020-07-08T00:55:42.000Z</published>
     <updated>2020-07-10T08:57:48.935Z</updated>
     
@@ -231,8 +231,8 @@
   
   <entry>
     <title>Privacy</title>
-    <link href="https://augists.top/self/THINKING/Privacy/"/>
-    <id>https://augists.top/self/THINKING/Privacy/</id>
+    <link href="https://augists.top/SELF/THINKING/Privacy/"/>
+    <id>https://augists.top/SELF/THINKING/Privacy/</id>
     <published>2020-07-05T06:57:48.000Z</published>
     <updated>2020-07-10T08:57:42.360Z</updated>
     
@@ -277,8 +277,8 @@
   
   <entry>
     <title>Inspirational Quotes to College Newcomers</title>
-    <link href="https://augists.top/hello/Inspirational-Quotes-to-College-Newcomers/"/>
-    <id>https://augists.top/hello/Inspirational-Quotes-to-College-Newcomers/</id>
+    <link href="https://augists.top/HELLO/Inspirational-Quotes-to-College-Newcomers/"/>
+    <id>https://augists.top/HELLO/Inspirational-Quotes-to-College-Newcomers/</id>
     <published>2020-06-30T13:20:06.000Z</published>
     <updated>2020-07-01T12:59:49.931Z</updated>
     
@@ -321,8 +321,8 @@
   
   <entry>
     <title>Review the First Half of the Year</title>
-    <link href="https://augists.top/self/REVIEW/Review-the-First-Half-of-the-Year/"/>
-    <id>https://augists.top/self/REVIEW/Review-the-First-Half-of-the-Year/</id>
+    <link href="https://augists.top/SELF/REVIEW/Review-the-First-Half-of-the-Year/"/>
+    <id>https://augists.top/SELF/REVIEW/Review-the-First-Half-of-the-Year/</id>
     <published>2020-06-29T05:14:43.000Z</published>
     <updated>2020-06-30T08:27:09.799Z</updated>
     
@@ -342,8 +342,8 @@
   
   <entry>
     <title>meVector</title>
-    <link href="https://augists.top/self/myVector/"/>
-    <id>https://augists.top/self/myVector/</id>
+    <link href="https://augists.top/SELF/myVector/"/>
+    <id>https://augists.top/SELF/myVector/</id>
     <published>2020-06-28T15:19:57.000Z</published>
     <updated>2020-07-02T05:54:26.925Z</updated>
     
@@ -382,8 +382,8 @@
   
   <entry>
     <title>2019 Review</title>
-    <link href="https://augists.top/self/REVIEW/2019-Review/"/>
-    <id>https://augists.top/self/REVIEW/2019-Review/</id>
+    <link href="https://augists.top/SELF/REVIEW/2019-Review/"/>
+    <id>https://augists.top/SELF/REVIEW/2019-Review/</id>
     <published>2020-06-28T02:33:30.000Z</published>
     <updated>2020-06-29T06:18:36.562Z</updated>
     
@@ -403,8 +403,8 @@
   
   <entry>
     <title>GCC Error</title>
-    <link href="https://augists.top/self/ERROR/gcc-error/"/>
-    <id>https://augists.top/self/ERROR/gcc-error/</id>
+    <link href="https://augists.top/SELF/ERROR/gcc-error/"/>
+    <id>https://augists.top/SELF/ERROR/gcc-error/</id>
     <published>2020-06-27T16:00:22.000Z</published>
     <updated>2020-07-10T08:23:49.076Z</updated>
     
