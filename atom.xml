@@ -38,11 +38,30 @@
   </entry>
   
   <entry>
+    <title>MAC Tips</title>
+    <link href="https://augists.top/mac/MAC-Tips/"/>
+    <id>https://augists.top/mac/MAC-Tips/</id>
+    <published>2020-07-19T06:58:16.000Z</published>
+    <updated>2020-07-19T17:16:50.510Z</updated>
+    
+    <summary type="html">
+    
+      Plenty of tips for using macOS (on updating)
+    
+    </summary>
+    
+    
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML Study Note</title>
     <link href="https://augists.top/NOTES/SUMMERTERM/WEB/HTML-study-note/"/>
     <id>https://augists.top/NOTES/SUMMERTERM/WEB/HTML-study-note/</id>
     <published>2020-07-18T03:19:41.000Z</published>
-    <updated>2020-07-19T07:17:57.400Z</updated>
+    <updated>2020-07-19T17:16:15.159Z</updated>
     
     <summary type="html">
     
@@ -54,9 +73,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
       <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
     
@@ -79,15 +98,15 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
   </entry>
   
@@ -106,15 +125,15 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
@@ -196,15 +215,15 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
   </entry>
   
@@ -223,17 +242,17 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="QT" scheme="https://augists.top/tags/QT/"/>
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
   </entry>
   
@@ -296,9 +315,9 @@
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
       <category term="MFC" scheme="https://augists.top/tags/MFC/"/>
     
@@ -338,13 +357,13 @@
     
     
     
-      <category term="QT" scheme="https://augists.top/tags/QT/"/>
-    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
   </entry>
   
@@ -403,9 +422,9 @@
     
     
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
@@ -445,42 +464,15 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
-  </entry>
-  
-  <entry>
-    <title>STL Learn and Summarize</title>
-    <link href="https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/"/>
-    <id>https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/</id>
-    <published>2020-06-25T16:22:14.000Z</published>
-    <updated>2020-06-30T02:24:48.581Z</updated>
-    
-    <summary type="html">
-    
-      C++ STL Report&lt;br&gt;Copyright@Augenstern
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
   </entry>
   
