@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-19T07:17:57.400Z</updated>
+  <updated>2020-07-19T07:39:56.643Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HEXO 404 Error Cuz Change Directory</title>
+    <link href="https://augists.top/HEXO/HEXO-404-Error-cuz-Change-Directory/"/>
+    <id>https://augists.top/HEXO/HEXO-404-Error-cuz-Change-Directory/</id>
+    <published>2020-07-19T07:28:22.000Z</published>
+    <updated>2020-07-19T07:39:56.643Z</updated>
+    
+    <summary type="html">
+    
+      Just now when I opened an article in my blog as usual, it turned to a 404 page&lt;br&gt;My Changing File Directories causes this 404 error
+    
+    </summary>
+    
+    
+    
+      <category term="HEXO" scheme="https://augists.top/tags/HEXO/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML Study Note</title>
@@ -48,7 +69,7 @@
     <link href="https://augists.top/SELF/ERROR/Re-include/"/>
     <id>https://augists.top/SELF/ERROR/Re-include/</id>
     <published>2020-07-17T14:25:04.000Z</published>
-    <updated>2020-07-17T15:04:39.188Z</updated>
+    <updated>2020-07-19T07:29:03.602Z</updated>
     
     <summary type="html">
     
@@ -66,6 +87,8 @@
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
   </entry>
   
   <entry>
@@ -73,7 +96,7 @@
     <link href="https://augists.top/SELF/ERROR/Switch-Case-Braces/"/>
     <id>https://augists.top/SELF/ERROR/Switch-Case-Braces/</id>
     <published>2020-07-17T13:27:32.000Z</published>
-    <updated>2020-07-17T14:24:00.590Z</updated>
+    <updated>2020-07-19T07:29:08.576Z</updated>
     
     <summary type="html">
     
@@ -90,6 +113,8 @@
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
       <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
   </entry>
   
@@ -161,7 +186,7 @@
     <link href="https://augists.top/SELF/ERROR/pragma-once-or-ifndef/"/>
     <id>https://augists.top/SELF/ERROR/pragma-once-or-ifndef/</id>
     <published>2020-07-10T08:42:47.000Z</published>
-    <updated>2020-07-17T13:29:17.639Z</updated>
+    <updated>2020-07-19T07:28:53.987Z</updated>
     
     <summary type="html">
     
@@ -179,6 +204,8 @@
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
   </entry>
   
   <entry>
@@ -186,7 +213,7 @@
     <link href="https://augists.top/SELF/ERROR/QT5-C-11-Lambda-Error/"/>
     <id>https://augists.top/SELF/ERROR/QT5-C-11-Lambda-Error/</id>
     <published>2020-07-10T08:20:08.000Z</published>
-    <updated>2020-07-10T08:41:46.075Z</updated>
+    <updated>2020-07-19T07:28:58.586Z</updated>
     
     <summary type="html">
     
@@ -205,6 +232,8 @@
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
   </entry>
   
@@ -406,7 +435,7 @@
     <link href="https://augists.top/SELF/ERROR/gcc-error/"/>
     <id>https://augists.top/SELF/ERROR/gcc-error/</id>
     <published>2020-06-27T16:00:22.000Z</published>
-    <updated>2020-07-10T08:23:49.076Z</updated>
+    <updated>2020-07-19T07:28:48.853Z</updated>
     
     <summary type="html">
     
@@ -424,6 +453,8 @@
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
   </entry>
   
   <entry>
@@ -436,33 +467,6 @@
     <summary type="html">
     
       C++ STL Report&lt;br&gt;Copyright@Augenstern
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STL Note</title>
-    <link href="https://augists.top/NOTES/SUMMERTERM/STL/STL-note/"/>
-    <id>https://augists.top/NOTES/SUMMERTERM/STL/STL-note/</id>
-    <published>2020-06-25T15:06:08.000Z</published>
-    <updated>2020-06-30T02:24:55.263Z</updated>
-    
-    <summary type="html">
-    
-      C++ STL Note&lt;br&gt;Copyright@Steve Yu
     
     </summary>
     
