@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-19T07:39:56.643Z</updated>
+  <updated>2020-07-21T07:49:07.756Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Data Structure</title>
+    <link href="https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/"/>
+    <id>https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/</id>
+    <published>2020-07-21T03:52:27.000Z</published>
+    <updated>2020-07-21T07:49:07.756Z</updated>
+    
+    <summary type="html">
+    
+      Data Structure note in C
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS Study Note</title>
+    <link href="https://augists.top/NOTES/SUMMERTERM/WEB/CSS-Study-Note/"/>
+    <id>https://augists.top/NOTES/SUMMERTERM/WEB/CSS-Study-Note/</id>
+    <published>2020-07-20T04:35:53.000Z</published>
+    <updated>2020-07-20T14:00:31.363Z</updated>
+    
+    <summary type="html">
+    
+      CSS note in Summer Term
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
+    
+      <category term="CSS" scheme="https://augists.top/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>HEXO 404 Error Cuz Change Directory</title>
@@ -42,7 +94,7 @@
     <link href="https://augists.top/mac/MAC-Tips/"/>
     <id>https://augists.top/mac/MAC-Tips/</id>
     <published>2020-07-19T06:58:16.000Z</published>
-    <updated>2020-07-19T17:16:50.510Z</updated>
+    <updated>2020-07-20T12:41:26.850Z</updated>
     
     <summary type="html">
     
@@ -98,9 +150,9 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
@@ -125,15 +177,15 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
-      <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
     
   </entry>
   
@@ -215,9 +267,9 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
@@ -242,17 +294,17 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="QT" scheme="https://augists.top/tags/QT/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
@@ -361,9 +413,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="QT" scheme="https://augists.top/tags/QT/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
@@ -423,54 +475,6 @@
     
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019 Review</title>
-    <link href="https://augists.top/SELF/REVIEW/2019-Review/"/>
-    <id>https://augists.top/SELF/REVIEW/2019-Review/</id>
-    <published>2020-06-28T02:33:30.000Z</published>
-    <updated>2020-06-29T06:18:36.562Z</updated>
-    
-    <summary type="html">
-    
-      Written on December 29th 2019
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GCC Error</title>
-    <link href="https://augists.top/SELF/ERROR/gcc-error/"/>
-    <id>https://augists.top/SELF/ERROR/gcc-error/</id>
-    <published>2020-06-27T16:00:22.000Z</published>
-    <updated>2020-07-19T07:28:48.853Z</updated>
-    
-    <summary type="html">
-    
-      Today when I use f5 as normal to compile and run c++ code, an error occurred&lt;br&gt;Take a Look of My Error🤣
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
