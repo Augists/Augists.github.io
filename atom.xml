@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-21T07:49:07.756Z</updated>
+  <updated>2020-07-22T06:52:18.125Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>WWDC 2020 Analysis</title>
+    <link href="https://augists.top/mac/WWDC2020-Analysis/"/>
+    <id>https://augists.top/mac/WWDC2020-Analysis/</id>
+    <published>2020-07-22T01:10:16.000Z</published>
+    <updated>2020-07-22T06:52:18.125Z</updated>
+    
+    <summary type="html">
+    
+      WWDC 2020 was launched on June 22rd this year&lt;br&gt;Such Big Changes are they
+    
+    </summary>
+    
+    
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Data Structure</title>
     <link href="https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/"/>
     <id>https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/</id>
     <published>2020-07-21T03:52:27.000Z</published>
-    <updated>2020-07-21T07:49:07.756Z</updated>
+    <updated>2020-07-22T16:03:09.583Z</updated>
     
     <summary type="html">
     
@@ -150,9 +171,9 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
@@ -177,9 +198,9 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
@@ -267,9 +288,9 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
@@ -294,9 +315,9 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
@@ -456,27 +477,6 @@
     
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Software Development Process</title>
-    <link href="https://augists.top/NOTES/SUMMERTERM/software/Software-Development-Process/"/>
-    <id>https://augists.top/NOTES/SUMMERTERM/software/Software-Development-Process/</id>
-    <published>2020-06-28T09:11:17.000Z</published>
-    <updated>2020-06-30T08:25:21.832Z</updated>
-    
-    <summary type="html">
-    
-      Note of Summer Term Class
-    
-    </summary>
-    
-    
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
