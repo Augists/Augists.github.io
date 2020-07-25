@@ -31,9 +31,9 @@
     
     
     
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
       <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
   </entry>
   
@@ -79,9 +79,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
     
@@ -146,9 +146,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
     
@@ -171,11 +171,11 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -198,11 +198,11 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
@@ -288,11 +288,11 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -315,15 +315,15 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
@@ -388,9 +388,9 @@
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="MFC" scheme="https://augists.top/tags/MFC/"/>
     
@@ -430,13 +430,13 @@
     
     
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
