@@ -39,7 +39,7 @@
 <meta property="og:description" content="Data Structure note in C">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-21T03:52:27.000Z">
-<meta property="article:modified_time" content="2020-07-25T16:55:00.949Z">
+<meta property="article:modified_time" content="2020-07-27T09:32:03.136Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="CODE">
 <meta property="article:tag" content="C&#x2F;C++">
@@ -204,7 +204,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-26 00:55:00" itemprop="dateModified" datetime="2020-07-26T00:55:00+08:00">2020-07-26</time>
+                <time title="Modified: 2020-07-27 17:32:03" itemprop="dateModified" datetime="2020-07-27T17:32:03+08:00">2020-07-27</time>
               </span>
 
           
@@ -244,7 +244,14 @@
 <li>数据类型 Data Type：一个值的集合和定义在这个值集上的一组操作的总称</li>
 <li>抽象数据类型 Abstract Data Type，ADT：用户定义，包括：数据对象、数据对象上关系的集合、对数据对象的基本操作的集合</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ADT 抽象数据类型名</span><br><span class="line">&#123;</span><br><span class="line">    数据对象：&lt;数据对象的定义&gt;</span><br><span class="line">    数据关系：&lt;数据关系的定义&gt;</span><br><span class="line">    基本操作：&lt;基本操作的定义&gt;</span><br><span class="line">&#125; ADT 抽象数据类型名</span><br></pre></td></tr></table></figure>
+<pre>
+ADT 抽象数据类型名
+{
+    数据对象：<数据对象的定义>
+    数据关系：<数据关系的定义>
+    基本操作：<基本操作的定义>
+} ADT 抽象数据类型名
+</pre>
 
 <p>其中，基本操作的定义格式为</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">基本操作名(参数表)</span><br><span class="line">    初始条件：&lt;初始条件描述&gt;</span><br><span class="line">    操作结构：&lt;操作结果描述&gt;</span><br></pre></td></tr></table></figure>
@@ -252,7 +259,28 @@
 <div class="note "><p>e.g. 复数</p>
 <ol>
 <li><p>定义部分</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ADT Complex</span><br><span class="line">&#123;</span><br><span class="line">    数据对象：D = &#123;e1, e2 | e1, e2 ∈ R&#125;</span><br><span class="line">    数据关系：S = &#123;&lt;e1, e2&gt; | e1 是复数实部，e2 是复数虚部&#125;</span><br><span class="line">    基本操作：</span><br><span class="line">      Creat(&amp;C, x, y)</span><br><span class="line">        操作结果：构造复数C，其实部和虚部分别赋以参数x, y</span><br><span class="line">      GetReal(C)</span><br><span class="line">        初始条件：C已存在</span><br><span class="line">        操作结果：返回C的实部值</span><br><span class="line">      GetImag(C)</span><br><span class="line">        初始条件：C已存在</span><br><span class="line">        操作结果：返回C的虚部值</span><br><span class="line">      Add(C1, C2)</span><br><span class="line">        初始条件：C1, C2是复数</span><br><span class="line">        操作结果：返回C1和C2的和</span><br><span class="line">      Sub(C1, C2)</span><br><span class="line">        初始条件：C1, C2是复数</span><br><span class="line">        操作结果：返回C1和C2的差</span><br><span class="line">&#125; ADT Complex</span><br></pre></td></tr></table></figure>
+<pre>
+ADT Complex
+{
+ 数据对象：D = {e1, e2 | e1, e2 ∈ R}
+ 数据关系：S = {<e1, e2> | e1 是复数实部，e2 是复数虚部}
+ 基本操作：
+   Creat(&C, x, y)
+     操作结果：构造复数C，其实部和虚部分别赋以参数x, y
+   GetReal(C)
+     初始条件：C已存在
+     操作结果：返回C的实部值
+   GetImag(C)
+     初始条件：C已存在
+     操作结果：返回C的虚部值
+   Add(C1, C2)
+     初始条件：C1, C2是复数
+     操作结果：返回C1和C2的和
+   Sub(C1, C2)
+     初始条件：C1, C2是复数
+     操作结果：返回C1和C2的差
+} ADT Complex
+</pre>
 </li>
 <li><p>表示部分</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">float</span> Realpart;</span><br><span class="line">    <span class="keyword">float</span> Imagepart;</span><br><span class="line">&#125; Complex;</span><br></pre></td></tr></table></figure>
@@ -298,7 +326,50 @@
 <li>除第一个之外，结构中的每个数据元素均只有一个前驱</li>
 <li>除最后一个之外，结构中的每个数据元素均只有一个后驱</li>
 </ol>
-<h3 id="类型定义"><a href="#类型定义" class="headerlink" title="类型定义"></a>类型定义</h3><p>ADT List<br>{<br>    数据对象：D = {a<sub>i</sub> | a<sub>i</sub>∈ElemSet, i=1, 2, …, n, n &gt;= 0}<br>    数据关系：R = {&lt;a<sub>i-1</sub>, a<sub>i</sub> | a<sub>i-1</sub>, a<sub>i</sub>∈D, i=2, …, n}<br>    基本操作：<br>      InitList(&amp;L)<br>        操作结果：构造一个空的线性表 L<br>      Destroylist(&amp;L)<br>        初始条件：线性表 L 已存在<br>        操作结果：销毁线性表 L<br>      ClearList(&amp;l)<br>        初始条件：线性表 L 已存在<br>        操作结果：将 L 重置为空表<br>      ListEmpty(L)<br>        初始条件：线性表 L 已存在<br>        操作结果：若 L 为空表，则返回 true，否则返回 false<br>      ListLength(L)<br>        初始条件：线性表 L 已存在<br>        操作结果：返回 L 中数据元素个数<br>      GetElem(L, i, &amp;e)<br>        初始条件：线性表 L 已存在，且 1 &lt;= i &lt;= ListLength(L)<br>        操作结果：用 e 返回 L 中第 i 个数据元素的值<br>      LocateElem(L, e)<br>        初始条件：线性表 L 已存在<br>        操作结果：返回 L 中第1个值与 e 相同的元素在 L 中的位置，若数据不存在，返回值为0<br>      PriorElem(L, cur_e, &amp;pre_e)<br>        初始条件：线性表 L 已存在<br>        操作结果：若 cur_e 是 L 的数据元素，且不是第一个，则用 pre_e 返回其前驱，否则操作失败，pre_e 无定义<br>      NextElem(L, cur_e, &amp;next_e)<br>        初始条件：线性表 L 已存在<br>        操作结果：若 cur_e 是 L 的数据元素，且不是最后一个，则用 next_e 返回其后继，否则操作失败，next_e 无定义<br>      ListInsert(&amp;L, i, e)<br>        初始条件：线性表 L 已存在，且 1 &lt;= i &lt;= ListLength(L) + 1<br>        操作结果：在 L 中第 i 个位置之前插入新的数据元素 e, L 的长度加1<br>      ListDelete(&amp;L, i)<br>        初始条件：线性表 L 已存在且非空，且 1 &lt;= i &lt;= ListLength(L)<br>        操作结果：在 L 中第 i 个位置之前插入新的数据元素 e，L的长度都加1<br>      TraverseList(L)<br>        初始条件：线性表 L 已存在<br>        操作结果：对线性表 L 进行遍历，在遍历的过程中<br>} ADT List</p>
+<h3 id="类型定义"><a href="#类型定义" class="headerlink" title="类型定义"></a>类型定义</h3><pre>
+ADT List
+{
+    数据对象：D = {a<sub>i</sub> | a<sub>i</sub>∈ElemSet, i=1, 2, …, n, n >= 0}
+    数据关系：R = {<a<sub>i-1</sub>, a<sub>i</sub> | a<sub>i-1</sub>, a<sub>i</sub>∈D, i=2, …, n}
+    基本操作：
+      InitList(&L)
+        操作结果：构造一个空的线性表 L
+      Destroylist(&L)
+        初始条件：线性表 L 已存在
+        操作结果：销毁线性表 L
+      ClearList(&l)
+        初始条件：线性表 L 已存在
+        操作结果：将 L 重置为空表
+      ListEmpty(L)
+        初始条件：线性表 L 已存在
+        操作结果：若 L 为空表，则返回 true，否则返回 false
+      ListLength(L)
+        初始条件：线性表 L 已存在
+        操作结果：返回 L 中数据元素个数
+      GetElem(L, i, &e)
+        初始条件：线性表 L 已存在，且 1 <= i <= ListLength(L)
+        操作结果：用 e 返回 L 中第 i 个数据元素的值
+      LocateElem(L, e)
+        初始条件：线性表 L 已存在
+        操作结果：返回 L 中第1个值与 e 相同的元素在 L 中的位置，若数据不存在，返回值为0
+      PriorElem(L, cur_e, &pre_e)
+        初始条件：线性表 L 已存在
+        操作结果：若 cur_e 是 L 的数据元素，且不是第一个，则用 pre_e 返回其前驱，否则操作失败，pre_e 无定义
+      NextElem(L, cur_e, &next_e)
+        初始条件：线性表 L 已存在
+        操作结果：若 cur_e 是 L 的数据元素，且不是最后一个，则用 next_e 返回其后继，否则操作失败，next_e 无定义
+      ListInsert(&L, i, e)
+        初始条件：线性表 L 已存在，且 1 <= i <= ListLength(L) + 1
+        操作结果：在 L 中第 i 个位置之前插入新的数据元素 e, L 的长度加1
+      ListDelete(&L, i)
+        初始条件：线性表 L 已存在且非空，且 1 <= i <= ListLength(L)
+        操作结果：在 L 中第 i 个位置之前插入新的数据元素 e，L的长度都加1
+      TraverseList(L)
+        初始条件：线性表 L 已存在
+        操作结果：对线性表 L 进行遍历，在遍历的过程中
+} ADT List
+</pre>
+
 <h3 id="顺序表示"><a href="#顺序表示" class="headerlink" title="顺序表示"></a>顺序表示</h3><p>每个存储元素占 l 个存储单元<br>LOC(a<sub>i</sub>) = LOC(a<sub>1</sub>) + (i - 1) * l</p>
 <p>只要确定了存储线性表的起始位置，线性表中任一数据元素都可以随机存储，所以线性表的顺序存储结构是一种<strong>随机存储</strong>的存储结构</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 100        <span class="comment">// 顺序表可能达到的最大长度</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ElemType *elem;        <span class="comment">// 存储空间的基地址</span></span><br><span class="line">    <span class="keyword">int</span> length;            <span class="comment">// 当前长度</span></span><br><span class="line">&#125; SqList                <span class="comment">// 顺序表的结构类型为 SqList</span></span><br></pre></td></tr></table></figure>
@@ -427,7 +498,42 @@
 <li>队列</li>
 </ol>
 <p><strong>队列 queue</strong> 是 <strong>先进先出 First In First Out (FIFO)</strong> 的线性表<br>队列中，允许插入的一端称为 <strong>队尾 rear</strong>，允许删除的一段称为 <strong>队头 front</strong></p>
-<h3 id="栈的表示和操作"><a href="#栈的表示和操作" class="headerlink" title="栈的表示和操作"></a>栈的表示和操作</h3><p>ADT Stack<br>{<br>    数据对象：D = {a<sub>i</sub> | a<sub>i</sub>∈ElemSet, i = 1, 2, …, n, n &gt;= 0}<br>    数据关系：R = {&lt;a<sub>i - 1</sub>, a<sub>i</sub>&gt; | a<sub>i - 1</sub>, a<sub>i</sub>∈D, i = 2, …, n}<br>        a<sub>n</sub>为栈顶，a<sub>i</sub>为栈底<br>    基本操作：<br>        InitStack(&amp;S)<br>            操作结果：构造一个空栈 S<br>        DestroyStack(&amp;S)<br>            初始条件：栈 S 已存在<br>            操作结果：栈 S 被销毁<br>        ClearStack(&amp;S)<br>            初始条件：栈 S 已存在<br>            操作结果：栈 S 清为空栈<br>        StackEmpty(S)<br>            初始条件：栈 S 已存在<br>            操作结果：若 S 为空栈，返回 true，否则返回 false<br>        StackLength(S)<br>            初始条件：栈 S 已存在<br>            操作结果：返回 S 的元素个数，即栈的长度<br>        GetTop(S)<br>            初始条件：栈 S 已存在且非空<br>            操作结果：返回 S 的栈顶元素，不修改栈顶指针<br>        Push(&amp;S, e)<br>            初始条件：栈 S 已存在<br>            操作结果：插入 e 为新的栈顶元素<br>        Pop(&amp;S, &amp;e)<br>            初始条件：栈 S 已存在且非空<br>            操作结果：删除 S 的栈顶元素，并用 e 返回其值<br>        StackTraverse(S)<br>            初始条件：栈 S 已存在且非空<br>            操作结果：从栈底到栈顶依次对 S 的每个数据元素进行访问<br>} ADT Stack</p>
+<h3 id="栈的表示和操作"><a href="#栈的表示和操作" class="headerlink" title="栈的表示和操作"></a>栈的表示和操作</h3><pre>
+ADT Stack
+{
+    数据对象：D = {a<sub>i</sub> | a<sub>i</sub>∈ElemSet, i = 1, 2, …, n, n >= 0}
+    数据关系：R = {<a<sub>i - 1</sub>, a<sub>i</sub>> | a<sub>i - 1</sub>, a<sub>i</sub>∈D, i = 2, …, n}
+        a<sub>n</sub>为栈顶，a<sub>i</sub>为栈底
+    基本操作：
+        InitStack(&S)
+            操作结果：构造一个空栈 S
+        DestroyStack(&S)
+            初始条件：栈 S 已存在
+            操作结果：栈 S 被销毁
+        ClearStack(&S)
+            初始条件：栈 S 已存在
+            操作结果：栈 S 清为空栈
+        StackEmpty(S)
+            初始条件：栈 S 已存在
+            操作结果：若 S 为空栈，返回 true，否则返回 false
+        StackLength(S)
+            初始条件：栈 S 已存在
+            操作结果：返回 S 的元素个数，即栈的长度
+        GetTop(S)
+            初始条件：栈 S 已存在且非空
+            操作结果：返回 S 的栈顶元素，不修改栈顶指针
+        Push(&S, e)
+            初始条件：栈 S 已存在
+            操作结果：插入 e 为新的栈顶元素
+        Pop(&S, &e)
+            初始条件：栈 S 已存在且非空
+            操作结果：删除 S 的栈顶元素，并用 e 返回其值
+        StackTraverse(S)
+            初始条件：栈 S 已存在且非空
+            操作结果：从栈底到栈顶依次对 S 的每个数据元素进行访问
+} ADT Stack
+</pre>
+
 <h4 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 100</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    SElemType *base;    <span class="comment">// 栈底指针</span></span><br><span class="line">    SelemType *top;</span><br><span class="line">    <span class="keyword">int</span> stacksize;</span><br><span class="line">&#125; SqStack;</span><br></pre></td></tr></table></figure>
 
 <h5 id="初始化-2"><a href="#初始化-2" class="headerlink" title="初始化"></a>初始化</h5><ol>
@@ -489,14 +595,152 @@
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">(参数表)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (递归结束条件成立) 可直接求解;</span><br><span class="line">    <span class="keyword">else</span> p(较小的参数);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>如果当递归结束条件成立，只执行 <code>return</code> 操作时，分治法可以化简为</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">(参数表)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (递归结束条件不成立)</span><br><span class="line">        p(较小的参数);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<div class="note "><p>e.g. 遍历输出链表</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TraverseList</span><span class="params">(LinkList p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; p-&gt;data &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        TraverseList(p-&gt;next);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</div>
 
+<div class="note success"><p>e.g. 汉诺塔问题</p>
+<ul>
+<li><p>问题描述</p>
+<ol>
+<li>每次只能移动一个圆盘</li>
+<li>圆盘可以插在 A、B、C 中任一塔座上</li>
+<li>任何时刻都不能将一个较大的圆盘压在较小的圆盘之上</li>
+</ol>
+</li>
+<li><p>问题分析<br>设 A 柱上最初的盘子总数为 n，则当 n=1 时，只要将编号为 1 的圆盘从塔座 A 直接移至 C 上即可；否则，执行以下</p>
+<ol>
+<li>用 C 柱做过渡，将 A 柱上的 (n-1) 个盘子移到 B 柱上</li>
+<li>将 A 柱上最后一个盘子直接移到 C 柱上</li>
+<li>用 A 柱做过渡，将 B 柱上的 (n-1) 个盘子移到 C 柱上</li>
+</ol>
+</li>
+<li><p>算法步骤</p>
+<ol>
+<li>如果 n=1，则直接将编号为 1 的圆盘从 A 移到 C，递归结束</li>
+<li>否则<ul>
+<li>递归，将 A 上编号为 1 至 n-1 的圆盘移到 B，C 做辅助塔</li>
+<li>直接将编号为 n 的圆盘从 A 移到 C</li>
+<li>递归，将 B 上编号为 1 至 n-1 的圆盘移到 C，A 做辅助塔</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>算法描述</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">char</span> A, <span class="keyword">int</span> n, <span class="keyword">char</span> C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ++m &lt;&lt; <span class="string">", "</span> &lt;&lt; n &lt;&lt; <span class="string">", "</span> &lt;&lt; A &lt;&lt; <span class="string">", "</span> C &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Hanoi</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> A, <span class="keyword">char</span> B, <span class="keyword">char</span> C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="built_in">move</span>(A, <span class="number">1</span>, C);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Hanoi(n<span class="number">-1</span>, A, C, B);</span><br><span class="line">        <span class="built_in">move</span>(A, n, C);</span><br><span class="line">        Hanoi(n<span class="number">-1</span>, B, A, C);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+O(2<sup>n</sup>)
+</div>
 
+<h3 id="队列的表示和操作"><a href="#队列的表示和操作" class="headerlink" title="队列的表示和操作"></a>队列的表示和操作</h3><pre>
+ADT Queue
+{
+    数据对象：D = {a<sub>i</sub> | a<sub>i</sub>∈ElemSet, i = 1, 2, …, n, n >= 0}
+    数据关系：R = {<a<sub>i-1</sub>, a<sub>i</sub>> | a<sub>i-1</sub>, a<sub>i</sub>∈D, i = 2, …, n}
+            约定其中 a<sub>i</sub> 端为队列头，a<sub>n</sub> 为队列尾
+    基本操作：
+        InitQueue(&Q)
+            操作结果：构造一个空队列 Q
+        DestroyQueue(&Q)
+            初始条件：队列 Q 已存在
+            操作结果：队列 Q 被销毁
+        ClearQueue(&Q)
+            初始条件：队列 Q 已存在
+            操作结果：将 Q 清为空队列
+        QueueEmety(Q)
+            初始条件：队列 Q 已存在
+            操作结果：若 Q 为空队列，则返回 true，否则返回 false
+        QueueLength(Q)
+            初始条件：队列 Q 已存在
+            操作结果：返回 Q 的元素个数，即队列的长度
+        GetHead(Q)
+            初始条件：Q 为非空队列
+            操作结果：返回 Q 的队头元素
+        EnQueue(&Q, e)
+            初始条件：队列 Q 已存在
+            操作结果：插入元素 e 为 Q 的新队尾元素
+        DeQueue(&Q, &e)
+            初始条件：Q 为非空队列
+            操作结果：删除 Q 的队头元素，并用 e 返回其值
+        QueueTraverse(Q)
+            初始条件：Q 已存在且非空
+            操作结果：从队头到队尾，依次对 Q 的每个数据元素访问
+} ADT Queue
+</pre>
 
+<h4 id="循环队列——队列的顺序表示和实现"><a href="#循环队列——队列的顺序表示和实现" class="headerlink" title="循环队列——队列的顺序表示和实现"></a>循环队列——队列的顺序表示和实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXQSIZE 100</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    QElemType *base;    <span class="comment">// 存储空间的基地址</span></span><br><span class="line">    <span class="keyword">int</span> front;            <span class="comment">// 头指针</span></span><br><span class="line">    <span class="keyword">int</span> rear;            <span class="comment">// 尾指针</span></span><br><span class="line">&#125; SqQueue</span><br></pre></td></tr></table></figure>
+<p>初始化时，令 <code>front = rear = 0</code>；每当有新的队尾元素时，尾指针 rear 加一；每当删除队列队头元素时，头指针 front 加一</p>
+<ul>
+<li>假溢出：溢出 base</li>
+<li>解决方案：通过取模实现头尾指针的循环</li>
+<li>同时带来的问题：循环队列不能以头、尾指针的值是否相同来判别队列是否为空</li>
+<li>处理方法</li>
+</ul>
+<div class="note info"><p>少用一个元素空间，即队列空间大小为 m 时，有 m-1 个元素就认为是队满。这样判断队空的条件不变，即当头、尾指针的值相同时，则认为队空；而当尾指针在循环意义上加 1<br>后是等于头指针，则认为队满</p>
+<ul>
+<li>队空的条件：<code>Q.front == Q.rear</code></li>
+<li>队满的条件：<code>(Q.rear + 1) % MAXQSIZE == Q.front</code></li>
+</ul>
+</div>
 
+<div class="note info"><p>设一个标志位以区别队列是空还是满</p>
+</div>
 
+<h5 id="初始化-4"><a href="#初始化-4" class="headerlink" title="初始化"></a>初始化</h5><ol>
+<li>为队列分配一个最大容量为 MAXQSIZE 的数组空间，base 指向数据空间的首地址</li>
+<li>头指针和尾指针置为零，表示队列为空</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">InitQueue</span><span class="params">(SqQueue &amp;Q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Q.base = <span class="keyword">new</span> QElemType[MAXQSIZE];</span><br><span class="line">    <span class="keyword">if</span> (!Q.base) <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">    Q.front = Q.rear = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h5 id="求队列长度"><a href="#求队列长度" class="headerlink" title="求队列长度"></a>求队列长度</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">QueueLength</span><span class="params">(SqQueue Q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (Q.rear - Q.front + MAXQSIZE) % MAXQSIZE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="入队"><a href="#入队" class="headerlink" title="入队"></a>入队</h5><ol>
+<li>判断队列是否满，若满返回 ERROR</li>
+<li>将新元素插入队尾</li>
+<li>队尾指针加 1</li>
+</ol>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Status <span class="constructor">EnQueue(SqQueue &amp;Q, QElemType <span class="params">e</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ((<span class="module-access"><span class="module"><span class="identifier">Q</span>.</span></span>rear + <span class="number">1</span>) % MAXQSIZE<span class="operator"> == </span><span class="module-access"><span class="module"><span class="identifier">Q</span>.</span></span>front)</span><br><span class="line">        return ERROR;</span><br><span class="line">    <span class="module-access"><span class="module"><span class="identifier">Q</span>.</span></span>base<span class="literal">[Q.<span class="identifier">rear</span>]</span> = e;</span><br><span class="line">    <span class="module-access"><span class="module"><span class="identifier">Q</span>.</span></span>rear = (<span class="module-access"><span class="module"><span class="identifier">Q</span>.</span></span>rear + <span class="number">1</span>) % MAXQSIZE;</span><br><span class="line">    return OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="出队"><a href="#出队" class="headerlink" title="出队"></a>出队</h5><ol>
+<li>判断队列是否为空，若空返回 ERROR</li>
+<li>保存队头元素</li>
+<li>队头指针加 1</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(SqQueue &amp;Q, QElemType &amp;e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Q.front == Q.rear) <span class="keyword">return</span> ERROR;</span><br><span class="line">    e = Q.base[Q.front];</span><br><span class="line">    Q.front = (Q.front + <span class="number">1</span>) % MAXQSIZE;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="取队头元素"><a href="#取队头元素" class="headerlink" title="取队头元素"></a>取队头元素</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">QElemType <span class="title">GetHead</span><span class="params">(SqQueue Q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Q.front != Q.rear)</span><br><span class="line">        <span class="keyword">return</span> Q.base[Q.front];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="链队——队列的链式表示和实现"><a href="#链队——队列的链式表示和实现" class="headerlink" title="链队——队列的链式表示和实现"></a>链队——队列的链式表示和实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    QElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; QNode, *QueuePtr;</span><br><span class="line">type <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    QueuePtr front;</span><br><span class="line">    QueuePtr rear;</span><br><span class="line">&#125; LinkQueue;</span><br></pre></td></tr></table></figure>
+
+<h5 id="初始化-5"><a href="#初始化-5" class="headerlink" title="初始化"></a>初始化</h5><ol>
+<li>生成新结点作为头结点，队头和队尾指针指向此结点</li>
+<li>头结点的指针域置空</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">InitQueue</span><span class="params">(LinkQueue &amp;Q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Q.front = Q.rear = <span class="keyword">new</span> QNode;</span><br><span class="line">    Q.front-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="入队-1"><a href="#入队-1" class="headerlink" title="入队"></a>入队</h5><ol>
+<li>为入队元素分配结点空间，用指针 p 指向</li>
+<li>将新结点数据域置为 e</li>
+<li>将新结点插入到队尾</li>
+<li>修改队尾指针为 p</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">EnQue</span><span class="params">(LinkQueue &amp;Q, QElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    p = <span class="keyword">new</span> QNode;</span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    Q.rear -&gt;next = p;</span><br><span class="line">    Q.rear = p;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="出队-1"><a href="#出队-1" class="headerlink" title="出队"></a>出队</h5><ol>
+<li>判断队列是否为空，若空返回 ERROR</li>
+<li>临时保存队头元素的空间，以备释放</li>
+<li>修改头结点的指针域，指向下一个结点</li>
+<li>判断出队元素是否为最后一个元素，若是，则将队尾指针重新赋值，指向头结点</li>
+<li>释放原队头元素的空间</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(LinkQueue &amp;Q, QElemType &amp;e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Q.front == Q.rear) <span class="keyword">return</span> ERROR;</span><br><span class="line">    p = Q.front-&gt;next;</span><br><span class="line">    e = p-&gt;data;</span><br><span class="line">    Q.front-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="keyword">if</span> (Q.rear == p) Q.rear = Q.front;</span><br><span class="line">    <span class="keyword">delete</span> p;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="取队头元素-1"><a href="#取队头元素-1" class="headerlink" title="取队头元素"></a>取队头元素</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">QElemType <span class="title">GetHead</span><span class="params">(LinkQueue Q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Q.front != Q.rear)</span><br><span class="line">        <span class="keyword">return</span> Q.front-&gt;next-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -651,7 +895,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构-C语言版"><span class="nav-number">1.</span> <span class="nav-text">数据结构 C语言版</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绪论"><span class="nav-number">1.1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑结构"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储结构"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">存储结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型和抽象数据类型"><span class="nav-number">1.1.3.</span> <span class="nav-text">数据类型和抽象数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法和算法分析"><span class="nav-number">1.1.4.</span> <span class="nav-text">算法和算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法的特性"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">算法的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#评价优劣的基本标准"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">评价优劣的基本标准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最好、最坏和平均时间复杂度"><span class="nav-number">1.1.4.4.</span> <span class="nav-text">最好、最坏和平均时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空间复杂度"><span class="nav-number">1.1.4.5.</span> <span class="nav-text">空间复杂度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表"><span class="nav-number">1.2.</span> <span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和特点"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义和特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型定义"><span class="nav-number">1.2.2.</span> <span class="nav-text">类型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表示"><span class="nav-number">1.2.3.</span> <span class="nav-text">顺序表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取值"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链式表示"><span class="nav-number">1.2.4.</span> <span class="nav-text">链式表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化-1"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取值-1"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找-1"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入-1"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-1"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前插法"><span class="nav-number">1.2.4.6.1.</span> <span class="nav-text">前插法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#后插法"><span class="nav-number">1.2.4.6.2.</span> <span class="nav-text">后插法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环链表"><span class="nav-number">1.2.4.7.</span> <span class="nav-text">循环链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双向链表"><span class="nav-number">1.2.4.8.</span> <span class="nav-text">双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#插入-2"><span class="nav-number">1.2.4.8.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除-2"><span class="nav-number">1.2.4.8.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表和链表的比较"><span class="nav-number">1.2.5.</span> <span class="nav-text">顺序表和链表的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空间性能"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">空间性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间性能"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">时间性能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性表的应用"><span class="nav-number">1.2.6.</span> <span class="nav-text">线性表的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#合并（去重）"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">合并（去重）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并（有序表-不去重）"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">合并（有序表 不去重）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#顺序有序表"><span class="nav-number">1.2.6.2.1.</span> <span class="nav-text">顺序有序表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链式有序表"><span class="nav-number">1.2.6.2.2.</span> <span class="nav-text">链式有序表</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈和队列"><span class="nav-number">1.3.</span> <span class="nav-text">栈和队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和特点-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义和特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的表示和操作"><span class="nav-number">1.3.2.</span> <span class="nav-text">栈的表示和操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序栈"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">顺序栈</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化-2"><span class="nav-number">1.3.2.1.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#入栈"><span class="nav-number">1.3.2.1.2.</span> <span class="nav-text">入栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#出栈"><span class="nav-number">1.3.2.1.3.</span> <span class="nav-text">出栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#取栈顶元素"><span class="nav-number">1.3.2.1.4.</span> <span class="nav-text">取栈顶元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">链栈</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化-3"><span class="nav-number">1.3.2.2.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#入栈-1"><span class="nav-number">1.3.2.2.2.</span> <span class="nav-text">入栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#出栈-1"><span class="nav-number">1.3.2.2.3.</span> <span class="nav-text">出栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#取栈顶元素-1"><span class="nav-number">1.3.2.2.4.</span> <span class="nav-text">取栈顶元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈与递归"><span class="nav-number">1.3.3.</span> <span class="nav-text">栈与递归</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构-C语言版"><span class="nav-number">1.</span> <span class="nav-text">数据结构 C语言版</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绪论"><span class="nav-number">1.1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑结构"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储结构"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">存储结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型和抽象数据类型"><span class="nav-number">1.1.3.</span> <span class="nav-text">数据类型和抽象数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法和算法分析"><span class="nav-number">1.1.4.</span> <span class="nav-text">算法和算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法的特性"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">算法的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#评价优劣的基本标准"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">评价优劣的基本标准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最好、最坏和平均时间复杂度"><span class="nav-number">1.1.4.4.</span> <span class="nav-text">最好、最坏和平均时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空间复杂度"><span class="nav-number">1.1.4.5.</span> <span class="nav-text">空间复杂度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表"><span class="nav-number">1.2.</span> <span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和特点"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义和特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型定义"><span class="nav-number">1.2.2.</span> <span class="nav-text">类型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表示"><span class="nav-number">1.2.3.</span> <span class="nav-text">顺序表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取值"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链式表示"><span class="nav-number">1.2.4.</span> <span class="nav-text">链式表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化-1"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取值-1"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找-1"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入-1"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-1"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前插法"><span class="nav-number">1.2.4.6.1.</span> <span class="nav-text">前插法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#后插法"><span class="nav-number">1.2.4.6.2.</span> <span class="nav-text">后插法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环链表"><span class="nav-number">1.2.4.7.</span> <span class="nav-text">循环链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双向链表"><span class="nav-number">1.2.4.8.</span> <span class="nav-text">双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#插入-2"><span class="nav-number">1.2.4.8.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除-2"><span class="nav-number">1.2.4.8.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表和链表的比较"><span class="nav-number">1.2.5.</span> <span class="nav-text">顺序表和链表的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空间性能"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">空间性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间性能"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">时间性能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性表的应用"><span class="nav-number">1.2.6.</span> <span class="nav-text">线性表的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#合并（去重）"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">合并（去重）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并（有序表-不去重）"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">合并（有序表 不去重）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#顺序有序表"><span class="nav-number">1.2.6.2.1.</span> <span class="nav-text">顺序有序表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链式有序表"><span class="nav-number">1.2.6.2.2.</span> <span class="nav-text">链式有序表</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈和队列"><span class="nav-number">1.3.</span> <span class="nav-text">栈和队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和特点-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义和特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的表示和操作"><span class="nav-number">1.3.2.</span> <span class="nav-text">栈的表示和操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序栈"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">顺序栈</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化-2"><span class="nav-number">1.3.2.1.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#入栈"><span class="nav-number">1.3.2.1.2.</span> <span class="nav-text">入栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#出栈"><span class="nav-number">1.3.2.1.3.</span> <span class="nav-text">出栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#取栈顶元素"><span class="nav-number">1.3.2.1.4.</span> <span class="nav-text">取栈顶元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">链栈</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化-3"><span class="nav-number">1.3.2.2.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#入栈-1"><span class="nav-number">1.3.2.2.2.</span> <span class="nav-text">入栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#出栈-1"><span class="nav-number">1.3.2.2.3.</span> <span class="nav-text">出栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#取栈顶元素-1"><span class="nav-number">1.3.2.2.4.</span> <span class="nav-text">取栈顶元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈与递归"><span class="nav-number">1.3.3.</span> <span class="nav-text">栈与递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队列的表示和操作"><span class="nav-number">1.3.4.</span> <span class="nav-text">队列的表示和操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环队列——队列的顺序表示和实现"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">循环队列——队列的顺序表示和实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化-4"><span class="nav-number">1.3.4.1.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#求队列长度"><span class="nav-number">1.3.4.1.2.</span> <span class="nav-text">求队列长度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#入队"><span class="nav-number">1.3.4.1.3.</span> <span class="nav-text">入队</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#出队"><span class="nav-number">1.3.4.1.4.</span> <span class="nav-text">出队</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#取队头元素"><span class="nav-number">1.3.4.1.5.</span> <span class="nav-text">取队头元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链队——队列的链式表示和实现"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">链队——队列的链式表示和实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化-5"><span class="nav-number">1.3.4.2.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#入队-1"><span class="nav-number">1.3.4.2.2.</span> <span class="nav-text">入队</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#出队-1"><span class="nav-number">1.3.4.2.3.</span> <span class="nav-text">出队</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#取队头元素-1"><span class="nav-number">1.3.4.2.4.</span> <span class="nav-text">取队头元素</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
