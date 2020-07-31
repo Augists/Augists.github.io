@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-29T16:02:30.123Z</updated>
+  <updated>2020-07-31T03:29:00.535Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,23 +17,23 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>WWDC 2020 Analysis</title>
-    <link href="https://augists.top/mac/WWDC2020-Analysis/"/>
-    <id>https://augists.top/mac/WWDC2020-Analysis/</id>
-    <published>2020-07-22T01:10:16.000Z</published>
-    <updated>2020-07-29T16:02:30.123Z</updated>
+    <title>Typing Practice</title>
+    <link href="https://augists.top/SELF/REVIEW/Typing-Practice/"/>
+    <id>https://augists.top/SELF/REVIEW/Typing-Practice/</id>
+    <published>2020-07-31T02:26:21.000Z</published>
+    <updated>2020-07-31T03:29:00.535Z</updated>
     
     <summary type="html">
     
-      WWDC 2020 was launched on June 22rd this year&lt;br&gt;Such Big Changes are they
+      The milestone? of my 2020&lt;br&gt;BIGGEST STEP
     
     </summary>
     
     
     
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+      <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
     
   </entry>
   
@@ -42,7 +42,7 @@
     <link href="https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/"/>
     <id>https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/</id>
     <published>2020-07-21T03:52:27.000Z</published>
-    <updated>2020-07-30T08:05:14.703Z</updated>
+    <updated>2020-07-30T14:17:13.140Z</updated>
     
     <summary type="html">
     
@@ -115,7 +115,7 @@
     <link href="https://augists.top/mac/MACIOS-Tips/"/>
     <id>https://augists.top/mac/MACIOS-Tips/</id>
     <published>2020-07-19T06:58:16.000Z</published>
-    <updated>2020-07-25T13:31:16.471Z</updated>
+    <updated>2020-07-31T01:39:54.465Z</updated>
     
     <summary type="html">
     
@@ -171,11 +171,11 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -198,11 +198,11 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
@@ -288,11 +288,11 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -315,17 +315,17 @@
     
     
     
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
-      <category term="QT" scheme="https://augists.top/tags/QT/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
   </entry>
   
@@ -434,9 +434,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="QT" scheme="https://augists.top/tags/QT/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
   </entry>
   
