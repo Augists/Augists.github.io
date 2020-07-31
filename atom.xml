@@ -38,6 +38,27 @@
   </entry>
   
   <entry>
+    <title>WWDC 2020 Analysis</title>
+    <link href="https://augists.top/mac/WWDC2020-Analysis/"/>
+    <id>https://augists.top/mac/WWDC2020-Analysis/</id>
+    <published>2020-07-22T01:10:16.000Z</published>
+    <updated>2020-07-31T03:53:34.653Z</updated>
+    
+    <summary type="html">
+    
+      WWDC 2020 was launched on June 22rd this year&lt;br&gt;Such Big Changes are they
+    
+    </summary>
+    
+    
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Data Structure</title>
     <link href="https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/"/>
     <id>https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/</id>
@@ -458,25 +479,6 @@
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>meVector</title>
-    <link href="https://augists.top/SELF/myVector/"/>
-    <id>https://augists.top/SELF/myVector/</id>
-    <published>2020-06-28T15:19:57.000Z</published>
-    <updated>2020-07-02T05:54:26.925Z</updated>
-    
-    <summary type="html">
-    
-      myVector in C++
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
   </entry>
   
