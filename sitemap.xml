@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://augists.top/google97d6f84c2e4b4822.html</loc>
-    
-    <lastmod>2020-08-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augists.top/mac/WWDC2020-Analysis/</loc>
     
     <lastmod>2020-08-01</lastmod>
@@ -564,7 +557,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/HEXO/</loc>
+    <loc>https://augists.top/tags/CODE/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -578,7 +571,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/CODE/</loc>
+    <loc>https://augists.top/tags/HEXO/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -613,21 +606,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/GIT/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/ENGLISH/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/EMACS/</loc>
+    <loc>https://augists.top/tags/C-C/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -641,21 +620,35 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/VIM/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/C-C/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/DEVICE/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/ENGLISH/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/GIT/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/EMACS/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/VIM/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -683,14 +676,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/THINKING/</loc>
+    <loc>https://augists.top/tags/REVIEW/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/REVIEW/</loc>
+    <loc>https://augists.top/tags/THINKING/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -704,14 +697,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/STL/</loc>
+    <loc>https://augists.top/tags/MFC/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/MFC/</loc>
+    <loc>https://augists.top/tags/STL/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
