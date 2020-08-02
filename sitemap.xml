@@ -641,6 +641,27 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/QT/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/C-C/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/SUMMERTERM/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/DEVICE/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
@@ -655,13 +676,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/REVIEW/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/THINKING/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
@@ -669,21 +683,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/QT/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/SUMMERTERM/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/C-C/</loc>
+    <loc>https://augists.top/tags/REVIEW/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -718,14 +718,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/CSS/</loc>
+    <loc>https://augists.top/tags/HTML/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/HTML/</loc>
+    <loc>https://augists.top/tags/CSS/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
