@@ -606,7 +606,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/REVIEW/</loc>
+    <loc>https://augists.top/tags/THINKING/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -641,7 +641,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/THINKING/</loc>
+    <loc>https://augists.top/tags/REVIEW/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -704,13 +704,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/MFC/</loc>
-    <lastmod>2020-08-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/WEB/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
@@ -726,6 +719,13 @@
   
   <url>
     <loc>https://augists.top/tags/HTML/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/MFC/</loc>
     <lastmod>2020-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
