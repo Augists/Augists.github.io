@@ -216,29 +216,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note warning"><p>起因是有人跟我说两个文件互相 <code>#include</code> 了，导致重定义</p>
-<p>所以才想起来去查查两个的区别</p>
-<p>第一次看到 <code>#pragma once</code> 是看 <strong>杜</strong> 传 <strong>GitHub</strong> 上的他们小组做的疫情扩散模拟程序</p>
-<p>莫大佬在 h 文件里写的这个宏</p>
-<p>当时查资料只看到了说</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br></pre></td></tr></table></figure>
-
-<p>与</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#ifndef _H_</span><br><span class="line">#define _H_</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<p>是相同作用，但是不知道两个区别，也不知道为什么要有一个新的宏来做这个事情</p>
-<p>前两天再查才看到</p>
-<p>放个<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Braveliu/archive/2012/12/29/2838726.html">原文链接</a>，没有标明原创或者转载，姑且当他是原创吧</p>
-<div class="note success"><h3 id="ifndef"><a href="#ifndef" class="headerlink" title="#ifndef"></a>#ifndef</h3><p><code>#ifndef</code> 的方式受 C/C++ 语言标准支持。它不仅可以保证同一个文件不会被包含多次，也能保证内容完全相同的两个文件（或者代码片段）不会被不小心同时包含。</p>
-<p>当然，缺点就是如果不同头文件中的宏名不小心“撞车”，可能就会导致你看到头文件明明存在，但编译器却硬说找不到声明的状况——这种情况有时非常让人郁闷。</p>
-<p>由于编译器每次都需要打开头文件才能判定是否有重复定义，因此在编译大型项目时，ifndef会使得编译时间相对较长，因此一些编译器逐渐开始支持 <code>#pragma once</code> 的方式。</p>
-<h3 id="pragma-once"><a href="#pragma-once" class="headerlink" title="#pragma once"></a>#pragma once</h3><p><code>#pragma once</code> 一般由编译器提供保证：同一个文件不会被包含多次。注意这里所说的“同一个文件”是指物理上的一个文件，而不是指内容相同的两个文件。</p>
-<p>你无法对一个头文件中的一段代码作 <code>#pragma once</code> 声明，而只能针对文件。</p>
-<p>其好处是，你不必再担心宏名冲突了，当然也就不会出现宏名冲突引发的奇怪问题。大型项目的编译速度也因此提高了一些。</p>
-<p>对应的缺点就是如果某个头文件有多份拷贝，本方法不能保证他们不被重复包含。当然，相比宏名冲突引发的“找不到声明”的问题，这种重复包含很容易被发现并修正。</p>
-<p>另外，这种方式不支持跨平台！</p>
-</div>
-</div>
+        <div class="note warning">
+            <p>起因是有人跟我说两个文件互相 <code>#include</code> 了，导致重定义</p><p>所以才想起来去查查两个的区别</p><p>第一次看到 <code>#pragma once</code> 是看 <strong>杜</strong> 传 <strong>GitHub</strong> 上的他们小组做的疫情扩散模拟程序</p><p>莫大佬在 h 文件里写的这个宏</p><p>当时查资料只看到了说</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br></pre></td></tr></table></figure><p>与</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#ifndef _H_</span><br><span class="line">#define _H_</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure><p>是相同作用，但是不知道两个区别，也不知道为什么要有一个新的宏来做这个事情</p><p>前两天再查才看到</p><p>放个<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Braveliu/archive/2012/12/29/2838726.html">原文链接</a>，没有标明原创或者转载，姑且当他是原创吧</p><div class="note success">            <h3 id="ifndef"><a href="#ifndef" class="headerlink" title="#ifndef"></a>#ifndef</h3><p><code>#ifndef</code> 的方式受 C/C++ 语言标准支持。它不仅可以保证同一个文件不会被包含多次，也能保证内容完全相同的两个文件（或者代码片段）不会被不小心同时包含。</p><p>当然，缺点就是如果不同头文件中的宏名不小心“撞车”，可能就会导致你看到头文件明明存在，但编译器却硬说找不到声明的状况——这种情况有时非常让人郁闷。</p><p>由于编译器每次都需要打开头文件才能判定是否有重复定义，因此在编译大型项目时，ifndef会使得编译时间相对较长，因此一些编译器逐渐开始支持 <code>#pragma once</code> 的方式。</p><h3 id="pragma-once"><a href="#pragma-once" class="headerlink" title="#pragma once"></a>#pragma once</h3><p><code>#pragma once</code> 一般由编译器提供保证：同一个文件不会被包含多次。注意这里所说的“同一个文件”是指物理上的一个文件，而不是指内容相同的两个文件。</p><p>你无法对一个头文件中的一段代码作 <code>#pragma once</code> 声明，而只能针对文件。</p><p>其好处是，你不必再担心宏名冲突了，当然也就不会出现宏名冲突引发的奇怪问题。大型项目的编译速度也因此提高了一些。</p><p>对应的缺点就是如果某个头文件有多份拷贝，本方法不能保证他们不被重复包含。当然，相比宏名冲突引发的“找不到声明”的问题，这种重复包含很容易被发现并修正。</p><p>另外，这种方式不支持跨平台！</p>          </div>
+          </div>
 
     </div>
 

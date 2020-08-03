@@ -215,96 +215,9 @@
       
         <iframe src="//player.bilibili.com/player.html?aid=840969268&bvid=BV1j54y1B7oD&cid=199459334&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-<div class="note warning"><blockquote>
-<p>Copyright@HuaHuaJiangLeetCode</p>
-</blockquote>
-<h1 id="EP4-进程管理"><a href="#EP4-进程管理" class="headerlink" title="EP4 进程管理"></a>EP4 进程管理</h1><h2 id="stress-amp-top"><a href="#stress-amp-top" class="headerlink" title="stress &amp; top"></a>stress &amp; top</h2><ul>
-<li><p>stress 给系统增加负载或者进行压力测试</p>
-<ul>
-<li>-t/–timeout N    <em># N秒后超时</em></li>
-<li>c/–cpu N            <em># 孵化N个worker，死循环运行sqrt() / CPU</em></li>
-<li>-i/–io N            <em># 孵化N个worker，死循环运行sync() / IO</em></li>
-<li>-m/–vm N            <em># 孵化N个worker，死循环运行malloc()/free() / Memory</em></li>
-<li>-d/–hdd N        <em># 孵化N个worker，死循环运行write()/unlink() / Disk</em></li>
-<li>stress –cpu 8  –io 4 –vm 2 –vm-bytes 128M –timeout 10s</li>
-</ul>
-</li>
-<li><p>top 显示或更新排序过的进程信息</p>
-<ul>
-<li>默认按照CPU占用率排序</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>stress均需自行下载</p>
-</blockquote>
-<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><ul>
-<li><p>ps (<strong>P</strong>rocess <strong>S</strong>tatus) 显示进程状态</p>
-<ul>
-<li>默认只显示<strong>当前用户</strong>有<strong>控制终端</strong>的进程</li>
-<li>$ ps aux    <em># 显示所有进程，包括其他用户的</em></li>
-<li>$ ps aux | grep Chrome | wc -l    <em># 看Chrome有多少个进程</em></li>
-<li>$ ps -l    <em># 列出UID PPID（父进程ID）</em></li>
-</ul>
-</li>
-</ul>
-<h2 id="kill-killall"><a href="#kill-killall" class="headerlink" title="kill * killall"></a>kill * killall</h2><ul>
-<li><p>kill 终止或者给进程发信号</p>
-<ul>
-<li>$ kill -signal_number/-signal_name PID</li>
-<li>$ kill PID    <em># 默认发送15/TERM (software termination signal)</em></li>
-<li>$ kill -9/-KILL PID    <em># 强力杀进程</em></li>
-</ul>
-</li>
-<li><p>killall 按照名字终止进程</p>
-<ul>
-<li>和kill一样，但是用名字作为参数</li>
-<li>如果是大众命令可能会误伤友军 $ killall bash / killall python</li>
-<li>$ killall -9 stress</li>
-</ul>
-</li>
-</ul>
-<h2 id="Ctrl-C-vs-Ctrl-Z"><a href="#Ctrl-C-vs-Ctrl-Z" class="headerlink" title="Ctrl+C vs Ctrl+Z"></a>Ctrl+C vs Ctrl+Z</h2><ul>
-<li><p>都能让程序“停止”</p>
-</li>
-<li><p>Ctrl+C 向进程发送 SIGINT 中断信号，通常进程会终</p>
-</li>
-<li><p>Ctrl+Z 向进程发送 SIGTSTP 停止信号，把前台进程放入后台并挂起</p>
-<ul>
-<li>进程还存在</li>
-<li>打开的端口还会被占用</li>
-</ul>
-</li>
-</ul>
-<h2 id="amp-jobs-fg-bg"><a href="#amp-jobs-fg-bg" class="headerlink" title="&amp; / jobs / fg / bg"></a>&amp; / jobs / fg / bg</h2><ul>
-<li><p>&amp; 在后台运行进程</p>
-<ul>
-<li>$ python3 -m http.server &amp;    <em># 在后台起一个Web Server</em></li>
-<li>前台可以继续运行其他命令</li>
-<li>当前终端/SSH关闭后依旧会被终止 (solution: screen / tmux / Chrome RDP)</li>
-</ul>
-</li>
-<li><p>jobs 显示从<strong>当前终端</strong>启动的命令</p>
-<ul>
-<li>$ jobs</li>
-<li>$ jobs -l        <em># 显示PID</em></li>
-</ul>
-</li>
-<li><p>fg (<strong>F</strong>ore<strong>g</strong>round) 把后台进程放到前台</p>
-<ul>
-<li>$ fg %1        <em># 把1号job放到前台并开始运行</em></li>
-</ul>
-</li>
-<li><p>bg (<strong>B</strong>ack<strong>g</strong>round) 继续被挂起的后台进程</p>
-<ul>
-<li>$ stress -c 1</li>
-<li>$ Ctrl+Z        <em># 挂起当前进程并放入后台</em></li>
-<li>$ bg            <em># 重启最后一个job</em></li>
-</ul>
-</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1j54y1B7oD/?spm_id_from=333.788.videocard.1">花花酱 玩转Linux命令行 - 进程管理 - EP4</a></p>
-</div>
+<div class="note warning">
+            <blockquote><p>Copyright@HuaHuaJiangLeetCode</p></blockquote><h1 id="EP4-进程管理"><a href="#EP4-进程管理" class="headerlink" title="EP4 进程管理"></a>EP4 进程管理</h1><h2 id="stress-amp-top"><a href="#stress-amp-top" class="headerlink" title="stress &amp; top"></a>stress &amp; top</h2><ul><li><p>stress 给系统增加负载或者进行压力测试</p><ul><li>-t/–timeout N    <em># N秒后超时</em></li><li>c/–cpu N            <em># 孵化N个worker，死循环运行sqrt() / CPU</em></li><li>-i/–io N            <em># 孵化N个worker，死循环运行sync() / IO</em></li><li>-m/–vm N            <em># 孵化N个worker，死循环运行malloc()/free() / Memory</em></li><li>-d/–hdd N        <em># 孵化N个worker，死循环运行write()/unlink() / Disk</em></li><li>stress –cpu 8  –io 4 –vm 2 –vm-bytes 128M –timeout 10s</li></ul></li><li><p>top 显示或更新排序过的进程信息</p><ul><li>默认按照CPU占用率排序</li></ul></li></ul><blockquote><p>stress均需自行下载</p></blockquote><h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><ul><li><p>ps (<strong>P</strong>rocess <strong>S</strong>tatus) 显示进程状态</p><ul><li>默认只显示<strong>当前用户</strong>有<strong>控制终端</strong>的进程</li><li>$ ps aux    <em># 显示所有进程，包括其他用户的</em></li><li>$ ps aux | grep Chrome | wc -l    <em># 看Chrome有多少个进程</em></li><li>$ ps -l    <em># 列出UID PPID（父进程ID）</em></li></ul></li></ul><h2 id="kill-killall"><a href="#kill-killall" class="headerlink" title="kill * killall"></a>kill * killall</h2><ul><li><p>kill 终止或者给进程发信号</p><ul><li>$ kill -signal_number/-signal_name PID</li><li>$ kill PID    <em># 默认发送15/TERM (software termination signal)</em></li><li>$ kill -9/-KILL PID    <em># 强力杀进程</em></li></ul></li><li><p>killall 按照名字终止进程</p><ul><li>和kill一样，但是用名字作为参数</li><li>如果是大众命令可能会误伤友军 $ killall bash / killall python</li><li>$ killall -9 stress</li></ul></li></ul><h2 id="Ctrl-C-vs-Ctrl-Z"><a href="#Ctrl-C-vs-Ctrl-Z" class="headerlink" title="Ctrl+C vs Ctrl+Z"></a>Ctrl+C vs Ctrl+Z</h2><ul><li><p>都能让程序“停止”</p></li><li><p>Ctrl+C 向进程发送 SIGINT 中断信号，通常进程会终</p></li><li><p>Ctrl+Z 向进程发送 SIGTSTP 停止信号，把前台进程放入后台并挂起</p><ul><li>进程还存在</li><li>打开的端口还会被占用</li></ul></li></ul><h2 id="amp-jobs-fg-bg"><a href="#amp-jobs-fg-bg" class="headerlink" title="&amp; / jobs / fg / bg"></a>&amp; / jobs / fg / bg</h2><ul><li><p>&amp; 在后台运行进程</p><ul><li>$ python3 -m http.server &amp;    <em># 在后台起一个Web Server</em></li><li>前台可以继续运行其他命令</li><li>当前终端/SSH关闭后依旧会被终止 (solution: screen / tmux / Chrome RDP)</li></ul></li><li><p>jobs 显示从<strong>当前终端</strong>启动的命令</p><ul><li>$ jobs</li><li>$ jobs -l        <em># 显示PID</em></li></ul></li><li><p>fg (<strong>F</strong>ore<strong>g</strong>round) 把后台进程放到前台</p><ul><li>$ fg %1        <em># 把1号job放到前台并开始运行</em></li></ul></li><li><p>bg (<strong>B</strong>ack<strong>g</strong>round) 继续被挂起的后台进程</p><ul><li>$ stress -c 1</li><li>$ Ctrl+Z        <em># 挂起当前进程并放入后台</em></li><li>$ bg            <em># 重启最后一个job</em></li></ul></li></ul><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1j54y1B7oD/?spm_id_from=333.788.videocard.1">花花酱 玩转Linux命令行 - 进程管理 - EP4</a></p>
+          </div>
 
     </div>
 

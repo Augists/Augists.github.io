@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
-  document.addEventListener('pjax:success', onPopupClose);
+  window.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', event => {
     if (event.key === 'Escape') {
       onPopupClose();

@@ -18,7 +18,7 @@ NexT.motion.integrator = {
   },
   next: function() {
     this.cursor++;
-    const fn = this.queue[this.cursor];
+    var fn = this.queue[this.cursor];
     typeof fn === 'function' && fn(NexT.motion.integrator);
   },
   bootstrap: function() {
@@ -28,13 +28,13 @@ NexT.motion.integrator = {
 
 NexT.motion.middleWares = {
   logo: function(integrator) {
-    const sequence = [];
-    const brand = document.querySelector('.brand');
-    const image = document.querySelector('.custom-logo-image');
-    const title = document.querySelector('.site-title');
-    const subtitle = document.querySelector('.site-subtitle');
-    const logoLineTop = document.querySelector('.logo-line-before i');
-    const logoLineBottom = document.querySelector('.logo-line-after i');
+    var sequence = [];
+    var brand = document.querySelector('.brand');
+    var image = document.querySelector('.custom-logo-image');
+    var title = document.querySelector('.site-title');
+    var subtitle = document.querySelector('.site-subtitle');
+    var logoLineTop = document.querySelector('.logo-line-before i');
+    var logoLineBottom = document.querySelector('.logo-line-after i');
 
     brand && sequence.push({
       e: brand,
@@ -106,13 +106,13 @@ NexT.motion.middleWares = {
       }
     });
 
-    if (CONFIG.motion.async || !document.querySelectorAll('.menu-item').length) {
+    if (CONFIG.motion.async) {
       integrator.next();
     }
   },
 
   subMenu: function(integrator) {
-    const subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
+    var subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
     if (subMenuItem.length > 0) {
       subMenuItem.forEach(element => {
         element.style.opacity = 1;
@@ -122,17 +122,17 @@ NexT.motion.middleWares = {
   },
 
   postList: function(integrator) {
-    const postBlock = document.querySelectorAll('.post-block, .pagination, .comments');
-    const postBlockTransition = CONFIG.motion.transition.post_block;
-    const postHeader = document.querySelectorAll('.post-header');
-    const postHeaderTransition = CONFIG.motion.transition.post_header;
-    const postBody = document.querySelectorAll('.post-body');
-    const postBodyTransition = CONFIG.motion.transition.post_body;
-    const collHeader = document.querySelectorAll('.collection-header');
-    const collHeaderTransition = CONFIG.motion.transition.coll_header;
+    var postBlock = document.querySelectorAll('.post-block, .pagination, .comments');
+    var postBlockTransition = CONFIG.motion.transition.post_block;
+    var postHeader = document.querySelectorAll('.post-header');
+    var postHeaderTransition = CONFIG.motion.transition.post_header;
+    var postBody = document.querySelectorAll('.post-body');
+    var postBodyTransition = CONFIG.motion.transition.post_body;
+    var collHeader = document.querySelectorAll('.collection-header');
+    var collHeaderTransition = CONFIG.motion.transition.coll_header;
 
     if (postBlock.length > 0) {
-      const postMotionOptions = window.postMotionOptions || {
+      var postMotionOptions = window.postMotionOptions || {
         stagger : 100,
         drag    : true,
         complete: function() {
@@ -159,8 +159,8 @@ NexT.motion.middleWares = {
   },
 
   sidebar: function(integrator) {
-    const sidebarAffix = document.querySelector('.sidebar-inner');
-    const sidebarAffixTransition = CONFIG.motion.transition.sidebar;
+    var sidebarAffix = document.querySelector('.sidebar-inner');
+    var sidebarAffixTransition = CONFIG.motion.transition.sidebar;
     // Only for Pisces | Gemini.
     if (sidebarAffixTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
       Velocity(sidebarAffix, 'transition.' + sidebarAffixTransition, {

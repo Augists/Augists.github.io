@@ -214,21 +214,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note warning"><h2 id="函数求导"><a href="#函数求导" class="headerlink" title="函数求导"></a>函数求导</h2><h3 id="求f-x-关于x的导数"><a href="#求f-x-关于x的导数" class="headerlink" title="求f(x)关于x的导数"></a>求f(x)关于x的导数</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms x</span><br><span class="line">diff(f(x), x)</span><br></pre></td></tr></table></figure>
-
-<h3 id="求f-x-关于x的n次导数"><a href="#求f-x-关于x的n次导数" class="headerlink" title="求f(x)关于x的n次导数"></a>求f(x)关于x的n次导数</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff(f(x), x, n)</span><br></pre></td></tr></table></figure>
-
-<h3 id="参数方程的求导"><a href="#参数方程的求导" class="headerlink" title="参数方程的求导"></a>参数方程的求导</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ys = diff(y, t) / diff(x, t)</span><br></pre></td></tr></table></figure>
-
-<h3 id="隐函数的求导"><a href="#隐函数的求导" class="headerlink" title="隐函数的求导"></a>隐函数的求导</h3><p>F(x, y) = 0</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ys = - diff(F, x) / diff(F, y)</span><br></pre></td></tr></table></figure>
-
-<h2 id="泰勒展式"><a href="#泰勒展式" class="headerlink" title="泰勒展式"></a>泰勒展式</h2><p>x在x0处的n阶泰勒展开式</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms x</span><br><span class="line">taylor(f(x), x, x0, <span class="string">&#x27;Order&#x27;</span>, n+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<p>默认为5阶</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">taylor(f)        # 在x = 0处的5阶泰勒展开</span><br><span class="line">taylor(f, x, a)    # 在x = a处的5阶泰勒展开</span><br></pre></td></tr></table></figure>
-</div>
+        <div class="note warning">
+            <h2 id="函数求导"><a href="#函数求导" class="headerlink" title="函数求导"></a>函数求导</h2><h3 id="求f-x-关于x的导数"><a href="#求f-x-关于x的导数" class="headerlink" title="求f(x)关于x的导数"></a>求f(x)关于x的导数</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms x</span><br><span class="line">diff(f(x), x)</span><br></pre></td></tr></table></figure><h3 id="求f-x-关于x的n次导数"><a href="#求f-x-关于x的n次导数" class="headerlink" title="求f(x)关于x的n次导数"></a>求f(x)关于x的n次导数</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff(f(x), x, n)</span><br></pre></td></tr></table></figure><h3 id="参数方程的求导"><a href="#参数方程的求导" class="headerlink" title="参数方程的求导"></a>参数方程的求导</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ys = diff(y, t) / diff(x, t)</span><br></pre></td></tr></table></figure><h3 id="隐函数的求导"><a href="#隐函数的求导" class="headerlink" title="隐函数的求导"></a>隐函数的求导</h3><p>F(x, y) = 0</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ys = - diff(F, x) / diff(F, y)</span><br></pre></td></tr></table></figure><h2 id="泰勒展式"><a href="#泰勒展式" class="headerlink" title="泰勒展式"></a>泰勒展式</h2><p>x在x0处的n阶泰勒展开式</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms x</span><br><span class="line">taylor(f(x), x, x0, <span class="string">&#x27;Order&#x27;</span>, n+<span class="number">1</span>)</span><br></pre></td></tr></table></figure><p>默认为5阶</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">taylor(f)        # 在x = 0处的5阶泰勒展开</span><br><span class="line">taylor(f, x, a)    # 在x = a处的5阶泰勒展开</span><br></pre></td></tr></table></figure>
+          </div>
 
     </div>
 

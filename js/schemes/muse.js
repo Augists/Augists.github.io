@@ -2,12 +2,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const isRight = CONFIG.sidebar.position === 'right';
-  const SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
-  const SIDEBAR_DISPLAY_DURATION = 200;
-  const mousePos = {};
+  var isRight = CONFIG.sidebar.position === 'right';
+  var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
+  var SIDEBAR_DISPLAY_DURATION = 200;
+  var mousePos = {};
 
-  const sidebarToggleLines = {
+  var sidebarToggleLines = {
     lines: document.querySelector('.sidebar-toggle'),
     init : function() {
       this.lines.classList.remove('toggle-arrow', 'toggle-close');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const sidebarToggleMotion = {
+  var sidebarToggleMotion = {
     sidebarEl       : document.querySelector('.sidebar'),
     isSidebarVisible: false,
     init            : function() {
@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
       mousePos.Y = event.pageY;
     },
     mouseupHandler: function(event) {
-      const deltaX = event.pageX - mousePos.X;
-      const deltaY = event.pageY - mousePos.Y;
-      const clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
+      var deltaX = event.pageX - mousePos.X;
+      var deltaY = event.pageY - mousePos.Y;
+      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
       if (this.isSidebarVisible && (clickingBlankPart || event.target.matches('img.medium-zoom-image, .fancybox img'))) {
         this.hideSidebar();
       }
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    const footer = document.querySelector('.footer');
-    const containerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.main').offsetHeight + footer.offsetHeight;
+    var footer = document.querySelector('.footer');
+    var containerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.main').offsetHeight + footer.offsetHeight;
     footer.classList.toggle('footer-fixed', containerHeight <= window.innerHeight);
   }
 

@@ -214,27 +214,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note warning"><h2 id="多元函数的微分"><a href="#多元函数的微分" class="headerlink" title="多元函数的微分"></a>多元函数的微分</h2><h3 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h3><ol>
-<li>求函数f(x, y)关于x的导数</li>
-</ol>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms x y</span><br><span class="line">diff(f(x, y), x)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>求函数f(x, y)关于x的n阶导数</li>
-</ol>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff(f(x, y), x, n)</span><br></pre></td></tr></table></figure>
-
-
-<ol start="3">
-<li>求函数f(x, y)关于x和y的2阶混合偏导数</li>
-</ol>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff(f(x, y), x, y)</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>求函数f(x, y)的全微分</li>
-</ol>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms dx dy</span><br><span class="line">dz = diff(f(x, y), x) * dx + diff(f(x, y), y) * dy</span><br></pre></td></tr></table></figure>
-</div>
+        <div class="note warning">
+            <h2 id="多元函数的微分"><a href="#多元函数的微分" class="headerlink" title="多元函数的微分"></a>多元函数的微分</h2><h3 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h3><ol><li>求函数f(x, y)关于x的导数</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms x y</span><br><span class="line">diff(f(x, y), x)</span><br></pre></td></tr></table></figure><ol start="2"><li>求函数f(x, y)关于x的n阶导数</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff(f(x, y), x, n)</span><br></pre></td></tr></table></figure><ol start="3"><li>求函数f(x, y)关于x和y的2阶混合偏导数</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff(f(x, y), x, y)</span><br></pre></td></tr></table></figure><ol start="4"><li>求函数f(x, y)的全微分</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms dx dy</span><br><span class="line">dz = diff(f(x, y), x) * dx + diff(f(x, y), y) * dy</span><br></pre></td></tr></table></figure>
+          </div>
 
     </div>
 

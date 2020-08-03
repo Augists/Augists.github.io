@@ -13,9 +13,9 @@ NexT.utils = {
    */
   wrapImageWithFancyBox: function() {
     document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(element => {
-      const $image = $(element);
-      const imageLink = $image.attr('data-src') || $image.attr('src');
-      const $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
+      var $image = $(element);
+      var imageLink = $image.attr('data-src') || $image.attr('src');
+      var $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
       if ($image.is('.post-gallery img')) {
         $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
       } else if ($image.is('.group-picture img')) {
@@ -24,7 +24,7 @@ NexT.utils = {
         $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
       }
 
-      const imageTitle = $image.attr('title') || $image.attr('alt');
+      var imageTitle = $image.attr('title') || $image.attr('alt');
       if (imageTitle) {
         $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
         // Make sure img title tag will show correctly in fancybox
@@ -64,18 +64,15 @@ NexT.utils = {
    */
   registerCopyCode: function() {
     document.querySelectorAll('figure.highlight').forEach(element => {
-      element.querySelectorAll('.code .line span').forEach(span => {
-        span.classList.forEach(name => {
-          span.classList.remove(name);
-          span.classList.add(`hljs-${name}`);
-        });
-      });
-      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>');
-      const button = element.querySelector('.copy-btn');
+      const box = document.createElement('div');
+      element.wrap(box);
+      box.classList.add('highlight-container');
+      box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>');
+      var button = element.parentNode.querySelector('.copy-btn');
       button.addEventListener('click', event => {
-        const target = event.currentTarget;
-        const code = [...target.parentNode.querySelectorAll('.code .line')].map(line => line.innerText).join('\n');
-        const ta = document.createElement('textarea');
+        var target = event.currentTarget;
+        var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => line.innerText).join('\n');
+        var ta = document.createElement('textarea');
         ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
@@ -87,9 +84,9 @@ NexT.utils = {
         ta.select();
         ta.setSelectionRange(0, code.length);
         ta.readOnly = false;
-        const result = document.execCommand('copy');
+        var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          target.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
+          target.querySelector('i').className = result ? 'fa fa-check fa-fw' : 'fa fa-times fa-fw';
         }
         ta.blur(); // For iOS
         target.blur();
@@ -138,16 +135,16 @@ NexT.utils = {
   },
 
   registerScrollPercent: function() {
-    const THRESHOLD = 50;
-    const backToTop = document.querySelector('.back-to-top');
-    const readingProgressBar = document.querySelector('.reading-progress-bar');
+    var THRESHOLD = 50;
+    var backToTop = document.querySelector('.back-to-top');
+    var readingProgressBar = document.querySelector('.reading-progress-bar');
     // For init back to top in sidebar if page was scrolled after page refresh.
     window.addEventListener('scroll', () => {
       if (backToTop || readingProgressBar) {
-        const docHeight = document.querySelector('.container').offsetHeight;
-        const winHeight = window.innerHeight;
-        const contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
-        const scrollPercent = Math.min(100 * window.scrollY / contentVisibilityHeight, 100);
+        var docHeight = document.querySelector('.container').offsetHeight;
+        var winHeight = window.innerHeight;
+        var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
+        var scrollPercent = Math.min(100 * window.scrollY / contentVisibilityHeight, 100);
         if (backToTop) {
           backToTop.classList.toggle('back-to-top-on', window.scrollY > THRESHOLD);
           backToTop.querySelector('span').innerText = Math.round(scrollPercent) + '%';
@@ -176,7 +173,7 @@ NexT.utils = {
     document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(element => {
       element.addEventListener('click', event => {
         event.preventDefault();
-        const target = event.currentTarget;
+        var target = event.currentTarget;
         // Prevent selected tab to select again.
         if (!target.classList.contains('active')) {
           // Add & Remove active class on `nav-tabs` & `tab-content`.
@@ -184,7 +181,7 @@ NexT.utils = {
             element.classList.remove('active');
           });
           target.classList.add('active');
-          const tActive = document.getElementById(target.querySelector('a').getAttribute('href').replace('#', ''));
+          var tActive = document.getElementById(target.querySelector('a').getAttribute('href').replace('#', ''));
           [...tActive.parentNode.children].forEach(element => {
             element.classList.remove('active');
           });
@@ -204,8 +201,8 @@ NexT.utils = {
     // Get responsive height passed from iframe.
     window.addEventListener('message', ({ data }) => {
       if ((typeof data === 'string') && data.includes('ciu_embed')) {
-        const featureID = data.split(':')[1];
-        const height = data.split(':')[2];
+        var featureID = data.split(':')[1];
+        var height = data.split(':')[2];
         document.querySelector(`iframe[data-feature=${featureID}]`).style.height = parseInt(height, 10) + 5 + 'px';
       }
     }, false);
@@ -213,35 +210,36 @@ NexT.utils = {
 
   registerActiveMenuItem: function() {
     document.querySelectorAll('.menu-item').forEach(element => {
-      const target = element.querySelector('a[href]');
+      var target = element.querySelector('a[href]');
       if (!target) return;
-      const isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
-      const isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
+      var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
+      var isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
       element.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
   },
 
   registerLangSelect: function() {
-    let sel = document.querySelector('.lang-select');
-    if (!sel) return;
-    sel.value = CONFIG.page.lang;
-    sel.addEventListener('change', () => {
-      let target = sel.options[sel.selectedIndex];
-      document.querySelector('.lang-select-label span').innerText = target.text;
-      let url = target.dataset.href;
-      window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
+    let selects = document.querySelectorAll('.lang-select');
+    selects.forEach(sel => {
+      sel.value = CONFIG.page.lang;
+      sel.addEventListener('change', () => {
+        let target = sel.options[sel.selectedIndex];
+        document.querySelectorAll('.lang-select-label span').forEach(span => span.innerText = target.text);
+        let url = target.dataset.href;
+        window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
+      });
     });
   },
 
   registerSidebarTOC: function() {
     const navItems = document.querySelectorAll('.post-toc li');
     const sections = [...navItems].map(element => {
-      const link = element.querySelector('a.nav-link');
+      var link = element.querySelector('a.nav-link');
+      var target = document.getElementById(decodeURI(link.getAttribute('href')).replace('#', ''));
       // TOC item animation navigate.
       link.addEventListener('click', event => {
         event.preventDefault();
-        const target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
-        const offset = target.getBoundingClientRect().top + window.scrollY;
+        var offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
           targets  : document.scrollingElement,
           duration : 500,
@@ -249,10 +247,10 @@ NexT.utils = {
           scrollTop: offset + 10
         });
       });
-      return document.getElementById(link.getAttribute('href').replace('#', ''));
+      return target;
     });
 
-    const tocElement = document.querySelector('.post-toc-wrap');
+    var tocElement = document.querySelector('.post-toc-wrap');
     function activateNavByIndex(target) {
       if (target.classList.contains('active-current')) return;
 
@@ -260,7 +258,7 @@ NexT.utils = {
         element.classList.remove('active', 'active-current');
       });
       target.classList.add('active', 'active-current');
-      let parent = target.parentNode;
+      var parent = target.parentNode;
       while (!parent.matches('.post-toc')) {
         if (parent.matches('li')) parent.classList.add('active');
         parent = parent.parentNode;
@@ -344,22 +342,22 @@ NexT.utils = {
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
   initSidebarDimension: function() {
-    const sidebarNav = document.querySelector('.sidebar-nav');
-    const sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.offsetHeight : 0;
-    const sidebarOffset = CONFIG.sidebar.offset || 12;
-    const sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
-    let sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
+    var sidebarNav = document.querySelector('.sidebar-nav');
+    var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.offsetHeight : 0;
+    var sidebarOffset = CONFIG.sidebar.offset || 12;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
+    var sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
     // Margin of sidebar b2t: -4px -10px -18px, brings a different of 22px.
     if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') sidebarSchemePadding += (sidebarOffset * 2) - 22;
     // Initialize Sidebar & TOC Height.
-    const sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
+    var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
     document.querySelector('.site-overview-wrap').style.maxHeight = sidebarWrapperHeight;
     document.querySelector('.post-toc-wrap').style.maxHeight = sidebarWrapperHeight;
   },
 
   updateSidebarPosition: function() {
-    const sidebarNav = document.querySelector('.sidebar-nav');
-    const hasTOC = document.querySelector('.post-toc');
+    var sidebarNav = document.querySelector('.sidebar-nav');
+    var hasTOC = document.querySelector('.post-toc');
     if (hasTOC) {
       sidebarNav.style.display = '';
       sidebarNav.classList.add('motion-element');
@@ -372,7 +370,7 @@ NexT.utils = {
     NexT.utils.initSidebarDimension();
     if (!this.isDesktop() || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
-    let display = CONFIG.page.sidebar;
+    var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter.
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
@@ -386,7 +384,7 @@ NexT.utils = {
     if (condition) {
       callback();
     } else {
-      let script = document.createElement('script');
+      var script = document.createElement('script');
       script.onload = script.onreadystatechange = function(_, isAbort) {
         if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
           script.onload = script.onreadystatechange = null;

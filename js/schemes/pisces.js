@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-const Affix = {
+var Affix = {
   init: function(element, options) {
     this.element = element;
     this.offset = options || 0;
