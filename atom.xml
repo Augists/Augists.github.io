@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-07-31T03:29:00.535Z</updated>
+  <updated>2020-08-05T02:40:56.011Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>For Auto</title>
+    <link href="https://augists.top/NOTES/SUMMERTERM/STL/for-auto/"/>
+    <id>https://augists.top/NOTES/SUMMERTERM/STL/for-auto/</id>
+    <published>2020-08-05T02:07:12.000Z</published>
+    <updated>2020-08-05T02:40:56.011Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>C++ 的这个特性我是在看 STL 的时候了解到的，整个小学期也一直在用，但是当时有地方没弄明白<br>现在重新去单独看了这个</p><hr><h2 id="普通形式"><a href="#普通形式" class="headerlink" title="普通形式"></a>普通形式</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;augists&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : s)</span><br><span class="line">    i = <span class="built_in">toupper</span>(i);</span><br></pre></td></tr></table></figure>在语句 `for (auto i : s)` 中，i 会作为 s 的迭代器的每个取值的副本进行遍历也就是说，这个循环相当于<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> p = s.begin(); p != s.end(); ++p)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">auto</span> i = *p;</span><br><span class="line">    i = <span class="built_in">toupper</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这也能看出来，i 每次是作为一个新的变量只拿到了值，而非指针或引用，不能修改原值</p><hr><h2 id="引用形式"><a href="#引用形式" class="headerlink" title="引用形式"></a>引用形式</h2><p>想要能修改原值，改成引用就好了呀</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;augists&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : s)</span><br><span class="line">    i = <span class="built_in">toupper</span>(i);</span><br></pre></td></tr></table></figure><hr>          </div>]]></content>
+    
+    <summary type="html">
+    
+      for (auto i : v) in C++
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="STL" scheme="https://augists.top/tags/STL/"/>
+    
+  </entry>
   
   <entry>
     <title>Typing Practice</title>
@@ -496,29 +523,6 @@
       <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Review the First Half of the Year</title>
-    <link href="https://augists.top/SELF/REVIEW/Review-the-First-Half-of-the-Year/"/>
-    <id>https://augists.top/SELF/REVIEW/Review-the-First-Half-of-the-Year/</id>
-    <published>2020-06-29T05:14:43.000Z</published>
-    <updated>2020-06-30T08:27:09.799Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>2020年上半年，多灾多难的半年</p><p>很多人说，这半年，很多学生毁了、堕落了</p><p>所以也应该回顾一下我的上半年了</p><h2 id="寒假"><a href="#寒假" class="headerlink" title="寒假"></a>寒假</h2><p>这半年要从寒假开始回看</p><p>除了一开始的社会实践没有没整理进去之外，其他都做成了一张导图</p><ul><li>企业HR、员工访谈和创业访谈社会实践</li><li>南京企业行社会实践</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg93rq6s1lj31hb0u0al0.jpg" alt="zyc寒假"></p><p>还给别人也整理的一张</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg93yjcjmjj31ks0tyn3i.jpg" alt="zyj寒假"></p><p>在寒假即将结束的时候，整理这一张自己寒假学到的东西，对自己帮助非常大</p><h2 id="春季学期"><a href="#春季学期" class="headerlink" title="春季学期"></a>春季学期</h2><p>由于今年的特殊情况，所有教学工作安排到了线上，教学任务也变得轻松而且没有限制</p><p>所以我也有了将近一个学期的时间自由安排，学习自己想学的东西</p><p>于是我学了些<strong>旁门左道</strong></p><ul><li><strong>修改打字手势</strong></li><li>mac软件筛选</li><li><strong>vim的基础操作</strong></li><li><strong>vim的非常多插件</strong></li><li><strong>git的基础使用</strong></li><li><strong>github和gitee</strong></li><li>emacs最基础操作</li><li><strong>浏览了很多官网、文档</strong></li><li>有了人生第一个云服务器，第一个Linux</li><li><strong>第一次挂了VPN，去看看广阔的世界</strong></li><li><strong>报名了入党积极分子，衷心热爱自己的国家</strong></li><li><strong>做了自己的博客网站，买了自己的域名</strong></li><li><strong>熟悉了一些Linux命令和命令行工具</strong></li><li><strong>c++ language</strong></li></ul><p>除了这些之外，肯定还有暂时没想到的</p><p>但是我已经很开心了</p><p>从去年10月份第一次开始敲代码开始，到现在，9个月</p><p>很开心自己能找到一个自己热爱的东西并在这么短的时间内学到了这么多</p><p>也谢谢你能看到这里   ❤️   听一个还很无知的小孩说这些话</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      It is June 29th 2020&lt;br&gt;Time to Review the First Half of the Year
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
     
   </entry>
   
