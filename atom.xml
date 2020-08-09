@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-08-08T15:50:56.914Z</updated>
+  <updated>2020-08-09T14:33:07.705Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Auto Close WLAN Cellar on IOS</title>
+    <link href="https://augists.top/APPLE/Auto-Close-WLAN-Cellar-on-IOS/"/>
+    <id>https://augists.top/APPLE/Auto-Close-WLAN-Cellar-on-IOS/</id>
+    <published>2020-08-09T14:18:21.000Z</published>
+    <updated>2020-08-09T14:33:07.705Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>今天在搞小火箭 🚀 的时候遇到的问题<br>在设置中打开小火箭的 <code>WLAN &amp; Cellar</code> 后，打开小火箭 🚀 的 app，会自动把设置中应用的网络许可关闭<br>来回开了好几次之后，我确定不是我的问题，是 ios 的 bug <strong>之一</strong><br>所以我去恢复设置啦<br>路径：<code>Settings - General - Reset</code><br>如果你也遇到了这个问题，可以试试先只 <code>reset network settings</code><br>如果还是不行，就和我一样 <code>reset all settings</code> 就可以啦（我啥也没管，直接选了 all<br>all 会删除在 Settings 里的所有设置，包括保存过的 wifi 密码以及 face id<br>应用的一些设置也在 Settings 里，所以也会删除，但是不删除应用和应用数据，只会删除比如 <code>WLAN &amp; Cellar</code> 这种设置中可以修改的内容<br><strong>注意⚠️ 如果你也有在本机以游客登陆保存在 Game Center 中的游戏 app……最好别 <code>reset all settings</code>，我的皇室战争就是这么挂掉的，半个月冲了 4000 杯的数据被覆盖掉了 😭</strong></p><hr><p>说一点题外话，这次重置也让我看到某些 app 在我重置完还没点开的时候就开始申请 <code>WLAN &amp; Cellar</code> 了，尽管我已经很久很久没点开过他们，他们还是在后台偷偷运行着<br>我们可能真的需要一点 <strong>照明弹</strong> 💣</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Some Apps will automatically turn off WLAN &amp; Cellar in setting&lt;br&gt;How to fix it
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac Clear Chrome Cache</title>
@@ -35,9 +58,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
@@ -95,10 +118,10 @@
   
   <entry>
     <title>WWDC 2020 Analysis</title>
-    <link href="https://augists.top/mac/WWDC2020-Analysis/"/>
-    <id>https://augists.top/mac/WWDC2020-Analysis/</id>
+    <link href="https://augists.top/APPLE/WWDC2020-Analysis/"/>
+    <id>https://augists.top/APPLE/WWDC2020-Analysis/</id>
     <published>2020-07-22T01:10:16.000Z</published>
-    <updated>2020-08-01T05:29:10.724Z</updated>
+    <updated>2020-08-09T14:18:51.493Z</updated>
     
     <content type="html"><![CDATA[<div class="note warning">            <p><img src="https://i.loli.net/2020/07/29/bjgQ61LBpoEWP2I.png" alt=""><br>苹果2020开发者大会，在整整一个月之前举办<br>一个月后，我也没看完在 <em>Developer</em> 里的最主要的几个视频<br>这是我第一年认真的去看 WWDC，也是第一次看 WWDC 除了第一场以外的演讲，更是第一次以 programmer 的学生身份去看待这一场发布会</p><p>先说总的，这一次的 WWDC 带来的改变，确实非常大，布局已久，影响深远<br>其中，最重要的一点就在 <strong>由 x86 转向 ARM</strong> 了</p><p>还是分开来说</p><h2 id="ios"><a href="#ios" class="headerlink" title="ios"></a>ios</h2><p><img src="https://i.loli.net/2020/07/29/ufx3PRJBbE7mj1L.jpg" alt=""><br>今年的 ios 改变在我看来，相对来说并不算很大，所以我放在开始说</p><p>从 iPad OS 独立开始，我认为，ios 的地位就开始下降的厉害了<br>尽管手机仍然是当前娱乐等多元的中心，所有人都和它形影不离，但是它更像是一种辅助，为 iPad 的辅助，弥补当前 iPad 的短板<br>手机的大屏化导致的是验证了苹果十年布局的正确，iPad 才是未来这一类电子产品的方向<br>目前 iPad 能做的，ios 只是一个替代品，没有更大的屏幕，没有更方便的书写和创作，没有更好的输入体验，ios 只是一个更小巧、更便携的替代品，唯一多的功能：打电话，也在网络化的今天优势荡然无存</p><p>总结便是，ios 与 iPad OS 在大部分功能上重叠，并且在使用体验上，目前技术上天然受限，ios 的使用体验永远也不及 iPad OS</p><p>说回今年 ios 的变化，亮点让我印象深刻的是桌面控件带来的负一屏和界面的变化、最后一屏的加入</p><p>安卓很早就已经引入了桌面控件，一直以来它的实现也不过如此，而 ios 的特殊的两点我认为在</p><ul><li>应用图标直接拓展</li><li>负一屏的变化</li></ul><p>旧的负一屏对我来说使用场景并不大，我除了去用我的快接指令外，其他时间从来不会划到负一屏。新 ios 的新负一屏改变后，我可能会把一部分的控制中心的操控转到负一屏进行<br>更重要的是应用图标拓展<br>由于 App Gallery 的引入，ios 不再要求每个应用都必须有一个图标放在桌面上，再加上应用图标的拓展，应该会搭配出更适合日常操作使用的桌面<br>我手机上的桌面分的比较多，但是其实很多软件不需要在桌面上，更适合下拉搜索，很少用到</p><p>另外，ios 的 app gallery 的设计，真丑，就算是从实用性出发，在 app 的整体浏览上，魅族做的更吸引我</p><h2 id="iPad-OS"><a href="#iPad-OS" class="headerlink" title="iPad OS"></a>iPad OS</h2><p>iPad 是我认为未来苹果发展的重中之重</p><p>除了和 ios 一样的内容外，iPad OS 最主要的是交互方式的变化<br>无论是鼠标还是键盘，都能在 iPad OS 上看到 macOS 的一些东西，而又单独有些不一样<br>比如光标融入图标，比如 Spotlight，等等<br>iPad OS 越来越像带触控屏幕的 macOS<br>而触控屏增多了一种交互方式，更直接，一些情况下也更高效<br>相比来说，iPad 是将 mac 的优点与 iPhone 的优点结合起来<br>当然这种结合会导致一些缺点，比如失去了极致的便携，不会再像 iPhone 一样小屏幕而省电<br>键盘鼠标的交互方式变得可有可无</p><p>但从目前来看，<strong>科技应应该提供能多的方式，让人们自己选择才是理所应当</strong><br>在未来 arm 版本的 mac 全面替代现在的 mac 之后，你是否会觉得，iPad 能替代 mac 呢</p><p>（2020 年了，ios 还是不愿意在 ios 上加入分屏显示，而 iPad OS 上的分屏无疑非常优秀，这也暗示着苹果更看好在 ipad 上做集成，而 iPhone 只是小屏幕的便携款，不应该拥有太多的功能</p><h2 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h2><p><img src="https://i.loli.net/2020/07/29/14SZbVwY2qEgdBI.png" alt=""></p><p>最大的变化，当然是从 x86 转向 arm<br>关于这个，我觉得我说的不会有少数派这一篇说的好，那就直接看<a href="https://sspai.com/post/61274">它</a>吧</p><p>不得不说，一开始，我也随大流，就觉得 macOS Big Sur 真是出奇的丑，整个 2020 WWDC 的系统设计级的更新越来越丑<br>直到我看了第二场关于设计的发布会</p><p>苹果依旧是那个苹果，即便乔纳森走，苹果的设计也依旧可圈可点<br>先放几张图，都是大部分科技媒体不会看的东西</p><p>关于应用的侧边栏和上边栏</p><p><img src="https://i.loli.net/2020/07/31/MIif21czsq3w9ou.png" alt=""><br><img src="https://i.loli.net/2020/07/31/m9MyebRtEP5c6qF.png" alt=""><br><img src="https://i.loli.net/2020/07/31/oKU2x4VqJHdwvtp.png" alt=""><br><img src="https://i.loli.net/2020/07/31/TA2jp6uqM1rHzZf.png" alt=""><br><img src="https://i.loli.net/2020/07/31/XVrmf3pGK21wTNz.png" alt=""><br><img src="https://i.loli.net/2020/07/31/ZTjWF8irOpQNfuD.png" alt=""></p><p>再比如</p><p><img src="https://i.loli.net/2020/07/31/sv2YkODTjUSFREb.png" alt=""><br><img src="https://i.loli.net/2020/07/31/RZjbUXIo2d34eSy.png" alt=""><br><img src="https://i.loli.net/2020/07/31/W8DJpRHelGkjC6X.png" alt=""></p><p>再来看看文本，唔还是那个样</p><p><img src="https://i.loli.net/2020/07/31/pX6zU4n7hZ9wQDY.png" alt=""></p><p>还有图标，更多彩了</p><p><img src="https://i.loli.net/2020/07/31/JtBVAw8NHCxUiag.png" alt=""><br><img src="https://i.loli.net/2020/07/31/KEcd5pIy7txPQuC.png" alt=""><br><img src="https://i.loli.net/2020/07/31/RCZWFXhwHDVnyPq.png" alt=""></p><p>苹果设计还是那个，会去追求细节，会从消费者角度想的美<br>但是，你说这些<br>mac 是不是在向 ios 靠拢<br>当 mac 也把所有图标都变成方方<br>是不是就意味着，三大主产品，越来越像</p><div class="note success">            <p><strong>更 PC 的 mac，更 PHONE 的 iPhone，然后中间站着 iPad<br>似乎一直是这样，又似乎变了什么</strong></p>          </div><p>如果站在这个时间节点让我从这三个里推荐，我一定会更推荐带 pencil 和键盘的 iPad，因为有了它，似乎别的都不再那么需要了</p>          </div>]]></content>
     
@@ -113,6 +136,8 @@
       <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
     
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
     
   </entry>
   
@@ -162,9 +187,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
       <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
     
@@ -197,10 +222,10 @@
   
   <entry>
     <title>MAC&amp;IOS Tips</title>
-    <link href="https://augists.top/mac/MACIOS-Tips/"/>
-    <id>https://augists.top/mac/MACIOS-Tips/</id>
+    <link href="https://augists.top/APPLE/MACIOS-Tips/"/>
+    <id>https://augists.top/APPLE/MACIOS-Tips/</id>
     <published>2020-07-19T06:58:16.000Z</published>
-    <updated>2020-08-09T13:41:32.715Z</updated>
+    <updated>2020-08-09T14:18:41.905Z</updated>
     
     <content type="html"><![CDATA[<div class="note warning">            <h1 id="一些使用-mac-的小技巧（持续更新）"><a href="#一些使用-mac-的小技巧（持续更新）" class="headerlink" title="一些使用 mac 的小技巧（持续更新）"></a>一些使用 mac 的小技巧（持续更新）</h1><div class="note ">            <p>部分技巧学自</p><ul><li>少数派</li><li>苹果FANS</li></ul>          </div><ul><li>自带输入法输入中文，可以用 <code>-</code> <code>=</code>来切换下一行候选词</li><li>自带输入法可以用 <code>tab</code> 给拼音注声调</li><li>在浏览器的地址栏输入网址，<code>command + enter</code> 会在新标签页打开网址但不跳转（可在任何网站内）</li><li><code>command + space</code> 调出 <em>spotlight</em> 后，输入要搜索的内容，<code>command + b</code> 可以直接在默认浏览器中以新标签打开并搜索</li><li>开机提示音<br>打开终端Terminal<ul><li>打开<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram StartupMute=%00</span><br></pre></td></tr></table></figure></li><li>关闭<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram StartupMute=%01</span><br></pre></td></tr></table></figure></li></ul></li><li>不管是自带的 <em>Quick Time</em> 还是第三方的 <em>IINA</em> 都支持了触控板力度控制快进和回退键的快慢，按的越重，效果越快</li><li>可以在设置中打开并设置朗读，我的快捷键是 <code>option + esc</code>，默认朗读全篇，选中部分也可以（仅限于英文，你可以试试中文🤣</li><li>输入  <code>shift option k</code>（多试试在自带的中文输入法中按住 <code>option</code> 或按住 <code>shift option</code> 再敲键盘上的任何键</li><li>ios 输入不小心没点上中文，输入成了拼音，可以是一下双击拼音，可能会重新出现候选词</li><li>ios 输入法可以长按小地球，单手模式及选择输入法，设置里可添加表情键盘及一些特殊语言的词典</li><li>finder 里可以用 <code>command shift .</code> 来快速显示或隐藏隐藏文件，unix 中的隐藏文件以 <code>.</code> 为文件名开头，ranger 里可以通过 <code>zh</code> 开启或关闭隐藏文件的显示</li><li>mac 的 QQ 里，可以通过 <code>control command</code> 再加上左右来快速从不常用群聊列表与普通列表切换</li><li>mac 的 QQ 中可以通过 <code>command D</code> 快捷删除会话（不删除记录），但是微信中只能右键删除</li></ul>          </div>]]></content>
     
@@ -213,6 +238,8 @@
     
     
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
     
   </entry>
   
@@ -235,9 +262,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
       <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
     
@@ -297,18 +324,18 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
   <entry>
     <title>2020 Apple Shop for College</title>
-    <link href="https://augists.top/mac/2020-Apple-Shop-for-College/"/>
-    <id>https://augists.top/mac/2020-Apple-Shop-for-College/</id>
+    <link href="https://augists.top/APPLE/2020-Apple-Shop-for-College/"/>
+    <id>https://augists.top/APPLE/2020-Apple-Shop-for-College/</id>
     <published>2020-07-14T13:18:00.000Z</published>
-    <updated>2020-07-14T14:18:00.714Z</updated>
+    <updated>2020-08-09T14:19:02.626Z</updated>
     
     <content type="html"><![CDATA[<div class="note warning">            <div class="note danger">            <p>今年的苹果教育优惠从上周四已经开始了！！！</p>          </div><p>今年特殊，跟高考这么近 🤣</p><p>除此之外，今年还特殊在很多地方</p><hr><h3 id="耳机"><a href="#耳机" class="headerlink" title="耳机"></a>耳机</h3><p>与以前相比，最大的不同就在送的耳机变了<br>以前 mac 系列送的是 <code>Beats Studio 3</code>，ipad 系列送的是 <code>Beats Solo 3</code>，可选换 <code>Beats X</code></p><div class="note ">            <p>我当时问了我这里的官方店，有的店员允许换 <code>PowerBeats Pro</code>，一般是不让换，这个不是完全按照价钱可以就能换）</p>          </div><p>今年改成了全线送 <code>AirPods</code><br>一般来说，由于有教育优惠的存在，每年到这时候二手市场上都会有大量的全新未拆封的 Beats 耳机在卖<br>那时候 solo 的价格在 450-550 不等，studio 的价格在 1450-1500 左右（这是语病<br>而 AirPods 的价格，大概我预估这一波会让它大概到 700-800，相对来说买 mac 的更亏了（我去年 studio 卖了1500，当时 AidPods2 的价格官方在 1200 左右<br>买 iPad 更值</p><p>当然，对很多人来讲，Beats 是装b的代名词，AidPods 才是当代新青年的标配，这一换他们很开心（我周围至少俩同学刚买了 AirPods 哭晕才厕所</p><h3 id="AppleCare"><a href="#AppleCare" class="headerlink" title="AppleCare+"></a>AppleCare+</h3><p>今年的 AppleCare+ 大概是我第一次看到它因为教育优惠打折吧<br>我没买过这个<br>但是至少它对于高校师生打折了<br>至于需求……<br>应该说，保底是换一次电池吧<br>如果不差钱当然闭眼买就行了<br>但是我不是很喜欢为了换专门去摔这种事情<br>普通人，珍惜点用就好了<br>对买 mac 的同学来说，推荐一下磁吸膜，既能当屏幕保护膜用，还侧面防偷窥，最重要的不需要担心别的膜导致屏幕镀层的问题（这屏幕较弱又高贵</p><h3 id="WWDC-2020"><a href="#WWDC-2020" class="headerlink" title="WWDC 2020"></a>WWDC 2020</h3><p>从长远来看，iPad 在苹果的地位会越来越核心<br>可以从今年的 WWDC 看出一点东西，再加上十年前老乔那段采访<br>苹果有一定可能是把平板作为未来电脑的形态在发展的<br>所以，如果要在 iPad 与 mac 之间推荐一个，我更推荐 iPad<br>尤其是 iPad + apple pencil （+ 键盘鼠标）<br>在未来可能会比买台 mac 更舒服<br>原因中最重要的一点就是苹果将在 mac 上逐步放弃 intel 转向 arm 架构的 CPU<br>而这带来的 Universal App 会让 iPad 更加吃香<br>令一点，从系统的美观实用来说，iPad OS 可能更优秀（macOS Big Sur 让我感觉，有向触摸屏发展的趋势</p><div class="note danger">            <p>买电子产品一定去官方买一定去官方买一定去官方买！！！<br>山东的苹果官方店一共就两家<br>查询地址：<a href="https://www.apple.com.cn/retail/storelist/">https://www.apple.com.cn/retail/storelist/</a></p>          </div><h2 id="最后放价格对比图"><a href="#最后放价格对比图" class="headerlink" title="最后放价格对比图"></a>最后放价格对比图</h2><p>数据全部来自官网</p><h3 id="macbook-air"><a href="#macbook-air" class="headerlink" title="macbook air"></a>macbook air</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqukgzdpaj30u00ucgre.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqujynfsaj30vg0u0n2o.jpg" alt=""></p><h3 id="macbook-pro-13"><a href="#macbook-pro-13" class="headerlink" title="macbook pro 13"></a>macbook pro 13</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqulhvs83j31aq0u0wlu.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqumfm3y6j31c80u0wlb.jpg" alt=""></p><h3 id="macbook-pro-16"><a href="#macbook-pro-16" class="headerlink" title="macbook pro 16"></a>macbook pro 16</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqunqza6oj30xh0u0dla.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqun7r033j30xk0todky.jpg" alt=""></p><h3 id="ipad"><a href="#ipad" class="headerlink" title="ipad"></a>ipad</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquw0ja76j30o60nymze.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqurbi47uj30og0nq0uz.jpg" alt=""></p><h3 id="ipad-mini"><a href="#ipad-mini" class="headerlink" title="ipad mini"></a>ipad mini</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquwjf8x4j30no0nkmzf.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqut36jhoj30o00notay.jpg" alt=""></p><h3 id="ipad-air"><a href="#ipad-air" class="headerlink" title="ipad air"></a>ipad air</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqux63flsj30nq0naq57.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqutp2ildj30p60oagnx.jpg" alt=""></p><h3 id="ipad-pro"><a href="#ipad-pro" class="headerlink" title="ipad pro"></a>ipad pro</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquxrwtwgj30ny0ss76y.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquuoe25uj30o80t6q5m.jpg" alt=""></p>          </div>]]></content>
     
@@ -320,9 +347,13 @@
     
     
     
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
     
   </entry>
   
@@ -424,11 +455,11 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="QT" scheme="https://augists.top/tags/QT/"/>
-    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
   </entry>
   
@@ -497,32 +528,11 @@
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
       <category term="MFC" scheme="https://augists.top/tags/MFC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Inspirational Quotes to College Newcomers</title>
-    <link href="https://augists.top/HELLO/Inspirational-Quotes-to-College-Newcomers/"/>
-    <id>https://augists.top/HELLO/Inspirational-Quotes-to-College-Newcomers/</id>
-    <published>2020-06-30T13:20:06.000Z</published>
-    <updated>2020-07-01T12:59:49.931Z</updated>
-    
-    <content type="html"><![CDATA[<p>没几天就高考了</p><p>五十八中2016届民乐团祝福2017届孩子们</p><blockquote class="blockquote-center">            <i class="fa fa-quote-left"></i>            <p>高考加油！<br>民乐团牛逼！</p>            <i class="fa fa-quote-right"></i>          </blockquote><blockquote><p>顺序根据对下一届的熟悉程度和特殊情况</p></blockquote><div class="note warning">            <h2 id="徐yx"><a href="#徐yx" class="headerlink" title="徐yx"></a>徐yx</h2><div class="note ">            <p>花有重开之日 朝暮皆为少年之时<br>千重险岭万重山 总是风雪满<br>是非成败何曾惧 高处不胜寒</p>          </div><p>希望你们都可以在这个夏天<strong>收获最好的自己</strong><br><strong>加油！</strong><br>另见图</p>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/30/d2b976.png" class="full-image" /><div class="note info">            <h2 id="田y"><a href="#田y" class="headerlink" title="田y"></a>田y</h2><p>大考当前，愿你们能<strong>放平心态</strong>，发挥自己<strong>应有的水平</strong>，给自己的高中三年画上圆满的句号。<br>也祝你们能在大学里找到<strong>热爱的事业</strong>，遇见<strong>志同道合的朋友</strong>，拥有<strong>自由的人生</strong>。</p>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/07/01/fc9952.png" class="full-image" /><div class="note success">            <h2 id="李yx"><a href="#李yx" class="headerlink" title="李yx"></a>李yx</h2><p>亲爱的民乐团的朋友们：</p><p><strong>恭喜</strong>你们即将结束三年的高中生活！<br>希望你们带着在五十八中<strong>学到的知识</strong>，考入自己<strong>心仪的大学</strong>，并取得<strong>更大的成功！</strong><br>这个世界是非常大的，如果有机会，希望你们能趁自己青春年少多出去<strong>看看外面不同的世界</strong>，结识<strong>形形色色的朋友</strong>。体会过<strong>世界不同地方的文化环境</strong>，也才算是不枉在这世上走一遭。<br>愿诸位<strong>脚踏实地，勿忘初心！</strong></p><div class="note ">            <p>“Our greatest weakness lies in giving up. The most certain way to succeed is always to TRY just one more time.”</p><p>Thomas A. Edison</p>          </div>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/30/99ebef.png" class="full-image" /><div class="note ">            <h2 id="长大池子"><a href="#长大池子" class="headerlink" title="长大池子"></a>长大池子</h2><p><strong>高考加油⛽️ 民乐团🐂🍺</strong></p><p>高考一定要<strong>放平心态</strong>，不过是一场考试</p><p>有兴趣可以看看我的<a href="https://augists.top/self/REVIEW/2019-Review/">这篇博客</a>，回顾了我的2019高考年</p><p>㊗️各位<strong>前程似锦</strong></p><p><strong>永远是民乐人</strong></p><blockquote><p>欢迎长期关注我的博客 🤣</p></blockquote>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/07/01/8e1fe7.png" class="full-image" /><div class="note default">            <h2 id="王z"><a href="#王z" class="headerlink" title="王z"></a>王z</h2><p>亲爱的民乐团的师弟师妹们！我是<strong>王震</strong>，曾经的乐团唯一的笛子！</p><p>现在在重庆西南政法大学学习法律。高中在民乐团的经历，让我结识了很多志趣相投的朋友，也一定给你们留下了很多美好的回忆。现如今高考在即，祝愿你们<strong>超常发挥</strong>，<strong>一举夺魁</strong>。一定要<strong>沉着冷静</strong>，<strong>放平心态</strong>，<strong>相信自己</strong>没有问题！</p><p>最后，祝愿你们都能考上自己<strong>理想的学校</strong>，去往自己<strong>向往的未来</strong>！</p><div class="note ">            <p>高考加油！五八必胜！</p>          </div>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/30/249db1.png" class="full-image" /><div class="note warning">            <h2 id="孙lq"><a href="#孙lq" class="headerlink" title="孙lq"></a>孙lq</h2><p>hello大家好呀，我是16级的<strong>孙乐晴</strong>。</p><p>相信在高考来临之际，大家都已经复习得很好啦！所以，考试的时候一定要<strong>放松心情</strong>，如果实在紧张的话，可以想象一下考完试后自己的<strong>快乐生活</strong>～如果在考场上遇到自己不会的题，<strong>一定不要慌</strong>，如果慌了，一定要让自己<strong>快速冷静下来</strong>（比如在脑子里告诉自己哪怕错了这一道题还是能考个接近满分的）。其他的相信优秀的58中老师也跟你们强调过很多遍了。</p><div class="note ">            <p>无论如何，你一定都不会辜负这三年的时光</p>          </div>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/30/3bcf4b.png" class="full-image" /><div class="note danger">            <h2 id="崔yq"><a href="#崔yq" class="headerlink" title="崔yq"></a>崔yq</h2><p>Dear 学弟学妹们：</p><p>我叫<strong>崔亚琴</strong>，2019级12班，现就读成都理工大学。<br>你们肯定不认识我，没瓜系，反正我也不认识你们。我们唯一的交集，就是共同出去过<strong>乐团小小的练习室</strong>。<br>就当是排练三年的一场小小小演出吧，<strong>未来的路长着呢，不要紧张，祝好运。</strong></p><div class="note ">            <p>ps:如果有喜欢王欣涛的妹妹，遗憾的通知你，那是我的我的我的。但你眼光不错，眼光不错的人，考的肯定好～</p>          </div><p>最后，奉上团魂一张 冲冲冲！</p>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/30/d60624.png" class="full-image" /><div class="note primary">            <h2 id="李xr"><a href="#李xr" class="headerlink" title="李xr"></a>李xr</h2><p>亲爱的学弟学妹们好呀，我是<strong>李欣然</strong></p><p>没有能够见到民乐团的学弟学妹们也是一大遗憾吧，但并不妨碍我对你们<strong>诚挚的祝福</strong><br>高考来临之际，一定要<strong>沉下心来</strong>，<strong>戒骄戒躁</strong>，在最关键的时刻<strong>为自己的梦想而努力</strong></p><div class="note ">            <p>祝愿你们<strong>不好高骛远</strong>，<strong>不畏缩不前</strong>，<strong>不羁于过往</strong>，<strong>不忧惧将来</strong><br>高考加油，前程似锦！</p>          </div>          </div><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/07/01/4f9699.png" class="full-image" /><div class="note ">            <p>丁老师 ❤️</p><p>民乐隽永，前途美好 ❤️</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Inspirational quotes to college newcomers&lt;br&gt;for you our group
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
   </entry>
   
