@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-08-09T14:33:07.705Z</updated>
+  <updated>2020-08-10T01:48:02.879Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -17,17 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Auto Close WLAN Cellar on IOS</title>
-    <link href="https://augists.top/APPLE/Auto-Close-WLAN-Cellar-on-IOS/"/>
-    <id>https://augists.top/APPLE/Auto-Close-WLAN-Cellar-on-IOS/</id>
+    <title>Auto Close WLAN Cellular on IOS</title>
+    <link href="https://augists.top/APPLE/Auto-Close-WLAN-Cellular-on-IOS/"/>
+    <id>https://augists.top/APPLE/Auto-Close-WLAN-Cellular-on-IOS/</id>
     <published>2020-08-09T14:18:21.000Z</published>
-    <updated>2020-08-09T14:33:07.705Z</updated>
+    <updated>2020-08-10T01:48:02.879Z</updated>
     
-    <content type="html"><![CDATA[<div class="note warning">            <p>今天在搞小火箭 🚀 的时候遇到的问题<br>在设置中打开小火箭的 <code>WLAN &amp; Cellar</code> 后，打开小火箭 🚀 的 app，会自动把设置中应用的网络许可关闭<br>来回开了好几次之后，我确定不是我的问题，是 ios 的 bug <strong>之一</strong><br>所以我去恢复设置啦<br>路径：<code>Settings - General - Reset</code><br>如果你也遇到了这个问题，可以试试先只 <code>reset network settings</code><br>如果还是不行，就和我一样 <code>reset all settings</code> 就可以啦（我啥也没管，直接选了 all<br>all 会删除在 Settings 里的所有设置，包括保存过的 wifi 密码以及 face id<br>应用的一些设置也在 Settings 里，所以也会删除，但是不删除应用和应用数据，只会删除比如 <code>WLAN &amp; Cellar</code> 这种设置中可以修改的内容<br><strong>注意⚠️ 如果你也有在本机以游客登陆保存在 Game Center 中的游戏 app……最好别 <code>reset all settings</code>，我的皇室战争就是这么挂掉的，半个月冲了 4000 杯的数据被覆盖掉了 😭</strong></p><hr><p>说一点题外话，这次重置也让我看到某些 app 在我重置完还没点开的时候就开始申请 <code>WLAN &amp; Cellar</code> 了，尽管我已经很久很久没点开过他们，他们还是在后台偷偷运行着<br>我们可能真的需要一点 <strong>照明弹</strong> 💣</p>          </div>]]></content>
+    <content type="html"><![CDATA[<div class="note warning">            <p>今天在搞小火箭 🚀 的时候遇到的问题<br>在设置中打开小火箭的 <code>WLAN &amp; Cellular</code> 后，打开小火箭 🚀 的 app，会自动把设置中应用的网络许可关闭<br>来回开了好几次之后，我确定不是我的问题，是 ios 的 bug <strong>之一</strong><br>所以我去恢复设置啦<br>路径：<code>Settings - General - Reset</code><br>如果你也遇到了这个问题，可以试试先只 <code>reset network settings</code><br>如果还是不行，就和我一样 <code>reset all settings</code> 就可以啦（我啥也没管，直接选了 all<br>all 会删除在 Settings 里的所有设置，包括保存过的 wifi 密码以及 face id<br>应用的一些设置也在 Settings 里，所以也会删除，但是不删除应用和应用数据，只会删除比如 <code>WLAN &amp; Cellular</code> 这种设置中可以修改的内容<br><strong>注意⚠️ 如果你也有在本机以游客登陆保存在 Game Center 中的游戏 app……最好别 <code>reset all settings</code>，我的皇室战争就是这么挂掉的，半个月冲了 4000 杯的数据被覆盖掉了 😭</strong></p><hr><p>说一点题外话，这次重置也让我看到某些 app 在我重置完还没点开的时候就开始申请 <code>WLAN &amp; Cellular</code> 了，尽管我已经很久很久没点开过他们，他们还是在后台偷偷运行着<br>我们可能真的需要一点 <strong>照明弹</strong> 💣</p>          </div>]]></content>
     
     <summary type="html">
     
-      Some Apps will automatically turn off WLAN &amp; Cellar in setting&lt;br&gt;How to fix it
+      Some Apps will automatically turn off WLAN &amp; Cellular in setting&lt;br&gt;How to fix it
     
     </summary>
     
@@ -85,9 +85,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
@@ -160,9 +160,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
     
@@ -324,9 +324,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
+    
+      <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
     
   </entry>
   
@@ -376,9 +376,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
   </entry>
   
@@ -457,9 +457,9 @@
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
       <category term="QT" scheme="https://augists.top/tags/QT/"/>
+    
+      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
   </entry>
   
@@ -526,9 +526,9 @@
     
     
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
