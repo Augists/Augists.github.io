@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-08-10T01:48:02.879Z</updated>
+  <updated>2020-08-14T02:22:52.168Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Make QQ Group Like Unix</title>
+    <link href="https://augists.top/SELF/SHARING/make-QQ-group-like-root/"/>
+    <id>https://augists.top/SELF/SHARING/make-QQ-group-like-root/</id>
+    <published>2020-08-14T02:04:46.000Z</published>
+    <updated>2020-08-14T02:22:52.168Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>其实这么翻译有点奇怪<br>就是让 QQ 群有一个类似于 unix 系的管理结构</p><p>这里以一个两个人的资源存放群为例子</p><hr><h2 id="为什么需要一个管理结构"><a href="#为什么需要一个管理结构" class="headerlink" title="为什么需要一个管理结构"></a>为什么需要一个管理结构</h2><p>资源存放肯定就会有查找和删除<br>查找可以通过群历史记录来实现<br>或者直接上翻看最近的资料<br>但是<strong>删除</strong><br>因为是两个人用的，所以单纯的使用删除并不能满足使用需求（消息的删除只是自己看不到了）<br>更合适的做法是<strong>撤回</strong>，才能让两个人都再看不到这个消息<br>对于已经过时的、不需要的消息进行整理和撤回，能较为方便的让资源群更好用<br>而自己的撤回只能撤回两分钟以内的消息，且只能对下级进行无时间限制的撤回，平级和上级不能撤回</p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>使用小号作为群主（root）<br>两个人升为管理员（user）<br>群机器人是普通成员（visitor）<br>小号的账号密码对两个人都可见（sudo su）<br>小号（root）可以任意撤回所有人的消息，但是不发送消息<br>管理员（user）可以在群机器人的消息过时后对其进行撤回<br>群机器人（visitor）是用来每天定时发送通知消息的，除了灌水无任何权限</p><hr><p>目前我有两个群采用了这种方式<br>对于现在所有学校通知和各种资料都在 QQ 上的情况下，这种资源群比较方便对通知信息和资料进行二次整理汇总</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      An example that making QQ group like Unix&lt;br&gt;root user visitor
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
   
   <entry>
     <title>Auto Close WLAN Cellular on IOS</title>
@@ -85,9 +106,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
@@ -160,9 +181,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
     
@@ -291,9 +312,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -320,9 +341,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
@@ -347,9 +368,9 @@
     
     
     
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
-    
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
     
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
@@ -376,9 +397,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
   </entry>
   
@@ -422,9 +443,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -451,9 +472,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
@@ -506,33 +527,6 @@
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="THINKING" scheme="https://augists.top/tags/THINKING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MFC Report</title>
-    <link href="https://augists.top/NOTES/SUMMERTERM/MFC/MFC-Report/"/>
-    <id>https://augists.top/NOTES/SUMMERTERM/MFC/MFC-Report/</id>
-    <published>2020-07-03T04:31:36.000Z</published>
-    <updated>2020-07-05T06:18:28.292Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <h1 id="MFC-学习报告"><a href="#MFC-学习报告" class="headerlink" title="MFC 学习报告"></a>MFC 学习报告</h1><h2 id="Windows-编程的特点及基本概念"><a href="#Windows-编程的特点及基本概念" class="headerlink" title="Windows 编程的特点及基本概念"></a>Windows 编程的特点及基本概念</h2><h3 id="事件驱动的程序设计"><a href="#事件驱动的程序设计" class="headerlink" title="事件驱动的程序设计"></a>事件驱动的程序设计</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggdujq86vzj30t20o0act.jpg" alt=""></p><p>事件驱动由消息循环来实现的</p><p>Windows 消息来源：</p><ul><li>输入消息：包括键盘和鼠标的输入</li><li>控制消息：用来与控制对象（如列表框、按钮、检查框等）进行双向通信<br>当用户在列表框中改动当前选择或改变了检查框的状态时发出此类消息。这类消息不经过应用消息队列，而是直接发送到控制对象上去</li><li>系统信息：对程序化的事件或系统时钟中断作出反应<br>一些系统消息，像 DDX 消息（动态数据交换消息）要通过系统消息队列，而有的则不通过系统消息队列而直接进入应用程序的消息队列，如创建窗口消息</li><li>用户消息：自己定义并在应用程序中主动发出的，一般由应用程序的某一部分内部处理</li></ul><h4 id="图形输出"><a href="#图形输出" class="headerlink" title="图形输出"></a>图形输出</h4><ul><li>控制台程序独占整个屏幕，其他程序在后台等待。而 Windows 应用程序只对屏幕的一部分窗口进行处理</li><li>Windows 程序的的所有输出都是图形。Windows 提供了丰富的图形函数用于图形输出</li><li>Windows 输出是与设备无关的，通过 <strong>GDI</strong> (Graphics Device Interface)</li></ul><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><h5 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h5><ul><li><code>winuser.h</code> 中定义了代表窗口的 <code>WNDCLASS</code> 结构类型</li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagWNDCLASS</span>&#123;</span></span><br><span class="line">    UINT        style;            <span class="comment">// 窗口风格</span></span><br><span class="line">    WNDPROC        lpfnWndProc;    <span class="comment">// 指向窗口处理函数的函数指针</span></span><br><span class="line">    <span class="keyword">int</span>            cbClsExtra;        <span class="comment">// 窗口结构中的预留字节数</span></span><br><span class="line">    <span class="keyword">int</span>            cbWndExtra;        <span class="comment">// 本窗口创建的其他窗口结构中预留字节数</span></span><br><span class="line">    HINSTANCE    hInstance;        <span class="comment">// 注册该窗口类的实例句柄</span></span><br><span class="line">    HICON        hIcon;            <span class="comment">// 该窗口类的图标句柄</span></span><br><span class="line">    HCURSOR        hCursor;        <span class="comment">// 该窗口客户区光标句柄</span></span><br><span class="line">    HBRUSH        hbrBackGround;    <span class="comment">// 该窗口背景颜色句柄</span></span><br><span class="line">    LPCSTR        lpszMenuName;    <span class="comment">// 指向窗口菜单名的字符指针</span></span><br><span class="line">    LPCSTR        lpszClassName;    <span class="comment">// 指向窗口名的字符指针</span></span><br><span class="line">&#125; WNDCLASS, *PWNDCLASS, NEAR *NPWNDCLASS, FAR *LPWNDCLASS;</span><br></pre></td></tr></table></figure><h5 id="事件与消息"><a href="#事件与消息" class="headerlink" title="事件与消息"></a>事件与消息</h5><p><code>winuser.h</code> 中，消息结构定义</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMSG</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    HWND    hWnd;        <span class="comment">// 消息发向的窗口的句柄</span></span><br><span class="line">    UINT    message;    <span class="comment">// 消息的消息值</span></span><br><span class="line">    WPARAM    wParam;        <span class="comment">// 消息参数</span></span><br><span class="line">    LPARAM    lParam;        <span class="comment">// 消息参数</span></span><br><span class="line">    DWORD    time;        <span class="comment">// 消息进入队列的时间</span></span><br><span class="line">    POINT    pt;            <span class="comment">// 消息进入队列时鼠标指针的屏幕坐标</span></span><br><span class="line">&#125; MSG, *PMSG, NEAR *NPMSG, FAR *LPMSG;</span><br></pre></td></tr></table></figure><ol><li><code>message</code></li></ol><p>标识消息的消息值或消息名</p><ol><li><code>WM_</code> 窗口消息</li><li><code>BM_</code> 控件消息</li><li><code>EM_</code> 编辑框控件消息</li><li><code>LB_</code> 列表框控件消息</li></ol><ul><li><code>WM_CREATE</code>    0X0001 创建窗口产生消息</li><li><code>WM_DESTROY</code>    0X0002 撤销窗口产生消息</li><li><code>WM_PAINT</code>    0X000F 重画窗口产生消息</li><li><code>WM_CLOSE</code>    0X0010 关闭窗口产生消息</li><li><code>WM_CHAR</code>        0X0102 按下非系统键产生消息</li><li><code>WM_USER</code>        0X0400 用户自定义消息</li><li><code>WM_USER+n</code></li></ul><ol start="2"><li><code>wParam</code> 和 <code>lParam</code></li></ol><p>都是32位消息参数，定义在 <code>windef.h</code> 下</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> UINT WPARAM;</span><br><span class="line"><span class="keyword">typedef</span> LONG LPARAM;</span><br></pre></td></tr></table></figure><ol start="3"><li><code>pt</code></li></ol><p>消息进入消息队列时鼠标指针的屏幕坐标</p><p><code>POINT</code> 定义在 <code>windef.h</code> 中的结构体，表示屏幕上的一个点</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPOINT</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    LONG x;</span><br><span class="line">    LONG y;</span><br><span class="line">&#125; POINT, PPOINT, NEAR *NPPOINT, FAR *LPPOINT;</span><br></pre></td></tr></table></figure><h5 id="资源共享"><a href="#资源共享" class="headerlink" title="资源共享"></a>资源共享</h5><p>基本模式</p><ol><li>向 Windows 系统请求资源</li><li>使用</li><li>释放资源给系统以供其他程序使用</li></ol><h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><table><thead><tr><th>数据类型</th><th>说明</th></tr></thead><tbody><tr><td>BYTE</td><td>8位无符号字符</td></tr><tr><td>BSTR</td><td>32位字符指针</td></tr><tr><td>COLORREF</td><td>32位整数，表示一个颜色</td></tr><tr><td>WORD</td><td>16位无符号整数</td></tr><tr><td>LONG</td><td>32位有符号整数</td></tr><tr><td>DWORD</td><td>32位无符号整数，WORD的两倍长度</td></tr><tr><td>UINT</td><td>32位无符号整数</td></tr><tr><td>BOOL</td><td>布尔值</td></tr><tr><td>HANDLE</td><td>句柄</td></tr><tr><td>LPSTR</td><td>32位指针，指向字符</td></tr><tr><td>LPCSTR</td><td>32位指针，指向字符串常量</td></tr><tr><td>LPTSTR</td><td>32位指针，指向字符串，可移植到 Unicode 和 DBCS 双字符集</td></tr><tr><td>LPCTSTR</td><td>32位指针，指向字符串常量，可移植到 Unicode 和 DBCS 双字符集</td></tr><tr><td>LPVOID</td><td>32位指针，可指向任何类型数据</td></tr><tr><td>LPRESULT</td><td>32位数值，作为窗口函数或 CALLBACK 函数的返回类型</td></tr><tr><td>WNDPROC</td><td>32位指针，指向一个窗口函数</td></tr></tbody></table><h5 id="句柄"><a href="#句柄" class="headerlink" title="句柄"></a>句柄</h5><p>用于识别应用程序对象的一个无重复整数，也可以看作赋予对象的唯一名称。在给一个对象赋予句柄以后，就可以通过此句柄完成对该对象的引用了</p><p>句柄是一个四字节长的整数</p><table><thead><tr><th>句柄类型</th><th>说明</th></tr></thead><tbody><tr><td>HWND</td><td>标识窗口的句柄</td></tr><tr><td>HINSTANCE</td><td>标识当前实例的句柄</td></tr><tr><td>HPEN</td><td>标识画笔的句柄</td></tr><tr><td>HBRUSH</td><td>标识画刷的句柄</td></tr><tr><td>HDC</td><td>标识设备环境的句柄</td></tr><tr><td>HMENU</td><td>标识菜单的句柄</td></tr><tr><td>HFIFE</td><td>标识文件的句柄</td></tr><tr><td>HFONT</td><td>标识字体的句柄</td></tr></tbody></table><h5 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h5><p>程序使用的资源被集中在一个资源文件中进行定义</p><h5 id="动态链接库"><a href="#动态链接库" class="headerlink" title="动态链接库"></a>动态链接库</h5><p>DLL(Dynamic Linkable Library) 允许应用程序共享代码和资源的可执行模块。</p><h2 id="Windows-程序的基本结构"><a href="#Windows-程序的基本结构" class="headerlink" title="Windows 程序的基本结构"></a>Windows 程序的基本结构</h2><p>Windows 程序的入口为 <code>WinMain</code> 函数</p><h2 id="利用-MFC-Microsoft-Foundation-Class-Library-创建-Windows-程序"><a href="#利用-MFC-Microsoft-Foundation-Class-Library-创建-Windows-程序" class="headerlink" title="利用 MFC (Microsoft Foundation Class Library) 创建 Windows 程序"></a>利用 MFC (Microsoft Foundation Class Library) 创建 Windows 程序</h2><ul><li>AppWizard：生成初步的框架文件</li><li>资源编辑器：帮助直观的设计用户接口</li><li>ClassWizard：协助添加代码到框架文件</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggfxnbq053j31750u0jwk.jpg" alt=""></p><table><thead><tr><th>类型</th><th>文件名称</th><th>功能描述</th></tr></thead><tbody><tr><td>框架窗口类实现文件</td><td><code>MainFrm.h</code>, <code>MainFrm.cpp</code></td><td>包含窗口类 <code>CMainFrame</code> 的实现代码，负责创建标题栏、菜单栏、工具栏和状态栏。实现应用程序的主窗口</td></tr><tr><td>文档类实现文件</td><td><code>MySDIDoc.h</code>, <code>MySDIDoc.cpp</code></td><td>应用程序数据的保存和装载，实现文档的序列化功能。<code>OnNewDocument()</code> 新建文档。<code>Serialize()</code> 文档数据的磁盘读写</td></tr><tr><td>视图类实现文件</td><td><code>MySDIView.h</code>, <code>MySDIView.cpp</code></td><td>客户区文档数据的显示，如何进行人机交互。<code>GetDocument()</code> 获取 <code>m_pDocument</code>，<code>OnDraw()</code> 文档数据显示</td></tr><tr><td>应用程序类实现文件</td><td><code>MySDI.h</code>, <code>MySDI.cpp</code></td><td>应用程序的主函数文件，应用程序的初始化、启动运行和结束</td></tr><tr><td>资源文件</td><td><code>Resource.h</code></td><td>资源标识符放在此文件中</td></tr><tr><td>应用程序生成的资源文件</td><td><code>MySDI.rc</code>, <code>MySDI.rc2</code></td><td>rc 用资源编辑器进行可视化编辑，rc2 不能编辑</td></tr><tr><td>应用程序生成的资源文件</td><td><code>MySDI.ico</code></td><td>图形编辑器编辑图标文件</td></tr><tr><td>应用程序生成的资源文件</td><td><code>MySDIDoc.ico</code></td><td>文档图标一般用于多文档应用程序中，可通过相关函数获取并显示图标</td></tr><tr><td>应用程序生成的资源文件</td><td><code>Toolbar.bmp</code></td><td>工具栏中所有按钮的图标显示</td></tr><tr><td>标准包含文件</td><td><code>StdAfx.h</code>, <code>StdAfx.cpp</code></td><td>用来生成预编译文件</td></tr></tbody></table><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggfyw9ghraj319z0u0jyy.jpg" alt=""></p><h3 id="基本类"><a href="#基本类" class="headerlink" title="基本类"></a>基本类</h3><ol><li><code>CObject</code> 类</li></ol><p>根类</p><pre><code>1. 在程序运行时，可获得对象的大小、类名、动态创建类的实例2. 提供了把对象状态调转给调试机制的能力，类似于判断当前对象的数据成员是否有效3. 具有把对象的数据存进文件或从文件中提取数据重建对象的能力</code></pre><ol start="2"><li><code>CCmdTarget</code> 类</li></ol><p>是 <code>CObject</code> 的子类，具有消息映射属性的类的公共基类，封装了窗口函数</p><p>子类有 <code>CWinThread</code>, <code>CWnd</code>, <code>CDocument</code></p><ol start="3"><li><code>CWnd</code> 类</li></ol><p>提供所有窗口类的基本功能。<code>CWnd</code> 派生的类可以拥有自己的窗口，并对它进行控制</p><p><code>CFrameWnd</code> 和 <code>CView</code> 是 <code>CWnd</code> 的子类，前者是创建和维护窗口的边框、菜单栏、工具栏、状态栏，负责显示和搜索用户命令，后者负责为文档提供一个或几个视图</p><p>视图的作用是为修改、查询文档等任务提供人机交互界面</p><ol start="4"><li><code>CDocument</code> 类</li></ol><p>负责装载和维护文档数据，数据的变化、存取都是通过文档实现的</p><p>视图窗口通过文档对象来访问和更新数据</p><ol start="5"><li><code>CView</code> 类</li></ol><p>和文档类联系在一起，在文档和用户之间起中介作用，即在屏幕上显示文档的内容，并把用户输入转换成对文档的操作</p><ol start="6"><li><code>CDocTemplate</code> 类</li></ol><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggg1uka7sjj313w0pugp1.jpg" alt=""></p><p>文档模板类对象由应用对象在 <code>InitInstance()</code> 函数中构造生成。它分为单文档模板类 (CSingleDocTemplate) 和多文档模板 (CMultiDocTemplate)，分别对应 SDI 应用程序和 MDI<br>应用。</p><p>应用类对象通常只生成一个文档模板类对象</p><ol start="7"><li><code>CWinThread</code> 类</li></ol><p>多线程类。所有应用程序至少有一个线程</p><ol start="8"><li><code>CWinApp</code> 类</li></ol><p>是 <code>CWinThread</code> 的子类，封装了初始化、运行、终止应用程序的代码</p><div class="note danger">            <p>一个 MFC 应用程序并不直接操纵上述类，而是以上述类为基类派生新的类，构建基本框架</p>          </div><h2 id="MFC-处理-Windows-消息的类型及方法"><a href="#MFC-处理-Windows-消息的类型及方法" class="headerlink" title="MFC 处理 Windows 消息的类型及方法"></a>MFC 处理 Windows 消息的类型及方法</h2>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Summer Term Report of MFC
-    
-    </summary>
-    
-    
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-      <category term="MFC" scheme="https://augists.top/tags/MFC/"/>
     
   </entry>
   
