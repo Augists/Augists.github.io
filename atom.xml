@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-09-01T15:13:03.914Z</updated>
+  <updated>2020-09-05T15:12:56.675Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ios Password Safety for Wallet</title>
+    <link href="https://augists.top/SELF/SHARING/ios-password-safety-for-wallet/"/>
+    <id>https://augists.top/SELF/SHARING/ios-password-safety-for-wallet/</id>
+    <published>2020-09-05T14:01:30.000Z</published>
+    <updated>2020-09-05T15:12:56.675Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>首先声明，之前使用的时候并没有这个，不清楚具体是在哪一次更新加入的这个特性，也没有看到有相关媒体文章提到过<br>本身 iPhone 在设置密码的时候，初始状态（指没有在钱包中添加过信用卡）密码只能设定为 6 位数字密码，且没有任何安全等级的要求<br>然后向钱包中添加信用卡，iPhone 会强制要求使用一个安全等级较高的密码来作为新的 iPhone 解锁密码，为了防止双击右侧电源键调出信用卡时，当不能使用 Face ID 时，要求使用者输入更安全的密码（任意位的数字或任意位的数字字母组合，只与安全系数有关，与长度不完全相关）<br>想要再修改成普通密码也很简单，设置-面容和密码-关闭密码，然后重新开启就可以设置普通密码了，但是这时你会看到，钱包中之前保存的信用卡也消失了<br>这个时候，打开钱包，点击添加信用卡，可以一键添加回原来的信用卡而无需再次输入卡号，但是会重新要求你输入更安全的密码<br>（再往下就套娃了 😏</p><p><img src="https://i.loli.net/2020/09/05/F8O51jWYEJ6Lhk9.jpg" alt=""><br>安全密码在锁屏进入的时候样式不太一样</p><hr><p>另外有一点也是第一次见到<br>在信用卡进行手机号验证的时候，钱包请求发送验证码，收到短信，自动填充，整个过程没有需要我点击键盘上的验证码，而是完全自动<br>毕竟是官方的钱包应用，协同的体验相对来说又上了一个台阶</p><p>最后还是不建议使用普通密码并在钱包中存留信用卡的信息，在别人知道的情况下，可以较为简单的破解密码并强制添加回保存了信息的信用卡并进行支付</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      What IOS will do when you add credit card in Apple Wallet?
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
+    
+  </entry>
   
   <entry>
     <title>Data Structure</title>
@@ -171,9 +196,9 @@
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
@@ -490,37 +515,6 @@
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QT5 C++11 Lambda Error</title>
-    <link href="https://augists.top/SELF/ERROR/QT5-C-11-Lambda-Error/"/>
-    <id>https://augists.top/SELF/ERROR/QT5-C-11-Lambda-Error/</id>
-    <published>2020-07-10T08:20:08.000Z</published>
-    <updated>2020-07-19T07:28:58.586Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <h1 id="QT-Lambda-表达式在-connect-时-error"><a href="#QT-Lambda-表达式在-connect-时-error" class="headerlink" title="QT Lambda 表达式在 connect 时 error"></a>QT Lambda 表达式在 connect 时 error</h1><p>依旧在这个折磨人的小学期</p><p>第一次接触到 <strong>Lambda</strong> 表达式，以及它在 QT 的 <code>connect</code> 函数中的运用</p><p>但是当自己写的时候，却发现不是那回事</p><h2 id="我的情况"><a href="#我的情况" class="headerlink" title="我的情况"></a>我的情况</h2><p>我在将一个 button 连接，但是我希望只有在 button 点击的时候，才在相应的位置上 new<br>这样我就可以只定义二维指针数组，而不需要立即为他们分配内存</p><p>在 h 文件中，有他们的二维指针数组</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gmae</span> :</span> <span class="keyword">public</span> QWidget</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    QPushButton *mapButton[<span class="number">12</span>][<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line">    Tower *tower[<span class="number">12</span>][<span class="number">7</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>在 cpp 中，<code>mapButton</code> 已经 <code>new</code> 过了</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// j, i 是因为 ij 是二维数组式的行列下标，而 QT 中为 xy</span></span><br><span class="line">connect(mapButton[j][i], SIGNAL(click(<span class="keyword">bool</span>)), [=]()</span><br><span class="line">&#123;</span><br><span class="line">    tower[j][i] = <span class="keyword">new</span> Tower(<span class="keyword">this</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>然后就 error 了😭，会告诉你没有合适的 <strong>candidate</strong></p><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>出现这个问题，根据我的最终解决方案和推测，是这样的</p><p>QT 从 5 开始，才支持 C++11 的 <strong>Lambda</strong> 表达式，而同时，QT5 对 <code>connect</code> 稍有修改</p><p>由原来的</p><figure class="highlight qt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect(*sender, SIGNAL(senderSignal()), *receiver, SLOT(receiverSlot()));</span><br></pre></td></tr></table></figure><p>修改为了</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect(*sender, &amp;SenderClass::signal, *receiver, &amp;ReceiverClass::slot);</span><br></pre></td></tr></table></figure><p>但是同时，兼容旧版的 <code>connect</code> 函数</p><p>但是 <code>Lambda</code> 表达式的 <code>connect</code> 函数并不支持旧版</p><p>当参数中用了 <code>Lambda</code> 表达式，会自动以 5 之后的标准看待这个 <code>connect</code> 函数</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>所以解决方案也很简单</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">connect(mapButton[j][i], &amp;QPushButton::click, [=]()</span><br><span class="line">&#123;</span><br><span class="line">    tower[j][i] = <span class="keyword">new</span> Tower(<span class="keyword">this</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>我觉得对于这个问题，与下一篇的 <code>#pragma once</code> 放在一起看，会对新旧标注以及兼容性有一点自己的想法吧</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      An unexpected error of Lambda Expression when using connect in QT5 C++11
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-      <category term="QT" scheme="https://augists.top/tags/QT/"/>
     
       <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
