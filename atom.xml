@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-09-17T08:35:26.616Z</updated>
+  <updated>2020-09-21T15:15:54.957Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IOS 14 Experience</title>
+    <link href="https://augists.top/APPLE/IOS-14-experience/"/>
+    <id>https://augists.top/APPLE/IOS-14-experience/</id>
+    <published>2020-09-21T12:03:28.000Z</published>
+    <updated>2020-09-21T15:15:54.957Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p><img src="https://i.loli.net/2020/09/21/OnB8sHbIwM1zyQV.png" alt="ios14"></p><p>苹果在北京时间 16 日凌晨 1 点开了 2020 秋季的第一场发布会，发布会内容本身与 iPhone 没啥关系，但是发布会说第二天就会推送 iOS 14 的更新<br>我也在第一时间更新了我的手机，毕竟这可以隐藏应用看起来太香了<br>周围人都很冷静的没更新，我也没管，没看别人说啥，直接就这么一个手机，头铁的更新了</p><p>目前使用上只有一次 shortcut 闪退，其他没有什么明显的 bug，除了微信（后面说</p><hr><p>大的更新点只有两点</p><ul><li>小组件（包括负一屏和主屏幕</li><li>App Library</li></ul><h3 id="小组件"><a href="#小组件" class="headerlink" title="小组件"></a>小组件</h3><p>现在的负一屏也直接改成了小组件<br><img src="https://i.loli.net/2020/09/21/aSFoC41tfDbpRUN.jpg" alt="widget"><br>主屏幕也可以添加小组件了<br><img src="https://i.loli.net/2020/09/21/PnRC2qmN31ZygzH.jpg" alt="homepage"><br>其实感觉上有一些重复，最常看的小组件，是应该放在主屏幕上还是放在负一屏上呢？<br>而且形式上，或者说设计上也有感觉重复，完全一样的设计，在负一屏上看和在主屏幕上看，对于一个知道并经常使用负一屏的人来说区别其实不大<br>所以我选择在主屏幕上放了 <em>reminder</em> 来时时刻刻提醒需要做的事情（如果你习惯用 calendar 而不是 reminder 的话，日历的日期会显得很多余，其他两个大小又不是很合适<br><em>reminder</em> 的 2x4 小组件限制了只能显示一个 list，而我想要让它放在主屏幕，所以我选的 Today 表<br>而负一屏的第一个是一个 <em>smart widget</em>，可以在这个小组件滑动切换，我放了</p><ul><li>reminder</li><li>calendar</li><li>music</li><li>weather</li></ul><p>使用频率不高，但是需要一个快捷的查看和打开入口<br>第二个是新版的快捷指令小组件，官方提供了 1 4 8 个快捷指令的集合，多个的快捷指令需要你在 <em>shortcut</em> 里自行创建一个 list 来存放想在这个小组件内展示的捷径，若多余小组件可以容纳的个数，只会显示前几个<br>我使用最多的其实只有剪贴板编辑和关闭两个捷径，其他的也只是提供一个快捷的入口而已<br>但是，新版的快捷指令组件要比前一代的感觉上好很多，更像把 shortcut 拿出来做成的，而不是原来像是两个独立的东西了</p><div class="note ">            <p>最近想写一个打开 wlan 并连接 EDA 校园网再登录的捷径，查询网络之后看到了北理和湖南科大的捷径<br>北理的发在少数派，有点高端 😔 超出了我现在对捷径的理解<br>湖南科大的可以看看，还需要点时间<br>之前埋的 RSSHub 的坑还没填上</p>          </div><p>总的来说，小组件带来的提升有限，个性化的空间也并不是很大（系统提供的<br>小组件叠放让我原来长长的负一屏小了很多，快捷指令也只需要挑选最常用最需要快捷入口的放在外面，最重要的可能是可以单独编辑每个组件吧，无论是展示形式还是内容选择，都和以前差的比较大</p><h3 id="App-Library"><a href="#App-Library" class="headerlink" title="App Library"></a>App Library</h3><p><img src="https://i.loli.net/2020/09/21/Ff3RjPqb452dTtr.jpg" alt="App Library"><br>对我来说最重要的是可以隐藏应用程序、文件夹和一整个屏幕<br>现在我只有一个屏幕了，其他的东西全都藏到 <em>App Libaray</em> 里了<br>一个清爽的主屏幕，向左进快捷组件，向右进入 <em>App Library</em> 找应用，主屏幕只放了几个最最常用的应用，小火箭和网飞都放进了 <em>App Library</em><br>而在 <em>App Library</em> 里，是系统自动帮我整理的分类，前三个可以直接打开，是我最常用的应用，第四个是应用抽屉<br>但是毕竟不是自己整理的文件夹，现在也没有开放给用户自己整理 <em>App Library</em> 的权限<br>所以上面还有一个应用字典排序查找<br>看起来有点像魅族当年做的，但是这个有一点有点想吐槽，字母间隔显示，<code>A*C*E</code>，然而我每次都需要想想中间是个啥 😂</p><hr><p>还有一个我自己注意到的点<br>旧版的 Siri 在与 shortcut 联动的时候，如果读取许多段的文本，是会显示在一起的，而新 siri 会把每一段分成一个一个的卡片分开显示<br>比如我的“早上好”，会一个一个显示当天的气温等信息，而不是全都堆在一起了</p><hr><p>对于现在的桌面非常满意<br>但是回想起来，它有点像是，安卓应用抽屉的另一种方式<br>在只保留一个屏幕的情况下，向右滑 = 点击应用抽屉，剩下的一个屏幕 = 快捷桌面<br>但是不同的地方在于，右滑的交互方式更适合现在人们的习惯，自动整理的分类和应用搜索更省事<br>但是我觉得依然可以看作 iOS 与安卓的靠近，对另一方交互方式的认同<br>iOS 有它曾经设计优秀的地方，安卓也有它理念的优势，“抄袭”是正常的<br>当年 iPhone 4 让很多人第一次接触到了这样先进的智能机（也包括我），让整个环境推崇 iOS 及 iPhone 的设计，所以趋势就是都学苹果的设计<br>现在这个圈子越来越大，不会再有那么多人盲目的崇拜苹果了，所以显得苹果开始抄袭安卓<br>其实大家一直都在互相学习，开源和闭源也并不冲突<br>尽管有 <em>Linux is not Unix</em> 但 Linux 依然是从 Unix 演变而来的，脱不了的关系</p><p>今年的 iOS 在我眼里并不是升级的主角，但是它依然还在坚持着简化普通人的使用，给大部分人更好的体验，这就够了</p><hr><p>微信的吐槽放在最后，因为这毕竟是一个有点政治敏感的东西<br>抛开美国现在对中国企业和产品的封锁禁令不谈，苹果和微信的纷争也已经持续了很久了<br>之前最出名的就是暗黑模式的适配，即便现在微信适配了暗黑模式，我依然觉得它这个模式做的很烂（不过相比 QQ 还是好一点<br>今年 iOS14 已经这么久了，从 6 月一直到现在 9 月推送正式版，微信依然没有做 iOS14 的适配<br>我一直不是很喜欢腾讯这家公司，而这种适配，确实就是态度问题了<br>一家这么大的公司，确做了这么多不合身份的事情<br>为什么国内，甚至说大陆，的大科技公司，都那么招黑呢<br>可能小米是几个大公司里相对声誉最好的吧？<br>😔</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      iOS 14 has been published last week, and I update mine at the earliest time
+    
+    </summary>
+    
+    
+    
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+  </entry>
   
   <entry>
     <title>Cannot Remove /Library/folder as Root</title>
@@ -79,11 +102,11 @@
     
     
     
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
+    
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
     
   </entry>
   
@@ -106,9 +129,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
     
@@ -217,9 +240,9 @@
     
     
     
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
       <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
   </entry>
   
@@ -269,9 +292,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
@@ -317,11 +340,11 @@
     
     
     
+      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
+    
       <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
     
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
     
   </entry>
   
@@ -394,9 +417,9 @@
     
     
     
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
       <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
   </entry>
   
@@ -484,33 +507,6 @@
       <category term="SUMMERTERM" scheme="https://augists.top/tags/SUMMERTERM/"/>
     
       <category term="C/C+" scheme="https://augists.top/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2020 Apple Shop for College</title>
-    <link href="https://augists.top/APPLE/2020-Apple-Shop-for-College/"/>
-    <id>https://augists.top/APPLE/2020-Apple-Shop-for-College/</id>
-    <published>2020-07-14T13:18:00.000Z</published>
-    <updated>2020-08-09T14:19:02.626Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <div class="note danger">            <p>今年的苹果教育优惠从上周四已经开始了！！！</p>          </div><p>今年特殊，跟高考这么近 🤣</p><p>除此之外，今年还特殊在很多地方</p><hr><h3 id="耳机"><a href="#耳机" class="headerlink" title="耳机"></a>耳机</h3><p>与以前相比，最大的不同就在送的耳机变了<br>以前 mac 系列送的是 <code>Beats Studio 3</code>，ipad 系列送的是 <code>Beats Solo 3</code>，可选换 <code>Beats X</code></p><div class="note ">            <p>我当时问了我这里的官方店，有的店员允许换 <code>PowerBeats Pro</code>，一般是不让换，这个不是完全按照价钱可以就能换）</p>          </div><p>今年改成了全线送 <code>AirPods</code><br>一般来说，由于有教育优惠的存在，每年到这时候二手市场上都会有大量的全新未拆封的 Beats 耳机在卖<br>那时候 solo 的价格在 450-550 不等，studio 的价格在 1450-1500 左右（这是语病<br>而 AirPods 的价格，大概我预估这一波会让它大概到 700-800，相对来说买 mac 的更亏了（我去年 studio 卖了1500，当时 AidPods2 的价格官方在 1200 左右<br>买 iPad 更值</p><p>当然，对很多人来讲，Beats 是装b的代名词，AidPods 才是当代新青年的标配，这一换他们很开心（我周围至少俩同学刚买了 AirPods 哭晕才厕所</p><h3 id="AppleCare"><a href="#AppleCare" class="headerlink" title="AppleCare+"></a>AppleCare+</h3><p>今年的 AppleCare+ 大概是我第一次看到它因为教育优惠打折吧<br>我没买过这个<br>但是至少它对于高校师生打折了<br>至于需求……<br>应该说，保底是换一次电池吧<br>如果不差钱当然闭眼买就行了<br>但是我不是很喜欢为了换专门去摔这种事情<br>普通人，珍惜点用就好了<br>对买 mac 的同学来说，推荐一下磁吸膜，既能当屏幕保护膜用，还侧面防偷窥，最重要的不需要担心别的膜导致屏幕镀层的问题（这屏幕较弱又高贵</p><h3 id="WWDC-2020"><a href="#WWDC-2020" class="headerlink" title="WWDC 2020"></a>WWDC 2020</h3><p>从长远来看，iPad 在苹果的地位会越来越核心<br>可以从今年的 WWDC 看出一点东西，再加上十年前老乔那段采访<br>苹果有一定可能是把平板作为未来电脑的形态在发展的<br>所以，如果要在 iPad 与 mac 之间推荐一个，我更推荐 iPad<br>尤其是 iPad + apple pencil （+ 键盘鼠标）<br>在未来可能会比买台 mac 更舒服<br>原因中最重要的一点就是苹果将在 mac 上逐步放弃 intel 转向 arm 架构的 CPU<br>而这带来的 Universal App 会让 iPad 更加吃香<br>令一点，从系统的美观实用来说，iPad OS 可能更优秀（macOS Big Sur 让我感觉，有向触摸屏发展的趋势</p><div class="note danger">            <p>买电子产品一定去官方买一定去官方买一定去官方买！！！<br>山东的苹果官方店一共就两家<br>查询地址：<a href="https://www.apple.com.cn/retail/storelist/">https://www.apple.com.cn/retail/storelist/</a></p>          </div><h2 id="最后放价格对比图"><a href="#最后放价格对比图" class="headerlink" title="最后放价格对比图"></a>最后放价格对比图</h2><p>数据全部来自官网</p><h3 id="macbook-air"><a href="#macbook-air" class="headerlink" title="macbook air"></a>macbook air</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqukgzdpaj30u00ucgre.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqujynfsaj30vg0u0n2o.jpg" alt=""></p><h3 id="macbook-pro-13"><a href="#macbook-pro-13" class="headerlink" title="macbook pro 13"></a>macbook pro 13</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqulhvs83j31aq0u0wlu.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqumfm3y6j31c80u0wlb.jpg" alt=""></p><h3 id="macbook-pro-16"><a href="#macbook-pro-16" class="headerlink" title="macbook pro 16"></a>macbook pro 16</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqunqza6oj30xh0u0dla.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqun7r033j30xk0todky.jpg" alt=""></p><h3 id="ipad"><a href="#ipad" class="headerlink" title="ipad"></a>ipad</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquw0ja76j30o60nymze.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqurbi47uj30og0nq0uz.jpg" alt=""></p><h3 id="ipad-mini"><a href="#ipad-mini" class="headerlink" title="ipad mini"></a>ipad mini</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquwjf8x4j30no0nkmzf.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqut36jhoj30o00notay.jpg" alt=""></p><h3 id="ipad-air"><a href="#ipad-air" class="headerlink" title="ipad air"></a>ipad air</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqux63flsj30nq0naq57.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggqutp2ildj30p60oagnx.jpg" alt=""></p><h3 id="ipad-pro"><a href="#ipad-pro" class="headerlink" title="ipad pro"></a>ipad pro</h3><p>原价<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquxrwtwgj30ny0ss76y.jpg" alt=""><br>教育优惠<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggquuoe25uj30o80t6q5m.jpg" alt=""></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Apple Shop for College Activity 2020 has started !!! 🤣
-    
-    </summary>
-    
-    
-    
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
     
   </entry>
   
