@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://augists.top/404.html</loc>
-    
-    <lastmod>2020-10-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Data-Structure/</loc>
     
     <lastmod>2020-10-02</lastmod>
@@ -683,6 +676,27 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/GIT/</loc>
+    <lastmod>2020-10-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/ENGLISH/</loc>
+    <lastmod>2020-10-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/DEVICE/</loc>
+    <lastmod>2020-10-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/C-C/</loc>
     <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
@@ -697,21 +711,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/DEVICE/</loc>
-    <lastmod>2020-10-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/ENGLISH/</loc>
-    <lastmod>2020-10-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/GIT/</loc>
+    <loc>https://augists.top/tags/EMACS/</loc>
     <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -719,13 +719,6 @@
   
   <url>
     <loc>https://augists.top/tags/VIM/</loc>
-    <lastmod>2020-10-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/EMACS/</loc>
     <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -774,14 +767,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/MFC/</loc>
+    <loc>https://augists.top/tags/STL/</loc>
     <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/STL/</loc>
+    <loc>https://augists.top/tags/MFC/</loc>
     <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
