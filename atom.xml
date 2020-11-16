@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-11-16T08:32:58.240Z</updated>
+  <updated>2020-11-16T11:17:58.590Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Thread Binary Tree</title>
+    <link href="https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Tree/Thread-Binary-Tree/"/>
+    <id>https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Tree/Thread-Binary-Tree/</id>
+    <published>2020-11-16T10:43:27.000Z</published>
+    <updated>2020-11-16T11:17:58.590Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <h2 id="线索二叉树的结点类"><a href="#线索二叉树的结点类" class="headerlink" title="线索二叉树的结点类"></a>线索二叉树的结点类</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">ThreadBinaryTreeNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadBinaryTree</span>&lt;T&gt;;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> leftTag, rightTag;</span><br><span class="line">    ThreadBinaryTreeNode&lt;T&gt; *leftChild;</span><br><span class="line">    ThreadBinaryTreeNode&lt;T&gt; *rightChild;</span><br><span class="line">    T element;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ThreadBinaryTreeNode();</span><br><span class="line">    ThreadBinaryTreeNode(<span class="keyword">const</span> T &amp;ele);</span><br><span class="line">    ThreadBinaryTreeNode(<span class="keyword">const</span> T &amp;ele, ThreadBinaryTreeNode&lt;T&gt; *l, ThreadBinaryTreeNode&lt;T&gt; *r);</span><br><span class="line">    <span class="function">ThreadBinaryTreeNode&lt;T&gt; *<span class="title">getLeftChild</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function">ThreadBinaryTreeNode&lt;T&gt; *<span class="title">getRightChild</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLeftChild</span><span class="params">(ThreadBinaryTreeNode&lt;T&gt; *l)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setRightChild</span><span class="params">(ThreadBinaryTreeNode&lt;T&gt; *r)</span></span>;</span><br><span class="line">    <span class="function">T <span class="title">getValue</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setValue</span><span class="params">(<span class="keyword">const</span> T &amp;val)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="线索二叉树类"><a href="#线索二叉树类" class="headerlink" title="线索二叉树类"></a>线索二叉树类</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">ThreadBinaryTree</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    ThreadBinaryTreeNode&lt;T&gt; *root;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ThreadBinaryTree();</span><br><span class="line">    ThreadBinaryTree(ThreadBinaryTreeNode&lt;T&gt; *r);</span><br><span class="line">    ~ThreadBinaryTree();</span><br><span class="line">    <span class="function">ThreadBinaryTreeNode&lt;T&gt; *<span class="title">getRoot</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">InThread</span><span class="params">(ThreadBinaryTreeNode&lt;T&gt; *root, ThreadBinaryTreeNode&lt;T&gt; *pre)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(ThreadBinaryTreeNode&lt;T&gt; *root)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="中序线索化二叉树"><a href="#中序线索化二叉树" class="headerlink" title="中序线索化二叉树"></a>中序线索化二叉树</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">ThreadBinaryTree</span>&lt;T&gt;:</span>:InThread(ThreadBinaryTreeNode&lt;T&gt; *root, ThreadBinaryTreeNode&lt;T&gt; *pre)</span><br><span class="line">&#123;</span><br><span class="line">    ThreadBinaryTreeNode&lt;T&gt; *current;</span><br><span class="line">    current = root;</span><br><span class="line">    <span class="keyword">if</span> (current)</span><br><span class="line">    &#123;</span><br><span class="line">        InThread(current-&gt;leftChild, pre);</span><br><span class="line">        <span class="keyword">if</span> (!current-&gt;leftChild)</span><br><span class="line">        &#123;</span><br><span class="line">            current-&gt;leftChild = pre;</span><br><span class="line">            current-&gt;leftTag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ((pre) &amp;&amp; (!pre-&gt;rightChild))</span><br><span class="line">        &#123;</span><br><span class="line">            pre-&gt;rightChild = root;</span><br><span class="line">            pre-&gt;rightTag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = current;</span><br><span class="line">        InThread(current-&gt;rightChild, pre);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="中序遍历线索二叉树"><a href="#中序遍历线索二叉树" class="headerlink" title="中序遍历线索二叉树"></a>中序遍历线索二叉树</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">ThreadBinaryTree</span>&lt;T&gt;:</span>:InOrder(ThreadBinaryTreeNode&lt;T&gt; *root)</span><br><span class="line">&#123;</span><br><span class="line">    ThreadBinaryTreeNode&lt;T&gt; *current;</span><br><span class="line">    current = root;</span><br><span class="line">    <span class="keyword">while</span> (!current-&gt;leftTag)</span><br><span class="line">        current = current-&gt;leftChild;</span><br><span class="line">    <span class="keyword">while</span> (current)</span><br><span class="line">    &#123;</span><br><span class="line">        visit(current);</span><br><span class="line">        <span class="keyword">if</span> (current-&gt;rightTag)</span><br><span class="line">            current = current-&gt;rightChild;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            current = current-&gt;rightChild;</span><br><span class="line">            <span class="keyword">while</span> (current &amp;&amp; !current-&gt;leftTag)</span><br><span class="line">                current = current-&gt;leftChild;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>          </div>]]></content>
+    
+    <summary type="html">
+    
+      code of Thread Binary Tree
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
+    
+      <category term="TREE" scheme="https://augists.top/tags/TREE/"/>
+    
+  </entry>
   
   <entry>
     <title>Traverse Binary Tree</title>
@@ -476,29 +505,6 @@
       <category term="WEB" scheme="https://augists.top/tags/WEB/"/>
     
       <category term="CSS" scheme="https://augists.top/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO 404 Error Cuz Change Directory</title>
-    <link href="https://augists.top/HEXO/HEXO-404-Error-cuz-Change-Directory/"/>
-    <id>https://augists.top/HEXO/HEXO-404-Error-cuz-Change-Directory/</id>
-    <published>2020-07-19T07:28:22.000Z</published>
-    <updated>2020-07-19T07:39:56.643Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>刚才想找一篇之前的博客，点开之后发现报了404的错误<br>那给我吓到……<code>(^_^)a</code><br>我以为我之前的博客都没了呢</p><p>当时有点懵，就直接去网上搜 <code>hexo 404</code> 去了，结果都是怎么做404页面的<br>我就又去 <em>reeder</em> 去看了一下博客，确实又问题<br>能显示博客的标题和简介，但是进入正文的时候404了</p><p>于是我就去 GitHub 博客仓库看了一下 public 的内容<br>发现问题出在文件夹目录上<br>我昨天晚上对一些文件夹进行了改名，目前除了 mac 相关的文件夹是小写，其余文件夹都用大写<br>而昨天的 html 记录急着上传，就直接 <code>hexo d -g</code> 了，导致更名的文件夹并没有在 public 中更改，而主页的链接由于增加了一篇博客进行了更新<br>最终结果是，主页的跳转链接是新的，而文件夹目录仍然是旧的</p><p>解决方案也很简单</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>只需要先 clean 清除 public，再重新 generate 产生新的 public 文件夹就可以了</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Just now when I opened an article in my blog as usual, it turned to a 404 page&lt;br&gt;My Changing File Directories causes this 404 error
-    
-    </summary>
-    
-    
-    
-      <category term="HEXO" scheme="https://augists.top/tags/HEXO/"/>
-    
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
   </entry>
   
