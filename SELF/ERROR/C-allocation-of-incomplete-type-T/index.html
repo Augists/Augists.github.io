@@ -39,13 +39,13 @@
 <meta property="og:description" content="I was working on my extra Principle of Computer Organization homework, simulating CPU buswhen I got an error of allocation of incomplete type">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-16T17:53:39.000Z">
-<meta property="article:modified_time" content="2020-12-16T18:06:56.748Z">
+<meta property="article:modified_time" content="2020-12-16T18:55:03.570Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="ESSAY">
 <meta property="article:tag" content="CODE">
 <meta property="article:tag" content="ERROR">
-<meta property="article:tag" content="NOTE">
 <meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="NOTE">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://augists.top/SELF/ERROR/C-allocation-of-incomplete-type-T/">
@@ -195,7 +195,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-12-17 01:53:39 / Modified: 02:06:56" itemprop="dateCreated datePublished" datetime="2020-12-17T01:53:39+08:00">2020-12-17</time>
+              <time title="Created: 2020-12-17 01:53:39 / Modified: 02:55:03" itemprop="dateCreated datePublished" datetime="2020-12-17T01:53:39+08:00">2020-12-17</time>
             </span>
 
           
@@ -211,7 +211,7 @@
 
       
         <div class="note warning">
-            <p>刚才在做机组作业，用 C++ 模拟仿真面向存储器的双总线结构<br>然后得到了这个报错<br><code>allocation of incomplete type</code></p><p>简单复原一下刚才 bug 的场景</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CPU</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Memory</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">I_O</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bus</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    CPU *b_cpu;</span><br><span class="line">    Memory *b_memory;</span><br><span class="line">    I_O *b_io[IO_MAX_NUMBER];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Bus(CPU *cpu)</span><br><span class="line">    &#123;</span><br><span class="line">        b_cpu = <span class="keyword">new</span> CPU(cpu);</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CPU</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CPU(CPU *cpu)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>编译使用 <code>g++ -std=c++2a</code><br>然后就得到 <code>allocation of incomplete type CPU</code> 的报错啦</p><p>然后我尝试写成 <code>b_cpu = new CPU;</code>，还是报错</p><p>觉得还挺奇怪的，然后就 google 了一下<br><em>stack overflow</em> 上人家的错误是因为 <em>header</em> 里没写 <code>template</code><br>别的说的感觉也和我的没啥关系</p><p>最后解决是把 Bus 类从前面放到了三个类的最后 😔<br>但是其实并不明白是因为什么原因<br>自己推测可能是前面只声明了三个类，但是类中的方法并没有声明定义，所以不能在 Bus 类中 new 另外三个类<br>确实以前这么写的时候也没有需要 new 过</p>
+            <p>刚才在做机组作业，用 C++ 模拟仿真面向存储器的双总线结构<br>然后得到了这个报错<br><code>allocation of incomplete type</code></p><p>简单复原一下刚才 bug 的场景</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CPU</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Memory</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">I_O</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bus</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    CPU *b_cpu;</span><br><span class="line">    Memory *b_memory;</span><br><span class="line">    I_O *b_io[IO_MAX_NUMBER];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Bus(CPU *cpu)</span><br><span class="line">    &#123;</span><br><span class="line">        b_cpu = <span class="keyword">new</span> CPU(cpu);</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CPU</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CPU(CPU *cpu)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>编译使用 <code>g++ -std=c++2a</code><br>然后就得到 <code>allocation of incomplete type CPU</code> 的报错啦</p><p>然后我尝试写成 <code>b_cpu = new CPU;</code>，还是报错</p><p>觉得还挺奇怪的，然后就 google 了一下<br><em>stack overflow</em> 上人家的错误是因为 <em>header</em> 里没写 <code>template</code><br>别的说的感觉也和我的没啥关系</p><p>最后解决是把 Bus 类从前面放到了三个类的最后 😔<br>自己推测可能是前面只声明了三个类，但是类中的方法并没有声明定义，所以不能在 Bus 类中 new 另外三个类<br>确实以前这么写的时候也没有需要 new 过</p>
           </div>
 
     </div>
@@ -321,8 +321,8 @@
               <a href="/tags/ESSAY/" rel="tag"><i class="fa fa-tag"></i> ESSAY</a>
               <a href="/tags/CODE/" rel="tag"><i class="fa fa-tag"></i> CODE</a>
               <a href="/tags/ERROR/" rel="tag"><i class="fa fa-tag"></i> ERROR</a>
-              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
               <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
           </div>
 
         
