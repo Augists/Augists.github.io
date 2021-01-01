@@ -753,14 +753,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/ENGLISH/</loc>
+    <loc>https://augists.top/tags/DEVICE/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/DEVICE/</loc>
+    <loc>https://augists.top/tags/ENGLISH/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -830,7 +830,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/STL/</loc>
+    <loc>https://augists.top/tags/DATASTRUCTURE/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/JAVA/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -865,7 +872,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/DATASTRUCTURE/</loc>
+    <loc>https://augists.top/tags/STL/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -873,20 +880,6 @@
   
   <url>
     <loc>https://augists.top/tags/TREE/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/DATASTRCTURE/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/JAVA/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
