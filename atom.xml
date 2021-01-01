@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2020-12-31T03:42:12.759Z</updated>
+  <updated>2021-01-01T03:18:15.169Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Algorithm of Sort</title>
+    <link href="https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Algorithm-of-Sort/"/>
+    <id>https://augists.top/NOTES/CODE_LANGUAGE/DATA_STRUCTURE/Algorithm-of-Sort/</id>
+    <published>2021-01-01T03:09:09.000Z</published>
+    <updated>2021-01-01T03:18:15.169Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <ul><li><a href="https://zhuanlan.zhihu.com/p/122284534">冒泡排序（Bubble Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/122293204">插入排序（Insertion Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/122632213">希尔排序（Shell Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/123048793">选择排序（Selection Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/123416868">快速排序（Quick Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/124356219">归并排序（Merge Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/124885051">堆排序（Heap Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/125126086">计数排序（Counting Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/125737294">桶排序（Bucket Sort）</a></li><li><a href="https://zhuanlan.zhihu.com/p/126116878">基数排序（Radix Sort）</a></li></ul>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Catalog of algorithm articles by develop1024
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="DATASTRCTURE" scheme="https://augists.top/tags/DATASTRCTURE/"/>
+    
+      <category term="JAVA" scheme="https://augists.top/tags/JAVA/"/>
+    
+  </entry>
   
   <entry>
     <title>2020 Review</title>
@@ -480,29 +509,6 @@
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="STL" scheme="https://augists.top/tags/STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typing Practice</title>
-    <link href="https://augists.top/SELF/REVIEW/Typing-Practice/"/>
-    <id>https://augists.top/SELF/REVIEW/Typing-Practice/</id>
-    <published>2020-07-31T02:26:21.000Z</published>
-    <updated>2020-07-31T03:29:00.535Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p><img src="https://i.loli.net/2020/07/31/hAmZS8tnREuj64l.png" alt=""></p><p>Thanks for my stepping out of my comfortable zone<br>今年，我最感谢我自己，走出了舒适区，重新练习打字<br>以前是半个一阳指，我可以不看键盘就用我的食指和中指摁到每个我想摁的键位，迅速而准确 🤣<br>事情转机在，我年初放假回家之后买了块罗技的 k480 蓝牙键盘<br>当时买之前，很认真的比较了罗技的几款键盘里，它最接近 mac 的原生键盘的大小和键位位置<br>拿到之后傻了，虽然大小上确实差不多，键位差不多，但是键与键之间的距离不一样<br><strong>我没法盲打了</strong></p><p>当时人就不好了，没想到阻止我玩新键盘的不是爹妈，而是我这双引以为傲的手 😒<br>不行，学<strong>标准手势</strong></p><p>练习打字的网站在<a href="https://www.typingclub.com/sportal/">这里</a><br>另一个是<a href="https://www.keybr.com">这个</a></p><p>但是有可能被墙了，上不去<br>并且这种免费大公无私的网站，肯定是会有广告的，建议用拦截插件屏蔽一下，推荐 AdGuard 和 AdBlock Plus<br>但是练习最好找这种带提示手指的，并且实时反馈你按下的位置，帮助调整自己的手势</p><hr><p>我每天练习的时间不长，大概十几二十分钟，有时候半小时甚至更多<br>练习打字只需要打开网站敲就行了，很好的消磨碎片时间，还能锻炼自己</p><p>第一天真的很痛苦，做别的事情需要打字的时候，强迫自己不用原来的，所以可能半分钟才能打一个字母<br>到了第二天，速度慢慢好一点了，但是还是一直想用原来的手势</p><p>练习总共练了10天，第一个网站上的训练情况如图</p><p><img src="https://i.loli.net/2020/07/31/8Bie1DHVpSvdjyE.png" alt=""><br><img src="https://i.loli.net/2020/07/31/moGE6QstWw9NMZv.png" alt=""><br><img src="https://i.loli.net/2020/07/31/RitGb9kHC8ujdSx.png" alt=""><br><img src="https://i.loli.net/2020/07/31/PCq1gYD7ZuvzeS6.png" alt=""></p><p>那个周还每天打卡 🤣</p><p><img src="https://i.loli.net/2020/07/31/gkVYdPByiGUEZMc.png" alt=""></p><p>其实练了不到一个周就已经没有问题了，后面主要就是练那些比较别扭一直有点问题的点</p><p>到现在，我差不多已经可以随便拿个键盘就照常敲了（盲打区域一直没有到数字区</p><p>直到第一阶段练完，我才直到不止有 qwerty 键盘，还有 Dvorak、Colemak 等等键盘布局<br>目前，qwerty 尽管不再适合，但是仍然是主流的键盘布局，方便<br>学习其他的键盘布局，要不就自己上哪都带一把特殊布局的外接键盘，要不就每次换个电脑用就费事的改一下键位，要不就需要同时熟悉至少两种键盘布局，学习成本都过高了<br>也许，我会和下一代人一起，学习新的键盘布局吧</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      The milestone? of my 2020&lt;br&gt;BIGGEST STEP
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
     
   </entry>
   
