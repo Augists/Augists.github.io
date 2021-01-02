@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-01-01T03:20:05.411Z</updated>
+  <updated>2021-01-02T12:25:23.137Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ATA Devices</title>
+    <link href="https://augists.top/SELF/SHARING/ATA-Devices/"/>
+    <id>https://augists.top/SELF/SHARING/ATA-Devices/</id>
+    <published>2021-01-02T12:03:12.000Z</published>
+    <updated>2021-01-02T12:25:23.137Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p><img src="https://i.loli.net/2021/01/02/OCAyISghkPGvHrD.png" alt=""><br>今天在系统信息里闲逛，看到硬件的第一个是叫 ATA<br>想了想，机组课好像没听到过这么个奇怪的缩写<br>就百度了一下（确实看英文 wiki 有点困难，等有时间想再学一下机组的时候要去看双语的了</p><hr><p>ATA 的全名叫 <em>Advanced Technology Attachment*，前面俩单词是废话，所以也就是说这是个 *attachment</em><br>ATA 与 IDE (<em>Integrated Drive Electronics</em>) 即集成驱动电子设备 技术实现的磁盘驱动器有关<br>也就是说，系统信息里的这个 ATA，换个意思表达就是 <strong>磁盘驱动器</strong></p><p>再往下看看，SATA 其实也是一种 ATA<br>SATA 进行一次展开叫 <em>Serial ATA</em>，而旧的 ATA 更名为 PATA，并于 2013 年年底正式退出历史舞台<br>所以在系统信息的这个 ATA，应该就可以理解成，我的电脑是否带有 SATA 接口，或是否有自己拓展出 SATA 接口<br>而 SATA 接口，似乎只在台式机上采用……所以它可能是给 iMac 和 Mac Pro 的人看的 😒<br>（那你还放在第一个</p><hr><p>2007 年制定的 SATA2 及 2.5 标准，速度达到了 <code>2.5Gb/s</code></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      What is ATA devices in system information?
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
   
   <entry>
     <title>Algorithm of Sort</title>
@@ -482,33 +503,6 @@
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>For Auto</title>
-    <link href="https://augists.top/NOTES/SUMMERTERM/STL/for-auto/"/>
-    <id>https://augists.top/NOTES/SUMMERTERM/STL/for-auto/</id>
-    <published>2020-08-05T02:07:12.000Z</published>
-    <updated>2020-08-05T02:40:56.011Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>C++ 的这个特性我是在看 STL 的时候了解到的，整个小学期也一直在用，但是当时有地方没弄明白<br>现在重新去单独看了这个</p><hr><h2 id="普通形式"><a href="#普通形式" class="headerlink" title="普通形式"></a>普通形式</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;augists&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : s)</span><br><span class="line">    i = <span class="built_in">toupper</span>(i);</span><br></pre></td></tr></table></figure>在语句 `for (auto i : s)` 中，i 会作为 s 的迭代器的每个取值的副本进行遍历也就是说，这个循环相当于<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> p = s.begin(); p != s.end(); ++p)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">auto</span> i = *p;</span><br><span class="line">    i = <span class="built_in">toupper</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这也能看出来，i 每次是作为一个新的变量只拿到了值，而非指针或引用，不能修改原值</p><hr><h2 id="引用形式"><a href="#引用形式" class="headerlink" title="引用形式"></a>引用形式</h2><p>想要能修改原值，改成引用就好了呀</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;augists&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : s)</span><br><span class="line">    i = <span class="built_in">toupper</span>(i);</span><br></pre></td></tr></table></figure><hr>          </div>]]></content>
-    
-    <summary type="html">
-    
-      for (auto i : v) in C++
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="STL" scheme="https://augists.top/tags/STL/"/>
     
   </entry>
   
