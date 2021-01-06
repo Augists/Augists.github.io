@@ -318,3 +318,52 @@ body{
 	-webkit-transform:rotate(-10deg);
 }
 
+.pic41{
+	left: 3%;
+	top: 1140px;
+	transform: rotate(-10deg);
+	-webkit-transform:rotate(-10deg);
+}
+
+.pic42{
+	left: 68%;
+	top: 1200px;
+	transform: rotate(10deg);
+	-webkit-transform:rotate(10deg);
+}
+
+.pic43{
+	left: 33%;
+	top: 1140px;
+	transform: rotate(-5deg);
+	-webkit-transform:rotate(-5deg);
+}
+
+.pic44{
+	left: 40%;
+	top: 1380px;
+	transform: rotate(25deg);
+	-webkit-transform:rotate(25deg);
+}
+
+.pic45{
+	left: 20%;
+	top: 1300px;
+	transform: rotate(15deg);
+	-webkit-transform:rotate(15deg);
+}
+
+.pic46{
+	left: 50%;
+	top: 1100px;
+	transform: rotate(15deg);
+	-webkit-transform:rotate(15deg);
+}
+
+.pic47{
+	left: 80%;
+	top: 1360px;
+	transform: rotate(15deg);
+	-webkit-transform:rotate(15deg);
+}
+
