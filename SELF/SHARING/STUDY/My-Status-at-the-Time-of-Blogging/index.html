@@ -31,20 +31,23 @@
   })();
 </script>
 
-  <meta name="description" content="An example that making QQ group like Unixroot user visitor">
+  <meta name="description" content="My Status at the Time of Blogging (sharing)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Make QQ Group Like Unix">
-<meta property="og:url" content="https://augists.top/SELF/SHARING/make-QQ-group-like-unix/index.html">
+<meta property="og:title" content="My Status at the Time of Blogging">
+<meta property="og:url" content="https://augists.top/SELF/SHARING/STUDY/My-Status-at-the-Time-of-Blogging/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="An example that making QQ group like Unixroot user visitor">
+<meta property="og:description" content="My Status at the Time of Blogging (sharing)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-14T02:04:46.000Z">
-<meta property="article:modified_time" content="2020-08-14T02:22:52.168Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfr2s08t8xj31c00u07wl.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfuj0zmxvaj31c00u07wj.jpg">
+<meta property="article:published_time" content="2020-06-13T15:19:57.000Z">
+<meta property="article:modified_time" content="2020-06-16T15:03:09.948Z">
 <meta property="article:author" content="Augists">
-<meta property="article:tag" content="ESSAY">
+<meta property="article:tag" content="HEXO">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfr2s08t8xj31c00u07wl.jpg">
 
-<link rel="canonical" href="https://augists.top/SELF/SHARING/make-QQ-group-like-unix/">
+<link rel="canonical" href="https://augists.top/SELF/SHARING/STUDY/My-Status-at-the-Time-of-Blogging/">
 
 
 <script id="page-configurations">
@@ -57,7 +60,7 @@
   };
 </script>
 
-  <title>Make QQ Group Like Unix | Augists-ZDCZ</title>
+  <title>My Status at the Time of Blogging | Augists-ZDCZ</title>
   
 
 
@@ -172,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/SHARING/make-QQ-group-like-unix/">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/SHARING/STUDY/My-Status-at-the-Time-of-Blogging/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
@@ -185,7 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Make QQ Group Like Unix
+          My Status at the Time of Blogging
         </h1>
 
         <div class="post-meta">
@@ -194,13 +197,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-08-14 10:04:46 / Modified: 10:22:52" itemprop="dateCreated datePublished" datetime="2020-08-14T10:04:46+08:00">2020-08-14</time>
+              <time title="Created: 2020-06-13 23:19:57" itemprop="dateCreated datePublished" datetime="2020-06-13T23:19:57+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-16 23:03:09" itemprop="dateModified" datetime="2020-06-16T23:03:09+08:00">2020-06-16</time>
+              </span>
 
           
-            <div class="post-description">An example that making QQ group like Unix<br>root user visitor</div>
+            <div class="post-description">My Status at the Time of Blogging (sharing)</div>
 
         </div>
       </header>
@@ -211,9 +220,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note warning">
-            <p>其实这么翻译有点奇怪<br>就是让 QQ 群有一个类似于 unix 系的管理结构</p><p>这里以一个两个人的资源存放群为例子</p><hr><h2 id="为什么需要一个管理结构"><a href="#为什么需要一个管理结构" class="headerlink" title="为什么需要一个管理结构"></a>为什么需要一个管理结构</h2><p>资源存放肯定就会有查找和删除<br>查找可以通过群历史记录来实现<br>或者直接上翻看最近的资料<br>但是<strong>删除</strong><br>因为是两个人用的，所以单纯的使用删除并不能满足使用需求（消息的删除只是自己看不到了）<br>更合适的做法是<strong>撤回</strong>，才能让两个人都再看不到这个消息<br>对于已经过时的、不需要的消息进行整理和撤回，能较为方便的让资源群更好用<br>而自己的撤回只能撤回两分钟以内的消息，且只能对下级进行无时间限制的撤回，平级和上级不能撤回</p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>使用小号作为群主（root）<br>两个人升为管理员（user）<br>群机器人是普通成员（visitor）<br>小号的账号密码对两个人都可见（sudo su）<br>小号（root）可以任意撤回所有人的消息，但是不发送消息<br>管理员（user）可以在群机器人的消息过时后对其进行撤回<br>群机器人（visitor）是用来每天定时发送通知消息的，除了灌水无任何权限</p><hr><p>目前我有两个群采用了这种方式<br>对于现在所有学校通知和各种资料都在 QQ 上的情况下，这种资源群比较方便对通知信息和资料进行二次整理汇总</p>
-          </div>
+        <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfr2s08t8xj31c00u07wl.jpg" alt="vim"></p>
+<p>这张图就是我目前写博客的时候的状态了</p>
+<ul>
+<li><p>vim编辑器，deus主题对markdown的支持比较好</p>
+</li>
+<li><p>左右分屏，通常用来查阅资料或者对照前文</p>
+</li>
+</ul>
+<p>目前没有再折腾vim中关于退出插入模式自动切换英文的插件，是因为现在一般用机械键盘，ctrl掌压的很舒服，切换输入法很快了</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfuj0zmxvaj31c00u07wj.jpg" alt="image2"></p>
+<hr>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <blockquote>
+<p>大道至简</p>
+</blockquote>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<p>这句中国的古话与现在经常能听到的极简主义不谋而合</p>
+<p>vim作为一个从上世纪早期就兴起的命令行代码编辑器一直经久不衰到今天，是时间沉淀下的优秀产物————简单而纯粹</p>
+<p>辅以适当的修饰，不宜过多，强调实用和美观的结合</p>
+<p>如果是大量中文输入的时候，也可以用typora（如有需要可以换用FlodText，比typora功能稍微丰富一点）</p>
+<p>实时渲染是我非常看重的一个点</p>
+<p>当你用markdown进行写作的时候，必须要左边输入右边渲染（或者反过来），我认为这并不是一个很好的选择</p>
+<ol>
+<li>占用空间过大。两栏确实是经典的markdown编辑器的选择，但是也注定了你需要同时开着两栏进行写作，而没有空间再给你进行分屏查阅了</li>
+<li>视线转移过多。我不是很清楚两栏写作眼睛应该看哪边，如果同时看的话会效率低下</li>
+</ol>
+<p>最后，引用一下包豪斯设计的理念吧，作为结束</p>
+<font color="orange">
+<b>包豪斯设计的三个基本观点</b>
+
+<pre><code>1. 艺术与技术的新统一
+2. 设计的目的是人而不是产品
+3. 设计必须遵循自然与客观的法则来进行</code></pre></font>
+
+<p>晚安😴</p>
 
     </div>
 
@@ -229,7 +274,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://augists.top/SELF/SHARING/make-QQ-group-like-unix/" title="Make QQ Group Like Unix">https://augists.top/SELF/SHARING/make-QQ-group-like-unix/</a>
+    <a href="https://augists.top/SELF/SHARING/STUDY/My-Status-at-the-Time-of-Blogging/" title="My Status at the Time of Blogging">https://augists.top/SELF/SHARING/STUDY/My-Status-at-the-Time-of-Blogging/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -319,7 +364,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/ESSAY/" rel="tag"><i class="fa fa-tag"></i> ESSAY</a>
+              <a href="/tags/HEXO/" rel="tag"><i class="fa fa-tag"></i> HEXO</a>
           </div>
 
         
@@ -328,12 +373,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/APPLE/Auto-Close-WLAN-Cellular-on-IOS/" rel="prev" title="Auto Close WLAN Cellular on IOS">
-      <i class="fa fa-chevron-left"></i> Auto Close WLAN Cellular on IOS
+    <a href="/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Process-Management/" rel="prev" title="Linux Terminal Command Process Management">
+      <i class="fa fa-chevron-left"></i> Linux Terminal Command Process Management
     </a></div>
       <div class="post-nav-item">
-    <a href="/APPLE/League-of-Legends-on-mac/" rel="next" title="League of Legends on Mac">
-      League of Legends on Mac <i class="fa fa-chevron-right"></i>
+    <a href="/NOTES/TERMINAL/The-Missing-Semester-of-Your-CS-Education/Lecture1-Course-Overview-The-Shell/" rel="next" title="The Missing Semester of Your CS Education<br>Lecture1 Course Overview+The Shell">
+      The Missing Semester of Your CS Education<br>Lecture1 Course Overview+The Shell <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -400,7 +445,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%B8%80%E4%B8%AA%E7%AE%A1%E7%90%86%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">为什么需要一个管理结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">实现方式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -415,7 +459,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
