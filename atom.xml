@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-01-06T10:33:14.914Z</updated>
+  <updated>2021-01-07T08:43:53.722Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Menu Bar Icon &amp; Rearrange Spaces</title>
+    <link href="https://augists.top/SELF/SHARING/LIFE/Menu-Bar-icon-rearrange-Spaces/"/>
+    <id>https://augists.top/SELF/SHARING/LIFE/Menu-Bar-icon-rearrange-Spaces/</id>
+    <published>2021-01-07T07:56:26.000Z</published>
+    <updated>2021-01-07T08:43:53.722Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>之前心心念念的电池🔋电量百分比显示<br>当时刚更新完 big sur 之后找了半天也没找到，还给苹果售后打了电话。客服告诉我在设置里的电池选项，然后就到他们的下班时间，电话直接被掐断了 😒<br>今天又是闲来无事在随便折腾<br><code>System Preference -&gt; Dock &amp; Menu Bar -&gt; Battery -&gt; Show Percentage</code><br>现在电量焦虑的有点严重，经常要求点开看看还剩了多少电量 🔋</p><hr><p>Big Sur 系统更新之后，顶栏多了一个控制中心的小图标，在里面的二级菜单里集成了</p><ul><li>WLAN</li><li>Bluetooth</li><li>AirDrop</li><li>Screen Mirroring</li><li>KeyBoard Brightness</li></ul><p>等好多用得到用不到的功能<br>有一个比较纠结的点就是，像 WLAN 这种对我来说分一年四季使用频率不同的东西<br>使用多的时候我更愿意它放在外面一次就能点到<br>使用少的时候收进去就收进去，一直都不会碰它一下<br>考虑了一下，我还是把它从外面收进去了</p><hr><p>之前看了一个大佬的 arch 桌面布置，他给自己固定开了三个桌面，分别用于</p><ul><li>代码</li><li>学习</li><li>娱乐</li></ul><p>我前段时间拿来试了一下，并且我还添加了第四个桌面，只用于放 Notion<br>Notion 上现在存放着我的日历计划表和项目看板，另一个工作区记录着我的娱乐生活 😏🚀<br>但是发现的一个问题就是，如果我在处于不同桌面的不同应用之间切换的时候，mac 会根据我的使用顺序打乱我几个桌面（固定顺序工作区）的布置<br>导致我只能靠 <code>command tab</code> 来进行模式切换<br>甚至不敢把同一个软件拆分成不同的桌面<br>这就很离谱了，比如 Chrome 不同的 tab 可能分别放了学习的内容和与学习无关的东西，我本来可以把他们拆分成学习和娱乐的 😒<br>今天在系统便好设置中，我找到它了 😭<br><code>System Preference -&gt; Mission Control -&gt; Automatically rearrange Spaces based on most recent use</code><br>把这个勾去掉，现在我的桌面就是固定顺序的了<br>😊</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      How to modify system icon as well as show percent of battery on menu bar?&lt;br&gt;How to steady spaces as list instead of recently use
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
   
   <entry>
     <title>Change the Phone Number of Baidu Account</title>
@@ -416,8 +437,8 @@
   
   <entry>
     <title>uPic or iPic or PicGo? That Is a Question</title>
-    <link href="https://augists.top/SELF/SHARING/STUDY/uPic-or-iPic-or-Picgo-That-is-a-question/"/>
-    <id>https://augists.top/SELF/SHARING/STUDY/uPic-or-iPic-or-Picgo-That-is-a-question/</id>
+    <link href="https://augists.top/SELF/SHARING/LIFE/uPic-or-iPic-or-Picgo-That-is-a-question/"/>
+    <id>https://augists.top/SELF/SHARING/LIFE/uPic-or-iPic-or-Picgo-That-is-a-question/</id>
     <published>2020-09-01T02:50:06.000Z</published>
     <updated>2020-09-02T14:37:01.219Z</updated>
     
@@ -476,27 +497,6 @@
     
     
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Make QQ Group Like Unix</title>
-    <link href="https://augists.top/SELF/SHARING/STUDY/make-QQ-group-like-unix/"/>
-    <id>https://augists.top/SELF/SHARING/STUDY/make-QQ-group-like-unix/</id>
-    <published>2020-08-14T02:04:46.000Z</published>
-    <updated>2020-08-14T02:22:52.168Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>其实这么翻译有点奇怪<br>就是让 QQ 群有一个类似于 unix 系的管理结构</p><p>这里以一个两个人的资源存放群为例子</p><hr><h2 id="为什么需要一个管理结构"><a href="#为什么需要一个管理结构" class="headerlink" title="为什么需要一个管理结构"></a>为什么需要一个管理结构</h2><p>资源存放肯定就会有查找和删除<br>查找可以通过群历史记录来实现<br>或者直接上翻看最近的资料<br>但是<strong>删除</strong><br>因为是两个人用的，所以单纯的使用删除并不能满足使用需求（消息的删除只是自己看不到了）<br>更合适的做法是<strong>撤回</strong>，才能让两个人都再看不到这个消息<br>对于已经过时的、不需要的消息进行整理和撤回，能较为方便的让资源群更好用<br>而自己的撤回只能撤回两分钟以内的消息，且只能对下级进行无时间限制的撤回，平级和上级不能撤回</p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>使用小号作为群主（root）<br>两个人升为管理员（user）<br>群机器人是普通成员（visitor）<br>小号的账号密码对两个人都可见（sudo su）<br>小号（root）可以任意撤回所有人的消息，但是不发送消息<br>管理员（user）可以在群机器人的消息过时后对其进行撤回<br>群机器人（visitor）是用来每天定时发送通知消息的，除了灌水无任何权限</p><hr><p>目前我有两个群采用了这种方式<br>对于现在所有学校通知和各种资料都在 QQ 上的情况下，这种资源群比较方便对通知信息和资料进行二次整理汇总</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      An example that making QQ group like Unix&lt;br&gt;root user visitor
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
   </entry>
   
