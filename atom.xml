@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-01-15T13:30:04.127Z</updated>
+  <updated>2021-01-24T03:09:26.421Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Outside the Wire</title>
+    <link href="https://augists.top/SELF/SHARING/LIFE/Outside-the-Wire/"/>
+    <id>https://augists.top/SELF/SHARING/LIFE/Outside-the-Wire/</id>
+    <published>2021-01-24T03:01:36.000Z</published>
+    <updated>2021-01-24T03:09:26.421Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p><img src="https://i.loli.net/2021/01/24/tBZdoNTGbg1hc76.jpg" alt=""></p><p>最近看的电影<br>多是挺多，就是就这么一点输出<br><img src="https://i.loli.net/2021/01/24/PvQ4YRMNobhfHyj.jpg" alt=""><br><img src="https://i.loli.net/2021/01/24/qwWSBXyorFCliAR.png" alt=""><br><img src="https://i.loli.net/2021/01/24/Cm9Ot8orT2sebdF.png" alt=""></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Thought after watching&lt;br&gt;Outside the Wire
+    
+    </summary>
+    
+    
+    
+      <category term="MOVIE" scheme="https://augists.top/tags/MOVIE/"/>
+    
+  </entry>
   
   <entry>
     <title>GitHub Octotastic Day</title>
@@ -464,31 +485,6 @@
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="THINKING" scheme="https://augists.top/tags/THINKING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IOS Password Safety for Wallet</title>
-    <link href="https://augists.top/APPLE/ios-password-safety-for-wallet/"/>
-    <id>https://augists.top/APPLE/ios-password-safety-for-wallet/</id>
-    <published>2020-09-05T14:01:30.000Z</published>
-    <updated>2020-09-06T02:08:12.579Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>首先声明，之前使用的时候并没有这个，不清楚具体是在哪一次更新加入的这个特性，也没有看到有相关媒体文章提到过<br>本身 iPhone 在设置密码的时候，初始状态（指没有在钱包中添加过信用卡）密码只能设定为 6 位数字密码，且没有任何安全等级的要求<br>然后向钱包中添加信用卡，iPhone 会强制要求使用一个安全等级较高的密码来作为新的 iPhone 解锁密码，为了防止双击右侧电源键调出信用卡时，当不能使用 Face ID 时，要求使用者输入更安全的密码（任意位的数字或任意位的数字字母组合，只与安全系数有关，与长度不完全相关）<br>想要再修改成普通密码也很简单，设置-面容和密码-关闭密码，然后重新开启就可以设置普通密码了，但是这时你会看到，钱包中之前保存的信用卡也消失了<br>这个时候，打开钱包，点击添加信用卡，可以一键添加回原来的信用卡而无需再次输入卡号，但是会重新要求你输入更安全的密码<br>（再往下就套娃了 😏</p><p><img src="https://i.loli.net/2020/09/05/F8O51jWYEJ6Lhk9.jpg" alt=""><br>安全密码在锁屏进入的时候样式不太一样</p><hr><p>另外有一点也是第一次见到<br>在信用卡进行手机号验证的时候，钱包请求发送验证码，收到短信，自动填充，整个过程没有需要我点击键盘上的验证码，而是完全自动<br>毕竟是官方的钱包应用，协同的体验相对来说又上了一个台阶</p><p>最后还是不建议使用普通密码并在钱包中存留信用卡的信息，在别人知道的情况下，可以较为简单的破解密码并强制添加回保存了信息的信用卡并进行支付</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      What IOS will do when you add credit card in Apple Wallet?
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-      <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
     
   </entry>
   
