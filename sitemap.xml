@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://augists.top/Covid-19/index.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://augists.top/HEXO/Covid-19-Maps-in-Blog/</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -781,7 +788,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/HEXO/</loc>
+    <loc>https://augists.top/tags/CODE/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -795,7 +802,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/CODE/</loc>
+    <loc>https://augists.top/tags/HEXO/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -872,14 +879,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/QT/</loc>
+    <loc>https://augists.top/tags/C-C/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/C-C/</loc>
+    <loc>https://augists.top/tags/QT/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -956,6 +963,13 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/GITHUB/</loc>
+    <lastmod>2021-01-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/MOVIE/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
@@ -964,13 +978,6 @@
   
   <url>
     <loc>https://augists.top/tags/FONT/</loc>
-    <lastmod>2021-01-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/GITHUB/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
