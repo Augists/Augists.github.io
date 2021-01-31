@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-01-24T09:51:35.028Z</updated>
+  <updated>2021-01-31T15:07:22.092Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>3D Modeling First Experience</title>
+    <link href="https://augists.top/SELF/SHARING/LIFE/3D-Modeling-First-Experience/"/>
+    <id>https://augists.top/SELF/SHARING/LIFE/3D-Modeling-First-Experience/</id>
+    <published>2021-01-31T14:45:58.000Z</published>
+    <updated>2021-01-31T15:07:22.092Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>人生中的第一次做建模 😏</p><blockquote><p>脑子里一直在鬼畜回放 b 站的首页 3D 建模广告推荐，四只小猫疯狂晃脑袋</p></blockquote><p>话不多说，先上图</p><p><img src="https://i.loli.net/2021/01/31/HQIrhC2x76UmaL1.png" alt=""><br><img src="https://i.loli.net/2021/01/31/UtOxfnFcoWNqiyK.png" alt=""><br><img src="https://i.loli.net/2021/01/31/Lt3rXd5DkpAChqb.png" alt=""></p><p>建模使用的 iPad + Apple Pencil，软件使用的 Shapr3D<br>最先是从 YouTube 的广告上看到的这个软件，广告非常好的体现出了软件的易用<br>于是在一次登陆共享账号的时候，看到别人有下载这个软件，我也安装尝试了一下<br>软件一进入就会问及想要建模的大概难度系数，自然我作为一个小白，从零开始</p><p>这个软件我认为非常好的一点是，它提供了视频教程，并且用一个 picture in picture 来让教程窗口常驻，并且非常显眼的提供了后退 10s 和前进 10s 的按钮<br>教程真的是从空白开始，一步一步的教如何使用并制作出一个简单的小零件模型，而这个模型也已经用到了大部分日常会用到的操作<br>教程里还把这一个看起来较为复杂的零件进行了拆分的示例，我甚至认为这个软件完全可以扔给小学生进行学习，并且非常有益</p><div class="note info">            <p>而这件事对我个人来说，最主要的一点，就是我一直认为 3D 建模是一个对我来说非常遥远的事情<br>我可以学会 ps，pr，ai，可以学会一点 ae，甚至去学一些排版，但是我从来没想过自己可以做 3D 建模，尽管它只是一个很普通的模型<br>它的意义，我想，这就是科技发展的价值吧<br>我们去发明计算机，发明互联网，或者往小了说，发明 QQ，成立腾讯，不是为了去挣普通人的那点钱 💰，而是通过科技的进步，拉近普通人之间的距离，让科技的发展造福于每个普通人的生活，让原本看起来困难的事情变得抬手可得<br>所以，尽管我讨厌抖音，但是我并不那么讨厌它的附加软件剪映。因为它让普通人不再需要打开电脑，安装流氓软件 pr，再去花费时间学习 pr 复杂的操作。剪映，对于大部分人来说，已经足够了<br>而这，正式科技应该做的</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      This is my first time to have a try on such a area&lt;br&gt;which I never thought I could make it
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
   
   <entry>
     <title>Covid-19 Maps in Blog</title>
@@ -467,29 +488,6 @@
       <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
     
       <category term="IPHONE" scheme="https://augists.top/tags/IPHONE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cannot Remove /Library/folder as Root</title>
-    <link href="https://augists.top/SELF/SHARING/STUDY/Cannot-Remove-Library-folder-as-Root/"/>
-    <id>https://augists.top/SELF/SHARING/STUDY/Cannot-Remove-Library-folder-as-Root/</id>
-    <published>2020-09-17T08:13:18.000Z</published>
-    <updated>2020-11-14T08:57:54.443Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>前两天又在卸载病毒软件 <em>Adobe*，又是一顿翻江倒海<br>基本上看到个不是 *apple</em> 的文件夹都要 <em>google</em> 一下是什么软件产生的垃圾<br>然后在处理 <code>/Library/StageExtension/Library/Application\ Support</code> 里的垃圾文件的时候，出现问题<br><img src="https://i.loli.net/2020/09/17/4YFxLwKBdH3opCa.png" alt=""></p><hr><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><img src="https://i.loli.net/2020/09/17/NowQJeWRGguPl2z.png" alt=""><br>注意目录是在根目录下，不是 <code>$HOME</code> 下</p><hr><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>这个问题本身相对不是很常见，尤其是在 mac 上<br>网上搜到的基本上都是告诉你使用 <code>lsttr</code> 来查看这个特殊属性<br>但是这东西 mac 上莫有啊 🤣</p><hr><h2 id="指路"><a href="#指路" class="headerlink" title="指路"></a>指路</h2><p>最终看到了一点东西，这里指个路<br><a href="https://apple.stackexchange.com/questions/101328/file-cant-be-moved-by-root-on-os-x">关于 mac 上的 lsattr</a><br>这里提到的我没见过的一个 <code>ls</code> 参数<br><img src="https://i.loli.net/2020/09/17/IiPh3jUuH2OpQb5.png" alt=""><br><a href="https://www.imore.com/how-turn-system-integrity-protection-macos">关于 SIP</a><br>我现在还没有试过，因为必须要在恢复模式中开关<br><img src="https://i.loli.net/2020/09/17/9SkUrT1jmAzlBcu.png" alt=""><br>等我下次觉得我电脑需要关机的时候我再试一下，但是如果那样还是不行，我没再查到其他可能有关的内容了</p><hr><p>后续：<br>我并没有关机搞 SIP，而是等待了一波更新系统<br>它自己就 🈚️ 了<br>毕竟是系统根目录下的东西，🈚️ 了可能是正常的</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      That sudo rm -rf does not work drives me mad 😭&lt;br&gt;How can we remove those stubborn directories on mac&lt;br&gt;without lsattr command 😒
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
   </entry>
   
