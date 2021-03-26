@@ -809,7 +809,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/CODE/</loc>
+    <loc>https://augists.top/tags/HEXO/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/ERROR/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -823,14 +830,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/HEXO/</loc>
-    <lastmod>2021-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/ERROR/</loc>
+    <loc>https://augists.top/tags/CODE/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -865,6 +865,13 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/GIT/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/ENGLISH/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
@@ -872,7 +879,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/GIT/</loc>
+    <loc>https://augists.top/tags/VIM/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -886,7 +893,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/VIM/</loc>
+    <loc>https://augists.top/tags/QT/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -901,13 +908,6 @@
   
   <url>
     <loc>https://augists.top/tags/C-C/</loc>
-    <lastmod>2021-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/QT/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1005,14 +1005,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/TREE/</loc>
+    <loc>https://augists.top/tags/GTD/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/GTD/</loc>
+    <loc>https://augists.top/tags/TREE/</loc>
     <lastmod>2021-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
