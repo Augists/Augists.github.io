@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-04-21T11:16:59.329Z</updated>
+  <updated>2021-04-21T11:15:01.103Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Information Security Note (Partial)</title>
-    <link href="https://augists.top/NOTES/SECURITY/Information-Security-Note-Partial/"/>
-    <id>https://augists.top/NOTES/SECURITY/Information-Security-Note-Partial/</id>
-    <published>2021-04-19T15:03:54.000Z</published>
-    <updated>2021-04-21T11:16:59.329Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <h1 id="Information-Security"><a href="#Information-Security" class="headerlink" title="Information Security"></a>Information Security</h1><h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><ul><li>主动攻击与被动攻击<ul><li>被动攻击：对传输进行窃听和监测，通信和信息不受影响，用户感觉不到攻击存在</li><li>主动攻击：攻击者破坏通信过程，重放、拦截、修改、伪造、丢弃信息、拒绝服务或假冒合法用户</li></ul></li><li>X800 将安全服务分为<ul><li>Authentication 认证：确保通信实体是合法和真实的，包括同等实体认证和数据源认证</li><li>Access Control 访问控制：防止资源非授权使用</li><li>Data Confidentiality 数据保密性：保护数据免于非授权泄漏，防止流量分析</li><li>Data Integrity 数据完整性：确保接收到的数据是由授权用户发出的或者是未被修改的</li><li>Non-Repudiation 不可否认性：防止通信方对通信行为的否认，包括源不可否认性和宿不可否认性</li><li>Availability Service：系统或系统资源能够按照要求根据系统性能规范被授权系统的实体访问和使用</li></ul></li></ul><h2 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h2><ul><li>历史<ul><li>Claude Elwood Shannon 信息论之父 布尔代数的电子实现和应用</li><li>IBM Lucifer Cipher 128 位密钥作分组加密</li><li>Whitfield Diffie and Matin Hellman 首次提出适用网络保密通信的公开密钥思想</li><li>Ronald Rivest, Adi Shamir, Len Adleman 第一次提出公开密钥密码系统的实现方法 RSA</li><li>Abbas El Gamal 提出概率密码系统 ElGamal 方法</li></ul></li><li>理论安全与实际安全<ul><li>理论安全（无条件安全）Theoretical Secure (Perfect Secure)：攻击者无论截获多少密文，都无法得到足够的信息来唯一决定明文。Shannon 理论证明了，想要达到理论安全，加密密钥的长度需要大于等于明文长度，密钥只用一次</li><li>实际安全（计算上安全）Practical Secure (Computationally Secure)：如果攻击者拥有无限资源，任何密码系统都是可以被破译的；但是，在有限的资源范围内，攻击者都不能通过系统的分析方法来破解系统</li></ul></li><li>对称密码与非对称密码<ul><li>对称密码体制（Symmetric System, One-key System, Secret-key System）：加密密钥和解密密钥相同，或者一个密钥可以从另一个导出，开放性差</li><li>非对称密码体制（Asymmetric System, Two-key System, Public-key System）：从一个密钥导出另一个密钥是计算上不可行的，开放性好</li></ul></li><li>序列密码与分组密码<ul><li>序列密码：密文不仅与最初给定的算法和密钥有关，同时也与明文位置有关(是所处位置的函数)。加密以明文比特为单位，以伪随机序列与明文序列模2加后，作为密文序列</li><li>分组密码：经过加密所得到的密文仅与给定的密码算法和密钥有关，与被处理的明文数据在整个明文中的位置无关。通常以大于等于64位的数据块为单位，加密得相同长度的密文</li></ul></li><li>确定型密码体制与概率密码体制<ul><li>确定型密码：当明文和密钥确定后，密文也就唯一地确定了</li><li>概率型密码：明文和密钥确定后，密文通过客观随机因素从一个密文集合中产生，密文形式不确定</li></ul></li><li>单向函数型密码体制和双向变换型密码体制<ul><li>单向函数型密码体制：适用于不需要解密的场合，容易将明文加密成密文，如哈希函数</li><li>双向变换型密码体制：可以进行可逆的加密、解密变换</li></ul></li></ul><ul><li><p>使用对称密码系统的要求</p><ul><li>强加密算法</li><li>只有发送方和接收方知道的密钥</li></ul></li><li><p>对加密信息的攻击类型</p><ul><li>唯密文攻击：仅知已加密文字（即密文）的情况下进行攻击</li><li>已知明文攻击：攻击者掌握了某段明文和对应的密文</li><li>选择明文攻击</li><li>选择密文攻击</li><li>选择文本攻击：选择明文攻击和选择密文攻击的结合</li><li>穷举攻击：可以简单尝试每一个可能的密钥</li></ul></li><li><p>代换技术</p><ul><li>将明文字母替换成其他字母、数字或符号的加密方法</li><li>凯撒密码：每个字母用它之后的第三个字母替换</li><li>单表代换密码：任意代换，增加密钥空间</li><li>语言的冗余性导致的密码攻击</li><li>一次一密<ul><li>与消息一样长且无重复的随机密钥来加密消息，只对一个消息加密，用后丢弃。不可攻破</li><li>运算基于二进制，按位进行异或运算</li><li>限制<ul><li>产生大规模的随机密钥有实际困难</li><li>密钥的分配和保护无法保证</li></ul></li></ul></li></ul></li><li><p>置换技术</p><ul><li>改变明文内容元素的相对位置，保持内容的表现形式不变</li><li>通常称为<strong>transposition</strong>或者<strong>permutation</strong>密码 </li><li>通过重新安排消息字母的位置来隐藏明文信息，而不是用其他字母来代换明文字母</li><li>这种方法是很容易破译的，因为密文拥有与明文一样的字母频率统计特性<img src="https://i.loli.net/2021/04/08/73GMFHv95Eaqj4o.png" alt="Screen Shot 2021-04-08 at 8.09.06 PM"></li><li>栅栏技术 <strong>Rail Fence cipher</strong><ul><li>按照对角线的顺序写出明文，按行的顺序读出作为密文<img src="https://i.loli.net/2021/04/08/RETJfvQx3cHdBKV.png" alt="Screen Shot 2021-04-08 at 8.09.34 PM"></li></ul></li></ul></li><li><p>隐写术<strong>Steganography</strong></p><ul><li>不是加密技术，只隐藏信息的存在</li><li>数字水印</li></ul></li></ul><h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h2><ul><li>对称加密<ul><li>安全性依赖密钥</li><li>两类<ul><li>序列算法/序列密码/流密码：一次只对明文中的单个位运算的算法</li><li>分组算法/分组密码：对明文的一组位进行运算</li></ul></li></ul></li></ul><ul><li>DES<ul><li>分组和密钥：64 和 56</li></ul></li></ul><h2 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4"></a>Chapter 4</h2><ul><li>欧几里得算法（辗转相除）</li></ul><p><img src="https://i.loli.net/2021/04/08/ygBH8hvJlKCczGs.png" alt="Screen Shot 2021-04-08 at 8.37.59 PM"></p><ul><li>既约多项式即只有1和其本身两个约数，又称不可约多项式</li></ul><h2 id="Chapter-5"><a href="#Chapter-5" class="headerlink" title="Chapter 5"></a>Chapter 5</h2><ul><li>双重 DES 加密<ul><li>中途相遇攻击<ul><li>只要连续使用密码两次，这种攻击总是有效的</li><li>用所有可能的密钥加密P并储存，再用所有可能的密钥解密C，与之匹配。相同即为被攻破</li></ul></li></ul></li><li>三重 DES 加密<ul><li>C = E<del>K1</del>[D<del>K2</del>[E<del>K1</del>(P)]]</li></ul></li></ul><ul><li>分组密码的工作模式<ul><li>电子密码本模式（Electronic Codebook, ECB）<ul><li>明文分成 64bit 的分组进行加密，必要时进行填充，每个分组用同一密钥加密，同样明文分组加密得相同密文</li><li>适合数据较少的情况，如安全传输 DES 密钥</li><li>一段明文消息中若有几个相同的明文组，则密文也将出现几个相同的片段</li><li>对于很长的消息，ECB 是不安全的（结构化）</li><li>ECB 的弱点来源于其加密过的密文分组是相互独立的</li></ul></li><li>密文分组链接模式（Cipher Block Chaining, CBC）<ul><li>加密输入是当前明文分组和前一密文分组的异或，形成一条链，使用相同的密钥，这样每个明文分组的加密函数输入与明文分组之间不再有固定的关系</li><li><img src="https://i.loli.net/2021/04/14/NGajltJOAxuDzgv.png" alt="Screen Shot 2021-04-14 at 11.46.42 PM"></li><li>每个密文分组依赖于其他明文分组</li><li>明文消息中的任何一点变化都会影响密文分组</li><li>发送方和接收方需要共享初始向量 IV（必须是一个固定的值或用 ECB 方式在消息之前加密传送，不能被明文传送）</li><li>在消息的最后还要处理不够长度的分组</li></ul></li><li>密码反馈模式（Cipher FeedBack, CFB）<ul><li>是一种将 DES 转成流密码的技术，不再需要填充，可以实时运行</li><li>加密：加密函数的输入是一个64位的移位寄存器，产生初始向量 IV。加密函数高端 j 位与明文 P1 的第一个单元异或，产生 j 位密文 C1 进入移位寄存器低端，继续加密，与 P2 输入异或</li><li>解密：相同方案，解密函数</li><li><img src="https://i.loli.net/2021/04/14/5MVGnN8UaYdOt79.png" alt="Screen Shot 2021-04-14 at 11.56.54 PM"></li><li>当数据以位或字节形式到达时使用都是恰当的</li><li>最通用的是流密码形式</li><li>比特差错传播</li></ul></li><li>输出反馈模式（Output FeedBack, OFB）<ul><li>结构上类似 CFB，但加密函数输出被反馈回移位寄存器，CFB 中是密文单元被反馈回移位寄存器。</li><li>优点：传输中的比特差错不会传播（某位上发生的错误不会影响到其他位）</li><li>缺点：比 CFB 更容易受报文流篡改攻击</li><li><img src="https://i.loli.net/2021/04/15/kYX764AIGzqHbN3.png" alt="Screen Shot 2021-04-15 at 6.43.37 PM"></li></ul></li><li>计数器模式（Counter, CTR）<ul><li>新模式，虽然很早就提出来了</li><li>与 OFB 很像，但是加密的是计数器的值而不是任何反馈回来的值</li><li>每一个明文分组都必须使用一个不同的密钥和计数器值，决不重复使用</li><li><img src="https://i.loli.net/2021/04/15/vdD3G7aSXTpPeCk.png" alt="Screen Shot 2021-04-15 at 6.47.43 PM"></li><li>可以用于高速网络加密（并行）</li><li><img src="https://i.loli.net/2021/04/15/PCNQGo2Mnrsc4iY.png" alt="Screen Shot 2021-04-15 at 6.48.51 PM"></li><li>可以对被加密的分组进行随机存取</li><li>安全、简洁</li></ul></li></ul></li></ul>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Part of Note
-    
-    </summary>
-    
-    
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="SECURITY" scheme="https://augists.top/tags/SECURITY/"/>
-    
-  </entry>
   
   <entry>
     <title>SSH on RaspberryOS</title>
@@ -367,9 +344,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
     
@@ -423,9 +400,9 @@
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
   </entry>
   
@@ -448,9 +425,9 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
     
@@ -477,13 +454,36 @@
     
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
-      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="C/C++" scheme="https://augists.top/tags/C-C/"/>
     
       <category term="DATASTRUCTURE" scheme="https://augists.top/tags/DATASTRUCTURE/"/>
     
       <category term="TREE" scheme="https://augists.top/tags/TREE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS Big Sur Experience</title>
+    <link href="https://augists.top/APPLE/macOS-Big-Sur-is-out/"/>
+    <id>https://augists.top/APPLE/macOS-Big-Sur-is-out/</id>
+    <published>2020-11-13T13:33:14.000Z</published>
+    <updated>2020-11-19T03:26:17.986Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>今天苹果推送了 macOS Big Sur 的系统更新！！！<br>我第一时间先去做了<strong>系统备份</strong><br>之前的 1T 机械盘被我拆分成了 3 个部分</p><ul><li>一部分是 APFS 格式只用来给 mac 系统查看，存放着只在 mac 上会用到的东西如 mac app 安装包，我自己私人的一些文件等（大部分人是 win，看不了 APFS</li><li>一部分是 NTFS 格式，由于是希捷的，所以希捷官网的 NTFS 软件就可以读取</li><li>最后一部分是 Time Machine，只留了 300GB，而之前半年的时间内的备份，时间机器已经基本满了，于是今天重新清空 BackUp 部分重新备份</li></ul><hr><p>备份好之后就直接进入更新啦<br><img src="https://i.loli.net/2020/11/13/2LKqb9Ia4lpR3uw.jpg" alt=""><br><img src="https://i.loli.net/2020/11/13/lq9JbNLGVdHo8SU.jpg" alt=""></p><p>更新完的开机一直转圈的 bug 还有</p><hr><p>总体来说，经过 10 个 beta 版本的更新测试，大的 bug 已经基本没有了，但是小问题还是不少</p><ul><li>顶栏的图标间距较大，有些让人感觉不在一条直线上</li><li>圆角矩形元素使用的有点过，如 <em>safari</em> 放全屏的状态下边角上会有一点奇怪，所有调用的系统的图形都变成了 r 值非常大的圆角</li><li>有些 app 仍没有做好新系统的适配，在顶栏会有点奇怪</li><li>顶栏一些图标没法用 <code>command</code> 拖动删除，需要从系统偏好设置里去掉掉显示的勾选，如 <em>siri</em></li><li>顶部电池没法显示数字百分比，问了客服，他正和我说这个的时候下班了…</li><li>系统时间的顶栏变成了通知中心的入口，点击时间会打开小组件中心，这让我原来使用 <em>Itsycal</em> 自己设置时间格式并点击显示日历 📅 和日历事项的习惯相去甚远，本来好不容易开始从 <em>reminder</em> 转向 <em>calendar</em>，现在又需要改习惯了<br><img src="https://i.loli.net/2020/11/13/6cweBjnslvOAF7U.png" alt=""></li><li>系统便好设置中的图标已经丑出天际，不忍直视…幸好平时看它不多<br><img src="https://i.loli.net/2020/11/13/crELzVo4M3whUTk.png" alt=""></li><li>这个通知中心的回复…头像大的，一言难尽<br><img src="https://i.loli.net/2020/11/13/upRmSn8erjZat5U.png" alt=""></li><li>如果你想试一试新系统的 <em>iOS App Installer</em> 你就会发现打开没啥反映打不开啊，据知乎人反馈问了客服说只有 M1 的 mac 才能使用这玩意？？？我进了包之后执行 <em>bin</em> 文件是这样的<br><img src="https://i.loli.net/2020/11/13/TLKwfAsmXnVvEFH.png" alt=""></li><li>这个多桌面切换，有点离谱<br><img src="https://i.loli.net/2020/11/13/rjyqcbUPau5p8gX.png" alt=""></li><li>全屏幕显示的时候上面有一个细条，现在看着它好难受。手动调整也无法再放大，是系统限制的，不是 <em>magnet</em> 的问题<br><img src="https://i.loli.net/2020/11/14/6BuNfdDEM34bmLl.png" alt=""></li><li>有时候一些适配还有点问题的会变成黑色，目前 QQ 和 uPic 发现出现过这个问题<br><img src="https://i.loli.net/2020/11/14/2vNQK1JeFzsMrdT.png" alt=""></li><li>新加了一个系统级的显示是不是有音乐、视频在播放的小玩意，和一些应用上的有点重复，图标也小一号，今天使用的时候识别也有点问题，希望后期能改进吧<br><img src="https://i.loli.net/2020/11/14/u9DJVYHNXMl3IbT.png" alt=""></li><li>更新之后其他软件适配其实还算不错了，homebrew 看得我有亿点点难受<br><img src="https://i.loli.net/2020/11/14/h5ypIkKetJFRVDd.png" alt=""><br><img src="https://i.loli.net/2020/11/14/7AwiF8TIyZl36nG.png" alt=""><br>另外，python 这个应该是 python2 吧，被移除了<br><img src="https://i.loli.net/2020/11/14/mc8sVw1yHuIFK25.png" alt=""></li></ul><hr><p>至于系统体验，我目前对流畅性没啥感觉，没有感觉有什么卡顿，也没感觉比原来流畅，只是正常水平<br>至于耗电，它电量数值都不敢显示，我也没啥感觉。我总不能动不动就去点它一下看看还剩多少电吧</p><div class="note info">            <p>第二天更新：<br>耗电有点变多，但是因为上一代是 Catalina，所以感觉耗电没啥变化<br>作为参考，19 年的 mbp13 从早上开始用大概能用到晚上 5 点半多，如果和 Mojave 比的话应该耗电会多一点<br>目前电池 🔋 健康状况是 normal，开启了电池优化</p><p>11.15 更新：<br>bug 还是不少，系统的声音调用有点混乱，还没看懂声音的逻辑。截屏除了原来的截屏声音还增加了一个短声音，有点奇怪<br>photos 删除有时候非常卡，每次遇到它卡住我就重新打开 photos</p><p>11.16 更新：<br>我也不知道我在终端里输入个 》都要带声音是什么迷惑行为<br>今天还碰到了一点小 bug<br><img src="https://i.loli.net/2020/11/16/V8OQZRxErAsNlUH.png" alt=""><br>新版 Pages 里所有原本蓝色的所有元素都改成了黄色，Numbers 改成绿色，Keynotes 都是蓝色……</p><p>11.18 更新：<br>今天在修改 png 图片名称时发现，原本隐藏的 png 图片删掉 <code>.</code> 后文件名称依然以浅色显示，但是不被隐藏<br>mac 版本 QQ 会在打开历史记录的时候连闪三次，不清楚是因为什么，可能是 QQ 还没有进行适配<br>QQ 的 <em>preference</em> 几个中间有可点但无效的占位<br><img src="https://i.loli.net/2020/11/18/HJqmjzeMIXKSBF5.png" alt=""><br>今天能明显感觉到打字会有延迟，建议暂时不要升级</p>          </div><hr><p>如果原来的系统是 Catalina，那我非常推荐你进行这次更新，Big Sur 11.0.1 版本就已经不错了，确实是值得更新的大版本，虽然我上面一直没有说它的好<br>但如果你是老旧机器并且系统停留在 Mojave，我建议可以直接停留在 10.14 版本了<br>如果有机会可以等一下下一代的 arm mac，可能更值得你入手</p><div class="note ">            <p>就在刚才，华为云又一次提醒我他们在搞双十一活动，虽然双十一已经过去了，他们还是固执的认为我需要在华为云上买点啥的<br>嗯，刚 18r 入了 <em><a href="http://www.augists.com">www.augists.com</a></em> 一年，感觉还不错，还可以 8.9r 再买 .cn 域名的，但是明显我买它就是玩玩没啥大用，这名字也没人和我抢</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      macOS Big Sur is out!!! I update my mac at the moment that I got the software update information
+    
+    </summary>
+    
+    
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
   </entry>
   
