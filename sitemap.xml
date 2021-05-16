@@ -9,62 +9,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/COURSES/Computer_Network/Computer_Network_Review_Outline/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augists.top/NOTES/COURSES/Computer_Network/Computer_Network/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augists.top/NOTES/COURSES/Information_Security/Chapter_5/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augists.top/NOTES/COURSES/Information_Security/Chapter_4/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augists.top/NOTES/COURSES/Information_Security/Chapter_3_DES/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augists.top/NOTES/COURSES/Information_Security/Chapter_2/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augists.top/NOTES/COURSES/Information_Security/Chapter_1/</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augists.top/NOTES/CODE_LANGUAGE/Hanming-Code/</loc>
     
     <lastmod>2021-05-15</lastmod>
@@ -851,49 +795,14 @@
 
   
   <url>
-    <loc>https://augists.top/tags/ESSAY/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/CODE/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/HELLO/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/HEXO/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/ERROR/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/IPHONE/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/APPLE/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/ESSAY/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -907,7 +816,21 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/IPHONE/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/TERMINAL/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/HEXO/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -921,28 +844,21 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/REVIEW/</loc>
+    <loc>https://augists.top/tags/ERROR/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/QT/</loc>
+    <loc>https://augists.top/tags/HELLO/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/C-C/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/SUMMERTERM/</loc>
+    <loc>https://augists.top/tags/CODE/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -956,7 +872,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/THINKING/</loc>
+    <loc>https://augists.top/tags/HANMING/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -970,7 +886,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/HANMING/</loc>
+    <loc>https://augists.top/tags/ENGLISH/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/GIT/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -991,14 +914,35 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/GIT/</loc>
+    <loc>https://augists.top/tags/QT/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/ENGLISH/</loc>
+    <loc>https://augists.top/tags/SUMMERTERM/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/C-C/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/REVIEW/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/THINKING/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1054,6 +998,13 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/MFC/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/GITHUB/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1076,20 +1027,6 @@
   
   <url>
     <loc>https://augists.top/tags/GTD/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/MFC/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/SHARING/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
