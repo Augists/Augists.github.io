@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-05-16T11:19:05.037Z</updated>
+  <updated>2021-05-16T15:36:11.498Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github Page Build Failure</title>
+    <link href="https://augists.top/SELF/ERROR/Github-Page-build-failure/"/>
+    <id>https://augists.top/SELF/ERROR/Github-Page-build-failure/</id>
+    <published>2021-05-16T15:12:05.000Z</published>
+    <updated>2021-05-16T15:36:11.498Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <div class="note ">            <p>今天早上还奇怪为什么昨天发的博客还没收到邮件通知，就上博客上怎么刷新都出不来新博客<br>后来发现，因为是直接复制的 markdown 文件，文件头是自己写的，日期给写错写到 3 月去了</p>          </div><p>今天前后一共收到了四封来自 GitHub 的邮件，内容通通一个样子，就是告诉我 ‘GitHub Page build failure’<br>我那个找啊 😭 把新文章弄走也不行，弄走了将近 10 篇都不行<br>本来好好的，咋就突然 ‘build failure’ 了<br>从头到尾浏览了一遍提供的 build failure 提示网页也没发现是哪里有问题，于是上网搜了一下这个错误</p><hr><p>基本上那些博客都没有什么实用价值，直到我发现了一篇说可以用 ‘jekyll –safe’ 让他自行检测错误原因（尽管错误原因可能会给的很模糊<br>于是我就 <code>gem install jekyll</code>（这东西居然还要我 root 权限 😒<br>然后就发现，人家根本那就没有这个 <code>--safe</code> 的参数指令</p><hr><p>一开始脑子没绕过弯来，就认定了 <code>--safe</code> 就是错误检测的参数，就在那傻不拉几的 <code>jekyll build --safe</code> <code>jekyll server --safe</code> 😒<br>重新仔细看看人家的 help list，似乎现在的 <code>--safe</code> 变成了 <code>jekyll doctor</code><br>跑了一遍试了下，确实是，博客的问题出在用了 c 语言的头文件的那个 keyword 作为内容<br>就挺突然的，<code>re-(c head keyword)</code> 那文章是很早很早以前的了，之前从来没因为这个出现过搭建错误的问题<br>已经半夜了，终于把这个破问题改好了 属实不容易 😒</p><div class="note ">            <p>gem 是真的难用</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      All of a SUDDEN&lt;br&gt;I have received four e-mails totally&lt;br&gt;Ridiculous but reasonable
+    
+    </summary>
+    
+    
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+      <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
+    
+  </entry>
   
   <entry>
     <title>Information Security Q.E.D</title>
@@ -228,9 +251,9 @@
     <link href="https://augists.top/NOTES/Hooked-by-Hooked/"/>
     <id>https://augists.top/NOTES/Hooked-by-Hooked/</id>
     <published>2021-05-08T00:44:46.000Z</published>
-    <updated>2021-05-16T11:50:38.831Z</updated>
+    <updated>2021-05-16T15:11:41.802Z</updated>
     
-    <content type="html"><![CDATA[<div class="note warning">            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>习惯是我们下意识做出的举动</li><li>集网络连接、海量数据、超快网速三者于一身的技术正在使这个世界上瘾成性</li><li>生产习惯养成类产品可以让商家稳占竞争优势</li><li>上瘾模型将用户面临的问题与企业提供的应对策略衔接在一起，二者频繁互动，促成用户养成习惯</li><li>上瘾模型包括四个阶段：触发，行动，多变的酬赏，投入</li></ul><h2 id="1-习惯的力量：如何让你的产品从维生素变成止痛药"><a href="#1-习惯的力量：如何让你的产品从维生素变成止痛药" class="headerlink" title="1 习惯的力量：如何让你的产品从维生素变成止痛药"></a>1 习惯的力量：如何让你的产品从维生素变成止痛药</h2><ul><li>用户对其产品形成的使用习惯是某些企业生存发展的根本，但并非所有企业都受制于此</li><li>一旦成功地使用户对其产品形成了使用习惯，企业就能获益匪浅，具体表现在：更高的用户终身价值，更大的价格灵活性，更快速的增长，以及更强的竞争优势</li><li>只有当某种行为的发生频率足够高、可感知用途足够多时，它才可能发展为习惯</li><li>习惯养成类产品起初都是非必需品（维生素），可一旦发展为习惯，它们就会变成必需品（止痛药）</li><li>习惯养成类产品通过“挠痒痒”减轻用户的痛苦</li><li>设计习惯养成类产品其实是在操控对方的行为。生产企业在做设计之前，最好先审慎思考，以确保自己的设计会引导用户形成健康的习惯，而不是发展成病态的成瘾</li></ul><h2 id="触发：提醒人们采取下一步行动"><a href="#触发：提醒人们采取下一步行动" class="headerlink" title="触发：提醒人们采取下一步行动"></a>触发：提醒人们采取下一步行动</h2><ul><li>触发是上瘾模型的第一个阶段，它可促使用户采取行动</li><li>触发分为两类——外部触发和内部触发</li><li>外部触发通过将信息渗透在用户生活的各个方面来引导他们采取下一步行动</li><li>内部触发通过用户记忆存储中的各种关联来提醒他们采取下一步行动</li><li>负面情绪往往可以充当内部触发</li><li>要开发习惯养成类产品，设计者要揣摩用户的心理，了解那些有可能成为内部触发的各种情绪，并且要知道如何利用外部触发来促使用户付诸行动</li></ul><h2 id="行动：人们在期待酬赏时的直接反应"><a href="#行动：人们在期待酬赏时的直接反应" class="headerlink" title="行动：人们在期待酬赏时的直接反应"></a>行动：人们在期待酬赏时的直接反应</h2><ul><li>行动是上瘾模型的第二个阶段</li><li>行动是人们在期待酬赏时最直接的反应</li><li>根据福格博士建立的行为模型：<ol><li>要促成某种行为，触发、动机和能力这三者缺一不可</li><li>要增加预想行为的发生率，触发要显而易见，行为要易于实施，动机要合乎常理</li><li>人类行为不外乎受三种核动机的影响：追求快乐，逃避痛苦；追求希望，逃避恐惧；追求认同，逃避排斥</li><li>时间、金钱、体力、脑力、社会偏差、非常规性等六个因素会对用户的能力产生影响。能力还会因人因地而异</li></ol></li><li>启发法是指我们借助认知经验对事物做出快速判断。产品设计者可以从上千种启发法中选择一些来获取灵感，提高产品的吸引力</li></ul><h2 id="多变的酬赏：满足用户的需求，激发使用欲"><a href="#多变的酬赏：满足用户的需求，激发使用欲" class="headerlink" title="多变的酬赏：满足用户的需求，激发使用欲"></a>多变的酬赏：满足用户的需求，激发使用欲</h2><ul><li>“多变的酬赏”是上瘾模型的第三个阶段，共包含三种类型：社交酬赏，猎物酬赏，自我酬赏</li><li>所谓社交酬赏，是指人们从产品中通过与他人的互动而获取的人际奖励</li><li>所谓猎物酬赏，是指人们从产品中获得具体资源或信息</li><li>所谓自我酬赏，是指人们从产品中体验到的操控感、成就感和终结感</li><li>在自主权受到挑战时，我们会感到自己失去了选择的自由，通常会对某种新的行为习惯产生排斥。心理学家称之为“逆反心理”。因此，保障用户的自主权是吸引他们的关键</li><li>“有限的多变性”会使产品随着时间的推移而丧失神秘感和吸引力，而“无穷的多变性”是维系用户长期兴趣的关键</li><li>产品中“多变的酬赏”在吸引用户的同时，必须满足他们的使用需求</li></ul><h2 id="投入：通过用户对产品的投入，培养“回头客”"><a href="#投入：通过用户对产品的投入，培养“回头客”" class="headerlink" title="投入：通过用户对产品的投入，培养“回头客”"></a>投入：通过用户对产品的投入，培养“回头客”</h2><ul><li>投入阶段是上瘾模型的第四个阶段</li><li>行动阶段使用户即时获得满足，而投入阶段主要与用户对未来酬赏的期待有关</li><li>对产品的投入会令用户形成偏好，因为我们往往会高估自己的劳动成果，尽力和自己过去的行为保持一致，避免认知失调</li><li>用户只有在享受了各种酬赏之后才会对产品进行投入</li><li>用户对产品的投入不仅可改进产品服务质量，增加用户再次使用产品的可能性，还能令存储价值以内容、数据资料、关注者、信誉或技能等形式自然增长</li><li>用户投入可通过加载下一个触发的方式令用户重新开始上瘾循环，从而增加了用户反复进入上瘾循环的可能性</li></ul><h2 id="上瘾模型与道德操控"><a href="#上瘾模型与道德操控" class="headerlink" title="上瘾模型与道德操控"></a>上瘾模型与道德操控</h2><ul><li>为帮助习惯养成类技术的设计者评估其操控用户背后的道德责任，首先要确定其工作性质属于四象限中的哪一个</li></ul>          </div>]]></content>
+    <content type="html"><![CDATA[<div class="note warning">            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>习惯是我们下意识做出的举动</li><li>集网络连接、海量数据、超快网速三者于一身的技术正在使这个世界上瘾成性</li><li>生产习惯养成类产品可以让商家稳占竞争优势</li><li>上瘾模型将用户面临的问题与企业提供的应对策略衔接在一起，二者频繁互动，促成用户养成习惯</li><li>上瘾模型包括四个阶段：触发，行动，多变的酬赏，投入</li></ul><h2 id="1-习惯的力量：如何让你的产品从维生素变成止痛药"><a href="#1-习惯的力量：如何让你的产品从维生素变成止痛药" class="headerlink" title="1 习惯的力量：如何让你的产品从维生素变成止痛药"></a>1 习惯的力量：如何让你的产品从维生素变成止痛药</h2><ul><li>用户对其产品形成的使用习惯是某些企业生存发展的根本，但并非所有企业都受制于此</li><li>一旦成功地使用户对其产品形成了使用习惯，企业就能获益匪浅，具体表现在：更高的用户终身价值，更大的价格灵活性，更快速的增长，以及更强的竞争优势</li><li>只有当某种行为的发生频率足够高、可感知用途足够多时，它才可能发展为习惯</li><li>习惯养成类产品起初都是非必需品（维生素），可一旦发展为习惯，它们就会变成必需品（止痛药）</li><li>习惯养成类产品通过“挠痒痒”减轻用户的痛苦</li><li>设计习惯养成类产品其实是在操控对方的行为。生产企业在做设计之前，最好先审慎思考，以确保自己的设计会引导用户形成健康的习惯，而不是发展成病态的成瘾</li></ul><h2 id="2-触发：提醒人们采取下一步行动"><a href="#2-触发：提醒人们采取下一步行动" class="headerlink" title="2 触发：提醒人们采取下一步行动"></a>2 触发：提醒人们采取下一步行动</h2><ul><li>触发是上瘾模型的第一个阶段，它可促使用户采取行动</li><li>触发分为两类——外部触发和内部触发</li><li>外部触发通过将信息渗透在用户生活的各个方面来引导他们采取下一步行动</li><li>内部触发通过用户记忆存储中的各种关联来提醒他们采取下一步行动</li><li>负面情绪往往可以充当内部触发</li><li>要开发习惯养成类产品，设计者要揣摩用户的心理，了解那些有可能成为内部触发的各种情绪，并且要知道如何利用外部触发来促使用户付诸行动</li></ul><h2 id="3-行动：人们在期待酬赏时的直接反应"><a href="#3-行动：人们在期待酬赏时的直接反应" class="headerlink" title="3 行动：人们在期待酬赏时的直接反应"></a>3 行动：人们在期待酬赏时的直接反应</h2><ul><li>行动是上瘾模型的第二个阶段</li><li>行动是人们在期待酬赏时最直接的反应</li><li>根据福格博士建立的行为模型：<ol><li>要促成某种行为，触发、动机和能力这三者缺一不可</li><li>要增加预想行为的发生率，触发要显而易见，行为要易于实施，动机要合乎常理</li><li>人类行为不外乎受三种核动机的影响：追求快乐，逃避痛苦；追求希望，逃避恐惧；追求认同，逃避排斥</li><li>时间、金钱、体力、脑力、社会偏差、非常规性等六个因素会对用户的能力产生影响。能力还会因人因地而异</li></ol></li><li>启发法是指我们借助认知经验对事物做出快速判断。产品设计者可以从上千种启发法中选择一些来获取灵感，提高产品的吸引力</li></ul><h2 id="4-多变的酬赏：满足用户的需求，激发使用欲"><a href="#4-多变的酬赏：满足用户的需求，激发使用欲" class="headerlink" title="4 多变的酬赏：满足用户的需求，激发使用欲"></a>4 多变的酬赏：满足用户的需求，激发使用欲</h2><ul><li>“多变的酬赏”是上瘾模型的第三个阶段，共包含三种类型：社交酬赏，猎物酬赏，自我酬赏</li><li>所谓社交酬赏，是指人们从产品中通过与他人的互动而获取的人际奖励</li><li>所谓猎物酬赏，是指人们从产品中获得具体资源或信息</li><li>所谓自我酬赏，是指人们从产品中体验到的操控感、成就感和终结感</li><li>在自主权受到挑战时，我们会感到自己失去了选择的自由，通常会对某种新的行为习惯产生排斥。心理学家称之为“逆反心理”。因此，保障用户的自主权是吸引他们的关键</li><li>“有限的多变性”会使产品随着时间的推移而丧失神秘感和吸引力，而“无穷的多变性”是维系用户长期兴趣的关键</li><li>产品中“多变的酬赏”在吸引用户的同时，必须满足他们的使用需求</li></ul><h2 id="5-投入：通过用户对产品的投入，培养“回头客”"><a href="#5-投入：通过用户对产品的投入，培养“回头客”" class="headerlink" title="5 投入：通过用户对产品的投入，培养“回头客”"></a>5 投入：通过用户对产品的投入，培养“回头客”</h2><ul><li>投入阶段是上瘾模型的第四个阶段</li><li>行动阶段使用户即时获得满足，而投入阶段主要与用户对未来酬赏的期待有关</li><li>对产品的投入会令用户形成偏好，因为我们往往会高估自己的劳动成果，尽力和自己过去的行为保持一致，避免认知失调</li><li>用户只有在享受了各种酬赏之后才会对产品进行投入</li><li>用户对产品的投入不仅可改进产品服务质量，增加用户再次使用产品的可能性，还能令存储价值以内容、数据资料、关注者、信誉或技能等形式自然增长</li><li>用户投入可通过加载下一个触发的方式令用户重新开始上瘾循环，从而增加了用户反复进入上瘾循环的可能性</li></ul><h2 id="6-上瘾模型与道德操控"><a href="#6-上瘾模型与道德操控" class="headerlink" title="6 上瘾模型与道德操控"></a>6 上瘾模型与道德操控</h2><ul><li>为帮助习惯养成类技术的设计者评估其操控用户背后的道德责任，首先要确定其工作性质属于四象限中的哪一个</li></ul>          </div>]]></content>
     
     <summary type="html">
     
@@ -443,27 +466,6 @@
     
     
       <category term="FONT" scheme="https://augists.top/tags/FONT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to Remove Icons8 App?</title>
-    <link href="https://augists.top/SELF/SHARING/LIFE/How-to-remove-Icons8-app/"/>
-    <id>https://augists.top/SELF/SHARING/LIFE/How-to-remove-Icons8-app/</id>
-    <published>2021-01-12T16:12:09.000Z</published>
-    <updated>2021-01-13T01:59:17.509Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <div class="note ">            <p>白嫖使我快乐</p>          </div><p>今天在地铁 🚇 上看到一篇讲学生可以白嫖什么软硬件的<br>于是就尝试了一下<br>给 GitHub 加一下学生认证，名字叫 <code>GitHub Student Developer Pack</code><br>GitHub 的高级版对我来说吸引力不大<br>但是，根据少数派之前的介绍，GitHub 的学生认证可以白嫖到</p><ul><li>JetBrains 全家桶</li><li>Unity、Termius 等开发者工具</li><li>AWS、Azure 和 DigitalOcean 等云服务商额度</li><li>Canva、Icons8 和 Iconscout 等设计师帮手</li><li>HazeOver、Dashlane 和 PomoDone 等实用工具</li></ul><p>我本来冲着 Termius 去的，JetBrains 的学生认证我也单独申请过了<br>但是看到第四个设计工具 🔧，我就没忍住试了试</p><hr><h2 id="Canva"><a href="#Canva" class="headerlink" title="Canva"></a>Canva</h2><p>这个软件的登陆方式提供了手机号、电子邮箱、微信、QQ、微博，但是我电子邮箱一直报错不能登陆，提示是它们自己的问题<br>可是 GitHub 是绑定的电子邮箱，不用电子邮箱登陆我怎么白嫖呢<br>于是乎，Google<br>一开始挂日本上这个网站都会直接跳转国内，即便全局也不行<br>然后改用新加坡的全局，终于是国外版本，有教育优惠的入口了</p><p>但是 😒<br>它似乎教育优惠是给老师的，我填了一大顿还让我传教师资格证照片 😒<br>而针对学生它只有一个教学网页 😒</p><hr><h2 id="Icons8"><a href="#Icons8" class="headerlink" title="Icons8"></a>Icons8</h2><p>我今天的 GoodNotes 也用到了 Icons8 的网页版，使用体验不尽如人意，但是好在下载的图标颜色是可以自己选的<br>然后又在 iPad 上下载了美区的 Icons8 软件<br>它作为一个只给 iMessage 用的插件，逼着我开启了 iPad 的 iMessage 之后，还不显示<br>但是由于它只是作为一个插件存在，所以找了半天我也不知道怎么卸载掉它<br>最终还是在 iMessage 里找到了<br>通过 iMessage 底部的应用管理，然后进入到排列的界面<br>左滑 Icons8 进行插件的删除</p><p>第一次下载这种插件，没有软件图标，也没法在 settings 里找到它<br>看美区软件下面的评论全都在问怎么卸载 😏</p><div class="note info">            <p>今天看了阿里云的 OSS 存储，半年才9块钱<br>正在考虑要不要买一个把图床再重新弄一下</p>          </div><p><img src="https://i.loli.net/2021/01/13/7pFqI4jlTEh68WX.png" alt=""></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      How to remove app like Icons8 those made for iMessage?
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
   </entry>
   
