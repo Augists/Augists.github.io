@@ -31,15 +31,24 @@
   })();
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Augists-ZDCZ">
-<meta property="og:url" content="https://augists.top/tags/CODE/page/2/index.html">
+  <meta name="description" content="So annoying bug disgusts me">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Re-(#In-Clude)">
+<meta property="og:url" content="https://augists.top/SELF/ERROR/Re-(in-clude)/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="So annoying bug disgusts me">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-17T14:25:04.000Z">
+<meta property="article:modified_time" content="2021-05-17T11:36:12.440Z">
 <meta property="article:author" content="Augists">
+<meta property="article:tag" content="ERROR">
+<meta property="article:tag" content="ESSAY">
+<meta property="article:tag" content="CODE">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="SUMMERTERM">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://augists.top/tags/CODE/page/2/">
+<link rel="canonical" href="https://augists.top/SELF/ERROR/Re-(in-clude)/">
 
 
 <script id="page-configurations">
@@ -47,12 +56,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: CODE | Augists-ZDCZ</title>
+  <title>Re-(#In-Clude) | Augists-ZDCZ</title>
   
 
 
@@ -165,240 +174,205 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">CODE
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/ERROR/Re-(in-clude)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Re-(#In-Clude)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-17 22:25:04" itemprop="dateCreated datePublished" datetime="2020-07-17T22:25:04+08:00">2020-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-17 19:36:12" itemprop="dateModified" datetime="2021-05-17T19:36:12+08:00">2021-05-17</time>
+              </span>
+
+          
+            <div class="post-description">So annoying bug disgusts me</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <div class="note warning">
+            <p>之前写过一篇关于 <code>#ifndef</code> 与 <code>#pragma once</code> 的博客<br>但是事情好像不是那么简单</p><h2 id="错误样例"><a href="#错误样例" class="headerlink" title="错误样例"></a>错误样例</h2><p>A.h</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(#in-clude) <span class="string">&quot;B.h&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> :</span> <span class="keyword">public</span> B</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>B.h</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(#in-clude) <span class="string">&quot;A.h&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="错误原因分析"><a href="#错误原因分析" class="headerlink" title="错误原因分析"></a>错误原因分析</h2><p>如果我没记错，这种因为 h 文件互相引用而导致的重定义之前弄的我莫名其妙</p><p>按照之前看 <code>#ifnedf</code> 的解释，内容一样不应该被编译器重复添加而导致重定义<br>但是它确实就存在这样了<br>网上查询好像还没有找到合适的解释（我还没看官方文档，只看了 CSDN <code>(^_^)a</code></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>根据看到的一些文章，解决方案无非两种</p><h3 id="尽量改为-cpp-文件引用"><a href="#尽量改为-cpp-文件引用" class="headerlink" title="尽量改为 cpp 文件引用"></a>尽量改为 cpp 文件引用</h3><p>cpp 文件不会被再次引用，所以可以更放心的用 <code>#in-clude</code><br>但是也要注意，cpp 文件的引用里可能会有冲突</p><h3 id="改为类声明"><a href="#改为类声明" class="headerlink" title="改为类声明"></a>改为类声明</h3><p>在错误样例中，A.h 文件改为</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class B;</span><br><span class="line"></span><br><span class="line">class A : public B</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>对类B进行声明</p>
+          </div>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-17T21:27:32+08:00"
-              content="2020-07-17">
-          07-17
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/SELF/ERROR/Re-(in-clude)/" title="Re-(#In-Clude)">https://augists.top/SELF/ERROR/Re-(in-clude)/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/SELF/ERROR/Switch-Case-Braces/" itemprop="url">
-            <span itemprop="name">Switch Case Braces</span>
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-10T16:42:47+08:00"
-              content="2020-07-10">
-          07-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/SELF/ERROR/pragma-once-or-ifndef/" itemprop="url">
-            <span itemprop="name">#Pragma Once or #Ifndef</span>
+            <span class="label">QQ</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-10T16:20:08+08:00"
-              content="2020-07-10">
-          07-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/SELF/ERROR/QT5-C-11-Lambda-Error/" itemprop="url">
-            <span itemprop="name">QT5 C++11 Lambda Error</span>
+            <span class="label">RSS</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-28T23:19:57+08:00"
-              content="2020-06-28">
-          06-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/SELF/SHARING/STUDY/myVector/" itemprop="url">
-            <span itemprop="name">meVector</span>
+            <span class="label">GitHub</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-28T00:00:22+08:00"
-              content="2020-06-28">
-          06-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/SELF/ERROR/gcc-error/" itemprop="url">
-            <span itemprop="name">GCC Error</span>
+            <span class="label">Gitee</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-26T00:22:14+08:00"
-              content="2020-06-26">
-          06-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/" itemprop="url">
-            <span itemprop="name">STL Learn and Summarize</span>
+            <span class="label">CSDN</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-25T23:06:08+08:00"
-              content="2020-06-25">
-          06-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/NOTES/SUMMERTERM/STL/STL-note/" itemprop="url">
-            <span itemprop="name">STL Note</span>
+            <span class="label">Subscribe</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-22T19:13:27+08:00"
-              content="2020-06-22">
-          06-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/NOTES/SUMMERTERM/STL/Cpp-STL-Report/" itemprop="url">
-            <span itemprop="name">C++ STL Report</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-16T22:43:00+08:00"
-              content="2020-06-16">
-          06-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/NOTES/CODE_LANGUAGE/MATLAB/Multivariate-Function-Integration/" itemprop="url">
-            <span itemprop="name">Multivariate Function Integration</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-16T22:40:10+08:00"
-              content="2020-06-16">
-          06-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/NOTES/CODE_LANGUAGE/MATLAB/Multivariate-Function-Differentiation/" itemprop="url">
-            <span itemprop="name">Multivariate Function Differentiation</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ERROR/" rel="tag"><i class="fa fa-tag"></i> ERROR</a>
+              <a href="/tags/ESSAY/" rel="tag"><i class="fa fa-tag"></i> ESSAY</a>
+              <a href="/tags/CODE/" rel="tag"><i class="fa fa-tag"></i> CODE</a>
+              <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
+              <a href="/tags/SUMMERTERM/" rel="tag"><i class="fa fa-tag"></i> SUMMERTERM</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/SELF/ERROR/Switch-Case-Braces/" rel="prev" title="Switch Case Braces">
+      <i class="fa fa-chevron-left"></i> Switch Case Braces
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/SUMMERTERM/WEB/HTML-study-note/" rel="next" title="HTML Study Note">
+      HTML Study Note <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/CODE/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/tags/CODE/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/CODE/page/3/">3</a><a class="page-number" href="/tags/CODE/page/4/">4</a><a class="extend next" rel="next" href="/tags/CODE/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
           </div>
           
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -445,6 +419,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">错误样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">错误原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%BD%E9%87%8F%E6%94%B9%E4%B8%BA-cpp-%E6%96%87%E4%BB%B6%E5%BC%95%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">尽量改为 cpp 文件引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E4%B8%BA%E7%B1%BB%E5%A3%B0%E6%98%8E"><span class="nav-number">3.2.</span> <span class="nav-text">改为类声明</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
