@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-05-20T15:33:59.297Z</updated>
+  <updated>2021-05-26T09:46:49.719Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shortcut Screen Saver</title>
+    <link href="https://augists.top/APPLE/Shortcut-Screen-Saver/"/>
+    <id>https://augists.top/APPLE/Shortcut-Screen-Saver/</id>
+    <published>2021-05-26T09:29:19.000Z</published>
+    <updated>2021-05-26T09:46:49.719Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>If asked how to start your screen saver on your mac, what is your answer? Some of you may respond with <em>Hot Corners</em>. But it may be the second choice on mine</p><h2 id="Hot-Coners"><a href="#Hot-Coners" class="headerlink" title="Hot Coners"></a>Hot Coners</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Preference -&gt; Desktop &amp;<span class="built_in"> Screen </span>Saver -&gt; Hot Corners</span><br></pre></td></tr></table></figure><p>Choice one of the four corners and <code>Start Screen Saver</code></p><h2 id="Automator"><a href="#Automator" class="headerlink" title="Automator"></a>Automator</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Automator -&gt; New Document -&gt; Quick Action -&gt; Start<span class="built_in"> Screen </span>Saver -&gt; Workflow receives: <span class="literal">no</span> input -&gt; save</span><br></pre></td></tr></table></figure><p>then give your workflow a shortcut</p><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P<span class="function"><span class="title">reference</span> -&gt;</span> K<span class="function"><span class="title">eyboard</span> -&gt;</span> S<span class="function"><span class="title">hortcuts</span> -&gt;</span> Services</span><br></pre></td></tr></table></figure><p>I record <code>control + option + command + s</code> for screen saver, which is also known as <code>hybrid + s</code></p><div class="note info">            <p>Recommend:<br>Fliqlo – a clock screen saver<br>4K video – downloaded from apple TV screen saver</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      How to start screen saver on your mac in a split second?&lt;br&gt;Hot corner? NO&lt;br&gt;Automator is the best choice
+    
+    </summary>
+    
+    
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux Fork</title>
@@ -454,27 +477,6 @@
     
     
       <category term="MOVIE" scheme="https://augists.top/tags/MOVIE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub Octotastic Day</title>
-    <link href="https://augists.top/SELF/SHARING/STUDY/GitHub-Octotastic-Day/"/>
-    <id>https://augists.top/SELF/SHARING/STUDY/GitHub-Octotastic-Day/</id>
-    <published>2021-01-15T13:22:39.000Z</published>
-    <updated>2021-01-15T13:30:04.127Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>今天不放心，又来看看 GitHub 的学生认证<br>然后就误打误撞进入了这个页面</p><p><img src="https://i.loli.net/2021/01/15/sRvWEu7z1y5qiD2.png" alt=""></p><p>最后一句话是</p><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Have a Octotastic <span class="built_in">Day</span>!</span><br></pre></td></tr></table></figure><p><code>Octotastic</code> 这个单词从来没见过，<code>Octo</code> 这个前缀就直接想到十月，可是现在是一月，为什么要说过十月天呢</p><p>所以就搜了一下，果然有人和我有一样的疑问</p><p>贴其中一个解释</p><div class="note info">            <p>It’s very common for informal writing to add “-tastic” to words to make them sound more effusive. So it’s not that October is especially fantastic, but merely that you didn’t happen to encounter an occurrence of “Maytastic” or “Junetastic” when their time rolled around. Having said that, I will admit that some months lend themselves to portmanteauing more readily than others. I doubt, for example, that you’ll run into an occurrence of “Februtastic,” even though February is a truly outstanding month.</p><p>这个答案的大致意思是：一个单词加上 “-tastic” 的后缀后，听起来是一种情感的流露，这是一种非正式的写法。这里答者认为十月（Octo）可能是一个美好的月份，加上后缀仅仅是将十月情感化，所是二月也可以情感化为 Februtastic，五月也可以情感化为 Maytastic，但由于每个人对该月份的理解不同，所以也不一定 Octotastic 代表美好的情感。</p>          </div><p>然后在评论区有人指出</p><div class="note danger">            <p>Github 的吉祥物是 octocat，是一个类似于小章鱼的形象，所以 Octotastic 代表的是 Github 官方情感的流露。</p>          </div><p>挺好 😏<br><img src="https://gitee.com/Augists/oss/raw/master/uPic/A7A99D6E-783C-4C57-B44E-2DFC39F0857C_4_5005_c.jpeg" alt=""></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      What is the meaning of Octotastic in GitHub?
-    
-    </summary>
-    
-    
-    
-      <category term="GITHUB" scheme="https://augists.top/tags/GITHUB/"/>
     
   </entry>
   
