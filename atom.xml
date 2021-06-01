@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-05-29T13:41:22.326Z</updated>
+  <updated>2021-06-01T01:56:57.815Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tmux Shortcut Record</title>
+    <link href="https://augists.top/NOTES/TERMINAL/Tmux-Shortcut-Record/"/>
+    <id>https://augists.top/NOTES/TERMINAL/Tmux-Shortcut-Record/</id>
+    <published>2021-06-01T01:17:50.000Z</published>
+    <updated>2021-06-01T01:56:57.815Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>三个概念 由大到小</p><ul><li>session</li><li>window</li><li>pane 窗格</li></ul><p><img src=";https://i.loli.net/2021/06/01/1vlPqRhLKN3Siob.png" alt=""></p><p>Shortcut</p><ul><li><code>tmux new -s session_name</code> 新建 session 并自动新建 window</li><li><code>ctrl b + ?</code> 调出命令面板 help</li><li><code>ctrl b + %</code> 左右分屏</li><li><code>ctrl b + &quot;</code> 上下分屏</li><li><code>ctrl b + o</code> 切换 focus 的 pane</li><li><code>ctrl b + d</code> detach 分离会话（退出但不关闭）</li><li><code>tmux ls</code> 查看正在运行的会话</li><li><code>tmux att -t session_name</code> attach 恢复会话（自动根据前缀匹配）</li><li><code>ctrl b + c</code> 新建 window</li><li><code>ctrl b + n</code> next window</li><li><code>ctrl b + p</code> previous window</li><li><code>ctrl b + ,</code> rename window</li><li><code>ctrl b + w</code> list windows and jump</li><li><code>ctrl b + s</code> list sessions and jump</li></ul>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Take down the shortcut for better using tmux
+    
+    </summary>
+    
+    
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="TMUX" scheme="https://augists.top/tags/TMUX/"/>
+    
+  </entry>
   
   <entry>
     <title>Code Server on ECS</title>
@@ -449,34 +472,6 @@
     
     
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Covid-19 Maps in Blog</title>
-    <link href="https://augists.top/HEXO/Covid-19-Maps-in-Blog/"/>
-    <id>https://augists.top/HEXO/Covid-19-Maps-in-Blog/</id>
-    <published>2021-01-24T09:45:15.000Z</published>
-    <updated>2021-01-24T09:51:35.028Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>我给博客添加了当前的新冠疫情地图，现在正在纠结放在左边 sidebar 上还是单独做一个页面<br>先写出来记录下怎么做的</p><hr><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">&quot;https://www.lovestu.com/api/project/cnmapyinqing/obj.php&quot;</span> <span class="built_in">height</span>=<span class="string">&quot;500&quot;</span> frameborder=<span class="string">&quot;no&quot;</span> <span class="built_in">border</span>=<span class="string">&quot;0&quot;</span> <span class="built_in">width</span>=<span class="string">&quot;100%&quot;</span>&gt; &lt;/iframe&gt;</span><br></pre></td></tr></table></figure><p>最重要的一行代码，用大佬做的框架直接生成<br>可以选择国内疫情情况还是全球疫情情况<br>如果你也想插入在 sidebar 的最下面，可以按照我下面的步骤来做</p><hr><p>打开<br><code>theme/next/layout/_partials/sidebar/site-overview.swig</code><br>直接在文件的最下面插入刚才的这行代码就可以啦</p><p>但是需要注意的是，渲染出来的效果可能不太合适<br>需要通过<br><code>theme/next/_config.yml</code><br>文件中修改 sidebar 下的 width 数值</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;div class=&quot;note warning&quot;&gt;
-            &lt;p&gt;我给博客添加了当前的新冠疫情地图，现在正在纠结放在左边 sidebar 上还是单独做一个页面&lt;br&gt;先写出来记录下怎么做的&lt;/p&gt;&lt;hr&gt;&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="HEXO" scheme="https://augists.top/tags/HEXO/"/>
     
   </entry>
   
