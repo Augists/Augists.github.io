@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-06-01T01:56:57.815Z</updated>
+  <updated>2021-06-01T13:52:00.276Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git Not Ignore Under Directory</title>
+    <link href="https://augists.top/Git-not-ignore-under-directory/"/>
+    <id>https://augists.top/Git-not-ignore-under-directory/</id>
+    <published>2021-06-01T13:25:07.000Z</published>
+    <updated>2021-06-01T13:52:00.276Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>先来看我的情景吧</p><div class="note info">            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br></pre></td></tr></table></figure>之前是忽略目录下所有文件及文件夹，只追踪* `.gitignore`* `.gitconfig`* `.zshrc`<p>现在想要添加对 <code>.config</code> 文件夹下的一些文件或文件夹的支持</p>          </div><p>一开始想的比较简单，就直接添加呗，于是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br><span class="line">!.config/</span><br></pre></td></tr></table></figure><p>如果你也尝试一下，就会发现，git 始终无法添加上对 <em>config</em> 文件夹下内容的追踪<br>查了好久都没找到应该怎么写，最后看到了 <em>git-doc</em> 才明白<br>官方给的例子是这样</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cat .gitignore</span><br><span class="line"><span class="comment"># exclude everything except directory foo/bar</span></span><br><span class="line">/*</span><br><span class="line">!/foo</span><br><span class="line">/foo/*</span><br><span class="line">!/foo/bar</span><br></pre></td></tr></table></figure><p>也就是说，想要想让 <em>git</em> 追踪文件夹里的某些内容，需要先追踪全文件夹，然后在忽略文件夹下的所有内容，再添加对单个文件的追踪</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br><span class="line">!/.config</span><br><span class="line">/.config/*</span><br><span class="line">!.config/htop</span><br><span class="line">!.config/ranger</span><br><span class="line">!.config/.zsh_history_bak</span><br><span class="line">!.config/.tmux</span><br></pre></td></tr></table></figure><blockquote><p>tmux 下 vim 似乎不是很好用</p></blockquote>          </div>]]></content>
+    
+    <summary type="html">
+    
+      How to write gitignore file&lt;br&gt;Ignore all except specific files under directory
+    
+    </summary>
+    
+    
+    
+      <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
+    
+  </entry>
   
   <entry>
     <title>Tmux Shortcut Record</title>
@@ -451,27 +472,6 @@
       <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
       <category term="GTD" scheme="https://augists.top/tags/GTD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3D Modeling First Experience</title>
-    <link href="https://augists.top/SELF/SHARING/LIFE/3D-Modeling-First-Experience/"/>
-    <id>https://augists.top/SELF/SHARING/LIFE/3D-Modeling-First-Experience/</id>
-    <published>2021-01-31T14:45:58.000Z</published>
-    <updated>2021-01-31T15:07:22.092Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>人生中的第一次做建模 😏</p><blockquote><p>脑子里一直在鬼畜回放 b 站的首页 3D 建模广告推荐，四只小猫疯狂晃脑袋</p></blockquote><p>话不多说，先上图</p><p><img src="https://i.loli.net/2021/01/31/HQIrhC2x76UmaL1.png" alt=""><br><img src="https://i.loli.net/2021/01/31/UtOxfnFcoWNqiyK.png" alt=""><br><img src="https://i.loli.net/2021/01/31/Lt3rXd5DkpAChqb.png" alt=""></p><p>建模使用的 iPad + Apple Pencil，软件使用的 Shapr3D<br>最先是从 YouTube 的广告上看到的这个软件，广告非常好的体现出了软件的易用<br>于是在一次登陆共享账号的时候，看到别人有下载这个软件，我也安装尝试了一下<br>软件一进入就会问及想要建模的大概难度系数，自然我作为一个小白，从零开始</p><p>这个软件我认为非常好的一点是，它提供了视频教程，并且用一个 picture in picture 来让教程窗口常驻，并且非常显眼的提供了后退 10s 和前进 10s 的按钮<br>教程真的是从空白开始，一步一步的教如何使用并制作出一个简单的小零件模型，而这个模型也已经用到了大部分日常会用到的操作<br>教程里还把这一个看起来较为复杂的零件进行了拆分的示例，我甚至认为这个软件完全可以扔给小学生进行学习，并且非常有益</p><div class="note info">            <p>而这件事对我个人来说，最主要的一点，就是我一直认为 3D 建模是一个对我来说非常遥远的事情<br>我可以学会 ps，pr，ai，可以学会一点 ae，甚至去学一些排版，但是我从来没想过自己可以做 3D 建模，尽管它只是一个很普通的模型<br>它的意义，我想，这就是科技发展的价值吧<br>我们去发明计算机，发明互联网，或者往小了说，发明 QQ，成立腾讯，不是为了去挣普通人的那点钱 💰，而是通过科技的进步，拉近普通人之间的距离，让科技的发展造福于每个普通人的生活，让原本看起来困难的事情变得抬手可得<br>所以，尽管我讨厌抖音，但是我并不那么讨厌它的附加软件剪映。因为它让普通人不再需要打开电脑，安装流氓软件 pr，再去花费时间学习 pr 复杂的操作。剪映，对于大部分人来说，已经足够了<br>而这，正式科技应该做的</p>          </div>          </div>]]></content>
-    
-    <summary type="html">
-    
-      This is my first time to have a try on such a area&lt;br&gt;which I never thought I could make it
-    
-    </summary>
-    
-    
-    
-      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
     
   </entry>
   
