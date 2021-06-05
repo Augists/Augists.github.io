@@ -40,7 +40,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://augists.top/NOTES/TERMINAL/Tmux-Shortcut-Record/;https://i.loli.net/2021/06/01/1vlPqRhLKN3Siob.png">
 <meta property="article:published_time" content="2021-06-01T01:17:50.000Z">
-<meta property="article:modified_time" content="2021-06-01T01:56:57.815Z">
+<meta property="article:modified_time" content="2021-06-05T02:45:01.127Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="TERMINAL">
 <meta property="article:tag" content="TMUX">
@@ -202,10 +202,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-06-01 09:17:50 / Modified: 09:56:57" itemprop="dateCreated datePublished" datetime="2021-06-01T09:17:50+08:00">2021-06-01</time>
+              <time title="Created: 2021-06-01 09:17:50" itemprop="dateCreated datePublished" datetime="2021-06-01T09:17:50+08:00">2021-06-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-05 10:45:01" itemprop="dateModified" datetime="2021-06-05T10:45:01+08:00">2021-06-05</time>
+              </span>
 
           
             <div class="post-description">Take down the shortcut for better using tmux</div>
@@ -220,7 +226,7 @@
 
       
         <div class="note warning">
-            <p>三个概念 由大到小</p><ul><li>session</li><li>window</li><li>pane 窗格</li></ul><p><img src=";https://i.loli.net/2021/06/01/1vlPqRhLKN3Siob.png" alt=""></p><p>Shortcut</p><ul><li><code>tmux new -s session_name</code> 新建 session 并自动新建 window</li><li><code>ctrl b + ?</code> 调出命令面板 help</li><li><code>ctrl b + %</code> 左右分屏</li><li><code>ctrl b + &quot;</code> 上下分屏</li><li><code>ctrl b + o</code> 切换 focus 的 pane</li><li><code>ctrl b + d</code> detach 分离会话（退出但不关闭）</li><li><code>tmux ls</code> 查看正在运行的会话</li><li><code>tmux att -t session_name</code> attach 恢复会话（自动根据前缀匹配）</li><li><code>ctrl b + c</code> 新建 window</li><li><code>ctrl b + n</code> next window</li><li><code>ctrl b + p</code> previous window</li><li><code>ctrl b + ,</code> rename window</li><li><code>ctrl b + w</code> list windows and jump</li><li><code>ctrl b + s</code> list sessions and jump</li></ul>
+            <p>三个概念 由大到小</p><ul><li>session</li><li>window</li><li>pane 窗格</li></ul><p><img src=";https://i.loli.net/2021/06/01/1vlPqRhLKN3Siob.png" alt=""></p><p>Shortcut</p><ul><li><code>tmux new -s session_name</code> 新建 session 并自动新建 window</li><li><code>ctrl b + ?</code> 调出命令面板 help</li><li><code>ctrl b + %</code> 左右分屏</li><li><code>ctrl b + &quot;</code> 上下分屏</li><li><code>ctrl b + o</code> 切换 focus 的 pane</li><li><code>ctrl b + d</code> detach 分离会话（退出但不关闭）</li><li><code>tmux ls</code> 查看正在运行的会话</li><li><code>tmux att -t session_name</code> attach 恢复会话（自动根据前缀匹配）</li><li><code>ctrl b + c</code> 新建 window</li><li><code>ctrl b + n</code> next window</li><li><code>ctrl b + p</code> previous window</li><li><code>ctrl b + ,</code> rename window</li><li><code>ctrl b + w</code> list windows and jump</li><li><code>ctrl b + s</code> list sessions and jump</li></ul><div class="note info">            <p>开启 tmux 并且分离会话后，再使用 <code>ps -a</code> 查看进程的时候，会发现非常乱，因为它包含了 tmux 下会话仍然在运行的进程<br>现在不知道 tmux 保存会话到底意义大不大了，占用系统资源保留进程，我现在可能并不需要为了一点便利而浪费性能和电量 🔋，也是因为我还没到那个层次吧</p>          </div>
           </div>
 
     </div>
