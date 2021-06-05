@@ -31,12 +31,12 @@
   })();
 </script>
 
-  <meta name="description" content="在 TCP 中，拥塞控制通常分为四个主要方向：慢启动拥塞避免快速重传快速恢复慢启动在 BBR 中仍然保留。它在不知道瓶颈带宽时以指数级增长达到或检测阈值，如图中前 4 秒。达到阈值后，开始加性增阶段，即拥塞避免。直到发生丢包后进行快速恢复和快速重传如果瓶颈路由器的缓存特别大，那么这种以丢包作为探测依据的拥塞算法将会导致严重问题：TCP链路上长时间RTT变大，但吞吐量维持不">
+  <meta name="description" content="Google BBR explanation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Google BBR">
 <meta property="og:url" content="https://augists.top/NOTES/COURSES/Computer_Network/Google-BBR/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="在 TCP 中，拥塞控制通常分为四个主要方向：慢启动拥塞避免快速重传快速恢复慢启动在 BBR 中仍然保留。它在不知道瓶颈带宽时以指数级增长达到或检测阈值，如图中前 4 秒。达到阈值后，开始加性增阶段，即拥塞避免。直到发生丢包后进行快速恢复和快速重传如果瓶颈路由器的缓存特别大，那么这种以丢包作为探测依据的拥塞算法将会导致严重问题：TCP链路上长时间RTT变大，但吞吐量维持不">
+<meta property="og:description" content="Google BBR explanation">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ask.qcloudimg.com/http-save/yehe-5661042/d908hulije.jpeg?imageView2/2/w/1620">
 <meta property="og:image" content="https://ask.qcloudimg.com/http-save/yehe-5661042/g8nl3rudja.png?imageView2/2/w/1620">
@@ -53,7 +53,7 @@
 <meta property="og:image" content="https://ask.qcloudimg.com/http-save/yehe-5661042/a5jrnqdpqq.png?imageView2/2/w/1620">
 <meta property="og:image" content="https://ask.qcloudimg.com/http-save/yehe-5661042/t24h8pps9s.png?imageView2/2/w/1620">
 <meta property="article:published_time" content="2021-05-19T07:54:00.000Z">
-<meta property="article:modified_time" content="2021-05-19T08:29:35.459Z">
+<meta property="article:modified_time" content="2021-06-03T11:20:05.991Z">
 <meta property="article:author" content="Augists">
 <meta property="article:tag" content="NOTE">
 <meta name="twitter:card" content="summary">
@@ -214,12 +214,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-05-19 15:54:00 / Modified: 16:29:35" itemprop="dateCreated datePublished" datetime="2021-05-19T15:54:00+08:00">2021-05-19</time>
+              <time title="Created: 2021-05-19 15:54:00" itemprop="dateCreated datePublished" datetime="2021-05-19T15:54:00+08:00">2021-05-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-03 19:20:05" itemprop="dateModified" datetime="2021-06-03T19:20:05+08:00">2021-06-03</time>
+              </span>
 
           
+            <div class="post-description">Google BBR explanation</div>
 
         </div>
       </header>
@@ -433,7 +440,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">124</span>
+          <span class="site-state-item-count">125</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

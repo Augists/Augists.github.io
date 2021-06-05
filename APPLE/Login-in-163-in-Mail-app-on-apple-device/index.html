@@ -31,20 +31,23 @@
   })();
 </script>
 
-  <meta name="description" content="How to write gitignore fileIgnore all except specific files under directory">
+  <meta name="description" content="The mailbox in system event was suddenly invalidCannot login and receive emails as normal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git Not Ignore Under Directory">
-<meta property="og:url" content="https://augists.top/Git-not-ignore-under-directory/index.html">
+<meta property="og:title" content="Login in 163 in Mail App on Apple Device">
+<meta property="og:url" content="https://augists.top/APPLE/Login-in-163-in-Mail-app-on-apple-device/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="How to write gitignore fileIgnore all except specific files under directory">
+<meta property="og:description" content="The mailbox in system event was suddenly invalidCannot login and receive emails as normal">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-01T13:25:07.000Z">
-<meta property="article:modified_time" content="2021-06-01T13:52:00.276Z">
+<meta property="og:image" content="https://i.loli.net/2021/06/05/mvDK4FfhSQtyA2n.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/05/oeUDQmVlWhtITMO.png">
+<meta property="article:published_time" content="2021-06-03T10:39:59.000Z">
+<meta property="article:modified_time" content="2021-06-05T02:39:04.288Z">
 <meta property="article:author" content="Augists">
-<meta property="article:tag" content="GIT">
+<meta property="article:tag" content="APPLE">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/06/05/mvDK4FfhSQtyA2n.png">
 
-<link rel="canonical" href="https://augists.top/Git-not-ignore-under-directory/">
+<link rel="canonical" href="https://augists.top/APPLE/Login-in-163-in-Mail-app-on-apple-device/">
 
 
 <script id="page-configurations">
@@ -57,7 +60,7 @@
   };
 </script>
 
-  <title>Git Not Ignore Under Directory | Augists-ZDCZ</title>
+  <title>Login in 163 in Mail App on Apple Device | Augists-ZDCZ</title>
   
 
 
@@ -177,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://augists.top/Git-not-ignore-under-directory/">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/APPLE/Login-in-163-in-Mail-app-on-apple-device/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
@@ -190,7 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Git Not Ignore Under Directory
+          Login in 163 in Mail App on Apple Device
         </h1>
 
         <div class="post-meta">
@@ -199,13 +202,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-06-01 21:25:07 / Modified: 21:52:00" itemprop="dateCreated datePublished" datetime="2021-06-01T21:25:07+08:00">2021-06-01</time>
+              <time title="Created: 2021-06-03 18:39:59" itemprop="dateCreated datePublished" datetime="2021-06-03T18:39:59+08:00">2021-06-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-05 10:39:04" itemprop="dateModified" datetime="2021-06-05T10:39:04+08:00">2021-06-05</time>
+              </span>
 
           
-            <div class="post-description">How to write gitignore file<br>Ignore all except specific files under directory</div>
+            <div class="post-description">The mailbox in system event was suddenly invalid<br>Cannot login and receive emails as normal</div>
 
         </div>
       </header>
@@ -217,7 +226,7 @@
 
       
         <div class="note warning">
-            <p>先来看我的情景吧</p><div class="note info">            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br></pre></td></tr></table></figure>之前是忽略目录下所有文件及文件夹，只追踪* `.gitignore`* `.gitconfig`* `.zshrc`<p>现在想要添加对 <code>.config</code> 文件夹下的一些文件或文件夹的支持</p>          </div><p>一开始想的比较简单，就直接添加呗，于是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br><span class="line">!.config/</span><br></pre></td></tr></table></figure><p>如果你也尝试一下，就会发现，git 始终无法添加上对 <em>config</em> 文件夹下内容的追踪<br>查了好久都没找到应该怎么写，最后看到了 <em>git-doc</em> 才明白<br>官方给的例子是这样</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cat .gitignore</span><br><span class="line"><span class="comment"># exclude everything except directory foo/bar</span></span><br><span class="line">/*</span><br><span class="line">!/foo</span><br><span class="line">/foo/*</span><br><span class="line">!/foo/bar</span><br></pre></td></tr></table></figure><p>也就是说，想要想让 <em>git</em> 追踪文件夹里的某些内容，需要先追踪全文件夹，然后在忽略文件夹下的所有内容，再添加对单个文件的追踪</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br><span class="line">!/.config</span><br><span class="line">/.config/*</span><br><span class="line">!.config/htop</span><br><span class="line">!.config/ranger</span><br><span class="line">!.config/.zsh_history_bak</span><br><span class="line">!.config/.tmux</span><br></pre></td></tr></table></figure><blockquote><p>tmux 下 vim 似乎不是很好用</p></blockquote>
+            <p>一直以来，我都很嫌弃苹果设备自带的邮箱。附件稍微大一点就无法正常发送，而且感觉使用逻辑也不是很清晰，一些我需要的小功能也没有提供<br>尝试了 Spark，网易邮箱大师。Spark 的配置上似乎不支持网易邮箱，但网易邮箱又在我的使用中占了大头，所以忍痛割爱，选择了网易邮箱大师<br>但这只是电脑端啊，我还有 pad 和手机端的邮箱需要使用。碰到问题，就要解决问题 😏<br>首先，分析自己的需求：</p><ol><li>发送较大附件 📎 仅在电脑上进行，通常为传输视频或软件一些有较高存储占用的</li><li>移动端主要为接收验证码和一些通知类邮件使用，几乎没有重度使用的要求。但是要求稳定、便捷</li><li>常用邮箱为网易 163 邮箱，并且对 outlook 和 edu 邮箱有一定的使用需求，Gmail 几乎不打开</li></ol><p>根据我自己的要求分析</p><ul><li>电脑端使用网易自己的邮箱软件进行接收更合适，并且似乎不要求必须开启 imap/smtp 功能</li><li>电脑端同时登陆 163, outlook, edu 及一些特殊邮箱，提供必要时的接收和较大附件的发送。有自动签名、自动回复和一些别的功能</li><li>移动端登陆 iCloud、outlook、163 邮箱，仅作为查看邮件的使用和一些小文件的发送</li></ul><hr><p>在配置苹果上的 163 邮箱的时候遇到了无法验证账号和密码的情况，下面是解决方法（或者说配置 163 邮箱的正确步骤）</p><ol><li>网页上登陆 163 邮箱，进入邮箱的设置界面<br><img src="https://i.loli.net/2021/06/05/mvDK4FfhSQtyA2n.png" alt=""></li><li>选择 <code>POP3/SMTP/IMAP</code>，开启 <code>IMAP/SMTP</code> 服务（也可以选择 <code>POP3/SMTP</code> 服务，自行配置 <img src="https://i.loli.net/2021/06/05/oeUDQmVlWhtITMO.png" alt=""></li><li>记录弹出的授权码，授权码是用于登陆第三方设备的专用密码</li><li>在要登陆的位置填写好邮箱的信息，密码使用刚才得到的授权码，不要写自己邮箱的密码</li></ol>
           </div>
 
     </div>
@@ -234,7 +243,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://augists.top/Git-not-ignore-under-directory/" title="Git Not Ignore Under Directory">https://augists.top/Git-not-ignore-under-directory/</a>
+    <a href="https://augists.top/APPLE/Login-in-163-in-Mail-app-on-apple-device/" title="Login in 163 in Mail App on Apple Device">https://augists.top/APPLE/Login-in-163-in-Mail-app-on-apple-device/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -324,7 +333,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/GIT/" rel="tag"><i class="fa fa-tag"></i> GIT</a>
+              <a href="/tags/APPLE/" rel="tag"><i class="fa fa-tag"></i> APPLE</a>
           </div>
 
         
@@ -333,8 +342,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/NOTES/TERMINAL/Tmux-Shortcut-Record/" rel="prev" title="Tmux Shortcut Record">
-      <i class="fa fa-chevron-left"></i> Tmux Shortcut Record
+    <a href="/NOTES/GIT/Git-not-ignore-under-directory/" rel="prev" title="Git Not Ignore Under Directory">
+      <i class="fa fa-chevron-left"></i> Git Not Ignore Under Directory
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -416,7 +425,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">124</span>
+          <span class="site-state-item-count">125</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
