@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="Summer Term Report of C++ STL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ STL Report">
+<meta property="og:url" content="https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="Summer Term Report of C++ STL">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/22/ea380e.png">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg1ihzp56lj30hq05yta2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gg2o3cdq4yj30ym0pmgx0.jpg">
+<meta property="article:published_time" content="2020-06-22T11:13:27.000Z">
+<meta property="article:modified_time" content="2020-06-30T08:23:21.473Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="CODE">
+<meta property="article:tag" content="NOTE">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="SUMMERTERM">
+<meta property="article:tag" content="STL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/22/ea380e.png">
+
+<link rel="canonical" href="https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>C++ STL Report | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-covid-19">
+
+    <a href="/Covid-19/" rel="section"><i class="fas fa-map-marked-alt fa-fw"></i>Covid-19</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ STL Report
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-22 19:13:27" itemprop="dateCreated datePublished" datetime="2020-06-22T19:13:27+08:00">2020-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-30 16:23:21" itemprop="dateModified" datetime="2020-06-30T16:23:21+08:00">2020-06-30</time>
+              </span>
+
+          
+            <div class="post-description">Summer Term Report of C++ STL</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <h1 id="C-STL-Report"><a href="#C-STL-Report" class="headerlink" title="C++ STL Report"></a>C++ STL Report</h1><h2 id="范型程序设计"><a href="#范型程序设计" class="headerlink" title="范型程序设计"></a>范型程序设计</h2><ul><li>范型(<em>Genericity</em>)：具有在多种数据类型上皆可操作的含意</li><li>范型程序设计：编写完全一般化并可重复使用的程序，其效率不依赖于具体数据类型</li></ul><h2 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h2><ul><li>容器（类模板）</li><li>迭代器（指针）</li><li>算法（函数模板）</li></ul><p><img src="https://cdn.jsdelivr.net/gh/chuqi906/h5u7f8j5m4b9a0p3y/2020/06/22/ea380e.png" alt="STL"></p><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ul><li><p>分类</p><ul><li>顺序容器 : <code>vector</code> / <code>list</code> / <code>deque</code></li><li>关联容器 : <code>set</code> / <code>multiset</code> / <code>map</code> / <code>mutimap</code></li><li>容器适配器 : <code>stack</code> / <code>queue</code> / <code>priority_queue</code></li></ul></li></ul><h4 id="顺序容器"><a href="#顺序容器" class="headerlink" title="顺序容器"></a>顺序容器</h4><ul><li>非排序，元素的插入位置同元素的值无关</li><li><code>vector</code> / <code>list</code> / <code>deque</code></li></ul><div class="note info">            <h5 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h5><ul><li>头文件 <code>#include &lt;vector&gt;</code></li><li>连续存储，<strong>可变大小的数组</strong></li><li>支持快速随机访问</li><li>在尾部之外的位置插入/删除可能会慢</li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">v1</span><span class="params">(<span class="number">5</span>)</span></span>;        <span class="comment">// 创建具有5个元素的整形向量v1</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v1.size(); i++)</span><br><span class="line">    v1[i] = i;            <span class="comment">// 利用[]给元素赋值</span></span><br><span class="line">v1.at(<span class="number">4</span>) = <span class="number">100</span>;            <span class="comment">// at()返回指定位置元素的引用</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v1.size(); ++i)</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; v1[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br></pre></td></tr></table></figure><h5 id="list"><a href="#list" class="headerlink" title="list"></a>list</h5><ul><li>头文件 <code>#include &lt;list&gt;</code></li><li><strong>双向链表</strong>，存储空间不连续</li><li>支持双向顺序访问</li><li>没有重载<code>[]</code>，不支持随机存取</li><li>在任意位置插入/删除速度快</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg1ihzp56lj30hq05yta2.jpg" alt="list"></p><h5 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h5><ul><li>头文件 <code>#include &lt;deque</code></li><li><strong>双端队列</strong>，队列尾部或首部添加/删除元素</li><li>支持快速随机访问</li><li>在头尾位置插入/删除速度快</li></ul>          </div><h5 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h5><ul><li><code>front</code>: 返回第一个元素</li><li><code>back</code>: 返回最后一个元素</li><li><code>push_back</code>: 在容器的最后添加一个元素</li><li><code>pop_back</code>: 删除最后一个元素</li><li><code>begin</code>: 返回指向容器中第一个元素的迭代器</li><li><code>end</code>: 返回指向容器中最后一个元素后面的位置的迭代器</li><li><code>rbegin</code>: 返回指向容器中最后一个元素的迭代器</li><li><code>rend</code>: 返回指向容器中第一个元素前面的位置的迭代器</li></ul><h5 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h5><ul><li>通常，使用<code>vector</code>是最好的选择，除非有很好的理由选择其他容器</li><li>如果程序要求随机访问元素，应使用<code>vector</code>和<code>deque</code></li><li>如果程序要求在容器的中间插入或删除元素，应使用<code>list</code></li><li>如果程序需要在头尾位置插入或删除元素，但不会在中间位置插入或删除，应使用<code>deque</code></li></ul><h4 id="关联容器"><a href="#关联容器" class="headerlink" title="关联容器"></a>关联容器</h4><ul><li>按照关键字保存、访问</li><li>有序，元素的插入位置按排序规则确定</li><li><code>set</code> / <code>multiset</code> / <code>map</code> / <code>multimap</code></li></ul><div class="note info">            <h5 id="set-multiset"><a href="#set-multiset" class="headerlink" title="set / multiset"></a>set / multiset</h5><ul><li><code>set&lt;key, pred&gt;</code> / <code>multiset&lt;key, pred&gt;</code><ul><li>元素只包含一个关键字</li><li><code>pred</code>默认为<code>less&lt;key&gt;</code><ul><li><code>set&lt;string&gt; s = {&quot;The&quot;, &quot;But&quot;, &quot;And&quot;};</code></li><li><code>set&lt;string, less&lt;string&gt;&gt; s = {&quot;The&quot;, &quot;But&quot;, &quot;And&quot;};</code></li></ul></li><li><code>set</code>中不可有关键字相同的元素，<code>multiset</code>中允许出现关键字相同的元素</li></ul></li></ul><h5 id="map-multimap"><a href="#map-multimap" class="headerlink" title="map / multimap"></a>map / multimap</h5><div class="note success">            <h6 id="pair类型"><a href="#pair类型" class="headerlink" title="pair类型"></a>pair类型</h6><ul><li>头文件 <code>#include &lt;utility&gt;</code></li></ul><table><thead><tr><th>action</th><th>meaning</th></tr></thead><tbody><tr><td><code>pair&lt;T1, T2&gt; p1</code></td><td>创建一个空pair对象，两元素分别为T1和T2类型，采用值初始化</td></tr><tr><td><code>pair&lt;T1, T2&gt; p1(v1, v2)</code></td><td>创建一个pair对象，两元素分别为T1和T2类型，其中first初始化为v1，second初始化为v2</td></tr><tr><td><code>make_pair(v1, v2)</code></td><td>以v1和v2值创建一个新pair对象，其元素类型分别是v1和v2类型</td></tr><tr><td><code>p1 == p2</code></td><td>如果两个pair对象的first和second依次相等，则他们相等</td></tr><tr><td><code>p1 &lt; p2</code></td><td>两个pair对象之间的小于运算，遵循字典顺序</td></tr><tr><td><code>p.first</code></td><td>返回p中first成员</td></tr><tr><td><code>p.second</code></td><td>返回p中second成员</td></tr></tbody></table>          </div><ul><li>头文件 <code>#include &lt;map&gt;</code></li><li>元素是键值对(key-value)<ul><li><code>pair&lt;const key, value&gt;</code></li><li>key索引；value具体数据；按照key排序<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; m = &#123;&#123;<span class="number">1</span>, <span class="string">&quot;The&quot;</span>&#125;, &#123;<span class="number">2</span>, <span class="string">&quot;But&quot;</span>&#125;, &#123;<span class="number">3</span>, <span class="string">&quot;And&quot;</span>&#125;&#125;</span><br></pre></td></tr></table></figure></li><li>map中不可有关键字相同的元素，multimap中允许出现关键字相同的元素</li></ul></li></ul>          </div><h5 id="常用操作-1"><a href="#常用操作-1" class="headerlink" title="常用操作"></a>常用操作</h5><ul><li><code>find</code>: 返回一个关键字与指定值相等的元素的迭代器</li><li><code>lower_bound</code>: 返回小于或等于某值的第一个元素的迭代器</li><li><code>upper_bound</code>: 返回大于某值的元素的迭代器</li><li><code>equal_range</code>: 返回关键字与给定值相等的元素上下限的两个迭代器</li><li><code>count</code>: 计算等于某值的元素个数</li><li><code>insert</code>: 用以插入一个元素或一个区间</li></ul><h4 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h4><ul><li>使用基本顺序容器实现<ul><li><code>stack</code> / <code>queue</code> / <code>priority_queue</code></li><li>元素的存取有限制</li></ul></li></ul><div class="note info">            <h5 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h5><ul><li>头文件 <code>#include &lt;stack&gt;</code></li><li>先进后出</li><li><code>stack&lt;Type, Container&gt;</code><ul><li><code>Container</code>可用<code>vector</code>, <code>list</code>, <code>deque</code>来实现，缺省情况用<code>deque</code>实现</li></ul></li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    st.push(i);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Size: &quot;</span> &lt;&lt; st.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">while</span> (!st.empty())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; st.top();</span><br><span class="line">    st.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h5><ul><li>头文件 <code>#include &lt;queue&gt;</code></li><li>先进先出</li><li><code>queue&lt;Type, Container&gt;</code><ul><li><code>Container</code>可以用<code>list</code>和<code>deque</code>实现，不能基于<code>vector</code>，缺省情况用<code>deque</code></li></ul></li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    st.push(i);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Size: &quot;</span> &lt;&lt; st.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">while</span> (!st.empty())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; st.front();</span><br><span class="line">    st.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h5><ul><li>头文件 <code>#include &lt;queue&gt;</code></li><li>元素具有优先级，优先级高的先出</li><li><code>priority_queue&lt;Type, Container, Functional&gt;</code><ul><li><code>Container</code>可以用<code>vector</code>和<code>deque</code>实现，不能基于<code>list</code>，缺省情况用<code>vector</code>实现</li></ul></li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; pq;     <span class="comment">// 默认为降序排序</span></span><br><span class="line"><span class="comment">// 等价于 priority_queue&lt;int, vector&lt;int&gt;, less&lt;int&gt;&gt; pq;</span></span><br><span class="line">pq.push(<span class="number">4</span>);</span><br><span class="line">pq.push(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">while</span> (!pq.empty())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pq.top();</span><br><span class="line">    pq.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>          </div><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ul><li>类似于指针</li><li>数据访问与数据修改</li><li>迭代器由类iterator来表明<ul><li>输入迭代器</li><li>输出迭代器</li><li>前向迭代器</li><li>双向迭代器</li><li>随机迭代器</li></ul></li><li>不同迭代器必须用于不同的容器</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg2o3cdq4yj30ym0pmgx0.jpg" alt="iterator"></p><div class="note info">            <ul><li>定义<ul><li><code>容器类名::iterator 变量名</code></li><li><code>容器类名::const_iterator 变量名   // 不能通过const迭代器修改数据元素的值</code></li></ul></li><li>数据访问<ul><li><code>*迭代器变量名</code></li></ul></li></ul>          </div><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    v.push_back(i);</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::const_iterator citer;</span><br><span class="line"><span class="keyword">for</span> (citer = v.begin(); citer != v.end(); citer++)</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *citer &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line"><span class="keyword">for</span> (iter = v.begin(); iter != v.end(); iter++)</span><br><span class="line">    *iter += <span class="number">10</span>;</span><br><span class="line"><span class="keyword">for</span> (iter = v.begin(); iter != v.end(); iter++)</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; m = &#123;&#123;<span class="number">1</span>, <span class="string">&quot;The&quot;</span>&#125;, &#123;<span class="number">5</span>, <span class="string">&quot;But&quot;</span>&#125;, &#123;<span class="number">3</span>, <span class="string">&quot;And&quot;</span>&#125;&#125;;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator iter;</span><br><span class="line"><span class="keyword">for</span> (iter = m.begin(); iter != m.end(); ++iter)</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (*iter).first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; (*iter).second &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ul><li>STL算法不依赖于具体的容器，通过迭代器来操纵容器中的元素</li><li><code>#include &lt;algorithm&gt;</code>，范型算法分类为<ul><li>不修改序列的操作<ul><li>find() / count() / equal() / mismatch() / search() 等</li></ul></li><li>修改序列的操作<ul><li>swap() / copy() / transform() / replace() / remove() / reverse() / retate() / fill() 等</li></ul></li><li>排序、合并和相关操作<ul><li>sort() / binary_search() / merge() / min() / max() 等</li></ul></li></ul></li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v = &#123;<span class="number">12</span>, <span class="number">3</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">67</span>, <span class="number">89</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter, pos;</span><br><span class="line"><span class="keyword">for</span> (iter = v.begin(); iter != v.end(); iter++)</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">pos = max_element(v.begin(), v.end());</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The maximum element is &quot;</span> &lt;&lt; *pos &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; count(v.begin(), v.end(), <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">sort(v.begin(), v.end();</span><br><span class="line"><span class="keyword">for</span> (iter = v.begin(); iter != v.end(); iter++)</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/" title="C++ STL Report">https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CODE/" rel="tag"><i class="fa fa-tag"></i> CODE</a>
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+              <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
+              <a href="/tags/SUMMERTERM/" rel="tag"><i class="fa fa-tag"></i> SUMMERTERM</a>
+              <a href="/tags/STL/" rel="tag"><i class="fa fa-tag"></i> STL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NOTES/TERMINAL/The-Missing-Semester-of-Your-CS-Education/Lecture10-Potpourri/" rel="prev" title="The Missing Semester of Your CS Education<br>Lecture10 Potpourri">
+      <i class="fa fa-chevron-left"></i> The Missing Semester of Your CS Education<br>Lecture10 Potpourri
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/SUMMERTERM/STL/STL-note/" rel="next" title="STL Note">
+      STL Note <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-STL-Report"><span class="nav-number">1.</span> <span class="nav-text">C++ STL Report</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%9E%8B%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.1.</span> <span class="nav-text">范型程序设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STL"><span class="nav-number">1.2.</span> <span class="nav-text">STL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8"><span class="nav-number">1.2.1.</span> <span class="nav-text">容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">顺序容器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#vector"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">vector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#list"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#deque"><span class="nav-number">1.2.1.1.3.</span> <span class="nav-text">deque</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.1.1.4.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%89%E6%8B%A9"><span class="nav-number">1.2.1.1.5.</span> <span class="nav-text">选择</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">关联容器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#set-multiset"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">set &#x2F; multiset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#map-multimap"><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">map &#x2F; multimap</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#pair%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.1.2.2.1.</span> <span class="nav-text">pair类型</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-1"><span class="nav-number">1.2.1.2.3.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">容器适配器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#stack"><span class="nav-number">1.2.1.3.1.</span> <span class="nav-text">stack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#queue"><span class="nav-number">1.2.1.3.2.</span> <span class="nav-text">queue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#priority-queue"><span class="nav-number">1.2.1.3.3.</span> <span class="nav-text">priority_queue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">算法</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/Augists" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-git-alt fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_45910536" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_45910536" rel="noopener" target="_blank"><i class="fab fa-cuttlefish fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/ZDCZ_Augists" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;ZDCZ_Augists" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2057240784&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://i.loli.net/2020/08/02/Qv8LmAnhs3u6fSR.jpg" title="WeChat → https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;08&#x2F;02&#x2F;Qv8LmAnhs3u6fSR.jpg" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>

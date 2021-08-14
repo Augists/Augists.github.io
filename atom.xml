@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Augists-ZDCZ</title>
+  
+  <subtitle>LESS is MORE</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://augists.top/"/>
+  <updated>2021-08-14T10:46:09.596Z</updated>
+  <id>https://augists.top/</id>
+  
+  <author>
+    <name>Augists</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Reinstall macOS</title>
+    <link href="https://augists.top/APPLE/Reinstall-macOS/"/>
+    <id>https://augists.top/APPLE/Reinstall-macOS/</id>
+    <published>2021-08-13T04:25:54.000Z</published>
+    <updated>2021-08-14T10:46:09.596Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>花了一天多的时间，把 mac 抹盘重装了，收获了一个全新的 mac</p><p>之前使用的是 macOS 12 public beta 4。本身使用并没有什么问题，问题出在了软件的兼容性上。很多软件如 <em>OnlyX</em> 都无法在新系统里正常打开运行（这里还是再点一下 <em>OnlyX</em>，每个系统版本出一个软件版本，导致兼容性非常差。但是也不是说这样做不好，只是我觉得应该又一个更鲜明的提示，当检测为更新的系统版本时提示一下）</p><p>导致我重装系统的直接原因是下载了 <em>CrossOver</em>，我不记得它有要我的系统权限，但是它直接修改了系统默认显示 <code>.exe</code> 文件的图标，而我比较菜（lan）。权衡了一下啊，干脆直接抹盘重装一次系统</p><hr><p>在这次重装过程中也发现了很多好玩的事情，也对很多东西有了新的理解。比如：</p><ul><li>切换输入法的快捷键应该设置给 <em>select the previous input source*，而不是 *select next input source</em></li><li><em>screen saver</em> 文件一般为 <code>.saver</code> 文件，而 <em>fliqlo</em> 是 <code>dmg</code> 安装器</li><li>由于更换了 <code>neovim</code>，很多东西都和以前不太一样，同时 <code>vim</code> 作为被我抛弃掉的被替代品，没有再使用任何插件，当作一个单纯的编辑器来使用了</li><li>对电脑的容量非常诧异。本来以为会清理出非常多的东西，能让 256G 的容量剩出很多，但是现在看其实和之前差别不大，只是少装了很多软件，大概节省了 20G 的空间，甚至 <em>Chrome</em> 我都还没有安装（也是在尝试一个单 <em>Safari</em> 能否承担重任，尤其是在下个版本中将要加回 <em>Group Tab</em>，这个在测试版中我爱不释手的功能</li><li>在抹盘之后，可以将 Data 和 数据 两个盘直接删掉，只保留 <em>Macintosh HD</em> 就可以，之前被这个奇怪的保护机制烦了很久</li><li>mac 启动器下载完成之后打开就会报错，但是事实上是正常的，这一点在网上查阅的时候都没有指出来。使用官方的制作启动器的指令之后报错了一次，有点莫名其妙，第二次就好了</li><li>mac 在使用制作好的外置磁盘启动器进行安装时，仍然需要关闭一些安全性设置（由于 T2 芯片的缘故）。我目前没有把这些安全性设置修改回来，但是我现在也不是很想折腾 <em>yabai</em></li></ul>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Spend A day for reinstalling my macOS&lt;br&gt;Downgrade the system from the beta version to official version Big Sur
+    
+    </summary>
+    
+    
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A Comfortable Way for Coding</title>
+    <link href="https://augists.top/SELF/SHARING/STUDY/A-better-way-for-coding/"/>
+    <id>https://augists.top/SELF/SHARING/STUDY/A-better-way-for-coding/</id>
+    <published>2021-08-08T01:44:25.000Z</published>
+    <updated>2021-08-08T08:33:03.887Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>这几天一直在尝试从头重新配置一个更适合我使用的 coding platform，用这篇博客简单记录一下我的配置过程<br>是探索，也是从上一个舒适区里走出来，划定一个更大范围的舒适区</p><div class="note info">            <p>我一直使用终端作为我的 coding platform，所以我也将基本围绕终端展开</p>          </div><hr><h2 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h2><p>既然是要走出舒适区，那肯定就要大胆尝试一下新东西。<a href="https://iterm2.com">iTerm2</a> 一直是我不知道需不需要尝试的一个新玩意。一直以来看所有的 mac 装机推荐文章或视频里很多都会告诉你，当你拿到一个新 mac 的时候，要先下载 iTerm2，然后安装 <code>oh-my-zsh</code>。这就和让装 Alfred 一样，完全不知道它好在哪，但是就是所有人都推荐装</p><p>目前就在使用 iTerm2。尽管在换用 iTerm2 之后我仍然没有很明显的感知它有多少特别的功能并提升了我的终端使用体验，但是通过设置让它变得比原生 Terminal<br>更好看了是真的。我取消了顶部的 title bar，并且添加了彩虹 🌈 色小组件，这就是我现在改用 iTerm2 的主要原因了</p><p><img src="https://i.loli.net/2021/08/08/6ngbcAlLQBmtUrx.png" alt="iTerm2"></p><p>当然，每个东西肯定有好有不好。iTerm2 最让我无法忍受的是每次粘贴都会刷新屏幕，就一个非常明显的闪屏。虽然可以理解，但是对它的好感度大打折扣。除此之外，之前说的打开 vim 再退出时终端会自动变到最后一行的问题在改用终端模拟器之后并没有解决，反而是换成 neovim 之后解决掉了</p><h2 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h2><p>相比 iTerm2，<a href="https://neovim.io">neovim</a> 带给我的体验提升就非常大了，甚至可以说是飞跃。Neovim 相比于 vim，进行了非常多体验上的优化，比如便捷的添加如 python 支持，通过命令直接查看 provider 的状态等等。同时 neovim 下也提供了一些插件的支持，提供了新的 api。现在我甚至可以不用分屏就能打开终端或者 fzf 了</p><p><img src="https://i.loli.net/2021/08/08/wYOWZb7krNFag5q.png" alt="fzf"></p><h2 id="coc-nvim"><a href="#coc-nvim" class="headerlink" title="coc.nvim"></a>coc.nvim</h2><p>更换了 neovim 之后，我也对我的 <a href="https://github.com/Augists/ZDCZ-vimrc">vimrc</a> 进行了重写。新的 <code>init.vim</code> 改为基于赵启明大佬的 <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a> 进行配置，尽可能多的使用 LSP 插件体系</p><p>在以前我认为，刚学习敲代码，就应该去掉代码提示，像在记事本写代码一样减少机器辅助。现在我已经到了日常需要查文档才能写代码的时候了（其实就是不会写了），尽管装了 Dash 但是从来不用……Code Completion &amp; Document 显得非常重要了。我屈服了</p><h2 id="glow"><a href="#glow" class="headerlink" title="glow"></a>glow</h2><p><code>glow</code> 是一个似乎不是很轻量的 markdown 终端渲染程序<br>很明显我并不会去使用它，我已经有太多的 markdown 渲染了，但是这不妨碍我把它放在推荐列表，因为确实很好看</p><h2 id="brew-rmtree"><a href="#brew-rmtree" class="headerlink" title="brew rmtree"></a>brew rmtree</h2><p><code>homebrew</code> 的 <code>formula &amp; cask</code> 的卸载一直是一个大问题，因为它没有像 <code>apt</code> 那样的 <code>autoremove</code> 来自动清理不需要的依赖。后果就是我在以前使用的时候每次安装软件都会把终端的内容打印到一个文件里进行存储，然后在卸载的时候对照着一个一个删掉</p><p><code>retree</code> 是一个辅助清理不需要的依赖的工具，但是在我的使用中它似乎对新系统的兼容性有待提升，就像我每次使用 <code>homebrew</code> 都会收到一个新系统的警告一样烦人</p><blockquote><p>我在尝试 <code>pip-autoremove</code> 的过程中遇到了更加恶心的问题。简单来说就是 mac 系统中的 python 太多太乱导致的，这导致我直接放弃了对 <code>pip-autoremove</code> 的研究</p></blockquote>          </div>]]></content>
+    
+    <summary type="html">
+    
+      After &lt;i&gt;remake&lt;/i&gt; my coding tools, I find my comfortable zone
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Command Ps | Grep Then Find Itself</title>
+    <link href="https://augists.top/SELF/ERROR/Command-ps-grep-then-find-itself/"/>
+    <id>https://augists.top/SELF/ERROR/Command-ps-grep-then-find-itself/</id>
+    <published>2021-07-24T16:50:07.000Z</published>
+    <updated>2021-07-24T17:17:47.156Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>分享今日份蠢事</p><p>事情要从下载学校的 VPN 客户端开始说起 …</p><hr><p>学校的 VPN 客户端使用的是 GlobalProtect，应该是一个提供成熟的 VPN 服务的软件，可以自己根据需求定制。这个软件有一个很奇怪的地方，它自动设置为开机自启动，而且进程不允许关闭<br>要知道，当你打开它之后，你会发现它连个 quit 都没有<br>我也尝试过在任务管理器里终止，或是直接 <code>kill</code> 掉它，但都会发现每次它都会立刻重启并开始尝试连接。总之让人看的非常想卸载<br>除此之外，它一直在不断的弹窗让我同意它监控我的所有网络活动…当时我就来气。我看的东西是你不花钱能跟着看的？<br>所以，在发现它并不能帮助我登录 IEEE 之后，我毅然决然的准备卸载掉它 😒</p><p><img src="https://i.loli.net/2021/07/25/GCTESI5Fo4NAPat.jpg" alt=""></p><hr><p>在我使用它提供的 pkg 里卸载时，它就莫名其妙的卡住了。于是我直接强制关闭了 installer（对，它的卸载是在安装器里的），然后准备重新卸载</p><p><img src="https://i.loli.net/2021/07/25/RdigjZxuhy1I4An.jpg" alt=""></p><p>这时候就发现，第二个 installer 会等待第一个运行完，而第一个尽管被我强制退出了，不过很明显它并没有“实质性”的退出 installer<br>它就这么莫名其妙的锁住了！！！<br>当时我就有点懵，尽管这可能是 macOS 系统限制，但是它的卸载强行卡死，导致我连关机都不能执行<br>在我长按关机执行强制重启后，它在启动界面再一次卡死了…</p><p><img src="https://i.loli.net/2021/07/25/tBzuefaORyUcgb9.jpg" alt=""></p><p>最后，上网查到这个软件会在 <code>Contents/Resources</code> 里面放一个卸载 shell 脚本，终于算是卸载掉了</p><hr><p>但是还是很慌，毕竟它能干出要监控我这种事情。我就怀疑他是不是背地里还有卸载残留<br>于是我一通 <code>ps -ef | grep GlobalProtect</code>，好家伙！还真有<br>当场又懵了，这啥进程啊怎么卸载完了还在运行，而且居然每次查看 pid 都不一样<br>又是一通骚操作，甚至已经入魔了，开始每次把获取到的 pid 提出来扔给 <code>kill</code>，然后就发现这个“病毒”非常的顽固呀，每秒都会换一个进程 id，还变成小强了</p><p><img src="https://i.loli.net/2021/07/25/1UQyAg2D5BrWfJ8.png" alt=""></p><p>过了很久才反应过来，这不就是我 <code>grep</code> 进程嘛…<br>也就是说，<code>grep GlobalProtect</code> 就是一个 <code>grep</code> 查找进程，然后它每次都会查找到自己…害得我在这折腾一晚上</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      While running command ps -ef | grep xxx, I came up with a stupid circle
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Merge Tab Bar in Safari</title>
+    <link href="https://augists.top/APPLE/Merge-Tab-Bar-in-Safari/"/>
+    <id>https://augists.top/APPLE/Merge-Tab-Bar-in-Safari/</id>
+    <published>2021-07-17T15:22:50.000Z</published>
+    <updated>2021-07-31T02:56:09.582Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>英文表述明白这意思太麻烦了<br>简单来说，就是我的 mac 更新了新的公测版本之后发现，safari 在上个版本添加的新功能：把 tab bar 合并到上面行程一栏，可以节省 title bar 的空间。这个功能不见了<br>😭 我那个急啊，这么好的功能，苹果官方怎么就想不开了<br>把偏好设置翻了个遍都没找到有关于这个的设置，最后在上面找到了<br>截两张图，省的下次再犯傻</p><p><img src="https://i.loli.net/2021/07/17/EC4JfaoDshVkvGO.png" alt=""></p><p><img src="https://i.loli.net/2021/07/17/Zwx1OfkuidEtXgC.png" alt=""></p><p><img src="https://i.loli.net/2021/07/17/eEzm4GfRNicL2jZ.png" alt=""></p><hr><p>更新到 public beta 4 之后，safari 的偏好设置中改用更为明显的方式进行修改了</p><p><img src="https://i.loli.net/2021/07/31/eOpZgKhmSGUE2nI.png" alt=""></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      You may find surprisingly that there will be a separate tab bar in Safari after updating to macOS Monterey beta 12.0&lt;br&gt;I like what it looks like in the last beta version&lt;br&gt;Then...How to roll back Safari
+    
+    </summary>
+    
+    
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pac Proxy for Github</title>
+    <link href="https://augists.top/NOTES/GIT/Pac-Proxy-for-Github/"/>
+    <id>https://augists.top/NOTES/GIT/Pac-Proxy-for-Github/</id>
+    <published>2021-06-14T02:34:15.000Z</published>
+    <updated>2021-06-14T02:47:20.007Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>为了能好好上 GitHub，真是招数用尽<br>之前转了一篇通过添加 Hosts 的方式正常使用 GitHub 并让图片正常加载的，没过多久就不好用了。当时也有提到，需要通过查询 hosts 的网站经常更新才可以。俗话说，懒是第一生产力，所以还是通过 pac 规则添加才是正道</p><p>如何自定义 PAC 列表规则</p><p>规则大概描述如下</p><p>通配符支持，如 <code>*.example.com/</code> 实际书写时可省略如 <code>.example.com/</code> 意即 <code>*.example.com/*</code><br>正则表达式支持，以 <code>\</code> 开始和结束，如 <code>[\w]+://example.com\</code><br>例外规则 <code>@@</code>，如 <code>@@_.example.com/_</code> 满足 <code>@@</code> 后规则的地址不使用代理<br>匹配地址开始和结尾<code>|</code>，如<code>|http://example.com</code>, <code>example.com|</code> 分别表示以 <code>http://example.com</code> 开始和以 <code>example.com</code> 结束的地址<br><code>||</code> 标记，如 <code>||example.com</code> 则 <code>http://example.com</code>，<code>https://example.com</code>，<code>FTP：//example.com</code> 等地址均满足条件，只用于匹配地址开头<br>注释 <code>!</code><br>分隔符 <code>^</code>，表示除了字母，数字或者<code>_ - 。％</code>之外的任何字符。如 <code>http://example.com^</code>，则 <code>http://example.com/</code>, <code>http://example.com:8000/:</code> 均满足条件，而 <code>http://example.com.ar/</code> 不满足条件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">! Put user rules line by line in this file.</span><br><span class="line">! See https:&#x2F;&#x2F;adblockplus.org&#x2F;en&#x2F;filter-cheatsheet</span><br><span class="line">||amazonaws.com</span><br><span class="line">||atom.io</span><br><span class="line">||github.com^</span><br></pre></td></tr></table></figure>          </div>]]></content>
+    
+    <summary type="html">
+    
+      How to write your pac configuration for surfing on GitHub
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Way of HarmonyOS</title>
+    <link href="https://augists.top/NOTES/DEVICE/way-of-HarmonyOS/"/>
+    <id>https://augists.top/NOTES/DEVICE/way-of-HarmonyOS/</id>
+    <published>2021-06-06T15:55:28.000Z</published>
+    <updated>2021-06-06T16:05:18.178Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <blockquote><p>Copyright@Linux中国<br><a href="https://linux.cn/article-13457-1.html">link</a></p></blockquote><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224803x7fppnqf77yyjfzb.jpg" alt=""><br>6 月 2 日晚上八点，鸿蒙召开了 2.0 的发布会，发布了鸿蒙 OS，以及一大批的新品。这两天想必大家也都看到了不少。这篇文章不想讨论鸿蒙系统本身的体验层面的变化，而是将会将精力更多的投放在鸿蒙的生态发展中。</p><h2 id="鸿蒙想要的是什么？"><a href="#鸿蒙想要的是什么？" class="headerlink" title="鸿蒙想要的是什么？"></a>鸿蒙想要的是什么？</h2><p>从 2019<br>年鸿蒙发布，有几个关键词就是核心，分布式、全场景、自主研发，其中自主研发比较好理解，而分布式、全场景一直是我无法理解的，直到看了发布会，我才意识到鸿蒙真正想要的是什么。由于我近几年来，使用的都是苹果的生态，使用<br>Macbook Pro 办公，使用 Homepod 听歌，出门会使用 Airpods Pro 来降噪。所以，在看鸿蒙发布会的时候，我时常有一个想法：这个功能苹果生态里已经有了啊？<br>或者是这个功能的 UI 交互确实是新的，但核心的体验我在苹果生态中也已经体验了啊？<br>也正是这一刻，我悟了，鸿蒙想要的分布式、全场景，其实就是过去我在苹果生态一直体验的那些东西，不同的是，鸿蒙的分布式、全场景，是超出了苹果生态所给予我的东西。</p><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224147uqxu94xvvlf19482.png" alt=""></p><p>鸿蒙的产品架构是 1+8+N，1 指的是手机，8 指的是 PC、平板、智慧屏、手表、智能音箱、车机、耳机、AR/VR，N 则是更多的生态。对比着我们来看苹果的生态，1 指的是 iPhone，8 指的是 Macbook Pro、iPad、Apple TV、Apple Watch、Homepod、Apple Car、AirPods 以及不知道有没有的 VR/AR 产品。到这一步，鸿蒙和苹果看起来都很像，那为什么我又说华为超越了苹果生态？原因在于 8 加的 N。在蒙的描述中，N 是指更多的 IoT 设备，他们可以通过鸿蒙系统借助 4G/5G/HiLink 等方式，和核心的 8 个产品进行连接，沟通，从而提升产品的智能性，让用户真正感受到产品的智能特性。而在苹果生态中，苹果是不做 IoT 设备的操作系统的。鸿蒙既做了手机、核心设备的操作系统，还做了嵌入式的操作系统，确实可以让 IoT 设备的操作体验，如同 8 个核心设备的体验，这一点是只制定标准，不下场做事的苹果所无法达到的。可以说，鸿蒙生态假设真的铺设起来了，体验、易用性，可能都要超过苹果生态目前能够提供给我们的。</p><h2 id="鸿蒙生态之乱象"><a href="#鸿蒙生态之乱象" class="headerlink" title="鸿蒙生态之乱象"></a>鸿蒙生态之乱象</h2><p>鸿蒙作为一个看起来还不错的产品，为何近几年来饱受争议？我觉得主要是在宣传策略上的混乱。</p><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224305nao3xua1o2jg3xa9.png" alt=""></p><p>提起鸿蒙，数码圈的人往往说的是鸿蒙 OS；而互联网/科技圈的人说的往往是 OpenHarmony 操作系统。二者在宣传的过程中，往往都是被人称作是鸿蒙系统。但实际上，鸿 OS 是真正的鸿蒙 OS，OpenHarmony 仅仅是鸿蒙生态的一个基座，如果你将之与 Android 对比，便是 Android 与 AOSP 的区别。</p><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224336t72gddgygyq1jeg3.png" alt=""></p><p>我们真正在使用的鸿蒙系统，是一个完整的、加入了各项系统设定的操作系统，而我们所看到的源码的部分，只是一个操作系统的基座，你真正在使用的过程中，还需要做大量的修改和剪裁的版本。不过，这样的区分是一件好事。Android 当年之所以能够盛行，AOSP 功不可没。OpenHarmony 同样承载了鸿蒙系统发扬光大的路线。不过，OpenHarmony 本身也在宣传上有硬伤。一直以来，OpenHarmony 都被称之为 Android 套壳，在我看来，是不完全准确的。OpenHarmony 在手机/平板/智慧屏部分，使用的是兼容 Android 的机制，而且兼容 Android 的路线也是没有问题的；但在覆盖面更广的嵌入式设备中，产生的价值的是 2012 年就开发的 LiteOS；对于一些特定的场景下，OpenHarmony 可能会使用 Linux Kernel 来完成自己的工作。OpenHarmony 不是 Android 套壳，而是基于 Android/LiteOS/Linux Kernel 的土壤所诞生出的操作系统。操作系统的研发一直以来都不是技术问题而是生态问题，用户不太会裸用操作系统提供的基础功能，能够留下用户的，必然是操作系统之上的应用生态，对于 OpenHarmony 这样的一个后来者，一个最为简单高效获得生态的方式，就是与原有生态的兼容，所以 OpenHarmony 兼容 Android 生态是在我意料之中的事情，倘若鸿蒙真的将整个系统完全重写，那我反而不看好 OpenHarmony。相比于è¯´ OpenHarmony 套壳 Android，我更倾向于 OpenHarmony 编写了一个抽象层，磨平了 LiteOS 和 Android 的系统 API，从而使得一些功能特性可以更加容易的在两种系统之上来实现。而这些，也正是鸿蒙所宣传的 1 + 8 + N战略下的核心体验的由来。但不得不说，在宣传上，OpenHarmony 做的很一般，至可能没有起到好的作用，而是一个坏的作用。</p><h2 id="鸿蒙生态的未来"><a href="#鸿蒙生态的未来" class="headerlink" title="鸿蒙生态的未来"></a>鸿蒙生态的未来</h2><p>说完了鸿蒙想要的东西和鸿蒙生态的乱象，最后，我想聊一聊关于鸿蒙的未来。鸿蒙生态看起来非常的不错，但，能否达到所预想的水平，又是另外一个问题，对于鸿蒙来说，前路依然坎坷。在国内方面，鸿蒙如果希进行推广，就必须要考虑合作伙伴的问题，鸿蒙生态的建设不仅仅是华为的事情，华为可以完成 1+8 的建设，可后面的 N，是需要无数的中小 IoT 设备生产厂商共同建设而来的。但，国内的厂商可能要面临的问题就是，面对曾经的对手，是否还要继续合作？如果合作了，未来是否会被华为卡脖子？华为又是否会在 OpenHarmony 中为自家系统添加单独的优化？这些问题都会让国内的厂商在面临选择时产生困惑。此外，国内的厂商在完成了接入后， 鸿蒙想要扩大生态范围，就必然需要进行出海，出海时就要正面与 Android、iOS 所构建的生态进行竞争，在海外生态不足的情况下，如何取得竞争的胜利，也是一个需要研究和探讨的话题。不过，说了这么多困难，我还是想说，鸿蒙看起来真的很好，或许，有朝一日我会面临这样的选择“花 15000 元，获得完整的苹果生态体验；花 10000 元，获得完整的鸿蒙生态体验，可以实现苹果生态 80% 甚至是 120% 的体验”，你会怎么选？<br>鸿蒙之路，道阻且长。</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      鸿蒙之路，道阻且长&lt;br&gt;Copyright@Linux中国
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Login in 163 in Mail App on Apple Device</title>
+    <link href="https://augists.top/APPLE/Login-in-163-in-Mail-app-on-apple-device/"/>
+    <id>https://augists.top/APPLE/Login-in-163-in-Mail-app-on-apple-device/</id>
+    <published>2021-06-03T10:39:59.000Z</published>
+    <updated>2021-06-05T02:39:04.288Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>一直以来，我都很嫌弃苹果设备自带的邮箱。附件稍微大一点就无法正常发送，而且感觉使用逻辑也不是很清晰，一些我需要的小功能也没有提供<br>尝试了 Spark，网易邮箱大师。Spark 的配置上似乎不支持网易邮箱，但网易邮箱又在我的使用中占了大头，所以忍痛割爱，选择了网易邮箱大师<br>但这只是电脑端啊，我还有 pad 和手机端的邮箱需要使用。碰到问题，就要解决问题 😏<br>首先，分析自己的需求：</p><ol><li>发送较大附件 📎 仅在电脑上进行，通常为传输视频或软件一些有较高存储占用的</li><li>移动端主要为接收验证码和一些通知类邮件使用，几乎没有重度使用的要求。但是要求稳定、便捷</li><li>常用邮箱为网易 163 邮箱，并且对 outlook 和 edu 邮箱有一定的使用需求，Gmail 几乎不打开</li></ol><p>根据我自己的要求分析</p><ul><li>电脑端使用网易自己的邮箱软件进行接收更合适，并且似乎不要求必须开启 imap/smtp 功能</li><li>电脑端同时登陆 163, outlook, edu 及一些特殊邮箱，提供必要时的接收和较大附件的发送。有自动签名、自动回复和一些别的功能</li><li>移动端登陆 iCloud、outlook、163 邮箱，仅作为查看邮件的使用和一些小文件的发送</li></ul><hr><p>在配置苹果上的 163 邮箱的时候遇到了无法验证账号和密码的情况，下面是解决方法（或者说配置 163 邮箱的正确步骤）</p><ol><li>网页上登陆 163 邮箱，进入邮箱的设置界面<br><img src="https://i.loli.net/2021/06/05/mvDK4FfhSQtyA2n.png" alt=""></li><li>选择 <code>POP3/SMTP/IMAP</code>，开启 <code>IMAP/SMTP</code> 服务（也可以选择 <code>POP3/SMTP</code> 服务，自行配置 <img src="https://i.loli.net/2021/06/05/oeUDQmVlWhtITMO.png" alt=""></li><li>记录弹出的授权码，授权码是用于登陆第三方设备的专用密码</li><li>在要登陆的位置填写好邮箱的信息，密码使用刚才得到的授权码，不要写自己邮箱的密码</li></ol>          </div>]]></content>
+    
+    <summary type="html">
+    
+      The mailbox in system event was suddenly invalid&lt;br&gt;Cannot login and receive emails as normal
+    
+    </summary>
+    
+    
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Not Ignore Under Directory</title>
+    <link href="https://augists.top/NOTES/GIT/Git-not-ignore-under-directory/"/>
+    <id>https://augists.top/NOTES/GIT/Git-not-ignore-under-directory/</id>
+    <published>2021-06-01T13:25:07.000Z</published>
+    <updated>2021-06-03T11:18:59.942Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>先来看我的情景吧</p><div class="note info">            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br></pre></td></tr></table></figure>之前是忽略目录下所有文件及文件夹，只追踪* `.gitignore`* `.gitconfig`* `.zshrc`<p>现在想要添加对 <code>.config</code> 文件夹下的一些文件或文件夹的支持</p>          </div><p>一开始想的比较简单，就直接添加呗，于是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br><span class="line">!.config/</span><br></pre></td></tr></table></figure><p>如果你也尝试一下，就会发现，git 始终无法添加上对 <em>config</em> 文件夹下内容的追踪<br>查了好久都没找到应该怎么写，最后看到了 <em>git-doc</em> 才明白<br>官方给的例子是这样</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cat .gitignore</span><br><span class="line"><span class="comment"># exclude everything except directory foo/bar</span></span><br><span class="line">/*</span><br><span class="line">!/foo</span><br><span class="line">/foo/*</span><br><span class="line">!/foo/bar</span><br></pre></td></tr></table></figure><p>也就是说，想要想让 <em>git</em> 追踪文件夹里的某些内容，需要先追踪全文件夹，然后在忽略文件夹下的所有内容，再添加对单个文件的追踪</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dotfiles</span></span><br><span class="line">/*</span><br><span class="line">!.gitignore</span><br><span class="line">!.gitconfig</span><br><span class="line">!.zshrc</span><br><span class="line">!/.config</span><br><span class="line">/.config/*</span><br><span class="line">!.config/htop</span><br><span class="line">!.config/ranger</span><br><span class="line">!.config/.zsh_history_bak</span><br><span class="line">!.config/.tmux</span><br></pre></td></tr></table></figure><blockquote><p>tmux 下 vim 似乎不是很好用</p></blockquote>          </div>]]></content>
+    
+    <summary type="html">
+    
+      How to write gitignore file&lt;br&gt;Ignore all except specific files under directory
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tmux Shortcut Record</title>
+    <link href="https://augists.top/NOTES/TERMINAL/Tmux-Shortcut-Record/"/>
+    <id>https://augists.top/NOTES/TERMINAL/Tmux-Shortcut-Record/</id>
+    <published>2021-06-01T01:17:50.000Z</published>
+    <updated>2021-06-05T02:45:01.127Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>三个概念 由大到小</p><ul><li>session</li><li>window</li><li>pane 窗格</li></ul><p><img src=";https://i.loli.net/2021/06/01/1vlPqRhLKN3Siob.png" alt=""></p><p>Shortcut</p><ul><li><code>tmux new -s session_name</code> 新建 session 并自动新建 window</li><li><code>ctrl b + ?</code> 调出命令面板 help</li><li><code>ctrl b + %</code> 左右分屏</li><li><code>ctrl b + &quot;</code> 上下分屏</li><li><code>ctrl b + o</code> 切换 focus 的 pane</li><li><code>ctrl b + d</code> detach 分离会话（退出但不关闭）</li><li><code>tmux ls</code> 查看正在运行的会话</li><li><code>tmux att -t session_name</code> attach 恢复会话（自动根据前缀匹配）</li><li><code>ctrl b + c</code> 新建 window</li><li><code>ctrl b + n</code> next window</li><li><code>ctrl b + p</code> previous window</li><li><code>ctrl b + ,</code> rename window</li><li><code>ctrl b + w</code> list windows and jump</li><li><code>ctrl b + s</code> list sessions and jump</li></ul><div class="note info">            <p>开启 tmux 并且分离会话后，再使用 <code>ps -a</code> 查看进程的时候，会发现非常乱，因为它包含了 tmux 下会话仍然在运行的进程<br>现在不知道 tmux 保存会话到底意义大不大了，占用系统资源保留进程，我现在可能并不需要为了一点便利而浪费性能和电量 🔋，也是因为我还没到那个层次吧</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Take down the shortcut for better using tmux
+    
+    </summary>
+    
+    
+    
+      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
+    
+      <category term="TMUX" scheme="https://augists.top/tags/TMUX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Code Server on ECS</title>
+    <link href="https://augists.top/SELF/SHARING/STUDY/Code-Server-on-ECS/"/>
+    <id>https://augists.top/SELF/SHARING/STUDY/Code-Server-on-ECS/</id>
+    <published>2021-05-29T05:31:02.000Z</published>
+    <updated>2021-05-29T13:41:22.326Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <h2 id="什么是-Code-Server"><a href="#什么是-Code-Server" class="headerlink" title="什么是 Code Server"></a>什么是 Code Server</h2><p><img src="https://i.loli.net/2021/05/29/Ft9MfxHQZ8TCdEK.png" alt="Screen Shot 2021-05-29 at 11.31.44 AM"></p><p>Code Server 是一个可以搭建在服务器上的网页版 VS Code，它允许你随时随地连接你服务器的 Code Server 并提供近似于本地 VS Code的服务，只需要你有一台能接入互联网的设备即可</p><blockquote><h2 id="Highlights"><a href="#Highlights" class="headerlink" title="Highlights"></a>Highlights</h2><ul><li>Code on any device with a consistent development environment</li><li>Use cloud servers to speed up tests, compilations, downloads, and more</li><li>Preserve battery life when you’re on the go; all intensive tasks run on your server</li></ul></blockquote><p>项目<a href="https://github.com/cdr/code-server">链接</a></p><p>以在苹果 iPad 为例，通过浏览器访问后 PWA，就可以获得一个 iPad 端的 VS Code</p><h2 id="搭建-Code-Server"><a href="#搭建-Code-Server" class="headerlink" title="搭建 Code Server"></a>搭建 Code Server</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>首先吧，你要有台服务器，服务器你要能自己开放特定的端口，要不让啥都免谈了。其次吧，你要能跟服务器进行一些交互，比如 SSH 登陆上去</p><p>下面就开始正式搭建啦，期间会遇到非常多的问题，有的经过我自己的摸索已经解决，也有的仍然没有找到合适的方法。如若你有什么想法，欢迎通过各种方式联系我啊</p><hr><p>在官方的 GitHub 仓库里提到，可以通过脚本一键安装</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run</span><br></pre></td></tr></table></figure><p>其中 <code>-s -- --dry-run</code> 参数是作为输出中间过程的，如果删掉参数只是不会接收到一些过程信息。在 <code>install.sh</code> 文件中，我们可以看到注释</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--dry-run</span><br><span class="line">    Echo the commands <span class="keyword">for</span> the install process without running them</span><br></pre></td></tr></table></figure><p>如果你也是使用的国内的服务器，没有办法让它能更便利的接近到外网时，就需要先在本机上下载 <code>install.sh</code> 脚本，然后通过 FTP 上传到服务器上了</p><p>运行 <code>install.sh</code> 脚本后会发现，它在尝试下载一个 deb 包。很明显，这个包又在国外</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fetch <span class="string">&quot;https://github.com/cdr/code-server/releases/download/v<span class="variable">$VERSION</span>/code-server_<span class="variable">$&#123;VERSION&#125;</span>_<span class="variable">$ARCH</span>.deb&quot;</span> \</span><br><span class="line">    <span class="string">&quot;<span class="variable">$CACHE_DIR</span>/code-server_<span class="variable">$&#123;VERSION&#125;</span>_<span class="variable">$ARCH</span>.deb&quot;</span></span><br></pre></td></tr></table></figure><p>于是，又要在本机下载这个 deb 包进行手动上传</p><p>那么上传之后，怎么才能让 <code>install.sh</code> 脚本继续工作呢？</p><p>查看刚才的 <code>fetch</code> 我们可以发现，脚本会把 deb 包下载到 <code>$CACHE_DIR/code-server_${VERSION}_$ARCH.deb</code> 这个路径下，所以我们也可以把包放在自己的 <code>~/.cache/</code> 下，并且按照脚本的命名方式进行更名，然后将 <code>fetch</code> 删掉，直接进入到</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo_sh_c dpkg -i <span class="string">&quot;<span class="variable">$CACHE_DIR</span>/code-server_<span class="variable">$&#123;VERSION&#125;</span>_<span class="variable">$ARCH</span>.deb&quot;</span></span><br></pre></td></tr></table></figure><p>这里的 <code>sudo_sh_c</code> 是函数。需要注意的是，我们需要修改对应自己系统的 <code>install</code> 函数，比如我在 ubuntu 上安装，所以我需要修改的是 <code>install_deb()</code> 函数</p><p><img src="https://i.loli.net/2021/05/27/SbPQAme3tcv4poM.png" alt=""></p><p>修改到这里，就可以使用官方提供的脚本进行一键安装了。比较不好的一点是，官方的 GitHub Wiki 对安装及安装之后的步骤并没有详细的说明，而只是说</p><blockquote><p>When done, the install script prints out instructions for running and starting code-server.</p></blockquote><p>甚至给出的 in-depth setup and configuration 里也是这句话</p><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>安装完成后，直接输入 <code>code-server</code> 回车就会启动服务啦，但是在此之前，我们还需要进行一点简单的配置</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi .config/code-server/config.yaml</span><br><span class="line"></span><br><span class="line"><span class="built_in">bind</span>-addr: 127.0.0.1:8080</span><br><span class="line">auth: password</span><br><span class="line">password: xxxxxx</span><br><span class="line">cert: <span class="literal">false</span></span><br></pre></td></tr></table></figure><ul><li><code>bind-addr</code> 为监听地址，这里我作为服务器，修改为 <code>0.0.0.0:12345</code>，即本地加上一个自己可以设定的端口号。默认的 8080 端口通常也会有其他应用使用，容易产生冲突，这里推荐改为自己喜欢的一个端口</li><li><code>password</code> 为登陆 Code Server 需要使用的密码，可以改为一个简单好记但是不容易被爆破的密码，在我的使用中我感觉 Code Server 会使服务器的安全等级急剧降低，通过 Code Server 可以直接编辑服务器的一些文件，有很大的安全风险</li><li><code>cert</code> 应该是 SSL 证书，如果没有的话直接 false 即可。对于普通人来说，http 带来的安全性问题应该影响不大，但是每次登陆 Code Server 之后都会提醒一遍听烦人的</li></ul><p>在设定了给 Code Server 分配的端口号之后，我们需要在服务器的安全组里添加设定的特殊端口的开放。而想要让 Code Server 开机自启就要用到系统提供的 <code>systemctl</code> 了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> code-server@</span><br></pre></td></tr></table></figure><p>最好再 tab 一下</p><p>经过配置和启动之后，我们就可以通过服务器的公网 ip 和端口号登陆 Code Server 了</p><h2 id="进入-Code-Server-后遇到的问题"><a href="#进入-Code-Server-后遇到的问题" class="headerlink" title="进入 Code Server 后遇到的问题"></a>进入 Code Server 后遇到的问题</h2><h3 id="ms-vscode-cpptools"><a href="#ms-vscode-cpptools" class="headerlink" title="ms-vscode.cpptools"></a>ms-vscode.cpptools</h3><p>如果你在插件商城中尝试安装了 C/C++，你会发现它提示的报错 VS Code 未能安装 ms-vscode.cpptools</p><p>同样也可以在本机下载之后上传到服务器上，然后在 Code Server 中扩展，三个点，从 VSIX 安装，然后选择下载的 <code>cpptools-linux.vsix</code> 文件。如有需要，可以随时重启 Code Server</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart code-server@</span><br></pre></td></tr></table></figure><h3 id="open-folder"><a href="#open-folder" class="headerlink" title="open folder"></a>open folder</h3><p>一开始可能会出现无法打开文件夹的情况。可以通过在 welcome 界面中选择打开文件夹解决。左侧的几个按钮在我的测试中都出现了失灵的情况</p><h3 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h3><p>我也尝试在服务器中安装了 PostgreSQL 并且通过 Code Server 直接在前台进行连接。也可能是由于 PostgreSQL 的配置问题，我在前端的 Code Server 一直没有成功连接上后台的数据库。我已经尝试了</p><ul><li>修改 postgres 用户密码</li><li>修改用户配置文件</li><li>修改监听地址</li><li>修改连接时的 ip 地址</li></ul><p>但是不确定具体问题出在哪里，提示的报错信息也只是验证失败。由于我已经有四个数据库和一个线上练习测试了，就不继续折腾这个</p><blockquote><p>后来，我一个干事告诉我他买了 30 块钱的 Code，使用上来说可能更加适合作为 iPad 上的敲代码的平台。这个软件以前在白嫖的时候也安装过，后来需要更新的时候以为是免费安装的，卸载之后就再也没找回来了。</p><p>本次实验搭建 Code Server 使用的平台是由华为云提供。本身是数据库课程于华为公司合作，统一申请的 300 元抵用券，在课程结束后的 8 月份就过期了。于是我就想怎么才能把用不到的钱利用起来，就在华为云上购买了一台最低配置的 ECS 服务器作为实验平台。</p><p>Code Server 是在很早以前就接触到的一个项目，一直很想自己动手实践搭建一下，但是当时看到的时候正好自己购买的阿里云学生机过期了，于是一直搁浅没有尝试。这次也很感谢华为云计算的平台，能自己搭建一个可以娱乐的平台，让我自己动手练习实践，体会到了很多。</p><p>目前已经在 ECS 上搭建过的项目：</p><ul><li>临时的 FTP Server</li><li>NextCloud</li><li>MC 私人服务器（最终失败了）</li><li>Code Server</li></ul><p>还想再尝试或继续的项目：</p><ul><li>个人下载站</li><li>VPN</li><li>挂载网盘</li><li>shell 脚本实战</li><li>python for beginners</li></ul><p>仍需要继续学习的工具：</p><ul><li>tmux</li><li>FTP Transmit</li><li>docker</li></ul></blockquote>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Those troubles during the process of building an Code Server on my ECS&lt;br&gt;Solved or Solving
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Shortcut Screen Saver</title>
+    <link href="https://augists.top/APPLE/Shortcut-Screen-Saver/"/>
+    <id>https://augists.top/APPLE/Shortcut-Screen-Saver/</id>
+    <published>2021-05-26T09:29:19.000Z</published>
+    <updated>2021-05-26T09:46:49.719Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>If asked how to start your screen saver on your mac, what is your answer? Some of you may respond with <em>Hot Corners</em>. But it may be the second choice on mine</p><h2 id="Hot-Coners"><a href="#Hot-Coners" class="headerlink" title="Hot Coners"></a>Hot Coners</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Preference -&gt; Desktop &amp;<span class="built_in"> Screen </span>Saver -&gt; Hot Corners</span><br></pre></td></tr></table></figure><p>Choice one of the four corners and <code>Start Screen Saver</code></p><h2 id="Automator"><a href="#Automator" class="headerlink" title="Automator"></a>Automator</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Automator -&gt; New Document -&gt; Quick Action -&gt; Start<span class="built_in"> Screen </span>Saver -&gt; Workflow receives: <span class="literal">no</span> input -&gt; save</span><br></pre></td></tr></table></figure><p>then give your workflow a shortcut</p><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P<span class="function"><span class="title">reference</span> -&gt;</span> K<span class="function"><span class="title">eyboard</span> -&gt;</span> S<span class="function"><span class="title">hortcuts</span> -&gt;</span> Services</span><br></pre></td></tr></table></figure><p>I record <code>control + option + command + s</code> for screen saver, which is also known as <code>hybrid + s</code></p><div class="note info">            <p>Recommend:<br>Fliqlo – a clock screen saver<br>4K video – downloaded from apple TV screen saver</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      How to start screen saver on your mac in a split second?&lt;br&gt;Hot corner? NO&lt;br&gt;Automator is the best choice
+    
+    </summary>
+    
+    
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux Fork</title>
+    <link href="https://augists.top/SELF/SHARING/STUDY/linux-fork/"/>
+    <id>https://augists.top/SELF/SHARING/STUDY/linux-fork/</id>
+    <published>2021-05-20T13:22:39.000Z</published>
+    <updated>2021-05-27T07:15:26.030Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="2-1程序一"><a href="#2-1程序一" class="headerlink" title="2.1程序一"></a>2.1程序一</h3><h4 id="2-1-1实验代码"><a href="#2-1-1实验代码" class="headerlink" title="2.1.1实验代码"></a>2.1.1实验代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> value=<span class="number">5</span>;     <span class="comment">//where?</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;     <span class="comment">//where?</span></span><br><span class="line">    <span class="keyword">pid_t</span> pid;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;    <span class="comment">// How many new processes and printfs？</span></span><br><span class="line">        pid=fork();</span><br><span class="line">        <span class="keyword">if</span>(pid==<span class="number">0</span>)&#123;</span><br><span class="line">            value += <span class="number">15</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Child: value = %d\n&quot;</span>,value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(pid&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            wait(<span class="literal">NULL</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;PARNET: value = %d\n&quot;</span>,value);</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);   <span class="comment">//Notice：What will happen with or without this line?</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="2-1-2代码理解"><a href="#2-1-2代码理解" class="headerlink" title="2.1.2代码理解"></a>2.1.2代码理解</h4><ol><li><code>fork()</code> 函数会在运行时创建一个与自己完全相同的子进程，即父进程在进入第一次 <code>for</code> 循环后进行第一次 <code>fork</code> 创建。此时父进程 <code>pid &gt; 0</code> 而子进程 <code>pid == 0</code></li><li>父进程继续执行，并进行 <code>wait(NULL)</code>。<code>wait</code> 意为：立即阻塞父进程，并进行判断：<ol><li>是否有当前进程的某个子进程已经退出，如果让它找到了这样一个已经变成僵尸的子进程，<code>wait</code> 就会收集这个子进程的信息，并把它彻底销毁后返回</li><li>如果没有找到这样一个子进程，<code>wait</code> 就会一直阻塞在这里，直到有一个出现为止（此时没有僵尸子进程，所以父进程阻塞等待）</li></ol></li><li>子进程并行执行，输出 <code>Child: value = 20</code> 并进入下一个 <code>for</code> 循环</li><li>进入第二个 <code>for</code> 循环后，原子进程变为新父进程，并创建与当前状态（<code>i = 1</code>）相同的子进程。子进程执行输出 <code>Child: value = 35</code> 并向下继续；新父进程进入 <code>wait</code> 阻塞</li><li>子进程运行结束，变为僵尸进程；新父进程结束阻塞，输出 <code>PARNET: value = 20</code> 并向下运行，<code>exit</code> 后运行结束；原父进程结束阻塞，输出 <code>PARNET: value = 5</code> 并 <code>exit</code>，结束运行</li></ol><blockquote><p>考虑 <code>value</code> 的生存期问题，在程序中作为全局变量，生存期一直到程序结束。对于每一个进程来说，<code>value</code> 的值在进程创建时为自己进程固定，不再受到其他进程影响</p></blockquote><blockquote><p><code>fork</code> 函数用于创建子进程，同时返回 0 用于父进程与子进程的区分判断。</p><p><code>fork</code> 可能有三种不同的返回值：<br>  1）在父进程中，fork返回新创建子进程的进程ID；<br>  2）在子进程中，fork返回0；<br>  3）如果出现错误，fork返回一个负值；</p><p>所以在子进程创建自己的子进程时，它存储的 <code>pid</code> 变量值已经变为新子进程的 <code>pid</code>，不为 0，即为新父进程</p></blockquote><blockquote><p>若父进程没有 <code>exit(0)</code> 则父进程会再次进入 <code>for</code> 循环，并创建子进程</p></blockquote><h4 id="2-1-3程序截图"><a href="#2-1-3程序截图" class="headerlink" title="2.1.3程序截图"></a>2.1.3程序截图</h4><ol><li>fork 程序</li></ol><p><img src="https://i.loli.net/2021/05/20/BIq3ceboUPxzKig.png" alt="Screen Shot 2021-05-20 at 7.50.53 PM"></p><ol start="2"><li>验证 fork 函数程序</li></ol><p><img src="https://i.loli.net/2021/05/20/3wGpUvTz1KosJBg.png" alt="Screen Shot 2021-05-20 at 7.52.04 PM"></p>]]></content>
+    
+    <summary type="html">
+    
+      What is behind fork() in Linux?&lt;br&gt;Share by an example for Operating System Course
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="UNIX" scheme="https://augists.top/tags/UNIX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google BBR</title>
+    <link href="https://augists.top/NOTES/COURSES/Computer_Network/Google-BBR/"/>
+    <id>https://augists.top/NOTES/COURSES/Computer_Network/Google-BBR/</id>
+    <published>2021-05-19T07:54:00.000Z</published>
+    <updated>2021-06-03T11:20:05.991Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>在 TCP 中，拥塞控制通常分为四个主要方向：</p><ol><li>慢启动</li><li>拥塞避免</li><li>快速重传</li><li>快速恢复</li></ol><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/d908hulije.jpeg?imageView2/2/w/1620" alt="slow-start"></p><p>慢启动在 BBR 中仍然保留。它在不知道瓶颈带宽时以指数级增长达到或检测阈值，如图中前 4 秒。达到阈值后，开始加性增阶段，即拥塞避免。直到发生丢包后进行快速恢复和快速重传</p><p>如果瓶颈路由器的缓存特别大，那么这种以丢包作为探测依据的拥塞算法将会导致严重问题：TCP链路上长时间RTT变大，但吞吐量维持不变。</p><p>事实上，我们的传输速度在3个阶段被不同的因素限制：</p><ol><li>应用程序限制阶段，此时 RTT 不变，随着应用程序开始发送大文件，速率直线上升</li><li>BDP限制阶段，此时RTT开始不断上升，但吞吐量不变，因为此时瓶颈路由器已经达到上限，缓冲队列正在不断增加</li><li>瓶颈路由器缓冲队列限制阶段，此时开始大量丢包</li></ol><p>如下所示：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/g8nl3rudja.png?imageView2/2/w/1620" alt=""></p><p>如CUBIC这样基于丢包的拥塞控制算法在第2条灰色竖线发生作用，这已经太晚了，更好的作用点是BDP上限开始发挥作用时，也就是第1条灰色竖线。</p><p>什么叫做BDP呢？它叫做带宽时延积，例如一条链路的带宽是100Mbps，而RTT是40ms，那么</p><p><code>BDP=100Mbps*0.04s=4Mb=0.5MB</code></p><p>即平均每秒飞行中的报文应当是0.5MB。因此Linux的接收窗口缓存常参考此设置：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/w936eownn1.jpeg?imageView2/2/w/1620" alt=""></p><p>第1条灰色竖线，是瓶颈路由器的缓冲队列刚刚开始积压时的节点。随着内存的不断降价，路由器设备的缓冲队列也会越来越大，CUBIC算法会造成更大的RTT时延！</p><p>而BBR通过检测RTprop和BtlBw来实现拥塞控制。什么是RTprop呢？这是链路的物理时延，因为RTT里含有报文在路由器队列里的排队时间、ACK的延迟确认时间等。什么叫延迟确认呢？TCP每个报文必须被确认，确认动作是通过接收端发送ACK报文实现的，但由于TCP和IP头部有40个字节，如果不携带数据只为发送ACK网络效率过低，所以会让独立的ACK报文等一等，看看有没有数据发的时候顺便带给对方，或者等等看多个ACK一起发。所以，可以用下列公式表示RTT与RTprop的差别：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/k3k0ctbo1g.png?imageView2/2/w/1620" alt=""></p><p>RTT我们可以测量得出，RTprop呢，我们只需要找到瓶颈路由器队列为空时多次RTT测量的最小值即可：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/lsmzam2ndc.png?imageView2/2/w/1620" alt=""></p><p>而BtlBw全称是bottleneck bandwith，即瓶颈带宽，我们可以通过测量已发送但未ACK确认的飞行中字节除以飞行时间deliveryRate来测量：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/kmknrmv9w3.png?imageView2/2/w/1620" alt=""></p><p>早在1979年Leonard Kleinrock就提出了第1条竖线是最好的拥塞控制点，但被Jeffrey M. Jaffe证明不可能实现，因为没有办法判断RTT变化到底是不是因为链路变化了，从而不同的设备瓶颈导致的，还是瓶颈路由器上的其他TCP连接的流量发生了大的变化。但我们有了RTprop和BtlBw后，当RTprop升高时我们便得到了BtlBw，这便找到第1条灰色竖线最好的拥塞控制点，也有了后续发送速率的依据。</p><p>基于BBR算法，由于瓶颈路由器的队列为空，最直接的影响就是RTT大幅下降，可以看到下图中CUBIC红色线条的RTT比BBR要高很多：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/2akuijcg66.png?imageView2/2/w/1620" alt=""></p><p>而因为没有丢包，BBR传输速率也会有大幅提升，下图中插入的图为CDF累积概率分布函数，从CDF中可以很清晰的看到CUBIC下大部分连接的吞吐量都更低：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/rkczti8k6v.png?imageView2/2/w/1620" alt=""></p><p>如果链路发生了切换，新的瓶颈带宽升大或者变小怎么办呢？BBR会尝试周期性的探测新的瓶颈带宽，这个周期值为1.25、0.75、1、1、1、1，如下所示：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/niu0skdnge.png?imageView2/2/w/1620" alt=""></p><p>1.25会使得BBR尝试发送更多的飞行中报文，而如果产生了队列积压，0.75则会释放队列。下图中是先以10Mbps的链路传输TCP，在第20秒网络切换到了更快的40Mbps链路，由于1.25的存在BBR很快发现了更大的带宽，而第40秒又切换回了10Mbps链路，2秒内由于RTT的快速增加BBR调低了发送速率，可以看到由于有了pacing_gain周期变换BBR工作得很好。</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/m52f1rftzh.png?imageView2/2/w/1620" alt=""></p><p>pacing_gain周期还有个优点，就是可以使多条初始速度不同的TCP链路快速的平均分享带宽，如下图所示，后启动的连接由于过高估计BDP产生队列积压，早先连接的BBR便会在数个周期内快速降低发送速率，最终由于不产生队列积压下RTT是一致的，故平衡时5条链路均分了带宽：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/dkvmzixicf.png?imageView2/2/w/1620" alt=""></p><p>我们再来看看慢启动阶段，下图网络是10Mbps、40ms，因此未确认的飞行字节数应为</p><p><code>10Mbps*0.04s=0.05MB</code></p><p>红色线条是CUBIC算法下已发送字节数，而蓝色是ACK已确认字节数，绿色则是BBR算法下的已发送字节数。显然，最初CUBIC与BBR算法相同，在0.25秒时飞行字节数显然远超过了0.05MB字节数，大约在 0.1MB字节数也就是2倍BDP：</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/c93xtbnopr.png?imageView2/2/w/1620" alt=""></p><p>大约在0.3秒时，CUBIC开始线性增加拥塞窗口，而到了0.5秒后BBR开始降低发送速率，即排空瓶颈路由器的拥塞队列，到0.75秒时飞行字节数调整到了BDP大小，这是最合适的发送速率。</p><p>当繁忙的网络出现大幅丢包时，BBR的表现也远好于CUBIC算法。下图中，丢包率从0.001%到50%时，可以看到绿色的BBR远好于红色的CUBIC。大约当丢包率到0.1%时，CUBIC由于不停的触发拥塞算法，所以吞吐量极速降到10Mbps只有原先的1/10，而BBR直到5%丢包率才出现明显的吞吐量下降。</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/a5jrnqdpqq.png?imageView2/2/w/1620" alt=""></p><p>CUBIC造成瓶颈路由器的缓冲队列越来越满，RTT时延就会越来越大，而操作系统对三次握手的建立是有最大时间限制的，这导致建CUBIC下的网络极端拥塞时，新连接很难建立成功，如下图中RTT中位数达到 100秒时 Windows便很难建立成功新连接，而200秒时Linux/Android也无法建立成功。</p><p><img src="https://ask.qcloudimg.com/http-save/yehe-5661042/t24h8pps9s.png?imageView2/2/w/1620" alt=""></p><p>BBR算法的伪代码如下，这里包括两个流程，收到ACK确认以及发送报文：</p><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onAck</span>(<span class="params">packet</span>)</span></span><br><span class="line"><span class="function">  <span class="title">rtt</span> = <span class="title">now</span> - <span class="title">packet</span>.<span class="title">sendtime</span></span></span><br><span class="line"><span class="function">  <span class="title">update_min_filter</span>(<span class="params">RTpropFilter, rtt</span>)</span></span><br><span class="line"><span class="function">  <span class="title">delivered</span> += <span class="title">packet</span>.<span class="title">size</span></span></span><br><span class="line"><span class="function">  <span class="title">delivered_time</span> = <span class="title">now</span></span></span><br><span class="line"><span class="function">  <span class="title">deliveryRate</span> = (<span class="params">delivered - packet.delivered</span>) / (<span class="params">delivered_time - packet.delivered_time</span>)</span></span><br><span class="line"><span class="function">  <span class="title">if</span> (<span class="params">deliveryRate &gt; BtlBwFilter.currentMax || ! packet.app_limited</span>)</span></span><br><span class="line"><span class="function">     <span class="title">update_max_filter</span>(<span class="params">BtlBwFilter, deliveryRate</span>)</span></span><br><span class="line"><span class="function">  <span class="title">if</span> (<span class="params">app_limited_until &gt; <span class="number">0</span></span>)</span></span><br><span class="line"><span class="function">     <span class="title">app_limited_until</span> = <span class="title">app_limited_until</span> - <span class="title">packet</span>.<span class="title">size</span></span></span><br></pre></td></tr></table></figure>这里的app_limited_until是在允许发送时观察是否有发送任务决定的。发送报文时伪码为：<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> send(packet)</span><br><span class="line">  bdp = <span class="module-access"><span class="module"><span class="identifier">BtlBwFilter</span>.</span></span>currentMax × <span class="module-access"><span class="module"><span class="identifier">RTpropFilter</span>.</span></span>currentMin</span><br><span class="line">  <span class="keyword">if</span> (inflight &gt;= cwnd_gain × bdp)</span><br><span class="line">     <span class="comment">// wait for ack or retransmission timeout</span></span><br><span class="line">     return</span><br><span class="line">  <span class="keyword">if</span> (now &gt;= nextSendTime)</span><br><span class="line">     packet = next<span class="constructor">PacketToSend()</span></span><br><span class="line">     <span class="keyword">if</span> (! packet)</span><br><span class="line">        app_limited_until = inflight</span><br><span class="line">        return</span><br><span class="line">     packet.app_limited = (app_limited_until &gt; <span class="number">0</span>)</span><br><span class="line">     packet.sendtime = now</span><br><span class="line">     packet.delivered = delivered</span><br><span class="line">     packet.delivered_time = delivered_time</span><br><span class="line">     ship(packet)</span><br><span class="line">     nextSendTime = now + packet.size<span class="operator"> / </span>(pacing_gain × <span class="module-access"><span class="module"><span class="identifier">BtlBwFilter</span>.</span></span>currentMax)</span><br><span class="line">  timer<span class="constructor">CallbackAt(<span class="params">send</span>, <span class="params">nextSendTime</span>)</span></span><br></pre></td></tr></table></figure>pacing_gain便是决定链路速率调整的关键周期数组。<p>BBR算法对网络世界的拥塞控制有重大意义，尤其未来可以想见路由器的队列一定会越来越大。HTTP3放弃了TCP协议，这意味着它需要在应用层（各框架中间件）中基于BBR算法实现拥塞控制，所以，BBR算法其实离我们很近。理解BBR，我们便能更好的应对网络拥塞导致的性能问题，也会对未来的拥塞控制算法发展脉络更清晰。</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Google BBR explanation
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github Page Build Failure</title>
+    <link href="https://augists.top/SELF/ERROR/Github-Page-build-failure/"/>
+    <id>https://augists.top/SELF/ERROR/Github-Page-build-failure/</id>
+    <published>2021-05-16T15:12:05.000Z</published>
+    <updated>2021-05-16T15:36:11.498Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <div class="note ">            <p>今天早上还奇怪为什么昨天发的博客还没收到邮件通知，就上博客上怎么刷新都出不来新博客<br>后来发现，因为是直接复制的 markdown 文件，文件头是自己写的，日期给写错写到 3 月去了</p>          </div><p>今天前后一共收到了四封来自 GitHub 的邮件，内容通通一个样子，就是告诉我 ‘GitHub Page build failure’<br>我那个找啊 😭 把新文章弄走也不行，弄走了将近 10 篇都不行<br>本来好好的，咋就突然 ‘build failure’ 了<br>从头到尾浏览了一遍提供的 build failure 提示网页也没发现是哪里有问题，于是上网搜了一下这个错误</p><hr><p>基本上那些博客都没有什么实用价值，直到我发现了一篇说可以用 ‘jekyll –safe’ 让他自行检测错误原因（尽管错误原因可能会给的很模糊<br>于是我就 <code>gem install jekyll</code>（这东西居然还要我 root 权限 😒<br>然后就发现，人家根本那就没有这个 <code>--safe</code> 的参数指令</p><hr><p>一开始脑子没绕过弯来，就认定了 <code>--safe</code> 就是错误检测的参数，就在那傻不拉几的 <code>jekyll build --safe</code> <code>jekyll server --safe</code> 😒<br>重新仔细看看人家的 help list，似乎现在的 <code>--safe</code> 变成了 <code>jekyll doctor</code><br>跑了一遍试了下，确实是，博客的问题出在用了 c 语言的头文件的那个 keyword 作为内容<br>就挺突然的，<code>re-(c head keyword)</code> 那文章是很早很早以前的了，之前从来没因为这个出现过搭建错误的问题<br>已经半夜了，终于把这个破问题改好了 属实不容易 😒</p><div class="note ">            <p>gem 是真的难用</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      All of a SUDDEN&lt;br&gt;I have received four e-mails totally&lt;br&gt;Ridiculous but reasonable
+    
+    </summary>
+    
+    
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+      <category term="GIT" scheme="https://augists.top/tags/GIT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Information Security Q.E.D</title>
+    <link href="https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/"/>
+    <id>https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/</id>
+    <published>2021-05-15T13:40:05.000Z</published>
+    <updated>2021-05-16T11:19:05.037Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>Julius Caesar</p><p>每个字母都用字母表中它之后的第三个字母来代换</p><p>单表代换密码</p><p><img src="https://i.loli.net/2021/04/21/A7JYuac83lQ6Ujk.png" alt="Screen Shot 2021-04-21 at 7.24.24 PM"></p><ul><li>穷举攻击</li><li>语言被人所知</li></ul><h2 id="单表代换密码"><a href="#单表代换密码" class="headerlink" title="单表代换密码"></a>单表代换密码</h2><p>每条消息用一个字母表加密，就会有 26! 种密钥</p><ul><li>语言规律性和冗余性（字母使用的频率）</li></ul><h2 id="一次一密-One-Time-Pad"><a href="#一次一密-One-Time-Pad" class="headerlink" title="一次一密 One Time Pad"></a>一次一密 One Time Pad</h2><p>与消息一样长且无重复的随机密钥进行加密，与消息进行异或</p><ul><li>产生大规模随机密钥有实际困难</li><li>密钥分配和保护</li></ul><h2 id="置换技术-Transposition-Permutation-Ciphers"><a href="#置换技术-Transposition-Permutation-Ciphers" class="headerlink" title="置换技术 Transposition(Permutation) Ciphers"></a>置换技术 Transposition(Permutation) Ciphers</h2><p>改变明文内容元素的相对位置，保持内容的表现形式不变</p><p>重新安排消息字母的位置</p><ul><li>字母频率问题</li></ul><p><img src="https://i.loli.net/2021/04/08/73GMFHv95Eaqj4o.png" alt="Screen Shot 2021-04-08 at 8.09.06 PM"></p><p>栅栏技术 Rail Fence Cipher</p><p>按照对角线的顺序写出明文，按行的顺序读出作为密文<img src="https://i.loli.net/2021/04/08/RETJfvQx3cHdBKV.png" alt="Screen Shot 2021-04-08 at 8.09.34 PM"></p><h2 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h2><p>分组 64位  密钥 56 位</p><h3 id="Feistel"><a href="#Feistel" class="headerlink" title="Feistel"></a>Feistel</h3><p>大多数分组密码的基础</p><p><img src="https://i.loli.net/2021/04/21/B7KzekH3GLPytuV.png" alt="Screen Shot 2021-04-21 at 7.36.41 PM"></p><p><img src="https://i.loli.net/2021/04/21/kIK8BwldNUGoYWt.png" alt="Screen Shot 2021-04-21 at 7.40.41 PM"></p><p>64位分组，128位密钥长度，16次迭代</p><h3 id="DES-1"><a href="#DES-1" class="headerlink" title="DES"></a>DES</h3><p><img src="https://i.loli.net/2021/04/21/GloY7EW83K6Osca.png" alt="Screen Shot 2021-04-21 at 7.43.36 PM"></p><p>置换矩阵和逆置换</p><p><img src="https://i.loli.net/2021/04/21/NjDOlucPmeSvYVZ.png" alt="Screen Shot 2021-04-21 at 7.47.29 PM"></p><p>扩充置换</p><p><img src="https://i.loli.net/2021/04/21/sSF9c2oz3DNm1Td.png" alt="Screen Shot 2021-04-21 at 7.47.59 PM"></p><p><img src="https://i.loli.net/2021/04/21/J7CATGvHZQMzPKF.png" alt="Screen Shot 2021-04-21 at 7.50.06 PM"></p><h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p><img src="https://i.loli.net/2021/04/21/4TWUIOZfzbNRBx6.png" alt="Screen Shot 2021-04-21 at 7.53.11 PM"></p><p><img src="https://i.loli.net/2021/04/21/tWI9fDiGUzXBw51.png" alt="Screen Shot 2021-04-21 at 7.53.58 PM"></p><h2 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h2><p><img src="https://i.loli.net/2021/04/21/wq57F2QufgYxiIK.png" alt="Screen Shot 2021-04-21 at 7.56.30 PM"></p><h2 id="分组密码的工作模式"><a href="#分组密码的工作模式" class="headerlink" title="分组密码的工作模式"></a>分组密码的工作模式</h2><ul><li>电子密码本模式（Electronic Codebook, ECB）<ul><li>明文分成 64bit 的分组进行加密，必要时进行填充，每个分组用同一密钥加密，同样明文分组加密得相同密文</li><li>适合数据较少的情况，如安全传输 DES 密钥</li><li>一段明文消息中若有几个相同的明文组，则密文也将出现几个相同的片段</li><li>对于很长的消息，ECB 是不安全的（结构化）</li><li>ECB 的弱点来源于其加密过的密文分组是相互独立的</li></ul></li><li>密文分组链接模式（Cipher Block Chaining, CBC）<ul><li>加密输入是当前明文分组和前一密文分组的异或，形成一条链，使用相同的密钥，这样每个明文分组的加密函数输入与明文分组之间不再有固定的关系</li><li><img src="https://i.loli.net/2021/04/14/NGajltJOAxuDzgv.png" alt="Screen Shot 2021-04-14 at 11.46.42 PM"></li><li>每个密文分组依赖于其他明文分组</li><li>明文消息中的任何一点变化都会影响密文分组</li><li>发送方和接收方需要共享初始向量 IV（必须是一个固定的值或用 ECB 方式在消息之前加密传送，不能被明文传送）</li><li>在消息的最后还要处理不够长度的分组</li></ul></li><li>密码反馈模式（Cipher FeedBack, CFB）<ul><li>是一种将 DES 转成流密码的技术，不再需要填充，可以实时运行</li><li>加密：加密函数的输入是一个64位的移位寄存器，产生初始向量 IV。加密函数高端 j 位与明文 P1 的第一个单元异或，产生 j 位密文 C1 进入移位寄存器低端，继续加密，与 P2 输入异或</li><li>解密：相同方案，解密函数</li><li><img src="https://i.loli.net/2021/04/14/5MVGnN8UaYdOt79.png" alt="Screen Shot 2021-04-14 at 11.56.54 PM"></li><li>当数据以位或字节形式到达时使用都是恰当的</li><li>最通用的是流密码形式</li><li>比特差错传播</li></ul></li><li>输出反馈模式（Output FeedBack, OFB）<ul><li>结构上类似 CFB，但加密函数输出被反馈回移位寄存器，CFB 中是密文单元被反馈回移位寄存器。</li><li>优点：传输中的比特差错不会传播（某位上发生的错误不会影响到其他位）</li><li>缺点：比 CFB 更容易受报文流篡改攻击</li><li><img src="https://i.loli.net/2021/04/15/kYX764AIGzqHbN3.png" alt="Screen Shot 2021-04-15 at 6.43.37 PM"></li></ul></li><li>计数器模式（Counter, CTR）<ul><li>新模式，虽然很早就提出来了</li><li>与 OFB 很像，但是加密的是计数器的值而不是任何反馈回来的值</li><li>每一个明文分组都必须使用一个不同的密钥和计数器值，决不重复使用</li><li><img src="https://i.loli.net/2021/04/15/vdD3G7aSXTpPeCk.png" alt="Screen Shot 2021-04-15 at 6.47.43 PM"></li><li>可以用于高速网络加密（并行）</li><li><img src="https://i.loli.net/2021/04/15/PCNQGo2Mnrsc4iY.png" alt="Screen Shot 2021-04-15 at 6.48.51 PM"></li><li>可以对被加密的分组进行随机存取</li><li>安全、简洁</li></ul></li></ul><h2 id="单向函数"><a href="#单向函数" class="headerlink" title="单向函数"></a>单向函数</h2><h3 id="离散对数问题-DLP"><a href="#离散对数问题-DLP" class="headerlink" title="离散对数问题 DLP"></a>离散对数问题 DLP</h3><p><img src="https://i.loli.net/2021/04/21/GtTodbzpDmCF8yf.png" alt="Screen Shot 2021-04-21 at 8.11.47 PM"></p><h3 id="因数分解问题-Factorization-Problem"><a href="#因数分解问题-Factorization-Problem" class="headerlink" title="因数分解问题 Factorization Problem"></a>因数分解问题 Factorization Problem</h3><p><img src="https://i.loli.net/2021/04/21/PfTokICjtEqKdrX.png" alt="Screen Shot 2021-04-21 at 8.12.46 PM"></p><h3 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h3><p><img src="https://i.loli.net/2021/04/21/FTyaICmkt8jwcx5.png" alt="Screen Shot 2021-04-21 at 8.13.52 PM"></p><h2 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h2><p><img src="https://i.loli.net/2021/04/21/pjRusoKQVyPNrES.png" alt="Screen Shot 2021-04-21 at 8.16.06 PM"></p><h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p><img src="https://i.loli.net/2021/04/21/qlLiUVN6OatwhfK.png" alt="Screen Shot 2021-04-21 at 8.18.37 PM"></p><h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p><img src="https://i.loli.net/2021/04/21/oeqJ2I5fQM4mwNg.png" alt="Screen Shot 2021-04-21 at 8.19.08 PM"></p><p><img src="https://i.loli.net/2021/04/21/rkABInZPuotcq63.png" alt="Screen Shot 2021-04-21 at 8.19.27 PM"></p><p><img src="https://i.loli.net/2021/04/21/nsfiTV4qFAloLg6.png" alt="Screen Shot 2021-04-21 at 8.20.54 PM"></p><h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><p><img src="https://i.loli.net/2021/04/21/SZ5VcsFBk98Xthm.png" alt="Screen Shot 2021-04-21 at 9.26.24 PM"></p><p><img src="https://i.loli.net/2021/04/21/DbhYJVyq1jzQ4id.png" alt=""></p><h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><p><img src="https://i.loli.net/2021/04/21/UrAFdBxIDg92jZl.png" alt="Screen Shot 2021-04-21 at 11.17.54 PM"></p><p><img src="https://i.loli.net/2021/04/21/FNHm4LulTbzfoS8.png" alt="Screen Shot 2021-04-21 at 11.22.01 PM"></p><h2 id="ElGamal"><a href="#ElGamal" class="headerlink" title="ElGamal"></a>ElGamal</h2><h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p><img src="https://i.loli.net/2021/04/22/JQvyouf7FA4ldap.png" alt="Screen Shot 2021-04-22 at 12.45.21 AM"></p><p>密文是明文的2倍</p><h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p><img src="https://i.loli.net/2021/04/22/84L37qGYaCvSNA1.png" alt="Screen Shot 2021-04-22 at 12.51.24 AM"></p><p><img src="https://i.loli.net/2021/04/22/lBj9qcz7AamriY1.png" alt="Screen Shot 2021-04-22 at 12.53.00 AM"></p>]]></content>
+    
+    <summary type="html">
+    
+      Q.E.D
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Information Security Note Chapter 5</title>
+    <link href="https://augists.top/NOTES/COURSES/Information_Security/Chapter_5/"/>
+    <id>https://augists.top/NOTES/COURSES/Information_Security/Chapter_5/</id>
+    <published>2021-05-15T13:40:04.000Z</published>
+    <updated>2021-05-16T11:19:01.398Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>双重 DES 加密<ul><li>中途相遇攻击<ul><li>只要连续使用密码两次，这种攻击总是有效的</li><li>用所有可能的密钥加密P并储存，再用所有可能的密钥解密C，与之匹配。相同即为被攻破</li></ul></li></ul></li><li>三重 DES 加密<ul><li>C = E<del>K1</del>[D<del>K2</del>[E<del>K1</del>(P)]]</li></ul></li></ul><ul><li>分组密码的工作模式<ul><li>电子密码本模式（Electronic Codebook, ECB）<ul><li>明文分成 64bit 的分组进行加密，必要时进行填充，每个分组用同一密钥加密，同样明文分组加密得相同密文</li><li>适合数据较少的情况，如安全传输 DES 密钥</li><li>一段明文消息中若有几个相同的明文组，则密文也将出现几个相同的片段</li><li>对于很长的消息，ECB 是不安全的（结构化）</li><li>ECB 的弱点来源于其加密过的密文分组是相互独立的</li></ul></li><li>密文分组链接模式（Cipher Block Chaining, CBC）<ul><li>加密输入是当前明文分组和前一密文分组的异或，形成一条链，使用相同的密钥，这样每个明文分组的加密函数输入与明文分组之间不再有固定的关系</li><li><img src="https://i.loli.net/2021/04/14/NGajltJOAxuDzgv.png" alt="Screen Shot 2021-04-14 at 11.46.42 PM"></li><li>每个密文分组依赖于其他明文分组</li><li>明文消息中的任何一点变化都会影响密文分组</li><li>发送方和接收方需要共享初始向量 IV（必须是一个固定的值或用 ECB 方式在消息之前加密传送，不能被明文传送）</li><li>在消息的最后还要处理不够长度的分组</li></ul></li><li>密码反馈模式（Cipher FeedBack, CFB）<ul><li>是一种将 DES 转成流密码的技术，不再需要填充，可以实时运行</li><li>加密：加密函数的输入是一个64位的移位寄存器，产生初始向量 IV。加密函数高端 j 位与明文 P1 的第一个单元异或，产生 j 位密文 C1 进入移位寄存器低端，继续加密，与 P2 输入异或</li><li>解密：相同方案，解密函数</li><li><img src="https://i.loli.net/2021/04/14/5MVGnN8UaYdOt79.png" alt="Screen Shot 2021-04-14 at 11.56.54 PM"></li><li>当数据以位或字节形式到达时使用都是恰当的</li><li>最通用的是流密码形式</li><li>比特差错传播</li></ul></li><li>输出反馈模式（Output FeedBack, OFB）<ul><li>结构上类似 CFB，但加密函数输出被反馈回移位寄存器，CFB 中是密文单元被反馈回移位寄存器。</li><li>优点：传输中的比特差错不会传播（某位上发生的错误不会影响到其他位）</li><li>缺点：比 CFB 更容易受报文流篡改攻击</li><li><img src="https://i.loli.net/2021/04/15/kYX764AIGzqHbN3.png" alt="Screen Shot 2021-04-15 at 6.43.37 PM"></li></ul></li><li>计数器模式（Counter, CTR）<ul><li>新模式，虽然很早就提出来了</li><li>与 OFB 很像，但是加密的是计数器的值而不是任何反馈回来的值</li><li>每一个明文分组都必须使用一个不同的密钥和计数器值，决不重复使用</li><li><img src="https://i.loli.net/2021/04/15/vdD3G7aSXTpPeCk.png" alt="Screen Shot 2021-04-15 at 6.47.43 PM"></li><li>可以用于高速网络加密（并行）</li><li><img src="https://i.loli.net/2021/04/15/PCNQGo2Mnrsc4iY.png" alt="Screen Shot 2021-04-15 at 6.48.51 PM"></li><li>可以对被加密的分组进行随机存取</li><li>安全、简洁</li></ul></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Information Security Note Chapter 5&lt;br&gt;Copyright SSDUT
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Information Security Note Chapter 4</title>
+    <link href="https://augists.top/NOTES/COURSES/Information_Security/Chapter_4/"/>
+    <id>https://augists.top/NOTES/COURSES/Information_Security/Chapter_4/</id>
+    <published>2021-05-15T13:40:03.000Z</published>
+    <updated>2021-05-16T11:18:57.954Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>欧几里得算法（辗转相除）</li></ul><p><img src="https://i.loli.net/2021/04/08/ygBH8hvJlKCczGs.png" alt="Screen Shot 2021-04-08 at 8.37.59 PM"></p><ul><li>既约多项式即只有1和其本身两个约数，又称不可约多项式</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Information Security Note Chapter 4&lt;br&gt;Copyright SSDUT
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Information Security Note Chapter 3</title>
+    <link href="https://augists.top/NOTES/COURSES/Information_Security/Chapter_3_DES/"/>
+    <id>https://augists.top/NOTES/COURSES/Information_Security/Chapter_3_DES/</id>
+    <published>2021-05-15T13:40:02.000Z</published>
+    <updated>2021-05-16T11:18:54.390Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>对称加密<ul><li>安全性依赖密钥</li><li>两类<ul><li>序列算法/序列密码/流密码：一次只对明文中的单个位运算的算法</li><li>分组算法/分组密码：对明文的一组位进行运算</li></ul></li></ul></li></ul><ul><li>DES<ul><li>分组和密钥：64 和 56</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Information Security Note Chapter 3&lt;br&gt;Copyright SSDUT
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Information Security Note Chapter 2</title>
+    <link href="https://augists.top/NOTES/COURSES/Information_Security/Chapter_2/"/>
+    <id>https://augists.top/NOTES/COURSES/Information_Security/Chapter_2/</id>
+    <published>2021-05-15T13:40:01.000Z</published>
+    <updated>2021-05-16T11:18:37.923Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>历史<ul><li>Claude Elwood Shannon 信息论之父 布尔代数的电子实现和应用</li><li>IBM Lucifer Cipher 128 位密钥作分组加密</li><li>Whitfield Diffie and Matin Hellman 首次提出适用网络保密通信的公开密钥思想</li><li>Ronald Rivest, Adi Shamir, Len Adleman 第一次提出公开密钥密码系统的实现方法 RSA</li><li>Abbas El Gamal 提出概率密码系统 ElGamal 方法</li></ul></li><li>理论安全与实际安全<ul><li>理论安全（无条件安全）Theoretical Secure (Perfect Secure)：攻击者无论截获多少密文，都无法得到足够的信息来唯一决定明文。Shannon 理论证明了，想要达到理论安全，加密密钥的长度需要大于等于明文长度，密钥只用一次</li><li>实际安全（计算上安全）Practical Secure (Computationally Secure)：如果攻击者拥有无限资源，任何密码系统都是可以被破译的；但是，在有限的资源范围内，攻击者都不能通过系统的分析方法来破解系统</li></ul></li><li>对称密码与非对称密码<ul><li>对称密码体制（Symmetric System, One-key System, Secret-key System）：加密密钥和解密密钥相同，或者一个密钥可以从另一个导出，开放性差</li><li>非对称密码体制（Asymmetric System, Two-key System, Public-key System）：从一个密钥导出另一个密钥是计算上不可行的，开放性好</li></ul></li><li>序列密码与分组密码<ul><li>序列密码：密文不仅与最初给定的算法和密钥有关，同时也与明文位置有关(是所处位置的函数)。加密以明文比特为单位，以伪随机序列与明文序列模2加后，作为密文序列</li><li>分组密码：经过加密所得到的密文仅与给定的密码算法和密钥有关，与被处理的明文数据在整个明文中的位置无关。通常以大于等于64位的数据块为单位，加密得相同长度的密文</li></ul></li><li>确定型密码体制与概率密码体制<ul><li>确定型密码：当明文和密钥确定后，密文也就唯一地确定了</li><li>概率型密码：明文和密钥确定后，密文通过客观随机因素从一个密文集合中产生，密文形式不确定</li></ul></li><li>单向函数型密码体制和双向变换型密码体制<ul><li>单向函数型密码体制：适用于不需要解密的场合，容易将明文加密成密文，如哈希函数</li><li>双向变换型密码体制：可以进行可逆的加密、解密变换</li></ul></li></ul><ul><li><p>使用对称密码系统的要求</p><ul><li>强加密算法</li><li>只有发送方和接收方知道的密钥</li></ul></li><li><p>对加密信息的攻击类型</p><ul><li>唯密文攻击：仅知已加密文字（即密文）的情况下进行攻击</li><li>已知明文攻击：攻击者掌握了某段明文和对应的密文</li><li>选择明文攻击</li><li>选择密文攻击</li><li>选择文本攻击：选择明文攻击和选择密文攻击的结合</li><li>穷举攻击：可以简单尝试每一个可能的密钥</li></ul></li><li><p>代换技术</p><ul><li>将明文字母替换成其他字母、数字或符号的加密方法</li><li>凯撒密码：每个字母用它之后的第三个字母替换</li><li>单表代换密码：任意代换，增加密钥空间</li><li>语言的冗余性导致的密码攻击</li><li>一次一密<ul><li>与消息一样长且无重复的随机密钥来加密消息，只对一个消息加密，用后丢弃。不可攻破</li><li>运算基于二进制，按位进行异或运算</li><li>限制<ul><li>产生大规模的随机密钥有实际困难</li><li>密钥的分配和保护无法保证</li></ul></li></ul></li></ul></li><li><p>置换技术</p><ul><li>改变明文内容元素的相对位置，保持内容的表现形式不变</li><li>通常称为<strong>transposition</strong>或者<strong>permutation</strong>密码 </li><li>通过重新安排消息字母的位置来隐藏明文信息，而不是用其他字母来代换明文字母</li><li>这种方法是很容易破译的，因为密文拥有与明文一样的字母频率统计特性<img src="https://i.loli.net/2021/04/08/73GMFHv95Eaqj4o.png" alt="Screen Shot 2021-04-08 at 8.09.06 PM"></li><li>栅栏技术 <strong>Rail Fence cipher</strong><ul><li>按照对角线的顺序写出明文，按行的顺序读出作为密文<img src="https://i.loli.net/2021/04/08/RETJfvQx3cHdBKV.png" alt="Screen Shot 2021-04-08 at 8.09.34 PM"></li></ul></li></ul></li><li><p>隐写术<strong>Steganography</strong></p><ul><li>不是加密技术，只隐藏信息的存在</li><li>数字水印</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Information Security Note Chapter 2&lt;br&gt;Copyright SSDUT
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Information Security Note Chapter 1</title>
+    <link href="https://augists.top/NOTES/COURSES/Information_Security/Chapter_1/"/>
+    <id>https://augists.top/NOTES/COURSES/Information_Security/Chapter_1/</id>
+    <published>2021-05-15T13:40:00.000Z</published>
+    <updated>2021-05-16T11:18:30.824Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>主动攻击与被动攻击<ul><li>被动攻击：对传输进行窃听和监测，通信和信息不受影响，用户感觉不到攻击存在</li><li>主动攻击：攻击者破坏通信过程，重放、拦截、修改、伪造、丢弃信息、拒绝服务或假冒合法用户</li></ul></li><li>X800 将安全服务分为<ul><li>Authentication 认证：确保通信实体是合法和真实的，包括同等实体认证和数据源认证</li><li>Access Control 访问控制：防止资源非授权使用</li><li>Data Confidentiality 数据保密性：保护数据免于非授权泄漏，防止流量分析</li><li>Data Integrity 数据完整性：确保接收到的数据是由授权用户发出的或者是未被修改的</li><li>Non-Repudiation 不可否认性：防止通信方对通信行为的否认，包括源不可否认性和宿不可否认性</li><li>Availability Service：系统或系统资源能够按照要求根据系统性能规范被授权系统的实体访问和使用</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Information Security Note Chapter 1&lt;br&gt;Copyright SSDUT
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
+  
+</feed>

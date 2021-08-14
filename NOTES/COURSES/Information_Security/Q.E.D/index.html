@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="Q.E.D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Information Security Q.E.D">
+<meta property="og:url" content="https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="Q.E.D">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/A7JYuac83lQ6Ujk.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/08/73GMFHv95Eaqj4o.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/08/RETJfvQx3cHdBKV.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/B7KzekH3GLPytuV.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/kIK8BwldNUGoYWt.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/GloY7EW83K6Osca.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/NjDOlucPmeSvYVZ.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/sSF9c2oz3DNm1Td.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/J7CATGvHZQMzPKF.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/4TWUIOZfzbNRBx6.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/tWI9fDiGUzXBw51.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/wq57F2QufgYxiIK.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/14/NGajltJOAxuDzgv.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/14/5MVGnN8UaYdOt79.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/15/kYX764AIGzqHbN3.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/15/vdD3G7aSXTpPeCk.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/15/PCNQGo2Mnrsc4iY.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/GtTodbzpDmCF8yf.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/PfTokICjtEqKdrX.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/FTyaICmkt8jwcx5.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/pjRusoKQVyPNrES.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/qlLiUVN6OatwhfK.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/oeqJ2I5fQM4mwNg.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/rkABInZPuotcq63.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/nsfiTV4qFAloLg6.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/SZ5VcsFBk98Xthm.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/DbhYJVyq1jzQ4id.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/UrAFdBxIDg92jZl.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/21/FNHm4LulTbzfoS8.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/22/JQvyouf7FA4ldap.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/22/84L37qGYaCvSNA1.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/22/lBj9qcz7AamriY1.png">
+<meta property="article:published_time" content="2021-05-15T13:40:05.000Z">
+<meta property="article:modified_time" content="2021-05-16T11:19:05.037Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="NOTE">
+<meta property="article:tag" content="SHARING">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/04/21/A7JYuac83lQ6Ujk.png">
+
+<link rel="canonical" href="https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Information Security Q.E.D | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-covid-19">
+
+    <a href="/Covid-19/" rel="section"><i class="fas fa-map-marked-alt fa-fw"></i>Covid-19</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Information Security Q.E.D
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-15 21:40:05" itemprop="dateCreated datePublished" datetime="2021-05-15T21:40:05+08:00">2021-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-16 19:19:05" itemprop="dateModified" datetime="2021-05-16T19:19:05+08:00">2021-05-16</time>
+              </span>
+
+          
+            <div class="post-description">Q.E.D</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>Julius Caesar</p>
+<p>每个字母都用字母表中它之后的第三个字母来代换</p>
+<p>单表代换密码</p>
+<p><img src="https://i.loli.net/2021/04/21/A7JYuac83lQ6Ujk.png" alt="Screen Shot 2021-04-21 at 7.24.24 PM"></p>
+<ul>
+<li>穷举攻击</li>
+<li>语言被人所知</li>
+</ul>
+<h2 id="单表代换密码"><a href="#单表代换密码" class="headerlink" title="单表代换密码"></a>单表代换密码</h2><p>每条消息用一个字母表加密，就会有 26! 种密钥</p>
+<ul>
+<li>语言规律性和冗余性（字母使用的频率）</li>
+</ul>
+<h2 id="一次一密-One-Time-Pad"><a href="#一次一密-One-Time-Pad" class="headerlink" title="一次一密 One Time Pad"></a>一次一密 One Time Pad</h2><p>与消息一样长且无重复的随机密钥进行加密，与消息进行异或</p>
+<ul>
+<li>产生大规模随机密钥有实际困难</li>
+<li>密钥分配和保护</li>
+</ul>
+<h2 id="置换技术-Transposition-Permutation-Ciphers"><a href="#置换技术-Transposition-Permutation-Ciphers" class="headerlink" title="置换技术 Transposition(Permutation) Ciphers"></a>置换技术 Transposition(Permutation) Ciphers</h2><p>改变明文内容元素的相对位置，保持内容的表现形式不变</p>
+<p>重新安排消息字母的位置</p>
+<ul>
+<li>字母频率问题</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/08/73GMFHv95Eaqj4o.png" alt="Screen Shot 2021-04-08 at 8.09.06 PM"></p>
+<p>栅栏技术 Rail Fence Cipher</p>
+<p>按照对角线的顺序写出明文，按行的顺序读出作为密文<img src="https://i.loli.net/2021/04/08/RETJfvQx3cHdBKV.png" alt="Screen Shot 2021-04-08 at 8.09.34 PM"></p>
+<h2 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h2><p>分组 64位  密钥 56 位</p>
+<h3 id="Feistel"><a href="#Feistel" class="headerlink" title="Feistel"></a>Feistel</h3><p>大多数分组密码的基础</p>
+<p><img src="https://i.loli.net/2021/04/21/B7KzekH3GLPytuV.png" alt="Screen Shot 2021-04-21 at 7.36.41 PM"></p>
+<p><img src="https://i.loli.net/2021/04/21/kIK8BwldNUGoYWt.png" alt="Screen Shot 2021-04-21 at 7.40.41 PM"></p>
+<p>64位分组，128位密钥长度，16次迭代</p>
+<h3 id="DES-1"><a href="#DES-1" class="headerlink" title="DES"></a>DES</h3><p><img src="https://i.loli.net/2021/04/21/GloY7EW83K6Osca.png" alt="Screen Shot 2021-04-21 at 7.43.36 PM"></p>
+<p>置换矩阵和逆置换</p>
+<p><img src="https://i.loli.net/2021/04/21/NjDOlucPmeSvYVZ.png" alt="Screen Shot 2021-04-21 at 7.47.29 PM"></p>
+<p>扩充置换</p>
+<p><img src="https://i.loli.net/2021/04/21/sSF9c2oz3DNm1Td.png" alt="Screen Shot 2021-04-21 at 7.47.59 PM"></p>
+<p><img src="https://i.loli.net/2021/04/21/J7CATGvHZQMzPKF.png" alt="Screen Shot 2021-04-21 at 7.50.06 PM"></p>
+<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p><img src="https://i.loli.net/2021/04/21/4TWUIOZfzbNRBx6.png" alt="Screen Shot 2021-04-21 at 7.53.11 PM"></p>
+<p><img src="https://i.loli.net/2021/04/21/tWI9fDiGUzXBw51.png" alt="Screen Shot 2021-04-21 at 7.53.58 PM"></p>
+<h2 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h2><p><img src="https://i.loli.net/2021/04/21/wq57F2QufgYxiIK.png" alt="Screen Shot 2021-04-21 at 7.56.30 PM"></p>
+<h2 id="分组密码的工作模式"><a href="#分组密码的工作模式" class="headerlink" title="分组密码的工作模式"></a>分组密码的工作模式</h2><ul>
+<li>电子密码本模式（Electronic Codebook, ECB）<ul>
+<li>明文分成 64bit 的分组进行加密，必要时进行填充，每个分组用同一密钥加密，同样明文分组加密得相同密文</li>
+<li>适合数据较少的情况，如安全传输 DES 密钥</li>
+<li>一段明文消息中若有几个相同的明文组，则密文也将出现几个相同的片段</li>
+<li>对于很长的消息，ECB 是不安全的（结构化）</li>
+<li>ECB 的弱点来源于其加密过的密文分组是相互独立的</li>
+</ul>
+</li>
+<li>密文分组链接模式（Cipher Block Chaining, CBC）<ul>
+<li>加密输入是当前明文分组和前一密文分组的异或，形成一条链，使用相同的密钥，这样每个明文分组的加密函数输入与明文分组之间不再有固定的关系</li>
+<li><img src="https://i.loli.net/2021/04/14/NGajltJOAxuDzgv.png" alt="Screen Shot 2021-04-14 at 11.46.42 PM"></li>
+<li>每个密文分组依赖于其他明文分组</li>
+<li>明文消息中的任何一点变化都会影响密文分组</li>
+<li>发送方和接收方需要共享初始向量 IV（必须是一个固定的值或用 ECB 方式在消息之前加密传送，不能被明文传送）</li>
+<li>在消息的最后还要处理不够长度的分组</li>
+</ul>
+</li>
+<li>密码反馈模式（Cipher FeedBack, CFB）<ul>
+<li>是一种将 DES 转成流密码的技术，不再需要填充，可以实时运行</li>
+<li>加密：加密函数的输入是一个64位的移位寄存器，产生初始向量 IV。加密函数高端 j 位与明文 P1 的第一个单元异或，产生 j 位密文 C1 进入移位寄存器低端，继续加密，与 P2 输入异或</li>
+<li>解密：相同方案，解密函数</li>
+<li><img src="https://i.loli.net/2021/04/14/5MVGnN8UaYdOt79.png" alt="Screen Shot 2021-04-14 at 11.56.54 PM"></li>
+<li>当数据以位或字节形式到达时使用都是恰当的</li>
+<li>最通用的是流密码形式</li>
+<li>比特差错传播</li>
+</ul>
+</li>
+<li>输出反馈模式（Output FeedBack, OFB）<ul>
+<li>结构上类似 CFB，但加密函数输出被反馈回移位寄存器，CFB 中是密文单元被反馈回移位寄存器。</li>
+<li>优点：传输中的比特差错不会传播（某位上发生的错误不会影响到其他位）</li>
+<li>缺点：比 CFB 更容易受报文流篡改攻击</li>
+<li><img src="https://i.loli.net/2021/04/15/kYX764AIGzqHbN3.png" alt="Screen Shot 2021-04-15 at 6.43.37 PM"></li>
+</ul>
+</li>
+<li>计数器模式（Counter, CTR）<ul>
+<li>新模式，虽然很早就提出来了</li>
+<li>与 OFB 很像，但是加密的是计数器的值而不是任何反馈回来的值</li>
+<li>每一个明文分组都必须使用一个不同的密钥和计数器值，决不重复使用</li>
+<li><img src="https://i.loli.net/2021/04/15/vdD3G7aSXTpPeCk.png" alt="Screen Shot 2021-04-15 at 6.47.43 PM"></li>
+<li>可以用于高速网络加密（并行）</li>
+<li><img src="https://i.loli.net/2021/04/15/PCNQGo2Mnrsc4iY.png" alt="Screen Shot 2021-04-15 at 6.48.51 PM"></li>
+<li>可以对被加密的分组进行随机存取</li>
+<li>安全、简洁</li>
+</ul>
+</li>
+</ul>
+<h2 id="单向函数"><a href="#单向函数" class="headerlink" title="单向函数"></a>单向函数</h2><h3 id="离散对数问题-DLP"><a href="#离散对数问题-DLP" class="headerlink" title="离散对数问题 DLP"></a>离散对数问题 DLP</h3><p><img src="https://i.loli.net/2021/04/21/GtTodbzpDmCF8yf.png" alt="Screen Shot 2021-04-21 at 8.11.47 PM"></p>
+<h3 id="因数分解问题-Factorization-Problem"><a href="#因数分解问题-Factorization-Problem" class="headerlink" title="因数分解问题 Factorization Problem"></a>因数分解问题 Factorization Problem</h3><p><img src="https://i.loli.net/2021/04/21/PfTokICjtEqKdrX.png" alt="Screen Shot 2021-04-21 at 8.12.46 PM"></p>
+<h3 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h3><p><img src="https://i.loli.net/2021/04/21/FTyaICmkt8jwcx5.png" alt="Screen Shot 2021-04-21 at 8.13.52 PM"></p>
+<h2 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h2><p><img src="https://i.loli.net/2021/04/21/pjRusoKQVyPNrES.png" alt="Screen Shot 2021-04-21 at 8.16.06 PM"></p>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p><img src="https://i.loli.net/2021/04/21/qlLiUVN6OatwhfK.png" alt="Screen Shot 2021-04-21 at 8.18.37 PM"></p>
+<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p><img src="https://i.loli.net/2021/04/21/oeqJ2I5fQM4mwNg.png" alt="Screen Shot 2021-04-21 at 8.19.08 PM"></p>
+<p><img src="https://i.loli.net/2021/04/21/rkABInZPuotcq63.png" alt="Screen Shot 2021-04-21 at 8.19.27 PM"></p>
+<p><img src="https://i.loli.net/2021/04/21/nsfiTV4qFAloLg6.png" alt="Screen Shot 2021-04-21 at 8.20.54 PM"></p>
+<h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><p><img src="https://i.loli.net/2021/04/21/SZ5VcsFBk98Xthm.png" alt="Screen Shot 2021-04-21 at 9.26.24 PM"></p>
+<p><img src="https://i.loli.net/2021/04/21/DbhYJVyq1jzQ4id.png" alt=""></p>
+<h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><p><img src="https://i.loli.net/2021/04/21/UrAFdBxIDg92jZl.png" alt="Screen Shot 2021-04-21 at 11.17.54 PM"></p>
+<p><img src="https://i.loli.net/2021/04/21/FNHm4LulTbzfoS8.png" alt="Screen Shot 2021-04-21 at 11.22.01 PM"></p>
+<h2 id="ElGamal"><a href="#ElGamal" class="headerlink" title="ElGamal"></a>ElGamal</h2><h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p><img src="https://i.loli.net/2021/04/22/JQvyouf7FA4ldap.png" alt="Screen Shot 2021-04-22 at 12.45.21 AM"></p>
+<p>密文是明文的2倍</p>
+<h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p><img src="https://i.loli.net/2021/04/22/84L37qGYaCvSNA1.png" alt="Screen Shot 2021-04-22 at 12.51.24 AM"></p>
+<p><img src="https://i.loli.net/2021/04/22/lBj9qcz7AamriY1.png" alt="Screen Shot 2021-04-22 at 12.53.00 AM"></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/" title="Information Security Q.E.D">https://augists.top/NOTES/COURSES/Information_Security/Q.E.D/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+              <a href="/tags/SHARING/" rel="tag"><i class="fa fa-tag"></i> SHARING</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NOTES/COURSES/Information_Security/Chapter_5/" rel="prev" title="Information Security Note Chapter 5">
+      <i class="fa fa-chevron-left"></i> Information Security Note Chapter 5
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/SELF/ERROR/Github-Page-build-failure/" rel="next" title="Github Page Build Failure">
+      Github Page Build Failure <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">凯撒密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AF%86%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">单表代换密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%80%E5%AF%86-One-Time-Pad"><span class="nav-number">3.</span> <span class="nav-text">一次一密 One Time Pad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2%E6%8A%80%E6%9C%AF-Transposition-Permutation-Ciphers"><span class="nav-number">4.</span> <span class="nav-text">置换技术 Transposition(Permutation) Ciphers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DES"><span class="nav-number">5.</span> <span class="nav-text">DES</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Feistel"><span class="nav-number">5.1.</span> <span class="nav-text">Feistel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DES-1"><span class="nav-number">5.2.</span> <span class="nav-text">DES</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E8%BF%90%E7%AE%97"><span class="nav-number">6.</span> <span class="nav-text">模运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">欧几里得算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">分组密码的工作模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E5%90%91%E5%87%BD%E6%95%B0"><span class="nav-number">9.</span> <span class="nav-text">单向函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98-DLP"><span class="nav-number">9.1.</span> <span class="nav-text">离散对数问题 DLP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3%E9%97%AE%E9%A2%98-Factorization-Problem"><span class="nav-number">9.2.</span> <span class="nav-text">因数分解问题 Factorization Problem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98"><span class="nav-number">9.3.</span> <span class="nav-text">背包问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">费马小定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="nav-number">11.</span> <span class="nav-text">欧拉函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="nav-number">12.</span> <span class="nav-text">欧拉定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="nav-number">13.</span> <span class="nav-text">中国剩余定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA"><span class="nav-number">14.</span> <span class="nav-text">RSA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ElGamal"><span class="nav-number">15.</span> <span class="nav-text">ElGamal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86"><span class="nav-number">15.1.</span> <span class="nav-text">加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><span class="nav-number">15.2.</span> <span class="nav-text">数字签名</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/Augists" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-git-alt fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_45910536" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_45910536" rel="noopener" target="_blank"><i class="fab fa-cuttlefish fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/ZDCZ_Augists" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;ZDCZ_Augists" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2057240784&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://i.loli.net/2020/08/02/Qv8LmAnhs3u6fSR.jpg" title="WeChat → https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;08&#x2F;02&#x2F;Qv8LmAnhs3u6fSR.jpg" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>

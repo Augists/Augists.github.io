@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="Study Notes of MIT CoursesCopyright@MIT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Missing Semester of Your CS Education&lt;br&gt;Lecture2 Shell Tools and Scripting">
+<meta property="og:url" content="https://augists.top/NOTES/TERMINAL/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="Study Notes of MIT CoursesCopyright@MIT">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-18T01:27:40.000Z">
+<meta property="article:modified_time" content="2020-09-01T02:47:44.916Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="TERMINAL">
+<meta property="article:tag" content="NOTE">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://augists.top/NOTES/TERMINAL/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>The Missing Semester of Your CS Education<br>Lecture2 Shell Tools and Scripting | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-covid-19">
+
+    <a href="/Covid-19/" rel="section"><i class="fas fa-map-marked-alt fa-fw"></i>Covid-19</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/TERMINAL/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          The Missing Semester of Your CS Education<br>Lecture2 Shell Tools and Scripting
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-18 09:27:40" itemprop="dateCreated datePublished" datetime="2020-06-18T09:27:40+08:00">2020-06-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-01 10:47:44" itemprop="dateModified" datetime="2020-09-01T10:47:44+08:00">2020-09-01</time>
+              </span>
+
+          
+            <div class="post-description">Study Notes of MIT Courses<br>Copyright@MIT</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <iframe src="//player.bilibili.com/player.html?aid=86911412&bvid=BV1x7411H7wa&cid=148439477&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<div class="note warning">
+            <h1 id="Shell-Tools-and-Scripting"><a href="#Shell-Tools-and-Scripting" class="headerlink" title="Shell Tools and Scripting"></a>Shell Tools and Scripting</h1><p>In this lecture, we will present some of the basics of using bash as a scripting language along with a number of shell tools that cover several of the most common tasks that you will be constantly performing in the command line.</p><h2 id="Shell-Scripting"><a href="#Shell-Scripting" class="headerlink" title="Shell Scripting"></a>Shell Scripting</h2><p>So far we have seen how to execute commands in the shell and pipe them together. However, in many scenarios you will want to perform a series of commands and make use of control flow expressions like conditionals or loops.</p><p>Shell scripts are the next step in complexity. Most shells have their own scripting language with variables, control flow and its own syntax. What makes shell scripting different from other scripting programming language is that it is optimized for performing shell-related tasks. Thus, creating command pipelines, saving results into files, and reading from standard input are primitives in shell scripting, which makes it easier to use than general purpose scripting languages. For this section we will focus on bash scripting since it is the most common.</p><p>To assign variables in bash, use the syntax <code>foo=bar</code> and access the value of the variable with <code>$foo</code>. Note that <code>foo = bar</code> will not work since it is interpreted as calling the <code>foo</code> program with arguments <code>=</code> and <code>bar</code>. In general, in shell scripts the space character will perform argument splitting. This behavior can be confusing to use at first, so always check for that.</p><p>Strings in bash can be defined with <code>&#39;</code> and <code>&quot;</code> delimiters, but they are not equivalent. Strings delimited with <code>&#39;</code> are literal strings and will not substitute variable values whereas <code>&quot;</code> delimited strings will.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">foo=bar</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$foo</span>&quot;</span></span><br><span class="line"><span class="comment"># prints bar</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;$foo&#x27;</span></span><br><span class="line"><span class="comment"># prints $foo</span></span><br></pre></td></tr></table></figure><p>As with most programming languages, bash supports control flow techniques including <code>if</code>, <code>case</code>, <code>while</code> and <code>for</code>. Similarly, <code>bash</code> has functions that take arguments and can operate with them. Here is an example of a function that creates a directory and <code>cd</code>s into it.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">mcd</span></span> () &#123;</span><br><span class="line">    mkdir -p <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Here <code>$1</code> is the first argument to the script/function. Unlike other scripting languages, bash uses a variety of special variables to refer to arguments, error codes, and other relevant variables. Below is a list of some of them. A more comprehensive list can be found <a target="_blank" rel="noopener" href="https://www.tldp.org/LDP/abs/html/special-chars.html">here</a>.</p><ul><li><code>$0</code> - Name of the script</li><li><code>$1</code> to <code>$9</code> - Arguments to the script. <code>$1</code> is the first argument and so on.</li><li><code>$@</code> - All the arguments</li><li><code>$#</code> - Number of arguments</li><li><code>$?</code> - Return code of the previous command</li><li><code>$$</code> - Process identification number (PID) for the current script</li><li><code>!!</code> - Entire last command, including arguments. A common pattern is to execute a command only for it to fail due to missing permissions; you can quickly re-execute the command with sudo by doing <code>sudo !!</code></li><li><code>$_</code> - Last argument from the last command. If you are in an interactive shell, you can also quickly get this value by typing <code>Esc</code> followed by <code>.</code></li></ul><p>Commands will often return output using <code>STDOUT</code>, errors through <code>STDERR</code>, and a Return Code to report errors in a more script-friendly manner. The return code or exit status is the way scripts/commands have to communicate how execution went. A value of 0 usually means everything went OK; anything different from 0 means an error occurred.</p><p>Exit codes can be used to conditionally execute commands using <code>&amp;&amp;</code> (and operator) and <code>||</code> (or operator), both of which are <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuiting</a> operators. Commands can also be separated within the same line using a semicolon <code>;</code>. The <code>true</code> program will always have a 0 return code and the <code>false</code> command will always have a 1 return code. Let’s see some examples</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span> || <span class="built_in">echo</span> <span class="string">&quot;Oops, fail&quot;</span></span><br><span class="line"><span class="comment"># Oops, fail</span></span><br><span class="line"></span><br><span class="line"><span class="literal">true</span> || <span class="built_in">echo</span> <span class="string">&quot;Will not be printed&quot;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;Things went well&quot;</span></span><br><span class="line"><span class="comment"># Things went well</span></span><br><span class="line"></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;Will not be printed&quot;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="literal">true</span> ; <span class="built_in">echo</span> <span class="string">&quot;This will always run&quot;</span></span><br><span class="line"><span class="comment"># This will always run</span></span><br><span class="line"></span><br><span class="line"><span class="literal">false</span> ; <span class="built_in">echo</span> <span class="string">&quot;This will always run&quot;</span></span><br><span class="line"><span class="comment"># This will always run</span></span><br></pre></td></tr></table></figure><p>Another common pattern is wanting to get the output of a command as a variable. This can be done with <em>command substitution</em>. Whenever you place <code>$( CMD )</code> it will execute <code>CMD</code>, get the output of the command and substitute it in place. For example, if you do <code>for file in $(ls)</code>, the shell will first call <code>ls</code> and then iterate over those values. A lesser known similar feature is <em>process substitution</em>, <code>&lt;( CMD )</code> will execute <code>CMD</code> and place the output in a temporary file and substitute the <code>&lt;()</code> with that file’s name. This is useful when commands expect values to be passed by file instead of by STDIN. For example, <code>diff &lt;(ls foo) &lt;(ls bar)</code> will show differences between files in dirs <code>foo</code> and <code>bar</code>.</p><p>Since that was a huge information dump, let’s see an example that showcases some of these features. It will iterate through the arguments we provide, <code>grep</code> for the string <code>foobar</code>, and append it to the file as a comment if it’s not found.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Starting program at <span class="subst">$(date)</span>&quot;</span> <span class="comment"># Date will be substituted</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Running program <span class="variable">$0</span> with <span class="variable">$#</span> arguments with pid $$&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$@</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    grep foobar <span class="string">&quot;<span class="variable">$file</span>&quot;</span> &gt; /dev/null 2&gt; /dev/null</span><br><span class="line">    <span class="comment"># When pattern is not found, grep has exit status 1</span></span><br><span class="line">    <span class="comment"># We redirect STDOUT and STDERR to a null register since we do not care about them</span></span><br><span class="line">    <span class="keyword">if</span> [[ $? -ne 0 ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;File <span class="variable">$file</span> does not have any foobar, adding one&quot;</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;# foobar&quot;</span> &gt;&gt; <span class="string">&quot;<span class="variable">$file</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure><p>In the comparison we tested whether <code>$?</code> was not equal to 0. Bash implements many comparisons of this sort - you can find a detailed list in the manpage for <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/test.1.html">test</a>. When performing comparisons in bash, try to use double brackets <code>[[</code> <code>]]</code> in favor of(to be replaced by) simple brackets <code>[</code> <code>]</code>. Chances of making mistakes are lower although it won’t be portable to <code>sh</code>. A more detailed explanation can be found <a target="_blank" rel="noopener" href="http://mywiki.wooledge.org/BashFAQ/031">here</a>.</p><p>When launching scripts, you will often want to provide arguments that are similar. Bash has ways of making this easier, expanding expressions by carrying out filename expansion. These techniques are often referred to as shell <em>globbing</em>.</p><ul><li>Wildcards - Whenever you want to perform some sort of wildcard matching, you can use <code>?</code> and <code>*</code> to match one or any amount of characters respectively. For instance, given files <code>foo</code>, <code>foo1</code>, <code>foo2</code>, <code>foo10</code> and <code>bar</code>, the command <code>rm foo?</code> will delete <code>foo1</code> and <code>foo2</code> whereas <code>rm foo*</code> will delete all but <code>bar</code>.</li><li>Curly braces <code>{}</code> - Whenever you have a common substring in a series of commands, you can use curly braces for bash to expand this automatically. This comes in very handy when moving or converting files.</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">convert image.&#123;png,jpg&#125;</span><br><span class="line"><span class="comment"># Will expand to</span></span><br><span class="line">convert image.png image.jpg</span><br><span class="line"></span><br><span class="line">cp /path/to/project/&#123;foo,bar,baz&#125;.sh /newpath</span><br><span class="line"><span class="comment"># Will expand to</span></span><br><span class="line">cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath</span><br><span class="line"></span><br><span class="line"><span class="comment"># Globbing techniques can also be combined</span></span><br><span class="line">mv *&#123;.py,.sh&#125; folder</span><br><span class="line"><span class="comment"># Will move all *.py and *.sh files</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mkdir foo bar</span><br><span class="line"><span class="comment"># This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h</span></span><br><span class="line">touch &#123;foo,bar&#125;/&#123;a..h&#125;</span><br><span class="line">touch foo/x bar/y</span><br><span class="line"><span class="comment"># Show differences between files in foo and bar</span></span><br><span class="line">diff &lt;(ls foo) &lt;(ls bar)</span><br><span class="line"><span class="comment"># Outputs</span></span><br><span class="line"><span class="comment"># &lt; x</span></span><br><span class="line"><span class="comment"># ---</span></span><br><span class="line"><span class="comment"># &gt; y</span></span><br></pre></td></tr></table></figure><p>Writing <code>bash</code> scripts can be tricky and unintuitive（直觉性）. There are tools like <a target="_blank" rel="noopener" href="https://github.com/koalaman/shellcheck">shellcheck</a> that will help you find errors in your sh/bash scripts.</p><p>Note that scripts need not necessarily be written in bash to be called from the terminal. For instance, here’s a simple Python script that outputs its arguments in reversed order:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> reversed(sys.argv[<span class="number">1</span>:]):</span><br><span class="line">    print(arg)</span><br></pre></td></tr></table></figure><p>The kernel knows to execute this script with a python interpreter instead of a shell command because we included a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> line at the top of the script. It is good practice to write shebang lines using the <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/env.1.html">env</a> command that will resolve to wherever the command lives in the system, increasing the portability of your scripts. To resolve the location, <code>env</code> will make use of the <code>PATH</code> environment variable we introduced in the first lecture. For this example the shebang line would look like <code>#!/usr/bin/env python</code>.</p><p>Some differences between shell functions and scripts that you should keep in mind are:</p><ul><li>Functions have to be in the same language as the shell, while scripts can be written in any language. This is why including a shebang for scripts is important.</li><li>Functions are loaded once when their definition is read. Scripts are loaded every time they are executed. This makes functions slightly faster to load, but whenever you change them you will have to reload their definition.</li><li>Functions are executed in the current shell environment whereas scripts execute in their own process. Thus, functions can modify environment variables, e.g. change your current directory, whereas scripts can’t. Scripts will be passed by value environment variables that have been exported using <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/export.1p.html">export</a></li><li>As with any programming language, functions are a powerful construct to achieve modularity, code reuse, and clarity of shell code. Often shell scripts will include their own function definitions.</li></ul><h2 id="Shell-Tools"><a href="#Shell-Tools" class="headerlink" title="Shell Tools"></a>Shell Tools</h2><h3 id="Finding-how-to-use-commands"><a href="#Finding-how-to-use-commands" class="headerlink" title="Finding how to use commands"></a>Finding how to use commands</h3><p>At this point, you might be wondering how to find the flags for the commands in the aliasing section such as <code>ls -l</code>, <code>mv -i</code> and <code>mkdir -p</code>. More generally, given a command, how do you go about finding out what it does and its different options? You could always start googling, but since UNIX predates StackOverflow😏, there are built-in ways of getting this information.</p><p>As we saw in the shell lecture, the first-order approach is to call said command with the <code>-h</code> or <code>--help</code> flags. A more detailed approach is to use the <code>man</code> command. Short for manual, <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/man.1.html">man</a> provides a manual page (called manpage) for a command you specify. For example, <code>man rm</code> will output the behavior of the <code>rm</code> command along with the flags that it takes, including the <code>-i</code> flag we showed earlier. In fact, what I have been linking so far for every command is the online version of the Linux manpages for the commands. Even non-native commands that you install will have manpage entries if the developer wrote them and included them as part of the installation process. For interactive tools such as the ones based on ncurses（计算机语言，指的是提供字符终端处理库）, help for the commands can often be accessed within the program using the <code>:help</code> command or typing <code>?</code>.</p><p>Sometimes manpages can provide overly detailed descriptions of the commands, making it hard to decipher（破译） what flags/syntax to use for common use cases. <a target="_blank" rel="noopener" href="https://tldr.sh/">TLDR pages</a> are a nifty(useful) complementary solution that focuses on giving example use cases of a command so you can quickly figure out which options to use. For instance, I find myself referring back to the tldr pages for <a target="_blank" rel="noopener" href="https://tldr.ostera.io/tar">tar</a> and <a target="_blank" rel="noopener" href="https://tldr.ostera.io/ffmpeg">ffmpeg</a> way more often than the manpages.</p><h3 id="Finding-files"><a href="#Finding-files" class="headerlink" title="Finding files"></a>Finding files</h3><p>One of the most common repetitive tasks that every programmer faces is finding files or directories. All UNIX-like systems come packaged with <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/find.1.html">find</a>, a great shell tool to find files. <code>find</code> will recursively search for files matching some criteria. Some examples:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Find all directories named src</span></span><br><span class="line">find . -name src -<span class="built_in">type</span> d</span><br><span class="line"><span class="comment"># Find all python files that have a folder named test in their path</span></span><br><span class="line">find . -path <span class="string">&#x27;*/test/*.py&#x27;</span> -<span class="built_in">type</span> f</span><br><span class="line"><span class="comment"># Find all files modified in the last day</span></span><br><span class="line">find . -mtime -1</span><br><span class="line"><span class="comment"># Find all zip files with size in range 500k to 10M</span></span><br><span class="line">find . -size +500k -size -10M -name <span class="string">&#x27;*.tar.gz&#x27;</span></span><br></pre></td></tr></table></figure><p>Beyond listing files, find can also perform actions over files that match your query（疑问）. This property can be incredibly helpful to simplify what could be fairly monotonous（乏味的） tasks.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Delete all files with .tmp extension</span></span><br><span class="line">find . -name <span class="string">&#x27;*.tmp&#x27;</span> -<span class="built_in">exec</span> rm &#123;&#125; \;</span><br><span class="line"><span class="comment"># Find all PNG files and convert them to JPG</span></span><br><span class="line">find . -name <span class="string">&#x27;*.png&#x27;</span> -<span class="built_in">exec</span> convert &#123;&#125; &#123;&#125;.jpg \;</span><br></pre></td></tr></table></figure><p>Despite <code>find</code>’s ubiquitousness（无处不在）, its syntax can sometimes be tricky to remember. For instance, to simply find files that match some pattern <code>PATTERN</code> you have to execute <code>find -name &#39;*PATTERN*&#39;</code> (or <code>-iname</code> if you want the pattern matching to be case insensitive). You could start building aliases for those scenarios, but part of the shell philosophy is that it is good to explore alternatives. Remember, one of the best properties of the shell is that you are just calling programs, so you can find (or even write yourself) replacements for some. For instance, <a target="_blank" rel="noopener" href="https://github.com/sharkdp/fd">fd</a> is a simple, fast, and user-friendly alternative to <code>find</code>. It offers some nice defaults like colorized output, default regex matching, and Unicode support. It also has, in my opinion, a more intuitive syntax. For example, the syntax to find a pattern <code>PATTERN</code> is <code>fd PATTERN</code>.</p><p>Most would agree that <code>find</code> and <code>fd</code> are good, but some of you might be wondering about the efficiency of looking for files every time versus（对） compiling some sort of index or database for quickly searching. That is what <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/locate.1.html">locate</a> is for. <code>locate</code> uses a database that is updated using <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/updatedb.1.html">updatedb</a>. In most systems, <code>updatedb</code> is updated daily via <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man8/cron.8.html">cron</a>. Therefore one trade-off between the two is speed vs freshness. Moreover <code>find</code> and similar tools can also find files using attributes such as file size, modification time, or file permissions, while <code>locate</code> just uses the file name. A more in-depth comparison can be found <a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/60205/locate-vs-find-usage-pros-and-cons-of-each-other">here</a>.</p><h3 id="Finding-code"><a href="#Finding-code" class="headerlink" title="Finding code"></a>Finding code</h3><p>Finding files by name is useful, but quite often you want to search based on file <em>content</em>. A common scenario（剧情） is wanting to search for all files that contain some pattern, along with where in those files said pattern occurs. To achieve this, most UNIX-like systems provide <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/grep.1.html">grep</a>, a generic tool for matching patterns from the input text. <code>grep</code> is an incredibly valuable shell tool that we will cover in greater detail during the data wrangling lecture.</p><p>For now, know that <code>grep</code> has many flags that make it a very versatile（多用途的） tool. Some I frequently use are <code>-C</code> for getting <strong>C</strong>ontext around the matching line and <code>-v</code> for in<em>v</em>erting the match, i.e. print all lines that do <strong>not</strong> match the pattern. For example, <code>grep -C 5</code> will print 5 lines before and after the match. When it comes to quickly searching through many files, you want to use <code>-R</code> since it will <strong>R</strong>ecursively go into directories and look for files for the matching string.</p><p>But <code>grep -R</code> can be improved in many ways, such as ignoring <code>.git</code> folders, using multi CPU support, &amp;c. Many <code>grep</code> alternatives have been developed, including <a target="_blank" rel="noopener" href="https://beyondgrep.com/">ack</a>, <a target="_blank" rel="noopener" href="https://github.com/ggreer/the_silver_searcher">ag</a> and <a target="_blank" rel="noopener" href="https://github.com/BurntSushi/ripgrep">rg</a>. All of them are fantastic and pretty much provide the same functionality. For now I am sticking with ripgrep (<code>rg</code>), given how fast and intuitive（凭直觉的） it is. Some examples:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Find all python files where I used the requests library</span></span><br><span class="line">rg -t py <span class="string">&#x27;import requests&#x27;</span></span><br><span class="line"><span class="comment"># Find all files (including hidden files) without a shebang line</span></span><br><span class="line">rg -u --files-without-match <span class="string">&quot;^#!&quot;</span></span><br><span class="line"><span class="comment"># Find all matches of foo and print the following 5 lines</span></span><br><span class="line">rg foo -A 5</span><br><span class="line"><span class="comment"># Print statistics of matches (# of matched lines and files )</span></span><br><span class="line">rg --stats PATTERN</span><br></pre></td></tr></table></figure><p>Note that as with <code>find/fd</code>, it is important that you know that these problems can be quickly solved using one of these tools, while the specific tools you use are not as important.</p><h3 id="Finding-shell-commands"><a href="#Finding-shell-commands" class="headerlink" title="Finding shell commands"></a>Finding shell commands</h3><p>So far we have seen how to find files and code, but as you start spending more time in the shell, you may want to find specific commands you typed at some point. The first thing to know is that typing the up arrow will give you back your last command, and if you keep pressing it you will slowly go through your shell history.</p><p>The <code>history</code> command will let you access your shell history programmatically. It will print your shell history to the standard output. If we want to search there we can pipe that output to <code>grep</code> and search for patterns. <code>history | grep find</code> will print commands that contain the substring “find”.</p><p>In most shells, you can make use of <code>Ctrl+R</code> to perform backwards search through your history. After pressing <code>Ctrl+R</code>, you can type a substring you want to match for commands in your history. As you keep pressing it, you will cycle through the matches in your history. This can also be enabled with the UP/DOWN arrows in <a target="_blank" rel="noopener" href="https://github.com/zsh-users/zsh-history-substring-search">zsh</a>. A nice addition on top of <code>Ctrl+R</code> comes with using <a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf/wiki/Configuring-shell-key-bindings#ctrl-r">fzf</a> bindings. <code>fzf</code> is a general-purpose fuzzy finder that can be used with many commands. Here it is used to fuzzily match through your history and present results in a convenient and visually pleasing manner.</p><p>Another cool history-related trick I really enjoy is <code>history-based autosuggestions</code>. First introduced by the <a target="_blank" rel="noopener" href="https://fishshell.com/">fish</a> shell, this feature dynamically autocompletes your current shell command with the most recent command that you typed that shares a common prefix with it. It can be enabled in <a target="_blank" rel="noopener" href="https://github.com/zsh-users/zsh-autosuggestions">zsh</a> and it is a great quality of life trick for your shell.</p><p>Lastly, a thing to have in mind is that if you start a command with a leading space it won’t be added to your shell history. This comes in handy when you are typing commands with passwords or other bits of sensitive information. If you make the mistake of not adding the leading space, you can always manually remove the entry by editing your <code>.bash_history</code> or <code>.zhistory</code>.</p><h3 id="Directory-Navigation"><a href="#Directory-Navigation" class="headerlink" title="Directory Navigation"></a>Directory Navigation</h3><p>So far, we have assumed that you are already where you need to be to perform these actions. But how do you go about quickly navigating directories? There are many simple ways that you could do this, such as writing shell aliases or creating symlinks with <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/ln.1.html">ln -s</a>, but the truth is that developers have figured out quite clever and sophisticated solutions by now.</p><p>as with the theme of this course, you often want to optimize for the common case. finding frequent and/or recent files and directories can be done through tools like <a target="_blank" rel="noopener" href="https://github.com/clvv/fasd">fasd</a> and <a target="_blank" rel="noopener" href="https://github.com/wting/autojump">autojump</a>. fasd ranks files and directories by <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en/the_places_frecency_algorithm"><em>frecency</em></a>, that is, by both <em>frequency</em> and <em>recency</em>. by default, <code>fasd</code> adds a <code>z</code> command that you can use to quickly <code>cd</code> using a substring of a <em>frecent</em> directory. for example, if you often go to <code>/home/user/files/cool_project</code> you can simply use <code>z cool</code> to jump there. using autojump, this same change of directory could be accomplished using <code>j cool</code>.</p><p>More complex tools exist to quickly get an overview of a directory structure: <a target="_blank" rel="noopener" href="https://linux.die.net/man/1/tree">tree</a>, <a target="_blank" rel="noopener" href="https://github.com/Canop/broot">broot</a> or even full fledged（羽翼丰满的） file managers like <a target="_blank" rel="noopener" href="https://github.com/jarun/nnn">nnn</a> or <a target="_blank" rel="noopener" href="https://github.com/ranger/ranger">ranger</a>.</p><h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><ol><li>Read <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/ls.1.html">man ls</a> and write an <code>ls</code> command that lists files in the following manner<ul><li>Includes all files, including hidden files</li><li>Sizes are listed in human readable format (e.g. 454M instead of 454279954)</li><li>Files are ordered by recency</li><li>Output is colorized</li></ul></li></ol><p>A sample output would look like this</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--   1 user group 1.1M Jan 14 09:53 baz</span><br><span class="line">drwxr-xr-x   5 user group  160 Jan 14 09:53 .</span><br><span class="line">-rw-r--r--   1 user group  514 Jan 14 06:42 bar</span><br><span class="line">-rw-r--r--   1 user group 106M Jan 13 12:12 foo</span><br><span class="line">drwx------+ 47 user group 1.5K Jan 12 18:08 ..</span><br></pre></td></tr></table></figure><ol start="2"><li><p>Write bash functions <code>marco</code> and <code>polo</code> that do the following. Whenever you execute <code>marco</code> the current working directory should be saved in some manner, then when you execute <code>polo</code>, no matter what directory you are in, <code>polo</code> should <code>cd</code> you back to the directory where you executed <code>marco</code>. For ease of debugging you can write the code in a file <code>marco.sh</code> and (re)load the definitions to your shell by executing <code>source marco.sh</code>.</p></li><li><p>Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line">n=$(( RANDOM % <span class="number">100</span> ))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ n -eq 42 ]]; <span class="keyword">then</span></span><br><span class="line">   <span class="built_in">echo</span> <span class="string">&quot;Something went wrong&quot;</span></span><br><span class="line">   &gt;&amp;2 <span class="built_in">echo</span> <span class="string">&quot;The error was using magic numbers&quot;</span></span><br><span class="line">   <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Everything went according to plan&quot;</span></span><br></pre></td></tr></table></figure><ol start="4"><li>As we covered in the lecture <code>find</code>’s <code>-exec</code> can be very powerful for performing operations over the files we are searching for. However, what if we want to do something with <em>all</em> the files, like creating a zip file? As you have seen so far commands will take input from both arguments and STDIN. When piping commands, we are connecting STDOUT to STDIN, but some commands like <code>tar</code> take inputs from arguments. To bridge this disconnect there’s the <a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man1/xargs.1.html">xargs</a> command which will execute a command using STDIN as arguments. For example <code>ls | xargs rm</code> will delete the files in the current directory.</li></ol><p>Your task is to write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces (hint: check <code>-d</code> flag for <code>xargs</code>)</p><ol start="5"><li>(Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?</li></ol>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>MIT
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/TERMINAL/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/" title="The Missing Semester of Your CS Education&lt;br&gt;Lecture2 Shell Tools and Scripting">https://augists.top/NOTES/TERMINAL/The-Missing-Semester-of-Your-CS-Education/Lecture2-Shell-Tools-and-Scripting/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TERMINAL/" rel="tag"><i class="fa fa-tag"></i> TERMINAL</a>
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NOTES/CODE_LANGUAGE/MATLAB/Multivariate-Function-Integration/" rel="prev" title="Multivariate Function Integration">
+      <i class="fa fa-chevron-left"></i> Multivariate Function Integration
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/SELF/THINKING/Electronic-or-Deelectronic/" rel="next" title="Electronic or Deelectronic">
+      Electronic or Deelectronic <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Tools-and-Scripting"><span class="nav-number">1.</span> <span class="nav-text">Shell Tools and Scripting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-Scripting"><span class="nav-number">1.1.</span> <span class="nav-text">Shell Scripting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-Tools"><span class="nav-number">1.2.</span> <span class="nav-text">Shell Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-how-to-use-commands"><span class="nav-number">1.2.1.</span> <span class="nav-text">Finding how to use commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-files"><span class="nav-number">1.2.2.</span> <span class="nav-text">Finding files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-code"><span class="nav-number">1.2.3.</span> <span class="nav-text">Finding code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-shell-commands"><span class="nav-number">1.2.4.</span> <span class="nav-text">Finding shell commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directory-Navigation"><span class="nav-number">1.2.5.</span> <span class="nav-text">Directory Navigation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">1.3.</span> <span class="nav-text">Exercises</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/Augists" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-git-alt fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_45910536" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_45910536" rel="noopener" target="_blank"><i class="fab fa-cuttlefish fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/ZDCZ_Augists" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;ZDCZ_Augists" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2057240784&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://i.loli.net/2020/08/02/Qv8LmAnhs3u6fSR.jpg" title="WeChat → https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;08&#x2F;02&#x2F;Qv8LmAnhs3u6fSR.jpg" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Subscribe Augists's blog</title>
+		<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+		html,body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		.navigation {
+			height: 11%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			background: #5E96BE;
+			margin-top: 0;
+		}
+
+		.menu {
+			margin: 0;
+			padding: 0;
+			text-align: right;
+
+		}
+		.menu li {
+			list-style: none;
+			display: inline-block;
+
+		}
+		.menu li a {
+			text-decoration: none;
+			position: relative;
+			color: #101E2F;
+			font-size: 20px;
+			font-weight: 700;
+			font-family: sans-serif;
+			display: block;
+			overflow: hidden;
+			transition: 0.7s all;
+			padding: 1vh 20px;
+			text-transform: uppercase;
+			padding-top: 4vh;
+		}
+		.menu li a::before {
+			content: '';
+			width: 60px;
+			position: absolute;
+			border-bottom: 3px solid #101E2F;
+			bottom: 0;
+			right: 350px;
+			transition: 0.7s all;
+		}
+		.menu li a:hover::before {
+			right: 0;
+		}
+
+		.subscribeForm {
+			width: 65%;
+			height: 89%;
+			float: left;
+			margin: 0;
+			padding: 0;
+			background: #B7C9D6;
+			font-family: "montserrat",sans-serif;
+			/* text-align: center; */
+		}
+		.validate {
+			position: relative;
+			top: 45%;
+			right: 50%;
+			/* right: 50%; */
+			margin: 0;
+			padding: 0;
+			transform: translate(50%,-50%);
+			color: #101E2F;
+			text-align: center;
+		}
+		.validate h2 {
+			font-weight: 500;
+			margin-top: 0;
+		}
+		.mc-field-group {
+			display:inline-block;
+			text-align: center;
+		}
+
+		.email {
+			display: block;
+			box-sizing: border-box;
+			width: 240px;
+			font-weight: 400;
+			background: #90B1CB;
+			border: 1px solid #101E2F;
+			text-align: center;
+			padding: 10px 20px;
+			color: #101E2F;
+			outline: none;
+			margin: 10px 0;
+			border-radius: 6px;
+
+		}
+		.button {
+			width: 240px;
+			font-weight: 400;
+			background: #5E96BE;
+			border: 0;
+			color: #101E2F;
+			padding: 10px;
+			border-radius: 6px;
+			cursor: pointer;
+			box-shadow: 0px 5px 7px #5C7684;
+
+		}
+		.button:hover {
+			animation: cute .5s;
+		}
+
+		@keyframes cute {
+			0%,
+			100% {
+				transform:  scale(1, 1);
+			}
+
+			25%,
+			75% {
+				transform: scale(1.1, .9);
+			}
+
+			50% {
+				transform: scale(.9, 1.1);
+			}
+		}
+
+		.code {
+			width: 35%;
+			height: 89%;
+			float: left;
+			/* float: left; */
+			margin: 0;
+			padding: 0;
+			background: #B7C9D6;
+		}
+		.codes {
+			width: 99.9%;
+			height: 55%;
+			max-width: 100%;
+			max-height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow: scroll;
+			text-align: center;
+			/* background: yellowgreen; */
+			/* overflow-y: auto;
+			overflow-x: hidden; */
+			border-right: 1px solid #5E96BE;
+		}
+		::-webkit-scrollbar {
+			display: none;
+			/* overflow-y: auto; */
+			/* overflow-x: hidden; */
+			/* scrollbar-face-color: black; */
+			/* scrollbar-track-color:; */
+		}
+
+		.img {
+			/* margin: 0; */
+			max-width: 100%;
+			max-height: 100%;
+			background-size: cover;
+
+			/* background-position: center;
+			background-attachment: fixed; */
+			background-repeat: no-repeat;
+			/* max-width: 100%; */
+			user-select: none;
+			cursor: default;
+		}
+
+		section {
+			margin: 0;
+			padding: 0;
+			height: 75vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#c1 {
+			background-image: url(https://i.loli.net/2020/08/02/mVXNLZErpvRbzQl.jpg);
+		}
+
+		#c2 {
+			background-image: url(https://i.loli.net/2020/08/02/LJ5YzT1g7ZcyvnU.png);
+		}
+
+		#cpp1 {
+			background-image: url(https://i.loli.net/2020/08/02/HpefyrMQ4bUOkzv.jpg);
+		}
+
+		#cpp2 {
+			background-image: url(https://i.loli.net/2020/08/02/WR7XmbB4lrVkSfd.png);
+		}
+
+		#golang1 {
+			background-image: url(https://i.loli.net/2020/08/02/rTM17x8A42g5IsS.jpg);
+		}
+
+		#golang2 {
+			background-image: url(https://i.loli.net/2020/08/02/OHnuZCUmVyMshGr.png);
+		}
+
+		#html1 {
+			background-image: url(https://i.loli.net/2020/08/02/5D7NjzvG2tPpBo3.jpg);
+		}
+
+		#html2 {
+			background-image: url(https://i.loli.net/2020/08/02/KXrxOa81wYIRgEp.png);
+		}
+
+		#hello {
+			background-image: url(https://i.loli.net/2020/08/02/uANng5S9KPwOMEI.jpg);
+		}
+
+		@keyframes eye-blink {
+			0%{
+				transform: scale(1);
+			}
+			18%{
+				transform: scale(1);
+			}
+			20%{
+				transform: scale(0);
+			}
+			25%{
+				transform: scale(1);
+			}
+			38%{
+				transform: scale(1);
+			}
+			40%{
+				transform: scale(0);
+			}
+			45%{
+				transform: scale(1);
+			}
+			80%{
+				transform: scale(1);
+			}
+		}
+
+		@keyframes sizzlin {
+			0% {
+				transform: rotate(0) scale(0.98);
+			}
+			10% {
+				transform: rotate(0) scale(1.01);
+			}
+			20% {
+				transform: rotate(2deg) scale(0.997);
+			}
+			25% {
+				transform: rotate(2deg) scale(0.998);
+			}
+			30% {
+				transform: rotate(2deg) scale(1.01);
+			}
+			40% {
+				transform: rotate(-3deg) scale(0.995);
+			}
+			50% {
+				transform: rotate(-2deg) scale(1);
+			}
+			60% {
+				transform: rotate(-3deg) scale(0.996);
+			}
+			80% {
+				transform: rotate(1deg) scale(1);
+			}
+			90% {
+				transform: rotate(1deg) scale(0.997);
+			}
+			100% {
+				transform: rotate(0) scale(1);
+			}
+		}
+		.container {
+			width: 100%;
+			height: 35%;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* background: #B7C9D6; */
+		}
+		.container h6 {
+			margin: 0;
+			bottom: 0;
+		}
+
+		.egg {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+			background-color: #fff;
+			width: 150px;
+			height: 150px;
+			z-index: 4;
+			border-radius: 50%;
+			box-shadow: inset #fff 4px 3px 10px 10px,
+			inset rgba(0, 0, 0, 0.2) 0 0 12px 6px;
+			animation: sizzlin 1.6s linear alternate infinite;
+			}
+		.egg::before {
+			content: "";
+			background-color: #fff;
+			position: absolute;
+			height: 0;
+			border-radius: 50%;
+			top: -1px;
+			left: 1px;
+			width: 70%;
+			padding-bottom: 70%;
+			box-shadow: inset #fff 6px 6px 2px 3px,
+			inset rgba(0, 0, 0, 0.1) -2px 0 3px 2px;
+		}
+		.egg::after {
+			content: "";
+			background-color: #fff;
+			position: absolute;
+			height: 0;
+			border-radius: 50%;
+			bottom: 1px;
+			right: 1px;
+			width: 70%;
+			padding-bottom: 70%;
+			box-shadow: inset #fff 6px 6px 2px 3px,
+			inset rgba(0, 0, 0, 0.1) -2px 0 6px 2px;
+		}
+		.yolk {
+			width: 70px;
+			height: 70px;
+			border-radius: 100%;
+			background: #ffdb10;
+			box-shadow: inset 6px 1px 0 #ffcc24;
+			z-index: 1;
+		}
+		.eyes {
+			position: relative;
+			width: 8px;
+			height: 8px;
+			background: #000;
+			border-radius: 100%;
+			left: 14px;
+			top: 25px;
+			animation: eye-blink 2s infinite;
+		}
+		.eyes::after {
+			content: "";
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			border-radius: 100%;
+			background: #000;
+			left: 35px;
+		}
+		.smile {
+			position: relative;
+			border-bottom-left-radius: 50px;
+			border-bottom-right-radius: 50px;
+			width: 5px;
+			height: 3px;
+			background: transparent;
+			border: 2px solid #000;
+			left: 31px;
+			top: 25px;
+		}
+		.smile::before {
+			background: #ffdb10;
+			width: 20px;
+			height: 6px;
+			content: "";
+			position: absolute;
+			left: -10px;
+			top: -5px;
+		}
+		.cheeks {
+			position: relative;
+			width: 6px;
+			height: 6px;
+			border-radius: 100%;
+			background: #ff7e7e;
+			left: 10px;
+			top: 20px;
+		}
+		.cheeks::after {
+			content: "";
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			border-radius: 100%;
+			background: #ff7e7e;
+			left: 46px;
+		}
+
+		.shine {
+			position: relative;
+			width: 4px;
+			height: 10px;
+			border-radius: 200px;
+			background: #fff;
+			left: 55px;
+			top: -11px;
+			transform: rotate(-35deg);
+		}
+
+		.shine::before {
+			content: "";
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			background: #fff;
+			border-radius: 100%;
+			top: -6px;
+			right: 3px;
+		}
+
+		.pos {
+			height: 5%
+		}
+	</style>
+	</head>
+	<body>
+		<div class="navigation">
+			<ul class="menu">
+				<ul>
+					<li><a href="https://github.com/Augists">Github</a></li>
+					<li><a href="https://gitee.com/Augists">Gitee</a></li>
+					<li><a href="https://blog.csdn.net/qq_45910536">CSDN</a></li>
+					<li><a href="http://eepurl.com/g_pilf">Subscribe</a></li>
+					<li><a href="https://www.augists.top/atom/xml">RSS</a></li>
+					<li><a href="https://www.augists.top">Augists's Blog</a></li>
+					<li><a></a></li>
+				</ul>
+			</ul>
+		</div>
+
+		<div class="code">
+			<div class="codes">
+				<section id="hello" class="img"></section>
+				<section id="c1" class="img"></section>
+				<section id="c2" class="img"></section>
+				<section id="cpp1" class="img"></section>
+				<section id="cpp2" class="img"></section>
+				<section id="golang1" class="img"></section>
+				<section id="golang2" class="img"></section>
+				<section id="html1" class="img"></section>
+				<section id="html2" class="img"></section>
+
+			</div>
+			<!-- <img src="images/down.png" id="down"> -->
+			<div class="container">
+				<div class="egg">
+					<div class="yolk">
+						<div class="eyes"></div>
+						<div class="smile"></div>
+						<div class="cheeks"></div>
+						<div class="shine"></div>
+					</div>
+				</div>
+				<div class="pos">
+					<a></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="subscribeForm">
+			<!-- <div id="mc_embed_signup"> -->
+			<form action="https://top.us17.list-manage.com/subscribe/post?u=3b4b1f5a4df04757b23874c53&amp;id=07b12acb30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<div id="mc_embed_signup_scroll">
+					<img src="https://i.loli.net/2020/08/02/CIVETHGLUXrbpJF.png" height="350vh"><br>
+					<!-- <h2>Welcome</h2> -->
+					<div class="mc-field-group">
+						<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email">
+					</div>
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3b4b1f5a4df04757b23874c53_07b12acb30" tabindex="-1" value=""></div>
+					<div class="clear">
+						<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+					</div>
+				</div>
+			</form>
+			<!-- </div> -->
+			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+			<!--End mc_embed_signup-->
+		</div>
+	</body>
+</html>
