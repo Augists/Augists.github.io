@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-08-27T09:34:42.250Z</updated>
+  <updated>2021-09-13T15:37:44.965Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MAC With External Display</title>
+    <link href="https://augists.top/APPLE/MAC-with-external-display/"/>
+    <id>https://augists.top/APPLE/MAC-with-external-display/</id>
+    <published>2021-09-13T15:12:29.000Z</published>
+    <updated>2021-09-13T15:37:44.965Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note info">            <p>刚开学的时候买了台显示器，确实是我看到过的最便宜的给 mac 用的显示器了</p>          </div><div class="note warning">            <p>给 mac 配显示器，稍微有点要求的话，大概这些是必须的吧</p><ul><li>3.5k 以上的分辨率</li><li>支持 HiDPI</li><li>反向充电 65W 以上的 C 口</li><li>色域达标为支持 P3 色域</li></ul><p>这只是一个非常笼统的配置要求，例如 P3 色域在实际显示的时候也会有非常多的讲究<br>可以在先看评测的对 4k 以下显示器的横评中看到非常多的评价标准，同时即便是相同的标准也可能有一些消费者无法感知的差异</p><p>我购买的是 WE （小厂）的显示器，据说采用的是京东方的面板<br>最终花费 1.5k 的价格就拿下这款显示器了<br>但是毕竟价钱摆在这里，色域上只能达到 99-100% sRGB<br>但是其实实际观感不会差什么，整体色调相比与 mac build-in 显示器会偏暖的比较多，目前也没有改调色方案</p><hr><p>前面说的感觉真的挺好的，但是有一点是我自己遇到的问题<br>mac 自带的电源线是没有视频传输能力的<br>这一点，不得不承认，有道理，但是用的时候很烦人<br>确实，不是所有人都有把 mac 接到外置显示器的需求<br>但是像我这种一开始不知道的人，买了显示器之后发现原装的线不能用，被迫只能使用 HDMI</p><p>买了根便宜的雷电 3 数据线，便宜的我有点不是很能相信<br>常规的雷电 3 数据线价格一般在 2-3 百上下<br>现在只能等便宜的这根到了试试好不好用了<br>希望到时候能让桌面更清爽一点，只使用一根雷电数据线接出来</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Here comes an external display I bought&lt;br&gt;An 27 inches 4k display with full functional type c&lt;br&gt;BUT!!! only 1.5k RMB
+    
+    </summary>
+    
+    
+    
+      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+  </entry>
   
   <entry>
     <title>Backspace Does Not Work on VPS?</title>
@@ -434,29 +457,6 @@
     <summary type="html">
     
       Information Security Note Chapter 4&lt;br&gt;Copyright SSDUT
-    
-    </summary>
-    
-    
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Information Security Note Chapter 3</title>
-    <link href="https://augists.top/NOTES/COURSES/Information_Security/Chapter_3_DES/"/>
-    <id>https://augists.top/NOTES/COURSES/Information_Security/Chapter_3_DES/</id>
-    <published>2021-05-15T13:40:02.000Z</published>
-    <updated>2021-05-16T11:18:54.390Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>对称加密<ul><li>安全性依赖密钥</li><li>两类<ul><li>序列算法/序列密码/流密码：一次只对明文中的单个位运算的算法</li><li>分组算法/分组密码：对明文的一组位进行运算</li></ul></li></ul></li></ul><ul><li>DES<ul><li>分组和密钥：64 和 56</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      Information Security Note Chapter 3&lt;br&gt;Copyright SSDUT
     
     </summary>
     
