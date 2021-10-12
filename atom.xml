@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-09-13T15:37:44.965Z</updated>
+  <updated>2021-10-12T07:39:40.291Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu Server on Raspberry Pi</title>
+    <link href="https://augists.top/SELF/SHARING/STUDY/Ubuntu-Server-on-Raspberry-Pi/"/>
+    <id>https://augists.top/SELF/SHARING/STUDY/Ubuntu-Server-on-Raspberry-Pi/</id>
+    <published>2021-10-05T14:51:08.000Z</published>
+    <updated>2021-10-12T07:39:40.291Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>又在树莓派上折腾了一顿，简单整理一下一开始遇到的问题</p><hr><h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>现在拿到 ubuntu 每次第一件事就要先去网上找镜像源。比较习惯用清华源和中科大源<br>按照惯例写了几个镜像源，一更新发现坏了，根本不行<br>之前一直是在服务器上做配置，树莓派最大的区别在于改用了 arm 架构<br>镜像源对 arm 架构要使用 ports 源</p><p><img src="https://mirrors.ustc.edu.cn/help/ubuntu-ports.html" alt="UTSC ubuntu ports"><br><img src="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/" alt="TUNA ubuntu ports"></p><h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><p>换完源之后更新，还是不行，报错大概是这个</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update failed because certificate verification failed because handshake failed on nodesource</span><br></pre></td></tr></table></figure><p>一开始是用 ca 证书解决的</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ca-certificates</span><br></pre></td></tr></table></figure><p>但是想了想，应该不是这个问题。<code>date -R</code> 查看系统时间，时区默认被设置成了格林尼治</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tzselect</span><br></pre></td></tr></table></figure><p>不知道这有啥用，它加在 <code>.profile</code> 文件里 <code>TZ=</code>，不是很优雅</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure><p>大概用软链接更合理</p><h2 id="静态ip"><a href="#静态ip" class="headerlink" title="静态ip"></a>静态ip</h2><p>ubuntu server 配置静态 ip 和之前树莓派自己的 raspbianOS 上不太一样，要复杂一些<br>因为本身我们是为了搭建 ss 服务器，并且有一些特殊需求，就没有配好</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/netplan/00-installer-config.yaml</span><br></pre></td></tr></table></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  ethernets:</span><br><span class="line">    ens160:     #配置的网卡的名称</span><br><span class="line">      addresses: [192.168.0.105/24]    #配置的静态ip地址和掩码</span><br><span class="line">      dhcp4: no    #关闭DHCP，如果需要打开DHCP则写yes</span><br><span class="line">      optional: true</span><br><span class="line">      gateway4: 192.168.0.1    #网关地址</span><br><span class="line">      nameservers:</span><br><span class="line">         addresses: [114.114.114.114,180.76.76.76]    #DNS服务器地址，多个DNS服务器地址需要用英文逗号分隔开</span><br><span class="line">  version: 2</span><br><span class="line">  renderer: networkd    #指定后端采用systemd-networkd或者Network Manager，可不填写则默认使用systemd-workd</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure>          </div>]]></content>
+    
+    <summary type="html">
+    
+      There is not much executable and helpful manual page for Ubuntu Server on a Raspberry Pi
+    
+    </summary>
+    
+    
+    
+      <category term="ESSAY" scheme="https://augists.top/tags/ESSAY/"/>
+    
+      <category term="DEVICE" scheme="https://augists.top/tags/DEVICE/"/>
+    
+  </entry>
   
   <entry>
     <title>MAC With External Display</title>
@@ -434,29 +457,6 @@
     <summary type="html">
     
       Information Security Note Chapter 5&lt;br&gt;Copyright SSDUT
-    
-    </summary>
-    
-    
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Information Security Note Chapter 4</title>
-    <link href="https://augists.top/NOTES/COURSES/Information_Security/Chapter_4/"/>
-    <id>https://augists.top/NOTES/COURSES/Information_Security/Chapter_4/</id>
-    <published>2021-05-15T13:40:03.000Z</published>
-    <updated>2021-05-16T11:18:57.954Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>欧几里得算法（辗转相除）</li></ul><p><img src="https://i.loli.net/2021/04/08/ygBH8hvJlKCczGs.png" alt="Screen Shot 2021-04-08 at 8.37.59 PM"></p><ul><li>既约多项式即只有1和其本身两个约数，又称不可约多项式</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      Information Security Note Chapter 4&lt;br&gt;Copyright SSDUT
     
     </summary>
     
