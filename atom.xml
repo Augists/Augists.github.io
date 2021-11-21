@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-11-15T08:44:30.944Z</updated>
+  <updated>2021-11-21T16:09:23.543Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Slice Growth in Golang</title>
+    <link href="https://augists.top/NOTES/CODE_LANGUAGE/GOLANG/Slice-Growth-in-Golang/"/>
+    <id>https://augists.top/NOTES/CODE_LANGUAGE/GOLANG/Slice-Growth-in-Golang/</id>
+    <published>2021-11-21T15:45:42.000Z</published>
+    <updated>2021-11-21T16:09:23.543Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>前两天在看《GO程序设计语言》的关于 Slice 的代码的时候产生了一个疑问，书里的代码如下</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// gopl.io/ch4/append</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">appendInt</span><span class="params">(x []<span class="keyword">int</span>, y <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">  <span class="keyword">var</span> z []<span class="keyword">int</span></span><br><span class="line">  zlen := <span class="built_in">len</span>(x) + <span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> zlen &lt;= <span class="built_in">cap</span>(x) &#123;</span><br><span class="line">    z = x[:zlen]</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    zcap := zlen</span><br><span class="line">    <span class="keyword">if</span> zcap &lt; <span class="number">2</span>*<span class="built_in">len</span>(x) &#123;</span><br><span class="line">      zcap = <span class="number">2</span> * <span class="built_in">len</span>(x)</span><br><span class="line">    &#125;</span><br><span class="line">    z = <span class="built_in">make</span>([]<span class="keyword">int</span>, zlen, zcap)</span><br><span class="line">    <span class="built_in">copy</span>(z, x)</span><br><span class="line">  &#125;</span><br><span class="line">  z[<span class="built_in">len</span>(x)] = y</span><br><span class="line">  <span class="keyword">return</span> z</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这是一个当对切片使用 append 添加时进行判断是否需要扩容的操作，尽管这是书中的代码，但是它可能和源码稍有差别<br>我从网上查询到的源码如下</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">growslice</span><span class="params">(et *_type, old slice, <span class="built_in">cap</span> <span class="keyword">int</span>)</span> <span class="title">slice</span></span> &#123;</span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">    newcap := old.<span class="built_in">cap</span></span><br><span class="line">    doublecap := newcap + newcap</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">cap</span> &gt; doublecap &#123;</span><br><span class="line">        newcap = <span class="built_in">cap</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> old.<span class="built_in">len</span> &lt; <span class="number">1024</span> &#123;</span><br><span class="line">            newcap = doublecap</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> newcap &lt; <span class="built_in">cap</span> &#123;</span><br><span class="line">                newcap += newcap / <span class="number">4</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">    <span class="comment">//内存对齐操作</span></span><br><span class="line">    capmem = roundupsize(<span class="keyword">uintptr</span>(newcap) * ptrSize)</span><br><span class="line">    newcap = <span class="keyword">int</span>(capmem / ptrSize)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一开始我在想，为什么它需要去判断一下 <code>zcap &lt; 2*len(x)</code>，而不是直接赋值呢<br>其实当时想的时候漏掉了 <code>len(x) == 0</code> 的情况<br>如果 <code>len(x)</code> 为大于等于 1 的正整数时，无论如何 <code>zcap &lt;= 2*len(x)</code><br>如果 <code>len(x)</code> 为 0 时，就需要让新的容量等于 <code>zcap == zlen == len(x) + 1 == 1</code></p><p>那么此时就会产生两个问题：</p><ol><li>为什么不直接采用 <code>zcap = 2*len(x) + 1</code>，如此省去判断步骤</li><li>为什么不直接判断是否 <code>len(x) == 0</code>，而是判断 <code>zcap &lt; 2*len(x)</code></li></ol><p>对于第一个问题，这涉及到内存对齐操作。尽管在以前的 C Family 语言学习和计算机组成原理课程中学习过，但是并没有迁移到 Go 这里来思考问题<br>这里推荐我看到的一篇<a href="https://www.jianshu.com/p/f035a22e094d">文章</a>，我通过这篇重新学习了 Go 语言中的内存对齐</p><p>对于第二个问题，我到现在也没有 get 到原因。按理说这本书是由创始人编写的，依照在《C程序设计语言》中的严谨程度，这里应该会有什么特别的用意。但是我想如果只判断 <code>len(x) == 0</code> 在操作及时间上都要好于书中的示例代码。此处仍然留有疑问</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      A Question while reading the book *Go Programming Language*
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
+    
+  </entry>
   
   <entry>
     <title>Get Root Privilege in Linux by Docker or Dirty COW</title>
@@ -41,8 +64,8 @@
   
   <entry>
     <title>Bit Operation: Average of Two Integer</title>
-    <link href="https://augists.top/NOTES/CODE_LANGUAGE/bit-operation-average-of-two-integer/"/>
-    <id>https://augists.top/NOTES/CODE_LANGUAGE/bit-operation-average-of-two-integer/</id>
+    <link href="https://augists.top/NOTES/COURSES/Network_Protocol_Stack/bit-operation-average-of-two-integer/"/>
+    <id>https://augists.top/NOTES/COURSES/Network_Protocol_Stack/bit-operation-average-of-two-integer/</id>
     <published>2021-11-12T04:59:34.000Z</published>
     <updated>2021-11-12T05:15:00.196Z</updated>
     
@@ -436,29 +459,6 @@
     
     
       <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Shortcut Screen Saver</title>
-    <link href="https://augists.top/APPLE/Shortcut-Screen-Saver/"/>
-    <id>https://augists.top/APPLE/Shortcut-Screen-Saver/</id>
-    <published>2021-05-26T09:29:19.000Z</published>
-    <updated>2021-05-26T09:46:49.719Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>If asked how to start your screen saver on your mac, what is your answer? Some of you may respond with <em>Hot Corners</em>. But it may be the second choice on mine</p><h2 id="Hot-Coners"><a href="#Hot-Coners" class="headerlink" title="Hot Coners"></a>Hot Coners</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Preference -&gt; Desktop &amp;<span class="built_in"> Screen </span>Saver -&gt; Hot Corners</span><br></pre></td></tr></table></figure><p>Choice one of the four corners and <code>Start Screen Saver</code></p><h2 id="Automator"><a href="#Automator" class="headerlink" title="Automator"></a>Automator</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Automator -&gt; New Document -&gt; Quick Action -&gt; Start<span class="built_in"> Screen </span>Saver -&gt; Workflow receives: <span class="literal">no</span> input -&gt; save</span><br></pre></td></tr></table></figure><p>then give your workflow a shortcut</p><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P<span class="function"><span class="title">reference</span> -&gt;</span> K<span class="function"><span class="title">eyboard</span> -&gt;</span> S<span class="function"><span class="title">hortcuts</span> -&gt;</span> Services</span><br></pre></td></tr></table></figure><p>I record <code>control + option + command + s</code> for screen saver, which is also known as <code>hybrid + s</code></p><div class="note info">            <p>Recommend:<br>Fliqlo – a clock screen saver<br>4K video – downloaded from apple TV screen saver</p>          </div>          </div>]]></content>
-    
-    <summary type="html">
-    
-      How to start screen saver on your mac in a split second?&lt;br&gt;Hot corner? NO&lt;br&gt;Automator is the best choice
-    
-    </summary>
-    
-    
-    
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
   </entry>
   
