@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://augists.top/QQ-RSS-Bot-New-Test/</loc>
-    
-    <lastmod>2021-12-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augists.top/HELLO/Inspirational-Quotes-to-College-Newcomers/</loc>
     
     <lastmod>2021-11-21</lastmod>
@@ -1089,20 +1082,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/C-C/</loc>
-    <lastmod>2021-12-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/HANMING/</loc>
-    <lastmod>2021-12-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/DEVICE/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
@@ -1111,6 +1090,20 @@
   
   <url>
     <loc>https://augists.top/tags/ENGLISH/</loc>
+    <lastmod>2021-12-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/C-C/</loc>
+    <lastmod>2021-12-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/HANMING/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1138,6 +1131,20 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/TMUX/</loc>
+    <lastmod>2021-12-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/REVIEW/</loc>
+    <lastmod>2021-12-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/QT/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
@@ -1153,20 +1160,6 @@
   
   <url>
     <loc>https://augists.top/tags/C-C/</loc>
-    <lastmod>2021-12-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/TMUX/</loc>
-    <lastmod>2021-12-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/REVIEW/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1208,6 +1201,13 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/GOLANG/</loc>
+    <lastmod>2021-12-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/MATLAB/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
@@ -1229,6 +1229,13 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/STL/</loc>
+    <lastmod>2021-12-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/WEB/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
@@ -1244,13 +1251,6 @@
   
   <url>
     <loc>https://augists.top/tags/HTML/</loc>
-    <lastmod>2021-12-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/STL/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1286,13 +1286,6 @@
   
   <url>
     <loc>https://augists.top/tags/UNIX/</loc>
-    <lastmod>2021-12-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/GOLANG/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
