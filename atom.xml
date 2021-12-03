@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2021-12-03T08:05:40.979Z</updated>
+  <updated>2021-12-03T08:13:39.287Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -18,23 +18,16 @@
   
   <entry>
     <title>QQ RSS Bot Test</title>
-    <link href="https://augists.top/QQ-RSS-Bot-Test/"/>
-    <id>https://augists.top/QQ-RSS-Bot-Test/</id>
+    <link href="https://augists.top/QQ-RSS-Bot-New-Test/"/>
+    <id>https://augists.top/QQ-RSS-Bot-New-Test/</id>
     <published>2021-12-03T08:05:03.000Z</published>
-    <updated>2021-12-03T08:05:40.979Z</updated>
+    <updated>2021-12-03T08:13:39.287Z</updated>
     
     <content type="html"><![CDATA[<div class="note warning">            <h1 id="test1"><a href="#test1" class="headerlink" title="test1"></a>test1</h1><h2 id="test2"><a href="#test2" class="headerlink" title="test2"></a>test2</h2><h3 id="test3"><a href="#test3" class="headerlink" title="test3"></a>test3</h3><h4 id="test4"><a href="#test4" class="headerlink" title="test4"></a>test4</h4><h5 id="test5"><a href="#test5" class="headerlink" title="test5"></a>test5</h5><p>info</p>          </div>]]></content>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;div class=&quot;note warning&quot;&gt;
-            &lt;h1 id=&quot;test1&quot;&gt;&lt;a href=&quot;#test1&quot; class=&quot;headerlink&quot; title=&quot;test1&quot;&gt;&lt;/a&gt;test1&lt;/h1&gt;&lt;h2 id=&quot;test2&quot;&gt;&lt;a
-        
-      
+      Test for new group
     
     </summary>
     
