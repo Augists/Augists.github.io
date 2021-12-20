@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="Copyright (c) DingsoulLink: https:&#x2F;&#x2F;dingiso.github.io&#x2F;2021&#x2F;03&#x2F;11&#x2F;软件工程复习&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Software Engineering Review">
+<meta property="og:url" content="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="Copyright (c) DingsoulLink: https:&#x2F;&#x2F;dingiso.github.io&#x2F;2021&#x2F;03&#x2F;11&#x2F;软件工程复习&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2021/12/20/3BY8Z46qzw5btSX.png">
+<meta property="article:published_time" content="2021-12-19T07:06:30.000Z">
+<meta property="article:modified_time" content="2021-12-20T06:00:41.480Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="NOTE">
+<meta property="article:tag" content="SHARING">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2021/12/20/3BY8Z46qzw5btSX.png">
+
+<link rel="canonical" href="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Software Engineering Review | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-covid-19">
+
+    <a href="/Covid-19/" rel="section"><i class="fas fa-map-marked-alt fa-fw"></i>Covid-19</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Software Engineering Review
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-19 15:06:30" itemprop="dateCreated datePublished" datetime="2021-12-19T15:06:30+08:00">2021-12-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-20 14:00:41" itemprop="dateModified" datetime="2021-12-20T14:00:41+08:00">2021-12-20</time>
+              </span>
+
+          
+            <div class="post-description">Copyright (c) Dingsoul<br>Link: https://dingiso.github.io/2021/03/11/软件工程复习/</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <h1 id="软件工程复习"><a href="#软件工程复习" class="headerlink" title="软件工程复习"></a>软件工程复习</h1><p>软件工程三要素： 方法 工具 和 过程</p><h2 id="软件开发方法"><a href="#软件开发方法" class="headerlink" title="软件开发方法*"></a>软件开发方法*</h2><h3 id="传统开发方法"><a href="#传统开发方法" class="headerlink" title="传统开发方法"></a>传统开发方法</h3><p>结构化方法：分阶段的，顺序的，依赖性</p><p>缺点：缺少灵活性，静态，缺少应对变化的能力</p><h3 id="面向对象方法"><a href="#面向对象方法" class="headerlink" title="面向对象方法"></a>面向对象方法</h3><p>将软件构件划分为<strong>类</strong>，并定义一组静态的<strong>变量</strong>和动态的<strong>方法</strong></p><p>利用父子类和<strong>继承</strong>的关系形成<strong>层次结构</strong>，</p><p><strong>封装性</strong>：对象间仅能通过发送消息互相联系</p><p>通过<strong>反复迭代</strong>开发软件，降低<strong>复杂性</strong>，提高<strong>可理解性</strong>，支持<strong>软件重用</strong></p><p>更好的应对变化</p><h2 id="软件开发各阶段活动及任务"><a href="#软件开发各阶段活动及任务" class="headerlink" title="软件开发各阶段活动及任务*"></a>软件开发各阶段活动及任务*</h2><ul><li>可行性分析：高层次需求分析 - 技术，经济，社会</li><li>需求分析：进行<strong>变更管理</strong>适应变化，分为功能性和非功能性，输出需求规格说明书</li><li>软件设计：概要+详细</li><li>程序编码</li><li>软件测试：单元-&gt;集成-&gt;系统，分为黑盒和白盒</li><li>软件维护：改正性，适应性，完善性，预防性</li></ul><h2 id="生命周期模型"><a href="#生命周期模型" class="headerlink" title="生命周期模型"></a>生命周期模型</h2><h3 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型*"></a>瀑布模型*</h3><p>传统开发方法 <strong>最广泛</strong>，顺序性，依赖性</p><p>推迟写代码，每个阶段都写文档</p><p>缺点：用户参与少，静态</p><h3 id="快速原型模型"><a href="#快速原型模型" class="headerlink" title="快速原型模型*"></a>快速原型模型*</h3><p>看名</p><p>优点： 用户参与多了</p><p>缺点： 原型大概率抛弃</p><h3 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h3><p>分为功能模块，逐步实现（开放架构）</p><h3 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h3><p>瀑布+快速原型+风险分析</p><p>每阶段增加风险分析，降低风险</p><h3 id="喷泉模型"><a href="#喷泉模型" class="headerlink" title="喷泉模型*"></a>喷泉模型*</h3><p>迭代和无缝</p><p>总目标：线性过程</p><p><strong>迭代</strong> 逐步求精，面向对象</p><h2 id="敏捷"><a href="#敏捷" class="headerlink" title="敏捷"></a>敏捷</h2><h3 id="敏捷宣言"><a href="#敏捷宣言" class="headerlink" title="敏捷宣言"></a>敏捷宣言</h3><ul><li>个体 + 互动 &gt; 流程 + 工具</li><li>软件 &gt; 文档</li><li>客户合作 &gt; 合同谈判</li><li>相应变化 &gt; 遵循计划</li></ul><h3 id="增量和迭代"><a href="#增量和迭代" class="headerlink" title="增量和迭代"></a>增量和迭代</h3><p>系统由三个模块构成</p><ul><li><p>增量：一个个实现</p></li><li><p>迭代：实现三个垃圾模块，再一步步求精</p></li></ul><h3 id="SCRUM"><a href="#SCRUM" class="headerlink" title="SCRUM*"></a>SCRUM*</h3><p><strong>冲刺 Sprint</strong>：一个工作周期</p><ul><li>产品订单：项目的概要文档，以天为单位</li><li>冲刺订单：小文档，以 16 小时为单位</li><li>燃尽图：to-do list</li></ul><p>角色</p><ul><li>产品拥有者：甲方领导</li><li>利益相关者：客户</li><li>专家：技术总监</li><li>团队成员：程序员</li></ul><p>活动</p><ul><li>计划会：冲刺初制定计划</li><li>每日立会：每天15分钟</li><li>评审会：冲刺结束前</li><li>反思会/回顾会：冲刺结束后</li></ul><p>XP(极限编程) 于 SCRUM 区别</p><table><thead><tr><th></th><th>XP</th><th>SCRUM</th></tr></thead><tbody><tr><td>迭代长度</td><td>1-2周</td><td>3-4周</td></tr><tr><td>迭代中是否允许修改需求</td><td>yes</td><td>no</td></tr><tr><td>迭代中是否按优先级实现</td><td>yes</td><td>no</td></tr><tr><td>是否采用严格工程方法，保证进度质量</td><td>yes</td><td>no</td></tr></tbody></table><h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>自动化，高度依赖工具</p><h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><h3 id="用户-amp-系统"><a href="#用户-amp-系统" class="headerlink" title="用户 &amp; 系统"></a>用户 &amp; 系统</h3><ul><li>系统需求是对用户需求的细化和完善</li><li>系统需求的阅读对象是开发者，用户需求是客户</li><li>系统需求是用户需求的开始</li><li>目标 &amp; 涉众</li></ul><h3 id="涉众"><a href="#涉众" class="headerlink" title="涉众"></a>涉众</h3><p>与目标系统相关的一切人和物</p><h3 id="系统功能的确定"><a href="#系统功能的确定" class="headerlink" title="系统功能的确定"></a>系统功能的确定</h3><p>正式和非正式的访谈</p><h3 id="分析过程"><a href="#分析过程" class="headerlink" title="分析过程"></a>分析过程</h3><p>用例-&gt;规约用例并生成文档-&gt;活动图-&gt;文字功能性需求</p><h4 id="三种功能性需求"><a href="#三种功能性需求" class="headerlink" title="三种功能性需求"></a>三种功能性需求</h4><p>系统功能需求 + 交互需求 + 外部接口需求</p><h4 id="需求说明书"><a href="#需求说明书" class="headerlink" title="需求说明书"></a>需求说明书</h4><p>文档+涉众+目标+功能，非功能+交付物+验收标准+附件</p><h4 id="需求跟踪"><a href="#需求跟踪" class="headerlink" title="需求跟踪"></a>需求跟踪</h4><p>业务，需求，类模型 三者递归确定，互有对应</p><p>活动图，需求文档，类图</p><p>提高完备性，同时检查是否有冗余（有没有缺的，多的）</p><h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><h3 id="基本元素"><a href="#基本元素" class="headerlink" title="基本元素"></a>基本元素</h3><p>构件 + 连接件 + 配置</p><h3 id="数据流风格"><a href="#数据流风格" class="headerlink" title="数据流风格"></a>数据流风格</h3><p><strong>管道与过滤器</strong>：信息隐藏，高内聚低耦合，可以灵活组合</p><p><strong>层次系统</strong>：计算机网络</p><p><strong>正交软件架构</strong>：</p><ul><li><p>层：一组具有相同抽象级别的构件</p></li><li><p>线索：用例形成的调用关系</p></li><li><p>好处：每个需求变动仅影响某一条线索</p></li></ul><p><strong>客户机服务器架构</strong>：</p><ul><li>一个服务器服务多个客户端</li><li>适应变化，灵活</li><li>易于对系统进行扩充和缩小</li><li>功能构建隔离</li></ul><p><strong>浏览器/服务器架构</strong>：基本同上+抽取client的function形成的web服务器</p><h3 id="独立构建风格"><a href="#独立构建风格" class="headerlink" title="独立构建风格"></a>独立构建风格</h3><h4 id="MVC架构"><a href="#MVC架构" class="headerlink" title="MVC架构*"></a>MVC架构*</h4><ul><li><p>Model: 企业数据和业务规则</p></li><li><p>View: 用户看到并与之交互的界面</p></li><li><p>Controller: 根据输入调用模型和视图去完成用户的需求，不输出结果，不做任何处理</p></li></ul><h3 id="数据中心风格-仓库系统"><a href="#数据中心风格-仓库系统" class="headerlink" title="数据中心风格 - 仓库系统"></a>数据中心风格 - 仓库系统</h3><p>星型结构，中央数据库和周边client</p><p>黑板系统：中央数据库将状态通知client，由client决定选择</p><h2 id="类的分析与设计"><a href="#类的分析与设计" class="headerlink" title="类的分析与设计"></a>类的分析与设计</h2><p>迭代逐级细化</p><h3 id="类的种类"><a href="#类的种类" class="headerlink" title="类的种类"></a>类的种类</h3><ul><li>实体类：存储，传递数据的类，名词</li><li>控制类：管理类，体现执行逻辑，动宾</li><li>边界类：外部用户交互，界面类，数据交换类</li></ul><h4 id="领域模型"><a href="#领域模型" class="headerlink" title="领域模型"></a>领域模型</h4><p>初始类图-实体类</p><p><strong>实体类</strong> <code>&lt;&lt;entity&gt;&gt;</code></p><ul><li>类名：构造性</li><li>变量：<ul><li>可见性 (private, public ..) - (<code>-+_~</code>)</li><li>依赖（计算）属性，(<code>/</code>)</li><li>名字</li><li>类型：UML定义的，int String…</li><li>下划线：表示静态</li></ul></li></ul><p>没有方法</p><h4 id="类的关系"><a href="#类的关系" class="headerlink" title="类的关系*"></a>类的关系*</h4><ul><li>关联关系：静态，拥有，长期持久</li><li>导航方向：箭头，包含关系</li><li>依赖关系：动态，临时 - 避免双向依赖</li><li>依赖 包含 关联</li></ul><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><ul><li>对象名：类的类型</li><li>实例变量 = 初始值</li><li>对象名为空代表匿名对象，类名为空代表有上下文</li></ul><h4 id="管理类-amp-控制类"><a href="#管理类-amp-控制类" class="headerlink" title="管理类 &amp; 控制类"></a>管理类 &amp; 控制类</h4><table><thead><tr><th></th><th>管理类</th><th>控制类</th></tr></thead><tbody><tr><td></td><td>不考虑get，set方法</td><td>隔离边界与实体</td></tr><tr><td>对象</td><td>对于同类对象的协调和管理</td><td>不同类</td></tr><tr><td>层</td><td>Domain层</td><td>业务控制层</td></tr><tr><td>作用</td><td>创建对象，代理访问其他对象</td><td>一个用例一个</td></tr></tbody></table><h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>利用抽象类隔离变化</p><p>空三角箭头表示继承</p><h4 id="枚举类-lt-lt-enumeration-gt-gt"><a href="#枚举类-lt-lt-enumeration-gt-gt" class="headerlink" title="枚举类 &lt;&lt;enumeration&gt;&gt;"></a>枚举类 <code>&lt;&lt;enumeration&gt;&gt;</code></h4><h4 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h4><p>对实体，生成 <code>ProjectMask</code> 代理类</p><h4 id="CASE工具"><a href="#CASE工具" class="headerlink" title="CASE工具"></a>CASE工具</h4><p>软件开发环境，计算机辅助软件工程</p><h2 id="类的关系-1"><a href="#类的关系-1" class="headerlink" title="类的关系"></a>类的关系</h2><h3 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h3><table><thead><tr><th>是否要求顺序</th><th>是否要求唯一性</th><th></th></tr></thead><tbody><tr><td>no</td><td>yes</td><td>Set</td></tr><tr><td>no</td><td>no</td><td>Bag/Multiset</td></tr><tr><td>yes</td><td>yes</td><td>OrderedSet</td></tr><tr><td>yes</td><td>no</td><td>List/Sequence</td></tr></tbody></table><p>适用模板类而非具体类</p><h4 id="聚合-聚集"><a href="#聚合-聚集" class="headerlink" title="聚合 - 聚集"></a>聚合 - 聚集</h4><p>部分与整体，共享</p><h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4><p>存在依赖性 - 同生共死</p><h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>访问的瞬时性 - 用参数</p><h2 id="类的详细设计"><a href="#类的详细设计" class="headerlink" title="类的详细设计"></a>类的详细设计</h2><p>算法+数据结构+物理结构</p><p>其他设计+详细设计说明书+评审</p><p>什么是结构化的程序</p><h3 id="盒图"><a href="#盒图" class="headerlink" title="盒图"></a>盒图</h3><p>图例：不允许随意跳转 - 向里嵌套</p><h3 id="PAD图"><a href="#PAD图" class="headerlink" title="PAD图"></a>PAD图</h3><p>问题分析图 - 向右嵌套</p><h3 id="判定表"><a href="#判定表" class="headerlink" title="判定表"></a>判定表</h3><p>使用<code>—</code>来表 示对此条件的不关心或不适用</p><p>判定树：结点-选择，叶子-结果</p><h3 id="PDL"><a href="#PDL" class="headerlink" title="PDL"></a>PDL</h3><p>人话版的C语言</p><h3 id="OCL"><a href="#OCL" class="headerlink" title="OCL"></a>OCL</h3><h2 id="设计优化"><a href="#设计优化" class="headerlink" title="设计优化"></a>设计优化</h2><h3 id="smell"><a href="#smell" class="headerlink" title="smell"></a>smell</h3><p>僵化性，脆弱性，顽固性，粘滞性，复杂，重复，晦涩</p><h4 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h4><ul><li>与父类方法有相似的行为，细节调整</li><li>相同条件工作，子类不应具有比其父类更严格的条件限制 - <strong>Liskov 替换原则</strong></li><li>重写的方法最高不能超出父类方法的状态。</li></ul><p>循环依赖：提取接口</p><p>狎昵关系：两个类过分亲密，高耦合</p><p>接口隔离原则：接口的稳定，适应变化，同一个类提取不同的接口</p><p>依赖倒置原则：依赖于抽象</p><p>开放封闭原则：扩展开放，修改封闭</p><p>单一职责原则：单一功能</p><p>合成/聚合复用原则：尽量使用合成/聚合形式的委托重用，尽量不使用继承重用</p><blockquote><p>子类是父类的特殊类型</p></blockquote><h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><ul><li>架构模式：MVC，层次等</li><li>设计模式：抽象工程之类的</li><li>实现模式：具体到写代码，类名，变量名，函数名</li></ul><table><thead><tr><th></th><th>创建模式</th><th>结构模式</th><th>行为模式</th></tr></thead><tbody><tr><td>类</td><td>抽象工厂</td><td>适配器</td><td>观察者模式</td></tr><tr><td>类</td><td>单例</td><td>桥 - 装饰</td><td>策略模式</td></tr><tr><td>类</td><td></td><td>代理</td><td>状态</td></tr><tr><td>类</td><td></td><td>门面</td><td></td></tr></tbody></table><h4 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h4><p>工厂表示一组产品的打包，不同的工厂对应不同的组合</p><p>抽象工厂是一个接口，用于生成一组对象，实际对象根据类别又有自己的接口</p><p>低耦合，且添加新的更容易</p><h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><p>管理类或控制类系统中只需要一个实例，该实例在程序中被创建</p><p>要求类的构造方法是私有的，有公有的方法获取该类的实例，实例变量为私有或受保护的。</p><h4 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h4><p>利用适配器进行接口的转换</p><h4 id="桥模式"><a href="#桥模式" class="headerlink" title="桥模式"></a>桥模式</h4><p>先将不同的变化维度（单一职责原则）分离，每个维度都有独立的抽象和继承结构，建立抽象耦合</p><h4 id="装饰模式"><a href="#装饰模式" class="headerlink" title="装饰模式"></a>装饰模式</h4><p>对于负数功能，若将其归入不同的变化维度太多了，归入装饰器</p><p>将 Bridge 中的抽象和实现合二为一了，是其特殊形式</p><h4 id="门面模式"><a href="#门面模式" class="headerlink" title="门面模式"></a>门面模式</h4><p>外部与一个子系统的通信必须通过一个统一的门面对象，且单例</p><h4 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h4><p>中介，负责资源的中间处理，节省主体的时间</p><p>用来对有价值稀缺资源的管理，比如数据库的连接等，提高资源的利用率或系统性能</p><h4 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h4><p>MVC 适用了观察者</p><p>当主题对象在状态上发生变化时，会通知所有观察者对象，使它们能够自动更新自己</p><h4 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h4><p>将每一个算法封装到具有共同接口的独立的类中</p><p>灵活可以相互替换</p><h4 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h4><p>使用一个具有多个子类的类，提前创建所有对应的子类，状态变化时换类</p><h2 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h2><p>测试的通过并不能用来证明整个系统是正确的</p><h3 id="测试V模型-测试"><a href="#测试V模型-测试" class="headerlink" title="测试V模型 + 测试*"></a>测试V模型 + 测试*</h3><table><thead><tr><th>测试名称</th><th>开发阶段</th><th>测试对象</th><th>测试方法</th></tr></thead><tbody><tr><td>单元测试</td><td>实现</td><td>类测试</td><td>白盒测试</td></tr><tr><td>集成测试</td><td>系统设计</td><td>包或系统测试-交互</td><td>灰盒测试</td></tr><tr><td>系统测试</td><td>系统需求</td><td>构件和接口测试</td><td>黑盒测试</td></tr><tr><td>验收测试</td><td>客户需求</td><td>现场复现</td><td>黑盒测试</td></tr></tbody></table><p>为什么要早修正</p><ul><li>涉及的范围越来越广泛</li><li>曾经付出的成本越来越高</li></ul><p>看一眼 P9 左下图</p><h5 id="非功能测试"><a href="#非功能测试" class="headerlink" title="非功能测试"></a>非功能测试</h5><p>峰值，尖峰，压力，浸泡</p><h4 id="软件度量"><a href="#软件度量" class="headerlink" title="软件度量"></a>软件度量</h4><h5 id="McCabe-控制流图"><a href="#McCabe-控制流图" class="headerlink" title="McCabe + 控制流图"></a>McCabe + 控制流图</h5><p>边数 - 点数 + 2 = 分支结点+1</p><h5 id="LCOM"><a href="#LCOM" class="headerlink" title="LCOM"></a>LCOM</h5><p><img src="https://s2.loli.net/2021/12/20/3BY8Z46qzw5btSX.png" alt=""></p><p>m为方法数，a为所含的实例变量数，为访问每个实例变量的方法数。</p><h4 id="等价类测试-黑盒"><a href="#等价类测试-黑盒" class="headerlink" title="等价类测试 - 黑盒"></a>等价类测试 - 黑盒</h4><ul><li>数值：一般，一个有效，两个无效</li><li>其他：一个有效，一个无效</li><li>传统 + 强等价类方法</li><li>边界值分析：对数值边界创建有效或无效等价类</li></ul><h4 id="控制流的覆盖测试-白盒"><a href="#控制流的覆盖测试-白盒" class="headerlink" title="控制流的覆盖测试 - 白盒"></a>控制流的覆盖测试 - 白盒</h4><ul><li>语句覆盖 - 结点</li><li>分支覆盖 - 边</li><li>条件覆盖 - 原子谓词真假</li></ul><p>满足分支覆盖要求一定会满足语句覆盖要求</p><ul><li><p>分支覆盖不能覆盖条件，因为条件是原子谓词判断，但对于组合条件可能会有诸如短路的情况</p></li><li><p>条件不能覆盖分支，因为是原子谓词，可能有没覆盖到的情况</p></li></ul><p>分支，条件并不完全覆盖，综合一下</p><ul><li><p>多条件组合覆盖 - 原子谓词及其组合覆盖</p></li><li><p>基本路径测试 - 独立路径 （ 独立路径要求在路径中至少含有一条未曾使用过的边）</p><ul><li><code>&lt;= V(G)</code></li></ul></li></ul><h4 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h4><h4 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h4><p>可测试性 - 彼此依赖而需要模拟程序或桩</p><p>设计简单方法</p><p>避免私有方法</p><p>优先使用通用方法</p><p>组合优于继承</p><p>避免隐藏的依赖关系与全局状态</p><h4 id="人工测试"><a href="#人工测试" class="headerlink" title="人工测试"></a>人工测试</h4><p>审查 - 评审 - 走查</p><h2 id="CMMI"><a href="#CMMI" class="headerlink" title="CMMI"></a>CMMI</h2><p>统一的，明确定义的组织级软件工程</p><p>初始级 - 已管理 - 已定义 - 已量化管理 - 优化</p><h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><h3 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h3><p>注意同一个图中的用例在同一个抽象级别</p><h4 id="角色-Actor"><a href="#角色-Actor" class="headerlink" title="角色 Actor"></a>角色 Actor</h4><p>人或软件系统，使用系统，与系统有关系</p><h4 id="寻找用例"><a href="#寻找用例" class="headerlink" title="寻找用例"></a>寻找用例</h4><h4 id="包含关系-lt-lt-include-gt-gt"><a href="#包含关系-lt-lt-include-gt-gt" class="headerlink" title="包含关系 &lt;&lt;include&gt;&gt;"></a>包含关系 <code>&lt;&lt;include&gt;&gt;</code></h4><p>一些通用，共同基础过程的功能，避免重复实现 - 非逻辑分解</p><p>关键词：依赖，包含</p><h4 id="扩展关系-lt-lt-extend-gt-gt"><a href="#扩展关系-lt-lt-extend-gt-gt" class="headerlink" title="扩展关系 &lt;&lt;extend&gt;&gt;"></a>扩展关系 <code>&lt;&lt;extend&gt;&gt;</code></h4><p>特殊情况，需要有条件</p><p>关键词：错误，特殊情况</p><h3 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h3><p>跨用例</p><h4 id="图示"><a href="#图示" class="headerlink" title="图示"></a>图示</h4><ul><li><strong>开始点</strong>：实心圆点</li><li><strong>结束点</strong>：实心加一圈</li><li><strong>动作</strong>：圆角矩形</li><li><strong>条件</strong>：菱形 - 可省略</li><li><strong>分支，汇聚</strong>：粗横线，{and}，{or}</li><li><strong>对象</strong>：直角矩形</li><li><strong>集合</strong>：多个动作（三叉戟）</li></ul><p>如果动作具有多个汇聚的箭头，需要等待所有分支都完成</p><h4 id="泳道"><a href="#泳道" class="headerlink" title="泳道"></a>泳道</h4><p>按角色划分</p><h4 id="基本事件流和备选"><a href="#基本事件流和备选" class="headerlink" title="基本事件流和备选"></a>基本事件流和备选</h4><p>利用中括号<code>[]</code>围绕子活动或者进入备选事件流的条件，可以另用活动图描述</p><h3 id="数据流图"><a href="#数据流图" class="headerlink" title="数据流图"></a>数据流图</h3><h4 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h4><p>实体，处理，存储，流</p><h4 id="画法"><a href="#画法" class="headerlink" title="画法"></a>画法</h4><p>看课件</p><h3 id="包图"><a href="#包图" class="headerlink" title="包图"></a>包图</h3><p>大包嵌套小包，小包嵌套类</p><p>⊕：嵌套关系</p><p>虚线：层间的使用(依赖)关系</p><p>实线：包间的使用(依赖)关系</p><p>空心三角：继承</p><p>避免循环依赖</p><h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><h4 id="领域模型-1"><a href="#领域模型-1" class="headerlink" title="领域模型"></a>领域模型</h4><h5 id="实体类-lt-lt-entity-gt-gt"><a href="#实体类-lt-lt-entity-gt-gt" class="headerlink" title="实体类 &lt;&lt;entity&gt;&gt;"></a>实体类 <code>&lt;&lt;entity&gt;&gt;</code></h5><ul><li>类名：构造性</li><li>变量：<ul><li>可见性 (private, public ..) - (<code>-+_~</code>)</li><li>依赖（计算）属性，(<code>/</code>)</li><li>名字：</li><li>类型：UML定义的，int String…</li><li>下划线：表示静态</li></ul></li><li>方法：<ul><li>同上</li><li>参数三种类型：in, out, inout</li></ul></li></ul><p>没有方法</p><h4 id="关联类"><a href="#关联类" class="headerlink" title="关联类"></a>关联类</h4><p>描述两个对象之间的联系</p><h3 id="顺序图"><a href="#顺序图" class="headerlink" title="顺序图"></a>顺序图</h3><p>表示一个用例，同步调用的方式（阻塞）</p><ul><li>控制焦点：长方形</li><li>生命线：竖虚线</li><li>同步消息：实心三角箭头（左右都可以）</li><li>返回消息：虚线左箭头</li><li>异步消息：创建对象，虚线右箭头</li></ul><p>结构：</p><ul><li>方括号 condition</li><li>可选：opt - 有条件执行的动作，不满足条件就不执行</li><li>多分支 alt - 不同的条件执行不同</li><li>循环 loop (start,end,condition)</li></ul><h3 id="通信图"><a href="#通信图" class="headerlink" title="通信图"></a>通信图</h3><p>可嵌套，或用编号 编号表示嵌套级别</p><p>其他与顺序图类似</p><h3 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h3><p>唯一的开始状态，可以有多个结束状态，针对确定性行为</p><p>转台框中的三个状态：Entry - Do - Exit</p><h4 id="状态转换-过渡"><a href="#状态转换-过渡" class="headerlink" title="状态转换 - 过渡"></a>状态转换 - 过渡</h4><p>事件+[条件]+动作</p><p>在事件被触发并且满足某个特定条件的情况下才会进行</p><p>动作：entry 执行前，未进入状态时做的动作</p><p>层次化组织：框起来</p><p>分解：分解为互不依赖的子状态 - 子状态离开</p><p>并行：有两个输入，则都完成才会被触发</p><h2 id="体系结构风格"><a href="#体系结构风格" class="headerlink" title="体系结构风格"></a>体系结构风格</h2><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>从低到高排序</p><p>内聚程度：内部各个元素彼此结合的紧密程度 - 越高，模块独立性越强</p><ul><li>偶然内聚</li><li>逻辑内聚</li><li>时间内聚</li><li>通信内聚</li><li>顺序内聚</li><li>功能内聚</li></ul><p>耦合程度：模块之间互相连接的紧密程度 - 越低，模块独立性越强</p><p>非直接 &lt; 数据 &lt; 标记 &lt; 控制 &lt; 外部 &lt; 公共 &lt; 内容</p><h3 id="4-1-视图模型"><a href="#4-1-视图模型" class="headerlink" title="4+1 视图模型"></a>4+1 视图模型</h3><p>用例在中间，四周是逻辑视图（功能需求），开发试图（软件模块），进程视图（并发），物理视图（硬件）</p>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review/" title="Software Engineering Review">https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+              <a href="/tags/SHARING/" rel="tag"><i class="fa fa-tag"></i> SHARING</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NOTES/COURSES/Advanced_C/Unix-Network-Programming-Review/" rel="prev" title="Unix Network Programming Review">
+      <i class="fa fa-chevron-left"></i> Unix Network Programming Review
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">软件工程复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">软件开发方法*</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">传统开发方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">面向对象方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%90%84%E9%98%B6%E6%AE%B5%E6%B4%BB%E5%8A%A8%E5%8F%8A%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.2.</span> <span class="nav-text">软件开发各阶段活动及任务*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">生命周期模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.1.</span> <span class="nav-text">瀑布模型*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.2.</span> <span class="nav-text">快速原型模型*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.3.</span> <span class="nav-text">增量模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.4.</span> <span class="nav-text">螺旋模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%96%B7%E6%B3%89%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.5.</span> <span class="nav-text">喷泉模型*</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7"><span class="nav-number">1.4.</span> <span class="nav-text">敏捷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E5%AE%A3%E8%A8%80"><span class="nav-number">1.4.1.</span> <span class="nav-text">敏捷宣言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E5%92%8C%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.4.2.</span> <span class="nav-text">增量和迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SCRUM"><span class="nav-number">1.4.3.</span> <span class="nav-text">SCRUM*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DevOps"><span class="nav-number">1.4.4.</span> <span class="nav-text">DevOps</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7-amp-%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.5.1.</span> <span class="nav-text">用户 &amp; 系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%89%E4%BC%97"><span class="nav-number">1.5.2.</span> <span class="nav-text">涉众</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9A%84%E7%A1%AE%E5%AE%9A"><span class="nav-number">1.5.3.</span> <span class="nav-text">系统功能的确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="nav-number">1.5.4.</span> <span class="nav-text">分析过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82"><span class="nav-number">1.5.4.1.</span> <span class="nav-text">三种功能性需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E8%AF%B4%E6%98%8E%E4%B9%A6"><span class="nav-number">1.5.4.2.</span> <span class="nav-text">需求说明书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E8%B7%9F%E8%B8%AA"><span class="nav-number">1.5.4.3.</span> <span class="nav-text">需求跟踪</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84"><span class="nav-number">1.6.</span> <span class="nav-text">软件架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0"><span class="nav-number">1.6.1.</span> <span class="nav-text">基本元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E9%A3%8E%E6%A0%BC"><span class="nav-number">1.6.2.</span> <span class="nav-text">数据流风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E6%9E%84%E5%BB%BA%E9%A3%8E%E6%A0%BC"><span class="nav-number">1.6.3.</span> <span class="nav-text">独立构建风格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MVC%E6%9E%B6%E6%9E%84"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">MVC架构*</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E9%A3%8E%E6%A0%BC-%E4%BB%93%E5%BA%93%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.6.4.</span> <span class="nav-text">数据中心风格 - 仓库系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.7.</span> <span class="nav-text">类的分析与设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="nav-number">1.7.1.</span> <span class="nav-text">类的种类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">领域模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">类的关系*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E7%B1%BB-amp-%E6%8E%A7%E5%88%B6%E7%B1%BB"><span class="nav-number">1.7.1.4.</span> <span class="nav-text">管理类 &amp; 控制类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">1.7.1.5.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB-lt-lt-enumeration-gt-gt"><span class="nav-number">1.7.1.6.</span> <span class="nav-text">枚举类 &lt;&lt;enumeration&gt;&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.7.1.7.</span> <span class="nav-text">界面设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CASE%E5%B7%A5%E5%85%B7"><span class="nav-number">1.7.1.8.</span> <span class="nav-text">CASE工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB-1"><span class="nav-number">1.8.</span> <span class="nav-text">类的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.8.1.</span> <span class="nav-text">集合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%9A%E5%90%88-%E8%81%9A%E9%9B%86"><span class="nav-number">1.8.1.1.</span> <span class="nav-text">聚合 - 聚集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88"><span class="nav-number">1.8.1.2.</span> <span class="nav-text">组合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96"><span class="nav-number">1.8.1.3.</span> <span class="nav-text">依赖</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.9.</span> <span class="nav-text">类的详细设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%92%E5%9B%BE"><span class="nav-number">1.9.1.</span> <span class="nav-text">盒图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PAD%E5%9B%BE"><span class="nav-number">1.9.2.</span> <span class="nav-text">PAD图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E5%AE%9A%E8%A1%A8"><span class="nav-number">1.9.3.</span> <span class="nav-text">判定表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PDL"><span class="nav-number">1.9.4.</span> <span class="nav-text">PDL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OCL"><span class="nav-number">1.9.5.</span> <span class="nav-text">OCL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%8C%96"><span class="nav-number">1.10.</span> <span class="nav-text">设计优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#smell"><span class="nav-number">1.10.1.</span> <span class="nav-text">smell</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E5%86%99"><span class="nav-number">1.10.1.1.</span> <span class="nav-text">重写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.</span> <span class="nav-text">模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.1.</span> <span class="nav-text">抽象工厂模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.2.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.3.</span> <span class="nav-text">适配器模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.4.</span> <span class="nav-text">桥模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.5.</span> <span class="nav-text">装饰模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.6.</span> <span class="nav-text">门面模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.7.</span> <span class="nav-text">代理模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.8.</span> <span class="nav-text">观察者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.9.</span> <span class="nav-text">策略模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.2.10.</span> <span class="nav-text">状态模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="nav-number">1.11.</span> <span class="nav-text">软件测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95V%E6%A8%A1%E5%9E%8B-%E6%B5%8B%E8%AF%95"><span class="nav-number">1.11.1.</span> <span class="nav-text">测试V模型 + 测试*</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9D%9E%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">1.11.1.0.1.</span> <span class="nav-text">非功能测试</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%BA%A6%E9%87%8F"><span class="nav-number">1.11.1.1.</span> <span class="nav-text">软件度量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#McCabe-%E6%8E%A7%E5%88%B6%E6%B5%81%E5%9B%BE"><span class="nav-number">1.11.1.1.1.</span> <span class="nav-text">McCabe + 控制流图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LCOM"><span class="nav-number">1.11.1.1.2.</span> <span class="nav-text">LCOM</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E7%B1%BB%E6%B5%8B%E8%AF%95-%E9%BB%91%E7%9B%92"><span class="nav-number">1.11.1.2.</span> <span class="nav-text">等价类测试 - 黑盒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81%E7%9A%84%E8%A6%86%E7%9B%96%E6%B5%8B%E8%AF%95-%E7%99%BD%E7%9B%92"><span class="nav-number">1.11.1.3.</span> <span class="nav-text">控制流的覆盖测试 - 白盒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%AD%E8%A8%80"><span class="nav-number">1.11.1.4.</span> <span class="nav-text">断言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Junit"><span class="nav-number">1.11.1.5.</span> <span class="nav-text">Junit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%BA%E5%B7%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">1.11.1.6.</span> <span class="nav-text">人工测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMMI"><span class="nav-number">1.12.</span> <span class="nav-text">CMMI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UML"><span class="nav-number">1.13.</span> <span class="nav-text">UML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="nav-number">1.13.1.</span> <span class="nav-text">用例图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%92%E8%89%B2-Actor"><span class="nav-number">1.13.1.1.</span> <span class="nav-text">角色 Actor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%94%A8%E4%BE%8B"><span class="nav-number">1.13.1.2.</span> <span class="nav-text">寻找用例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E5%85%B3%E7%B3%BB-lt-lt-include-gt-gt"><span class="nav-number">1.13.1.3.</span> <span class="nav-text">包含关系 &lt;&lt;include&gt;&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E5%85%B3%E7%B3%BB-lt-lt-extend-gt-gt"><span class="nav-number">1.13.1.4.</span> <span class="nav-text">扩展关系 &lt;&lt;extend&gt;&gt;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="nav-number">1.13.2.</span> <span class="nav-text">活动图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%A4%BA"><span class="nav-number">1.13.2.1.</span> <span class="nav-text">图示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%B3%E9%81%93"><span class="nav-number">1.13.2.2.</span> <span class="nav-text">泳道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BA%8B%E4%BB%B6%E6%B5%81%E5%92%8C%E5%A4%87%E9%80%89"><span class="nav-number">1.13.2.3.</span> <span class="nav-text">基本事件流和备选</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE"><span class="nav-number">1.13.3.</span> <span class="nav-text">数据流图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.13.3.1.</span> <span class="nav-text">基本符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%BB%E6%B3%95"><span class="nav-number">1.13.3.2.</span> <span class="nav-text">画法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%9B%BE"><span class="nav-number">1.13.4.</span> <span class="nav-text">包图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE"><span class="nav-number">1.13.5.</span> <span class="nav-text">类图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B-1"><span class="nav-number">1.13.5.1.</span> <span class="nav-text">领域模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93%E7%B1%BB-lt-lt-entity-gt-gt"><span class="nav-number">1.13.5.1.1.</span> <span class="nav-text">实体类 &lt;&lt;entity&gt;&gt;</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E7%B1%BB"><span class="nav-number">1.13.5.2.</span> <span class="nav-text">关联类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%9B%BE"><span class="nav-number">1.13.6.</span> <span class="nav-text">顺序图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%9B%BE"><span class="nav-number">1.13.7.</span> <span class="nav-text">通信图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%9B%BE"><span class="nav-number">1.13.8.</span> <span class="nav-text">状态图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2-%E8%BF%87%E6%B8%A1"><span class="nav-number">1.13.8.1.</span> <span class="nav-text">状态转换 - 过渡</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E9%A3%8E%E6%A0%BC"><span class="nav-number">1.14.</span> <span class="nav-text">体系结构风格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-number">1.14.1.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.14.2.</span> <span class="nav-text">4+1 视图模型</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">143</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/Augists" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-git-alt fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_45910536" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_45910536" rel="noopener" target="_blank"><i class="fab fa-cuttlefish fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/ZDCZ_Augists" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;ZDCZ_Augists" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2057240784&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://i.loli.net/2020/08/02/Qv8LmAnhs3u6fSR.jpg" title="WeChat → https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;08&#x2F;02&#x2F;Qv8LmAnhs3u6fSR.jpg" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>
