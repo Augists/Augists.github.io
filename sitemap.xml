@@ -1054,14 +1054,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/TERMINAL/</loc>
+    <loc>https://augists.top/tags/IPHONE/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/IPHONE/</loc>
+    <loc>https://augists.top/tags/TERMINAL/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1103,13 +1103,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/DEVICE/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/ENGLISH/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1117,21 +1110,14 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/DEVICE/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/GIT/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/EMACS/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/VIM/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1146,6 +1132,20 @@
   
   <url>
     <loc>https://augists.top/tags/HANMING/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/EMACS/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/VIM/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1208,6 +1208,34 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/SHARING/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/DATASTRUCTURE/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/JAVA/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/MATLAB/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/MFC/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1243,28 +1271,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/SHARING/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/DATASTRUCTURE/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/JAVA/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/MATLAB/</loc>
+    <loc>https://augists.top/tags/GOLANG/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1285,13 +1292,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/GITHUB/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/VIRUS/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1299,14 +1299,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/UNIX/</loc>
+    <loc>https://augists.top/tags/GITHUB/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://augists.top/tags/GOLANG/</loc>
+    <loc>https://augists.top/tags/UNIX/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
