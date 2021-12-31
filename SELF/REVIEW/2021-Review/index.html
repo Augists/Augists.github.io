@@ -31,21 +31,20 @@
   })();
 </script>
 
-  <meta name="description" content="Study Notes of Linux Terminal Command EP2-Run ScriptCopyright@HuaHuaJiangLeetCode">
+  <meta name="description" content="Written on December 31st 2021">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Terminal Command Run Script">
-<meta property="og:url" content="https://augists.top/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/index.html">
+<meta property="og:title" content="2021 Review">
+<meta property="og:url" content="https://augists.top/SELF/REVIEW/2021-Review/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
-<meta property="og:description" content="Study Notes of Linux Terminal Command EP2-Run ScriptCopyright@HuaHuaJiangLeetCode">
+<meta property="og:description" content="Written on December 31st 2021">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-10T07:41:43.000Z">
-<meta property="article:modified_time" content="2020-06-27T06:25:25.307Z">
+<meta property="article:published_time" content="2021-12-31T02:32:44.000Z">
+<meta property="article:modified_time" content="2021-12-31T15:46:19.637Z">
 <meta property="article:author" content="Augists">
-<meta property="article:tag" content="TERMINAL">
-<meta property="article:tag" content="NOTE">
+<meta property="article:tag" content="REVIEW">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://augists.top/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/">
+<link rel="canonical" href="https://augists.top/SELF/REVIEW/2021-Review/">
 
 
 <script id="page-configurations">
@@ -58,7 +57,7 @@
   };
 </script>
 
-  <title>Linux Terminal Command Run Script | Augists-ZDCZ</title>
+  <title>2021 Review | Augists-ZDCZ</title>
   
 
 
@@ -178,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/REVIEW/2021-Review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
@@ -191,7 +190,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Linux Terminal Command Run Script
+          2021 Review
         </h1>
 
         <div class="post-meta">
@@ -200,19 +199,13 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-06-10 15:41:43" itemprop="dateCreated datePublished" datetime="2020-06-10T15:41:43+08:00">2020-06-10</time>
+              <time title="Created: 2021-12-31 10:32:44 / Modified: 23:46:19" itemprop="dateCreated datePublished" datetime="2021-12-31T10:32:44+08:00">2021-12-31</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-27 14:25:25" itemprop="dateModified" datetime="2020-06-27T14:25:25+08:00">2020-06-27</time>
-              </span>
 
           
-            <div class="post-description">Study Notes of Linux Terminal Command EP2-Run Script<br>Copyright@HuaHuaJiangLeetCode</div>
+            <div class="post-description">Written on December 31st 2021</div>
 
         </div>
       </header>
@@ -223,10 +216,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <iframe src="//player.bilibili.com/player.html?aid=327628262&bvid=BV1nA411h7KD&cid=177233379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<div class="note warning">
-            <blockquote><p>Copyright@HuaHuaJiangLeetCode</p></blockquote><h1 id="EP2-运行脚本"><a href="#EP2-运行脚本" class="headerlink" title="EP2 运行脚本"></a>EP2 运行脚本</h1><h2 id="python-my-echo的运行"><a href="#python-my-echo的运行" class="headerlink" title="python my_echo的运行"></a>python my_echo的运行</h2><ol><li>在文件开头添加</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python3</span><br></pre></td></tr></table></figure><ol start="2"><li>添加可执行权限</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x my_echo.py</span><br></pre></td></tr></table></figure><p><em>这时已经可以通过<code>./my_echo.py</code>来执行了</em></p><ol start="3"><li>去掉py后缀</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv my_echo.py my_echo</span><br></pre></td></tr></table></figure><p><em>运行脚本：<code>./my_echo hello world</code></em></p><ol start="4"><li>把当前路径添加到环境变量中</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$PWD</span></span><br></pre></td></tr></table></figure><p><em>可以在任意位置运行my_echo脚本，可以通过<code>which my_echo</code>查看脚本位置</em></p><p><em>执行脚本：<code>my_echo hello world</code></em></p><blockquote><p><code>which python3</code>查询到的路径非常长，并非<code>/usr/bin/env python3</code>?</p><p>加入<code>#!/usr/bin/env python3</code>后，系统会在执行脚本时自动从环境变量中寻找python3的路径。这一步的意思是<strong>指定解释器</strong><br>前提是已经将python3加入环境变量中</p></blockquote><h3 id=""><a href="#" class="headerlink" title="#!"></a>#!</h3><ul><li><p><code>#!</code>: shebang (<strong>Sha</strong>rp<strong>Bang</strong> of ha<strong>SHBang</strong>)</p><ul><li>必须放在第一行，并使用绝对路径</li></ul></li></ul><h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><ul><li><p>chmod: (<strong>Ch</strong>ange <strong>Mod</strong>e) 改变文件权限</p><ul><li><p>% chmod +x foo    <em># 增加可执行权限 / +w +r</em></p></li><li><p>% chmod -x foo    <em># 移除可执行权限 / -w -r</em></p></li><li><p>% chmod 740 foo    <em># 把foo权限设置为740</em></p><ul><li>Owner:    7 = 1 + 2 + 4 = 可执行 + 可写 + 可读</li><li>Group:    4 = 4 = 可读</li><li>Others:    0 = 没有任何权限</li></ul></li></ul></li><li><p>常见：</p><ul><li>644    -rw-r–r–  <em># default</em></li><li>755    -rwxr-xr-x</li><li>777    -rwxrwxrwx    <em># 危险！ use chown / chgrp instead</em></li></ul></li></ul><h2 id="文件基本操作"><a href="#文件基本操作" class="headerlink" title="文件基本操作"></a>文件基本操作</h2><ul><li><p>mv: (<strong>M</strong>o<strong>v</strong>e) 移动文件 重命名 剪切+粘贴</p><ul><li>% mv hwllo.txt hello.txt    <em># 重命名</em></li><li>% mv 四六级 大学/英语/    <em># 移动文件夹</em></li></ul></li><li><p>cp: (<strong>C</strong>o<strong>p</strong>y) 复制文件</p><ul><li>% cp a.txt a_copy.txt        <em># 复制单个文件</em></li><li>% cp -r dir1 dir2            <em># 复制文件夹 -r = recursive</em></li></ul></li><li><p>rm: (<strong>R</strong>e<strong>m</strong>ove) 删除文件 <strong>没有回收站！！！</strong></p><ul><li>% rm a.txt                <em># 删除单个文件</em></li><li>% rm a.txt b.txt c.txt    <i># 删除多个文件 / rm *.txt</i></li><li>% rm -r dir1                <em># 递归删除dir1和所有子目录/文件</em></li></ul></li></ul><h2 id="PATH-环境变量-which-命令"><a href="#PATH-环境变量-which-命令" class="headerlink" title="$PATH 环境变量 + which 命令"></a>$PATH 环境变量 + which 命令</h2><ul><li>$PATH: 以：分割的文件夹列表</li></ul><p>从哪里去找可执行文件（按照文件夹的顺序）</p><pre><code>- % PATH=$PATH:%PWD            *# 把当前目录追加到PATH中*- % echo $PATH&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;...&lt;span class=&quot;symbol&quot;&gt;:/Users/Augists/cmd2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</code></pre><ul><li><p>which: locate a program file in user’s path</p><ul><li>% which my_echo<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>Augists<span class="regexp">/cmd2/my</span>_echo</span><br></pre></td></tr></table></figure></li><li>% my_echo hello world        <em># runs from anywhere</em><br>hello world</li></ul></li></ul><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nA411h7KD/?spm_id_from=333.788.videocard.0">玩转Linux命令行 - 运行脚本 - EP2</a></p>
+        <div class="note warning">
+            <p>由于疫情的影响，大三上学期的课时和考试都压缩了近三个周的时间。我也被迫没有像前两年一样能早一点写完自己的年终总结。站在这个时间点上，大学四年的必修课已经全部结束，只剩下学期的6门选修课程。这可能也意味着我的大学生活即将画上句号，紧接着的是需要考虑更为现实的一些问题。回顾整个2021年，完全可以用“魔幻”来形容。今年我打算换个方式，把这段经历讲给每一个看到的人听。</p><div class="note info">            <p>曾经有一个学长，人做的非常耿直，思维方式和很多人相差甚远，总是能做出一些很奇怪的事情。在他心里事物的重要程度很多人也无法理解，例如他一直认为在打扮自己这件事情上花费时间是世界上最蠢的了。进入大二后，他选择了留在dv工作室，做一个上要负责学院和校区活动的苦力，下要教好大一新干事的老师。所以，在dv为数不多的例会中，他有四次站在了讲台上，并且在寒假组织了dv大作业的例会，并首次做了b站的直播。在工作上，他可以放弃任何一门课程，来保证随时可以完成学院校区的大大小小的任务。这一学年，很多课他都没怎么去过，大多数时间工作室的副部也只有他守在那里，即便是期末考试前的一个周他每天晚上留在dv做图导出到两点他也没什么所谓。俗话说，干一行爱一行。既然选择了，那便去做。但是，他不能忍受的是别人的不理解。他不能忍受别人把他的工作定义为偷偷出去卷，他不能忍受在期末前的几天带着十个干事熬夜做了上百张图之后被当作没有活干，他不能忍受一年几百个小时的付出要和别的部门划等号甚至小于号，他最不能忍受的是作为工作室负责的老师居然不能理解大家的辛苦。他看着同事心疼，因为他无法想象几个原本应该在认真学着敲代码的本科生需要把无数的时间拿出来学习制作海报、制作视频，居然还会被要求再做的更好一点。要知道这种任务的报价完全不输于被公认为工资第一梯队的程序员的小项目报价，他们却几乎没什么回报。这一年，工作室添购了桌子椅子，新买了机箱等一众零零散散的配件，而直到2021年的最后一天都没能收到那少得可怜的工资奖励。</p><p>最终，他放弃了。5月份，在通过别人作为媒介传达无效后，他在会议上与负责老师针锋相对。留任面试中，他在ppt中用每一页用黑底白字协商在过去一年承担的任务，他走了ppt都没有播放完。他可以不在乎自己获得什么，可以无所谓后面的评选，他只想让人们能知道能理解他在dv工作室这一年的辛苦。在2021年的最后一天，他终于释然了。</p><div class="note danger">            <p>仰天大笑出门去，我辈岂是蓬蒿人</p>          </div>          </div><p>对于2021年前半部分的总结，大体上每天的记忆只剩下dv的工作、玩玩游戏就没了。寒假因为同学都在玩，把原神又拾起来，然后把自己的账号肝成天花板，还第一次在游戏里氪金。前后一共花了800多，账号平均33发出金。收手了，账号送给朋友，从此再也不碰。</p><p>这学期开始做校区心协的理事部部长，手下突然变成了二十多个人。本来在dv就全都是我崽崽，现在又多出来二十多个崽崽。是开心，也是责任。是教大家怎么才是干活，是看着副部能承担起大梁的欣慰，是每一次搞活动都逼着大家能随口说出来旁边人的名字，是解答每一个问问题的崽崽。很开心，可以又认识到这么多可爱的人。和之前的两年一样，没有人是为了什么社会工作奖学金在阿谀奉承，跟大家在一起，只有开心</p><p>幸运的是，4月底开始参与到嘉禾连理论坛的项目中，并且在五一正式上线开放测试。论坛一开始搭建在我的树莓派上，加挂了一个硬盘就作为测试版上线了。被网信中心找上来之后，论坛逐渐开始正规化，尝试并转向了各种云服务商，并使用着最为便宜的方案……认识了各种大佬，见识到很多以前没有接触过的东西。论坛这个项目被作为创新创业项目陪伴我们拿到了校、省奖，尽管由于学校的时间安排问题让我们被迫止步于辽宁省，但是非常开心我们的项目能收到来自华为的各位大佬的青睐。</p><p>更幸运的是，7月份能有机会和学长们一起去沈阳的宝马工厂拼3天2夜。从刚到的懵逼到通宵准备答辩。我们是全场最为年轻的队伍，也是唯一一个全由本科生组成的队伍，在一众来自美国、清北浙的研究生甚至博士生队伍中杀出重围，得到了来自宝马德国总部的工程师的赏识，非常侥幸拿到全国冠军🏆。3天，3个赛道，长了不止3斤。谢谢宝马工厂的热情款待，让我们不仅能开心的参与活动，拿到额外的活动小礼品，还拿到了最佳人气奖🏆</p><p>8月是今年最黑暗的一段时间。对现在的担忧、对未来的焦虑，我无法很好的调节自己的情绪，让我找不到方向，让我不得不放下了很多东西。谢谢从8月份一直理解、帮助我的每一个人。我知道，心态的转变肯定不是一朝一夕就能做到的，有些东西对于我这个不太擅长表达自己的人来说有些困难，所以很多是需要自己一点一点来慢慢化解开，过程痛苦有漫长</p><p>谢谢hzm的ps5和switch，让我这个游戏白痴踏上新大陆。在坚定我需要整一个来party game的想法同时让我在选择哪一个上纠结死；感谢老胡的3070，让我获得了一点科研体验顺便能在寝室联机</p><p>想了想，今年挣了不少钱。奖金、奖学金、挖矿（合法时）、以及看不见的工资。今年也没少花钱。买了心心念念的HHKB，把之前的poker借出去；给家里添了把心水的人体工学椅，就是我日常都不在家；在寝室放了台新显示器，是满足我需求的最低价格的显示器了；买了二手的架子，把寝室布置换了个底朝天；买了好一点的台灯，终于不用忍受之前台灯的电流声……</p><p>2021，注定不平凡；2022，我们拭目以待</p>
           </div>
 
     </div>
@@ -239,11 +230,11 @@
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>Post author:  </strong>HuaHuaJiangLeetCode
+    <strong>Post author:  </strong>Augists
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://augists.top/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/" title="Linux Terminal Command Run Script">https://augists.top/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Run-Script/</a>
+    <a href="https://augists.top/SELF/REVIEW/2021-Review/" title="2021 Review">https://augists.top/SELF/REVIEW/2021-Review/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -333,8 +324,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/TERMINAL/" rel="tag"><i class="fa fa-tag"></i> TERMINAL</a>
-              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+              <a href="/tags/REVIEW/" rel="tag"><i class="fa fa-tag"></i> REVIEW</a>
           </div>
 
         
@@ -343,13 +333,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Newcomer/" rel="prev" title="Linux Terminal Command Newcomer">
-      <i class="fa fa-chevron-left"></i> Linux Terminal Command Newcomer
+    <a href="/NOTES/COURSES/Software_Engineering/Software-Engineering-Review-2/" rel="prev" title="Software Engineering Review 2">
+      <i class="fa fa-chevron-left"></i> Software Engineering Review 2
     </a></div>
-      <div class="post-nav-item">
-    <a href="/NOTES/TERMINAL/Linux-Terminal-Command/Linux-Terminal-Command-Event-Handling/" rel="next" title="Linux Terminal Command Event Handling">
-      Linux Terminal Command Event Handling <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -415,7 +402,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#EP2-%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">EP2 运行脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-my-echo%E7%9A%84%E8%BF%90%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">python my_echo的运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">#!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod"><span class="nav-number">1.1.2.</span> <span class="nav-text">chmod</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">文件基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PATH-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-which-%E5%91%BD%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">$PATH 环境变量 + which 命令</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
