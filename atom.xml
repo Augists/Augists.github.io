@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-01-03T15:31:07.219Z</updated>
+  <updated>2022-01-10T13:00:39.981Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Why My Devices Cannot Automatically Connect to Mbp</title>
+    <link href="https://augists.top/SELF/SHARING/LIFE/Why-my-devices-cannot-automatically-connect-to-mbp/"/>
+    <id>https://augists.top/SELF/SHARING/LIFE/Why-my-devices-cannot-automatically-connect-to-mbp/</id>
+    <published>2022-01-10T12:27:43.000Z</published>
+    <updated>2022-01-10T13:00:39.981Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>早先的无线设备大多使用的是 2.4G 无线接收器来进行传输，例如之前使用的罗技 M370 和 ikbc poker，并且耳机也一直用着 3.5mm 的音频线，可以说对蓝牙真无线一直没有接触很多<br>自从去年换用了 HHKB，经常需要使用蓝牙来进行连接。前几天又买了罗技的 mx master 2s 作为在家里使用的过渡品，耳机也改为了无线蓝牙来进行传输，蓝牙自动连接的问题就一直在困扰着我</p><div class="note danger">            <p>为什么我在唤醒电脑之后，只有耳机自动连接了电脑，另外两个都无法连接</p>          </div><p>我们知道，在点击系统 menu bar 上的蓝牙小图标时，如果按住 <code>option</code> 再点，会显示详细信息；旧版本的系统在按住 <code>shift + option</code> 点击时，可以重置蓝牙模块（现在好像没有了<br>恰巧我再查看的时候，注意到我的电脑蓝牙开关下有一行小字写着 <code>Discoverable: off</code><br>我就感觉不是很对劲</p><p>根据 ssh 心跳包的理解，我们可以猜测，耳机由于没有关机并且是音频设备，可能会一直用心跳包来维持蓝牙的连接<br>而键盘和鼠标都有长时间不用自动断电的功能<br>由于 mac 的蓝牙被设定为不可以被发现，所以当电脑不是主动去发现并连接设备时，设备的主动尝试连接失效</p><p>解决方案是：可以在 <code>系统偏好设置 - Sharing - Bluetooth Sharing</code> 将其勾选打开，这样电脑就允许被其他设备通过蓝牙进行扫描发现了</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      After getting more wireless connectivity devices, I have unfortunately found that my Bluetooth devices have a high probability of not connecting every time I wake up my Macbook Pro.&lt;br&gt; At first I thought it was the fault of HHKB, but now I am temporarily a fan of bluetooth wireless&lt;br&gt; I bought a Logi master 2s as my new mouse to cope with the use of scenarios at home&lt;br&gt; Also my Audio-Technica headphones also changed to wireless mode&lt;br&gt; Just now I wake up my mac and only headphones connected&lt;br&gt; It really bothered me for a long time
+    
+    </summary>
+    
+    
+    
+      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
   
   <entry>
     <title>AODV Analysis</title>
@@ -438,29 +461,6 @@
     
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Merge Tab Bar in Safari</title>
-    <link href="https://augists.top/APPLE/Merge-Tab-Bar-in-Safari/"/>
-    <id>https://augists.top/APPLE/Merge-Tab-Bar-in-Safari/</id>
-    <published>2021-07-17T15:22:50.000Z</published>
-    <updated>2021-07-31T02:56:09.582Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>英文表述明白这意思太麻烦了<br>简单来说，就是我的 mac 更新了新的公测版本之后发现，safari 在上个版本添加的新功能：把 tab bar 合并到上面行程一栏，可以节省 title bar 的空间。这个功能不见了<br>😭 我那个急啊，这么好的功能，苹果官方怎么就想不开了<br>把偏好设置翻了个遍都没找到有关于这个的设置，最后在上面找到了<br>截两张图，省的下次再犯傻</p><p><img src="https://i.loli.net/2021/07/17/EC4JfaoDshVkvGO.png" alt=""></p><p><img src="https://i.loli.net/2021/07/17/Zwx1OfkuidEtXgC.png" alt=""></p><p><img src="https://i.loli.net/2021/07/17/eEzm4GfRNicL2jZ.png" alt=""></p><hr><p>更新到 public beta 4 之后，safari 的偏好设置中改用更为明显的方式进行修改了</p><p><img src="https://i.loli.net/2021/07/31/eOpZgKhmSGUE2nI.png" alt=""></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      You may find surprisingly that there will be a separate tab bar in Safari after updating to macOS Monterey beta 12.0&lt;br&gt;I like what it looks like in the last beta version&lt;br&gt;Then...How to roll back Safari
-    
-    </summary>
-    
-    
-    
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
   </entry>
   
