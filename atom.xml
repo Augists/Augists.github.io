@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-01-20T06:45:06.524Z</updated>
+  <updated>2022-02-04T04:39:35.402Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Watch Later or Store in History List</title>
+    <link href="https://augists.top/SELF/SHARING/LIFE/watch-later-or-store-in-history-list/"/>
+    <id>https://augists.top/SELF/SHARING/LIFE/watch-later-or-store-in-history-list/</id>
+    <published>2022-02-03T15:57:55.000Z</published>
+    <updated>2022-02-04T04:39:35.402Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>今天在 xbox 上看游戏的时候，突然有注意到一个“稍后再玩”的 list。同样在 b 站上，也有一个“稍后再看”的 list<br>其实 我早先的习惯是使用历史记录来做存储。如果看到一个想要保留的视频内容以后在看，我都是点进去看几秒确认一下就退出来，这样它就会自动被添加到历史记录里了。再加上有整理历史记录的习惯，偶尔进去把没用的删掉，提醒自己看完想看的视频<br>我的很多会员账号是与别人一起使用的，例如 Netflix，Apple Music 等等，定期清理历史记录对我而言既麻烦又有必要，所以这个习惯坚持了挺长时间的<br>它有一点问题，历史记录通常都不是无限长的，过于久远的历史记录会被清理掉，并且早期 b 站手机端是不能看到专栏的历史记录的，这也使得能够存储的条目莫名其妙的变少<br>现在开始使用“稍后再看”，但是里面只能存放 100 个，目前我一直是在 80 个左右“稍后再看”的视频<br>比较难受的一点是，如果想要把视频添加到“稍后再看”，需要点进视频，在没有最大化视频的情况下，点击右上角的三个点，选择添加到“稍后再看”，步骤非常繁琐<br>并且如果有空闲时间可以去看看自己之前存储过的视频时，在网页端，需要在收藏的最下面才能找到“稍后再看”列表。删除列表中刚刚看完的视频也需要从视频中退出来<br>我感觉，watch or play later 这个功能并没有像它名字那样美好，入口和常用功能都比较繁琐</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      When I have something to watch later, I should throw it into watch-later or store in history list&lt;br&gt; Compare these two
+    
+    </summary>
+    
+    
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
   
   <entry>
     <title>Google RE2 Syntax</title>
@@ -440,29 +461,6 @@
       <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
     
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>A Comfortable Way for Coding</title>
-    <link href="https://augists.top/SELF/SHARING/STUDY/A-better-way-for-coding/"/>
-    <id>https://augists.top/SELF/SHARING/STUDY/A-better-way-for-coding/</id>
-    <published>2021-08-08T01:44:25.000Z</published>
-    <updated>2021-11-08T15:09:16.093Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>这几天一直在尝试从头重新配置一个更适合我使用的 coding platform，用这篇博客简单记录一下我的配置过程<br>是探索，也是从上一个舒适区里走出来，划定一个更大范围的舒适区</p><div class="note info">            <p>我一直使用终端作为我的 coding platform，所以我也将基本围绕终端展开</p>          </div><hr><h2 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h2><p>既然是要走出舒适区，那肯定就要大胆尝试一下新东西。<a href="https://iterm2.com">iTerm2</a> 一直是我不知道需不需要尝试的一个新玩意。一直以来看所有的 mac 装机推荐文章或视频里很多都会告诉你，当你拿到一个新 mac 的时候，要先下载 iTerm2，然后安装 <code>oh-my-zsh</code>。这就和让装 Alfred 一样，完全不知道它好在哪，但是就是所有人都推荐装</p><p>目前就在使用 iTerm2。尽管在换用 iTerm2 之后我仍然没有很明显的感知它有多少特别的功能并提升了我的终端使用体验，但是通过设置让它变得比原生 Terminal<br>更好看了是真的。我取消了顶部的 title bar，并且添加了彩虹 🌈 色小组件，这就是我现在改用 iTerm2 的主要原因了</p><p><img src="https://i.loli.net/2021/08/08/6ngbcAlLQBmtUrx.png" alt="iTerm2"></p><p>当然，每个东西肯定有好有不好。iTerm2 最让我无法忍受的是每次粘贴都会刷新屏幕，就一个非常明显的闪屏。虽然可以理解，但是对它的好感度大打折扣。除此之外，之前说的打开 vim 再退出时终端会自动变到最后一行的问题在改用终端模拟器之后并没有解决，反而是换成 neovim 之后解决掉了</p><h2 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h2><p>相比 iTerm2，<a href="https://neovim.io">neovim</a> 带给我的体验提升就非常大了，甚至可以说是飞跃。Neovim 相比于 vim，进行了非常多体验上的优化，比如便捷的添加如 python 支持，通过命令直接查看 provider 的状态等等。同时 neovim 下也提供了一些插件的支持，提供了新的 api。现在我甚至可以不用分屏就能打开终端或者 fzf 了</p><p><img src="https://i.loli.net/2021/08/08/wYOWZb7krNFag5q.png" alt="fzf"></p><h2 id="coc-nvim"><a href="#coc-nvim" class="headerlink" title="coc.nvim"></a>coc.nvim</h2><p>更换了 neovim 之后，我也对我的 <a href="https://github.com/Augists/ZDCZ-vimrc">vimrc</a> 进行了重写。新的 <code>init.vim</code> 改为基于赵启明大佬的 <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a> 进行配置，尽可能多的使用 LSP 插件体系</p><p>在以前我认为，刚学习敲代码，就应该去掉代码提示，像在记事本写代码一样减少机器辅助。现在我已经到了日常需要查文档才能写代码的时候了（其实就是不会写了），尽管装了 Dash 但是从来不用……Code Completion &amp; Document 显得非常重要了。我屈服了</p><h2 id="glow"><a href="#glow" class="headerlink" title="glow"></a>glow</h2><p><code>glow</code> 是一个似乎不是很轻量的 markdown 终端渲染程序<br>很明显我并不会去使用它，我已经有太多的 markdown 渲染了，但是这不妨碍我把它放在推荐列表，因为确实很好看</p><h2 id="brew-rmtree"><a href="#brew-rmtree" class="headerlink" title="brew rmtree"></a>brew rmtree</h2><p><code>homebrew</code> 的 <code>formula &amp; cask</code> 的卸载一直是一个大问题，因为它没有像 <code>apt</code> 那样的 <code>autoremove</code> 来自动清理不需要的依赖。后果就是我在以前使用的时候每次安装软件都会把终端的内容打印到一个文件里进行存储，然后在卸载的时候对照着一个一个删掉</p><p><code>retree</code> 是一个辅助清理不需要的依赖的工具，但是在我的使用中它似乎对新系统的兼容性有待提升，就像我每次使用 <code>homebrew</code> 都会收到一个新系统的警告一样烦人</p><blockquote><p>我在尝试 <code>pip-autoremove</code> 的过程中遇到了更加恶心的问题。简单来说就是 mac 系统中的 python 太多太乱导致的，这导致我直接放弃了对 <code>pip-autoremove</code> 的研究</p></blockquote>          </div>]]></content>
-    
-    <summary type="html">
-    
-      After &lt;i&gt;remake&lt;/i&gt; my coding tools, I find my comfortable zone
-    
-    </summary>
-    
-    
-    
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
-      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
     
   </entry>
   
