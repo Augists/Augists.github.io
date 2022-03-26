@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-02-04T04:39:35.402Z</updated>
+  <updated>2022-03-26T03:42:26.075Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nil Pointer Error in Golang During webChat Development on Database</title>
+    <link href="https://augists.top/SELF/ERROR/nil-pointer-error-in-golang-during-webChat-development-on-database/"/>
+    <id>https://augists.top/SELF/ERROR/nil-pointer-error-in-golang-during-webChat-development-on-database/</id>
+    <published>2022-03-26T03:19:08.000Z</published>
+    <updated>2022-03-26T03:42:26.075Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>前几天在进行 <a href="https://github.com/Augists/webChat">webChat</a> 的 Server 端的数据库部分代码调试的时候，一直被一个奇怪的错误缠着。</p><p>我在前面全局变量里声明了数据库引擎的指针</p><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">  DBdriver = <span class="string">&quot;mysql&quot;</span></span><br><span class="line">  DBinfo   = <span class="string">&quot;xxx&quot;</span></span><br><span class="line">  DBengine *xorm.Engine</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>然后在数据库初始化时</p><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DBengine, err := xorm.NewEngine(DBdriver, DBinfo)</span><br></pre></td></tr></table></figure><p>因为 golang 在一定程度上对变量类型进行了弱化，添加了类似于 C++ 中的 auto 对类型进行自动判断，所以为了区分新变量，Go 中使用 <code>:=</code> 运算符作为新变量开辟并初始化的标志<br>例如这里，将 <code>xorm.NewEngine</code> 函数的返回值赋给新变量。由于 Go 中函数可以进行多返回值，当左值中存在新变量时，就需要使用 <code>:=</code><br>在这里就产生了歧义。err 是新的局部变量，同时 DBengine 也被编译器认为是新本地变量，这就使得这行代码并没有给全局的 DBengine 进行赋值<br>所以即使进行了初始化，全局变量中的 DBengine 依旧为 nil</p><p>解决的方法其实也不难，在这之前将 err 创建好就可以消除误解了</p><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> err error</span><br><span class="line">DBengine, err = xorm.NewEngine(DBdriver, DBinfo)</span><br></pre></td></tr></table></figure><p>这算一个比较隐性的 bug，不是很容易被发现。我感觉，这是由于 Go 对于语法及特性妥协导致的，这种情况必定会导致歧义，如果让编译器将这种情况处理为先去寻找是否有更高层级已经声明的变量 DBengine 并优先赋值，将会使得这种情况只能通过修改变量命名来解决局部与全局的冲突，亦或局部声明 <code>var DBengine *xorm.Engine</code><br>我感觉后一种逻辑更容易理解吧，想尝试在 Go 社区中提 issue 询问一下</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      During the developing process of Database Engine of webChat, an undiscoverable error occured&lt;br&gt;and I blamed it on golang itself
+    
+    </summary>
+    
+    
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
+    
+  </entry>
   
   <entry>
     <title>Watch Later or Store in History List</title>
@@ -438,29 +463,6 @@
       <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
       <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Reinstall macOS</title>
-    <link href="https://augists.top/APPLE/Reinstall-macOS/"/>
-    <id>https://augists.top/APPLE/Reinstall-macOS/</id>
-    <published>2021-08-13T04:25:54.000Z</published>
-    <updated>2021-08-14T10:46:09.596Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>花了一天多的时间，把 mac 抹盘重装了，收获了一个全新的 mac</p><p>之前使用的是 macOS 12 public beta 4。本身使用并没有什么问题，问题出在了软件的兼容性上。很多软件如 <em>OnlyX</em> 都无法在新系统里正常打开运行（这里还是再点一下 <em>OnlyX</em>，每个系统版本出一个软件版本，导致兼容性非常差。但是也不是说这样做不好，只是我觉得应该又一个更鲜明的提示，当检测为更新的系统版本时提示一下）</p><p>导致我重装系统的直接原因是下载了 <em>CrossOver</em>，我不记得它有要我的系统权限，但是它直接修改了系统默认显示 <code>.exe</code> 文件的图标，而我比较菜（lan）。权衡了一下啊，干脆直接抹盘重装一次系统</p><hr><p>在这次重装过程中也发现了很多好玩的事情，也对很多东西有了新的理解。比如：</p><ul><li>切换输入法的快捷键应该设置给 <em>select the previous input source*，而不是 *select next input source</em></li><li><em>screen saver</em> 文件一般为 <code>.saver</code> 文件，而 <em>fliqlo</em> 是 <code>dmg</code> 安装器</li><li>由于更换了 <code>neovim</code>，很多东西都和以前不太一样，同时 <code>vim</code> 作为被我抛弃掉的被替代品，没有再使用任何插件，当作一个单纯的编辑器来使用了</li><li>对电脑的容量非常诧异。本来以为会清理出非常多的东西，能让 256G 的容量剩出很多，但是现在看其实和之前差别不大，只是少装了很多软件，大概节省了 20G 的空间，甚至 <em>Chrome</em> 我都还没有安装（也是在尝试一个单 <em>Safari</em> 能否承担重任，尤其是在下个版本中将要加回 <em>Group Tab</em>，这个在测试版中我爱不释手的功能</li><li>在抹盘之后，可以将 Data 和 数据 两个盘直接删掉，只保留 <em>Macintosh HD</em> 就可以，之前被这个奇怪的保护机制烦了很久</li><li>mac 启动器下载完成之后打开就会报错，但是事实上是正常的，这一点在网上查阅的时候都没有指出来。使用官方的制作启动器的指令之后报错了一次，有点莫名其妙，第二次就好了</li><li>mac 在使用制作好的外置磁盘启动器进行安装时，仍然需要关闭一些安全性设置（由于 T2 芯片的缘故）。我目前没有把这些安全性设置修改回来，但是我现在也不是很想折腾 <em>yabai</em></li></ul>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Spend A day for reinstalling my macOS&lt;br&gt;Downgrade the system from the beta version to official version Big Sur
-    
-    </summary>
-    
-    
-    
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
     
   </entry>
   
