@@ -33,9 +33,9 @@
     
     
     
-      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
-    
       <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
     

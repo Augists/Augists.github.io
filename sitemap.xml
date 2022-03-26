@@ -23,6 +23,13 @@
   </url>
   
   <url>
+    <loc>https://augists.top/NOTES/CODE_LANGUAGE/Hanming-Code/</loc>
+    
+    <lastmod>2022-01-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://augists.top/SELF/SHARING/STUDY/How-to-choose-your-own-courses-in-SSDUT/</loc>
     
     <lastmod>2022-01-12</lastmod>
@@ -569,13 +576,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/CODE_LANGUAGE/Hanming-Code/</loc>
-    
-    <lastmod>2021-05-15</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augists.top/NOTES/GIT/Github-DNS/</loc>
     
     <lastmod>2021-05-09</lastmod>
@@ -1110,20 +1110,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/HEXO/</loc>
-    <lastmod>2022-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/ERROR/</loc>
-    <lastmod>2022-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/HELLO/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1138,7 +1124,28 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/HEXO/</loc>
+    <lastmod>2022-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/ERROR/</loc>
+    <lastmod>2022-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/NOTE/</loc>
+    <lastmod>2022-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/REVIEW/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1180,7 +1187,21 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/REVIEW/</loc>
+    <loc>https://augists.top/tags/GOLANG/</loc>
+    <lastmod>2022-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/HANMING/</loc>
+    <lastmod>2022-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/REGEX/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1236,13 +1257,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/HANMING/</loc>
-    <lastmod>2022-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/TMUX/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1271,6 +1285,13 @@
   </url>
   
   <url>
+    <loc>https://augists.top/tags/VIRUS/</loc>
+    <lastmod>2022-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://augists.top/tags/GITHUB/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1285,20 +1306,6 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/VIRUS/</loc>
-    <lastmod>2022-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/MATLAB/</loc>
-    <lastmod>2022-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/DATASTRUCTURE/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1307,6 +1314,13 @@
   
   <url>
     <loc>https://augists.top/tags/JAVA/</loc>
+    <lastmod>2022-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://augists.top/tags/MATLAB/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1348,21 +1362,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/tags/GOLANG/</loc>
-    <lastmod>2022-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://augists.top/tags/TREE/</loc>
-    <lastmod>2022-03-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://augists.top/tags/REGEX/</loc>
     <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
