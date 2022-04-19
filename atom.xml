@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-03-30T02:36:13.747Z</updated>
+  <updated>2022-04-19T07:13:24.581Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pass Value or Reference in Golang</title>
+    <link href="https://augists.top/NOTES/CODE_LANGUAGE/GOLANG/pass-value-or-reference-in-Golang/"/>
+    <id>https://augists.top/NOTES/CODE_LANGUAGE/GOLANG/pass-value-or-reference-in-Golang/</id>
+    <published>2022-04-19T05:35:35.000Z</published>
+    <updated>2022-04-19T07:13:24.581Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>昨天在写 LeetCode 39 的时候，遇到了一个奇怪的问题，会自动让我的 <code>res</code> 在返回的时候发生变化<br>按照意思简单复原一下部分代码</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> res [][]<span class="keyword">int</span></span><br><span class="line"><span class="keyword">var</span> r []<span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    res = [][]<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">    r = []<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">    solve(<span class="number">5</span>)</span><br><span class="line">    fmt.Println(res)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solve</span><span class="params">(i <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    r = <span class="built_in">append</span>(r, i)</span><br><span class="line">    r[<span class="number">0</span>] = i</span><br><span class="line">    res = <span class="built_in">append</span>(res, r)</span><br><span class="line">    solve(i - <span class="number">1</span>)</span><br><span class="line">    r = r[:<span class="built_in">len</span>(r)<span class="number">-1</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>可以看到，最终输出的 <code>res</code> 里变量非常奇怪<br>这个情况主要由于 Golang 中的切片以及在函数参数传递的过程中发生的浅拷贝</p><h2 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h2><p>我们可以把切片理解为一个结构体</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Slice <span class="keyword">struct</span> &#123;</span><br><span class="line">  data  <span class="keyword">uintptr</span></span><br><span class="line">  <span class="built_in">len</span>   <span class="keyword">int</span></span><br><span class="line">  <span class="built_in">cap</span>   <span class="keyword">int</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>切片的浅拷贝是指，当它在赋值时，相当于创建了新的副本，结构体中的三个变量的值进行了复制。也就是说，虽然指向的是同一个 data 地址，并且 len 和 cap 都相同，但是从二级指针的角度来看，是一个新的变量了<br>而 append 虽然它直接被写成了汇编，但是它的实现是在切片存储的数据小于 1024 时进行 cap 翻倍，在大于时扩容到 1.25 倍。如果发生了切片的扩容，就会返回一个新开辟的内存空间用来存放数据；否则就会返回原地址</p><h2 id="Pass"><a href="#Pass" class="headerlink" title="Pass"></a>Pass</h2><p>对于 Golang 的函数传参是传值还是传引用一直都有争议。有人把变量分成了值类型和引用类型。但是实际上，通过上面对于 Slice 的拷贝可以看到，Golang 对于函数传参一直都是传值。但是值得注意的是，虽然在不发生扩容的情况下在函数中修改切片的内容会反馈到原切片（由于 data 指针），但是切片的 len 和 cap 都是在函数中创建了新的拷贝<br>也就是说，如果有如下代码</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">myAppend</span><span class="params">(nums []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">  nums = <span class="built_in">append</span>(nums, <span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  nums := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">  myAppend(nums)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在这个例子中，尽管在 <code>myAppend</code> 中对于 nums 添加 1 成功反馈给了 <code>main</code> 中的 nums，但是由于 <code>main</code> 中 nums 的 len 仍为 3，所以如果这时输出 nums，会发现似乎对它并没有任何反馈的影响</p><hr><p>回到开头的例子。由于 res 可以看作二级指针，而 r 可以看作一级指针，这就导致对 r 仍然在 len 中的元素的修改会影响到最终的 res 的结果，而若由于 append 发生了扩容，后续就会使用新的切片地址，就不会对原切片产生影响</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      A discussion about passing to function in Golang origin from `res = append(res, r)`
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
+    
+  </entry>
   
   <entry>
     <title>Nil Pointer Error in Golang During webChat Development on Database</title>
@@ -438,31 +461,6 @@
     
     
       <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Applications &amp; Command Line Tools</title>
-    <link href="https://augists.top/APPLE/Applications-and-Command-Line-Tools/"/>
-    <id>https://augists.top/APPLE/Applications-and-Command-Line-Tools/</id>
-    <published>2021-08-20T08:27:19.000Z</published>
-    <updated>2021-08-20T10:20:07.659Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>There is the overview of my recommends. 不全，但是是我在重装系统之后经过重新考虑之后保留下来的推荐</p><div class="note info">            <center><b>System</b></center><ul><li>Caffeinated: 保持系统常量不休眠的小工具</li><li>AppCleaner: 软件清理</li><li>Hidden Bar: Menu Bar 隐藏</li><li>IINA: 视频播放器</li><li>Karabiner: 修改键盘映射</li><li>OnlyX: 系统垃圾清理</li><li>Paste: 剪贴板历史</li><li>The Unarchiver: 解压</li><li>uPic: 图片上传图床</li><li>Vimari: safari 的 vim-like 快捷键</li><li>V2rayU: VPN</li><li>rectangle: 窗口管理器</li><li>yabai: 窗口管理器</li><li>shkd: 快捷键工具</li><li>spacebar: Menu Bar 定制</li><li>htop: 活动监视器</li></ul><center><b>Code</b></center><ul><li>Dash: 查看文档</li><li>Kitty: 终端模拟器</li><li>Typora: markdown</li><li>Docker: 虚拟容器</li><li>homebrew: 包管理器</li><li>tmux: 终端复用</li><li>neovim: 编辑器</li><li>fzf: fuzzy file finder</li><li>nnn: 文件管理器</li><li>autojump: 快速跳转</li><li>zsh<ul><li>oh-my-zsh: 终端美化</li><li>zsh-autosuggestions: 终端补全</li><li>zsh-syntax-highlighting: 终端高亮</li></ul></li><li>clang-format: c language formatter</li></ul>          </div><p>简单说明是啥之后，就可以挑主要的说了</p><h2 id="Caffeinated"><a href="#Caffeinated" class="headerlink" title="Caffeinated"></a>Caffeinated</h2><p>这是一个比较简单，图标也好看一点的禁止休眠工具，直接显示在 Menu Bar 上<br>比其他同类软件更简单，不提供一些有的没的工具，与终端指令 Caffeinate 相同效果</p><h2 id="AppCleaner-amp-OnlyX-amp-fzf"><a href="#AppCleaner-amp-OnlyX-amp-fzf" class="headerlink" title="AppCleaner &amp; OnlyX &amp; fzf"></a>AppCleaner &amp; OnlyX &amp; fzf</h2><p>卸载软件其实一直都是一件很头疼的事情，即便有了这两个工具<br>首先，一定不推荐任何打着清理名头的软件，如 CleanMyMacX、腾讯柠檬清理等<br>AppCleaner 在卸载软件时查找它在系统中存储的一些配置信息文件，但是并不是所有都能找到<br>它主要检索 <code>$HOME/Library</code> 下的文件，但是即便是这样，也并不是能发现全部可以删除的垃圾文件<br>而 OnlyX 是更为深度的清理系统缓存等垃圾，需要对一些名词有一定了解<br>众所周知，macOS 采用了沙盒机制<br>我第一次对沙盒机制感慨是在看了飞蚊话的<a href="https://www.bilibili.com/video/BV1WA411V7r8">分析视频</a><br>即便有这样优秀的思想，也不能防止软件忽悠你获取权限然后把文件放在不该放的地方<br>所以我一般会在删除完软件或者我想要清理系统垃圾的时候手动去两个 Library 里看看<br>心情好就去根目录用 fzf 开个全盘扫描，经常会发现几个漏网之鱼<br>举个例子，前几天下载了 Parallel Desktop 试用了几下，一看空间，好家伙，占了我 50G 的空间<br>在 AppCleaner 找完一部分，手动去 Library 里删了一些之后，我又去根目录用 fzf 扫了一下，果然发现在 <code>/etc</code> 和 <code>/var</code> 下都还有配置文件</p><h2 id="Karabiner"><a href="#Karabiner" class="headerlink" title="Karabiner"></a>Karabiner</h2><p>这个是在键盘与系统之间虚拟出一层来，对键盘的键位映射进行修改<br>由于我现在开始用 HHKB，一些键位我就需要重新改一下（最主要还是因为 QQ<br>我的 Karabiner 配置文件已经放在 GitHub 上的 dotfiles 里了<br>通过 json 文件简单修改就可以用了</p><h2 id="uPic"><a href="#uPic" class="headerlink" title="uPic"></a>uPic</h2><p>uPic 的作者挺好玩的，之前加了 tg 群，正好碰到他说要上架 app store了<br>app store 里的版本是收费的，同时因为软件开源，免费版可以直接从 GitHub 上下载</p><h2 id="yabai-amp-shkd-amp-spacebar"><a href="#yabai-amp-shkd-amp-spacebar" class="headerlink" title="yabai &amp; shkd &amp; spacebar"></a>yabai &amp; shkd &amp; spacebar</h2><p>最近新换的窗口管理器，配置也比较简单，实现效果就和 Linux 下的如 dwm、i3 等类似<br>经过一番操作，我的 mac 它更像 Linux 了<br>但是 yabai 需要关闭 SIP<br>不推荐了解不够深入的关闭 SIP</p><h2 id="Kitty"><a href="#Kitty" class="headerlink" title="Kitty"></a>Kitty</h2><p>Kitty 是一个更符合 Unix 哲学的终端模拟器，基于 GPU，更快速<br>我用 Kitty 替换了 iTerm2，主要是 iTerm2 太过于庞杂，提供的功能基本都用不上<br>而 Kitty 只需要修改它的配置文件就可以啦 <code>~/.config/kitty/kitty.conf</code><br>在换用 Kitty 之后，我把我的配置文件重新整理了一遍，按照模块进行加载</p><h2 id="nnn"><a href="#nnn" class="headerlink" title="nnn"></a>nnn</h2><p>nnn 我用来替换了 ranger<br>其实论实用，ranger 更好用一点，但是在我电脑上，一旦开启了一些功能就会变卡<br>如果打开了 git，直接就卡到怀疑人生<br>我之前的 ranger 经常在预览上卡住。一开始我以为是预览大文件会卡，后来发现啥都可能卡<br>ranger 的好处是它可以直接调用 iTerm2 在终端显示图片预览<br>而 nnn 虽然也采用 vim-like 快捷键，但是它没有了三栏的设计，操作也都尽可能的用一个键完成<br>总的来说，应该算是 ranger 的下位替代吧<br>另外有一点，如果想让 nnn 显示图标，需要自己手动编译，修改编译参数，这在无形中提高了门槛</p><h2 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h2><p>vim 作为我一直在使用的编辑器，一直就仅限于想要的那一部分就再没往下探索新的东西了<br>重装系统之前改用 neovim 重新进行了配置，新的 neovim 配置基于 coc，并且终于我开始用提示了<br>LSP 让它的配置变得非常好用<br>最近也在想改用 lua 重写配置，放弃 coc，直接转用新配置<br>目前只是学会了 lua，还没有换新 <em>init.lua</em> 的动力</p><h2 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h2><p>autojump 算是比较推荐的一个终端工具，它可以记住我的 <code>cd</code> 路径，并在后面直接 <code>j</code> 过去<br>在从 ranger 改用 nnn 之后我把 autojump 卸载了，但是最近又重新安装回来了<br>我一直把它作为文件管理器的辅助，比如要写博客的时候 <code>j augists</code> 就会跳到博客目录</p><hr><div class="note info">            <p>最近的最后一次大改是因为在学习 python<br>在 macOS 里，系统自带了 python2.7<br>如果你使用 <code>xcode-select --install</code> 安装了 Command Line Tools<br>它就会给你安装上 python3（目前是 python3.8)<br>但是因为路径和权限的原因经常会出现一些问题<br>所以我现在电脑上同时存在了 3 个 python</p><ul><li>系统自带的 python2</li><li>Command Line Tools 安装的 python3.8</li><li>homebrew 安装的 python3.9</li></ul><p>2 为系统提供服务<br>3.8 为 neovim 服务，在 <code>$PATH</code> 中存放在后面<br>3.9 是我平常用的，因为 homebrew 很鸡贼的让安装的路径是环境变量的第一个</p>          </div>          </div>]]></content>
-    
-    <summary type="html">
-    
-      !!!NOW!!! These applications and command line tools are on my mac&lt;br&gt;which I strongly recommend
-    
-    </summary>
-    
-    
-    
-      <category term="APPLE" scheme="https://augists.top/tags/APPLE/"/>
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-      <category term="TERMINAL" scheme="https://augists.top/tags/TERMINAL/"/>
     
   </entry>
   
