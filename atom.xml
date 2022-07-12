@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-07-10T16:00:55.764Z</updated>
+  <updated>2022-07-12T15:55:26.380Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;Paper Reading&gt; Fast BGP Simulation of Large Datacenters</title>
+    <link href="https://augists.top/NOTES/PAPER/Fast%20BGP%20Simulation%20of%20Large%20Datacenters/"/>
+    <id>https://augists.top/NOTES/PAPER/Fast%20BGP%20Simulation%20of%20Large%20Datacenters/</id>
+    <published>2022-07-12T15:44:46.000Z</published>
+    <updated>2022-07-12T15:55:26.380Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <h1 id="Fast-BGP-Simulation-of-Large-Datacenters"><a href="#Fast-BGP-Simulation-of-Large-Datacenters" class="headerlink" title="Fast BGP Simulation of Large Datacenters"></a>Fast BGP Simulation of Large Datacenters</h1><blockquote><p>VMCAI 2019 (CCF B)</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@inproceedings&#123;lopes2019fast,</span><br><span class="line">  title&#x3D;&#123;Fast BGP simulation of large datacenters&#125;,</span><br><span class="line">  author&#x3D;&#123;Lopes, Nuno P and Rybalchenko, Andrey&#125;,</span><br><span class="line">  booktitle&#x3D;&#123;International Conference on Verification, Model Checking, and Abstract Interpretation&#125;,</span><br><span class="line">  pages&#x3D;&#123;386--408&#125;,</span><br><span class="line">  year&#x3D;&#123;2019&#125;,</span><br><span class="line">  organization&#x3D;&#123;Springer&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>outage 运行中断</p><p>misconfigurations, maintenance, upgrades, hardware and firmware failures -&gt; production datacenters outage</p><table><thead><tr><th>RIP</th><th>DV</th></tr></thead><tbody><tr><td>OSPF</td><td>LS</td></tr></tbody></table><ul><li><p>LS</p><ul><li>链路状态路由算法</li><li>每个节点都周期性的向网络上所有其它节点广播自己到邻居节点的距离。每个节点都具有完整的网络信息，即知道网络上每条边的距离。于是，每个节点都可以彼此独立的使用Dijkstra最短路径算法来计算到网络上其它节点的最短路径。</li></ul></li><li><p>边界网关协议 BGP (Border Gateway Protocol)</p><ul><li>一种实现自治系统AS（Autonomous System）之间的路由可达，并选择最佳路由的距离矢量路由协议</li><li>外部网关协议 EGP (Exterior Gateway Protocol): 在 AS 之间动态交换路由信息，只发布网络可达，不优选，不考虑环路避免等问题</li><li>路由优选、避免路由环路、更高效率的传递路由和维护大量的路由信息<ul><li>采用认证和GTSM的方式，保证了<a href="https://link.zhihu.com/?target=http%3A//127.0.0.1%3A7890/pages/DZE0811M/09/DZE0811M/09/resources/dc/dc_feature_bgp_0006.html">网络的安全性</a></li><li>提供了丰富的路由策略，能够灵活的进行<a href="https://link.zhihu.com/?target=http%3A//127.0.0.1%3A7890/pages/DZE0811M/09/DZE0811M/09/resources/dc/dc_feature_bgp_0007.html">路由选路</a></li><li>提供了<a href="https://link.zhihu.com/?target=http%3A//127.0.0.1%3A7890/pages/DZE0811M/09/DZE0811M/09/resources/dc/dc_feature_bgp_0010.html">路由聚合</a>和<a href="https://link.zhihu.com/?target=http%3A//127.0.0.1%3A7890/pages/DZE0811M/09/DZE0811M/09/resources/dc/dc_feature_bgp_0011.html">路由衰减</a>功能用于防止路由振荡，有效提高了网络的稳定性</li><li>用TCP作为其传输层协议（端口号为179），并支持<a href="https://link.zhihu.com/?target=http%3A//127.0.0.1%3A7890/pages/DZE0811M/09/DZE0811M/09/resources/dc/dc_feature_bgp_0012.html">BGP与BFD联动</a>、<a href="https://link.zhihu.com/?target=http%3A//127.0.0.1%3A7890/pages/DZE0811M/09/DZE0811M/09/resources/dc/dc_feature_bgp_0013.html">BGP Tracking</a>和<a href="https://link.zhihu.com/?target=http%3A//127.0.0.1%3A7890/pages/DZE0811M/09/DZE0811M/09/resources/dc/dc_feature_bgp_0020.html">BGP GR</a>，提高了网络的可靠性</li></ul></li><li>角色<ul><li>Speaker: 接收或产生新的报文信息，并发布（Advertise）给其它BGP Speaker</li><li>Peer: 相互交换报文的Speaker之间互称对等体（Peer）。若干相关的对等体可以构成对等体组（Peer Group）</li></ul></li><li>报文<ul><li>Open报文：用于建立BGP对等体连接</li><li>Update报文：用于在对等体之间交换路由信息</li><li>Notification报文：用于中断BGP连接</li><li>Keepalive报文：用于保持BGP连接，周期性发送</li><li>Route-refresh报文：用于在改变路由策略后请求对等体重新发送路由信息。只有支持路由刷新（Route-refresh）能力的BGP设备会发送和响应此报文</li></ul></li></ul></li></ul><p><img src="https://pic1.zhimg.com/80/v2-a60f360061dd3d41d12ca88a5ee8f0dc_1440w.jpg" alt=""></p><ul><li>RIB (route information base)<ul><li>维护每种协议的网络拓扑和路由表。这将包括许多到达相同目的地前缀的路由。</li></ul></li><li>FIB (forwarding information base)<ul><li>是从下推的RIB中可能的许多协议到快速转发查找内存的最佳路径的最佳路由。</li></ul></li></ul><p>FASTPLANE - based on Dijkstra</p><ul><li>is two orders of magnitude faster than the state-of-the-art on small and medium datacenters (快两个数量级)</li><li>goes beyond the state-of-the-art by scaling to large datacenters</li></ul><p>静态检查无法处理一些路由器固件层面上的bug，因此需要用动态的模拟来寻找问题</p><p>总结：提出了一种快速可拓展的BGP系统模拟算法，它需要数据中心路由策略有单调性，用路由报文而非权重计算出单源最短路。</p><h2 id="Datacenters-and-BGP"><a href="#Datacenters-and-BGP" class="headerlink" title="Datacenters and BGP"></a>Datacenters and BGP</h2><p>ASN (autonomous system number)</p><p>路径属性的词典顺序(这里用的是ASN) 替代 跳数</p><p>RIB根据配置初始化，根据新收到的前缀和unreachable更新</p><h2 id="Illustration"><a href="#Illustration" class="headerlink" title="Illustration"></a>Illustration</h2><h3 id="Prefix-Interaction"><a href="#Prefix-Interaction" class="headerlink" title="Prefix Interaction"></a>Prefix Interaction</h3><p><code>(router,prefix,AS path)</code> 代表要到达 router，下一跳 prefix，中转路径 AS path</p><p>WL 中不止一个时，选择优先级最高的 (we need to visit a most preferred advertisement first)</p><p>优先级由 BGP 最优路径选择算法得出，即更短的 AS path 优先级更高。但并不总是可以比较的</p><ul><li>算法被用于单路由？而FASTPLANE被用于处理属于不同路由的报文</li><li>AS path length 可能相等</li></ul><p>最终优先级<strong>先判断路径长度，在长度相同时选择 ASN 小的 (an auxiliary lexicographic order on names of routers)</strong></p><p>路由根据自己是否已经在 AS path 中来决定是否要 reject 收到的报文</p><p>R2 此时 RIB 中不空且 <code>24 &gt; 16</code>，进行 aggregation，生成新的 <code>a&#39;&#39; = (R2, 10.0.0.0/16, &lt;&gt;)</code> 作为种子 </p><p>最后将 RIB 中每个前缀的最优报文交给 FIB</p><h3 id="Globally-vs-Locally-Preferred-Advertisements"><a href="#Globally-vs-Locally-Preferred-Advertisements" class="headerlink" title="Globally vs. Locally Preferred Advertisements"></a>Globally vs. Locally Preferred Advertisements</h3><p>当同一路由出现两个甚至多个竞争的报文时，选取并替换 WL</p><p>为什么 R4 就会等 R1 发的包呢？(by propagating only globally optimal advertisements)</p><h3 id="Necessity-of-Monotonic-Increase-of-Preference"><a href="#Necessity-of-Monotonic-Increase-of-Preference" class="headerlink" title="Necessity of Monotonic Increase of Preference"></a>Necessity of Monotonic Increase of Preference</h3><p>FASTPLANE 需要路由节点的优先级越来越低 (the preference of a route advertisement at the destination router cannot be higher than the preference of the originating advertisement at the source router)，但是又要求单调增？？？(ensure monotonic increase of preference)</p><p>最终优先级的判断修改为<strong>先判断配置中的优先级 local pref，再判断路径长度，最后在路径长度相同时选择 ASN 较小的一个</strong> (the adver- tisement with the highest local preference is preferred. If advertisements have an equal value of the local preference attribute, then the advertisement with the shortest AS path is preferred)</p><p><code>(router,prefix,local pref,AS path)</code></p><h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><p>本文提出了一种计算路由表的算法，该算法仅适用于使用BGP的特定特征子集。需要进一步重新搜索，以拓宽和准确描述哪些特征集合（或多组）可以一起使用，并且仍然与拟议的算法（或类似的单调推理方法）兼容。</p><p>双重而言，需要进一步研究来描述要避免的协议功能，以支持高效的验证。此外，对是否/如何用单调特征取代非单调特征知之甚少。这不仅可以提高网络验证的效率，还可以加快生产网络的融合时间，因为撤回的广告会更少。</p><p>另一个途径是研究控制平面上的非确定性。有时不是总顺序，这意味着网络中可能存在不同的稳定状态。这有缺点，例如使故障排除变得更加困难。我们目前的原型故意以一致、确定性的方式计算单个稳定状态，以便结果可以重现。然而，这种稳定状态可能与真实网络稳定的状态不同。</p><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><ul><li><p>第一个例子中RIB初始化后，如果R1和R3都为<code>10.0.0.0/24</code>，R2应该怎么办</p><ul><li>对于相同的前缀长度，incomparable -&gt; pick either of them arbitrarily</li><li>挨个运行？</li></ul></li><li><p>prefix 选择过程像是由主节点选择</p><ul><li>猜测报文在每一步都返回到单源路由，由单源路由计算后再发出下一步？</li></ul></li><li><p>计算单源最优路径，计算过程是由路由计算异步传播还是有中心计算并将结果给路由节点</p><ul><li>节点自行计算<ul><li>By running BGP each datacenter router participates in a distributed best path computation, where information about the best paths is ex- changed between direct neighbors</li><li>transBGP函数的OutRouteMap返回值和InRouteMap</li></ul></li></ul></li><li><p>三个示例中修改使得非最优路径会提前发送</p><ul><li>在后文中看到好像是会撤回后续节点RIB中的非最优路径，保留出现最优路径歧义节点RIB中的存储</li></ul></li><li><p>only deal with transBGP that is monotonically increasing，增 or 减？</p><ul><li>In a network, monotonicity implies that the weight of a walk does not decrease when it is extended by a new link (Paper: <em>An Algebraic Theory of Dynamic Network Routing</em>)</li></ul></li><li><p>初始状态多个路由器的配置有冲突，且交叉点有距离</p><ul><li>4.4</li></ul></li></ul><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.youtube.com/watch?v=_Z29ZzKeZHc">BGP Overview</a></p><p><a href="https://www.techtarget.com/searchnetworking/definition/BGP-Border-Gateway-Protocol">BGP</a></p><p><a href="https://www.cisco.com/c/zh_cn/support/docs/ip/border-gateway-protocol-bgp/5441-aggregation.pdf">了解 BGP 中的路由聚合</a></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      Note taken down during reading process
+    
+    </summary>
+    
+    
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
+    
+  </entry>
   
   <entry>
     <title>How to Choose a Suitable Laptop for Freshmen Majoring in Software Engineering</title>
@@ -438,27 +461,6 @@
       <category term="THINKING" scheme="https://augists.top/tags/THINKING/"/>
     
       <category term="NETFLIX" scheme="https://augists.top/tags/NETFLIX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Record an Experience of Computer Fixing</title>
-    <link href="https://augists.top/SELF/THINKING/Record-an-experience-of-computer-fixing/"/>
-    <id>https://augists.top/SELF/THINKING/Record-an-experience-of-computer-fixing/</id>
-    <published>2021-10-25T12:28:05.000Z</published>
-    <updated>2021-11-08T15:07:08.286Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>昨天朋友的 windows 在更新系统的时候，突然蓝屏了，叫我过去帮忙。</p><p>蓝屏代码 0xc0000001，网上查询其错误原因特别乱，最终确定可能是因为系统引导故障。</p><p>电脑是 ROG 的笔记本，每次开机时间都超级长。出现蓝屏问题后，无法正常进入系统。F8通过安全模式启动，无论是否带命令行的安全模式（我应该没记错，也可能叫恢复模式）还是是否禁用一些启动设置再启动系统，都无法进入系统。尝试了自带的修复工具、恢复到还原点（3个）、UEFI固件设置等所有可以尝试的操作（除了直接重置系统），都没有任何反应。</p><p>其实修电脑并不是我想说的，最终的修复方法是用其他电脑做了一个windows的启动盘然后将系统装在D盘，并且成功进入了新做好的系统，并将C盘里需要的文件拷贝回来。我是在想。。。</p><p>当你使用一套别人制作好并且闭源的系统，当它出现这种故障时，你只能使用开发者提供的修复工具尝试进行修复，而无法了解为什么出现这个问题，如何复现，怎么才能避免出现这种状况。我一直提倡的理念是，简约、但将其他复杂的功能作为备选项提供给用户，让它的决定权还给用户自己。我可以不用，但你不能没有。以手机系统为例，我可以将屏幕刷新率默认设置到一个用户能接受并且对系统影响不大的数值，比如系统默认设置为60Hz的刷新率，同时提供90Hz、120Hz甚至ProMotion这种可变刷新率的选项。依照它的实用程度、用户的使用频率甚至说计算出的用户使用的可能性，将它放在一定的系统设置的层级深度。比如刚才提到的屏幕刷新率设置放在 设置-显示-屏幕刷新率 层级里，或是 设置-显示-屏幕-刷新率，因为屏幕刷新率是用户有可能与默认设置意见不同而进行修改的选项。如果提供了如ProMotion这种动态可变刷新率的设置，当用户将刷新率修改为ProMotion后，屏幕刷新率的选项设置层级会进行下移，将它放入 设置-其他-屏幕（显示）-屏幕刷新率 这种角落里。本身系统提供了最基础最大众最优化（甚至可以说是让用户感知的结果最好）的方案，将方案的修改细节同样提供给用户可以进行任意的修改。</p><p>说完我自己的想法，那就可以来说说现在市场上的产品了。windows作为一个完全闭源，基本软件也闭源的操作系统，可以说是和我相去甚远的。当我遇到这种情况，仅仅使用它提供的工具和手段无法方便快捷的解决问题时，我会非常无能为力。macOS只能说达标了一部分。本身系统也闭源，但是它很好的提供了对开源的Linux的兼容性，同时开放的去接受了大量开源软件和开源思想。所以当你在macOS上遇到了问题，如果你有能力，是可以一定程度上自己尝试解决的。但是在开放系统本身上，它做的只是提供了一套非常优秀的配置方案，而并没有给用户开放更多的权限了。在Linux的众多发行版里，arch就比较极端，ubuntu系中规中矩。arch（甚至gentoo）将所有都开放给了用户， 甚至可以说连最基本的都完全交给用户自己定义。ubuntu系本身提供了一套还不错的路子，但是似乎在可自定义性上稍微会差一点。介于中间的像Manjaro同时兼具了提供配套服务、提供用户最大化的选择权，同时拥有类arch的自定义性，所以我一直把Manjaro当作我心目中最佳的选择了。</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Export My Thought
-    
-    </summary>
-    
-    
-    
-      <category term="THINKING" scheme="https://augists.top/tags/THINKING/"/>
     
   </entry>
   
