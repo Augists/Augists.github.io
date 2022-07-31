@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://augists.top/NOTES/CODE_LANGUAGE/concurrency/</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://augists.top/SELF/SHARING/LIFE/Tips-of-DUT-EDA/</loc>
     
     <lastmod>2022-07-25</lastmod>
@@ -79,14 +86,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/CODE_LANGUAGE/RE2Syntax/</loc>
+    <loc>https://augists.top/NOTES/CODE_LANGUAGE/REGEX/RE2Syntax/</loc>
     
     <lastmod>2022-01-20</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/CODE_LANGUAGE/Hanming-Code/</loc>
+    <loc>https://augists.top/NOTES/COURSES/Hanming-Code/</loc>
     
     <lastmod>2022-01-20</lastmod>
     
@@ -177,7 +184,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/CODE_LANGUAGE/C-cin-clean-cache/</loc>
+    <loc>https://augists.top/NOTES/CODE_LANGUAGE/C/C-cin-clean-cache/</loc>
     
     <lastmod>2021-11-21</lastmod>
     
@@ -520,7 +527,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/GIT/Pac-Proxy-for-Github/</loc>
+    <loc>https://augists.top/NOTES/TERMINAL/GIT/Pac-Proxy-for-Github/</loc>
     
     <lastmod>2021-06-14</lastmod>
     
@@ -555,7 +562,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/GIT/Git-not-ignore-under-directory/</loc>
+    <loc>https://augists.top/NOTES/TERMINAL/GIT/Git-not-ignore-under-directory/</loc>
     
     <lastmod>2021-06-03</lastmod>
     
@@ -569,7 +576,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/Hooked-by-Hooked/</loc>
+    <loc>https://augists.top/NOTES/BOOK/Hooked-by-Hooked/</loc>
     
     <lastmod>2021-05-16</lastmod>
     
@@ -632,7 +639,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/GIT/Github-DNS/</loc>
+    <loc>https://augists.top/NOTES/TERMINAL/GIT/Github-DNS/</loc>
     
     <lastmod>2021-05-09</lastmod>
     
@@ -779,7 +786,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/STL/for-auto/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/STL/for-auto/</loc>
     
     <lastmod>2020-08-05</lastmod>
     
@@ -800,7 +807,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/WEB/CSS-Study-Note/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/WEB/CSS-Study-Note/</loc>
     
     <lastmod>2020-07-21</lastmod>
     
@@ -856,7 +863,7 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/WEB/HTML-study-note/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/WEB/HTML-study-note/</loc>
     
     <lastmod>2020-07-20</lastmod>
     
@@ -891,14 +898,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/MFC/MFC-Report/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/MFC/MFC-Report/</loc>
     
     <lastmod>2020-07-05</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/QT/QT-Report/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/QT/QT-Report/</loc>
     
     <lastmod>2020-07-03</lastmod>
     
@@ -912,28 +919,28 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/software/Software-Development-Process/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/software/Software-Development-Process/</loc>
     
     <lastmod>2020-06-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/STL/Cpp-STL-Report/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/STL/Cpp-STL-Report/</loc>
     
     <lastmod>2020-06-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/STL/STL-note/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/STL/STL-note/</loc>
     
     <lastmod>2020-06-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/SUMMERTERM/STL/STL-Learn-and-Summarize/</loc>
+    <loc>https://augists.top/NOTES/COURSES/SUMMERTERM/STL/STL-Learn-and-Summarize/</loc>
     
     <lastmod>2020-06-30</lastmod>
     
@@ -1024,14 +1031,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/VIM_EMACS/VIMRC/</loc>
+    <loc>https://augists.top/NOTES/TERMINAL/VIM_EMACS/VIMRC/</loc>
     
     <lastmod>2020-06-20</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/VIM_EMACS/Spacemacs/</loc>
+    <loc>https://augists.top/NOTES/TERMINAL/VIM_EMACS/Spacemacs/</loc>
     
     <lastmod>2020-06-20</lastmod>
     
@@ -1045,28 +1052,28 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/GIT/git-cheat-sheet/</loc>
+    <loc>https://augists.top/NOTES/TERMINAL/GIT/git-cheat-sheet/</loc>
     
     <lastmod>2020-06-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/GIT/git-cheat-sheet-en/</loc>
+    <loc>https://augists.top/NOTES/TERMINAL/GIT/git-cheat-sheet-en/</loc>
     
     <lastmod>2020-06-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/ENGLISH/Writing-CET4-6/</loc>
+    <loc>https://augists.top/NOTES/COURSES/ENGLISH/Writing-CET4-6/</loc>
     
     <lastmod>2020-06-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/ENGLISH/abbreviation-in-email/</loc>
+    <loc>https://augists.top/NOTES/COURSES/ENGLISH/abbreviation-in-email/</loc>
     
     <lastmod>2020-06-09</lastmod>
     
@@ -1115,14 +1122,14 @@
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/ENGLISH/Email-in-English/</loc>
+    <loc>https://augists.top/NOTES/COURSES/ENGLISH/Email-in-English/</loc>
     
     <lastmod>2020-05-31</lastmod>
     
   </url>
   
   <url>
-    <loc>https://augists.top/NOTES/ENGLISH/Transition-word-sentence/</loc>
+    <loc>https://augists.top/NOTES/COURSES/ENGLISH/Transition-word-sentence/</loc>
     
     <lastmod>2020-05-31</lastmod>
     
@@ -1131,7 +1138,7 @@
 
   <url>
     <loc>https://augists.top/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1139,301 +1146,301 @@
   
   <url>
     <loc>https://augists.top/tags/APPLE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/MAC/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/IPHONE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/TERMINAL/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/HELLO/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/HEXO/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/CODE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/NOTE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/ERROR/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/DEVICE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/GIT/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/ENGLISH/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/EMACS/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/VIM/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/REVIEW/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/C-C/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/QT/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/SUMMERTERM/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/C-C/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/GOLANG/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/THINKING/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/GTD/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/NETFLIX/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/HANMING/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/TMUX/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/REGEX/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/SHARING/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/MFC/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/STL/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/WEB/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/HTML/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/CSS/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/GITHUB/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/VIRUS/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/UNIX/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/FONT/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/MOVIE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/DATASTRUCTURE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/JAVA/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/MATLAB/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/TREE/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/OS/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://augists.top/tags/PAPER/</loc>
-    <lastmod>2022-07-25</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

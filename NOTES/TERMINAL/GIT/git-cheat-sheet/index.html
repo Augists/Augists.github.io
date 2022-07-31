@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="Git Cheat Sheet check if necessary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Cheat Sheet">
+<meta property="og:url" content="https://augists.top/NOTES/TERMINAL/GIT/git-cheat-sheet/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="Git Cheat Sheet check if necessary">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbhg47xbjj30pa0ak3yk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbhgm4w2qj30h809hab6.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbhgwt7xcj310c0o7acs.jpg">
+<meta property="article:published_time" content="2020-05-31T03:35:38.000Z">
+<meta property="article:modified_time" content="2020-06-09T10:37:20.149Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="TERMINAL">
+<meta property="article:tag" content="CODE">
+<meta property="article:tag" content="GIT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg">
+
+<link rel="canonical" href="https://augists.top/NOTES/TERMINAL/GIT/git-cheat-sheet/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Git Cheat Sheet | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/TERMINAL/GIT/git-cheat-sheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git Cheat Sheet
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-31 11:35:38" itemprop="dateCreated datePublished" datetime="2020-05-31T11:35:38+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-09 18:37:20" itemprop="dateModified" datetime="2020-06-09T18:37:20+08:00">2020-06-09</time>
+              </span>
+
+          
+            <div class="post-description">Git Cheat Sheet check if necessary</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Git-Cheat-Sheet-中文版"><a href="#Git-Cheat-Sheet-中文版" class="headerlink" title="Git Cheat Sheet 中文版 "></a>Git Cheat Sheet 中文版 <a target="_blank" rel="noopener" href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a></h1><hr>
+<p align="center">
+    <img alt="Git" src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbhg47xbjj30pa0ak3yk.jpg" height="190" width="455">
+</p>
+
+<hr>
+<h5 id="forked-from-http-bilalarslan-me-git-cheat-sheet"><a href="#forked-from-http-bilalarslan-me-git-cheat-sheet" class="headerlink" title="forked from http://bilalarslan.me/git-cheat-sheet/"></a>forked from <a target="_blank" rel="noopener" href="http://bilalarslan.me/git-cheat-sheet/">http://bilalarslan.me/git-cheat-sheet/</a></h5><hr>
+<p>Git cheat sheet 让你不用再去记所有的git命令。</p>
+<p>欢迎贡献内容、更新语法错误，也欢迎添加你母语版本的Git cheat sheet。</p>
+<hr>
+<p>Git Cheat Sheet 中文版</p>
+<p>=====================</p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><ul>
+<li><a href="#配置">配置</a></li>
+<li><a href="#配置文件">配置文件</a></li>
+<li><a href="#创建">创建</a></li>
+<li><a href="#本地修改">本地修改</a></li>
+<li><a href="#搜索">搜索</a></li>
+<li><a href="#提交历史">提交历史</a></li>
+<li><a href="#分支与标签">分支与标签</a></li>
+<li><a href="#更新与发布">更新与发布</a></li>
+<li><a href="#合并与重置">合并与重置</a></li>
+<li><a href="#撤销">撤销</a></li>
+<li><a href="#git-flow">Git Flow</a></li>
+</ul>
+<hr>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h5 id="列出当前配置："><a href="#列出当前配置：" class="headerlink" title="列出当前配置："></a>列出当前配置：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--list</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出repository配置："><a href="#列出repository配置：" class="headerlink" title="列出repository配置："></a>列出repository配置：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--local --list</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出全局配置："><a href="#列出全局配置：" class="headerlink" title="列出全局配置："></a>列出全局配置：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global --list</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出系统配置："><a href="#列出系统配置：" class="headerlink" title="列出系统配置："></a>列出系统配置：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--system --list</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置用户名："><a href="#设置用户名：" class="headerlink" title="设置用户名："></a>设置用户名：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name “[firstname lastname]”</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置用户邮箱："><a href="#设置用户邮箱：" class="headerlink" title="设置用户邮箱："></a>设置用户邮箱：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.email “[valid-email]”</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置git命令输出为彩色："><a href="#设置git命令输出为彩色：" class="headerlink" title="设置git命令输出为彩色："></a>设置git命令输出为彩色：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global color.ui auto</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置git使用的文本编辑器设："><a href="#设置git使用的文本编辑器设：" class="headerlink" title="设置git使用的文本编辑器设："></a>设置git使用的文本编辑器设：</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global core.editor vi</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><h5 id="Repository配置对应的配置文件路径-–local-："><a href="#Repository配置对应的配置文件路径-–local-：" class="headerlink" title="Repository配置对应的配置文件路径[–local]："></a>Repository配置对应的配置文件路径[–local]：</h5><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;repo&gt;<span class="regexp">/.git/</span>config</span><br></pre></td></tr></table></figure>
+
+<h5 id="用户全局配置对应的配置文件路径-–global-："><a href="#用户全局配置对应的配置文件路径-–global-：" class="headerlink" title="用户全局配置对应的配置文件路径[–global]："></a>用户全局配置对应的配置文件路径[–global]：</h5><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.gitconfig</span><br></pre></td></tr></table></figure>
+
+<h5 id="系统配置对应的配置文件路径-–local-："><a href="#系统配置对应的配置文件路径-–local-：" class="headerlink" title="系统配置对应的配置文件路径[–local]："></a>系统配置对应的配置文件路径[–local]：</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/etc/gi</span>tconfig</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><h5 id="复制一个已创建的仓库"><a href="#复制一个已创建的仓库" class="headerlink" title="复制一个已创建的仓库:"></a>复制一个已创建的仓库:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过 SSH</span></span><br><span class="line">$ git <span class="built_in">clone</span> ssh://user@domain.com/repo.git</span><br><span class="line"></span><br><span class="line"><span class="comment">#通过 HTTP</span></span><br><span class="line">$ git <span class="built_in">clone</span> http://domain.com/user/repo.git</span><br></pre></td></tr></table></figure>
+
+<h5 id="创建一个新的本地仓库"><a href="#创建一个新的本地仓库" class="headerlink" title="创建一个新的本地仓库:"></a>创建一个新的本地仓库:</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git init</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="本地修改"><a href="#本地修改" class="headerlink" title="本地修改"></a>本地修改</h3><h5 id="显示工作路径下已修改的文件："><a href="#显示工作路径下已修改的文件：" class="headerlink" title="显示工作路径下已修改的文件："></a>显示工作路径下已修改的文件：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git status</span><br></pre></td></tr></table></figure>
+
+<h5 id="显示与上次提交版本文件的不同："><a href="#显示与上次提交版本文件的不同：" class="headerlink" title="显示与上次提交版本文件的不同："></a>显示与上次提交版本文件的不同：</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> git <span class="built_in">diff</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="把当前所有修改添加到下次提交中："><a href="#把当前所有修改添加到下次提交中：" class="headerlink" title="把当前所有修改添加到下次提交中："></a>把当前所有修改添加到下次提交中：</h5><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">add</span><span class="bash"> .</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="把对某个文件的修改添加到下次提交中："><a href="#把对某个文件的修改添加到下次提交中：" class="headerlink" title="把对某个文件的修改添加到下次提交中："></a>把对某个文件的修改添加到下次提交中：</h5><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">add</span><span class="bash"> -p &lt;file&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="提交本地的所有修改："><a href="#提交本地的所有修改：" class="headerlink" title="提交本地的所有修改："></a>提交本地的所有修改：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git commit -a</span><br></pre></td></tr></table></figure>
+
+<h5 id="提交之前已标记的变化："><a href="#提交之前已标记的变化：" class="headerlink" title="提交之前已标记的变化："></a>提交之前已标记的变化：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git commit</span><br></pre></td></tr></table></figure>
+
+<h5 id="附加消息提交："><a href="#附加消息提交：" class="headerlink" title="附加消息提交："></a>附加消息提交：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git commit -m <span class="string">&#x27;message here&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="提交，并将提交时间设置为之前的某个日期"><a href="#提交，并将提交时间设置为之前的某个日期" class="headerlink" title="提交，并将提交时间设置为之前的某个日期:"></a>提交，并将提交时间设置为之前的某个日期:</h5><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --date=<span class="string">&quot;`date --date=&#x27;n day ago&#x27;`&quot; -am &quot;</span>Commit Message<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="修改上次提交"><a href="#修改上次提交" class="headerlink" title="修改上次提交"></a>修改上次提交</h5><p><em><sub>请勿修改已发布的提交记录!</sub></em></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">commit</span> <span class="comment">--amend</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="修改上次提交的committer-date："><a href="#修改上次提交的committer-date：" class="headerlink" title="修改上次提交的committer date："></a>修改上次提交的committer date：</h5><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">GIT_COMMITTER_DATE</span>=<span class="string">&quot;date&quot;</span> git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改上次提交的author-date："><a href="#修改上次提交的author-date：" class="headerlink" title="修改上次提交的author date："></a>修改上次提交的author date：</h5><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit <span class="params">--amend</span> <span class="params">--date=</span><span class="string">&quot;date&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="把当前分支中未提交的修改移动到其他分支："><a href="#把当前分支中未提交的修改移动到其他分支：" class="headerlink" title="把当前分支中未提交的修改移动到其他分支："></a>把当前分支中未提交的修改移动到其他分支：</h5><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">stash</span></span><br><span class="line"><span class="attr">git</span> <span class="string">checkout branch2</span></span><br><span class="line"><span class="attr">git</span> <span class="string">stash pop</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将-stashed-changes-应用到当前分支："><a href="#将-stashed-changes-应用到当前分支：" class="headerlink" title="将 stashed changes 应用到当前分支："></a>将 stashed changes 应用到当前分支：</h5><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="built_in">apply</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="删除最新一次的-stashed-changes："><a href="#删除最新一次的-stashed-changes：" class="headerlink" title="删除最新一次的 stashed changes："></a>删除最新一次的 stashed changes：</h5><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git stash drop</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><h5 id="从当前目录的所有文件中查找文本内容："><a href="#从当前目录的所有文件中查找文本内容：" class="headerlink" title="从当前目录的所有文件中查找文本内容："></a>从当前目录的所有文件中查找文本内容：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git grep <span class="string">&quot;Hello&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="在某一版本中搜索文本："><a href="#在某一版本中搜索文本：" class="headerlink" title="在某一版本中搜索文本："></a>在某一版本中搜索文本：</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git grep <span class="string">&quot;Hello&quot;</span> <span class="built_in">v2</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="提交历史"><a href="#提交历史" class="headerlink" title="提交历史"></a>提交历史</h3><h5 id="从最新提交开始，显示所有的提交记录（显示hash，-作者信息，提交的标题和时间）："><a href="#从最新提交开始，显示所有的提交记录（显示hash，-作者信息，提交的标题和时间）：" class="headerlink" title="从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）："></a>从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="显示所有提交（仅显示提交的hash和message）："><a href="#显示所有提交（仅显示提交的hash和message）：" class="headerlink" title="显示所有提交（仅显示提交的hash和message）："></a>显示所有提交（仅显示提交的hash和message）：</h5><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment">--oneline</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="显示某个用户的所有提交："><a href="#显示某个用户的所有提交：" class="headerlink" title="显示某个用户的所有提交："></a>显示某个用户的所有提交：</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> git <span class="built_in">log</span> --author=<span class="string">&quot;username&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="显示某个文件的所有修改："><a href="#显示某个文件的所有修改：" class="headerlink" title="显示某个文件的所有修改："></a>显示某个文件的所有修改：</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> git <span class="built_in">log</span> -p &lt;<span class="keyword">file</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="仅显示远端-lt-remote-master-gt-分支与远端-lt-origin-master-gt-分支提交记录的差集："><a href="#仅显示远端-lt-remote-master-gt-分支与远端-lt-origin-master-gt-分支提交记录的差集：" class="headerlink" title="仅显示远端&lt;remote/master&gt;分支与远端&lt;origin/master&gt;分支提交记录的差集："></a>仅显示远端&lt;remote/master&gt;分支与远端&lt;origin/master&gt;分支提交记录的差集：</h5><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --oneline &lt;origin/master&gt;..&lt;remote/master&gt; --<span class="built_in">left</span>-<span class="built_in">right</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="谁，在什么时间，修改了文件的什么内容："><a href="#谁，在什么时间，修改了文件的什么内容：" class="headerlink" title="谁，在什么时间，修改了文件的什么内容："></a>谁，在什么时间，修改了文件的什么内容：</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> git blame &lt;<span class="keyword">file</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="显示reflog："><a href="#显示reflog：" class="headerlink" title="显示reflog："></a>显示reflog：</h5><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">ref</span>log show</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除reflog："><a href="#删除reflog：" class="headerlink" title="删除reflog："></a>删除reflog：</h5><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog <span class="keyword">delete</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h3><h5 id="列出所有的分支："><a href="#列出所有的分支：" class="headerlink" title="列出所有的分支："></a>列出所有的分支：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git branch</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出所有的远端分支："><a href="#列出所有的远端分支：" class="headerlink" title="列出所有的远端分支："></a>列出所有的远端分支：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git branch -r</span><br></pre></td></tr></table></figure>
+
+<h5 id="切换分支："><a href="#切换分支：" class="headerlink" title="切换分支："></a>切换分支：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="创建并切换到新分支"><a href="#创建并切换到新分支" class="headerlink" title="创建并切换到新分支:"></a>创建并切换到新分支:</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -<span class="keyword">b</span> &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="基于当前分支创建新分支："><a href="#基于当前分支创建新分支：" class="headerlink" title="基于当前分支创建新分支："></a>基于当前分支创建新分支：</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch &lt;<span class="keyword">new</span><span class="type"></span>-branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="基于远程分支创建新的可追溯的分支："><a href="#基于远程分支创建新的可追溯的分支：" class="headerlink" title="基于远程分支创建新的可追溯的分支："></a>基于远程分支创建新的可追溯的分支：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --track <span class="tag">&lt;<span class="name">new-branch</span>&gt;</span> <span class="tag">&lt;<span class="name">remote-branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支:"></a>删除本地分支:</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="强制删除一个本地分支："><a href="#强制删除一个本地分支：" class="headerlink" title="强制删除一个本地分支："></a>强制删除一个本地分支：</h5><p><em><sub>将会丢失未合并的修改！</sub></em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -D <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h5 id="给当前版本打标签："><a href="#给当前版本打标签：" class="headerlink" title="给当前版本打标签："></a>给当前版本打标签：</h5><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">tag</span> <span class="title">&lt;tag-name</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="给当前版本打标签并附加消息："><a href="#给当前版本打标签并附加消息：" class="headerlink" title="给当前版本打标签并附加消息："></a>给当前版本打标签并附加消息：</h5><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">tag</span> <span class="title">-a</span> <span class="tag">&lt;tag-name&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="更新与发布"><a href="#更新与发布" class="headerlink" title="更新与发布"></a>更新与发布</h3><h5 id="列出当前配置的远程端："><a href="#列出当前配置的远程端：" class="headerlink" title="列出当前配置的远程端："></a>列出当前配置的远程端：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git remote -v</span><br></pre></td></tr></table></figure>
+
+<h5 id="显示远程端的信息："><a href="#显示远程端的信息：" class="headerlink" title="显示远程端的信息："></a>显示远程端的信息：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote show <span class="tag">&lt;<span class="name">remote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="添加新的远程端："><a href="#添加新的远程端：" class="headerlink" title="添加新的远程端："></a>添加新的远程端：</h5><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote <span class="built_in">add</span> <span class="symbol">&lt;remote&gt;</span> <span class="symbol">&lt;url&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="下载远程端版本，但不合并到HEAD中："><a href="#下载远程端版本，但不合并到HEAD中：" class="headerlink" title="下载远程端版本，但不合并到HEAD中："></a>下载远程端版本，但不合并到HEAD中：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch <span class="tag">&lt;<span class="name">remote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="下载远程端版本，并自动与HEAD版本合并："><a href="#下载远程端版本，并自动与HEAD版本合并：" class="headerlink" title="下载远程端版本，并自动与HEAD版本合并："></a>下载远程端版本，并自动与HEAD版本合并：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote pull <span class="tag">&lt;<span class="name">remote</span>&gt;</span> <span class="tag">&lt;<span class="name">url</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将远程端版本合并到本地版本中："><a href="#将远程端版本合并到本地版本中：" class="headerlink" title="将远程端版本合并到本地版本中："></a>将远程端版本合并到本地版本中：</h5><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="以rebase方式将远端分支与本地合并："><a href="#以rebase方式将远端分支与本地合并：" class="headerlink" title="以rebase方式将远端分支与本地合并："></a>以rebase方式将远端分支与本地合并：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase <span class="tag">&lt;<span class="name">remote</span>&gt;</span> <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将本地版本发布到远程端："><a href="#将本地版本发布到远程端：" class="headerlink" title="将本地版本发布到远程端："></a>将本地版本发布到远程端：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push remote <span class="tag">&lt;<span class="name">remote</span>&gt;</span> <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="删除远程端分支："><a href="#删除远程端分支：" class="headerlink" title="删除远程端分支："></a>删除远程端分支：</h5><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push &lt;remote&gt; :&lt;<span class="keyword">branch&gt; </span>(since Git <span class="built_in">v1</span>.<span class="number">5</span>.<span class="number">0</span>)</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="keyword">git </span>push &lt;remote&gt; --delete &lt;<span class="keyword">branch&gt; </span>(since Git <span class="built_in">v1</span>.<span class="number">7</span>.<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="发布标签"><a href="#发布标签" class="headerlink" title="发布标签:"></a>发布标签:</h5><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push <span class="comment">--tags</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>###合并与重置(Rebase)</p>
+<h5 id="将分支合并到当前HEAD中："><a href="#将分支合并到当前HEAD中：" class="headerlink" title="将分支合并到当前HEAD中："></a>将分支合并到当前HEAD中：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将当前HEAD版本重置到分支中"><a href="#将当前HEAD版本重置到分支中" class="headerlink" title="将当前HEAD版本重置到分支中:"></a>将当前HEAD版本重置到分支中:</h5><p><em><sub>请勿重置已发布的提交!</sub></em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出重置"><a href="#退出重置" class="headerlink" title="退出重置:"></a>退出重置:</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> git rebase --<span class="keyword">abort</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="解决冲突后继续重置："><a href="#解决冲突后继续重置：" class="headerlink" title="解决冲突后继续重置："></a>解决冲突后继续重置：</h5><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --<span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="使用配置好的merge-tool-解决冲突："><a href="#使用配置好的merge-tool-解决冲突：" class="headerlink" title="使用配置好的merge tool 解决冲突："></a>使用配置好的merge tool 解决冲突：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git mergetool</span><br></pre></td></tr></table></figure>
+
+<h5 id="在编辑器中手动解决冲突后，标记文件为已解决冲突："><a href="#在编辑器中手动解决冲突后，标记文件为已解决冲突：" class="headerlink" title="在编辑器中手动解决冲突后，标记文件为已解决冲突："></a>在编辑器中手动解决冲突后，标记文件为<code>已解决冲突</code>：</h5><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">add</span><span class="bash"> &lt;resolved-file&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> git <span class="built_in">rm</span> &lt;resolved<span class="operator">-file</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="合并提交："><a href="#合并提交：" class="headerlink" title="合并提交："></a>合并提交：</h5><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase -i &lt;commit-just-<span class="keyword">before</span>-<span class="keyword">first</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>把上面的内容替换为下面的内容：</p>
+<p>原内容：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pick <span class="tag">&lt;<span class="name">commit_id</span>&gt;</span></span><br><span class="line">pick <span class="tag">&lt;<span class="name">commit_id2</span>&gt;</span></span><br><span class="line">pick <span class="tag">&lt;<span class="name">commit_id3</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>替换为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pick <span class="tag">&lt;<span class="name">commit_id</span>&gt;</span></span><br><span class="line">squash <span class="tag">&lt;<span class="name">commit_id2</span>&gt;</span></span><br><span class="line">squash <span class="tag">&lt;<span class="name">commit_id3</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><h5 id="放弃工作目录下的所有修改："><a href="#放弃工作目录下的所有修改：" class="headerlink" title="放弃工作目录下的所有修改："></a>放弃工作目录下的所有修改：</h5><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard HEAD</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="移除缓存区的所有文件（i-e-撤销上次git-add）"><a href="#移除缓存区的所有文件（i-e-撤销上次git-add）" class="headerlink" title="移除缓存区的所有文件（i.e. 撤销上次git add）:"></a>移除缓存区的所有文件（i.e. 撤销上次<code>git add</code>）:</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="keyword">HEAD</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="放弃某个文件的所有本地修改："><a href="#放弃某个文件的所有本地修改：" class="headerlink" title="放弃某个文件的所有本地修改："></a>放弃某个文件的所有本地修改：</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> git checkout HEAD &lt;<span class="keyword">file</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="重置一个提交（通过创建一个截然不同的新提交）"><a href="#重置一个提交（通过创建一个截然不同的新提交）" class="headerlink" title="重置一个提交（通过创建一个截然不同的新提交）"></a>重置一个提交（通过创建一个截然不同的新提交）</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git revert <span class="tag">&lt;<span class="name">commit</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将HEAD重置到指定的版本，并抛弃该版本之后的所有修改："><a href="#将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：" class="headerlink" title="将HEAD重置到指定的版本，并抛弃该版本之后的所有修改："></a>将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：</h5><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard &lt;commit&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="用远端分支强制覆盖本地分支："><a href="#用远端分支强制覆盖本地分支：" class="headerlink" title="用远端分支强制覆盖本地分支："></a>用远端分支强制覆盖本地分支：</h5><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">reset</span> --hard &lt;remote/branch&gt; e.g., upstream/master, <span class="built_in">origin</span>/my-<span class="built_in">feature</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改："><a href="#将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：" class="headerlink" title="将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改："></a>将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：</h5><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> &lt;<span class="keyword">commit</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="将HEAD重置到上一次提交的版本，并保留未提交的本地修改："><a href="#将HEAD重置到上一次提交的版本，并保留未提交的本地修改：" class="headerlink" title="将HEAD重置到上一次提交的版本，并保留未提交的本地修改："></a>将HEAD重置到上一次提交的版本，并保留未提交的本地修改：</h5><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--keep &lt;commit&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="删除添加-gitignore文件前错误提交的文件："><a href="#删除添加-gitignore文件前错误提交的文件：" class="headerlink" title="删除添加.gitignore文件前错误提交的文件："></a>删除添加<code>.gitignore</code>文件前错误提交的文件：</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> git <span class="built_in">rm</span> <span class="literal">-r</span> -<span class="literal">-cached</span> .</span><br><span class="line"><span class="variable">$</span> git add .</span><br><span class="line"><span class="variable">$</span> git commit <span class="literal">-m</span> <span class="string">&quot;remove xyz file&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Git-Flow"><a href="#Git-Flow" class="headerlink" title="Git-Flow"></a>Git-Flow</h2><h3 id="索引-1"><a href="#索引-1" class="headerlink" title="索引"></a>索引</h3><ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#开始">开始</a></li>
+<li><a href="#特性">特性</a></li>
+<li><a href="#做一个release版本">做一个release版本</a></li>
+<li><a href="#紧急修复">紧急修复</a></li>
+<li><a href="#commands">Commands</a></li>
+</ul>
+<hr>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>你需要有一个可以工作的 git 作为前提。</li>
+<li>Git flow 可以工作在 OSX, Linux 和 Windows之下</li>
+</ul>
+<h5 id="OSX-Homebrew"><a href="#OSX-Homebrew" class="headerlink" title="OSX Homebrew:"></a>OSX Homebrew:</h5><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span><span class="keyword">install </span>git-flow</span><br></pre></td></tr></table></figure>
+
+<h5 id="OSX-Macports"><a href="#OSX-Macports" class="headerlink" title="OSX Macports:"></a>OSX Macports:</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="built_in"> port </span>install git-flow</span><br></pre></td></tr></table></figure>
+
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux:"></a>Linux:</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-<span class="builtin-name">get</span> install git-flow</span><br></pre></td></tr></table></figure>
+
+<h5 id="Windows-Cygwin"><a href="#Windows-Cygwin" class="headerlink" title="Windows (Cygwin):"></a>Windows (Cygwin):</h5><p>安装 git-flow, 你需要 wget 和 util-linux。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -q -O - --no-check-certificate https:<span class="regexp">//gi</span>thub.com<span class="regexp">/nvie/gi</span>tflow<span class="regexp">/raw/</span>develop<span class="regexp">/contrib/gi</span>tflow-installer.sh | bash</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ul>
+<li>为了自定义你的项目，Git flow 需要初始化过程。</li>
+<li>使用 git-flow，从初始化一个现有的 git 库内开始。</li>
+<li>初始化，你必须回答几个关于分支的命名约定的问题。建议使用默认值。</li>
+</ul>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git flow init</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>为即将发布的版本开发新功能特性。</li>
+<li>这通常只存在开发者的库中。</li>
+</ul>
+<h5 id="创建一个新特性"><a href="#创建一个新特性" class="headerlink" title="创建一个新特性:"></a>创建一个新特性:</h5><p>下面操作创建了一个新的feature分支，并切换到该分支</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow feature <span class="literal">start</span> MYFEATURE</span><br></pre></td></tr></table></figure>
+
+<h5 id="完成新特性的开发"><a href="#完成新特性的开发" class="headerlink" title="完成新特性的开发:"></a>完成新特性的开发:</h5><p>完成开发新特性。这个动作执行下面的操作：</p>
+<ol>
+<li>合并 MYFEATURE 分支到 ‘develop’</li>
+<li>删除这个新特性分支</li>
+<li>切换回 ‘develop’ 分支</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git flow feature finish MYFEATURE</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="发布新特性"><a href="#发布新特性" class="headerlink" title="发布新特性:"></a>发布新特性:</h5><p>你是否合作开发一项新特性？<br>发布新特性分支到远程服务器，所以，其它用户也可以使用这分支。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git flow feature publish MYFEATURE</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="取得一个发布的新特性分支"><a href="#取得一个发布的新特性分支" class="headerlink" title="取得一个发布的新特性分支:"></a>取得一个发布的新特性分支:</h5><p>取得其它用户发布的新特性分支。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow <span class="built_in">feature</span> pull <span class="built_in">origin</span> MYFEATURE</span><br></pre></td></tr></table></figure>
+
+<h5 id="追溯远端上的特性"><a href="#追溯远端上的特性" class="headerlink" title="追溯远端上的特性:"></a>追溯远端上的特性:</h5><p>通过下面命令追溯远端上的特性</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow <span class="built_in">feature</span> <span class="built_in">track</span> MYFEATURE</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="做一个release版本"><a href="#做一个release版本" class="headerlink" title="做一个release版本"></a>做一个release版本</h3><ul>
+<li>支持一个新的用于生产环境的发布版本。</li>
+<li>允许修正小问题，并为发布版本准备元数据。</li>
+</ul>
+<h5 id="开始创建release版本"><a href="#开始创建release版本" class="headerlink" title="开始创建release版本:"></a>开始创建release版本:</h5><ul>
+<li>开始创建release版本，使用 git flow release 命令。</li>
+<li>‘release’ 分支的创建基于 ‘develop’ 分支。</li>
+<li>你可以选择提供一个 [BASE]参数，即提交记录的 sha-1 hash 值，来开启动 release 分支。</li>
+<li>这个提交记录的 sha-1 hash 值必须是’develop’ 分支下的。</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow <span class="keyword">release</span> <span class="keyword">start</span> <span class="keyword">RELEASE</span> [BASE]</span><br></pre></td></tr></table></figure>
+
+<p>创建 release 分支之后立即发布允许其它用户向这个 release 分支提交内容是个明智的做法。命令十分类似发布新特性：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow <span class="keyword">release</span> publish <span class="keyword">RELEASE</span></span><br></pre></td></tr></table></figure>
+
+<p>(你可以通过<br><code>git flow release track RELEASE</code> 命令追溯远端的 release 版本)</p>
+<h5 id="完成-release-版本"><a href="#完成-release-版本" class="headerlink" title="完成 release 版本:"></a>完成 release 版本:</h5><p>完成 release 版本是一个大 git 分支操作。它执行下面几个动作：</p>
+<ol>
+<li>归并 release 分支到 ‘master’ 分支。</li>
+<li>用 release 分支名打 Tag</li>
+<li>归并 release 分支到 ‘develop’</li>
+<li>移除 release 分支。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow <span class="keyword">release</span> <span class="keyword">finish</span> <span class="keyword">RELEASE</span></span><br></pre></td></tr></table></figure>
+
+<p>不要忘记使用<code>git push --tags</code>将tags推送到远端</p>
+<hr>
+<h3 id="紧急修复"><a href="#紧急修复" class="headerlink" title="紧急修复"></a>紧急修复</h3><p>紧急修复来自这样的需求：生产环境的版本处于一个不预期状态，需要立即修正。有可能是需要修正 master 分支上某个 TAG 标记的生产版本。</p>
+<h5 id="开始-git-flow-紧急修复"><a href="#开始-git-flow-紧急修复" class="headerlink" title="开始 git flow 紧急修复:"></a>开始 git flow 紧急修复:</h5><p>像其它 git flow 命令一样, 紧急修复分支开始自：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow hotfix <span class="literal">start</span> <span class="keyword">VERSION</span> [BASENAME]</span><br></pre></td></tr></table></figure>
+
+
+<p>VERSION 参数标记着修正版本。你可以从 <code>[BASENAME]开始，</code>[BASENAME]`为finish release时填写的版本号</p>
+<h5 id="完成紧急修复"><a href="#完成紧急修复" class="headerlink" title="完成紧急修复:"></a>完成紧急修复:</h5><p>当完成紧急修复分支，代码归并回 develop 和 master 分支。相应地，master 分支打上修正版本的 TAG。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow hotfix finish <span class="keyword">VERSION</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h3><p align="center">
+    <img alt="Git" src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbhgm4w2qj30h809hab6.jpg" height="270" width="460">
+</p>
+<hr>
+
+<h3 id="Git-flow-schema"><a href="#Git-flow-schema" class="headerlink" title="Git flow schema"></a>Git flow schema</h3><p align="center">
+    <img alt="Git" src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbhgwt7xcj310c0o7acs.jpg">
+</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/TERMINAL/GIT/git-cheat-sheet/" title="Git Cheat Sheet">https://augists.top/NOTES/TERMINAL/GIT/git-cheat-sheet/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TERMINAL/" rel="tag"><i class="fa fa-tag"></i> TERMINAL</a>
+              <a href="/tags/CODE/" rel="tag"><i class="fa fa-tag"></i> CODE</a>
+              <a href="/tags/GIT/" rel="tag"><i class="fa fa-tag"></i> GIT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NOTES/COURSES/ENGLISH/abbreviation-in-email/" rel="prev" title="Abbreviation in Email">
+      <i class="fa fa-chevron-left"></i> Abbreviation in Email
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/TERMINAL/GIT/git-cheat-sheet-en/" rel="next" title="Git Cheat Sheet En">
+      Git Cheat Sheet En <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Cheat-Sheet-%E4%B8%AD%E6%96%87%E7%89%88"><span class="nav-number">1.</span> <span class="nav-text">Git Cheat Sheet 中文版 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#forked-from-http-bilalarslan-me-git-cheat-sheet"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">forked from http:&#x2F;&#x2F;bilalarslan.me&#x2F;git-cheat-sheet&#x2F;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="nav-number">1.0.1.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.0.2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E5%BD%93%E5%89%8D%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">列出当前配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E5%87%BArepository%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">列出repository配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.0.2.0.3.</span> <span class="nav-text">列出全局配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.0.2.0.4.</span> <span class="nav-text">列出系统配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%EF%BC%9A"><span class="nav-number">1.0.2.0.5.</span> <span class="nav-text">设置用户名：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E9%82%AE%E7%AE%B1%EF%BC%9A"><span class="nav-number">1.0.2.0.6.</span> <span class="nav-text">设置用户邮箱：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEgit%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA%E4%B8%BA%E5%BD%A9%E8%89%B2%EF%BC%9A"><span class="nav-number">1.0.2.0.7.</span> <span class="nav-text">设置git命令输出为彩色：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEgit%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%EF%BC%9A"><span class="nav-number">1.0.2.0.8.</span> <span class="nav-text">设置git使用的文本编辑器设：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.0.3.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Repository%E9%85%8D%E7%BD%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84-%E2%80%93local-%EF%BC%9A"><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">Repository配置对应的配置文件路径[–local]：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84-%E2%80%93global-%EF%BC%9A"><span class="nav-number">1.0.3.0.2.</span> <span class="nav-text">用户全局配置对应的配置文件路径[–global]：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84-%E2%80%93local-%EF%BC%9A"><span class="nav-number">1.0.3.0.3.</span> <span class="nav-text">系统配置对应的配置文件路径[–local]：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">1.0.4.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E4%B8%80%E4%B8%AA%E5%B7%B2%E5%88%9B%E5%BB%BA%E7%9A%84%E4%BB%93%E5%BA%93"><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">复制一个已创建的仓库:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">1.0.4.0.2.</span> <span class="nav-text">创建一个新的本地仓库:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BF%AE%E6%94%B9"><span class="nav-number">1.0.5.</span> <span class="nav-text">本地修改</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84%E4%B8%8B%E5%B7%B2%E4%BF%AE%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">1.0.5.0.1.</span> <span class="nav-text">显示工作路径下已修改的文件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E4%B8%8E%E4%B8%8A%E6%AC%A1%E6%8F%90%E4%BA%A4%E7%89%88%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8D%E5%90%8C%EF%BC%9A"><span class="nav-number">1.0.5.0.2.</span> <span class="nav-text">显示与上次提交版本文件的不同：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%8A%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E4%BF%AE%E6%94%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%8B%E6%AC%A1%E6%8F%90%E4%BA%A4%E4%B8%AD%EF%BC%9A"><span class="nav-number">1.0.5.0.3.</span> <span class="nav-text">把当前所有修改添加到下次提交中：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%8A%E5%AF%B9%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%8B%E6%AC%A1%E6%8F%90%E4%BA%A4%E4%B8%AD%EF%BC%9A"><span class="nav-number">1.0.5.0.4.</span> <span class="nav-text">把对某个文件的修改添加到下次提交中：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="nav-number">1.0.5.0.5.</span> <span class="nav-text">提交本地的所有修改：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E4%B9%8B%E5%89%8D%E5%B7%B2%E6%A0%87%E8%AE%B0%E7%9A%84%E5%8F%98%E5%8C%96%EF%BC%9A"><span class="nav-number">1.0.5.0.6.</span> <span class="nav-text">提交之前已标记的变化：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%99%84%E5%8A%A0%E6%B6%88%E6%81%AF%E6%8F%90%E4%BA%A4%EF%BC%9A"><span class="nav-number">1.0.5.0.7.</span> <span class="nav-text">附加消息提交：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%EF%BC%8C%E5%B9%B6%E5%B0%86%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE%E4%B8%BA%E4%B9%8B%E5%89%8D%E7%9A%84%E6%9F%90%E4%B8%AA%E6%97%A5%E6%9C%9F"><span class="nav-number">1.0.5.0.8.</span> <span class="nav-text">提交，并将提交时间设置为之前的某个日期:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%8A%E6%AC%A1%E6%8F%90%E4%BA%A4"><span class="nav-number">1.0.5.0.9.</span> <span class="nav-text">修改上次提交</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%8A%E6%AC%A1%E6%8F%90%E4%BA%A4%E7%9A%84committer-date%EF%BC%9A"><span class="nav-number">1.0.5.0.10.</span> <span class="nav-text">修改上次提交的committer date：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%8A%E6%AC%A1%E6%8F%90%E4%BA%A4%E7%9A%84author-date%EF%BC%9A"><span class="nav-number">1.0.5.0.11.</span> <span class="nav-text">修改上次提交的author date：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%8A%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E4%B8%AD%E6%9C%AA%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%AE%E6%94%B9%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.5.0.12.</span> <span class="nav-text">把当前分支中未提交的修改移动到其他分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86-stashed-changes-%E5%BA%94%E7%94%A8%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.5.0.13.</span> <span class="nav-text">将 stashed changes 应用到当前分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%80%E6%96%B0%E4%B8%80%E6%AC%A1%E7%9A%84-stashed-changes%EF%BC%9A"><span class="nav-number">1.0.5.0.14.</span> <span class="nav-text">删除最新一次的 stashed changes：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-number">1.0.6.</span> <span class="nav-text">搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%8E%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="nav-number">1.0.6.0.1.</span> <span class="nav-text">从当前目录的所有文件中查找文本内容：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8%E6%9F%90%E4%B8%80%E7%89%88%E6%9C%AC%E4%B8%AD%E6%90%9C%E7%B4%A2%E6%96%87%E6%9C%AC%EF%BC%9A"><span class="nav-number">1.0.6.0.2.</span> <span class="nav-text">在某一版本中搜索文本：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2"><span class="nav-number">1.0.7.</span> <span class="nav-text">提交历史</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%8E%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E7%9A%84%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%EF%BC%88%E6%98%BE%E7%A4%BAhash%EF%BC%8C-%E4%BD%9C%E8%80%85%E4%BF%A1%E6%81%AF%EF%BC%8C%E6%8F%90%E4%BA%A4%E7%9A%84%E6%A0%87%E9%A2%98%E5%92%8C%E6%97%B6%E9%97%B4%EF%BC%89%EF%BC%9A"><span class="nav-number">1.0.7.0.1.</span> <span class="nav-text">从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E6%8F%90%E4%BA%A4%EF%BC%88%E4%BB%85%E6%98%BE%E7%A4%BA%E6%8F%90%E4%BA%A4%E7%9A%84hash%E5%92%8Cmessage%EF%BC%89%EF%BC%9A"><span class="nav-number">1.0.7.0.2.</span> <span class="nav-text">显示所有提交（仅显示提交的hash和message）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E6%9F%90%E4%B8%AA%E7%94%A8%E6%88%B7%E7%9A%84%E6%89%80%E6%9C%89%E6%8F%90%E4%BA%A4%EF%BC%9A"><span class="nav-number">1.0.7.0.3.</span> <span class="nav-text">显示某个用户的所有提交：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="nav-number">1.0.7.0.4.</span> <span class="nav-text">显示某个文件的所有修改：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%85%E6%98%BE%E7%A4%BA%E8%BF%9C%E7%AB%AF-lt-remote-master-gt-%E5%88%86%E6%94%AF%E4%B8%8E%E8%BF%9C%E7%AB%AF-lt-origin-master-gt-%E5%88%86%E6%94%AF%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E7%9A%84%E5%B7%AE%E9%9B%86%EF%BC%9A"><span class="nav-number">1.0.7.0.5.</span> <span class="nav-text">仅显示远端&lt;remote&#x2F;master&gt;分支与远端&lt;origin&#x2F;master&gt;分支提交记录的差集：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B0%81%EF%BC%8C%E5%9C%A8%E4%BB%80%E4%B9%88%E6%97%B6%E9%97%B4%EF%BC%8C%E4%BF%AE%E6%94%B9%E4%BA%86%E6%96%87%E4%BB%B6%E7%9A%84%E4%BB%80%E4%B9%88%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="nav-number">1.0.7.0.6.</span> <span class="nav-text">谁，在什么时间，修改了文件的什么内容：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E7%A4%BAreflog%EF%BC%9A"><span class="nav-number">1.0.7.0.7.</span> <span class="nav-text">显示reflog：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A0%E9%99%A4reflog%EF%BC%9A"><span class="nav-number">1.0.7.0.8.</span> <span class="nav-text">删除reflog：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E4%B8%8E%E6%A0%87%E7%AD%BE"><span class="nav-number">1.0.8.</span> <span class="nav-text">分支与标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.8.0.1.</span> <span class="nav-text">列出所有的分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E8%BF%9C%E7%AB%AF%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.8.0.2.</span> <span class="nav-text">列出所有的远端分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.8.0.3.</span> <span class="nav-text">切换分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.0.8.0.4.</span> <span class="nav-text">创建并切换到新分支:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%88%9B%E5%BB%BA%E6%96%B0%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.8.0.5.</span> <span class="nav-text">基于当前分支创建新分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E5%8F%AF%E8%BF%BD%E6%BA%AF%E7%9A%84%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.8.0.6.</span> <span class="nav-text">基于远程分支创建新的可追溯的分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.0.8.0.7.</span> <span class="nav-text">删除本地分支:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.8.0.8.</span> <span class="nav-text">强制删除一个本地分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%99%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC%E6%89%93%E6%A0%87%E7%AD%BE%EF%BC%9A"><span class="nav-number">1.0.8.0.9.</span> <span class="nav-text">给当前版本打标签：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%99%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC%E6%89%93%E6%A0%87%E7%AD%BE%E5%B9%B6%E9%99%84%E5%8A%A0%E6%B6%88%E6%81%AF%EF%BC%9A"><span class="nav-number">1.0.8.0.10.</span> <span class="nav-text">给当前版本打标签并附加消息：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%8F%91%E5%B8%83"><span class="nav-number">1.0.9.</span> <span class="nav-text">更新与发布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E5%BD%93%E5%89%8D%E9%85%8D%E7%BD%AE%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%AB%AF%EF%BC%9A"><span class="nav-number">1.0.9.0.1.</span> <span class="nav-text">列出当前配置的远程端：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E8%BF%9C%E7%A8%8B%E7%AB%AF%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-number">1.0.9.0.2.</span> <span class="nav-text">显示远程端的信息：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%AB%AF%EF%BC%9A"><span class="nav-number">1.0.9.0.3.</span> <span class="nav-text">添加新的远程端：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E8%BF%9C%E7%A8%8B%E7%AB%AF%E7%89%88%E6%9C%AC%EF%BC%8C%E4%BD%86%E4%B8%8D%E5%90%88%E5%B9%B6%E5%88%B0HEAD%E4%B8%AD%EF%BC%9A"><span class="nav-number">1.0.9.0.4.</span> <span class="nav-text">下载远程端版本，但不合并到HEAD中：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E8%BF%9C%E7%A8%8B%E7%AB%AF%E7%89%88%E6%9C%AC%EF%BC%8C%E5%B9%B6%E8%87%AA%E5%8A%A8%E4%B8%8EHEAD%E7%89%88%E6%9C%AC%E5%90%88%E5%B9%B6%EF%BC%9A"><span class="nav-number">1.0.9.0.5.</span> <span class="nav-text">下载远程端版本，并自动与HEAD版本合并：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86%E8%BF%9C%E7%A8%8B%E7%AB%AF%E7%89%88%E6%9C%AC%E5%90%88%E5%B9%B6%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E4%B8%AD%EF%BC%9A"><span class="nav-number">1.0.9.0.6.</span> <span class="nav-text">将远程端版本合并到本地版本中：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A5rebase%E6%96%B9%E5%BC%8F%E5%B0%86%E8%BF%9C%E7%AB%AF%E5%88%86%E6%94%AF%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%90%88%E5%B9%B6%EF%BC%9A"><span class="nav-number">1.0.9.0.7.</span> <span class="nav-text">以rebase方式将远端分支与本地合并：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%E5%88%B0%E8%BF%9C%E7%A8%8B%E7%AB%AF%EF%BC%9A"><span class="nav-number">1.0.9.0.8.</span> <span class="nav-text">将本地版本发布到远程端：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.9.0.9.</span> <span class="nav-text">删除远程端分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E6%A0%87%E7%AD%BE"><span class="nav-number">1.0.9.0.10.</span> <span class="nav-text">发布标签:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8DHEAD%E4%B8%AD%EF%BC%9A"><span class="nav-number">1.0.9.0.11.</span> <span class="nav-text">将分支合并到当前HEAD中：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86%E5%BD%93%E5%89%8DHEAD%E7%89%88%E6%9C%AC%E9%87%8D%E7%BD%AE%E5%88%B0%E5%88%86%E6%94%AF%E4%B8%AD"><span class="nav-number">1.0.9.0.12.</span> <span class="nav-text">将当前HEAD版本重置到分支中:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E9%87%8D%E7%BD%AE"><span class="nav-number">1.0.9.0.13.</span> <span class="nav-text">退出重置:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81%E5%90%8E%E7%BB%A7%E7%BB%AD%E9%87%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.0.9.0.14.</span> <span class="nav-text">解决冲突后继续重置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84merge-tool-%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81%EF%BC%9A"><span class="nav-number">1.0.9.0.15.</span> <span class="nav-text">使用配置好的merge tool 解决冲突：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%AD%E6%89%8B%E5%8A%A8%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81%E5%90%8E%EF%BC%8C%E6%A0%87%E8%AE%B0%E6%96%87%E4%BB%B6%E4%B8%BA%E5%B7%B2%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81%EF%BC%9A"><span class="nav-number">1.0.9.0.16.</span> <span class="nav-text">在编辑器中手动解决冲突后，标记文件为已解决冲突：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E6%8F%90%E4%BA%A4%EF%BC%9A"><span class="nav-number">1.0.9.0.17.</span> <span class="nav-text">合并提交：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%92%A4%E9%94%80"><span class="nav-number">1.0.10.</span> <span class="nav-text">撤销</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%BE%E5%BC%83%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="nav-number">1.0.10.0.1.</span> <span class="nav-text">放弃工作目录下的所有修改：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E7%BC%93%E5%AD%98%E5%8C%BA%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%EF%BC%88i-e-%E6%92%A4%E9%94%80%E4%B8%8A%E6%AC%A1git-add%EF%BC%89"><span class="nav-number">1.0.10.0.2.</span> <span class="nav-text">移除缓存区的所有文件（i.e. 撤销上次git add）:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%BE%E5%BC%83%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%80%E6%9C%89%E6%9C%AC%E5%9C%B0%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="nav-number">1.0.10.0.3.</span> <span class="nav-text">放弃某个文件的所有本地修改：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E4%B8%80%E4%B8%AA%E6%8F%90%E4%BA%A4%EF%BC%88%E9%80%9A%E8%BF%87%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%88%AA%E7%84%B6%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B0%E6%8F%90%E4%BA%A4%EF%BC%89"><span class="nav-number">1.0.10.0.4.</span> <span class="nav-text">重置一个提交（通过创建一个截然不同的新提交）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86HEAD%E9%87%8D%E7%BD%AE%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E5%B9%B6%E6%8A%9B%E5%BC%83%E8%AF%A5%E7%89%88%E6%9C%AC%E4%B9%8B%E5%90%8E%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="nav-number">1.0.10.0.5.</span> <span class="nav-text">将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E8%BF%9C%E7%AB%AF%E5%88%86%E6%94%AF%E5%BC%BA%E5%88%B6%E8%A6%86%E7%9B%96%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%EF%BC%9A"><span class="nav-number">1.0.10.0.6.</span> <span class="nav-text">用远端分支强制覆盖本地分支：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86HEAD%E9%87%8D%E7%BD%AE%E5%88%B0%E4%B8%8A%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E5%B9%B6%E5%B0%86%E4%B9%8B%E5%90%8E%E7%9A%84%E4%BF%AE%E6%94%B9%E6%A0%87%E8%AE%B0%E4%B8%BA%E6%9C%AA%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%BC%93%E5%AD%98%E5%8C%BA%E7%9A%84%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="nav-number">1.0.10.0.7.</span> <span class="nav-text">将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86HEAD%E9%87%8D%E7%BD%AE%E5%88%B0%E4%B8%8A%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E5%B9%B6%E4%BF%9D%E7%95%99%E6%9C%AA%E6%8F%90%E4%BA%A4%E7%9A%84%E6%9C%AC%E5%9C%B0%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="nav-number">1.0.10.0.8.</span> <span class="nav-text">将HEAD重置到上一次提交的版本，并保留未提交的本地修改：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%B7%BB%E5%8A%A0-gitignore%E6%96%87%E4%BB%B6%E5%89%8D%E9%94%99%E8%AF%AF%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">1.0.10.0.9.</span> <span class="nav-text">删除添加.gitignore文件前错误提交的文件：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Flow"><span class="nav-number">1.1.</span> <span class="nav-text">Git-Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#OSX-Homebrew"><span class="nav-number">1.1.2.0.1.</span> <span class="nav-text">OSX Homebrew:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OSX-Macports"><span class="nav-number">1.1.2.0.2.</span> <span class="nav-text">OSX Macports:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux"><span class="nav-number">1.1.2.0.3.</span> <span class="nav-text">Linux:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Windows-Cygwin"><span class="nav-number">1.1.2.0.4.</span> <span class="nav-text">Windows (Cygwin):</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B"><span class="nav-number">1.1.3.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.4.</span> <span class="nav-text">特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.4.0.1.</span> <span class="nav-text">创建一个新特性:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E6%96%B0%E7%89%B9%E6%80%A7%E7%9A%84%E5%BC%80%E5%8F%91"><span class="nav-number">1.1.4.0.2.</span> <span class="nav-text">完成新特性的开发:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.4.0.3.</span> <span class="nav-text">发布新特性:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E4%B8%80%E4%B8%AA%E5%8F%91%E5%B8%83%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E5%88%86%E6%94%AF"><span class="nav-number">1.1.4.0.4.</span> <span class="nav-text">取得一个发布的新特性分支:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%BD%E6%BA%AF%E8%BF%9C%E7%AB%AF%E4%B8%8A%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.4.0.5.</span> <span class="nav-text">追溯远端上的特性:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9A%E4%B8%80%E4%B8%AArelease%E7%89%88%E6%9C%AC"><span class="nav-number">1.1.5.</span> <span class="nav-text">做一个release版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%88%9B%E5%BB%BArelease%E7%89%88%E6%9C%AC"><span class="nav-number">1.1.5.0.1.</span> <span class="nav-text">开始创建release版本:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%8C%E6%88%90-release-%E7%89%88%E6%9C%AC"><span class="nav-number">1.1.5.0.2.</span> <span class="nav-text">完成 release 版本:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A7%E6%80%A5%E4%BF%AE%E5%A4%8D"><span class="nav-number">1.1.6.</span> <span class="nav-text">紧急修复</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B-git-flow-%E7%B4%A7%E6%80%A5%E4%BF%AE%E5%A4%8D"><span class="nav-number">1.1.6.0.1.</span> <span class="nav-text">开始 git flow 紧急修复:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E7%B4%A7%E6%80%A5%E4%BF%AE%E5%A4%8D"><span class="nav-number">1.1.6.0.2.</span> <span class="nav-text">完成紧急修复:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-number">1.1.7.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-flow-schema"><span class="nav-number">1.1.8.</span> <span class="nav-text">Git flow schema</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">159</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/Augists" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-git-alt fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_45910536" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_45910536" rel="noopener" target="_blank"><i class="fab fa-cuttlefish fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/ZDCZ_Augists" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;ZDCZ_Augists" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2057240784&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://i.loli.net/2020/08/02/Qv8LmAnhs3u6fSR.jpg" title="WeChat → https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;08&#x2F;02&#x2F;Qv8LmAnhs3u6fSR.jpg" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>
