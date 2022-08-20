@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-08-05T15:52:29.212Z</updated>
+  <updated>2022-08-20T03:09:10.477Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Color Map Generator</title>
+    <link href="https://augists.top/SELF/SHARING/STUDY/Color-Map-Generator/"/>
+    <id>https://augists.top/SELF/SHARING/STUDY/Color-Map-Generator/</id>
+    <published>2022-08-20T02:12:20.000Z</published>
+    <updated>2022-08-20T03:09:10.477Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>前天偶然想到要做一个自动采集图片颜色，并且按照比例和颜色排成色卡的小工具，顺便敲敲代码<br>因为没有上升到直方图的层次，所以对于图片的判断并没有很大的辅助效果，它只能帮助更直观的体现图片的颜色层次和范围<br>本身对于图片的颜色提取到最后的绘制 color map 都很简单，Golang 也有标准库 image 来提供对不同格式图片的编码和解码<br>但是在对于提取后的颜色排序上，遇到了一些很有意思的问题</p><hr><p>提取后的颜色结果存储形式是 <code>color.Color</code>，在官方文档里是这样写的</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/Screen Shot 2022-08-20 at 10.34.53.png"><ul><li>注意到，它返回的是 <em>alpha-permultiplied red, green, blue and alpha values*，并非我们平时直接用到的 RGB 值。平常理解的值是 0-255 范围，而这里是 0-65535，但是它可以转换为普通的 RGB 值，并且直接以 *alpha-premultiplied</em> 的 RGB 进行排序也是可以的</li><li>直接打印 <code>color.Color</code> 对象会发现它输出的并不是 RGB 值，这在一开始对我产生了很大的误导。我在排序后查看 log 中存储的 <code>color.Color</code> 结果时发现一直是乱序，让我一直以为我的排序不起作用</li><li>由于我将输出设定为固定高度 50px，在尝试将宽度设置为原图的长x宽后发现会导致编码后的图片可能由于长宽比过于夸张而无法读取（width: 19w px, height: 50px）。经过测试，最终选择用 step 的方式将宽度固定为原图等宽，也可以宽 50px 长度等长，这样就可以将 color map 与原图放在一起生成图片</li><li>通常的调色盘是如下图这种形式。通过将左边拉到右上角，调整右边的颜色滑块，观察 RGB 值可以看到，所有颜色被分为了六个部分</li></ul><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/D5826E381AB434B0940EC19F32DD890B.jpg"><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ffxx00: 00-ff</span><br><span class="line">xxff00: ff-00</span><br><span class="line">00ffxx: 00-ff</span><br><span class="line">00xxff: ff-00</span><br><span class="line">xx00ff: 00-ff</span><br><span class="line">ff00xx: ff-00</span><br></pre></td></tr></table></figure><p>其中 xx 的变化范围在右边。这也就说明，对于任意一个颜色，需要优先判断它所处的颜色范围，例如 <code>#ff0301</code> 需要先划分到 <code>#ff0300</code> 属于第一种颜色范围。如果将 <code>#ff0301</code> 与 <code>#ff0103</code> 进行对比排序，他们的颜色范围分别是 <code>#ff0300</code> 和 <code>#ff0003</code>，也即 <code>#ffxx00</code> 和 <code>#ff00xx</code>，分属不同颜色范围。但如果是 <code>#ff0301</code> 和 <code>#ff0302</code> 比较，他们同属于 <code>#ffxx00</code> 中，就是在同一颜色范围中进行比较，就会涉及到对左侧色盘的调整。你很难说 <code>#ff0302</code> 和 <code>#ff0504</code> 谁应该放在前面，是否在同一颜色范围内应该以 xx 作为第一排序原则。同时，若是 <code>#fe0302</code> 就需要找最靠近标准值的两个颜色，也即 <code>fe</code> 和 <code>02</code>，这时在同一颜色范围又该如何判断</p><ul><li>除了上面这种非常复杂的排序方案，我也考虑了一些简单的排序并在这里附上他们的效果图。测试图片由顾景提供</li></ul><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/colormaptest.jpg"><hr><p>按照先排 R，再排 G，最后排 B 的顺序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/DF693CF0583BFD479E02771CC1BAE7BF.png"><hr><p>按照 <code>r1 &lt; r2 &amp;&amp; g1 &lt; g2 &amp;&amp; b1 &lt; b2</code> 排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/B91446BCDB5D9838F480D59B2150D234.png"><p>注意判断的顺序</p><hr><p>去掉了优先级排序中对于相同值的判断</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/F05A1ED7761CD4FA818F7B183D5C7E5B.png"><p>似乎影响不大，但是它将左边的蓝色大块打散消掉了</p><hr><p>单 R 值排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/34E667A4C8B86CCDE4DC9E481ED8BECD.png"><p>对于这张照片来说，单 R 和前一种效果最好</p><hr><p>单 G 值排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/42A62092F071E6872F888DCE704CC36A.png"><hr><p>单 B 值排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/4CBCB6A27BD6F540EDF726EF9EDE1642.png"><hr><p>以明度值排序也放在代码里，但是好像效果不是很好</p><hr><p>想要做到颜色的平滑过渡似乎并不容易，我更希望能通过改进第一种算法达到如下图的效果</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/Screen Shot 2022-08-20 at 11.01.16.png"><p>代码放在了 <a href="https://github.com/Augists/imgColorMapGenerator">GitHub 仓库</a> 里，最后的实现效果虽然没有达到最预期，但是也是看了几种不同的实现效果</p><p>后续想要改进和实现第一种，可以加如对于聚类的一些思想。Reference 中的文章可以参考，我这里的排序都是在自己摸索规律</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a href="http://adrianlikins.com/2011/07/color-sorting/">color sorting</a></li><li><a href="https://github.com/alikins/sortpal.js/blob/master/sortpal.js">sortpal.js</a></li><li><a href="https://mathematica.stackexchange.com/questions/87588/how-to-sort-colors-properly">How to sort colors properly?</a></li><li><a href="http://www.alanzucconi.com/2015/09/30/colour-sorting/">The incredibly challenging task of sorting colours</a></li></ul>          </div>]]></content>
+    
+    <summary type="html">
+    
+      A simple tool for generating color map by given image
+    
+    </summary>
+    
+    
+    
+      <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+  </entry>
   
   <entry>
     <title>Review the THREE Years as an Undergraduator</title>
@@ -432,29 +455,6 @@
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Slice Growth in Golang</title>
-    <link href="https://augists.top/NOTES/CODE_LANGUAGE/GOLANG/Slice-Growth-in-Golang/"/>
-    <id>https://augists.top/NOTES/CODE_LANGUAGE/GOLANG/Slice-Growth-in-Golang/</id>
-    <published>2021-11-21T15:45:42.000Z</published>
-    <updated>2021-11-21T16:09:23.543Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>前两天在看《GO程序设计语言》的关于 Slice 的代码的时候产生了一个疑问，书里的代码如下</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// gopl.io/ch4/append</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">appendInt</span><span class="params">(x []<span class="keyword">int</span>, y <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">  <span class="keyword">var</span> z []<span class="keyword">int</span></span><br><span class="line">  zlen := <span class="built_in">len</span>(x) + <span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> zlen &lt;= <span class="built_in">cap</span>(x) &#123;</span><br><span class="line">    z = x[:zlen]</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    zcap := zlen</span><br><span class="line">    <span class="keyword">if</span> zcap &lt; <span class="number">2</span>*<span class="built_in">len</span>(x) &#123;</span><br><span class="line">      zcap = <span class="number">2</span> * <span class="built_in">len</span>(x)</span><br><span class="line">    &#125;</span><br><span class="line">    z = <span class="built_in">make</span>([]<span class="keyword">int</span>, zlen, zcap)</span><br><span class="line">    <span class="built_in">copy</span>(z, x)</span><br><span class="line">  &#125;</span><br><span class="line">  z[<span class="built_in">len</span>(x)] = y</span><br><span class="line">  <span class="keyword">return</span> z</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这是一个当对切片使用 append 添加时进行判断是否需要扩容的操作，尽管这是书中的代码，但是它可能和源码稍有差别<br>我从网上查询到的源码如下</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">growslice</span><span class="params">(et *_type, old slice, <span class="built_in">cap</span> <span class="keyword">int</span>)</span> <span class="title">slice</span></span> &#123;</span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">    newcap := old.<span class="built_in">cap</span></span><br><span class="line">    doublecap := newcap + newcap</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">cap</span> &gt; doublecap &#123;</span><br><span class="line">        newcap = <span class="built_in">cap</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> old.<span class="built_in">len</span> &lt; <span class="number">1024</span> &#123;</span><br><span class="line">            newcap = doublecap</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> newcap &lt; <span class="built_in">cap</span> &#123;</span><br><span class="line">                newcap += newcap / <span class="number">4</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">    <span class="comment">//内存对齐操作</span></span><br><span class="line">    capmem = roundupsize(<span class="keyword">uintptr</span>(newcap) * ptrSize)</span><br><span class="line">    newcap = <span class="keyword">int</span>(capmem / ptrSize)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一开始我在想，为什么它需要去判断一下 <code>zcap &lt; 2*len(x)</code>，而不是直接赋值呢<br>其实当时想的时候漏掉了 <code>len(x) == 0</code> 的情况<br>如果 <code>len(x)</code> 为大于等于 1 的正整数时，无论如何 <code>zcap &lt;= 2*len(x)</code><br>如果 <code>len(x)</code> 为 0 时，就需要让新的容量等于 <code>zcap == zlen == len(x) + 1 == 1</code></p><p>那么此时就会产生两个问题：</p><ol><li>为什么不直接采用 <code>zcap = 2*len(x) + 1</code>，如此省去判断步骤</li><li>为什么不直接判断是否 <code>len(x) == 0</code>，而是判断 <code>zcap &lt; 2*len(x)</code></li></ol><p>对于第一个问题，这涉及到内存对齐操作。尽管在以前的 C Family 语言学习和计算机组成原理课程中学习过，但是并没有迁移到 Go 这里来思考问题<br>这里推荐我看到的一篇<a href="https://www.jianshu.com/p/f035a22e094d">文章</a>，我通过这篇重新学习了 Go 语言中的内存对齐</p><p>对于第二个问题，我到现在也没有 get 到原因。按理说这本书是由创始人编写的，依照在《C程序设计语言》中的严谨程度，这里应该会有什么特别的用意。但是我想如果只判断 <code>len(x) == 0</code> 在操作及时间上都要好于书中的示例代码。此处仍然留有疑问</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      A Question while reading the book *Go Programming Language*
-    
-    </summary>
-    
-    
-    
-      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
-    
-      <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
     
   </entry>
   
