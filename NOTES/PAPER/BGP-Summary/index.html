@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="BGP summary note from InternetCopyright https:&#x2F;&#x2F;blog.csdn.net&#x2F;keith6785753&#x2F;article&#x2F;details&#x2F;107088632">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BGP Summary">
+<meta property="og:url" content="https://augists.top/NOTES/PAPER/BGP-Summary/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="BGP summary note from InternetCopyright https:&#x2F;&#x2F;blog.csdn.net&#x2F;keith6785753&#x2F;article&#x2F;details&#x2F;107088632">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702173513321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020070219233669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702194159619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702200955159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020070220371341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703095406255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703095512612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703173009194.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703173127693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703173619159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703173748997.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703195448601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2022-09-05T08:25:21.000Z">
+<meta property="article:modified_time" content="2022-09-10T18:15:54.020Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="NOTE">
+<meta property="article:tag" content="BGP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200702173513321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">
+
+<link rel="canonical" href="https://augists.top/NOTES/PAPER/BGP-Summary/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>BGP Summary | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-f-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>F-links</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/PAPER/BGP-Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          BGP Summary
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-05 16:25:21" itemprop="dateCreated datePublished" datetime="2022-09-05T16:25:21+08:00">2022-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-11 02:15:54" itemprop="dateModified" datetime="2022-09-11T02:15:54+08:00">2022-09-11</time>
+              </span>
+
+          
+            <div class="post-description">BGP summary note from Internet<br>Copyright https://blog.csdn.net/keith6785753/article/details/107088632</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <div class="note danger">            <p>Copyright: Looo~ye<br>Source: <a target="_blank" rel="noopener" href="https://blog.csdn.net/keith6785753/article/details/107088632">CSDN</a><br>对文章排版进行修改，学习过程中顺带，并对一些有歧义或有问题的地方进行修改（只看了需要看的，所以可能还是会有地方有小问题</p>          </div><h1 id="Border-Gateway-Protocol"><a href="#Border-Gateway-Protocol" class="headerlink" title="Border Gateway Protocol"></a><strong>B</strong>order <strong>G</strong>ateway <strong>P</strong>rotocol</h1><blockquote><p>动态路由协议可以按照工作范围分为IGP以及EGP。IGP工作在同一个AS内，主要用来发现和计算路由，为AS内提供路由信息的交换；而EGP工作在AS与AS之间，在AS间提供无环路的路由信息交换。BGP是为了取代EGP而创建的（维基百科）。BGP是一种增强的路径矢量路由协议，同时BGP是拥有丰富的策略控制技术的外部网关协议。多运行于AS与AS之间。</p></blockquote><h2 id="BGP-概述"><a href="#BGP-概述" class="headerlink" title="BGP 概述"></a>BGP 概述</h2><p><strong>BGP 其着眼点不在于自动发现网络拓扑，而在于在AS之间选择最佳路由和控制路由的传播。</strong></p><ul><li>BGP使用TCP作为其传输层协议（监听端口号为179），提高了协议的可靠性，且不需要专门的机制来确保连接的可控性。<ul><li>BGP进行域间的路由选择，对协议的稳定性要求非常高。因此用TCP协议的高可靠性来保证BGP协议的稳定性。</li><li>BGP的对等体之间必须在逻辑上连通，并进行TCP连接。目的端口号为179，本地端口号任意。</li></ul></li><li>路由更新时，BGP只发送更新的路由，大大减少了BGP传播路由所占用的带宽，适用于在Internet上传播大量的路由信息。</li><li>BGP从设计上避免了环路的发生。<ul><li>AS之间：BGP通过携带AS路径信息来标记途经的AS，带有本地AS号的路由将被丢弃，从而避免了域间产生环路。</li><li>AS内部：BGP在AS内学到的路由不再通告给AS内的BGP邻居，避免了AS内产生环路。</li></ul></li><li>支持CIDR 无类域间路由</li><li>BGP提供了丰富的路由策略；提供了防止路由振荡的机制；BGP也易于扩展</li></ul><h2 id="BGP-基本概念"><a href="#BGP-基本概念" class="headerlink" title="BGP 基本概念"></a>BGP 基本概念</h2><ul><li>自治系统AS（Autonomous System ）是指在一个实体管辖下的拥有相同选路策略的IP网络。<ul><li>每个AS都有唯一的自治系统编号，这个编号是由IANA分配的。</li><li>编号范围是1~65535（其中1到64511是注册的因特网编号，64512到65535是私有网络编号）</li></ul></li><li>EBGP和IBGP（External BGP /Internal BGP）<br><img src="https://img-blog.csdnimg.cn/20200702173513321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""><ul><li>IBGP：运行于同一AS内部的BGP称为IBGP</li><li>EBGP：运行于不同AS之间的BGP称为EBGP</li></ul></li><li>BGP报文交互中的角色<ul><li>Speaker：发送BGP消息的路由器称为BGP发言者，它接收或产生新的路由信息，并发布给其它BGP Speaker</li><li>Peer：相互交换消息的BGP Speaker之间互称对等体（Peer），若干相关的对等体可以构成对等体组（Peer Group）</li></ul></li></ul><h2 id="BGP-工作原理"><a href="#BGP-工作原理" class="headerlink" title="BGP 工作原理"></a>BGP 工作原理</h2><h3 id="BGP报文"><a href="#BGP报文" class="headerlink" title="BGP报文"></a>BGP报文</h3><ul><li>Open消息：是TCP连接建立后发送的第一个消息，用于建立BGP对等体之间的连接关系。对等体在接收到Open消息并协商成功后，将发送Keepalive消息确认并保持连接的有效性。确认后，对等体间可以进行Update、Notification、Keepalive和Route-Refresh消息的交换</li><li>Update消息：用于在对等体之间交换路由信息。Update消息可以发布多条属性相同的可达路由信息，也可以撤销多条不可达路由信息</li><li>Keepalive消息：BGP会周期性的向对等体发出Keepalive消息，用来保持连接的有效性</li><li>Notification消息：当BGP检测到错误状态时，就向对等体发出Notification消息，之后BGP连接会立即中断</li><li>Route-Refresh消息：通过OPEN消息告知BGP peer本地支持路由刷新能力（Route-Refresh capability）</li></ul><p>这5种消息的应用：</p><ul><li>通过TCP建立BGP连接时，发送OPEN消息</li><li>连接建立后，如果有路由需要发送或路由变化时，发送UPDATE消息通告对端</li><li>稳定后要定时发送KEEPALIVE消息以保持BGP连接的有效性</li><li>当本地BGP在运行中发现错误时，要发送NOTIFICATION消息通告BGP对等体</li><li>ROUTE-REFRESH消息用来通知对等体自己支持路由刷新</li></ul><p>报文格式</p><p><img src="https://img-blog.csdnimg.cn/2020070219233669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><p>上图展开了BGP报文中的报文头Header</p><ul><li>Marker（标记）：16字节，固定为1</li><li>Length（长度）：两字节无符号整数。指定了消息的全长，包括头部</li><li>Type（类型）：1 字节，指示报文类型，如OPEN、UPDATE报文等<ul><li>1 – OPEN</li><li>2 – UPDATE</li><li>3 – NOTIFICATION</li><li>4 – KEEPALIVE</li></ul></li></ul><p>以 open 消息的具体报文格式为例<br><img src="https://img-blog.csdnimg.cn/20200702194159619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><h3 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h3><p>BGP有限状态机共有六种状态，分别是Idle、Connect、Active、OpenSent、OpenConfirm和Established</p><ul><li>Idle状态是BGP初始状态。在Idle状态下，BGP拒绝邻居发送的连接请求。只有在收到本设备的Start事件后，BGP才开始尝试和其它BGP对等体进行TCP连接，并转至Connect状态<ul><li>Start事件是由一个操作者配置一个BGP过程，或者重置一个已经存在的过程或者路由器软件重置BGP过程引起的</li><li>任何状态中收到Notification报文或TCP拆除链路通知等Error事件后，BGP都会转至Idle状态</li></ul></li><li>在Connect状态下，BGP启动连接重传定时器（Connect Retry，缺省为32秒），等待TCP完成连接<ul><li>如果TCP连接成功，那么BGP向对等体发送Open报文，并转至OpenSent状态</li><li>如果TCP连接失败，那么BGP转至Active状态</li><li>如果连接重传定时器超时，BGP仍没有收到BGP对等体的响应，那么BGP继续尝试和其它BGP对等体进行TCP连接，停留在Connect状态</li><li>如果发生其他事件（由系统或者操作人员启动的），则退回到Idle状态</li></ul></li><li>在Active状态下，BGP总是在试图建立TCP连接<ul><li>如果TCP连接成功，那么BGP向对等体发送Open报文，关闭连接重传定时器，并转至OpenSent状态</li><li>如果TCP连接失败，那么BGP停留在Active状态</li><li>如果连接重传定时器超时，BGP仍没有收到BGP对等体的响应，那么BGP转至Connect状态</li></ul></li><li>在OpenSent状态下，BGP等待对等体的Open报文，并对收到的Open报文中的AS号、版本号、认证码等进行检查<ul><li>如果收到的Open报文正确，那么BGP发送Keepalive报文，并转至OpenConfirm状态；</li><li>如果发现收到的Open报文有错误，那么BGP发送Notification报文给对等体，并转至Idle状态。</li></ul></li><li>在OpenConfirm状态下，BGP等待Keepalive或Notification报文。如果收到Keepalive报文，则转至Established状态，如果收到Notification报文，则转至Idle状态</li><li>在Established状态下，BGP可以和对等体交换Update、Keepalive、Route-refresh报文和Notification报文<ul><li>如果收到正确的Update或Keepalive报文，那么BGP就认为对端处于正常运行状态，将保持BGP连接</li><li>如果收到错误的Update或Keepalive报文，那么BGP发送Notification报文通知对端，并转至Idle状态</li><li>Route-refresh报文不会改变BGP状态。 如果收到Notification报文，那么BGP转至Idle状态</li><li>如果收到TCP拆链通知，那么BGP断开连接，转至Idle状态</li></ul></li></ul><p><img src="https://img-blog.csdnimg.cn/20200702200955159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><h3 id="BGP对等体之间交互原则"><a href="#BGP对等体之间交互原则" class="headerlink" title="BGP对等体之间交互原则"></a>BGP对等体之间交互原则</h3><ul><li>从IBGP对等体获得的BGP路由，BGP设备只发布给它的EBGP对等体（这样的水平分割是为了防止IBGP内部环路）</li><li>从EBGP对等体获得的BGP路由，BGP设备发布给它所有EBGP和IBGP对等体（即发给所有BGP对等体）</li><li>当存在多条到达同一目的地址的有效路由时，BGP设备会选择最优路由给自己使用，即用来发给邻居，同时上送给路由表</li><li>路由更新时，BGP设备只发送更新的BGP路由</li></ul><h3 id="BGP与IGP同步"><a href="#BGP与IGP同步" class="headerlink" title="BGP与IGP同步"></a>BGP与IGP同步</h3><p>事实上，上面第一条从IBGP对等体学到的BGP路由，不是一定会发送给它的EBGP对等体的，前提条件是需要BGP与IGP同步</p><p><img src="https://img-blog.csdnimg.cn/2020070220371341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><p>BGP的主要任务之一就是向其它自治系统发布该自治系统的网络可达信息。如图所示，RTB会把去往10.1.1.0/24 的路由信息封装在BGP报文中，通过由RTB、RTE建立的TCP连接通告给RTE，如果RTE不考虑同步问题，直接接受了这条路由信息并通告给RTF。那么，如果RTF或RTE有去往10.1.1.0/24 的数据报文要发送，这个数据报文要想到达目的地必须经过RTD和RTC。但是，由于先前没有考虑同步问题，RTD和RTC的路由表中没有去往10.1.1.0/24的路由信息，数据报文到了RTD就会被丢弃。因此，BGP必须与IGP（如RIP、OSPF等）同步。也就是说，当一个路由器从IBGP对等体收到一条路由更新信息，在把它通告给它的EBGP对等体之前，要试图验证该目的地能否通过自治系统内部到达（即验证该目的地是否存在于IGP发现的路由表内，非BGP路由器是否可以传递报文到该目的地）。若能通过IGP知道这个目的地，才会把这样一条路由信息通告给EBGP对等体，否则认为BGP与IGP不同步，不进行通告。</p><h2 id="BGP-与-IGP-交互"><a href="#BGP-与-IGP-交互" class="headerlink" title="BGP 与 IGP 交互"></a>BGP 与 IGP 交互</h2><p>上面刚刚介绍了从IBGP对等体学到的BGP路由发送给它的EBGP对等体的前提条件是BGP同步，而同步是通过BGP路由表与IGP路由表的相互引入</p><p>BGP引入IGP路由：</p><p>BGP的主要工作是在自治系统之间传递路由信息，而不是去发现和计算路由信息。所以，路由信息需要通过配置命令的方式注入到BGP中。</p><h3 id="network-命令"><a href="#network-命令" class="headerlink" title="network 命令"></a>network 命令</h3><p>逐条引入，通过Network命令注入到BGP路由表里的路由信息必须存在于IP路由表中<br><img src="https://img-blog.csdnimg.cn/20200703095406255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><h3 id="import"><a href="#import" class="headerlink" title="import"></a>import</h3><p>按协议类型引入，也可以引入静态或直连路由</p><p><img src="https://img-blog.csdnimg.cn/20200703095512612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><h2 id="BGP-属性特点"><a href="#BGP-属性特点" class="headerlink" title="BGP 属性特点"></a>BGP 属性特点</h2><p>BGP路由属性分为4类：</p><ul><li>公认必遵(Well-known mandatory)：所有BGP路由器都可以识别，且必须存在于Update消息中 如果缺少这种属性，路由信息就会出错</li><li>公认任意(Well-known discretionary)： 所有BGP路由器都可以识别，但不要求必须存在于Update消息中，即就算缺少这类属性，路由信息也不会出错</li><li>可选过渡(Optional transitive)：在AS之间具有可传递性的属性 BGP路由器可以选择是否在Update消息中携带这种属性。接收的路由器如果不识别这种属性，可以转发给邻居路由器，邻居路由器可能会识别并使用到这种属性</li><li>可选非过渡(Optional non-transitive)：BGP路由器可以选择是否在Update消息中携带这种属性。如果接受的BGP路由器不支持此属性，则相应的这类属性会被忽略，且不会传递给其他对等体</li></ul><p>列出几种常见属性（下文会重点介绍和后面要说的BGP选路规则有关的属性）：</p><ul><li>Origin：起点属性。定义路由信息的来源，标记一条路由是怎样成为BGP路由的。（属于公认必遵）<br><img src="https://img-blog.csdnimg.cn/20200703173009194.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></li></ul><p>有3种类型：</p><ol><li>IGP（标识为 i）：具有最高的优先级。通过路由始发AS的IGP得到的路由信息，比如通过network命令注入到BGP路由表的路由，其Origin属性为IGP。</li><li>EGP（标识为 e）：优先级次之。通过EGP得到的路由信息，其Origin属性为EGP。</li><li>Incomplete（标识为 ？）：优先级最低。通过其他方式学习到的路由信息。比如BGP通过import-route命令引入的路由，其Origin属性为Incomplete。</li></ol><ul><li>As_PATH：AS路径属性。是路由经过的AS的序列，即列出此路由在传递过程中经过了哪些AS。它可以防止路由循环，并用于路由的过滤和选择。（公认必遵）</li></ul><p><img src="https://img-blog.csdnimg.cn/20200703173127693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><p>上图中：当R4将网段10.0.0.0/24通告给AS400和AS100时，会在AS_PATH中添加自己的AS号。当R5将网段10.0.0.0/24通告给AS100使，也会添加添加自己的AS号。当AS100内的R1和R3再将网段10.0.0.0/24通告给本AS域内的R2时，AS_PATH属性不会改变，且R2在其他BGP选路条件相同的前提下选择AS_PATH路径最短的，即选择通过R3到达网段10.0.0.0/24。</p><ul><li><p>Next hop：下一跳属性。包含到达更新消息所列网络的下一跳边界路由器的IP地址。（公认必遵）</p></li><li><p>Local-Preference：本地优先级属性。用于在AS内优选到达某一目的地的路由。反映了BGP Speaker对每条BGP路由的偏好程度。属性值越大越优。（公认任意）<br><img src="https://img-blog.csdnimg.cn/20200703173619159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p></li></ul><p>上图中：R1从本AS内的R2学到网络10.0.0.0/24的Local_Pref为300，从本AS内的R3学到网络10.0.0.0/24的Local_Pref为200时，R1会选择经由R2到达目的网络10.0.0.0/24。</p><ul><li>MED属性：当某个AS有多个入口时，可以用MED属性来帮助其外部的AS选择一个较好的入口路径。一条路由的MED值越小，其优先级越高。（可选非过渡）<br><img src="https://img-blog.csdnimg.cn/20200703173748997.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></li></ul><p>上图中：R1和R2将网段10.0.0.0/24传递给各自的EBGP邻居R3和R4，R3和R4在其他条件相同的情况下，优先选择MED值较低的路径，即均选择经由R1访问网络10.0.0.0/24。</p><ul><li>Community：团体属性。团体属性标识了一组具有相同特征的路由信息，与它所在的IP子网或自治系统无关。（可选过渡）</li></ul><h2 id="BGP-选路规则与负载分担"><a href="#BGP-选路规则与负载分担" class="headerlink" title="BGP 选路规则与负载分担"></a>BGP 选路规则与负载分担</h2><p>当到达同一目的地存在多条路由时，BGP采取如下策略进行路由选择：</p><ol><li>如果此路由的下一跳不可达，忽略此路由</li><li>优选协议首选值（PrefVal）最高的路由 （华为设备特有属性）</li><li>优选本地优先级（Local_Pref）最高的路由</li><li>优选本地生成的路由</li><li>优选AS路径（AS_Path）最短的路由</li><li>比较Origin属性，依次优选Origin类型为IGP、EGP、Incomplete的路由</li><li>优选MED值最低的路由</li><li>优选从EBGP邻居学来的路由</li><li>优选到BGP下一跳IGP Metric较小的路由</li></ol><p>当以上全部相同，则为“等价路由”，可以负载分担<br>注：AS_PATH必须一致；当负载分担时，以下3条原则无效<br>优选Cluster_List最短的路由<br>优选Originator_ID 或者Router ID最小的路由器发布的路由<br>比较对等体的IP Address，优选从具有较小IP Address的对等体学来的路由</p><p>根据BGP的选路原则以及BGP常用的路径属性，我们可以总结出9个影响BGP选路的重要参数，分别为：</p><ul><li>Preferred Value</li><li>LOCAL_PREF</li><li>AS_PATH</li><li>ORIGIN</li><li>MED</li><li>邻居类别是EBGP还是IBGP</li><li>IGP内部开销值</li><li>Cluster List /ROUTER_ID</li><li>COMMUNITY</li></ul><p>以上参数都能直接地影响BGP的路径选择，其中我们常用的参数分别为LOCAL_PREF, AS_PATH和MED属性。</p><h2 id="BGP-拓展特性"><a href="#BGP-拓展特性" class="headerlink" title="BGP 拓展特性"></a>BGP 拓展特性</h2><h3 id="安全特性"><a href="#安全特性" class="headerlink" title="安全特性"></a>安全特性</h3><ul><li>MD5：BGP使用TCP作为传输层协议，为提高BGP的安全性，可以在建立TCP连接时进行MD5认证。但BGP的MD5认证并不能对BGP报文认证，它只是为TCP连接设置MD5认证密码，由TCP完成认证。如果认证失败，则不建立TCP连接。</li><li>GTSM（Generalized TTL Security Mechanism 即通用TTL安全保护机制）：使能BGP的GTSM策略后，接口板对所有BGP报文的TTL值进行检查。根据实际组网的需要，对于不符合TTL值范围的报文，GTSM可以设置为通过或丢弃。配置GTSM缺省动作为丢弃时，可以根据网络拓扑选择合适的TTL有限值范围，不符合TTL值范围的报文会被接口板直接丢弃，这样就避免了网络攻击者模拟的“合法”BGP报文占用CPU。该功能与EBGP多跳互斥。</li><li>限制从对等体接收的路由数量，防止资源耗尽性攻击。</li><li>AS_Path长度保护。通过在入口和出口两个方向对AS_Path的长度进行限定，直接丢弃AS_Path超限的报文。</li></ul><h3 id="路由衰减（eBGP）"><a href="#路由衰减（eBGP）" class="headerlink" title="路由衰减（eBGP）"></a>路由衰减（eBGP）</h3><p>路由衰减（Route Dampening）用来解决路由不稳定的问题，即路由表中的某条路由反复消失和重现，也就是路由振荡。多数情况下，BGP协议都应用于复杂的网络环境中，路由变化十分频繁。为了防止持续的路由振荡带来的不利影响，BGP使用路由衰减来抑制不稳定的路由。</p><p><img src="https://img-blog.csdnimg.cn/20200703195448601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70" alt=""></p><p>BGP衰减使用惩罚值来衡量一条路由的稳定性，惩罚值越高则说明路由越不稳定。路由每发生一次振荡（路由从激活状态变为未激活状态，称为一次路由振荡），BGP便会给此路由增加一定的惩罚值（1000）。当惩罚值超过抑制阈值时，此路由被抑制，不加入到路由表中，也不再向其他BGP对等体发布更新报文。<br>被抑制的路由每经过一段时间（900S），惩罚值便会减少一半，这个时间称为半衰期（Half-life）。当惩罚值降到再使用阈值时，此路由变为可用并被加入到路由表中，同时向其他BGP对等体发布更新报文</p><p>路由衰减只适用于EBGP路由。对于从IBGP收来的路由不能进行衰减，因为IBGP路由经常含有本AS的路由，内部网络路由要求转发表尽可能一致，IGP快速收敛就是为了达到信息同步，转发一致。如果衰减对IBGP路由起作用，不同设备的衰减参数不一致时，会导致转发表不一致。</p>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/PAPER/BGP-Summary/" title="BGP Summary">https://augists.top/NOTES/PAPER/BGP-Summary/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+              <a href="/tags/BGP/" rel="tag"><i class="fa fa-tag"></i> BGP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/SELF/SHARING/STUDY/Color-Map-Generator/" rel="prev" title="Color Map Generator">
+      <i class="fa fa-chevron-left"></i> Color Map Generator
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Border-Gateway-Protocol"><span class="nav-number">1.</span> <span class="nav-text">Border Gateway Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">BGP 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">BGP 基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">BGP 工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP%E6%8A%A5%E6%96%87"><span class="nav-number">1.3.1.</span> <span class="nav-text">BGP报文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-number">1.3.2.</span> <span class="nav-text">状态机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP%E5%AF%B9%E7%AD%89%E4%BD%93%E4%B9%8B%E9%97%B4%E4%BA%A4%E4%BA%92%E5%8E%9F%E5%88%99"><span class="nav-number">1.3.3.</span> <span class="nav-text">BGP对等体之间交互原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP%E4%B8%8EIGP%E5%90%8C%E6%AD%A5"><span class="nav-number">1.3.4.</span> <span class="nav-text">BGP与IGP同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-%E4%B8%8E-IGP-%E4%BA%A4%E4%BA%92"><span class="nav-number">1.4.</span> <span class="nav-text">BGP 与 IGP 交互</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#network-%E5%91%BD%E4%BB%A4"><span class="nav-number">1.4.1.</span> <span class="nav-text">network 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import"><span class="nav-number">1.4.2.</span> <span class="nav-text">import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-%E5%B1%9E%E6%80%A7%E7%89%B9%E7%82%B9"><span class="nav-number">1.5.</span> <span class="nav-text">BGP 属性特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-%E9%80%89%E8%B7%AF%E8%A7%84%E5%88%99%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%88%86%E6%8B%85"><span class="nav-number">1.6.</span> <span class="nav-text">BGP 选路规则与负载分担</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-%E6%8B%93%E5%B1%95%E7%89%B9%E6%80%A7"><span class="nav-number">1.7.</span> <span class="nav-text">BGP 拓展特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%89%B9%E6%80%A7"><span class="nav-number">1.7.1.</span> <span class="nav-text">安全特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E8%A1%B0%E5%87%8F%EF%BC%88eBGP%EF%BC%89"><span class="nav-number">1.7.2.</span> <span class="nav-text">路由衰减（eBGP）</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmxyb8b33j30dw0ijgqv.jpg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">163</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Augists" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>
