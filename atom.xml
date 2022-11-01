@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-10-09T16:35:39.001Z</updated>
+  <updated>2022-11-01T08:17:28.172Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Open Case Design</title>
+    <link href="https://augists.top/SELF/SHARING/LIFE/open-case-design/"/>
+    <id>https://augists.top/SELF/SHARING/LIFE/open-case-design/</id>
+    <published>2022-11-01T08:12:28.000Z</published>
+    <updated>2022-11-01T08:17:28.172Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <h1 id="开放式机箱设计方案"><a href="#开放式机箱设计方案" class="headerlink" title="开放式机箱设计方案"></a>开放式机箱设计方案</h1><div class="note danger">            <p>项目已经放在<a href="https://github.com/Augists/openCase">GitHub 仓库</a></p>          </div><p>由于市面上的机箱设计方案便宜的普遍不好看，好看又优秀的设计又导致机箱特别贵。正好我也在计划着装一台自己的电脑，所以就想能不能自己设计一套符合自己审美，又能拿出来看的机箱</p><p>在最开始我曾非常坚定的想要做壁挂主机，把所有的电脑配件都挂到洞洞板上立起来，也可以钉到墙上。后来在看了很多视频后，决定做成桌面的开放式机箱。壁挂机箱的最大缺点就是，硕大的电源也需要挂上去，成为整个壁挂主机最不和谐的地方</p><p>所以我就想，能不能把这个方块的电源藏起来，甚至让它作为机箱的一部分起到某种作用呢？</p><p><img src="https://github.com/Augists/openCase/raw/main/img/sample.JPG" alt="sample"></p><p>上图是我在浏览购物平台时发现的一套分体水的开放式机箱，店家也是专做水冷的，名字叫 bykski。感兴趣可以去搜索一下这个机箱 B-CE-X 的效果，这也是我这次设计的模仿</p><p>这套机箱为了能实现分体水冷和显卡的支撑，将 atx 主板旋转了 90 度摆放。作为一台开放式主机，风冷散热器可能并不合适直接放置在外面，所以尽管没有能力做分体水，我也选择了一体水作为我的开放式机箱的散热支持</p><img alt="手绘" src="https://github.com/Augists/openCase/raw/main/img/手绘设计图 ver. 2.PNG"><p>在第一次的构想里，我把水冷放在了机箱背板的顶部。整个结构想要通过背板和电源以及支架来倾斜放置，然后将水冷放在较为中心的位置以平衡整个机箱结构的重心。由于我目前手边并没有台式机，只能依靠之前触碰的印象进行猜测。电源应该是在不考虑显卡的情况下电脑配件里最笨重的一个了，将它倾斜作为支点，同时分担平衡主板的重量，感觉还是挺合理的</p><p>另外有一点，我特意将主板正放，不同于 B-CE-X，以便我可以在没有前置 IO 的情况下能方便的使用主板的 IO 接口</p><img alt="ver 1" src="https://github.com/Augists/openCase/raw/main/img/ver. 1/main pad.PNG"><p>于是我就开始用 Sharp3D 着手进行设计，并参考了网上的 m-atx 主板的尺寸以及螺丝孔位，为主板和CPU供电预留了两个应该够大的走线孔。右下角的圆形开孔是我从淘宝找到的主板开机键跳线和按钮，商家提供了 12/16/22mm 等直径的开机按键，我在这里只是以最小的 12mm 直径为例</p><p>通过简单的组合可以预估到装机后的情况，由于第一版设计需要分开部件单独制作并组装，在水冷架上就发现一开始的构想存在问题</p><img alt="com" src="https://github.com/Augists/openCase/raw/main/img/ver. 1/主视图.PNG"><p>m-atx 主板的大小是 244x244mm，这也意味着在不太突出水冷的情况下，不能选择 360 大小的水冷，最大可能就只能通过延长机箱背板让它支持 240 规格的水冷。在询问了利民 240 冰封幻境的规格后我才发现，水冷排的尺寸并非简单的两把 120 风扇拼接，而是 277x120x27，也就意味着我的背板需要至少 280 的长度才可以，并且再加上 25mm 高的风扇，整个水冷的厚度已经到了 52mm，放在机箱里可能没有什么感觉，但是在我的这种结构里，如此厚重的水冷无疑是灾难</p><blockquote><p>这块机箱背板我找了一家铝板定制，报价为 85r，如果加厚到 5mm，预估会在 100r 出头</p></blockquote><p>所以在第二版的设计里，我将水冷转移到了背板的侧面，让它改为立式的放置方式，同时由于 52mm 的厚度，我觉得不应该将整个背板再继续延长来支撑它，而是将散热器架到水冷架的外侧进行固定</p><img src="https://github.com/Augists/openCase/raw/main/img/ver. 2/底部视角.PNG"><p>我也在背板的底部添加了两个小的开孔，想让主板下面的例如开机跳线、sata线等穿过这个孔洞来进行整理。整个机箱的装饰风格也从第一版的模仿 B-CE-X 改为这种房子🏠形状的开孔和凹槽</p><p>不过我在给朋友看这套设计的时候，他提到如果我用的是铝材料做机箱，它在强度和刚性上可能会不足，所以我就在第三版里将水冷架延伸到桌面进行支撑，并且加厚了背部的电源支架和机箱脚</p><img src="https://github.com/Augists/openCase/raw/main/img/ver. 3/前视角.PNG"><img src="https://github.com/Augists/openCase/raw/main/img/ver. 3/斜视角.PNG"><img src="https://github.com/Augists/openCase/raw/main/img/ver. 3/底部视角.PNG"><p>不过很可惜，这个开放式机箱的项目流产了（PS 最近流产的项目有点多，感觉自己很浮躁），因为我找到的商家无法直接 cnc 这么大的三维结构，而改用其他材料又会出现很多限制，而我又急于得到一个可以使用的机箱</p><p>我的模型文件 ver.1 对应 <code>case1.step</code>，ver.3 对应 <code>case2.step</code></p><p>希望能等到一个有缘人，看到我的这个不是很成熟的开放式机箱设计方案，记得和我说一声给我看看装机的图片让我也开心一下</p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      A open case structure designed by myself
+    
+    </summary>
+    
+    
+    
+      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
+    
+      <category term="DESIGN" scheme="https://augists.top/tags/DESIGN/"/>
+    
+  </entry>
   
   <entry>
     <title>DLUT-EDA Network List Has Been Rewritten Using Beego</title>
@@ -209,9 +232,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
-    
       <category term="BGP" scheme="https://augists.top/tags/BGP/"/>
+    
+      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
     
   </entry>
   
@@ -320,9 +343,9 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
     
@@ -434,27 +457,6 @@
     
     
       <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2021 Review</title>
-    <link href="https://augists.top/SELF/REVIEW/2021-Review/"/>
-    <id>https://augists.top/SELF/REVIEW/2021-Review/</id>
-    <published>2021-12-31T02:32:44.000Z</published>
-    <updated>2021-12-31T15:50:12.031Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>由于疫情的影响，大三上学期的课时和考试都压缩了近三个周的时间。我也被迫没有像前两年一样能早一点写完自己的年终总结。站在这个时间点上，大学四年的必修课已经全部结束，只剩下学期的6门选修课程。这可能也意味着我的大学生活即将画上句号，紧接着的是需要考虑更为现实的一些问题。回顾整个2021年，完全可以用“魔幻”来形容。今年我打算换个方式，把这段经历讲给每一个看到的人听。</p><div class="note info">            <p>曾经有一个学长，人做的非常耿直，思维方式和很多人相差甚远，总是能做出一些很奇怪的事情。在他心里事物的重要程度很多人也无法理解，例如他一直认为在打扮自己这件事情上花费时间是世界上最蠢的了。进入大二后，他选择了留在dv工作室，做一个上要负责学院和校区活动的苦力，下要教好大一新干事的老师。所以，在dv为数不多的例会中，他有四次站在了讲台上，并且在寒假组织了dv大作业的例会，并首次做了b站的直播。在工作上，他可以放弃任何一门课程，来保证随时可以完成学院校区的大大小小的任务。这一学年，很多课他都没怎么去过，大多数时间工作室的副部也只有他守在那里，即便是期末考试前的一个周他每天晚上留在dv做图导出到两点他也没什么所谓。俗话说，干一行爱一行。既然选择了，那便去做。但是，他不能忍受的是别人的不理解。他不能忍受别人把他的工作定义为偷偷出去卷，他不能忍受在期末前的几天带着十个干事熬夜做了上百张图之后被当作没有活干，他不能忍受一年几百个小时的付出要和别的部门划等号甚至小于号，他最不能忍受的是作为工作室负责的老师居然不能理解大家的辛苦。他看着同事心疼，因为他无法想象几个原本应该在认真学着敲代码的本科生需要把无数的时间拿出来学习制作海报、制作视频，居然还会被要求再做的更好一点。要知道这种任务的报价完全不输于被公认为工资第一梯队的程序员的小项目报价，他们却几乎没什么回报。这一年，工作室添购了桌子椅子，新买了机箱等一众零零散散的配件，而直到2021年的最后一天都没能收到那少得可怜的工资奖励。</p><p>最终，他放弃了。5月份，在通过别人作为媒介传达无效后，他在会议上与负责老师针锋相对。留任面试中，他在ppt中用每一页用黑底白字协商在过去一年承担的任务，他走了ppt都没有播放完。他可以不在乎自己获得什么，可以无所谓后面的评选，他只想让人们能知道能理解他在dv工作室这一年的辛苦。在2021年的最后一天，他终于释然了。</p><div class="note danger">            <p>仰天大笑出门去，我辈岂是蓬蒿人</p>          </div>          </div><p>对于2021年前半部分的总结，大体上每天的记忆只剩下dv的工作、玩玩游戏就没了。寒假因为同学都在玩，把原神又拾起来，然后把自己的账号肝成天花板，还第一次在游戏里氪金。前后一共花了800多，账号平均33发出金。收手了，账号送给朋友，从此再也不碰。</p><p>这学期开始做校区心协的理事部部长，手下突然变成了二十多个人。本来在dv就全都是我崽崽，现在又多出来二十多个崽崽。是开心，也是责任。是教大家怎么才是干活，是看着副部能承担起大梁的欣慰，是每一次搞活动都逼着大家能随口说出来旁边人的名字，是解答每一个问问题的崽崽。很开心，可以又认识到这么多可爱的人。和之前的两年一样，没有人是为了什么社会工作奖学金在阿谀奉承，跟大家在一起，只有开心</p><p>幸运的是，4月底开始参与到嘉禾连理论坛的项目中，并且在五一正式上线开放测试。论坛一开始搭建在我的树莓派上，加挂了一个硬盘就作为测试版上线了。被网信中心找上来之后，论坛逐渐开始正规化，尝试并转向了各种云服务商，并使用着最为便宜的方案……认识了各种大佬，见识到很多以前没有接触过的东西。论坛这个项目被作为创新创业项目陪伴我们拿到了校、省奖，尽管由于学校的时间安排问题让我们被迫止步于辽宁省，但是非常开心我们的项目能收到来自华为的各位大佬的青睐。</p><p>更幸运的是，7月份能有机会和学长们一起去沈阳的宝马工厂拼3天2夜。从刚到的懵逼到通宵准备答辩。我们是全场最为年轻的队伍，也是唯一一个全由本科生组成的队伍，在一众来自美国、清北浙的研究生甚至博士生队伍中杀出重围，得到了来自宝马德国总部的工程师的赏识，非常侥幸拿到全国冠军🏆。3天，3个赛道，长了不止3斤。谢谢宝马工厂的热情款待，让我们不仅能开心的参与活动，拿到额外的活动小礼品，还拿到了最佳人气奖🏆</p><p>8月是今年最黑暗的一段时间。对现在的担忧、对未来的焦虑，我无法很好的调节自己的情绪，让我找不到方向，让我不得不放下了很多东西。谢谢从8月份一直理解、帮助我的每一个人。我知道，心态的转变肯定不是一朝一夕就能做到的，有些东西对于我这个不太擅长表达自己的人来说有些困难，所以很多是需要自己一点一点来慢慢化解开，过程痛苦有漫长</p><p>谢谢hzm的ps5和switch，让我这个游戏白痴踏上新大陆。在坚定我需要整一个来party game的想法同时让我在选择哪一个上纠结死；感谢老胡的3070，让我获得了一点科研体验顺便能在寝室联机</p><p>想了想，今年挣了不少钱。奖金、奖学金、挖矿（合法时）、以及看不见的工资。今年也没少花钱。买了心心念念的HHKB，把之前的poker借出去；给家里添了把心水的人体工学椅，就是我日常都不在家；在寝室放了台新显示器，是满足我需求的最低价格的显示器了；买了二手的架子，把寝室布置换了个底朝天；买了好一点的台灯，终于不用忍受之前台灯的电流声……</p><p>其实回过头来，看看大学已经经过的两年半，必修已经全部学完了的我们，也应该对自己的大学做个总结了。作为入学时站在起跑线的我们，比已经提前出发的人多跑了多远，又与同样从起跑线出发的人有什么区别……</p><p>2021，注定不平凡；2022，我们拭目以待</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      Written on December 31st 2021
-    
-    </summary>
-    
-    
-    
-      <category term="REVIEW" scheme="https://augists.top/tags/REVIEW/"/>
     
   </entry>
   
