@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2022-12-31T14:24:52.453Z</updated>
+  <updated>2023-02-09T04:01:33.729Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UTF8MB X Emoji Encoding Error in MySQL</title>
+    <link href="https://augists.top/SELF/ERROR/UTF8MB-x-Emoji-Encoding-Error-in-MySQL/"/>
+    <id>https://augists.top/SELF/ERROR/UTF8MB-x-Emoji-Encoding-Error-in-MySQL/</id>
+    <published>2023-02-09T03:32:40.000Z</published>
+    <updated>2023-02-09T04:01:33.729Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <div class="note info">            <p>这是一篇基于编码踩坑博客引发的关于字符编码的讨论整理，你可以先行阅读初始博客</p><p><a href="http://forimoc.me/blog/36">utf8mb4之鏖战逆天emoji编码 —— 一文通透后端和数据库的编码</a> from 🐟神</p>          </div><h2 id="emoji编码"><a href="#emoji编码" class="headerlink" title="emoji编码"></a>emoji编码</h2><ul><li>emoji表情符号，是20世纪90年代由NTT Docomo栗田穣崇(Shigetaka Kurit)创建的，词义来自日语（えもじ，e-moji，moji在日语中的含义是字符）。emoji可以使数字通信做到让人如同面对面交流，避免错误传达信息。</li><li>在NTT DoCoMo的i-mode系统电话系统中，绘文字的尺寸是12x12 像素，在传送时，一个图形有2个字节。</li><li>自苹果公司发布的iOS 5输入法中加入了emoji后，这种表情符号开始席卷全球，目前emoji已被大多数现代计算机系统所兼容的Unicode编码采纳，普遍应用于各种手机短信和社交网络中。</li><li>所谓Emoji就是一种在Unicode位于\u1F601-\u1F64F区段的字符。这个显然超过了目前常用的UTF-8字符集的编码范围\u0000-\uFFFF。</li></ul><h2 id="UTF-8编码"><a href="#UTF-8编码" class="headerlink" title="UTF-8编码"></a>UTF-8编码</h2><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/AEEA064BB83CE89C9775A20C1D6A79CA.png" alt="utf-8 wikipedia"></p><div class="note danger">            <h3 id="UTF编码补充"><a href="#UTF编码补充" class="headerlink" title="UTF编码补充"></a>UTF编码补充</h3><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/1B7F7236282723A1D3505834BC930363.png" alt=""><br><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/9B9CB57BCC5FFF69B47995820EFDE376.png" alt=""></p>          </div><h2 id="UTF8MB4"><a href="#UTF8MB4" class="headerlink" title="UTF8MB4"></a>UTF8MB4</h2><ul><li>utf8mb4是utf8的超集并完全兼容utf8，能够用四个字节存储更多的字符，mb4就是most bytes 4的缩写，即至多四字节的意思</li></ul><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>为什么emoji的编码范围U+1F601 ~ U+1F64F被覆盖在UTF-8规范限制后的范围U+0000 ~ U+10FFFF，但是UTF-8不兼容emoji，需要使用UTF8MB4</p><p>或者说，为什么我们日常说的（MySQL &lt; 8.0 默认的）UTF-8指的是UTF8MB3（范围U+0000 ~ U+FFFF），但是实际上UTF-8并非仅有这个范围</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>查了一下，utf8mb x这个是mysql特有的一个概念，这个问题也只会出现在旧版本的mysql里</p><p>官方文档reference</p><ul><li><a href="https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb4.html">https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb4.html</a></li><li><a href="https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb3.html">https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb3.html</a></li></ul><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a href="https://zh.wikipedia.org/wiki/UTF-8">UTF-8 wikipedia</a></li><li><a href="https://q.cnblogs.com/q/96864/">10FFFF不是只用3个字节吗？？？？翻遍了资料怎么都说是4个呢？？？</a></li><li><a href="https://stackoverflow.com/questions/30074492/what-is-the-difference-between-utf8mb4-and-utf8-charsets-in-mysql#30074553">What is the difference between utf8mb4 and utf8 charsets in MySQL?</a></li><li><a href="https://segmentfault.com/a/1190000039294107">一次彻底搞清unicode、utf8和utf8mb4</a></li></ul>          </div>]]></content>
+    
+    <summary type="html">
+    
+      If you use MySQL &lt; 8.0 to store an emoji, it will be symbolized as &quot;?&quot;&lt;br&gt;This is an archive during discussing utf encoding based on a blog&lt;br&gt;http://forimoc.me/blog/36
+    
+    </summary>
+    
+    
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
+    
+      <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
+    
+      <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+  </entry>
   
   <entry>
     <title>2022-Review</title>
@@ -434,29 +459,6 @@
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
       <category term="REGEX" scheme="https://augists.top/tags/REGEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Why My Devices Cannot Automatically Connect to Mbp</title>
-    <link href="https://augists.top/SELF/SHARING/LIFE/Why-my-devices-cannot-automatically-connect-to-mbp/"/>
-    <id>https://augists.top/SELF/SHARING/LIFE/Why-my-devices-cannot-automatically-connect-to-mbp/</id>
-    <published>2022-01-10T12:27:43.000Z</published>
-    <updated>2022-01-10T13:00:39.981Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>早先的无线设备大多使用的是 2.4G 无线接收器来进行传输，例如之前使用的罗技 M370 和 ikbc poker，并且耳机也一直用着 3.5mm 的音频线，可以说对蓝牙真无线一直没有接触很多<br>自从去年换用了 HHKB，经常需要使用蓝牙来进行连接。前几天又买了罗技的 mx master 2s 作为在家里使用的过渡品，耳机也改为了无线蓝牙来进行传输，蓝牙自动连接的问题就一直在困扰着我</p><div class="note danger">            <p>为什么我在唤醒电脑之后，只有耳机自动连接了电脑，另外两个都无法连接</p>          </div><p>我们知道，在点击系统 menu bar 上的蓝牙小图标时，如果按住 <code>option</code> 再点，会显示详细信息；旧版本的系统在按住 <code>shift + option</code> 点击时，可以重置蓝牙模块（现在好像没有了<br>恰巧我再查看的时候，注意到我的电脑蓝牙开关下有一行小字写着 <code>Discoverable: off</code><br>我就感觉不是很对劲</p><p>根据 ssh 心跳包的理解，我们可以猜测，耳机由于没有关机并且是音频设备，可能会一直用心跳包来维持蓝牙的连接<br>而键盘和鼠标都有长时间不用自动断电的功能<br>由于 mac 的蓝牙被设定为不可以被发现，所以当电脑不是主动去发现并连接设备时，设备的主动尝试连接失效</p><p>解决方案是：可以在 <code>系统偏好设置 - Sharing - Bluetooth Sharing</code> 将其勾选打开，这样电脑就允许被其他设备通过蓝牙进行扫描发现了</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      After getting more wireless connectivity devices, I have unfortunately found that my Bluetooth devices have a high probability of not connecting every time I wake up my Macbook Pro.&lt;br&gt; At first I thought it was the fault of HHKB, but now I am temporarily a fan of bluetooth wireless&lt;br&gt; I bought a Logi master 2s as my new mouse to cope with the use of scenarios at home&lt;br&gt; Also my Audio-Technica headphones also changed to wireless mode&lt;br&gt; Just now I wake up my mac and only headphones connected&lt;br&gt; It really bothered me for a long time
-    
-    </summary>
-    
-    
-    
-      <category term="MAC" scheme="https://augists.top/tags/MAC/"/>
-    
-      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
     
   </entry>
   
