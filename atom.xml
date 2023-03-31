@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://augists.top/"/>
-  <updated>2023-03-20T04:58:19.215Z</updated>
+  <updated>2023-03-31T15:33:11.830Z</updated>
   <id>https://augists.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Small Talk - 看到各路同学朋友收到的Offers</title>
+    <link href="https://augists.top/SELF/THINKING/small-talk-in-spring-2023/"/>
+    <id>https://augists.top/SELF/THINKING/small-talk-in-spring-2023/</id>
+    <published>2023-03-31T14:07:09.000Z</published>
+    <updated>2023-03-31T15:33:11.830Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning">            <p>晚上偶然打开朋友圈看了看，我个人现在已经在尽量减少这种空间朋友圈的关心，只会有照片产出了发一发图</p><div class="note danger">            <p>有关信息摄入和社交形式等的讨论不放在这里，我也一直在尝试和改正自己的一些我觉得不合理的习惯。只能说目前很不满意</p>          </div><p>最近临近毕业季了，各种开花结果的分享也变得多了起来。找工作的朋友有的对秋招确定的offer不满意，又开始寻找待遇更高的去处；已经拿到秋招offer的朋友也收到了入职大礼包；下一届学弟春招的“金三”也到了尾声，手里握着我觉得还不错的实习；考研有人上岸，有人落榜，有人怀着忐忑拿到了最后的入场券，有人一年的努力化为泡影；出国的有人已经在国外，有人放弃了曾经的选择，拿到了更好的项目offer</p><p>选择太多，大家在每一个岔路口分别，又在下一条小路上碰到新的伴行者，没有人知道自己的终点在哪，也没有人知道自己走哪条路、走到哪里就到了终点。对于去年的我自己来说，同样有很多个选项摆在面前，每一个都看起来很诱人，我也不知道我选择哪个会更适合自己，在我有限的人生里，可能每一种都接触了一点点，但都只是冰山一角。我觉得我还没有能力选择，所以我尽量保留了每一个选项的可能性，让我能在以后看懂自己的时候再决定。但是对于有些人甚至是大部分人来说，没有那条能在下个路口仍然保留着几个方向的选择，就必须在这个路口选择其中一条可能充满迷雾的小路。</p><p>不管大家走在哪条小路上，都请抬头望向前方，这是我们自己选择的路，都值得尊敬。每一条小路都有自己的意义，无关对错，没有好坏。我羡慕每一个走在自己选择的小路上的人，每一条我都希望自己也能走一走看一看。正是因为不知道路的尽头在哪，会有什么美景在等待，每一次赌都值得期待。（有点像现在玩胶卷，每一次按快门都不知道自己拍下的照片洗完会变成什么样子，但是正是这份不确定的期待让每次拍摄都变得很有趣</p><div class="note danger">            <p>出于隐私考虑，不会把别人朋友圈发了什么放在这里，只能靠想象了，也说的比较隐晦</p><p>最近因为一些拍摄的隐私问题有一些争议，我有一些思考，写这篇播客的时候想到，又想到这些争议，不在这里赘述了</p>          </div>          </div>]]></content>
+    
+    <summary type="html">
+    
+      晚上偶然逛了下朋友圈，几家欢喜几家愁。实习、考研、工作、出国的同学朋友也陆陆续续有了去向和offer
+    
+    </summary>
+    
+    
+    
+      <category term="THINKING" scheme="https://augists.top/tags/THINKING/"/>
+    
+      <category term="SMALL_TALK" scheme="https://augists.top/tags/SMALL-TALK/"/>
+    
+  </entry>
   
   <entry>
     <title>Benchmark on Different OS</title>
@@ -438,27 +461,6 @@
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
       <category term="GOLANG" scheme="https://augists.top/tags/GOLANG/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Watch Later or Store in History List</title>
-    <link href="https://augists.top/SELF/SHARING/LIFE/watch-later-or-store-in-history-list/"/>
-    <id>https://augists.top/SELF/SHARING/LIFE/watch-later-or-store-in-history-list/</id>
-    <published>2022-02-03T15:57:55.000Z</published>
-    <updated>2022-02-04T04:39:35.402Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note warning">            <p>今天在 xbox 上看游戏的时候，突然有注意到一个“稍后再玩”的 list。同样在 b 站上，也有一个“稍后再看”的 list<br>其实 我早先的习惯是使用历史记录来做存储。如果看到一个想要保留的视频内容以后在看，我都是点进去看几秒确认一下就退出来，这样它就会自动被添加到历史记录里了。再加上有整理历史记录的习惯，偶尔进去把没用的删掉，提醒自己看完想看的视频<br>我的很多会员账号是与别人一起使用的，例如 Netflix，Apple Music 等等，定期清理历史记录对我而言既麻烦又有必要，所以这个习惯坚持了挺长时间的<br>它有一点问题，历史记录通常都不是无限长的，过于久远的历史记录会被清理掉，并且早期 b 站手机端是不能看到专栏的历史记录的，这也使得能够存储的条目莫名其妙的变少<br>现在开始使用“稍后再看”，但是里面只能存放 100 个，目前我一直是在 80 个左右“稍后再看”的视频<br>比较难受的一点是，如果想要把视频添加到“稍后再看”，需要点进视频，在没有最大化视频的情况下，点击右上角的三个点，选择添加到“稍后再看”，步骤非常繁琐<br>并且如果有空闲时间可以去看看自己之前存储过的视频时，在网页端，需要在收藏的最下面才能找到“稍后再看”列表。删除列表中刚刚看完的视频也需要从视频中退出来<br>我感觉，watch or play later 这个功能并没有像它名字那样美好，入口和常用功能都比较繁琐</p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      When I have something to watch later, I should throw it into watch-later or store in history list&lt;br&gt; Compare these two
-    
-    </summary>
-    
-    
-    
-      <category term="SHARING" scheme="https://augists.top/tags/SHARING/"/>
     
   </entry>
   
