@@ -1,6 +1,6 @@
 ---
 title: Linux Fork
-tags: [UNIX, SHARING]
+tags: [LINUX, NOTE, OS]
 description: 'What is behind fork() in Linux?<br>Share by an example for Operating System Course'
 date: 2021-05-20 21:22:39
 
