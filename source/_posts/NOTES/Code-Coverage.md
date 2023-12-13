@@ -42,6 +42,26 @@ Coverage Criteria
 
 * Java: [Atlassian Clover](https://www.atlassian.com/software/clover), [Cobertura](http://cobertura.github.io/cobertura/), [JaCoCo](http://www.eclemma.org/jacoco/)
   * [JaCoCo Documentation](https://www.jacoco.org/jacoco/trunk/doc/)
+  * Instructions
+    * single Java byte code instructions
+    * the amount of code that has been executed or missed
+  * Branches
+    * the total number of `if` and `switch` branches in a method and determines the number of executed or missed branches
+    * line highlight
+      * No coverage: No branches in the line has been executed (red diamond)
+      * Partial coverage: Only a part of the branches in the line have been executed (yellow diamond)
+      * Full coverage: All branches in the line have been executed (green diamond)
+  * Cyclomatic Complexity
+    * the minimum number of paths that can, in (linear) combination, generate all possible paths through a method
+    * the complexity value can serve as an indication for the number of unit test cases to fully cover a certain piece of software
+  * Lines
+    * at least one instruction that is assigned to this line has been executed
+    * line highlight
+      * No coverage: No instruction in the line has been executed (red background)
+      * Partial coverage: Only a part of the instruction in the line have been executed (yellow background)
+      * Full coverage: All instructions in the line have been executed (green background)
+  * Methods
+  * Classes
 * Javascript: [istanbul](https://github.com/gotwarlost/istanbul)
 * PHP: [PHPUnit](https://phpunit.de/)
 * Python: [Coverage.py](https://coverage.readthedocs.io/)
