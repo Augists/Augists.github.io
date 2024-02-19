@@ -31,15 +31,25 @@
   })();
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Augists-ZDCZ">
-<meta property="og:url" content="https://augists.top/tags/UNIX/index.html">
+  <meta name="description" content="由于设备越来越丰富，我需要在多个平台上共享同步我的博客环境">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog on Multi-Platform">
+<meta property="og:url" content="https://augists.top/SELF/SHARING/STUDY/blog-on-multi-platform/index.html">
 <meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="由于设备越来越丰富，我需要在多个平台上共享同步我的博客环境">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/proxy%20bad%20github%20connection.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/GFW.png">
+<meta property="article:published_time" content="2023-09-21T07:54:16.000Z">
+<meta property="article:modified_time" content="2024-02-18T02:13:49.475Z">
 <meta property="article:author" content="Augists">
+<meta property="article:tag" content="TERMINAL">
+<meta property="article:tag" content="HEXO">
+<meta property="article:tag" content="SHARING">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/proxy%20bad%20github%20connection.png">
 
-<link rel="canonical" href="https://augists.top/tags/UNIX/">
+<link rel="canonical" href="https://augists.top/SELF/SHARING/STUDY/blog-on-multi-platform/">
 
 
 <script id="page-configurations">
@@ -47,12 +57,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: UNIX | Augists-ZDCZ</title>
+  <title>Blog on Multi-Platform | Augists-ZDCZ</title>
   
 
 
@@ -170,57 +180,203 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">UNIX
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/SHARING/STUDY/blog-on-multi-platform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Blog on Multi-Platform
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-09-21 15:54:16" itemprop="dateCreated datePublished" datetime="2023-09-21T15:54:16+08:00">2023-09-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-02-18 10:13:49" itemprop="dateModified" datetime="2024-02-18T10:13:49+08:00">2024-02-18</time>
+              </span>
+
+          
+            <div class="post-description">由于设备越来越丰富，我需要在多个平台上共享同步我的博客环境</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <div class="note warning">
+            <p>刚入学的时候还吐槽，交大的校园网限制只能登录3台设备，而我现在一共有4台电脑（去年年底组的电脑放在宿舍打游戏，工位配的电脑过于离谱，所以又组了一台5600G的基础配置放在工位用，再加上一个笔记本）1台Xbox，1台iPad，两部手机。所幸买了两个小路由器放在宿舍和工位，才躲开登录数量限制。</p><p>前两天有人催我说已经半年没更新博客了，正好今天在配置多平台的博客环境，就把遇到的坑记一下。其实在 reminder 里有好多想写和想做的东西，怪自己摆烂，总是找各种理由不干活。</p><p>多平台同步的博客环境我参考了<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b1fccce74e0">这篇文章</a>。他在原 <code>github.io</code> 仓库中创建了一个新的分支用来存放环境，并将它设置为默认用于每次同步，同时不修改 <code>master</code> 主分支，其用于hexo部署和 <code>github.io</code> 的静态网页渲染。但是我注意到我的 <code>config</code> 里有一个 <code>token</code> 出现在莫名其妙的位置，时间过于久远我也不记得为什么需要它，好在它可能只是第二层保障，并且只在这里用到了一下，所以就也无所谓了。</p><p>工位电脑装了一套 Arch Linux，这是在我去年的折腾里测试能顺利运行我需要看得项目的发行版，尽管可以说是迷信，但我还是选择了它，并且这次没有过多的在桌面环境上纠结，直接安装的KDE，毕竟工位电脑更多的是需要它流畅稳定的运行。如果这是自己平时玩的电脑，可能会继续尝试sway或者一些好玩的桌面环境。本身项目标明的是使用 Ubuntu，但是我一直不喜欢 gnome 嫌弃它怪以外，Ubuntu 官方一直在尝试从 <code>apt</code> 切换到 <code>snap</code>，让我感觉很陌生。宿舍里的那台游戏电脑之前在放弃双系统后我也被迫使用虚拟机安装了 Ubuntu，但体验一直谈不上好。</p><p>在 Arch 上配置 GitHub 密钥的过程中一直收到 <code>Connection closed by remote host</code> 的错误，我重新去搜索了官方的文档（会在后面列出），一开始以为是 <code>SHA</code> 被弃用的问题，但是在强制了 <code>RSA-SHA2-256</code> 和 <code>ed25519</code> 后仍然没有解决，于是到 NAOSI 里问。有同学提起应该考虑网络代理配置的问题</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/proxy%20bad%20github%20connection.png" alt=""></p><blockquote><p>这个终端大概率没走代理，如果是CFW设置http_proxy<br>from 金一</p></blockquote><p>突然点醒我。前几天在帮博士师兄配环境的时候也一直遇到网络问题，收到的是 <code>bad record MAC</code>，查询后结论为在 TLS 连接中被迫中断，也同样是由于代理。当时的电脑和我现在一样使用了 v2rayA 进行代理，在设置的时候按照官方文档中的配图将设置的代理模式选择为大陆白名单模式，此时猜测是配置了系统全局流量通过 v2rayA 的端口，使得我们在终端中所有的强制 proxy 都没有作用。最后修改为 GFWList 模式后解决。</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/GFW.png" alt=""></p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/69394001/how-can-i-fix-kex-exchange-identification-read-connection-reset-by-peer">How can I fix “kex_exchange_identification: read: Connection reset by peer”?</a></li><li><a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">新增 SSH 密钥到 GitHub 帐户</a></li><li><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/chinese/news/how-to-get-and-configure-git-and-github-ssh-keys/">如何获取和配置 Git 和 GitHub SSH 密钥</a></li><li><a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">生成新的 SSH 密钥并将其添加到 ssh-agent</a></li></ul>
+          </div>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-20T21:22:39+08:00"
-              content="2021-05-20">
-          05-20
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/SELF/SHARING/STUDY/blog-on-multi-platform/" title="Blog on Multi-Platform">https://augists.top/SELF/SHARING/STUDY/blog-on-multi-platform/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/SELF/SHARING/STUDY/linux-fork/" itemprop="url">
-            <span itemprop="name">Linux Fork</span>
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
 
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TERMINAL/" rel="tag"><i class="fa fa-tag"></i> TERMINAL</a>
+              <a href="/tags/HEXO/" rel="tag"><i class="fa fa-tag"></i> HEXO</a>
+              <a href="/tags/SHARING/" rel="tag"><i class="fa fa-tag"></i> SHARING</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/SELF/THINKING/lets-imagine-a-magical-world/" rel="prev" title="Lets Imagine a Magical World">
+      <i class="fa fa-chevron-left"></i> Lets Imagine a Magical World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/SELF/THINKING/full-duplex-or-half-in-3-5mm/" rel="next" title="Full Duplex or Half in 3.5mm">
+      Full Duplex or Half in 3.5mm <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -267,6 +423,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -281,14 +438,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">172</span>
+          <span class="site-state-item-count">180</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -337,7 +494,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
