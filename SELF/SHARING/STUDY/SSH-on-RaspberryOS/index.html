@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="My tough experience on Raspberry Pi tonight,- [x] enable SSH- [x] static ip address- [x] public &amp; private key">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH on RaspberryOS">
+<meta property="og:url" content="https://augists.top/SELF/SHARING/STUDY/SSH-on-RaspberryOS/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="My tough experience on Raspberry Pi tonight,- [x] enable SSH- [x] static ip address- [x] public &amp; private key">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/04/09/dUzuJXWmhADr3GC.png">
+<meta property="article:published_time" content="2021-04-09T11:37:00.000Z">
+<meta property="article:modified_time" content="2025-05-22T08:50:20.323Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="DEVICE">
+<meta property="article:tag" content="SHARING">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/04/09/dUzuJXWmhADr3GC.png">
+
+<link rel="canonical" href="https://augists.top/SELF/SHARING/STUDY/SSH-on-RaspberryOS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>SSH on RaspberryOS | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-f-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>F-links</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/SHARING/STUDY/SSH-on-RaspberryOS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SSH on RaspberryOS
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-09 19:37:00" itemprop="dateCreated datePublished" datetime="2021-04-09T19:37:00+08:00">2021-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-05-22 16:50:20" itemprop="dateModified" datetime="2025-05-22T16:50:20+08:00">2025-05-22</time>
+              </span>
+
+          
+            <div class="post-description">My tough experience on Raspberry Pi tonight,<br>- [x] enable SSH<br>- [x] static ip address<br>- [x] public & private key</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <p>今天在工作室折腾了一顿树莓派，这个小玩意从去年买回来在我手里一直吃灰，就借给了学长，最近刚重新拿回来<br>树莓派 4B 刷的是树莓派官方的 Raspberry OS GUI 系统，在系统设置里可以直接开启 SSH 登陆权限<br>目前的想法是把它放在工作室，可以长年不断电放着。如果能分配一个静态 ip，就可以当作工作室的一个小型（迷你）服务器用<br>一方面可以提供大家简单的 linux 学习实践，另一方面如果进行内网穿透，就可以给工作室搭建一个博客之类的<br>今天没给他做内网穿透，因为目前对他的期望还不是很稳定，一些东西也还没开始尝试。可能会在一段时间的试用之后再重新给它分配一个合理的定位吧</p><hr><h2 id="分配静态-ip"><a href="#分配静态-ip" class="headerlink" title="分配静态 ip"></a>分配静态 ip</h2><p>之前在折腾家里的小米 AX1800 的时候就有看到 DHCP 动态分配 ip，之前就去多少了解了一点关于动态分配 ip 地址的东西<br>如果不是有配套软件的话，一般在路由器的底面会有它进行设置的 ip 地址或网址<br>工作室现在用的是 tp-link 的路由器，也比较老旧了，通过 tplogin.cn 对路由器进行设备管理<br>因为 DHCP 之前没有在家里进行设置过，看小米的那个界面，让我以为在路由器的管理页面可以进行单独的静态 ip 设置，但是在 tp-link 的管理页面找了很久也没找到<br>后来就想到当时一个哥哥给我展示的他给自己的 mac 设置静态 ip，是在系统偏好设置里，也就是需要进行静态分配的主机上直接进行设置<br>从道理上讲，DHCP 是路由器要做的事情，也理应在路由器上直接进行分配；但是再想想，路由器为什么要记住每台设备信息，以让它每次接入的时候都被分配到或许它一年前在自己这里记录下的 ip 地址呢<br>也就是说，静态 ip 的设置工作应该是在要被分配的主机上进行设置<br>这里截个计算机网络上课的图<br><img src="https://i.loli.net/2021/04/09/dUzuJXWmhADr3GC.png" alt=""><br>DHCP 过程第一步是由主机进行 DHCP Discover，在当前局域网中进行广播，由路由器，也就是 DHCP Server 进行反馈<br>如果在第一步主机的 DHCP Discover 广播的时候直接说我的配置文件里说我想要分配一个静态的 ip，希望你们不要不识抬举，那么 DHCP 过程也就能转变成一个静态 ip 的分配了</p><p>所以，我们需要做的是在树莓派上进行静态 ip 的配置<br>通过查询，配置过程如下</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">route -n    <span class="comment"># 得到 routers</span></span><br><span class="line">cat /etc/resolv.conf    <span class="comment"># 得到 nameserver</span></span><br><span class="line">sudo vim /etc/dhcpcd.conf    <span class="comment"># dhcp 配置文件</span></span><br></pre></td></tr></table></figure><p>在配置文件中找到它所提供的静态 ip 模板，按照刚才得到的结果进行修改</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface wlan0</span><br><span class="line">static ip_address&#x3D;192.168.1.120        # 我给树莓派分配的 ip</span><br><span class="line">static routers&#x3D;192.168.1.1            # route -n 查询到的</span><br><span class="line">static domain_name_servers&#x3D;202.118.66.6    # resolv.conf 查询到的</span><br></pre></td></tr></table></figure><p>一开始我一直没有分配成功，最后发现过程中有以下几个问题：</p><ol><li>不要太相信路由器。我一开始每次检验是否分配成功是同时通过路由器的管理页面里的 ip 查询列表和我直接 ssh / ping 旧 ip 和新 ip 来进行判断的，但是后来发现，路由器的 ip<br>列表在我分配成功之后仍然写的是旧的 ip，目前还没搞懂是什么原因。按照 DHCP 的协议，即便 DHCP Server 反馈的是旧 ip 的 DHCP offer 也不应该被主机返回 request 确认啊</li><li>配置里的 <code>wlan0</code> 是要改的，一开始没怎么关注这一行，本身模板里这个位置是有东西的</li><li>我 <code>cat</code> 到的 <code>resolv.conf</code> 文件里，第二个 nameserver 是 192.168.1.1，这个可能是不可用的，因为在我参考的文章里，他的两个 nameserver 和 routers<br>是完全不一样的。当然，也可能这个并没有什么问题</li><li>ipv6 地址在模板里是有的，但是我最终还是去掉了 ipv6 的地址，仅仅是为了减小出错的可能。现在 ipv4 与 ipv6 共存，其实对于这个小小的树莓派来说，没什么使用 ipv6 的必要，它仅仅在内网中使用</li></ol><p>在这期间，还玩了会 <code>traceroute</code>，发现了点之前没发现的东西</p><h2 id="公私钥免密登陆"><a href="#公私钥免密登陆" class="headerlink" title="公私钥免密登陆"></a>公私钥免密登陆</h2><p>这个其实就比较简单了，了解一下 RSA 加密即可（安全概论快考试了 😭<br>我想要让我的电脑能免密 SSH 登陆树莓派，需要在我的主机上先生成公私钥对，然后再把 public key 传给树莓派。当然，内部关于怎么传送的，我确实还不了解它使用的是我学过的方式还是怎样，至少简单的操作指令就可以完成复杂的操作</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">ssh-copy-id pi@192.168.1.120</span><br></pre></td></tr></table></figure><p>对于大部分人来说，只需要知道这两条简单的指令就可以实现免密登陆了就可以<br>私钥会存储在 <code>~/.ssh</code>，和一开始的 <code>known_hosts</code> 放在一起，公钥应该也会通过一些加密形式传送给我的 Raspberry Pi，同样存储在 <code>~/.ssh</code> 目录下<br>私钥 <code>id_rsa</code> 公钥 <code>authorized_keys</code><br>我们在指令中主动选择了使用 RSA 加密<br>最后。我直接把 <code>.ssh</code> 文件压缩放在了工作室的群里，根据我的设想，任何下载它的人都可以无需配置，免密登陆树莓派进行 linux 练习<br>当然，我知道把私钥直接交给别人是不对的，只能希望它仅在工作室内部交换吧</p><hr><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>树莓派现在放在工作室里不断电运行了，关闭了图形界面，不再接显示器之后经过长时间运行它也不会有发热的情况<br>现在给它通过花生壳做了内网穿透，可以分别在 工作室的网络下、校园网下、外网下 都有合适的接入方法<br>通过这一个个人的小项目，让我对一些东西的理解加深了好多。每次折腾一些自己喜欢的东西，都有新的收获<br>关于子网、内网穿透、DHCP、公私钥证书、Linux 的一些知识，甚至说对工作室的电脑都有了更多了解<br>从我的角度来说，这种学习方式要比学校里墨守陈规的教学好得多，我也相信有很多人也和我一样，对自己感兴趣的东西会抱有12分的热情，愿意拿出时间来折腾他们，并且在折腾的过程中会学习到很多有用的知识</p>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/SELF/SHARING/STUDY/SSH-on-RaspberryOS/" title="SSH on RaspberryOS">https://augists.top/SELF/SHARING/STUDY/SSH-on-RaspberryOS/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/DEVICE/" rel="tag"><i class="fa fa-tag"></i> DEVICE</a>
+              <a href="/tags/SHARING/" rel="tag"><i class="fa fa-tag"></i> SHARING</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/SELF/THINKING/JUAN/" rel="prev" title="JUAN">
+      <i class="fa fa-chevron-left"></i> JUAN
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/BOOK/Hooked-by-Hooked/" rel="next" title="Hooked by Hooked">
+      Hooked by Hooked <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%85%8D%E9%9D%99%E6%80%81-ip"><span class="nav-number">1.</span> <span class="nav-text">分配静态 ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E7%A7%81%E9%92%A5%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86"><span class="nav-number">2.</span> <span class="nav-text">公私钥免密登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD"><span class="nav-number">3.</span> <span class="nav-text">后续</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">182</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Augists" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+<a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+<a target="_blank" rel="noopener" href="https://tjupt.org/promotionlink.php?key=426b9e4fa510e913924e033efa906fd2"><img src="https://tjupt.org/mybar.php?userid=141948.png" alt="北洋园PT" title="北洋园PT"></a>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>
