@@ -35,9 +35,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="NETWORK" scheme="https://augists.top/tags/NETWORK/"/>
-    
       <category term="LB" scheme="https://augists.top/tags/LB/"/>
+    
+      <category term="NETWORK" scheme="https://augists.top/tags/NETWORK/"/>
     
   </entry>
   
@@ -60,9 +60,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
-    
       <category term="NETWORK" scheme="https://augists.top/tags/NETWORK/"/>
+    
+      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
     
   </entry>
   
@@ -136,7 +136,7 @@
     <link href="https://augists.top/NOTES/PAPER/An-Introduction-to-Binary-Decision-Diagrams/"/>
     <id>https://augists.top/NOTES/PAPER/An-Introduction-to-Binary-Decision-Diagrams/</id>
     <published>2024-01-08T06:14:52.000Z</published>
-    <updated>2025-05-22T08:50:20.307Z</updated>
+    <updated>2025-07-27T14:22:22.470Z</updated>
     
     <content type="html"><![CDATA[<div class="note warning">            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Table T: u -&gt; (i, l, h)</span><br><span class="line">  init(T)                     initialize T to contain only 0 and 1</span><br><span class="line">  u &lt;- add(T, i, l, h)        allocate a new node u with attributes (i, l, h)</span><br><span class="line">  var(u), low(u), high(u)     lookup the attributes of u in T</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Table H: (i, l, h) -&gt; u</span><br><span class="line">  init(H)                     initialize H to be empty</span><br><span class="line">  b &lt;- member(H, i, l, h)     check if (i, l, h) is in H</span><br><span class="line">  u &lt;- lookup(H, i, l, h)     find H(i, l, h)</span><br><span class="line">  insert(H, i, l, h, u)       make (i, l, h) map to u in H</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MK[T, H](i, l, h)</span><br><span class="line">  if l &#x3D; h then return l            # if low &#x3D;&#x3D; high, pass the node and point to its child</span><br><span class="line">  else if member(H, i, l, h) then   # if node in H, return it and do not create a new one</span><br><span class="line">    return lookup(H, i, l, h)</span><br><span class="line">  else</span><br><span class="line">    u &lt;- add(T, i, l, h)            # create node in T and map in H</span><br><span class="line">    insert(H, i, l, h, u)</span><br><span class="line">    return u</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">BUILD[T, H](t)</span><br><span class="line">function BUILD&#39;(t, i)               # i is the lowest index at first</span><br><span class="line">  if i &gt; n then                     # terminal node</span><br><span class="line">    if t is false then return 0 else return 1</span><br><span class="line">  else                              # build from bottom to top recurisively</span><br><span class="line">    v0 &lt;- BUILD&#39;(t[0&#x2F;xi], i + 1)</span><br><span class="line">    v1 &lt;- BUILD&#39;(t[1&#x2F;xi], i + 1)</span><br><span class="line">    return MK(i, v0, v1)</span><br><span class="line">end BUILD&#39;</span><br><span class="line"></span><br><span class="line">return BUILD&#39;(t, 1)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">APPLY[T, H](op, u1, u2)             # combine two ROBDDs? O(|u1||u2|)</span><br><span class="line">init(G)</span><br><span class="line"></span><br><span class="line">function APP(u1, u2)                # call from top to bottom, compute from bottom to top</span><br><span class="line">  if G(u1, u2) !&#x3D; empty then return G(u1, u2)</span><br><span class="line">  else if u1 in &#123;0, 1&#125; and u2 in &#123;0, 1&#125; then u &lt;- op(u1, u2)</span><br><span class="line">  else if var(u1) &#x3D; var(u2) then</span><br><span class="line">    u &lt;- MK(var(u1), APP(low(u1), low(u2)), APP(high(u1), high(u2)))</span><br><span class="line">  else if var(u1) &lt; var(u2) then</span><br><span class="line">    u &lt;- MK(var(u1), APP(low(u1), u2), APP(high(u1), u2))</span><br><span class="line">  else  # var(u1) &gt; var(u2)</span><br><span class="line">    u &lt;- MK(var(u2), APP(u1, low(u2)), APP(u1, high(u2)))</span><br><span class="line">  G(u1, u2) &lt;- u</span><br><span class="line">  return u</span><br><span class="line">end APP</span><br><span class="line"></span><br><span class="line">return APP(u1, u2)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">RESTRICT[T, H](u, j, b)             # find the ROBDD for some condition, i.e., t[0&#x2F;x3, 1&#x2F;x5, 1&#x2F;x6]</span><br><span class="line">function res(u)</span><br><span class="line">  if var(u) &gt; j then return u</span><br><span class="line">  else if var(u) &lt; j then return MK(var(u), res(low(u)), res(high(u)))</span><br><span class="line">  else if b &#x3D; 0 then return res(low(u))</span><br><span class="line">  else  # var(u) &#x3D; j, b &#x3D; 1</span><br><span class="line">    return res(high(u))</span><br><span class="line">end res</span><br><span class="line"></span><br><span class="line">return res(u)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SATCOUNT[T](u)                      # determine the number of valid truth assignments</span><br><span class="line">function count(u)</span><br><span class="line">  if u &#x3D; 0 then res &lt;- 0</span><br><span class="line">  else if u &#x3D; 1 then res &lt;- 1</span><br><span class="line">  else res &lt;- 2^(var(low(u))-var(u)-1) * count(low(u)) + 2^(var(high(u))-var(u)-1) * count(high(u))</span><br><span class="line">  return res</span><br><span class="line">end count</span><br><span class="line"></span><br><span class="line">return 2^(var(u)-1) * count(u)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ANYSAT(u)                           # find a satisfying truth-assignment, find a path leading to 1 by DFS, prefering low-edges over high-edges</span><br><span class="line">  if u &#x3D; 0 then Error</span><br><span class="line">  else if u &#x3D; 1 then return []</span><br><span class="line">  else if low(u) &#x3D; 0 then return [x_var(u) -&gt; 1, ANYSAT(high(u))]</span><br><span class="line">  else return [x_var(u) -&gt; 0, ANYSAT(low(u))]</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ALLSAT(u)                           # find all paths from a node u to the terminal 1</span><br><span class="line">  if u &#x3D; 0 then return &#123;&#125;</span><br><span class="line">  else if u &#x3D; 1 then return &#123;[]&#125;    # &#123;&#125; denotes swquences of truth assignments</span><br><span class="line">  else return</span><br><span class="line">    &#123;</span><br><span class="line">      add[x_var(u) -&gt; 0] in front of all truth-assignments in ALLSAT(low(u)),</span><br><span class="line">      add[x_var(u) -&gt; 1] in front of all truth-assignments in ALLSAT(hight(u))</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">SIMPLIFY(d, u)                      # simplify an ROBDD by trying to remove nodes based on a domain d</span><br><span class="line">function sim(d, u)</span><br><span class="line">  if d &#x3D; 0 then return 0</span><br><span class="line">  else if u &lt;&#x3D; 1 then return u</span><br><span class="line">  else if d &#x3D; 1 then</span><br><span class="line">    return MK(var(u), sim(d, low(u)), sim(d, high(u)))</span><br><span class="line">  else if var(d) &#x3D; var(u) then</span><br><span class="line">    if low(d) &#x3D; 0 then return sim(high(d), high(u))</span><br><span class="line">    else if high(d) &#x3D; 0 then return sim(low(d), low(u))</span><br><span class="line">    else</span><br><span class="line">      return MK(var(u), sim(low(d), low(u)), sim(high(d), high(u)))</span><br><span class="line">  else if var(d) &lt; var(u) then</span><br><span class="line">    return MK(var(d), sim(low(d), u), sim(high(d), u))</span><br><span class="line">  else</span><br><span class="line">    return MK(var(u), sim(d, low(u)), sim(d, high(u)))</span><br><span class="line">end sim</span><br><span class="line"></span><br><span class="line">return sim(d, u)</span><br></pre></td></tr></table></figure><table><thead><tr><th>method</th><th>time</th><th>note</th></tr></thead><tbody><tr><td>MK(i, u0, u1)</td><td><code>O(1)</code></td><td></td></tr><tr><td>BUILD(t)</td><td><code>O(2^n)</code></td><td></td></tr><tr><td>APPLY(op, u1, u2)</td><td><code>O(abs(u1) * abs(u2))</code></td><td></td></tr><tr><td>RESTRICT(u, j, b)</td><td><code>O(abs(u))</code></td><td></td></tr><tr><td>SATCOUNT(u)</td><td><code>O(abs(u))</code></td><td></td></tr><tr><td>ANYSAT(u)</td><td><code>O(abs(p))</code></td><td><code>p = ANYSAT(u), abs(p) = O(abs(u))</code></td></tr><tr><td>ALLSAT(u)</td><td><code>O(abs(r)*n)</code></td><td><code>r = ALLSAT(u), abs(r) = O(2^abs(u))</code></td></tr><tr><td>SIMPLIFY(d, u)</td><td><code>O(abs(d) * abs(u))</code></td><td></td></tr></tbody></table>          </div>]]></content>
     
@@ -150,9 +150,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
-    
       <category term="NETWORK" scheme="https://augists.top/tags/NETWORK/"/>
+    
+      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
     
   </entry>
   
@@ -219,9 +219,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
-    
       <category term="NETWORK" scheme="https://augists.top/tags/NETWORK/"/>
+    
+      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
     
   </entry>
   
@@ -244,9 +244,9 @@
     
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
     
-      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
-    
       <category term="NETWORK" scheme="https://augists.top/tags/NETWORK/"/>
+    
+      <category term="PAPER" scheme="https://augists.top/tags/PAPER/"/>
     
   </entry>
   
@@ -380,9 +380,9 @@
     
     
     
-      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
-    
       <category term="NOTE" scheme="https://augists.top/tags/NOTE/"/>
+    
+      <category term="CODE" scheme="https://augists.top/tags/CODE/"/>
     
       <category term="ERROR" scheme="https://augists.top/tags/ERROR/"/>
     
