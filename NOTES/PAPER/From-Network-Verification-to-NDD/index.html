@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="我们有关 NDD 的工作被 NSDI 2025 接收并评为唯一一篇 Outstanding Paper，可喜可贺">
+<meta property="og:type" content="article">
+<meta property="og:title" content="From Network Verification to NDD">
+<meta property="og:url" content="https://augists.top/NOTES/PAPER/From-Network-Verification-to-NDD/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="我们有关 NDD 的工作被 NSDI 2025 接收并评为唯一一篇 Outstanding Paper，可喜可贺">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/veriflow%20ec.svg">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/BDD%20Tree.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/robdd.svg">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/bdd%20example.svg">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/ndd-drawio.png">
+<meta property="article:published_time" content="2025-05-18T06:14:52.000Z">
+<meta property="article:modified_time" content="2025-05-22T09:07:45.680Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="NOTE">
+<meta property="article:tag" content="PAPER">
+<meta property="article:tag" content="NETWORK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/veriflow%20ec.svg">
+
+<link rel="canonical" href="https://augists.top/NOTES/PAPER/From-Network-Verification-to-NDD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>From Network Verification to NDD | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-f-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>F-links</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/PAPER/From-Network-Verification-to-NDD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          From Network Verification to NDD
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-05-18 14:14:52" itemprop="dateCreated datePublished" datetime="2025-05-18T14:14:52+08:00">2025-05-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-05-22 17:07:45" itemprop="dateModified" datetime="2025-05-22T17:07:45+08:00">2025-05-22</time>
+              </span>
+
+          
+            <div class="post-description">我们有关 NDD 的工作被 NSDI 2025 接收并评为唯一一篇 Outstanding Paper，可喜可贺</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <h1 id="从网络验证到-NDD"><a href="#从网络验证到-NDD" class="headerlink" title="从网络验证到 NDD"></a>从网络验证到 NDD</h1><p>作为一个偏门的小众领域，一直会有人问起说<strong>网络验证是什么？</strong>(Network Verification)。参考去年组会上的简单梳理，加上自己浅薄的理解，我也算是成功给大组里别的老师的同门讲明白了我们在做什么。这里只是简单的介绍这个研究方向，并且不涉及到论文层面的内容。</p><h2 id="想要解决什么问题？"><a href="#想要解决什么问题？" class="headerlink" title="想要解决什么问题？"></a>想要解决什么问题？</h2><p>通常网络服务提供商 (Internet Service Provider, ISP) 是有自己维护的组网，并且由骨干网串联起来，从而为用户提供网络连接。这也就意味着 ISP 以及 ISP 之间的网络对稳定性的要求会极高。除此之外，厂商也会自己组建大型数据中心等设施，会面临频繁的配置变更及动态扩缩容等的需求。所以，就需要一种方案，可以在配置网络时或配置变更时提前验证其准确性和鲁棒性，来为网络增加一层防护。。</p><blockquote><p>除此之外，从软件定义网络 (Software Defined Network, SDN) 的角度考虑，中央控制器作为选出的 Leader 可以获取到全局的拓扑等信息，是不是也可以在其下发之前做建模验证，来保证下发结果的合理性？</p></blockquote><p>想要验证的问题（举例）：</p><ul><li>任意两节点之间的可达性</li><li>节点转发表</li><li>任意 k 条链路断开之后的情况</li><li>……</li></ul><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>所有的解决方案都是在做取舍，这里也不例外。从前到后，我们所验证的真实性在降低，解决方案的实际开发复杂性某种程度上在提升，但是应用的性能和人力开销也在降低。</p><h3 id="物理镜像"><a href="#物理镜像" class="headerlink" title="物理镜像"></a>物理镜像</h3><p>部署完全相同配置的镜像网络来做物理测试，直接在镜像网络中发送数据包、抓包分析等</p><h3 id="虚拟镜像-emulation"><a href="#虚拟镜像-emulation" class="headerlink" title="虚拟镜像 emulation"></a>虚拟镜像 emulation</h3><p>同物理镜像，但是使用虚拟机或容器的形式表示每一台网元设备。在容器之间建立同物理网络相同的连接，并真实的模拟数据包在网络中的转发，完整的根据协议的规划进行。</p><blockquote><p>开销大，速度慢</p></blockquote><h3 id="网络仿真-simulation"><a href="#网络仿真-simulation" class="headerlink" title="网络仿真 simulation"></a>网络仿真 simulation</h3><p>只模拟转发行为，通过算法直接计算最终的转发表</p><p>例如：真实网络中的协议大多通过扩散的方式传播，既然我们已经拿到了全局的拓扑和每个节点的配置信息，我们就可以找到一种方式尽快的模拟出网络稳定之后的转发表</p><p>这里我们以最为被广泛使用的 <a target="_blank" rel="noopener" href="https://github.com/batfish/batfish">Batfish</a> 开源网络验证工具为例 (1.2k stars)，它将整个网络验证过程划分为了6步：</p><ol><li>解析 parsing：解析不同厂商的配置文件，通常是 <code>.cfg</code> 文件，记录着设备的所有功能定义，如端口启用、ip分配、协议配置等</li><li>提取 extraction：将上一步解析到的配置信息转为类对象存储，可以理解为对每个厂商都会定义其对应的配置解析类</li><li>转换 conversion：去除厂商特定的配置信息，以全局统一的方式存储配置信息，使其厂商无关</li><li>后处理 post-processing：解决配置解析中的问题，确保可以进行仿真计算</li><li>计算数据平面 data plane generation：计算 RIB，FIB，第一层到第三层overlay实际拓扑</li><li>分析转发 forwarding analysis：计算端口谓词等信息，建模转发行为</li></ol><h2 id="网络仿真-simulation-怎么做"><a href="#网络仿真-simulation-怎么做" class="headerlink" title="网络仿真 simulation 怎么做"></a>网络仿真 simulation 怎么做</h2><p>笼统来说，网络的仿真验证 simulation 会对每台设备的每个端口计算端口谓词 port predicate，也即为可以从这个端口上转发出去的包头空间 header space。这样的话，对从节点 A 到节点 B 的可达性也就转变成了从节点 A 到节点 B 的路径上，所有端口谓词的交集，表达了最终所有可以从 A 到 B 的包头空间，也即所有可以传递的数据包包头。因为一般情况下，后续所需要的验证会大量重复的利用前面所计算出的中间信息，那么我们也就需要一种方式可以更高效紧凑的表示出这部分信息。</p><h3 id="包头空间是什么"><a href="#包头空间是什么" class="headerlink" title="包头空间是什么"></a>包头空间是什么</h3><p>对于一个数据包来说，最基础的包头空间可以是 ip 五元组（srcIP, srcPort, dstIP, dstPort, protocol），以 ipv4 为例，我们就需要完整表示出两个 ip 地址的 32bit，两个端口的 16bit，协议的 8bit，共 104bit 的包头信息。比如在 Batfish 中，它的 BDDPacket 共表示了：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FIRST_PACKET_VAR <span class="comment">// reserved for auxiliary variables before packet vars</span></span><br><span class="line">   + IP_LENGTH * <span class="number">4</span> <span class="comment">// primed/unprimed src/dst</span></span><br><span class="line">   + PORT_LENGTH * <span class="number">4</span> <span class="comment">// primed/unprimed src/dst</span></span><br><span class="line">   + IP_PROTOCOL_LENGTH</span><br><span class="line">   + ICMP_CODE_LENGTH</span><br><span class="line">   + ICMP_TYPE_LENGTH</span><br><span class="line">   + TCP_FLAG_LENGTH * <span class="number">8</span></span><br><span class="line">   + DSCP_LENGTH</span><br><span class="line">   + ECN_LENGTH</span><br><span class="line">   + FRAGMENT_OFFSET_LENGTH</span><br><span class="line">   + PACKET_LENGTH_LENGTH;</span><br></pre></td></tr></table></figure><p>如果想要表示 ipv6 地址，单单是一个 ip 就需要 128bit 的空间来表示。又或者想要表示链路状态等，又需要向内添加额外的 bit 位用来表示。</p><p>所以理论上我们所想要表示的包头空间是一个非常庞大的信息域。</p><h3 id="如何高效的表示"><a href="#如何高效的表示" class="headerlink" title="如何高效的表示"></a>如何高效的表示</h3><p>最开始的验证工具使用 Trie 前缀树的方式来表示。</p><h4 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h4><p>有关 Trie 树的相关信息可以参考 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/implement-trie-prefix-tree">LeetCode 208</a>。对于我们想要表示的 01 串（包头空间）来说，字典树应该是一颗三叉树，分别代表 0，1，any。在每个中间节点上都有一个 <code>isEnd</code> 的标记位，用来表示当前节点可以是 01 串的终点，也即是这一段从根到当前节点的信息完整的表示了一段内容。这里以力扣的<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/implement-trie-prefix-tree/solutions/717239/shi-xian-trie-qian-zhui-shu-by-leetcode-ti500">原题 java 题解</a>（修改为三叉）为例展示 Trie 的存储和查询结构。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Trie[] children;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isEnd;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Trie</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        children = <span class="keyword">new</span> Trie[<span class="number">3</span>];</span><br><span class="line">        isEnd = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span>[] word)</span> </span>&#123;</span><br><span class="line">        Trie node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = word[i];</span><br><span class="line">            <span class="keyword">if</span> (node.children[index] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                node.children[index] = <span class="keyword">new</span> Trie();</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.children[index];</span><br><span class="line">        &#125;</span><br><span class="line">        node.isEnd = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] word)</span> </span>&#123;</span><br><span class="line">        Trie node = searchPrefix(word);</span><br><span class="line">        <span class="keyword">return</span> node != <span class="keyword">null</span> &amp;&amp; node.isEnd;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">startsWith</span><span class="params">(<span class="keyword">int</span>[] prefix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> searchPrefix(prefix) != <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Trie <span class="title">searchPrefix</span><span class="params">(<span class="keyword">int</span>[] prefix)</span> </span>&#123;</span><br><span class="line">        Trie node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prefix.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = prefix[i];</span><br><span class="line">            <span class="keyword">if</span> (node.children[index] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.children[index];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>但是，Trie 树对 any 的表示是一条单独的路径，作为树结构也无法复用下层的子树。这会导致整颗树很胖，很冗余，查询和遍历都很复杂，需要一直判断当前节点是否已经标记了 <code>isEnd</code>。尽管 Trie 能表示出离散的空间，但是在网络验证工具的表达中，它将离散的同一等价类（具有相同转发行为的包）需要拆分表示。以 <a target="_blank" rel="noopener" href="https://github.com/XJTU-NetVerify/sdn-lab4/tree/main/veriflow">Veriflow</a> 为例，它对 <code>TrieNode</code> 的定义如下：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TrieNode* parent;</span><br><span class="line">    TrieNode* zeroBranch;</span><br><span class="line">    TrieNode* oneBranch;</span><br><span class="line">    TrieNode* wildcardBranch;</span><br><span class="line">    Trie* nextLevelTrie;</span><br><span class="line">    <span class="built_in">unordered_set</span>&lt; Rule, KHash&lt; Rule &gt;, KEqual&lt; Rule &gt; &gt;* ruleSet;</span><br><span class="line"></span><br><span class="line">    TrieNode();</span><br><span class="line">    ~TrieNode();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><blockquote><p> 可以看到，在 Veriflow 里，已经有了对域划分的思想。</p></blockquote><p>在对等价类的表示中，Trie 无法合并多个 range，只能将每个 range 当作一个等价类，从而产生了不必要的拆分。并且可以预想到，在对连续范围的非离散数据表示中，Trie 结构本身并不能很好的编码信息，只能将所有的可能性都进行表示。</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/veriflow%20ec.svg" alt="veriflow ec"></p><p>除此之外，Trie 结构本身也不适合作为逻辑计算的载体。在数据包传播过程中，从单个节点的视角来看，它是上游限制与本地信息的结合，并向下游继续传播的过程，中间不可避免需要涉及到对空间的限制计算。假如我们安排两个 Trie 存储的空间做交集或并集，就需要两个指针从根节点开始向下递归遍历，any 与 0 和 any 与 1 都会造成重新的树结构分裂，牵一发而动全身。</p><h4 id="SAT-SMT"><a href="#SAT-SMT" class="headerlink" title="SAT/SMT"></a>SAT/SMT</h4><p>布尔可满足性理论（Boolean satisfiability problem，SAT）是用来解决给定的真值方程式，询问是否存在一种解释可以满足给定的布尔公式。换句话说，它询问公式的变量是否可以被一致地替换为 TRUE 或 FALSE 的值，使得公式评估为 TRUE。如果这种情况成立，则该公式称为可满足的，否则为不可满足的。例如，公式 <code>a AND NOT b</code> 是可满足的，因为可以找到 <code>a = TRUE</code> 和 <code>b = FALSE</code> 的值，使得 <code>(a AND NOT b) =  TRUE</code>。相比之下，<code>a AND NOT a</code> 是不可满足的。</p><p>模理论可满足性（Satisfiability modulo theories，SMT）是确定一个数学公式是否可满足的问题。它将布尔可满足性问题（SAT）推广到更复杂的公式，这些公式涉及实数、整数以及各种数据结构，如列表、数组、位向量字符串等。SMT 求解器是旨在为实际输入子集解决 SMT 问题的工具。</p><p>通过 SMT 求解器的方式来对包头空间进行信息表示，可能着重于对包头空间的逻辑计算以及最终是否可满足的求解。但是在预想中，SMT 求解器需要将所有的可能解进行遍历尝试，直到确认存在一组可满足的解。并且随着需要表示信息变得复杂，以及在网络严重工具里解空间的扩张，SMT 可能并不是一种非常高效的建模方式。</p><blockquote><p>由于本人对这方面的接触比较少，只能确认在一些网络验证工具中会用 SMT 的方式建模自己需要验证的内容。</p></blockquote><h4 id="BDD"><a href="#BDD" class="headerlink" title="BDD"></a>BDD</h4><p>二元决策图（Binary Decision Diagram），可以视为一颗用于编码表示 01 信息的二叉树，我们可以定义它的 <code>Left/Low/Zero</code> 边代表 0，<code>Right/High/One</code> 边代表 1，any 可以用 0 1 两条边指向同一个子树来表示。如此这般，从一颗 BDD 树的根节点开始向下遍历到叶子节点即为一个 01 串。最终我们将所有叶子节点指向 <code>TRUE</code> 和 <code>FALSE</code> 两个全局的终结点，只有最终指向 <code>TRUE</code> 终结点的信息是我们所要编码的所有信息。</p><p>我们期望能通过 BDD 的结构对离散的包头空间进行紧凑表达，并且能方便的进行逻辑限制条件的计算。</p><p>在最初始的状态下，BDD 树呈现出下图的样子：</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/BDD%20Tree.png" alt="BDD Tree"></p><p>但是，可以注意到，它是可以被化简的。实际上，BDD 已经是 <strong>R</strong>educed <strong>O</strong>rdered BDD 的简称。在固定变量顺序的表示里，每个编码信息都会被化简后的 BDD 唯一的表示。它的化简约束如下：</p><blockquote><ul><li>(<strong>uniqueness</strong>) no two distinct nodes $u$ and $v$ have the same variable name and low- and high-successor</li><li>(<strong>non-redundant tests</strong>) no variable node $u$ has identical low- and high-successor</li></ul></blockquote><p>如图表示 BDD 的化简方法</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/robdd.svg" alt="robdd"></p><p>通过这种方式，我们就可以唯一的表示所有用到的不同的可能性（并复用），并方便的在他们之间进行逻辑计算，即在原树的基础上构建新的树冠。</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/bdd%20example.svg" alt="BDD example"></p><h4 id="NDD"><a href="#NDD" class="headerlink" title="NDD"></a>NDD</h4><p>在最初的表示方法 Trie 树中，已经尝试将划分域的思想应用到底层的表示结构中了。但是这显然在后面直接应用的形式化建模方式里被模糊处理了。其实，我们不止可以把划分域的思想放到网络验证工具里去匹配和约束，也应该在底层表示里将不同域的表示进行划分。由此，我们提出了 Network Decision Diagram，NDD 这种结构，想要更好的对网络验证过程中的包头空间进行建模表示。</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/ndd-drawio.png" alt="fig4"></p><p>核心点在于，原本 BDD 的表示空间是离散的所有可能性，但是由于在网络验证中所想要表示的信息较多，导致 BDD 结构的肿大。我们通过对每个域之间做解耦，使得 BDD 仅仅需要表示自己域（较少）的信息，从而可以很好的控制住肿大的问题，进而解决了很多 BDD 不够理想的情况。</p><p>详细的内容和实现可以移步我们<a target="_blank" rel="noopener" href="https://xjtu-netverify.github.io/papers/2025-ndd-a-decision-diagram-for-network-verification/">网站</a>进行深入了解。</p><blockquote><p>NDD 的相关工作发表在 NSDI 2025 会议上，并获得了 Outstanding Paper 奖。</p></blockquote><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/suppl/10.1145/3544216.3544264/suppl_file/p336-zhang-supp.pdf">Symbolic Router Execution – Public Review from Ennan Zhai</a></p></li><li><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">SAT wikipedia</a></p></li><li><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories">SMT wikipedia</a></p></li><li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/151725312">SAT 与 SMT 简明入门</a></p></li><li><p><a target="_blank" rel="noopener" href="https://github.com/XJTU-NetVerify/NDD">NDD</a></p></li></ul>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/PAPER/From-Network-Verification-to-NDD/" title="From Network Verification to NDD">https://augists.top/NOTES/PAPER/From-Network-Verification-to-NDD/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+              <a href="/tags/PAPER/" rel="tag"><i class="fa fa-tag"></i> PAPER</a>
+              <a href="/tags/NETWORK/" rel="tag"><i class="fa fa-tag"></i> NETWORK</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/SELF/REVIEW/2024-Review/" rel="prev" title="2024-Review">
+      <i class="fa fa-chevron-left"></i> 2024-Review
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/LB/LB%20Algorithms%20Sharing/" rel="next" title="Load Balance Algorithm Analysis (What Is the Fair in Lb?)">
+      Load Balance Algorithm Analysis (What Is the Fair in Lb?) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E7%BD%91%E7%BB%9C%E9%AA%8C%E8%AF%81%E5%88%B0-NDD"><span class="nav-number">1.</span> <span class="nav-text">从网络验证到 NDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%B3%E8%A6%81%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">想要解决什么问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.2.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E9%95%9C%E5%83%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">物理镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E9%95%9C%E5%83%8F-emulation"><span class="nav-number">1.2.2.</span> <span class="nav-text">虚拟镜像 emulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BB%BF%E7%9C%9F-simulation"><span class="nav-number">1.2.3.</span> <span class="nav-text">网络仿真 simulation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BB%BF%E7%9C%9F-simulation-%E6%80%8E%E4%B9%88%E5%81%9A"><span class="nav-number">1.3.</span> <span class="nav-text">网络仿真 simulation 怎么做</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%A4%B4%E7%A9%BA%E9%97%B4%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.3.1.</span> <span class="nav-text">包头空间是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.2.</span> <span class="nav-text">如何高效的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Trie"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SAT-SMT"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">SAT&#x2F;SMT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BDD"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">BDD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NDD"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">NDD</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Augists" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+<a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+<a target="_blank" rel="noopener" href="https://tjupt.org/promotionlink.php?key=426b9e4fa510e913924e033efa906fd2"><img src="https://tjupt.org/mybar.php?userid=141948.png" alt="北洋园PT" title="北洋园PT"></a>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>

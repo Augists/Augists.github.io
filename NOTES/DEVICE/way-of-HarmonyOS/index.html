@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="鸿蒙之路，道阻且长Copyright@Linux中国">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Way of HarmonyOS">
+<meta property="og:url" content="https://augists.top/NOTES/DEVICE/way-of-HarmonyOS/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="鸿蒙之路，道阻且长Copyright@Linux中国">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img.linux.net.cn/data/attachment/album/202106/04/224803x7fppnqf77yyjfzb.jpg">
+<meta property="og:image" content="https://img.linux.net.cn/data/attachment/album/202106/04/224147uqxu94xvvlf19482.png">
+<meta property="og:image" content="https://img.linux.net.cn/data/attachment/album/202106/04/224305nao3xua1o2jg3xa9.png">
+<meta property="og:image" content="https://img.linux.net.cn/data/attachment/album/202106/04/224336t72gddgygyq1jeg3.png">
+<meta property="article:published_time" content="2021-06-06T15:55:28.000Z">
+<meta property="article:modified_time" content="2025-05-22T08:50:20.307Z">
+<meta property="article:author" content="Augists">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.linux.net.cn/data/attachment/album/202106/04/224803x7fppnqf77yyjfzb.jpg">
+
+<link rel="canonical" href="https://augists.top/NOTES/DEVICE/way-of-HarmonyOS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Way of HarmonyOS | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-f-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>F-links</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/DEVICE/way-of-HarmonyOS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Way of HarmonyOS
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-06 23:55:28" itemprop="dateCreated datePublished" datetime="2021-06-06T23:55:28+08:00">2021-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-05-22 16:50:20" itemprop="dateModified" datetime="2025-05-22T16:50:20+08:00">2025-05-22</time>
+              </span>
+
+          
+            <div class="post-description">鸿蒙之路，道阻且长<br>Copyright@Linux中国</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <blockquote><p>Copyright@Linux中国<br><a target="_blank" rel="noopener" href="https://linux.cn/article-13457-1.html">link</a></p></blockquote><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224803x7fppnqf77yyjfzb.jpg" alt=""><br>6 月 2 日晚上八点，鸿蒙召开了 2.0 的发布会，发布了鸿蒙 OS，以及一大批的新品。这两天想必大家也都看到了不少。这篇文章不想讨论鸿蒙系统本身的体验层面的变化，而是将会将精力更多的投放在鸿蒙的生态发展中。</p><h2 id="鸿蒙想要的是什么？"><a href="#鸿蒙想要的是什么？" class="headerlink" title="鸿蒙想要的是什么？"></a>鸿蒙想要的是什么？</h2><p>从 2019<br>年鸿蒙发布，有几个关键词就是核心，分布式、全场景、自主研发，其中自主研发比较好理解，而分布式、全场景一直是我无法理解的，直到看了发布会，我才意识到鸿蒙真正想要的是什么。由于我近几年来，使用的都是苹果的生态，使用<br>Macbook Pro 办公，使用 Homepod 听歌，出门会使用 Airpods Pro 来降噪。所以，在看鸿蒙发布会的时候，我时常有一个想法：这个功能苹果生态里已经有了啊？<br>或者是这个功能的 UI 交互确实是新的，但核心的体验我在苹果生态中也已经体验了啊？<br>也正是这一刻，我悟了，鸿蒙想要的分布式、全场景，其实就是过去我在苹果生态一直体验的那些东西，不同的是，鸿蒙的分布式、全场景，是超出了苹果生态所给予我的东西。</p><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224147uqxu94xvvlf19482.png" alt=""></p><p>鸿蒙的产品架构是 1+8+N，1 指的是手机，8 指的是 PC、平板、智慧屏、手表、智能音箱、车机、耳机、AR/VR，N 则是更多的生态。对比着我们来看苹果的生态，1 指的是 iPhone，8 指的是 Macbook Pro、iPad、Apple TV、Apple Watch、Homepod、Apple Car、AirPods 以及不知道有没有的 VR/AR 产品。到这一步，鸿蒙和苹果看起来都很像，那为什么我又说华为超越了苹果生态？原因在于 8 加的 N。在蒙的描述中，N 是指更多的 IoT 设备，他们可以通过鸿蒙系统借助 4G/5G/HiLink 等方式，和核心的 8 个产品进行连接，沟通，从而提升产品的智能性，让用户真正感受到产品的智能特性。而在苹果生态中，苹果是不做 IoT 设备的操作系统的。鸿蒙既做了手机、核心设备的操作系统，还做了嵌入式的操作系统，确实可以让 IoT 设备的操作体验，如同 8 个核心设备的体验，这一点是只制定标准，不下场做事的苹果所无法达到的。可以说，鸿蒙生态假设真的铺设起来了，体验、易用性，可能都要超过苹果生态目前能够提供给我们的。</p><h2 id="鸿蒙生态之乱象"><a href="#鸿蒙生态之乱象" class="headerlink" title="鸿蒙生态之乱象"></a>鸿蒙生态之乱象</h2><p>鸿蒙作为一个看起来还不错的产品，为何近几年来饱受争议？我觉得主要是在宣传策略上的混乱。</p><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224305nao3xua1o2jg3xa9.png" alt=""></p><p>提起鸿蒙，数码圈的人往往说的是鸿蒙 OS；而互联网/科技圈的人说的往往是 OpenHarmony 操作系统。二者在宣传的过程中，往往都是被人称作是鸿蒙系统。但实际上，鸿 OS 是真正的鸿蒙 OS，OpenHarmony 仅仅是鸿蒙生态的一个基座，如果你将之与 Android 对比，便是 Android 与 AOSP 的区别。</p><p><img src="https://img.linux.net.cn/data/attachment/album/202106/04/224336t72gddgygyq1jeg3.png" alt=""></p><p>我们真正在使用的鸿蒙系统，是一个完整的、加入了各项系统设定的操作系统，而我们所看到的源码的部分，只是一个操作系统的基座，你真正在使用的过程中，还需要做大量的修改和剪裁的版本。不过，这样的区分是一件好事。Android 当年之所以能够盛行，AOSP 功不可没。OpenHarmony 同样承载了鸿蒙系统发扬光大的路线。不过，OpenHarmony 本身也在宣传上有硬伤。一直以来，OpenHarmony 都被称之为 Android 套壳，在我看来，是不完全准确的。OpenHarmony 在手机/平板/智慧屏部分，使用的是兼容 Android 的机制，而且兼容 Android 的路线也是没有问题的；但在覆盖面更广的嵌入式设备中，产生的价值的是 2012 年就开发的 LiteOS；对于一些特定的场景下，OpenHarmony 可能会使用 Linux Kernel 来完成自己的工作。OpenHarmony 不是 Android 套壳，而是基于 Android/LiteOS/Linux Kernel 的土壤所诞生出的操作系统。操作系统的研发一直以来都不是技术问题而是生态问题，用户不太会裸用操作系统提供的基础功能，能够留下用户的，必然是操作系统之上的应用生态，对于 OpenHarmony 这样的一个后来者，一个最为简单高效获得生态的方式，就是与原有生态的兼容，所以 OpenHarmony 兼容 Android 生态是在我意料之中的事情，倘若鸿蒙真的将整个系统完全重写，那我反而不看好 OpenHarmony。相比于è¯´ OpenHarmony 套壳 Android，我更倾向于 OpenHarmony 编写了一个抽象层，磨平了 LiteOS 和 Android 的系统 API，从而使得一些功能特性可以更加容易的在两种系统之上来实现。而这些，也正是鸿蒙所宣传的 1 + 8 + N战略下的核心体验的由来。但不得不说，在宣传上，OpenHarmony 做的很一般，至可能没有起到好的作用，而是一个坏的作用。</p><h2 id="鸿蒙生态的未来"><a href="#鸿蒙生态的未来" class="headerlink" title="鸿蒙生态的未来"></a>鸿蒙生态的未来</h2><p>说完了鸿蒙想要的东西和鸿蒙生态的乱象，最后，我想聊一聊关于鸿蒙的未来。鸿蒙生态看起来非常的不错，但，能否达到所预想的水平，又是另外一个问题，对于鸿蒙来说，前路依然坎坷。在国内方面，鸿蒙如果希进行推广，就必须要考虑合作伙伴的问题，鸿蒙生态的建设不仅仅是华为的事情，华为可以完成 1+8 的建设，可后面的 N，是需要无数的中小 IoT 设备生产厂商共同建设而来的。但，国内的厂商可能要面临的问题就是，面对曾经的对手，是否还要继续合作？如果合作了，未来是否会被华为卡脖子？华为又是否会在 OpenHarmony 中为自家系统添加单独的优化？这些问题都会让国内的厂商在面临选择时产生困惑。此外，国内的厂商在完成了接入后， 鸿蒙想要扩大生态范围，就必然需要进行出海，出海时就要正面与 Android、iOS 所构建的生态进行竞争，在海外生态不足的情况下，如何取得竞争的胜利，也是一个需要研究和探讨的话题。不过，说了这么多困难，我还是想说，鸿蒙看起来真的很好，或许，有朝一日我会面临这样的选择“花 15000 元，获得完整的苹果生态体验；花 10000 元，获得完整的鸿蒙生态体验，可以实现苹果生态 80% 甚至是 120% 的体验”，你会怎么选？<br>鸿蒙之路，道阻且长。</p>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/DEVICE/way-of-HarmonyOS/" title="Way of HarmonyOS">https://augists.top/NOTES/DEVICE/way-of-HarmonyOS/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/APPLE/Login-in-163-in-Mail-app-on-apple-device/" rel="prev" title="Login in 163 in Mail App on Apple Device">
+      <i class="fa fa-chevron-left"></i> Login in 163 in Mail App on Apple Device
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/TERMINAL/GIT/Pac-Proxy-for-Github/" rel="next" title="Pac Proxy for Github">
+      Pac Proxy for Github <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B8%BF%E8%92%99%E6%83%B3%E8%A6%81%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">鸿蒙想要的是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B8%BF%E8%92%99%E7%94%9F%E6%80%81%E4%B9%8B%E4%B9%B1%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">鸿蒙生态之乱象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B8%BF%E8%92%99%E7%94%9F%E6%80%81%E7%9A%84%E6%9C%AA%E6%9D%A5"><span class="nav-number">3.</span> <span class="nav-text">鸿蒙生态的未来</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Augists" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+<a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+<a target="_blank" rel="noopener" href="https://tjupt.org/promotionlink.php?key=426b9e4fa510e913924e033efa906fd2"><img src="https://tjupt.org/mybar.php?userid=141948.png" alt="北洋园PT" title="北洋园PT"></a>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>

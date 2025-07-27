@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="Software Engineering Review">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Software Engineering Review 2">
+<meta property="og:url" content="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review-2/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="Software Engineering Review">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-22T15:55:11.000Z">
+<meta property="article:modified_time" content="2025-05-22T08:50:20.306Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="NOTE">
+<meta property="article:tag" content="SHARING">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review-2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Software Engineering Review 2 | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-f-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>F-links</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Software Engineering Review 2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-22 23:55:11" itemprop="dateCreated datePublished" datetime="2021-12-22T23:55:11+08:00">2021-12-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-05-22 16:50:20" itemprop="dateModified" datetime="2025-05-22T16:50:20+08:00">2025-05-22</time>
+              </span>
+
+          
+            <div class="post-description">Software Engineering Review</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <h2 id="软件工程学概述"><a href="#软件工程学概述" class="headerlink" title="软件工程学概述"></a>软件工程学概述</h2><h3 id="何谓软件危机"><a href="#何谓软件危机" class="headerlink" title="何谓软件危机"></a>何谓软件危机</h3><p>软件危机是指在计算机软件的开发和维护过程中所遇到的一系列严重问题</p><h3 id="产生软件危机的原因及解决途径"><a href="#产生软件危机的原因及解决途径" class="headerlink" title="产生软件危机的原因及解决途径"></a>产生软件危机的原因及解决途径</h3><ul><li><p>技术原因</p><ul><li>软件规模越来越大</li><li>软件复杂度越来越高</li></ul></li><li><p>管理原因</p><ul><li>软件开发缺乏正确的理论指导，过分依靠个人技巧和创造性</li><li>对用户需求没有完整准确的认识</li></ul></li><li><p>解决途径：软件工程</p><ul><li>对计算机软件正确认识</li><li>推广使用开发软件成功的技术和方法，研究探索更好更有效的技术和方法，消除错误概念和做法</li><li>开发和使用更好的软件工具</li><li>对于时间、人员、资源等需要引入更加合理的管理措施</li></ul></li></ul><h3 id="软件工程定义及基本原理"><a href="#软件工程定义及基本原理" class="headerlink" title="软件工程定义及基本原理"></a>软件工程定义及基本原理</h3><ul><li>软件工程<ul><li>将系统化、规范化、可量化的工程原则和方法，应用于软件的开发、运行和维护</li><li>对其中方法的理论研究</li></ul></li><li>主要目标<ul><li>高效开发高质量软件，降低开发成本</li></ul></li><li>基本原理<ul><li>用分阶段的生命周期计划严格管理</li><li>坚持进行阶段评审</li><li>实行严格的产品控制</li><li>采用现代程序设计技术</li><li>结果应能清楚的审查</li><li>开发小组的人员应该少而精</li><li>承认不断改进软件工程实践的必要性</li></ul></li></ul><h3 id="软件工程方法学包含哪三个要素"><a href="#软件工程方法学包含哪三个要素" class="headerlink" title="软件工程方法学包含哪三个要素"></a>软件工程方法学包含哪三个要素</h3><ul><li>方法</li><li>工具</li><li>过程</li></ul><h3 id="软件生命周期阶段划分及各阶段的任务"><a href="#软件生命周期阶段划分及各阶段的任务" class="headerlink" title="软件生命周期阶段划分及各阶段的任务"></a>软件生命周期阶段划分及各阶段的任务</h3><ul><li>可行性分析与开发计划<ul><li>约束和限制</li><li>简要需求分析，建立逻辑模型</li><li>对可供选择的解决方法进行研究<ul><li>技术可行性</li><li>经济可行性</li><li>社会可行性</li></ul></li></ul></li><li>需求分析<ul><li>功能需求</li><li>非功能性需求</li></ul></li><li>软件设计<ul><li>概要设计</li><li>详细设计</li></ul></li><li>程序编码</li><li>软件测试<ul><li>单元测试</li><li>集成测试</li><li>系统测试</li></ul></li><li>软件维护<ul><li>改正性维护</li><li>适应性维护</li><li>完善性维护</li><li>预防性维护</li></ul></li></ul><h3 id="各种生命周期模型的概念和特点"><a href="#各种生命周期模型的概念和特点" class="headerlink" title="各种生命周期模型的概念和特点"></a>各种生命周期模型的概念和特点</h3><h4 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h4><ul><li>阶段间具有顺序性和依赖性，文档驱动</li><li>推迟实现，不急于编写代码<ul><li>尽可能的理解和掌握系统需求</li><li>清楚区分逻辑设计与物理设计，尽可能推迟程序的物理实现</li></ul></li><li>质量保证的观点<ul><li>每个阶段都必须完成规定的文档，没有交出合格的文档就是没有完成该阶段的任务</li><li>每个阶段结束前都要对所完成的文档进行评审，以便尽早发现问题，改正错误</li></ul></li></ul><p>问题</p><ul><li>不希望有变化</li><li>变化来的越晚，付出的代价越高</li><li>设计阶段过多的假设，导致理想化、一厢情愿的东西过多（用户只参与需求）</li><li>文档驱动，静态</li></ul><p>适合规模较大的系统或分布式开发模式</p><h4 id="快速原型模型"><a href="#快速原型模型" class="headerlink" title="快速原型模型"></a>快速原型模型</h4><ul><li>对系统进行简单和快速的分析，快速构造一个软件原型</li><li>用户和开发者在试用或演示过程中加强沟通和反馈，获取到用户真正的需求</li></ul><p>问题</p><ul><li>所选用的开发技术和工具不一定是实际项目的需要</li><li>快速建立起来的模型可能由于不符合各种开发规范，加上不断修改，质量较差，被抛弃</li></ul><p>适合一个全新的系统开发</p><h4 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h4><ul><li>逐步增加系统功能</li><li>第一个增量构件往往实现软件的基本需求，提供最核心的功能</li></ul><p>问题：</p><ul><li>加入构件必须不破坏已构造好的系统部分</li><li>容易退化为“边做边改”模型，从而使软件过程的控制失去整体性</li></ul><h4 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h4><ul><li>在每个阶段之前都增加了风险分析过程（瀑布模型）的快速原型模型</li></ul><p>适合大型复杂的系统</p><h4 id="喷泉模型"><a href="#喷泉模型" class="headerlink" title="喷泉模型"></a>喷泉模型</h4><ul><li>典型的面向对象生命周期模型</li><li>迭代：逐步求精</li><li>阶段间没有明显的界限</li></ul><h4 id="敏捷软件开发"><a href="#敏捷软件开发" class="headerlink" title="敏捷软件开发"></a>敏捷软件开发</h4><ul><li>迭代式开发</li><li>增量交付</li><li>开发团队和用户反馈推动产品开发</li><li>持续集成</li><li>开发团队自我管理</li></ul><p>敏捷宣言：</p><ul><li>个体和互动胜过流程和工具</li><li>工作的软件胜过详尽的文档</li><li>客户合作胜过合同谈判</li><li>相应变化胜过遵循计划</li></ul><p>优势</p><ul><li>精确</li><li>质量</li><li>速度</li><li>丰厚的投资回报率</li><li>高效的自我管理团队</li></ul><p>适合规模中小、需求变化频繁的系统开发，并且强调团队的作用，适合集中式的开发模式</p><h4 id="极限编程"><a href="#极限编程" class="headerlink" title="极限编程"></a>极限编程</h4><ul><li>e<strong>X</strong>treme <strong>P</strong>rogramming</li><li>目的是降低需求变化的成本</li><li>开发方法<ul><li>客户代表与开发团队紧密融合</li><li>结对编程 pair-programming</li></ul></li><li>开发流程<ul><li>编写用户故事</li><li>架构规范</li><li>实施规划</li><li>迭代计划</li><li>代码开发</li><li>单元测试</li><li>验收测试</li></ul></li><li>核心做法<ul><li>小规模，频繁的版本发布，短迭代周期</li><li>测试驱动开发 Test-driven development</li><li>结对编程 Pair programming</li><li>持续集成 Continuous integration</li><li>每日站立会议 Daily stand-up meeting</li><li>共同拥有代码 Collative code ownership</li><li>系统隐喻 System metaphor</li></ul></li></ul><h3 id="了解敏捷过程和极限编程的基本思想"><a href="#了解敏捷过程和极限编程的基本思想" class="headerlink" title="了解敏捷过程和极限编程的基本思想"></a>了解敏捷过程和极限编程的基本思想</h3><ul><li>Scrum 注重过程，XP 注重实践</li><li>需求被定义为产品需求积压 product backlogs</li><li>开发过程氛围多个冲刺周期 sprint</li><li>燃尽图 burn down 显示当前冲刺中未完成的数目</li></ul><p>Scrum 角色</p><ul><li>产品拥有者 Product Owner</li><li>利益相关者 Stakeholder</li><li>专家 Scrum Master</li><li>团队成员 Team Member</li></ul><p>DevOps 过程</p><ul><li>核心目标是自动化和可持续交付</li></ul><h2 id="软件架构的构件"><a href="#软件架构的构件" class="headerlink" title="软件架构的构件"></a>软件架构的构件</h2><h3 id="4-1-视图"><a href="#4-1-视图" class="headerlink" title="4+1 视图"></a>4+1 视图</h3><ul><li>逻辑视图 Logic View<ul><li>主要支持系统的功能性需求，即系统提供给最终用户的服务</li><li>功能描述</li><li>类模型</li></ul></li><li>开发视图 Development View （模块视图 Module View）<ul><li>软件模块的组织和管理</li><li>软件可通过程序库或子系统进行组织</li><li>子系统</li><li>接口</li></ul></li><li>进程视图 Process View （并发视图）<ul><li>系统的运行特性，主要关注非功能性需求</li><li>处理流程</li><li>并行性</li><li>同步</li></ul></li><li>物理视图 Physical View<ul><li>把软件映射到硬件上</li><li>考虑系统性能、规模、可靠性</li><li>目标硬件</li><li>网络</li></ul></li><li>场景视图 Scenarios View<ul><li>重要系统活动的抽象</li></ul></li></ul><h3 id="软件架构风格"><a href="#软件架构风格" class="headerlink" title="软件架构风格"></a>软件架构风格</h3><h4 id="管道与过滤器"><a href="#管道与过滤器" class="headerlink" title="管道与过滤器"></a>管道与过滤器</h4><h4 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h4><h4 id="仓库-黑板系统"><a href="#仓库-黑板系统" class="headerlink" title="仓库/黑板系统"></a>仓库/黑板系统</h4><ul><li>中央数据结构：说明当前状态</li><li>独立构件：在中央数据存储上执行</li></ul><p>若输入流中某类时间触发进程执行的选择，则仓库是一个传统型数据库<br>若中央数据结构的当前状态触发进程执行的选择，则仓库是一个黑板系统</p><h4 id="正交软件结构"><a href="#正交软件结构" class="headerlink" title="正交软件结构"></a>正交软件结构</h4><ul><li>组织层</li><li>线索</li></ul><h4 id="客户机-服务器结构"><a href="#客户机-服务器结构" class="headerlink" title="客户机/服务器结构"></a>客户机/服务器结构</h4><ul><li>服务器：管理系统的资源，服务器访问与并发性控制、服务器安全性、服务器的备份与恢复和全局数据完整性规则</li><li>客户应用程序：提供用户与服务器交互的界面、向服务器提交用户请求并接收来自服务器的信息、利用客户应用程序对存在于客户端的数据执行应用逻辑要求</li><li>网络：完成服务器和客户应用程序之间的数据传输</li></ul><h4 id="浏览器-服务器结构"><a href="#浏览器-服务器结构" class="headerlink" title="浏览器/服务器结构"></a>浏览器/服务器结构</h4><p>与 C/S 结构相比，B/S 结构增加了一个应用服务器，可以将整个应用逻辑保存在应用服务器上，客户端的压力大大减轻，负荷被均衡的分配给了服务器</p><h4 id="MVC-结构"><a href="#MVC-结构" class="headerlink" title="MVC 结构"></a>MVC 结构</h4><p>Model View Controller</p>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review-2/" title="Software Engineering Review 2">https://augists.top/NOTES/COURSES/Software_Engineering/Software-Engineering-Review-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NOTE/" rel="tag"><i class="fa fa-tag"></i> NOTE</a>
+              <a href="/tags/SHARING/" rel="tag"><i class="fa fa-tag"></i> SHARING</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NOTES/COURSES/Software_Engineering/Software-Engineering-Review/" rel="prev" title="Software Engineering Review">
+      <i class="fa fa-chevron-left"></i> Software Engineering Review
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/SELF/REVIEW/2021-Review/" rel="next" title="2021 Review">
+      2021 Review <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">软件工程学概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%95%E8%B0%93%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">何谓软件危机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A7%E7%94%9F%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E9%80%94%E5%BE%84"><span class="nav-number">1.2.</span> <span class="nav-text">产生软件危机的原因及解决途径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">软件工程定义及基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95%E5%AD%A6%E5%8C%85%E5%90%AB%E5%93%AA%E4%B8%89%E4%B8%AA%E8%A6%81%E7%B4%A0"><span class="nav-number">1.4.</span> <span class="nav-text">软件工程方法学包含哪三个要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%98%B6%E6%AE%B5%E5%88%92%E5%88%86%E5%8F%8A%E5%90%84%E9%98%B6%E6%AE%B5%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.5.</span> <span class="nav-text">软件生命周期阶段划分及各阶段的任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E7%89%B9%E7%82%B9"><span class="nav-number">1.6.</span> <span class="nav-text">各种生命周期模型的概念和特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.6.1.</span> <span class="nav-text">瀑布模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.6.2.</span> <span class="nav-text">快速原型模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.6.3.</span> <span class="nav-text">增量模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.6.4.</span> <span class="nav-text">螺旋模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%96%B7%E6%B3%89%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.6.5.</span> <span class="nav-text">喷泉模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91"><span class="nav-number">1.6.6.</span> <span class="nav-text">敏捷软件开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B"><span class="nav-number">1.6.7.</span> <span class="nav-text">极限编程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B%E5%92%8C%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-number">1.7.</span> <span class="nav-text">了解敏捷过程和极限编程的基本思想</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E7%9A%84%E6%9E%84%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">软件架构的构件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E8%A7%86%E5%9B%BE"><span class="nav-number">2.1.</span> <span class="nav-text">4+1 视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC"><span class="nav-number">2.2.</span> <span class="nav-text">软件架构风格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%A1%E9%81%93%E4%B8%8E%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-number">2.2.1.</span> <span class="nav-text">管道与过滤器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">2.2.2.</span> <span class="nav-text">层次结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%93%E5%BA%93-%E9%BB%91%E6%9D%BF%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.3.</span> <span class="nav-text">仓库&#x2F;黑板系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E8%BD%AF%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-number">2.2.4.</span> <span class="nav-text">正交软件结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E6%9C%BA-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84"><span class="nav-number">2.2.5.</span> <span class="nav-text">客户机&#x2F;服务器结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84"><span class="nav-number">2.2.6.</span> <span class="nav-text">浏览器&#x2F;服务器结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MVC-%E7%BB%93%E6%9E%84"><span class="nav-number">2.2.7.</span> <span class="nav-text">MVC 结构</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Augists" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+<a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+<a target="_blank" rel="noopener" href="https://tjupt.org/promotionlink.php?key=426b9e4fa510e913924e033efa906fd2"><img src="https://tjupt.org/mybar.php?userid=141948.png" alt="北洋园PT" title="北洋园PT"></a>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>

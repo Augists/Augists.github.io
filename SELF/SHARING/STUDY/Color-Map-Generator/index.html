@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="A simple tool for generating color map by given image">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Color Map Generator">
+<meta property="og:url" content="https://augists.top/SELF/SHARING/STUDY/Color-Map-Generator/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="A simple tool for generating color map by given image">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/Screen Shot 2022-08-20 at 10.34.53.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/D5826E381AB434B0940EC19F32DD890B.jpg">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/colormaptest.jpg">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/DF693CF0583BFD479E02771CC1BAE7BF.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/B91446BCDB5D9838F480D59B2150D234.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/F05A1ED7761CD4FA818F7B183D5C7E5B.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/34E667A4C8B86CCDE4DC9E481ED8BECD.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/42A62092F071E6872F888DCE704CC36A.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/4CBCB6A27BD6F540EDF726EF9EDE1642.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/Screen Shot 2022-08-20 at 11.01.16.png">
+<meta property="article:published_time" content="2022-08-20T02:12:20.000Z">
+<meta property="article:modified_time" content="2025-05-22T08:50:20.322Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="GOLANG">
+<meta property="article:tag" content="SHARING">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/Screen Shot 2022-08-20 at 10.34.53.png">
+
+<link rel="canonical" href="https://augists.top/SELF/SHARING/STUDY/Color-Map-Generator/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Color Map Generator | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-f-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>F-links</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/SHARING/STUDY/Color-Map-Generator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Color Map Generator
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-08-20 10:12:20" itemprop="dateCreated datePublished" datetime="2022-08-20T10:12:20+08:00">2022-08-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-05-22 16:50:20" itemprop="dateModified" datetime="2025-05-22T16:50:20+08:00">2025-05-22</time>
+              </span>
+
+          
+            <div class="post-description">A simple tool for generating color map by given image</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <p>前天偶然想到要做一个自动采集图片颜色，并且按照比例和颜色排成色卡的小工具，顺便敲敲代码<br>因为没有上升到直方图的层次，所以对于图片的判断并没有很大的辅助效果，它只能帮助更直观的体现图片的颜色层次和范围<br>本身对于图片的颜色提取到最后的绘制 color map 都很简单，Golang 也有标准库 image 来提供对不同格式图片的编码和解码<br>但是在对于提取后的颜色排序上，遇到了一些很有意思的问题</p><hr><p>提取后的颜色结果存储形式是 <code>color.Color</code>，在官方文档里是这样写的</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/Screen Shot 2022-08-20 at 10.34.53.png"><ul><li>注意到，它返回的是 <em>alpha-permultiplied red, green, blue and alpha values*，并非我们平时直接用到的 RGB 值。平常理解的值是 0-255 范围，而这里是 0-65535，但是它可以转换为普通的 RGB 值，并且直接以 *alpha-premultiplied</em> 的 RGB 进行排序也是可以的</li><li>直接打印 <code>color.Color</code> 对象会发现它输出的并不是 RGB 值，这在一开始对我产生了很大的误导。我在排序后查看 log 中存储的 <code>color.Color</code> 结果时发现一直是乱序，让我一直以为我的排序不起作用</li><li>由于我将输出设定为固定高度 50px，在尝试将宽度设置为原图的长x宽后发现会导致编码后的图片可能由于长宽比过于夸张而无法读取（width: 19w px, height: 50px）。经过测试，最终选择用 step 的方式将宽度固定为原图等宽，也可以宽 50px 长度等长，这样就可以将 color map 与原图放在一起生成图片</li><li>通常的调色盘是如下图这种形式。通过将左边拉到右上角，调整右边的颜色滑块，观察 RGB 值可以看到，所有颜色被分为了六个部分</li></ul><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/D5826E381AB434B0940EC19F32DD890B.jpg"><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ffxx00: 00-ff</span><br><span class="line">xxff00: ff-00</span><br><span class="line">00ffxx: 00-ff</span><br><span class="line">00xxff: ff-00</span><br><span class="line">xx00ff: 00-ff</span><br><span class="line">ff00xx: ff-00</span><br></pre></td></tr></table></figure><p>其中 xx 的变化范围在右边。这也就说明，对于任意一个颜色，需要优先判断它所处的颜色范围，例如 <code>#ff0301</code> 需要先划分到 <code>#ff0300</code> 属于第一种颜色范围。如果将 <code>#ff0301</code> 与 <code>#ff0103</code> 进行对比排序，他们的颜色范围分别是 <code>#ff0300</code> 和 <code>#ff0003</code>，也即 <code>#ffxx00</code> 和 <code>#ff00xx</code>，分属不同颜色范围。但如果是 <code>#ff0301</code> 和 <code>#ff0302</code> 比较，他们同属于 <code>#ffxx00</code> 中，就是在同一颜色范围中进行比较，就会涉及到对左侧色盘的调整。你很难说 <code>#ff0302</code> 和 <code>#ff0504</code> 谁应该放在前面，是否在同一颜色范围内应该以 xx 作为第一排序原则。同时，若是 <code>#fe0302</code> 就需要找最靠近标准值的两个颜色，也即 <code>fe</code> 和 <code>02</code>，这时在同一颜色范围又该如何判断</p><ul><li>除了上面这种非常复杂的排序方案，我也考虑了一些简单的排序并在这里附上他们的效果图。测试图片由顾景提供</li></ul><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/colormaptest.jpg"><hr><p>按照先排 R，再排 G，最后排 B 的顺序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/DF693CF0583BFD479E02771CC1BAE7BF.png"><hr><p>按照 <code>r1 &lt; r2 &amp;&amp; g1 &lt; g2 &amp;&amp; b1 &lt; b2</code> 排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/B91446BCDB5D9838F480D59B2150D234.png"><p>注意判断的顺序</p><hr><p>去掉了优先级排序中对于相同值的判断</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/F05A1ED7761CD4FA818F7B183D5C7E5B.png"><p>似乎影响不大，但是它将左边的蓝色大块打散消掉了</p><hr><p>单 R 值排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/34E667A4C8B86CCDE4DC9E481ED8BECD.png"><p>对于这张照片来说，单 R 和前一种效果最好</p><hr><p>单 G 值排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/42A62092F071E6872F888DCE704CC36A.png"><hr><p>单 B 值排序</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/4CBCB6A27BD6F540EDF726EF9EDE1642.png"><hr><p>以明度值排序也放在代码里，但是好像效果不是很好</p><hr><p>想要做到颜色的平滑过渡似乎并不容易，我更希望能通过改进第一种算法达到如下图的效果</p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/Screen Shot 2022-08-20 at 11.01.16.png"><p>代码放在了 <a target="_blank" rel="noopener" href="https://github.com/Augists/imgColorMapGenerator">GitHub 仓库</a> 里，最后的实现效果虽然没有达到最预期，但是也是看了几种不同的实现效果</p><p>后续想要改进和实现第一种，可以加如对于聚类的一些思想。Reference 中的文章可以参考，我这里的排序都是在自己摸索规律</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a target="_blank" rel="noopener" href="http://adrianlikins.com/2011/07/color-sorting/">color sorting</a></li><li><a target="_blank" rel="noopener" href="https://github.com/alikins/sortpal.js/blob/master/sortpal.js">sortpal.js</a></li><li><a target="_blank" rel="noopener" href="https://mathematica.stackexchange.com/questions/87588/how-to-sort-colors-properly">How to sort colors properly?</a></li><li><a target="_blank" rel="noopener" href="http://www.alanzucconi.com/2015/09/30/colour-sorting/">The incredibly challenging task of sorting colours</a></li></ul>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/SELF/SHARING/STUDY/Color-Map-Generator/" title="Color Map Generator">https://augists.top/SELF/SHARING/STUDY/Color-Map-Generator/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/GOLANG/" rel="tag"><i class="fa fa-tag"></i> GOLANG</a>
+              <a href="/tags/SHARING/" rel="tag"><i class="fa fa-tag"></i> SHARING</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/SELF/REVIEW/Review-the-THREE-years-as-an-undergraduator/" rel="prev" title="Review the THREE Years as an Undergraduator">
+      <i class="fa fa-chevron-left"></i> Review the THREE Years as an Undergraduator
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/PAPER/BGP-Summary/" rel="next" title="BGP Summary">
+      BGP Summary <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Augists" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+<a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+<a target="_blank" rel="noopener" href="https://tjupt.org/promotionlink.php?key=426b9e4fa510e913924e033efa906fd2"><img src="https://tjupt.org/mybar.php?userid=141948.png" alt="北洋园PT" title="北洋园PT"></a>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>

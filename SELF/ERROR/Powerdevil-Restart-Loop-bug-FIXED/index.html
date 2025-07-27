@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico">
+  <link rel="mask-icon" href="/images/32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"augists.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<script>
+  (function() {
+    if ('') {
+      if (prompt('Please input password') !== '') {
+        alert('Wrong password! ');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+  <meta name="description" content="KDE crashed again so I have to check KSystemlogwhere I found a process Powerdevil restart about every five seconds">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Powerdevil Restart Loop Bug &#39;FIXED&#39;">
+<meta property="og:url" content="https://augists.top/SELF/ERROR/Powerdevil-Restart-Loop-bug-FIXED/index.html">
+<meta property="og:site_name" content="Augists-ZDCZ">
+<meta property="og:description" content="KDE crashed again so I have to check KSystemlogwhere I found a process Powerdevil restart about every five seconds">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/20231118152719.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/20231118160424.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/594053625b0d88196079c566f5e9b4f9.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/d9e40f83e3bb3b921551a57ad9570232.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/d7c1597cf6747553193b3423b1b4d469.png">
+<meta property="og:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/820ec0cf185e56e5d83ad3c5d92137d2.png">
+<meta property="article:published_time" content="2023-11-15T11:53:16.000Z">
+<meta property="article:modified_time" content="2025-05-22T08:50:20.314Z">
+<meta property="article:author" content="Augists">
+<meta property="article:tag" content="ERROR">
+<meta property="article:tag" content="LINUX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/20231118152719.png">
+
+<link rel="canonical" href="https://augists.top/SELF/ERROR/Powerdevil-Restart-Loop-bug-FIXED/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Powerdevil Restart Loop Bug 'FIXED' | Augists-ZDCZ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Augists-ZDCZ" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+	<!-- github icon -->
+	<a target="_blank" rel="noopener" href="https://github.com/Augists" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Augists-ZDCZ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LESS is MORE</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-gallery">
+
+    <a href="/gallery/" rel="section"><i class="fas fa-images fa-fw"></i>Gallery</a>
+
+  </li>
+        <li class="menu-item menu-item-f-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>F-links</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://augists.top/SELF/ERROR/Powerdevil-Restart-Loop-bug-FIXED/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+      <meta itemprop="name" content="Augists">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Augists-ZDCZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Powerdevil Restart Loop Bug 'FIXED'
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-11-15 19:53:16" itemprop="dateCreated datePublished" datetime="2023-11-15T19:53:16+08:00">2023-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-05-22 16:50:20" itemprop="dateModified" datetime="2025-05-22T16:50:20+08:00">2025-05-22</time>
+              </span>
+
+          
+            <div class="post-description">KDE crashed again so I have to check KSystemlog<br>where I found a process Powerdevil restart about every five seconds</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note warning">
+            <p>最近遇到过几次 KDE 直接崩溃的情况，具体表现为后台的进城可以正常运行（音乐视频等正常播放），但是桌面环境卡死。在应该是第二次还是第三次的时候就想要不要找找系统的 log 看看，毕竟作为一个不够稳定且追求极致最新的系统，出现崩溃也是合理的</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/20231118152719.png" alt=""></p><p>于是找到了 KSystemlog</p><div class="note info">            <p>KSystemLog show all logs of your system, grouped by General (Default system log, Authentication, Kernel, X.org…), and optional Services (Apache, Cups, etc, …). It includes many features to read nicely your log files:</p><ul><li>Colorize log lines depending on their severities</li><li>Tabbed view to allow displaying several logs at the same time</li><li>Auto display new lines logged</li><li>Detailed information for each log lines</li></ul>          </div><p>筛选了 Error 及以上的信息后，发现 systemd 里一直有一个 Powerdevil 在无限重启</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/20231118160424.png" alt=""></p><p>所以就在搜索后尝试查看进程状态</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/594053625b0d88196079c566f5e9b4f9.png" alt=""></p><p>可以看到发生错误与 ddcutil 和休眠有关系。可能需要提及的是，在前段时间每天使用 sleep 之后我发现 Arch 会越来越慢。当时为了保留 IDEA 的 debugger 状态不敢关机，导致后面卡成 PPT。后来在 NAOSI 群里聊起来，JC Zhang 说不要用 KDE 的 sleep，可以就用自动的 Lock。由于已经不记得装系统的时候对 Hibernate 等是否有什么配置，所以现在就直接放着关显示器了（现在改为降低显示器亮度）来达到不影响工作进度和省电的目的。</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/d9e40f83e3bb3b921551a57ad9570232.png" alt=""></p><p>直接尝试运行 kde powerdevil 得到 <code>DBus session bus not found</code>，但是在 systemctl 里检查会看到是正常的 active 状态，运行它提供的指令也没有效果</p><p><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/d7c1597cf6747553193b3423b1b4d469.png" alt=""></p><p>在 arch 手册里能检索到关于 <code>dbus-launch</code> 的文档</p><div class="note info">            <p>NAME</p><ul><li>dbus-launch - Utility to start a message bus from a shell script</li></ul><p>DESCRIPTION</p><ul><li>The dbus-launch command is used to start a session bus instance of dbus-daemon from a shell script. It would normally be called from a user’s login scripts. Unlike the daemon itself, dbus-launch exits, so backticks or the $() construct can be used to read information from dbus-launch.</li><li>With no arguments, dbus-launch will launch a session bus instance and print the address and PID of that instance to standard output.</li></ul>          </div><p>那么 D-Bus 是什么呢？</p><div class="note info">            <p>D-Bus is a message bus system, a simple way for applications to talk to one another. In addition to interprocess communication, D-Bus helps coordinate process lifecycle; it makes it simple and reliable to code a “single instance” application or daemon, and to launch applications and daemons on demand when their services are needed.</p>          </div><p>回到正题，可以搜到类似的情况普遍在 11-06（更早） 的系统更新后出现。对比 log 文件发现有一些也不完全相同。比较多的解决方案是通过版本降级</p><blockquote><p>ddcutil-1.4.1-1 (downgraded from ddcutil-2.0.0-1)<br>powerdevil-5.27.9-1 (downgraded from powerdevil-5.27.9-2)</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -U https://archive.archlinux.org/packages/d/ddcutil/ddcutil-1.4.1-1-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/p/powerdevil/powerdevil-5.27.9-1-x86_64.pkg.tar.zst</span><br></pre></td></tr></table></figure><p>梳理时间线大概是，<code>ddcutil</code> 释出了全新的 2.0 版本，全面采用了新版本的 API，对应 <code>powerdevil</code> 也升级来兼容新版本，但是在 KDE 上使用外接显示器对两者的兼容性仍然没有调好（似乎在 Gnome 上没有问题）。</p><p>同样，你可以用一些方法来临时 <code>kill</code> 掉它和重启（我记得是收到了报错</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">killall org_kde_powerdevil</span><br><span class="line">kstart5 /usr/lib/org_kde_powerdevil</span><br></pre></td></tr></table></figure><p>issue 提出者发了一个视频来解释他目前找到的最合适的方法</p><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=bFSd6QYerRM"><img src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/arch/820ec0cf185e56e5d83ad3c5d92137d2.png" alt=""></a></p><p>简单来说就是修改 <code>/etc/xdg/autostart/powerdevil.desktop</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X-systemd-skip=<span class="literal">false</span></span><br><span class="line">X-KDE-autostart-phase=1</span><br></pre></td></tr></table></figure><p>而在 Arch 的 bbs 里，有人提到了一个似乎更专业的解决方案</p><div class="note info">            <p>change the line ‘TimeoutSec=5s’ to higher value</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">╰─&gt;$ bat /usr/lib/systemd/user/plasma-powerdevil.service</span><br><span class="line">─────┬──────────────────────────────────────────────</span><br><span class="line">   1 │ [Unit]</span><br><span class="line">   2 │ Description=Powerdevil</span><br><span class="line">   3 │ PartOf=graphical-session.target</span><br><span class="line">   4 │ After=plasma-core.target</span><br><span class="line">   5 │</span><br><span class="line">   6 │ [Service]</span><br><span class="line">   7 │ ExecStart=/usr/lib/org_kde_powerdevil</span><br><span class="line">   8 │ Type=dbus</span><br><span class="line">   9 │ BusName=org.kde.Solid.PowerManagement</span><br><span class="line">  10 │ TimeoutSec=9sec</span><br><span class="line">  11 │ Slice=background.slice</span><br><span class="line">  12 │ Restart=on-failure</span><br></pre></td></tr></table></figure>          </div><div class="note danger">            <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a target="_blank" rel="noopener" href="https://man.archlinux.org/man/dbus-launch.1.en">https://man.archlinux.org/man/dbus-launch.1.en</a></li><li><a target="_blank" rel="noopener" href="https://www.freedesktop.org/wiki/Software/dbus/">https://www.freedesktop.org/wiki/Software/dbus/</a></li><li><a target="_blank" rel="noopener" href="https://forum.manjaro.org/t/powerdevil-fails-energy-settings-unavailable/151081">https://forum.manjaro.org/t/powerdevil-fails-energy-settings-unavailable/151081</a></li><li><a target="_blank" rel="noopener" href="https://forum.manjaro.org/t/frame-drops-below-vsync-every-coupel-of-secound-but-killall-org-kde-powerdevil-fixes-it/151260">https://forum.manjaro.org/t/frame-drops-below-vsync-every-coupel-of-secound-but-killall-org-kde-powerdevil-fixes-it/151260</a></li><li><a target="_blank" rel="noopener" href="https://forum.endeavouros.com/t/power-devil-restart-loop-bug-after-updating-today/47271/21">https://forum.endeavouros.com/t/power-devil-restart-loop-bug-after-updating-today/47271/21</a></li><li><a target="_blank" rel="noopener" href="https://bugs.kde.org/show_bug.cgi?id=476375">https://bugs.kde.org/show_bug.cgi?id=476375</a></li><li><a target="_blank" rel="noopener" href="https://bbs.archlinux.org/viewtopic.php?id=289979">https://bbs.archlinux.org/viewtopic.php?id=289979</a></li></ul>          </div>
+          </div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Augists
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://augists.top/SELF/ERROR/Powerdevil-Restart-Loop-bug-FIXED/" title="Powerdevil Restart Loop Bug &#39;FIXED&#39;">https://augists.top/SELF/ERROR/Powerdevil-Restart-Loop-bug-FIXED/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/Augists">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="http://wpa.qq.com/msgrd?v=3&uin=2057240784&site=qq&menu=yes">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">QQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Augists">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://gitee.com/Augists">
+            <span class="icon">
+              <i class="fab fa-git-alt"></i>
+            </span>
+
+            <span class="label">Gitee</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_45910536">
+            <span class="icon">
+              <i class="fab fa-cuttlefish"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://augists.top/subscribe">
+            <span class="icon">
+              <i class="fab fa-mailchimp"></i>
+            </span>
+
+            <span class="label">Subscribe</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ERROR/" rel="tag"><i class="fa fa-tag"></i> ERROR</a>
+              <a href="/tags/LINUX/" rel="tag"><i class="fa fa-tag"></i> LINUX</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NOTES/PAPER/VeriFlow-Verifying-Network-Wide-Invariants-in-Real-Time/" rel="prev" title="VeriFlow: Verifying Network-Wide Invariants in Real Time">
+      <i class="fa fa-chevron-left"></i> VeriFlow: Verifying Network-Wide Invariants in Real Time
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NOTES/Code-Coverage/" rel="next" title="Code Coverage">
+      Code Coverage <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="Augists/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augists"
+      src="https://augists-upic.oss-cn-qingdao.aliyuncs.com/uPic/2CCC8E38-15C8-4A70-A836-2DC4D988DD4E_1_105_c.jpeg">
+  <p class="site-author-name" itemprop="name">Augists</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://augists.top/subscribe" title="Subscribe → https:&#x2F;&#x2F;augists.top&#x2F;subscribe"><i class="fab fa-mailchimp fa-fw"></i>Subscribe</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Augists" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:awzyc2010@163.com" title="E-Mail → mailto:awzyc2010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/484868244" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;484868244" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Augists" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Augists" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+<a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+<a target="_blank" rel="noopener" href="https://tjupt.org/promotionlink.php?key=426b9e4fa510e913924e033efa906fd2"><img src="https://tjupt.org/mybar.php?userid=141948.png" alt="北洋园PT" title="北洋园PT"></a>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augists</span>
+</div>
+  <div class="powered-by">
+    <!--
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      Click Number:<span id="busuanzi_value_site_pv"></span>次
+    </span>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+    -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <!-- TODO -->
+  <!-- 动态线条 -->
+  <!--  -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":280,"height":300},"mobile":{"show":true,"scale":0.5},"log":false,"tagMode":false});</script></body>
+</html>
