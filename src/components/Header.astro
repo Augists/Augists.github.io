@@ -1,0 +1,32 @@
+---
+import ThemeToggle from "./ThemeToggle";
+import Navigation from "./Navigation.astro";
+import IconMail from "../assets/icons/mail.svg";
+import IconRss from "../assets/icons/rss.svg";
+import { siteConfig } from "../config/site";
+---
+
+<header
+  class="header-margin sticky top-0 z-0 flex items-center justify-between"
+>
+  <a
+    href="/"
+    class:list={[
+      "text-xl tracking-wider select-none",
+      Astro.url.pathname === "/" ? "text-accent font-semibold" : "",
+    ]}>{siteConfig.title}</a
+  >
+  <div class="flex items-center justify-center gap-6">
+    <Navigation />
+
+    <div class="flex items-center justify-center gap-4">
+      <ThemeToggle client:idle />
+      <a href="/subscribe" aria-label="邮件订阅" title="邮件订阅">
+        <IconMail class="active-foreground size-5" />
+      </a>
+      <a href="/rss.xml" aria-label="rss" title="rss"
+        ><IconRss class="active-foreground size-5" /></a
+      >
+    </div>
+  </div>
+</header>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config/site";
+---
+
+<BaseLayout
+  title="404"
+  description={siteConfig.description}
+  author={siteConfig.author}
+  url={`${siteConfig.url}/404`}
+>
+  <h1 class="heading text-center">404</h1>
+  <p class="paragraph text-center">
+    没找到这个页面，返回 <a class="link" href="/">首页</a> 看看吧。
+  </p>
+</BaseLayout>

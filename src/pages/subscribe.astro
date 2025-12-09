@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config/site";
+const action =
+  "https://top.us17.list-manage.com/subscribe/post?u=3b4b1f5a4df04757b23874c53&id=07b12acb30";
+---
+
+<BaseLayout
+  title="订阅"
+  description="订阅更新或使用 RSS 跟进最新文章"
+  author={siteConfig.author}
+  url={`${siteConfig.url}/subscribe`}
+>
+  <div class="center">
+    <h1 class="heading">订阅</h1>
+    <p class="paragraph">
+      想通过邮件获取更新？留下邮箱即可。也可以直接使用
+      <a class="link" href="/rss.xml">RSS</a> 订阅。
+    </p>
+
+    <form
+      class="subscription-card"
+      action={action}
+      method="post"
+      target="_blank"
+      novalidate
+    >
+      <label class="text-sm opacity-80" for="mce-EMAIL">电子邮箱</label>
+      <input
+        id="mce-EMAIL"
+        name="EMAIL"
+        type="email"
+        required
+        autocomplete="email"
+        placeholder="you@example.com"
+      />
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input
+          type="text"
+          name="b_3b4b1f5a4df04757b23874c53_07b12acb30"
+          tabIndex="-1"
+          value=""
+        />
+      </div>
+      <button type="submit" class="button animation w-full text-center">
+        订阅邮件
+      </button>
+      <p class="hint">
+        邮件由 Mailchimp 发送，确保邮箱能接收外部邮件。
+      </p>
+    </form>
+  </div>
+</BaseLayout>
+
+<style>
+  .subscription-card {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    max-width: 520px;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-foreground) 18%, transparent);
+    box-shadow: 0 12px 36px color-mix(in srgb, var(--color-foreground) 12%, transparent);
+    background: linear-gradient(
+        145deg,
+        color-mix(in srgb, var(--color-background) 90%, var(--color-accent) 10%),
+        color-mix(in srgb, var(--color-background) 80%, transparent)
+      );
+  }
+
+  input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border-radius: 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--color-foreground) 30%, transparent);
+    background: color-mix(in srgb, var(--color-background) 96%, var(--color-foreground) 4%);
+    color: var(--color-foreground);
+    outline: none;
+  }
+
+  input[type="email"]:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  }
+
+  .hint {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin: 0;
+  }
+</style>

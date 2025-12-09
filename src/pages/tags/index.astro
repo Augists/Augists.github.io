@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { BlogType } from "../../content.config";
+import { siteConfig } from "../../config/site";
+
+const blogs: BlogType[] = await getCollection("posts");
+const tags = [...new Set(blogs.map((blog) => blog.data.tags).flat())].sort();
+const counts = tags.reduce<Record<string, number>>((acc, tag) => {
+  acc[tag] = blogs.filter((blog) => blog.data.tags.includes(tag)).length;
+  return acc;
+}, {});
+
+const maxCount = Math.max(...Object.values(counts));
+const minCount = Math.min(...Object.values(counts));
+
+const getFontScale = (count: number) => {
+  if (maxCount === minCount) return 1.2;
+  const minSize = 0.95;
+  const maxSize = 1.9;
+  return minSize + ((count - minCount) / (maxCount - minCount)) * (maxSize - minSize);
+};
+
+const getTone = (count: number) => {
+  if (maxCount === minCount) return 0.85;
+  const minTone = 0.7;
+  const maxTone = 0.95;
+  return minTone + ((count - minCount) / (maxCount - minCount)) * (maxTone - minTone);
+};
+---
+
+<BaseLayout
+  title="标签"
+  description="所有标签"
+  author={siteConfig.author}
+  url={`${siteConfig.url}/tags`}
+>
+  <div class="center flex flex-col items-center gap-6 text-center">
+    <h1 class="heading">标签</h1>
+    <p class="paragraph text-base opacity-75">
+      共 {tags.length} 个标签，覆盖 {blogs.length} 篇文章
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4 lg:gap-5">
+      {
+        tags.map((tag) => {
+          const count = counts[tag];
+          const scale = getFontScale(count);
+          const tone = getTone(count);
+          return (
+            <a
+              href={`/tags/${encodeURIComponent(tag)}/1`}
+              class="animation rounded-full border border-foreground/10 bg-foreground/6 px-3 py-2 font-semibold text-foreground ring-1 ring-foreground/26 hover:-translate-y-0.5 hover:bg-foreground/12 hover:text-accent hover:shadow-lg hover:shadow-accent/10 hover:ring-accent"
+              style={`font-size: ${scale.toFixed(3)}rem; opacity: ${tone.toFixed(2)};`}
+              title={`${tag} · ${count} 篇`}
+            >
+              {tag}
+              <span class="ml-2 text-sm font-medium text-foreground/70">({count})</span>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>

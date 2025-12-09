@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutContent from "../content/pages/about.md";
+import { siteConfig } from "../config/site";
+---
+
+<BaseLayout
+  title="关于"
+  description={siteConfig.description}
+  author={siteConfig.author}
+  url={`${siteConfig.url}/about`}
+>
+  <div class="center markdown">
+    <AboutContent />
+  </div>
+</BaseLayout>

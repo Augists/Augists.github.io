@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { friendLinks, siteConfig } from "../config/site";
+---
+
+<BaseLayout
+  title="友链"
+  description="朋友们的博客和站点"
+  author={siteConfig.author}
+  url={`${siteConfig.url}/links`}
+>
+  <div class="center markdown">
+    <h1 class="heading">友链</h1>
+    {
+      friendLinks.length ? (
+        <ul class="list-none space-y-4 px-0">
+          {friendLinks.map((link) => (
+            <li class="ring-foreground/30 hover:ring-accent animation rounded-xl border border-foreground/10 px-4 py-3 ring-1">
+              <a
+                class="text-xl font-semibold hover:text-accent"
+                href={link.url}
+                target="blank"
+                rel="noreferrer"
+              >
+                {link.name}
+              </a>
+              {link.description ? (
+                <p class="opacity-80">{link.description}</p>
+              ) : (
+                ""
+              )}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="paragraph">
+          暂时还没有添加友链，想交换的话可以通过页脚的邮箱或 Telegram 联系。
+        </p>
+      )
+    }
+  </div>
+</BaseLayout>

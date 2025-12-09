@@ -1,0 +1,32 @@
+---
+import ProgressBar from "../components/ProgressBar";
+import BaseLayout from "./BaseLayout.astro";
+import Title from "../components/Title.astro";
+import { siteConfig } from "../config/site";
+import Comments from "../components/Comments.astro";
+
+const { frontmatter, readTime, slug } = Astro.props;
+const author = frontmatter.author || siteConfig.author;
+const canonicalUrl = new URL(slug, siteConfig.url).toString();
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  author={author}
+  url={canonicalUrl}
+  pubDate={frontmatter.date}
+>
+  <ProgressBar client:idle />
+  <article>
+    <div class="center">
+      <Title frontmatter={frontmatter} readTime={readTime} slug={slug} />
+      <section class="markdown">
+        <slot />
+      </section>
+    </div>
+  </article>
+  <div class="center">
+    <Comments slug={slug} />
+  </div>
+</BaseLayout>

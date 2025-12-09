@@ -1,0 +1,19 @@
+---
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const theme = "preferred-color-scheme";
+---
+
+<section class="mt-10">
+  <script
+    src="https://utteranc.es/client.js"
+    repo="Augists/comments"
+    issue-term={slug || "pathname"}
+    theme={theme}
+    crossOrigin="anonymous"
+    async
+  />
+</section>

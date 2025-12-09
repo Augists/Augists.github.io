@@ -1,0 +1,27 @@
+---
+import { siteConfig } from "../config/site";
+
+const navLinks = siteConfig.nav;
+---
+
+<nav class="flex items-center justify-center gap-4">
+  {
+    navLinks.map((link) => {
+      const isArchive = link.href === "/archive/1";
+      const active = isArchive
+        ? Astro.url.pathname.startsWith("/archive")
+        : Astro.url.pathname.startsWith(link.href);
+      return (
+        <a
+          href={link.href}
+          class:list={[
+            "navigation animation",
+            active ? "text-accent font-semibold" : "",
+          ]}
+        >
+          {link.label}
+        </a>
+      );
+    })
+  }
+</nav>
