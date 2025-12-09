@@ -13,6 +13,7 @@ import "katex/dist/katex.min.css";
 import Seo from "../components/Seo.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BackToTop from "../components/BackToTop.astro";
 import { siteConfig } from "../config/site";
 import "../styles/global.css";
 const {
@@ -56,6 +57,7 @@ const pageTitle =
     <main class="main-margin bg-background relative z-1 min-h-svh">
       <slot />
     </main>
+    <BackToTop />
     <Footer />
   </body>
 </html>

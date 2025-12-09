@@ -1,0 +1,30 @@
+---
+import IconArrowUp from "../assets/icons/arrow-up.svg";
+---
+
+<button
+  type="button"
+  class="back-to-top animation visible fixed bottom-6 right-4 z-20 flex items-center justify-center rounded-full border border-foreground/15 bg-foreground/8 px-3.5 py-3 text-accent shadow-lg shadow-accent/15 ring-1 ring-accent/50 backdrop-blur hover:-translate-y-1 hover:bg-foreground/12 hover:shadow-accent/30 hover:ring-2 hover:ring-accent"
+  data-back-to-top
+  aria-label="回到顶部"
+  title="回到顶部"
+  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+>
+  <IconArrowUp
+    class="h-5 w-5 stroke-2 drop-shadow-sm"
+    style="color: color-mix(in srgb, var(--color-accent) 85%, transparent);"
+  />
+</button>
+
+<style>
+  .back-to-top {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+</style>
