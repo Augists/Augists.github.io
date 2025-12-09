@@ -1,10 +1,26 @@
 export const siteConfig = {
   title: "Augists",
-  subtitle: "LESS is MORE",
+  subtitle: "一个网络人的个人博客，记录开发、随想与生活",
   description:
     "记录开发、随想与生活的个人博客。Less is more，写给自己，也分享给偶然路过的你。",
   author: "Augists",
   url: "https://augists.top",
+  comments: {
+    provider: "giscus",
+    giscus: {
+      repo: "Augists/comments",
+      repoId: "MDEwOlJlcG9zaXRvcnkyNzUzOTg2MzM=",
+      category: "General",
+      categoryId: "DIC_kwDOEGo_6c4CzlhN",
+      mapping: "pathname",
+      reactionsEnabled: "1",
+      emitMetadata: "0",
+      inputPosition: "top",
+      strict: "0",
+      loading: "lazy",
+      lang: "zh-CN",
+    },
+  },
   nav: [
     { label: "归档", href: "/archive/1" },
     { label: "标签", href: "/tags" },

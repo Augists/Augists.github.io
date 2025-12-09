@@ -1,19 +1,76 @@
 ---
+import { siteConfig } from "../config/site";
+
 interface Props {
   slug: string;
 }
 
 const { slug } = Astro.props;
-const theme = "preferred-color-scheme";
+const giscus = siteConfig.comments?.giscus;
+const hasConfig =
+  giscus?.repo && giscus?.repoId && giscus?.category && giscus?.categoryId;
 ---
 
 <section class="mt-10">
-  <script
-    src="https://utteranc.es/client.js"
-    repo="Augists/comments"
-    issue-term={slug || "pathname"}
-    theme={theme}
-    crossOrigin="anonymous"
-    async
-  />
+  {
+    hasConfig ? (
+      <script
+        src="https://giscus.app/client.js"
+        data-repo={giscus.repo}
+        data-repo-id={giscus.repoId}
+        data-category={giscus.category}
+        data-category-id={giscus.categoryId}
+        data-mapping={giscus.mapping || "pathname"}
+        data-reactions-enabled={giscus.reactionsEnabled || "1"}
+        data-emit-metadata={giscus.emitMetadata || "0"}
+        data-input-position={giscus.inputPosition || "bottom"}
+        data-lang={giscus.lang || "zh-CN"}
+        data-theme="light"
+        data-strict={giscus.strict || "0"}
+        data-loading={giscus.loading || "lazy"}
+        crossorigin="anonymous"
+        async
+      />
+    ) : (
+      <div class="rounded-lg border border-dashed border-foreground/30 bg-foreground/6 px-4 py-5 text-sm text-foreground/70">
+        未配置 giscus 的分类 ID，暂未加载评论区。请在
+        <code>src/config/site.ts</code> 填写 <code>comments.giscus.categoryId</code>
+        （开启 Discussions 后在 giscus 配置页获取）。
+      </div>
+    )
+  }
 </section>
+
+<script is:inline>
+  const lightTheme = "light";
+  const darkTheme = "gruvbox_dark";
+  const origin = "https://giscus.app";
+
+  const setGiscusTheme = () => {
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (!iframe) return;
+    const isDark = document.documentElement.classList.contains("dark");
+    iframe.contentWindow?.postMessage(
+      {
+        giscus: {
+          setConfig: {
+            theme: isDark ? darkTheme : lightTheme,
+          },
+        },
+      },
+      origin,
+    );
+  };
+
+  const observer = new MutationObserver(setGiscusTheme);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+
+  window.addEventListener("load", setGiscusTheme, { once: true });
+  window.addEventListener("astro:after-swap", setGiscusTheme);
+  window.addEventListener("astro:before-swap", () => observer.disconnect(), {
+    once: true,
+  });
+</script>
