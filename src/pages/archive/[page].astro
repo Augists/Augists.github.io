@@ -1,11 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PostCard from "../../components/PostCard.astro";
-import Pagination from "../../components/Pagination.astro";
 import type { BlogType } from "../../content.config";
-import Year from "../../components/Year.astro";
 import { siteConfig } from "../../config/site";
+import ArchiveDynamic from "../../components/ArchiveDynamic.astro";
 
 const blogs = await getCollection("posts");
 const years = [
@@ -22,7 +20,7 @@ export async function getStaticPaths({
   const blogs = await getCollection("posts");
   blogs.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-  return paginate(blogs, { pageSize: 10 });
+  return paginate(blogs, { pageSize: 6 });
 }
 
 const { page } = Astro.props as { page: { data: BlogType[] } };
@@ -34,30 +32,10 @@ const { page } = Astro.props as { page: { data: BlogType[] } };
   author={siteConfig.author}
   url={`${siteConfig.url}/archive/${page.currentPage}`}
 >
-  <div class="center">
-    <div class="flex items-center gap-8">
-      <a href="/archive/1" class="heading">归档</a>
-      <Year years={years} />
-    </div>
-    <ul class="my-3 space-y-3">
-      {
-        page.data.map((blog: BlogType) => (
-          <li>
-            <PostCard
-              title={blog.data.title}
-              date={blog.data.date
-                .toLocaleDateString("en-GB", {
-                  day: "numeric",
-                  month: "short",
-                })
-                .slice(0, 11)}
-              url={`/${blog.slug}`}
-              tags={blog.data.tags}
-            />
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-  <Pagination page={page} />
+  <ArchiveDynamic
+    years={years}
+    page={page}
+    posts={page.data}
+    basePath="/archive"
+  />
 </BaseLayout>

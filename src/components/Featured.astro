@@ -4,6 +4,8 @@ import type { BlogType } from "../content.config";
 import FeatureCard from "./FeatureCard.astro";
 
 const blogs: BlogType[] = await getCollection("posts");
+const maxCandidates = 24;
+const defaultVisible = 6;
 const blogsWithReadTime = blogs
   .map((blog) => {
     const words = (blog.body ?? "").split(/\s+/).filter(Boolean).length;
@@ -15,18 +17,24 @@ const blogsWithReadTime = blogs
   })
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const featuredBlogs =
-  blogsWithReadTime.filter((blog) => blog.data.featured).length > 0
-    ? blogsWithReadTime.filter((blog) => blog.data.featured)
-    : blogsWithReadTime.slice(0, 6);
+const pinnedBlogs = blogsWithReadTime.filter((blog) => blog.data.featured);
+const candidateBlogs =
+  pinnedBlogs.length > 0
+    ? [...pinnedBlogs, ...blogsWithReadTime.filter((blog) => !blog.data.featured)]
+        .slice(0, maxCandidates)
+    : blogsWithReadTime.slice(0, maxCandidates);
 ---
 
 <h2 class="section-heading">最新文章</h2>
-<ul class="grid gap-3 py-6 md:grid-cols-2">
+<ul
+  class="grid gap-3 py-6 md:grid-cols-2"
+  data-home-featured-list
+  data-default-visible={defaultVisible}
+>
   {
-    featuredBlogs.map((blog: BlogType) => {
+    candidateBlogs.map((blog: BlogType, index: number) => {
       return (
-        <li>
+        <li data-home-featured-item hidden={index >= defaultVisible}>
           <FeatureCard
             title={blog.data.title}
             date={blog.data.date
@@ -45,3 +53,113 @@ const featuredBlogs =
     })
   }
 </ul>
+
+<script is:inline>
+  (() => {
+    const list = document.querySelector("[data-home-featured-list]");
+    if (!list) return;
+
+    const items = Array.from(
+      list.querySelectorAll("[data-home-featured-item]"),
+    );
+    if (items.length === 0) return;
+
+    const defaultVisible = Number(list.getAttribute("data-default-visible") || 6);
+    let currentVisible = Math.min(defaultVisible, items.length);
+    let updateTimer = 0;
+    let raf = 0;
+
+    const getColumns = () => {
+      return window.matchMedia("(min-width: 768px)").matches ? 2 : 1;
+    };
+
+    const setVisible = (count) => {
+      if (count === currentVisible) return;
+      currentVisible = count;
+      items.forEach((item, index) => {
+        item.hidden = index >= count;
+      });
+    };
+
+    const getViewportLimit = () => {
+      const footer = document.querySelector("footer");
+      const footerHeight = footer ? footer.getBoundingClientRect().height : 0;
+      return window.innerHeight - footerHeight - 16;
+    };
+
+    const getTargetBottom = () => {
+      const target =
+        document.querySelector("[data-home-newsletter]") || list;
+      return target.getBoundingClientRect().bottom;
+    };
+
+    const findBestCount = () => {
+      const limit = getViewportLimit();
+      const columns = getColumns();
+      const safety = 8;
+
+      let low = 0;
+      let high = items.length;
+      let best = 0;
+
+      while (low <= high) {
+        const mid = Math.floor((low + high) / 2);
+        setVisible(mid);
+        const bottom = getTargetBottom();
+        if (bottom <= limit - safety) {
+          best = mid;
+          low = mid + 1;
+        } else {
+          high = mid - 1;
+        }
+      }
+
+      if (columns > 1 && best > columns) best = best - (best % columns);
+      return Math.max(0, best);
+    };
+
+    const update = () => {
+      if (!document.contains(list)) return;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const best = findBestCount();
+        const next = best > 0 ? best : Math.min(defaultVisible, items.length);
+        setVisible(next);
+      });
+    };
+
+    const scheduleUpdate = () => {
+      if (updateTimer) clearTimeout(updateTimer);
+      updateTimer = window.setTimeout(update, 120);
+    };
+
+    const init = () => {
+      scheduleUpdate();
+      window.addEventListener("resize", scheduleUpdate, { passive: true });
+      window.addEventListener("load", scheduleUpdate, { once: true });
+      window.addEventListener("astro:after-swap", scheduleUpdate);
+
+      const footer = document.querySelector("footer");
+      const newsletter =
+        document.querySelector("[data-home-newsletter]") || null;
+
+      const ro = new ResizeObserver(scheduleUpdate);
+      if (footer) ro.observe(footer);
+      if (newsletter) ro.observe(newsletter);
+
+      window.addEventListener(
+        "astro:before-swap",
+        () => ro.disconnect(),
+        { once: true },
+      );
+
+      document.fonts?.ready?.then?.(scheduleUpdate).catch?.(() => {});
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+      init();
+    }
+  })();
+</script>

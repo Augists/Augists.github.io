@@ -1,0 +1,388 @@
+---
+import PostCard from "./PostCard.astro";
+import Year from "./Year.astro";
+import type { BlogType } from "../content.config";
+
+interface Props {
+  years: Array<string | number>;
+  page: {
+    currentPage: number;
+    lastPage: number;
+    url: { prev?: string; next?: string };
+  };
+  posts: BlogType[];
+  basePath: string;
+  year?: string;
+}
+
+const { years, page, posts, basePath, year } = Astro.props;
+const baselinePageSize = 6;
+const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
+---
+
+<div
+  class="center"
+  data-archive-root
+  data-archive-base={basePath}
+  data-archive-year={year || ""}
+>
+  <div class="flex items-center gap-8">
+    <a href="/archive/1" class="heading">归档</a>
+    <Year years={years} />
+  </div>
+
+  <ul class="my-3 space-y-3" data-archive-list>
+    {
+      posts.map((blog: BlogType, index: number) => (
+        <li
+          data-archive-item
+          data-archive-index={baselineStartIndex + index}
+        >
+          <PostCard
+            title={blog.data.title}
+            date={blog.data.date
+              .toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short",
+              })
+              .slice(0, 11)}
+            url={`/${blog.slug}`}
+            tags={blog.data.tags}
+          />
+        </li>
+      ))
+    }
+  </ul>
+
+  <nav
+    class="my-3 flex items-center justify-center gap-8 select-none"
+    data-archive-pagination
+  >
+    <a
+      href={page.url.prev || "#"}
+      data-archive-prev
+      class={`${page.url.prev ? "hover:text-accent" : "text-foreground/60 cursor-not-allowed"}`}
+      >prev</a
+    >
+    <p class="font-mono text-sm opacity-90" data-archive-pageinfo>
+      {page.currentPage} of {page.lastPage}
+    </p>
+    <a
+      href={page.url.next || "#"}
+      data-archive-next
+      class={`${page.url.next ? "hover:text-accent" : "text-foreground/60 cursor-not-allowed"}`}
+      >next</a
+    >
+  </nav>
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector("[data-archive-root]");
+    if (!root) return;
+
+    const list = root.querySelector("[data-archive-list]");
+    const pagination = root.querySelector("[data-archive-pagination]");
+    if (!list || !pagination) return;
+
+    const basePath = root.getAttribute("data-archive-base") || "/archive";
+    const yearRaw = root.getAttribute("data-archive-year") || "";
+    const year = yearRaw ? Number(yearRaw) : null;
+    const endpoint = "/archive/posts.json";
+
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+    const computePageSize = (currentSize) => {
+      const min = 6;
+      const max = 24;
+      const h = window.innerHeight;
+      const w = window.innerWidth;
+
+      let size = 8;
+      if (h >= 1200) size = 20;
+      else if (h >= 1080) size = 18;
+      else if (h >= 900) size = 16;
+      else if (h >= 780) size = 14;
+      else if (h >= 660) size = 12;
+      else if (h >= 560) size = 10;
+
+      if (w >= 1280) size += 2;
+      if (w >= 1536) size += 2;
+
+      size = clamp(size, min, max);
+      if (size % 2 !== 0) size -= 1;
+      size = Math.max(min, size);
+
+      const nearBreakpoints = (value, points, buffer) =>
+        points.some((p) => Math.abs(value - p) < buffer);
+      const buffer = 36;
+      const heightBreaks = [560, 660, 780, 900, 1080, 1200];
+      const widthBreaks = [1280, 1536];
+
+      if (
+        Number.isFinite(currentSize) &&
+        (nearBreakpoints(h, heightBreaks, buffer) ||
+          nearBreakpoints(w, widthBreaks, buffer))
+      ) {
+        return currentSize;
+      }
+
+      return size;
+    };
+
+    const formatDate = (iso) =>
+      new Date(iso)
+        .toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+        })
+        .slice(0, 11);
+
+    const getCurrentPageFromPath = () => {
+      const parts = location.pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+      const last = parts[parts.length - 1] || "1";
+      const value = Number(last);
+      return Number.isFinite(value) && value > 0 ? value : 1;
+    };
+
+    const buildPath = (page) => `${basePath}/${page}`;
+
+    const createArrowIcon = () => {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      svg.setAttribute("width", "24");
+      svg.setAttribute("height", "24");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "2");
+      svg.setAttribute("stroke-linecap", "round");
+      svg.setAttribute("stroke-linejoin", "round");
+      svg.setAttribute(
+        "class",
+        "stroke-background animation size-0 stroke-2 group-hover:size-6",
+      );
+
+      const path0 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path0.setAttribute("stroke", "none");
+      path0.setAttribute("d", "M0 0h24v24H0z");
+      path0.setAttribute("fill", "none");
+
+      const path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path1.setAttribute("d", "M5 12l14 0");
+
+      const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path2.setAttribute("d", "M13 18l6 -6");
+
+      const path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path3.setAttribute("d", "M13 6l6 6");
+
+      svg.append(path0, path1, path2, path3);
+      return svg;
+    };
+
+    const createPostCard = (post) => {
+      const link = document.createElement("a");
+      link.href = `/${post.slug}`;
+      link.className =
+        "hover:bg-accent ring-background hover:ring-accent group animation flex h-full flex-col gap-2 rounded-lg shadow-lg ring-3 select-none hover:shadow-none hover:ring-3 active:ring-0 dark:shadow-2xl";
+
+      const head = document.createElement("div");
+      head.className = "mx-4 mt-2 flex items-center justify-between gap-6";
+
+      const left = document.createElement("div");
+      left.className = "flex items-center gap-3";
+
+      const title = document.createElement("h3");
+      title.className =
+        "text-foreground group-hover:text-background animation self-start rounded-lg text-xl opacity-90 group-hover:font-semibold group-hover:tracking-wide";
+      title.textContent = post.title;
+
+      left.append(title);
+
+      const right = document.createElement("div");
+      right.className = "flex";
+
+      const date = document.createElement("p");
+      date.className =
+        "animation mt-1 text-sm opacity-80 group-hover:text-[0rem] group-hover:opacity-0";
+      date.textContent = formatDate(post.date);
+
+      right.append(date, createArrowIcon());
+
+      head.append(left, right);
+
+      const tagsOuter = document.createElement("div");
+      const tags = document.createElement("div");
+      tags.className = "mx-3 flex flex-wrap";
+
+      (post.tags || []).forEach((tag) => {
+        const tagEl = document.createElement("p");
+        tagEl.className =
+          "ring-foreground bg-background animation mx-1 flex items-center gap-1 rounded-lg px-3 pb-0.5 text-[0rem] opacity-90 group-hover:mb-3 group-hover:text-sm";
+        tagEl.textContent = tag;
+        tags.append(tagEl);
+      });
+
+      tagsOuter.append(tags);
+      link.append(head, tagsOuter);
+      return link;
+    };
+
+    const state = {
+      posts: [],
+      pageSize: computePageSize(),
+      currentPage: getCurrentPageFromPath(),
+      lastPage: 1,
+    };
+
+    let anchorIndexCache = null;
+    let anchorRaf = 0;
+
+    const getAnchorIndex = () => {
+      const x = window.innerWidth / 2;
+      const y = window.innerHeight / 2;
+      const el = document.elementFromPoint(x, y);
+      const item = el?.closest?.("[data-archive-index]");
+      if (item) {
+        const value = Number(item.getAttribute("data-archive-index"));
+        if (Number.isFinite(value)) return value;
+      }
+
+      const items = list.querySelectorAll("[data-archive-index]");
+      if (!items.length) return null;
+      const mid = Math.floor(items.length / 2);
+      const value = Number(items[mid].getAttribute("data-archive-index"));
+      return Number.isFinite(value) ? value : null;
+    };
+
+    const updateAnchorCache = () => {
+      anchorIndexCache = getAnchorIndex();
+    };
+
+    const updateUrl = (page) => {
+      const next = buildPath(page);
+      const current = location.pathname.replace(/\/+$/, "");
+      if (current !== next) history.replaceState(null, "", next);
+    };
+
+    const updatePagination = () => {
+      const prev = pagination.querySelector("[data-archive-prev]");
+      const next = pagination.querySelector("[data-archive-next]");
+      const info = pagination.querySelector("[data-archive-pageinfo]");
+      if (!prev || !next || !info) return;
+
+      info.textContent = `${state.currentPage} of ${state.lastPage}`;
+
+      const prevPage = state.currentPage > 1 ? state.currentPage - 1 : null;
+      const nextPage = state.currentPage < state.lastPage ? state.currentPage + 1 : null;
+
+      prev.setAttribute("href", prevPage ? buildPath(prevPage) : "#");
+      prev.className = prevPage
+        ? "hover:text-accent"
+        : "text-foreground/60 cursor-not-allowed";
+
+      next.setAttribute("href", nextPage ? buildPath(nextPage) : "#");
+      next.className = nextPage
+        ? "hover:text-accent"
+        : "text-foreground/60 cursor-not-allowed";
+    };
+
+    const render = (anchorIndex) => {
+      const start = (state.currentPage - 1) * state.pageSize;
+      const end = start + state.pageSize;
+      const slice = state.posts.slice(start, end);
+
+      list.textContent = "";
+      slice.forEach((post, offset) => {
+        const li = document.createElement("li");
+        li.setAttribute("data-archive-item", "");
+        li.setAttribute("data-archive-index", String(start + offset));
+        li.append(createPostCard(post));
+        list.append(li);
+      });
+
+      updatePagination();
+
+      if (anchorIndex === null || anchorIndex === undefined) return;
+
+      requestAnimationFrame(() => {
+        const target = list.querySelector(
+          `[data-archive-index="${anchorIndex}"]`,
+        );
+        if (target?.scrollIntoView) target.scrollIntoView({ block: "center" });
+      });
+    };
+
+    const applyPageSize = (pageSize, anchorIndex) => {
+      state.pageSize = pageSize;
+      state.lastPage = Math.max(1, Math.ceil(state.posts.length / state.pageSize));
+      state.currentPage = clamp(state.currentPage, 1, state.lastPage);
+      render(anchorIndex);
+      updateUrl(state.currentPage);
+    };
+
+    const load = async () => {
+      try {
+        const res = await fetch(endpoint);
+        if (!res.ok) return;
+        const data = await res.json();
+        const posts = Array.isArray(data?.posts) ? data.posts : [];
+        state.posts = year ? posts.filter((p) => p.year === year) : posts;
+        const pageSize = computePageSize(state.pageSize);
+        const anchorIndex = anchorIndexCache ?? getAnchorIndex();
+        state.currentPage =
+          anchorIndex === null || anchorIndex === undefined
+            ? getCurrentPageFromPath()
+            : Math.floor(anchorIndex / pageSize) + 1;
+        applyPageSize(pageSize, anchorIndex);
+        updateAnchorCache();
+      } catch {
+        // keep SSR
+      }
+    };
+
+    let resizeTimer = 0;
+    let resizeAnchor = null;
+    const onResize = () => {
+      if (!state.posts.length) return;
+
+      if (resizeAnchor === null) {
+        resizeAnchor =
+          anchorIndexCache ??
+          (state.currentPage - 1) * state.pageSize +
+            Math.floor(state.pageSize / 2);
+      }
+
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        const nextSize = computePageSize(state.pageSize);
+        const current = state.pageSize;
+        const delta = Math.abs(nextSize - current);
+        if (nextSize === current || delta < 2) {
+          resizeAnchor = null;
+          return;
+        }
+
+        const anchorIndex = resizeAnchor;
+        resizeAnchor = null;
+
+        state.currentPage = Math.floor(anchorIndex / nextSize) + 1;
+        applyPageSize(nextSize, anchorIndex);
+      }, 150);
+    };
+
+    load();
+    updateAnchorCache();
+    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (anchorRaf) cancelAnimationFrame(anchorRaf);
+        anchorRaf = requestAnimationFrame(updateAnchorCache);
+      },
+      { passive: true },
+    );
+    window.addEventListener("astro:after-swap", load);
+  })();
+</script>

@@ -9,28 +9,59 @@ import { friendLinks, siteConfig } from "../config/site";
   author={siteConfig.author}
   url={`${siteConfig.url}/links`}
 >
-  <div class="center markdown">
+  <div class="center">
     <h1 class="heading">友链</h1>
     {
       friendLinks.length ? (
-        <ul class="list-none space-y-4 px-0">
-          {friendLinks.map((link) => (
-            <li class="ring-foreground/30 hover:ring-accent animation rounded-xl border border-foreground/10 px-4 py-3 ring-1">
-              <a
-                class="text-xl font-semibold hover:text-accent"
-                href={link.url}
-                target="blank"
-                rel="noreferrer"
-              >
-                {link.name}
-              </a>
-              {link.description ? (
-                <p class="opacity-80">{link.description}</p>
-              ) : (
-                ""
-              )}
-            </li>
-          ))}
+        <ul class="grid list-none grid-cols-1 gap-3 px-0 sm:grid-cols-2 lg:grid-cols-3">
+          {friendLinks.map((link) => {
+            const hostname = (() => {
+              try {
+                return new URL(link.url).hostname.replace(/^www\./, "");
+              } catch {
+                return "";
+              }
+            })();
+
+            return (
+              <li class="ring-foreground/25 hover:ring-accent animation h-full rounded-xl border border-foreground/10 bg-foreground/3 p-3 ring-1 hover:bg-foreground/5">
+                <a
+                  class="group flex h-full items-start gap-3"
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.avatar ? (
+                    <img
+                      src={link.avatar}
+                      alt={`${link.name} avatar`}
+                      class="h-11 w-11 shrink-0 rounded-full border border-foreground/10 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                    />
+                  ) : (
+                    <div class="h-11 w-11 shrink-0 rounded-full border border-foreground/10 bg-foreground/8" />
+                  )}
+                  <div class="min-w-0">
+                    <p class="group-hover:text-accent animation truncate text-base font-semibold">
+                      {link.name}
+                    </p>
+                    {hostname ? (
+                      <p class="font-mono text-xs text-foreground/55">
+                        {hostname}
+                      </p>
+                    ) : null}
+                    {link.description ? (
+                      <p class="mt-1 text-sm text-foreground/75">
+                        {link.description}
+                      </p>
+                    ) : null}
+                  </div>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       ) : (
         <p class="paragraph">
