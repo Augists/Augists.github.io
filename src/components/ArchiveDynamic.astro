@@ -92,44 +92,6 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
 
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
-    const computePageSize = (currentSize) => {
-      const min = 6;
-      const max = 24;
-      const h = window.innerHeight;
-      const w = window.innerWidth;
-
-      let size = 8;
-      if (h >= 1200) size = 20;
-      else if (h >= 1080) size = 18;
-      else if (h >= 900) size = 16;
-      else if (h >= 780) size = 14;
-      else if (h >= 660) size = 12;
-      else if (h >= 560) size = 10;
-
-      if (w >= 1280) size += 2;
-      if (w >= 1536) size += 2;
-
-      size = clamp(size, min, max);
-      if (size % 2 !== 0) size -= 1;
-      size = Math.max(min, size);
-
-      const nearBreakpoints = (value, points, buffer) =>
-        points.some((p) => Math.abs(value - p) < buffer);
-      const buffer = 36;
-      const heightBreaks = [560, 660, 780, 900, 1080, 1200];
-      const widthBreaks = [1280, 1536];
-
-      if (
-        Number.isFinite(currentSize) &&
-        (nearBreakpoints(h, heightBreaks, buffer) ||
-          nearBreakpoints(w, widthBreaks, buffer))
-      ) {
-        return currentSize;
-      }
-
-      return size;
-    };
-
     const formatDate = (iso) =>
       new Date(iso)
         .toLocaleDateString("en-GB", {
@@ -231,7 +193,7 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
 
     const state = {
       posts: [],
-      pageSize: computePageSize(),
+      pageSize: 6,
       currentPage: getCurrentPageFromPath(),
       lastPage: 1,
     };
@@ -288,7 +250,24 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
         : "text-foreground/60 cursor-not-allowed";
     };
 
-    const render = (anchorIndex) => {
+    const getPaginationBottom = () => pagination.getBoundingClientRect().bottom;
+
+    const getFitLimit = () => {
+      const footer = document.querySelector("footer");
+      const footerHeight = footer ? footer.getBoundingClientRect().height : 0;
+
+      const firstItem = list.querySelector("[data-archive-index]");
+      const firstHeight = firstItem
+        ? firstItem.getBoundingClientRect().height
+        : 0;
+
+      const hoverReserve = clamp(firstHeight * 0.65, 88, 160);
+      const safe = 16;
+
+      return window.innerHeight - footerHeight - safe - hoverReserve;
+    };
+
+    const renderList = () => {
       const start = (state.currentPage - 1) * state.pageSize;
       const end = start + state.pageSize;
       const slice = state.posts.slice(start, end);
@@ -303,9 +282,10 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
       });
 
       updatePagination();
+    };
 
+    const scrollToAnchor = (anchorIndex) => {
       if (anchorIndex === null || anchorIndex === undefined) return;
-
       requestAnimationFrame(() => {
         const target = list.querySelector(
           `[data-archive-index="${anchorIndex}"]`,
@@ -314,12 +294,93 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
       });
     };
 
-    const applyPageSize = (pageSize, anchorIndex) => {
+    const setPageSizeByAnchor = (pageSize, anchorIndex) => {
       state.pageSize = pageSize;
-      state.lastPage = Math.max(1, Math.ceil(state.posts.length / state.pageSize));
-      state.currentPage = clamp(state.currentPage, 1, state.lastPage);
-      render(anchorIndex);
+      state.lastPage = Math.max(
+        1,
+        Math.ceil(state.posts.length / state.pageSize),
+      );
+      state.currentPage = clamp(
+        Math.floor(anchorIndex / state.pageSize) + 1,
+        1,
+        state.lastPage,
+      );
+    };
+
+    const fitToViewport = (anchorIndex) => {
+      if (anchorIndex === null || anchorIndex === undefined) return;
+
+      const min = 6;
+      const max = Math.min(24, state.posts.length || 24);
+      const clampSize = (value) => {
+        let size = clamp(value, min, max);
+        if (size % 2 !== 0) size -= 1;
+        return Math.max(min, size);
+      };
+
+      let guard = 0;
+      let limit = getFitLimit();
+      let bottom = getPaginationBottom();
+
+      // First: reduce until it fits (with reserved hover space).
+      while (bottom > limit && state.pageSize > min && guard < 20) {
+        guard += 1;
+        const nextSize = clampSize(state.pageSize - 2);
+        if (nextSize === state.pageSize) break;
+        setPageSizeByAnchor(nextSize, anchorIndex);
+        renderList();
+        limit = getFitLimit();
+        bottom = getPaginationBottom();
+      }
+
+      // Second: try to fill up (but keep the hover reserve).
+      guard = 0;
+      while (guard < 20) {
+        guard += 1;
+        const nextSize = clampSize(state.pageSize + 2);
+        if (nextSize === state.pageSize) break;
+
+        const prevSize = state.pageSize;
+        const prevPage = state.currentPage;
+        const prevLast = state.lastPage;
+
+        setPageSizeByAnchor(nextSize, anchorIndex);
+        renderList();
+
+        limit = getFitLimit();
+        bottom = getPaginationBottom();
+        if (bottom > limit) {
+          state.pageSize = prevSize;
+          state.currentPage = prevPage;
+          state.lastPage = prevLast;
+          renderList();
+          break;
+        }
+      }
+    };
+
+    const applyPageSize = (pageSize, anchorIndex) => {
+      const min = 6;
+      const max = Math.min(24, state.posts.length || 24);
+      let nextSize = clamp(pageSize, min, max);
+      if (nextSize % 2 !== 0) nextSize -= 1;
+      nextSize = Math.max(min, nextSize);
+
+      if (anchorIndex === null || anchorIndex === undefined) {
+        state.pageSize = nextSize;
+        state.lastPage = Math.max(
+          1,
+          Math.ceil(state.posts.length / state.pageSize),
+        );
+        state.currentPage = clamp(state.currentPage, 1, state.lastPage);
+      } else {
+        setPageSizeByAnchor(nextSize, anchorIndex);
+      }
+
+      renderList();
+      fitToViewport(anchorIndex);
       updateUrl(state.currentPage);
+      scrollToAnchor(anchorIndex);
     };
 
     const load = async () => {
@@ -329,13 +390,9 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
         const data = await res.json();
         const posts = Array.isArray(data?.posts) ? data.posts : [];
         state.posts = year ? posts.filter((p) => p.year === year) : posts;
-        const pageSize = computePageSize(state.pageSize);
         const anchorIndex = anchorIndexCache ?? getAnchorIndex();
-        state.currentPage =
-          anchorIndex === null || anchorIndex === undefined
-            ? getCurrentPageFromPath()
-            : Math.floor(anchorIndex / pageSize) + 1;
-        applyPageSize(pageSize, anchorIndex);
+        state.currentPage = getCurrentPageFromPath();
+        applyPageSize(state.pageSize, anchorIndex);
         updateAnchorCache();
       } catch {
         // keep SSR
@@ -356,19 +413,11 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
 
       if (resizeTimer) clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(() => {
-        const nextSize = computePageSize(state.pageSize);
-        const current = state.pageSize;
-        const delta = Math.abs(nextSize - current);
-        if (nextSize === current || delta < 2) {
-          resizeAnchor = null;
-          return;
-        }
-
         const anchorIndex = resizeAnchor;
         resizeAnchor = null;
 
-        state.currentPage = Math.floor(anchorIndex / nextSize) + 1;
-        applyPageSize(nextSize, anchorIndex);
+        applyPageSize(state.pageSize, anchorIndex);
+        updateAnchorCache();
       }, 150);
     };
 
