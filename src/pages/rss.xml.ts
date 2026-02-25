@@ -15,12 +15,20 @@ export async function GET(context: APIContext) {
   const sorted = blogs.sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
   );
+  const lastBuildDate = sorted.length
+    ? sorted[0].data.date.toUTCString()
+    : new Date().toUTCString();
   return rss({
     // stylesheet: "/pretty-feed-v3.xsl",
     title: siteConfig.title,
     description: siteConfig.description,
     site: context.site,
     trailingSlash: false,
+    xmlns: { atom: "http://www.w3.org/2005/Atom" },
+    customData: [
+      `<lastBuildDate>${lastBuildDate}</lastBuildDate>`,
+      `<atom:link href="${siteConfig.url}/rss.xml" rel="self" type="application/rss+xml"/>`,
+    ].join(""),
     items: sorted.map((blog: BlogType) => ({
       title: blog.data.title,
       description: blog.data.description,
