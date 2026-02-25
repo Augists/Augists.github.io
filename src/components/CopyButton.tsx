@@ -3,28 +3,40 @@ import { useState } from "react";
 import IconLink from "../assets/icons/link.svg?react";
 // @ts-ignore
 import IconCheck from "../assets/icons/check.svg?react";
+// @ts-ignore
+import IconX from "../assets/icons/x.svg?react";
 
 export default function CopyButton() {
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setStatus("copied");
+    } catch {
+      setStatus("failed");
+    }
+    setTimeout(() => setStatus("idle"), 2000);
+  };
+
+  const title =
+    status === "copied" ? "已复制" : status === "failed" ? "复制失败" : "复制链接";
 
   return (
     <button
-      onClick={async () => {
-        await navigator.clipboard.writeText(window.location.href);
-        setCopied(true);
-
-        setTimeout(() => setCopied(false), 2000);
-      }}
-      aria-label="copy url button"
-      title={copied ? "copied" : "copy url"}
+      onClick={handleCopy}
+      aria-label="复制链接"
+      title={title}
       className="flex"
     >
-      <a href=""></a>
       <IconCheck
-        className={`${copied ? "size-6 opacity-100" : "size-0 opacity-0"} animation stroke-foreground animation stroke-2`}
+        className={`${status === "copied" ? "size-6 opacity-100" : "size-0 opacity-0"} animation stroke-foreground stroke-2`}
+      />
+      <IconX
+        className={`${status === "failed" ? "size-6 opacity-100" : "size-0 opacity-0"} animation stroke-foreground stroke-2`}
       />
       <IconLink
-        className={`${copied ? "size-0 opacity-0" : "size-6 opacity-100"} animation stroke-foreground animation stroke-1 hover:stroke-2`}
+        className={`${status === "idle" ? "size-6 opacity-100" : "size-0 opacity-0"} animation stroke-foreground stroke-1 hover:stroke-2`}
       />
     </button>
   );

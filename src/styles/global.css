@@ -67,7 +67,7 @@
 @layer base {
   /* layouts */
   html {
-    @apply bg-background text-foreground selection:bg-accent selection:text-background overflow-y-scroll scroll-smooth antialiased;
+    @apply bg-background text-foreground selection:bg-accent selection:text-background overflow-x-hidden overflow-y-scroll scroll-smooth antialiased;
   }
   body {
     --z-old: 1;

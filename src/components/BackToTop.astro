@@ -4,7 +4,7 @@ import IconArrowUp from "../assets/icons/arrow-up.svg";
 
 <button
   type="button"
-  class="back-to-top animation visible fixed bottom-6 right-4 z-20 flex items-center justify-center rounded-full border border-foreground/15 bg-foreground/8 px-3.5 py-3 text-accent shadow-lg shadow-accent/15 ring-1 ring-accent/50 backdrop-blur hover:-translate-y-1 hover:bg-foreground/12 hover:shadow-accent/30 hover:ring-2 hover:ring-accent"
+  class="back-to-top animation fixed bottom-6 right-4 z-20 flex items-center justify-center rounded-full border border-foreground/15 bg-foreground/8 px-3.5 py-3 text-accent shadow-lg shadow-accent/15 ring-1 ring-accent/50 backdrop-blur hover:-translate-y-1 hover:bg-foreground/12 hover:shadow-accent/30 hover:ring-2 hover:ring-accent"
   data-back-to-top
   aria-label="回到顶部"
   title="回到顶部"
@@ -28,3 +28,12 @@ import IconArrowUp from "../assets/icons/arrow-up.svg";
     pointer-events: auto;
   }
 </style>
+
+<script is:inline>
+  const btn = document.querySelector("[data-back-to-top]");
+  if (btn) {
+    window.addEventListener("scroll", () => {
+      btn.classList.toggle("visible", window.scrollY > 300);
+    }, { passive: true });
+  }
+</script>

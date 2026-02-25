@@ -10,18 +10,40 @@ const year = new Date().getFullYear();
     class="text-foreground/50 flex items-center justify-between text-sm select-none"
   >
     <p>© {year} {siteConfig.author}</p>
-    <p>
-      powered by <a
-        href="https://astro.build"
-        target="blank"
-        class="hover:text-accent"
-        aria-label="astro site">Astro</a
-      > &
-      <a
-        href="https://ryze.pages.dev"
-        class="hover:text-accent"
-        aria-label="Ryze site">Ryze</a
-      >
-    </p>
+    <div class="powered-by group relative">
+      <p class="flex items-center gap-1">
+        powered by <a
+          href="https://astro.build"
+          target="_blank"
+          class="hover:text-accent"
+          aria-label="astro site">Astro</a
+        >
+        <span class="inline-flex items-center text-[0.5rem] leading-none transition-transform duration-150 group-hover:rotate-180">▲</span>
+      </p>
+      <div class="powered-by-popup absolute bottom-full right-0 pb-3 opacity-0 transition-all duration-150 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto">
+        <div class="flex gap-2 rounded-md bg-background/90 px-3 py-1.5 shadow-lg ring-1 ring-foreground/10 backdrop-blur">
+          <a href="https://ryze.pages.dev" target="_blank" class="hover:text-accent whitespace-nowrap" aria-label="Ryze site">Ryze</a>
+          <span class="text-foreground/20">·</span>
+          <a href="https://chatgpt.com" target="_blank" class="hover:text-accent whitespace-nowrap" aria-label="ChatGPT site">ChatGPT</a>
+          <span class="text-foreground/20">·</span>
+          <a href="https://claude.ai" target="_blank" class="hover:text-accent whitespace-nowrap" aria-label="Claude site">Claude</a>
+          <span class="text-foreground/20">·</span>
+          <a href="https://github.com/Augists" target="_blank" class="hover:text-accent whitespace-nowrap" aria-label="Augists GitHub">Augists</a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
+
+<style>
+  /* safe triangle: invisible bridge from trigger to popup edges */
+  .powered-by-popup::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 0.75rem;
+    clip-path: polygon(100% 100%, 0% 0%, 100% 0%);
+  }
+</style>

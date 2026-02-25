@@ -250,21 +250,11 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
         : "text-foreground/60 cursor-not-allowed";
     };
 
-    const getPaginationBottom = () => pagination.getBoundingClientRect().bottom;
-
-    const getFitLimit = () => {
-      const footer = document.querySelector("footer");
-      const footerHeight = footer ? footer.getBoundingClientRect().height : 0;
-
+    const measureItemHeight = () => {
       const firstItem = list.querySelector("[data-archive-index]");
-      const firstHeight = firstItem
-        ? firstItem.getBoundingClientRect().height
-        : 0;
-
-      const hoverReserve = clamp(firstHeight * 0.65, 88, 160);
-      const safe = 16;
-
-      return window.innerHeight - footerHeight - safe - hoverReserve;
+      if (!firstItem) return 0;
+      const gap = parseFloat(getComputedStyle(list).rowGap) || 12;
+      return firstItem.getBoundingClientRect().height + gap;
     };
 
     const renderList = () => {
@@ -310,61 +300,26 @@ const baselineStartIndex = (page.currentPage - 1) * baselinePageSize;
     const fitToViewport = (anchorIndex) => {
       if (anchorIndex === null || anchorIndex === undefined) return;
 
-      const min = 6;
-      const max = Math.min(24, state.posts.length || 24);
-      const clampSize = (value) => {
-        let size = clamp(value, min, max);
-        if (size % 2 !== 0) size -= 1;
-        return Math.max(min, size);
-      };
+      const rowHeight = measureItemHeight();
+      if (rowHeight <= 0) return;
 
-      let guard = 0;
-      let limit = getFitLimit();
-      let bottom = getPaginationBottom();
+      // measure fixed chrome: heading + year selector + pagination + list gap
+      const listTop = list.getBoundingClientRect().top;
+      const paginationHeight = pagination.getBoundingClientRect().height;
+      const listGap = parseFloat(getComputedStyle(list).rowGap) || 12;
 
-      // First: reduce until it fits (with reserved hover space).
-      while (bottom > limit && state.pageSize > min && guard < 20) {
-        guard += 1;
-        const nextSize = clampSize(state.pageSize - 2);
-        if (nextSize === state.pageSize) break;
-        setPageSizeByAnchor(nextSize, anchorIndex);
-        renderList();
-        limit = getFitLimit();
-        bottom = getPaginationBottom();
-      }
+      // available = viewport - listTop - pagination - spacing
+      const available = window.innerHeight - listTop - paginationHeight - listGap;
+      const fitCount = Math.floor(available / rowHeight);
 
-      // Second: try to fill up (but keep the hover reserve).
-      guard = 0;
-      while (guard < 20) {
-        guard += 1;
-        const nextSize = clampSize(state.pageSize + 2);
-        if (nextSize === state.pageSize) break;
+      let size = Math.max(1, fitCount);
 
-        const prevSize = state.pageSize;
-        const prevPage = state.currentPage;
-        const prevLast = state.lastPage;
-
-        setPageSizeByAnchor(nextSize, anchorIndex);
-        renderList();
-
-        limit = getFitLimit();
-        bottom = getPaginationBottom();
-        if (bottom > limit) {
-          state.pageSize = prevSize;
-          state.currentPage = prevPage;
-          state.lastPage = prevLast;
-          renderList();
-          break;
-        }
-      }
+      setPageSizeByAnchor(size, anchorIndex);
+      renderList();
     };
 
     const applyPageSize = (pageSize, anchorIndex) => {
-      const min = 6;
-      const max = Math.min(24, state.posts.length || 24);
-      let nextSize = clamp(pageSize, min, max);
-      if (nextSize % 2 !== 0) nextSize -= 1;
-      nextSize = Math.max(min, nextSize);
+      let nextSize = Math.max(1, pageSize);
 
       if (anchorIndex === null || anchorIndex === undefined) {
         state.pageSize = nextSize;

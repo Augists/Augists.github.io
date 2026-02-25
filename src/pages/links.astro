@@ -31,18 +31,20 @@ import { friendLinks, siteConfig } from "../config/site";
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {link.avatar ? (
-                    <img
-                      src={link.avatar}
-                      alt={`${link.name} avatar`}
-                      class="h-11 w-11 shrink-0 rounded-full border border-foreground/10 object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      referrerpolicy="no-referrer"
-                    />
-                  ) : (
-                    <div class="h-11 w-11 shrink-0 rounded-full border border-foreground/10 bg-foreground/8" />
-                  )}
+                  <div class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-foreground/10 bg-foreground/8 text-lg font-semibold leading-none select-none">
+                    {link.name[0].toUpperCase()}
+                    {link.avatar && (
+                      <img
+                        src={link.avatar}
+                        alt=""
+                        class="absolute inset-0 h-full w-full rounded-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                        onerror="this.style.display='none'"
+                      />
+                    )}
+                  </div>
                   <div class="min-w-0">
                     <p class="group-hover:text-accent animation truncate text-base font-semibold">
                       {link.name}
